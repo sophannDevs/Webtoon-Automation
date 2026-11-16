@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Viewer preview</title>
+<!--
+  EXAMPLE ONLY: what RELEASE/ep01/index.html looks like for the Cambodian-reader edition.
+  The panel images contain no text; this page draws the speech bubbles and types the Khmer in them,
+  using the positions from the lettering spec. Images here are placeholders for your Flow images.
+  Not used by the harness; safe to delete.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Fasthand&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --max-w: 720px;
+    --page-bg: #0e0e10;
+    --ink: #111;
+    --pen: #1e3caa;
+    --note: #b9b9c2;
+    --khmer: "Battambang", "Khmer UI", "Noto Sans Khmer", "Khmer Sangam MN", sans-serif;
+    --hand: "Fasthand", "Khmer UI", "Noto Sans Khmer", cursive;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--page-bg); font-family: var(--khmer); }
+  header.viewer-head {
+    position: sticky; top: 0; z-index: 50; background: rgba(14,14,16,.92); color: #f5f5f7;
+    text-align: center; padding: 10px 12px; font-size: 14px; backdrop-filter: blur(6px);
+  }
+  .note { max-width: var(--max-w); margin: 0 auto; padding: 14px 16px; color: var(--note); font: 14px/1.6 system-ui, sans-serif; }
+  .strip { max-width: var(--max-w); margin: 0 auto; display: flex; flex-direction: column; }
+  .panel { position: relative; line-height: 0; background: #e9e9ee; container-type: inline-size; }
+  .panel img { width: 100%; height: auto; display: block; }
+  .gap { background: var(--page-bg); }
+
+  /* Speech bubbles drawn by the viewer. x/y = centre, w = max width, all in % of the panel. */
+  .bubble {
+    position: absolute; transform: translate(-50%, -50%); z-index: 5;
+    background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 999px;
+    padding: 0.7em 1.2em; text-align: center; font-family: var(--khmer);
+    font-size: 17px; font-size: 3.4cqw; line-height: 1.7; white-space: normal; word-break: keep-all;
+  }
+  .bubble .tail {
+    position: absolute; width: 1.1em; height: 1.1em; background: #fff;
+    border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+    bottom: -0.6em; transform: rotate(45deg);
+  }
+  .bubble .tail.up { bottom: auto; top: -0.6em; border: 0; border-left: 3px solid var(--ink); border-top: 3px solid var(--ink); }
+  .bubble.thought { border-style: dashed; border-radius: 40%; color: #333; }
+  .bubble.thought .dot { position: absolute; background: #fff; border: 3px solid var(--ink); border-radius: 50%; }
+  .bubble.memory { border-color: #4f78c4; box-shadow: 0 0 0.6em 0.15em rgba(120,170,255,.75); }
+  .bubble.memory .tail { border-color: #4f78c4; }
+  .bubble.narration { border-radius: 4px; background: rgba(20,20,24,.88); color: #f4f4f6; border-color: rgba(255,255,255,.25); }
+
+  /* Writing on objects (signature, notes, signs): no bubble, handwriting style. */
+  .env {
+    position: absolute; transform: translate(-50%, -50%) rotate(var(--rot, 0deg)); z-index: 4;
+    color: var(--pen); font-family: var(--hand); text-align: center; line-height: 1.6; white-space: nowrap;
+  }
+  footer { color: #9a9aa2; text-align: center; padding: 28px 12px 60px; font: 13px system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<header class="viewer-head"><b id="m-title"></b> · <span id="m-ep"></span></header>
+<p class="note">Preview of the Cambodian-reader layout: the panel images have no text, and this page draws
+  each speech bubble with the Khmer inside it, using the positions from the lettering spec. The handwriting on
+  the receipt is also typed by the page. Images are placeholders for your Flow panels.</p>
+<main class="strip" id="strip" aria-label="webtoon vertical viewer"></main>
+<footer id="foot"></footer>
+
+<script>
+const META = { title: "ហាងបញ្ចាំការចងចាំ", episode: "ភាគទី ១ (preview)" };
+
+/* From ep01_lettering.md. bubbles: type, text, x, y, w (%), tail ("down"/"up"/none), tailX (% from left).
+   env: writing on objects: text, x, y (%), size (% of panel width), rot (deg). gapAfter: px after the panel. */
+const PANELS = [
+  { src: "ep01_viewer_EXAMPLE_files/panel_044.png", alt: "panel 044", gapAfter: 0,
+    bubbles: [{ type: "dialogue", text: "អ្នកលក់… ហាន សឺយូន?", x: 70, y: 13, w: 50, tail: "down", tailX: 22 }] },
+  { src: "ep01_viewer_EXAMPLE_files/panel_045.png", alt: "panel 045", gapAfter: 0,
+    env: [{ text: "ហាន សឺយូន", x: 50, y: 56, size: 10, rot: -6 }] },
+  { src: "ep01_viewer_EXAMPLE_files/panel_046.png", alt: "panel 046", gapAfter: 64,
+    bubbles: [{ type: "thought", text: "ខ្ញុំ… បានលក់វា?", x: 38, y: 15, w: 56 }] },
+  { src: "ep01_viewer_EXAMPLE_files/panel_047.png", alt: "panel 047", gapAfter: 64,
+    env: [{ text: "កុំស្វែងរកមនុស្សនោះ។", x: 50, y: 49, size: 6.6, rot: -3 }] },
+  { src: "ep01_viewer_EXAMPLE_files/panel_055.png", alt: "panel 055", gapAfter: 0,
+    bubbles: [{ type: "dialogue", text: "កញ្ញា សឺយូន។ កំពុងមើលអ្វី?", x: 78, y: 9, w: 40, tail: "down", tailX: 18 }] }
+];
+
+/* Names never break across lines: join their parts with a non-breaking space. */
+const NAMES = ["ហាន សឺយូន", "កញ្ញា សឺយូន", "ម៉ា ដូជីន"];
+function keepNames(s) { return NAMES.reduce((t, n) => t.split(n).join(n.replace(/ /g, " ")), s || ""); }
+
+function el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+function renderBubble(b) {
+  const node = el("div", "bubble " + (b.type || "dialogue"), keepNames(b.text));
+  node.style.left = b.x + "%"; node.style.top = b.y + "%"; node.style.maxWidth = b.w + "%";
+  if (b.type === "thought") {
+    [[0.9, 1.2, 0.5], [1.6, 0.4, 0.32]].forEach(([dy, dx, s]) => {
+      const dot = el("span", "dot");
+      dot.style.width = dot.style.height = s + "em"; dot.style.bottom = -dy + "em"; dot.style.left = (30 - dx * 4) + "%";
+      node.appendChild(dot);
+    });
+  } else if (b.tail) {
+    const t = el("span", "tail" + (b.tail === "up" ? " up" : ""));
+    t.style.left = (b.tailX || 30) + "%";
+    node.appendChild(t);
+  }
+  return node;
+}
+
+function renderEnv(v) {
+  const node = el("div", "env", v.text);
+  node.style.left = v.x + "%"; node.style.top = v.y + "%";
+  node.style.fontSize = v.size + "cqw"; node.style.setProperty("--rot", (v.rot || 0) + "deg");
+  return node;
+}
+
+(function init() {
+  document.title = META.title + " — " + META.episode;
+  document.getElementById("m-title").textContent = META.title;
+  document.getElementById("m-ep").textContent = META.episode;
+  const strip = document.getElementById("strip");
+  PANELS.forEach(p => {
+    const panel = el("div", "panel");
+    const img = new Image(); img.loading = "lazy"; img.decoding = "async"; img.alt = p.alt; img.src = p.src;
+    panel.appendChild(img);
+    (p.bubbles || []).forEach(b => panel.appendChild(renderBubble(b)));
+    (p.env || []).forEach(v => panel.appendChild(renderEnv(v)));
+    strip.appendChild(panel);
+    if (p.gapAfter) { const g = el("div", "gap"); g.style.height = p.gapAfter + "px"; strip.appendChild(g); }
+  });
+  document.getElementById("foot").textContent = "Preview · " + PANELS.length + " panels";
+})();
+</script>
+</body>
+</html>

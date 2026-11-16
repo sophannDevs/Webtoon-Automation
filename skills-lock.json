@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "skills": {
+    "webtoon-harness": {
+      "source": "akillness/jeo-skills",
+      "sourceType": "github",
+      "skillPath": ".agent-skills/webtoon-harness/SKILL.md",
+      "computedHash": "300592249f44982d966947aa401b0039f914de69c3502a8fe8a757016bfdf46e"
+    }
+  }
+}

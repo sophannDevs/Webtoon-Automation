@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Webtoon</title>
+<!--
+  Khmer-edition vertical-scroll viewer. Built by km_tool.py from ep{NN}_lettering.md; do not edit the
+  data by hand (edit the lettering spec and rebuild). Panel images contain no text: this page draws the
+  speech bubbles and writes the Khmer. Fonts: Google Fonts when online, otherwise the reader's system
+  Khmer font (Khmer UI on Windows, Noto Sans Khmer on Android, Khmer Sangam MN on iOS/macOS).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Fasthand&family=Koulen&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --max-w: 720px;
+    --page-bg: #0e0e10;
+    --ink: #111;
+    --pen: #1e3caa;
+    --khmer: "Battambang", "Khmer UI", "Noto Sans Khmer", "Khmer Sangam MN", "Leelawadee UI", sans-serif;
+    --hand: "Fasthand", "Khmer UI", "Noto Sans Khmer", "Khmer Sangam MN", cursive;
+    --bold: "Koulen", "Khmer UI", "Noto Sans Khmer", "Khmer Sangam MN", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--page-bg); font-family: var(--khmer); -webkit-text-size-adjust: 100%; }
+  header.viewer-head {
+    position: sticky; top: 0; z-index: 50; background: rgba(14,14,16,.92); color: #f5f5f7;
+    text-align: center; padding: 10px 12px; font-size: 15px; backdrop-filter: blur(6px);
+  }
+  .strip { max-width: var(--max-w); margin: 0 auto; display: flex; flex-direction: column; }
+  .panel { position: relative; line-height: 0; background: #e9e9ee; container-type: inline-size; }
+  .panel img { width: 100%; height: auto; display: block; }
+  .panel .missing { line-height: 1.5; color: #b00020; background: #fff3f3; border: 2px dashed #b00020;
+    text-align: center; padding: 48px 12px; font: 14px system-ui, sans-serif; }
+  .gap { background: var(--page-bg); }
+
+  /* Speech bubbles: x/y = centre, w = max width, in % of the panel. Text scales with panel width. */
+  .bubble {
+    position: absolute; transform: translate(-50%, -50%); z-index: 5;
+    background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 999px;
+    padding: 0.7em 1.2em; text-align: center; font-family: var(--khmer);
+    font-size: 17px; font-size: 3.4cqw; line-height: 1.7; word-break: keep-all;
+  }
+  .bubble .tail {
+    position: absolute; width: 1.1em; height: 1.1em; background: #fff; margin-left: -0.55em;
+    border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+    bottom: -0.6em; transform: rotate(45deg);
+  }
+  .bubble .tail.up { bottom: auto; top: -0.6em; border: 0; border-left: 3px solid var(--ink); border-top: 3px solid var(--ink); }
+  .bubble.thought { border-style: dashed; border-radius: 40%; color: #333; }
+  .bubble.thought .dot { position: absolute; background: #fff; border: 3px solid var(--ink); border-radius: 50%; }
+  .bubble.shout { border-width: 4px; border-radius: 18%; font-family: var(--bold); font-size: 4cqw; transform: translate(-50%, -50%) rotate(-2deg); }
+  .bubble.memory { border-color: #4f78c4; box-shadow: 0 0 0.6em 0.15em rgba(120,170,255,.75); }
+  .bubble.memory .tail { border-color: #4f78c4; }
+  .bubble.narration { border-radius: 4px; background: rgba(20,20,24,.88); color: #f4f4f6; border-color: rgba(255,255,255,.25); }
+
+  /* Writing on objects (no bubble). */
+  .env { position: absolute; transform: translate(-50%, -50%) rotate(var(--rot, 0deg)); z-index: 4;
+    text-align: center; line-height: 1.6; white-space: nowrap; }
+  .env.hand { color: var(--pen); font-family: var(--hand); }
+  .env.sign { color: #d9f0ff; font-family: var(--bold); text-shadow: 0 0 .25em #6fb6ff, 0 0 .6em #3d8bff; }
+  .env.screen { color: #f4f4f6; font-family: var(--khmer); white-space: normal; }
+
+  /* Sound effects (only where the lettering spec letters them). */
+  .sfx { position: absolute; transform: translate(-50%, -50%) rotate(var(--rot, 0deg)); z-index: 6;
+    font-family: var(--bold); color: #fff; line-height: 1.4; white-space: nowrap;
+    -webkit-text-stroke: 0.06em #111; paint-order: stroke fill; text-shadow: 0.05em 0.05em 0 #111; }
+
+  footer { color: #9a9aa2; text-align: center; padding: 28px 12px 60px; font-size: 14px; }
+</style>
+</head>
+<body>
+<header class="viewer-head"><b id="m-title"></b> · <span id="m-ep"></span></header>
+<main class="strip" id="strip" aria-label="webtoon vertical viewer"></main>
+<footer id="foot"></footer>
+
+<script>
+const META = /*__META__*/;
+const PANELS = /*__PANELS__*/;
+
+function keepNames(s) {
+  return (META.names || []).reduce((t, n) => t.split(n).join(n.replace(/ /g, " ")), s || "");
+}
+function el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+function renderBubble(b) {
+  const node = el("div", "bubble " + (b.type || "dialogue"), keepNames(b.text));
+  node.style.left = b.x + "%"; node.style.top = b.y + "%"; node.style.maxWidth = b.w + "%";
+  if (b.type === "thought") {
+    [[0.9, 1.2, 0.5], [1.6, 0.4, 0.32]].forEach(([dy, dx, s]) => {
+      const dot = el("span", "dot");
+      dot.style.width = dot.style.height = s + "em"; dot.style.bottom = -dy + "em"; dot.style.left = (30 - dx * 4) + "%";
+      node.appendChild(dot);
+    });
+  } else if (b.tail && b.type !== "narration") {
+    const t = el("span", "tail" + (b.tail === "up" ? " up" : ""));
+    t.style.left = (b.tailX == null ? 50 : b.tailX) + "%";
+    node.appendChild(t);
+  }
+  return node;
+}
+function renderFree(v, cls) {
+  const node = el("div", cls, keepNames(v.text));
+  node.style.left = v.x + "%"; node.style.top = v.y + "%";
+  node.style.fontSize = v.size + "cqw"; node.style.setProperty("--rot", (v.rot || 0) + "deg");
+  if (v.w) node.style.maxWidth = v.w + "%";
+  return node;
+}
+
+(function init() {
+  document.title = META.title + " — " + META.episode;
+  document.getElementById("m-title").textContent = META.title;
+  document.getElementById("m-ep").textContent = META.episode;
+  const strip = document.getElementById("strip");
+  PANELS.forEach(p => {
+    const panel = el("div", "panel");
+    const img = new Image(); img.loading = "lazy"; img.decoding = "async"; img.alt = p.alt; img.src = p.src;
+    img.onerror = () => img.replaceWith(el("div", "missing", "⚠ " + p.src));
+    panel.appendChild(img);
+    (p.bubbles || []).forEach(b => panel.appendChild(renderBubble(b)));
+    (p.env || []).forEach(v => panel.appendChild(renderFree(v, "env " + (v.style || "hand"))));
+    (p.sfx || []).forEach(v => panel.appendChild(renderFree(v, "sfx")));
+    strip.appendChild(panel);
+    if (p.gapAfter) { const g = el("div", "gap"); g.style.height = p.gapAfter + "px"; strip.appendChild(g); }
+  });
+  document.getElementById("foot").textContent = META.footer || "";
+})();
+</script>
+</body>
+</html>
