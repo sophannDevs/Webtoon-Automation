@@ -1,17 +1,9 @@
-# Brief — EP01 (initial run)
+# Brief — EP01 (new story run)
 
-- 요청 원문: "트렌드 반영해서 웹툰 1화 만들어줘" (2026-11-16)
-- 실행 모드: 초기 실행 (Phase 0 case 1 — `_workspace/` 없음)
-- 회차: EP01 (NN = 01)
-- 장르/톤: 지정 없음 → 트렌드 리서치 결과로 결정
-- 분량: 50+ 패널, 대사 위주, 우상향 긴장 곡선, 매 회차 반전 1개 이상, 끝에 클리프행어
-- 수위: 지정 없음 → 일반 연령 웹툰 수준(전체~15세)
-
-## 프로젝트 고정 조건 (CLAUDE.md)
-- **Khmer edition:** 독자는 캄보디아인이며 **크메르어만 본다**. 바뀌는 것은 딱 두 가지:
-  (1) 말풍선에 크메르어 표시 (뷰어가 그림), (2) 대본에 크메르어(`KM:` 줄) 추가.
-  리서치·스토리·세계관·캐릭터·작화는 하네스 설계 그대로. "독자가 캄보디아인"은 텍스트 언어에만 영향.
-  `webtoon-khmer-edition` 스킬을 모든 단계에서 따른다.
-- **Flow-by-hand mode:** 이미지는 사용자가 Google Flow에서 직접 만든다. Codex 없음.
-  Phase 4는 `webtoon-flow-handoff` 스킬을 따르고, 핸드오프 페이지를 만든 뒤 사용자를 기다린다.
-  panel-artist-a/b/c는 쓰지 않는다. 이미지에는 글자가 전혀 없다.
+- Request: "트렌드 반영해서 웹툰 1화 만들어줘" (make episode 1 based on current trends), then "I want to create new story" (2026-11-17)
+- Mode: new story. The previous run (office horror, 「수칙 4번은 거짓말입니다」) is archived in _workspace_* and must NOT be reused.
+- Episode: EP01 (NN = 01)
+- Genre/tone: not specified, so the trend research decides
+- Length: 50+ panels, dialogue-driven, rising tension, at least one twist, cliffhanger ending
+- Rating: not specified, so general-audience webtoon level
+- Project rules (CLAUDE.md): Khmer edition (readers are Cambodian, Khmer-only text, images text-free) + Flow-by-hand mode (no Codex).
