@@ -15,3 +15,17 @@
 - **Flow-by-hand mode:** 이미지는 사용자가 Google Flow에서 직접 만든다. Codex 없음.
   Phase 4는 `webtoon-flow-handoff` 스킬을 따르고, 핸드오프 페이지를 만든 뒤 사용자를 기다린다.
   panel-artist-a/b/c는 쓰지 않는다. 이미지에는 글자가 전혀 없다.
+
+---
+
+# Brief — EP02 (new episode, 2026-11-17)
+
+- 요청: "Start episode 2" (EP01 이미지는 아직 Flow에서 제작 전)
+- 실행 모드: Phase 0 case 2 — 새 회차. NN = 02
+- 재사용(재작성 금지): `01_research/*`, `02_story/*`(concept·world·characters·series-arc·twist-plan·tension-curve·glossary_km),
+  `04_visual/style-bible.md`, `character-sheets.md`, `refs/`(레퍼런스 시트 — 신규 캐릭터·장소만 추가)
+- 연속성 원천: `continuity.md`는 아직 없음(EP01 Phase 5 전). 대신 `03_episode/ep01_script_final.md`가 확정된 EP01 내용이다.
+- EP02 골격: series-arc §5 EP02 행 「퇴근하세요」 + twist-plan EP02 + tension-curve EP02 메모.
+  신규: 전임자(손 주인, EP02 P1–5 얼굴 공개), 장소 L3 로비. 분량 50–60패널(50+ 하한).
+- 고정 조건은 EP01과 동일: Khmer edition(KM 줄, 글자 없는 이미지, 뷰어가 말풍선), Flow-by-hand mode.
+- 주의: EP01 검증·QA 전이므로, EP01에서 소품·외형이 바뀌면 EP02 프롬프트를 맞춰 고친다.

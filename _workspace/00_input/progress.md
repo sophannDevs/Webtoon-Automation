@@ -1,3 +1,24 @@
+# EP02 progress (paused 2026-11-17 by the user)
+
+## Done
+- `00_input/brief.md` EP02 section (new episode; story assets, style bible and refs are reused)
+- `02_story/characters.md` v1.1: 전임자 = 남재우 (§4-8 token + English Flow line, §4-9 EP02 looks; KM ណាម ជែវូ proposed, label អ្នកមុន)
+- `03_episode/ep02_beatsheet.md`: 58 panels, blocks ①–⑦, twists T-a (the hand = 남재우, a living person) and T-b (05:59 "퇴근하세요" = handover offer, rule 7 reversed), cliff = handover form at the L3 day window
+
+- `03_episode/ep02_script.md` (draft): 58 panels, 81 KM bubbles, 5 KM sfx, P58 caption; `glossary_km.md` v3 (+69 rows incl. §7-2 EP02 fixed lines)
+
+- `03_episode/ep02_script_final.md`: final, 58 panels / 81 KM bubbles; glossary_km v4 (rule 7 KM lengthened; decisions in memo column; EP03 note in script notes §E)
+- `04_visual/style-bible.md` + `character-sheets.md` v1.1 (additions only): LOC_L3_LOBBY (+views, dawn/day light), VIEW_SIDE in LOC_L1, handover forms A/B, L3 clock, 남재우 token
+- `refs/ref_prompts.md`: +5 EP02 cards (JAEWOO_turnaround, JAEWOO_expressions, PROP_HANDOVER_pair, LOC_L3_LOBBY_DAWN_plate, LOC_L3_LOBBY_DAY_plate) → 21 cards total; EP01 handoff page rebuilt
+
+## Next, in order
+1. panel-director → `04_visual/ep02_shotlist.md` (58 panels). It was stopped mid-write: the unfinished preamble (no panels) is kept as `04_visual/ep02_shotlist.PARTIAL.md` — the next run may reuse it, then delete it.
+2. letterer → `04_visual/ep02_lettering.md` + `km_tool.py check --episode 02`
+3. prompt-smith → `04_visual/ep02_prompts.md` (≤250 words each)
+4. `flow_tool.py handoff --episode 02` + `04_visual/ep02_flow_status.md` (WAITING_FOR_IMAGES) → stop
+
+---
+
 # EP01 progress — waiting for the user's Flow images (2026-11-17)
 
 ## Done

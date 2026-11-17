@@ -1,6 +1,7 @@
 # 캐릭터 시트 — 「수칙 4번은 거짓말입니다」 EP01
 
 - 작성: art-director · 기준일 **2026-11-16** · EP01 Phase 4 · **v1** (외형 토큰 원본 = `02_story/characters.md` §4 v1)
+- **v1.1 · 2026-11-17 · EP02 추가 → §10** (외형 토큰 원본 = `characters.md` §4-8 · §4-9 v1.1). **§0–§8의 토큰·표정·상태 문장은 한 글자도 바꾸지 않았다**(EP01 프롬프트가 쓴다). 신규: 남재우 JAEWOO(§10-1), EP02 상태(서하 밤샘 · 노미란 B+코트 뭉치 / 'A-정돈 중' / 손 · 선임 졸음, §10-2–§10-4), 인물 구분(§10-5), 레퍼런스 카드 17–21(§10-6), 검수표(§10-7)
 - 짝 문서: `04_visual/style-bible.md` (화풍·LOC·PROP·조명·말풍선 공간·금지)
 - 다음 독자: **ref-sheet-artist**(§7 → `refs/ref_prompts.md`), panel-director, prompt-smith, panel-validator(§8)
 - Flow-by-hand: 아래 영문 토큰은 **그대로 붙여 넣는 완결된 영어**다. 토큰 이름(SEOHA 등)은 프롬프트에 쓰지 않는다. 인물 이름은 써도 되지만 이름만으로는 Flow가 모르므로 외형 문장을 항상 함께 넣는다.
@@ -32,6 +33,7 @@
 
 - 같은 컷에서 주색 넷(머스터드·검정·슬레이트블루·젖은 카키)은 겹치지 않는다(characters §4-1).
 - 디자인하지 않는 인물: 강지호(목소리만, 휴대폰 빈 화면), 엄마(언급), 전임자(손만 = HAND-CLIFF. 전신 토큰은 EP02 Phase 4 전 character-designer), 과장(언급). **이들을 그리지 않는다.**
+- (v1.1) EP02 캐스트는 **§10-0**. 전임자 = 남재우 JAEWOO(§10-1)가 HAND-CLIFF를 물려받았다.
 
 ---
 
@@ -332,5 +334,239 @@ ref-sheet-artist는 아래 카드마다 `refs/ref_prompts.md`에 블록 하나�
 | 버전 | 날짜 | 내용 |
 |---|---|---|
 | v1 | 2026-11-16 | characters §4 v1 토큰을 그대로 옮김(FULL). SHORT·상태 토큰·표정 영문 추가(서하 표정 ⑦⑧ 추가: P6·블랙코미디 컷용). 노미란 의상 B FULL을 자족형으로 보강(내용 동일). 레퍼런스 카드 16장 사양(필수 12) |
+| v1.1 | 2026-11-17 | **EP02 추가(§10), §0–§8 변경 0.** JAEWOO FULL = characters §4-8 영문 원문 그대로 + SHORT · 표정 6종 영문 · 상태 토큰(P1 빈손 · P2 오르는 컷 등). 서하 밤샘(원문 + 프롬프트용 풀이), 노미란 P43 B+코트 뭉치 · 'A-정돈 중'(원문 + 자족형 FULL, 내용 동일) · 손 클로즈업, 선임 졸음 등, L3 엑스트라(원문). 카드 17–21(필수 3: JAEWOO_turnaround · JAEWOO_expressions · PROP_HANDOVER_pair / 권장 2: L3 플레이트). 상태 변주는 카드 없음 |
 
 - 새 인물(전임자 전신 등)은 이 문서에 섹션만 추가하고 글로벌 규약(style-bible)은 유지한다.
+
+---
+
+## 10. EP02 추가 (v1.1 · 2026-11-17)
+
+> 원본: `characters.md` v1.1 §0-4 · §2-6(시각 메모) · §4-8 TOKEN-JAEWOO · §4-9 EP02 상태 토큰. 장면 근거: `ep02_script_final.md`(58패널) · `ep02_beatsheet.md`. 장소·조명·소품은 style-bible §6-6 · §3-4 · §7-5. **위 §0–§8은 그대로 유효하다**(서하·노미란·선임 FULL/SHORT·표정·상태 토큰). 여기에는 EP02에 새로 필요한 것만 있다.
+
+### 10-0. EP02 캐스트 요약
+
+| ID | 이름 (KM) | 주색 | 식별 표식 (좌우) | EP02 등장 | 레퍼런스 |
+|---|---|---|---|---|---|
+| **SEOHA** | 강서하 | 머스터드 | 점 = RIGHT 눈 밑 · 빈 공무원증 + 네이비 목줄 | 거의 전편 (의상 A 전편, **P26부터 밤샘 상태**, P44부터 토트백) | 기존 turnaround + expressions |
+| **JAEWOO** [신규] | 남재우 (ណាម ជែវូ) · 대사 화자 `អ្នកមុន` | 무채색: 차콜·흰색·스톤 그레이 | **RIGHT 검지 은반지** · **빈 클립 짙은 회색 목줄**(카드 없음) · 다크서클 · 흰 커프스가 차콜 소맷부리 밖으로 | 손만 P1 · 손→소매→턱 P2 · 얼굴 P3, P5–P11, P13, P15, P17, P19(일부), P20, P23–P25, P34, P38, P40–P41 · 발 P12 · 손 P14, P16, P39 · 실루엣 P33 · 비네트 P55(손+서류) | **신규 2장** (§10-6) |
+| **SEONIM** | 선임 | 슬레이트블루 | 흉터 = LEFT 눈썹 · 목의 돋보기 | P10 비네트, P11, P25(배경), P26, P28, P29, P32, P42, P43(배경) | 기존 |
+| **MIRAN** | 노미란 | 검정·차콜 | 금테 하프림 · 금시계 LEFT 손목 | P8 비네트(A) · **P43 B + 코트 뭉치** · **P45–P49 'A-정돈 중'** · P53–P57 A (P54·P57 손) | 기존 (카드 추가 없음) |
+| (목소리) | 강지호 | — | 그리지 않는다 | P50–P52 전화 목소리 | — |
+| (배경) | L3 엑스트라 | 회색·베이지·짙은 녹색 | 디자인하지 않는다 | **P53–P58 09:00에만**, 초점 밖 | — |
+
+- 구정민은 EP02에 나오지 않는다. HAND-CLIFF 토큰(§5)은 이제 **재우의 오른손 클로즈업 토큰**이다(characters §0-4). 원문은 바꾸지 않는다.
+- 같은 컷의 주색: 머스터드(서하) · 무채색(재우) · 슬레이트블루(선임) · 검정(노미란) — 겹치지 않는다.
+
+### 10-1. 남재우 — JAEWOO (전임자 · 잔류 당직자 · 클리프의 손 주인)
+
+- identity_tag: `JAEWOO` · 25세 남(서하와 동갑) · 9급 신규, 사흘 당직 뒤 인수인계 없이 도망친 사람 · **사람으로 그린다**(정상 그림자, 마른 옷, 산 사람의 피부. EP10 전에는 어긋남 없음)
+- 레퍼런스: `refs/JAEWOO_turnaround.png`(오른손 클로즈업 포함), `refs/JAEWOO_expressions.png` — characters §4-8 시트 메모의 `JAEWOO_ref`를 시리즈 관례대로 두 장으로 나눈 것
+
+**FULL (characters §4-8 영문 원문 그대로 · 일관성 토큰):**
+```
+Nam Jae-woo, a 25-year-old Korean man, a young junior civil servant; lanky 177 cm slim build with narrow, slightly slumped shoulders, a long neck, thin wrists and long thin pale fingers; slightly overgrown, untidy black hair with bangs falling over his eyebrows, the sides half over his ears and the back touching his shirt collar, no styling; long dark-brown eyes with faint double eyelids and deep dark circles under them; pale cool-toned skin that still looks like a normal living person; a thin plain silver ring on his RIGHT index finger, short clean unpolished nails; a fitted fine-ribbed charcoal-gray knit cardigan, fully buttoned, with white shirt cuffs showing past the knit cuffs at his wrists, a plain white shirt with the collar out over the cardigan and the top button undone, no tie, light stone-gray slacks, scuffed off-white canvas sneakers; a dark-gray lanyard around his neck ending in an empty metal clip with NO ID card; default expression a quiet, tired, knowing look with a faint wry tilt at one corner of his mouth; no glasses, no watch, no red on his clothes
+```
+
+**SHORT:**
+```
+Nam Jae-woo (lanky 25-year-old Korean man, slightly overgrown untidy black hair with bangs over his eyebrows, deep dark circles under his eyes, pale but normal living skin, a fitted fine-ribbed charcoal-gray cardigan fully buttoned with white shirt cuffs and a white collar showing, a dark-gray lanyard ending in an empty clip with no ID card, a thin silver ring on his RIGHT index finger)
+```
+
+**불변 (일관성 핵심):** 마르고 길쭉한 몸·좁고 처진 어깨·긴 목·길고 가는 손가락 / 웃자란 흑발(앞머리가 눈썹을 덮음, 뒷머리가 깃에 닿음) / **짙은 다크서클**(얼굴 앵커) / 창백하지만 산 사람의 피부 / **RIGHT 검지 은반지**(이 작품에서 반지를 끼는 유일한 사람) / 단추를 다 잠근 몸에 맞는 **가는 골지 차콜 카디건**(앞주머니 둘) + **소맷부리 밖 흰 셔츠 커프스** + 깃 밖 흰 셔츠 깃(노타이) / 스톤 그레이 슬랙스 / **해진 오프화이트 캔버스 운동화**(다섯 인물 중 유일한 밝은 신발) / **끝이 빈 클립인 짙은 회색 목줄**. 의상 B 없음(늘 같은 옷). 안경·시계·넥타이·공무원증 없음.
+
+**표정 (가변 · 시트 6종 · characters §4-8):**
+
+| # | 상황 | 영문 | EP02 |
+|---|---|---|---|
+| ① | 디폴트 — 조용히 지친, 다 아는 얼굴 | `a quiet, tired, knowing look with a faint wry tilt at one corner of his mouth` | P3 |
+| ② | 코웃음 | `eyes lowered, a short dry laugh through his nose, one corner of his mouth lifting` | P7 · P13 · P41(→④) |
+| ③ | 다급한 경고 ("떼려고 하지 마") | `eyes suddenly wide, leaning forward with one hand reaching out, urgent and alarmed` | P19(프레임 가장자리 얼굴 일부) |
+| ④ | 상처 (그녀가 그를 모른다) | `his gaze dropping away, lips pressed together, his smile stiffening and fading` | P6 · P41 |
+| ⑤ | 간절한 미소 (05:59) | `a soft, earnest smile, his eyes glistening and slightly wet at the rims` | P34 |
+| ⑥ | 빈 정중함 (EP06용, 시트에 미리) | `a polite, unfocused, blank look of a stranger meeting her for the first time` | (EP06) |
+
+**상태 토큰 (패널 묘사에 덧붙인다 · 빛은 style-bible `LIGHT_LAMP_EDGE`):**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 빈손 (얼굴 전 · HAND-CLIFF 원문의 불변 부분 + 이 컷의 상태) | `a slim pale RIGHT hand of indeterminate gender, short clean unpolished nails, a thin plain silver ring on the index finger, the cuff of a charcoal-gray knit cardigan over a white shirt cuff, now empty, resting on top of the back of her green vinyl swivel chair; no face, no body, no hair visible` | P1 (롤은 이미 책상 위 수첩 옆) |
+| 손에서 얼굴 쪽으로 오르는 컷 | `seen from his RIGHT hand resting on the chair back, up along the sleeve of a fitted fine-ribbed charcoal-gray knit cardigan with a white shirt cuff at the wrist, to a narrow, slightly slumped shoulder, a white shirt collar out over the buttoned cardigan with the top button undone, and a dark-gray lanyard ending in an empty metal clip with no ID card; the frame cuts off at his jawline, no face visible` | P2 |
+| 서가에 기댐 (characters 원문) | `both hands in the front pockets of his charcoal cardigan, one shoulder leaning against the shelf at the edge of the lamplight` | P11 (선임 바로 옆) |
+| 운동화 (마름 = 사람) | `close-up of a pair of scuffed off-white canvas sneakers standing on dry gray speckled terrazzo, the hems of light stone-gray slacks above them; no puddle, no water, no footprints` | P12 |
+| 반지 돌리기 (습관 · 권장) | `his RIGHT thumb absently turning the thin silver ring on his RIGHT index finger` | P14 |
+| 띠와 접힌 서류 (b1) | `taking a blank ruler-cut strip of bright-white paper out of the front pocket of his charcoal cardigan, where the corner of a folded white sheet with a bold dark-gray double-line border also sticks out` | P15 (권장 LEFT 앞주머니, style-bible §7-5) |
+| 테이프 롤 (characters 원문) | `holding a palm-sized roll of bright red vinyl tape in his RIGHT hand; the red is only on the tape roll` | P15 · P16 |
+| 롤을 굴림 | `calmly rolling the red tape roll back and forth in his open palm` | P17 |
+| 귀퉁이를 먼저 덮는 손 | `his RIGHT hand with the silver ring on the index finger covering the lifted corner of the lower red tape first; her fingertip touches the back of his hand and stops` | P19 |
+| 퇴장 | `putting the white paper strip and the red tape roll into his cardigan pocket and walking out through the entrance door into the dark corridor, speaking over his shoulder; no red visible any more` | P25 |
+| 문틀 실루엣 | `a tall, thin silhouette standing in the entrance doorframe with the dark corridor behind him, his overgrown hair and slumped shoulders outlined, his face in shadow; only the single white sheet of paper in his hand catches the warm lamp light` | P33 |
+| 인수인계서 (characters 원문) | `holding out a single blank white form with a double-line border in both hands, nothing written on it` + style-bible `PROP_HANDOVER_A` | P34 · P40(돌려받음) · P41(내림) |
+| 열쇠 쪽 손 | `his RIGHT hand with the silver ring reaching into the warm lamp light toward the bunch of keys on the desk for the first time, while his body stays at the edge of the light` | P38 |
+| 멈춘 손가락 | `his ringed RIGHT index finger stopped a hand's width short of the keys, her palm already laid over them` | P39 |
+
+**금지 · 드리프트 (characters §4-8 그대로 · panel-validator):**
+- 반지는 **RIGHT 검지**, 은색 하나. 왼손·다른 손가락·금색(노미란의 금과 섞임)·둘이면 다시. 정면 그림에서 그의 RIGHT 손은 **화면 왼쪽**.
+- **흰 셔츠 커프스가 차콜 소맷부리 밖으로**(EP01 P61과 일치). 소매가 슬레이트블루·머스터드로 바뀌면 다시.
+- 목줄 끝은 **빈 클립**. 카드가 생기면(빈 카드여도) 다시.
+- 안경·시계·넥타이 금지. 같은 컷의 선임 얼굴에도 안경이 생기지 않았는지 본다.
+- **유령으로 그리지 않는다:** 푸르거나 투명한 피부, 흐려지는 발, 없는 그림자 금지. 젖지 않았다(구정민과 구별).
+- 다크서클은 재우만. 같은 컷의 서하에게 번지지 않게.
+- 머리는 조금 웃자란 정도. 장발·묶은 머리·탈색·흰머리 금지.
+- 빨강은 테이프 롤에만, **손에 들었을 때만**. 주머니 밖으로 비치지 않는다.
+- 몸·얼굴 전체가 스탠드의 노란 원 안에 들어가지 않는다(얼굴은 반만 따뜻하게, 손만 원 안). 초록 회전의자에 앉지 않는다. 로맨스 코드(클로즈 투샷의 홍조·반짝임)로 연출하지 않는다.
+
+### 10-2. 강서하 — EP02 상태 (FULL/SHORT·표정은 §1 그대로)
+
+**밤샘 (P26–P58) — characters §4-9 원문:**
+```
+a few more loose strands of hair after a sleepless night, tired eyes, otherwise exactly the same
+```
+**프롬프트용 풀이 (서하 문장 뒤에 덧붙인다):**
+```
+after a sleepless night: a few more loose strands of hair slipping from her low ponytail and around her temples, slightly tired, heavy eyelids; the skin under her eyes smooth and clear; otherwise exactly the same, in the same outfit
+```
+- **다크서클 금지**(재우의 얼굴 앵커). 서하 문장과 Avoid 줄에 "dark circles"라는 말을 쓰지 않는다 — 같은 컷의 재우에게서 다크서클이 빠진다. 피로는 잔머리와 눈꺼풀로만.
+
+**상태 토큰:**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 의자를 밀고 굳음 | `pushed back in her green swivel chair until her back hits the edge of the desk` + 표정 ② | P4 |
+| 7번 자리까지 손끝 | `her fingertip running down the rules sheet, past the white strip, and stopping at the very bottom row` | P27 (P37 비네트 원본) |
+| 서류를 끝까지 읽는 손끝 | `her fingertip running down the blank boxes of the form and stopping on the lower signature line` | P35 |
+| 열쇠를 먼저 덮는 손 | `her small hand, half covered by the cuff of her oversized mustard-yellow cardigan, laid flat over the bunch of keys first` | P39 |
+| 방화문을 미는 뒷모습 | `seen from behind: a dark brown LOW ponytail tied with a navy hair tie, the back of an oversized mustard-yellow cable-knit cardigan, a plain navy canvas tote bag on her LEFT shoulder, her LEFT hand pushing the horizontal push bar, her phone buzzing in her RIGHT hand` | P44 |
+| L3 (characters §4-9 권장) | `a plain navy canvas tote bag on her LEFT shoulder` | P45–P53 |
+| 대기 의자 통화 | `sitting on a navy-gray waiting chair with a thick black ledger and her navy linen notebook on her lap, her dark gray smartphone in a plain light-gray silicone case held to her RIGHT ear with her RIGHT hand, the screen blank` | P50–P52 |
+| 스티커를 쓰다듬는 엄지 | `her LEFT thumb gently stroking the new sticker on the cover of the notebook on her lap` | P52 (COMP-STICKER와 같은 LEFT 손) |
+| 펜 | `her small RIGHT hand, half covered by the mustard cardigan cuff, holding a plain ballpoint pen stopped a hand's width above the empty lower signature line` | P58 (얼굴은 프레임 밖) |
+
+- 표정 사용(§1 번호): ② P4 · ④ P22 · P48 · ⑤ P52 · ⑥ P36 · ⑦ P50 · ③ P51 · ⑧ P29 · P46. 09:00까지 **의상 A**(실내, characters §4-9 권장). 바깥 의상(네이비 롱 패딩)은 EP02에 없다.
+
+### 10-3. 노미란 — EP02 상태 (의상 A·B FULL·표정은 §2 그대로)
+
+| 패널 | 상태 | 쓰는 문장 |
+|---|---|---|
+| P8 비네트 | 의상 A (EP01 P10 크롭) | §2 SHORT — A + 퇴장 상태 토큰 |
+| **P43** | 의상 B + 코트·재킷 뭉치 | §2 FULL — 의상 B + 아래 상태 토큰 |
+| **P45–P49** | **'A-정돈 중'** | 아래 FULL / SHORT |
+| P53 · P56 | 의상 A 원문(완전 복구 = 권력 회복) | §2 FULL — 의상 A |
+| P54 · P57 | 손 클로즈업 | 아래 손 토큰 |
+
+**P43 상태 토큰 (의상 B 문장 뒤에):**
+```
+her long black coat and charcoal suit jacket bundled over one arm; she snaps the thick black hardcover ledger on the duty desk shut and tucks it under her other arm
+```
+
+**'A-정돈 중' — characters §4-9 원문:**
+```
+the same woman Noh Mi-ran at dawn, back in her charcoal trouser suit with the long black coat draped over her shoulders again, arms not in the sleeves, but her black bob is still flattened on one side and her ivory blouse is wrinkled; thin gold half-rim glasses now straight; gold watch on her LEFT wrist; no red anywhere
+```
+**FULL — 'A-정돈 중'** (위 원문을 의상 A의 불변 요소와 합쳐 자족형으로 보강. 내용 변경 없음):
+```
+Noh Mi-ran, a 47-year-old Korean woman, team leader, at dawn after a bad night, back in her suit; tall 170 cm slim angular build with very upright posture; glossy black chin-length blunt bob with a center part, still flattened and messy on one side; narrow sharp almond-shaped dark eyes behind thin gold half-rim glasses, now sitting straight; fair cool-toned skin, nude-beige lips; a tailored charcoal-gray trouser suit over a wrinkled ivory silk blouse, the long black wool coat draped over her shoulders again with her arms NOT in the sleeves, black low-heeled pumps; a thin gold bracelet watch on her LEFT wrist; no blanket; no red anywhere, no rings
+```
+**SHORT — 'A-정돈 중':**
+```
+Noh Mi-ran (tall, upright 47-year-old Korean woman at dawn, black chin-length bob still flattened on one side, thin gold half-rim glasses, charcoal-gray trouser suit over a wrinkled ivory blouse, long black coat draped over her shoulders with arms not in the sleeves, thin gold watch on her LEFT wrist)
+```
+
+**손 클로즈업 (P47 · P54 · P57 · 권장 LEFT 손 — 금시계가 신원 앵커, P55 비네트의 재우 오른손·은반지와 대비):**
+```
+Noh Mi-ran's LEFT hand: fair cool-toned skin, short neat nude nails, no rings, a thin gold bracelet watch on the wrist, the cuff of a charcoal-gray suit sleeve over an ivory silk blouse cuff
+```
+- P47(A-정돈 중)도 같은 손 문장. 블라우스 소매는 구겨져도 된다.
+
+**그 밖의 상태:**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 일지를 끼고 정문으로 | `walking toward the glass entrance doors with the thick black ledger tucked under her arm` | P45 |
+| 퇴장 (역광 실루엣) | `seen from behind, walking out through the glass doors into the cold blue dawn, the long black coat draped over her shoulders making a tall, straight silhouette` | P49 |
+| 카운터에 기댐 (↺COMP-HANDOVER 자세) | `leaning over the counter toward her` + 표정 ① | P56 |
+
+- 표정(§2 번호): ⑥ 억지 침착 P43(말더듬) · ① P46 · P53 · P56 · ⑥→⑤ P48. 표정 시트 ⑤⑥은 아래 줄(의상 B)에 있지만 얼굴은 같으므로 'A-정돈 중'에도 그대로 쓴다.
+- **빨강 0**(몸·립·네일·소지품·낮 책상). P53–P58은 카운터 위만, 그녀의 책상 면은 프레임 밖(R11).
+
+### 10-4. 선임 · 지호 · L3 엑스트라 — EP02
+
+**선임 상태 토큰 (FULL/SHORT·표정은 §3 그대로):**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 물 붓기 (재우를 보지 않음) | `sitting backwards astride the gray steel folding chair, pouring hot water from a plain white electric kettle into two plain white paper cups on the small side table, never once looking at the young man leaning on the shelf beside him` | P11 |
+| 졸음 | `sitting backwards astride the gray steel folding chair, arms folded on the backrest, eyes closed as if dozing, head slightly bowed` | P26 · P28 · P32 |
+| 한쪽 눈 | `one eye opened to a slit, the other still closed, otherwise motionless` | P29 |
+| 06:00 | 눈을 뜨고 표정 ⑤ `a rare faint smile at only the corners of his mouth` | P42 |
+| 배경 | 표정 ④ 실눈(P25) / 숙직실 문간의 노미란을 보지 않음(P43) | P25 · P43 |
+
+- 재우와 같은 컷: 선임은 그를 **한 번도 보지 않는다**(시선은 컵·서하·허공). 재우도 선임을 보지 않는다. 선임 얼굴에 안경이 생기지 않게(돋보기는 목에).
+
+**강지호:** 그리지 않는다(목소리만, 서하 휴대폰의 빈 화면). 디자인은 EP14.
+
+**L3 엑스트라 (09:00 · P53–P58 배경만) — characters §4-9 원문:**
+```
+background: a few ordinary office workers and citizens in muted winter clothes (gray, beige, dark green), simplified faces, slightly out of focus; nobody wears a mustard-yellow cardigan, a long black coat draped over the shoulders, a slate-blue work jacket, a khaki trench coat, or a charcoal cardigan with a white shirt; no red, no ID card text, no signs, no text anywhere
+```
+- 새벽 L3(P45–P52)는 **비어 있다**(서하·노미란 둘뿐). characters §4-9의 '원거리 방호원 1명' 대안은 쓰지 않는다 — 새벽 컷 Avoid 줄에 `extra people`.
+
+### 10-5. 인물 간 구분 — EP02 추가 (§6에 덧붙임)
+
+| 짝 | 헷갈릴 수 있는 것 | 구분 장치 (프롬프트에 둘 다 넣는다) |
+|---|---|---|
+| 서하 ↔ 재우 | 동갑, 둘 다 카디건 | **오버사이즈 머스터드 꽈배기·열림** vs **몸에 맞는 차콜 가는 골지·잠김** · 낮은 포니 vs 웃자란 짧은 머리 · 네이비 목줄 + 빈 카드 vs 짙은 회색 목줄 + 빈 클립 · 점(서하 RIGHT 눈 밑) vs 다크서클(재우만). 프롬프트에서 옷으로 부른다: `the young woman in the mustard cardigan` / `the young man in the charcoal cardigan` |
+| 재우 ↔ 선임 | 당직실의 두 남자 | 길쭉하고 마름 vs 크고 굽음 · 검은 웃자란 머리 vs 회색 반삭 · 차콜 니트 vs 슬레이트블루 점퍼 · 빈 클립 목줄 vs 목줄 없음(목에 돋보기) · 반지 vs 흉터(LEFT 눈썹) |
+| 재우 손 ↔ 노미란 손 | P55 비네트(재우가 내민 서류 A) ↔ 큰 컷(노미란의 서류 B) | **RIGHT 손 · 은반지(검지) · 차콜 니트 + 흰 커프스** vs **LEFT 손 · 금시계 · 차콜 정장 소매 + 아이보리 커프스 · 반지 없음** |
+| 재우 ↔ HAND-CLIFF | 같은 사람 | 같은 손(§5 원문)이어야 한다 — 카드 17이 HANDCLIFF_ref를 첨부한다(§10-6) |
+
+### 10-6. 레퍼런스 카드 — EP02 (ref-sheet-artist 지시서 · §7 공통 조건 그대로)
+
+ref-sheet-artist는 `refs/ref_prompts.md`에 아래 블록을 **추가만** 한다(기존 16장 블록은 그대로). 프롬프트 = STYLE_REF(style-bible §1) + 레이아웃 + FULL 토큰(또는 소품·장소 토큰) + 반드시 보일 것 + `Avoid: any text, labels, speech bubbles, watermark.`
+
+| # | 카드 | 필수 | aspect | 레이아웃 (영문 핵심) | 반드시 보일 것 | 첨부 |
+|---|---|---|---|---|---|---|
+| 17 | `JAEWOO_turnaround` | **필수** | 16:9 | `four full-body views of the same lanky young man side by side (front, three-quarter turned to his left, right profile, back), plus two close-ups: a head-and-shoulders front view of his face, and his RIGHT hand with the thin plain silver ring on the index finger and a crisp white shirt cuff showing past the ribbed charcoal knit cuff` + §10-1 FULL | RIGHT 검지 은반지(`which appears on the left side of the image in front views`), 소맷부리 밖 흰 커프스, **빈 클립** 목줄(카드 없음), 다크서클, 눈썹을 덮는 앞머리와 깃에 닿는 뒷머리(뒷모습), 단추를 다 잠근 차콜 가는 골지 카디건 + 앞주머니 둘, 깃 밖 흰 셔츠 깃, 스톤 그레이 슬랙스, 해진 오프화이트 캔버스 운동화. 롤·안경·시계·넥타이·빨강 없음 | `refs/HANDCLIFF_ref.png` (있으면 — 손 클로즈업이 그 손과 같아야 한다) |
+| 18 | `JAEWOO_expressions` | **필수** | 16:9 | `a grid of six head-and-shoulders portraits of the same young man in two rows of three, identical outfit and lighting, each with a different expression:` + §10-1 표정 ①–⑥ 순서대로 | 모든 칸에 다크서클·웃자란 앞머리·흰 깃·빈 클립 목줄. ③ 칸에 뻗은 손이 보이면 RIGHT 검지 은반지 | `refs/JAEWOO_turnaround.png` |
+| 19 | `PROP_HANDOVER_pair` | **필수** | 16:9 | `two sheets of paper side by side at exactly the same size and angle on a plain light-gray background, lit evenly from the front: on the left the completely blank form, on the right the identical form with one red seal mark` + style-bible `PROP_HANDOVER_A` · `PROP_HANDOVER_B` 문장 | 같은 굵은 이중 테두리·같은 빈 칸·아래쪽 같은 두 서명란과 줄 끝 원. **오른쪽 종이의 위 줄 원에만** 글자 없는 붉은 원. 글씨·서명·제목·번호 없음, 접힌 자국 없음. 빨강은 그 원 하나 | — |
+| 20 | `LOC_L3_LOBBY_dawn_plate` | 권장 | 16:9 | style-bible LOC_L3_LOBBY 전체 토큰 + VIEW_L3_OUTWARD + LIGHT_L3_DAWN, `an empty hall, no people` | 유리 정문 줄의 푸른 새벽, 바닥의 긴 빛 사각형, 카운터 = 화면 오른쪽, 의자 = 왼쪽, 꺼진 검은 표시 면, **녹색 형광빛 없음**, 간판·글자 없음 | — |
+| 21 | `LOC_L3_LOBBY_day_plate` | 권장 | 16:9 | LOC_L3_LOBBY 전체 토큰 + VIEW_L3_INWARD + LIGHT_L3_DAY + 시계 `PROP_CLOCK_TIME_0900`, `the same hall as in the attached image, now in the daytime, empty, no people` | 같은 배치(카운터 = 왼쪽 벽, 시계 = 카운터 가운데 위, 계단 철문 = 안쪽 오른쪽 구석), 시계 09:00(시침 왼쪽 + 분침 위 = 직각), 표시 면은 꺼진 검은 면 | `refs/LOC_L3_LOBBY_dawn_plate.png` |
+
+- **만드는 순서:** `HANDCLIFF_ref`(EP01 카드 10) → 17 → 18 → 19 → 20 → 21. EP01 카드가 아직 Flow 제작 전이므로, 17을 HANDCLIFF_ref보다 먼저 만들게 되면 반대로 **HANDCLIFF_ref 카드에 17을 첨부**한다(나중에 만드는 쪽이 먼저 만든 쪽을 첨부 → 두 회차의 손이 처음부터 같다, characters §4-8 시트 메모).
+- 사용자 부담: EP02 필수 3장 + 권장 2장 = 최대 5장. 권장 플레이트를 빼면 L3 문장만으로 간다(새벽·낮이 같은 공간으로 보이는 힘이 약해진다 — 6+6컷이라 권장).
+
+**별도 카드가 필요 없는 EP02 상태 (판단):**
+
+| 상태 | 카드 | 이유 · 대신 첨부할 것 |
+|---|---|---|
+| 노미란 'A-정돈 중' (P45–P49) | **불필요** | 의상 A 그대로 + 두 가지 흐트러짐(눌린 단발·구겨진 블라우스)뿐. `MIRAN_turnaround`(A) + `MIRAN_expressions`를 첨부하고 흐트러짐은 문장으로. 5컷짜리 과도기 상태라 카드로 굳히면 오히려 A와 섞인다 |
+| 노미란 의상 B + 코트 뭉치 (P43) | 불필요 | `MIRAN_outfitB` + EP01 panel_043 PNG(같은 문·같은 의상) |
+| 서하 밤샘 (P26–P58) | **불필요** | 잔머리·눈꺼풀만 달라지는 미세 변주. 카드로 만들면 피로가 과장되거나(다크서클) 기준 외형이 둘로 갈린다. `SEOHA_turnaround` / `SEOHA_expressions` + §10-2 문장 |
+| 선임 졸음 · 한쪽 눈 | 불필요 | `SEONIM_turnaround` + 상태 문장 |
+| L3 엑스트라 | 불필요 | 디자인하지 않는 배경 인물(초점 밖) |
+
+**어떤 패널에 무엇을 첨부하나 (prompt-smith 참고 · 3장 이내):**
+
+| 레퍼런스 | 주로 붙일 패널 |
+|---|---|
+| `JAEWOO_turnaround` | 그의 몸·얼굴이 보이는 모든 컷(P2 · P3 · P5–P11 · P13 · P15 · P17 · P20 · P23–P25 · P33 · P34 · P38 · P40 · P41) |
+| `JAEWOO_expressions` | 얼굴이 큰 컷: P3 · P6 · P13 · P19 · P34 · P41 |
+| `HANDCLIFF_ref` | 손만 보이는 컷: P1 · P16 · P19 · P39 (P2는 JAEWOO_turnaround 우선) |
+| `MIRAN_outfitB` / `MIRAN_turnaround` + `MIRAN_expressions` | P43 / P45–P49 · P53 · P56 (손 컷 P47 · P54 · P57은 turnaround만) |
+| `SEONIM_*` | §10-0 등장 패널 |
+| `SEOHA_*` | 그녀의 얼굴·몸이 보이는 컷. 손 컷(P27 · P35 · P39 · P58)은 소품 카드 우선 |
+| `PROP_HANDOVER_pair` | P34 · P35 · P40 · P54 · P55 · P57 · P58 |
+| `PROP_PAGES_pair` / `PROP_STICKERS_pair` | 수칙 종이 클로즈업 P16 · P18 · P19 · P27 · P37 / P52 |
+| L3 플레이트 | dawn → P45–P52 · day → P53 · P56 |
+| EP01 패널 PNG | style-bible §5-5 · beatsheet §3-1의 재사용 구도, 기억 비네트 원본(style-bible §4-3) |
+
+### 10-7. 패널 검수표 — EP02 인물 축 (§8에 덧붙임 · panel-validator)
+
+| 인물 | 반드시 맞아야 하는 것 | 실패 예 |
+|---|---|---|
+| JAEWOO | RIGHT 검지 은반지 · 흰 커프스가 차콜 소맷부리 밖 · 빈 클립 목줄 · 다크서클 · 웃자란 앞머리 · 오프화이트 운동화 · 정상 그림자·마른 옷·산 사람 피부 · 몸은 빛 가장자리(손만 노란 원 안) · 롤은 손에 들 때만 | 왼손 반지·금반지·반지 둘, 목줄에 카드, 안경, 푸르거나 투명한 피부, 그림자 없음, 젖음, 장발, 당직석에 앉음, 주머니로 비치는 빨강 |
+| JAEWOO 손 (P1 · P16 · P19 · P39) | EP01 HAND-CLIFF와 같은 손 · P1은 **빈손**(롤은 책상 위) · P2는 턱선에서 잘림(얼굴 없음) | P1에 롤을 든 손, P2에 얼굴이 보임 |
+| SEOHA (EP02) | §8 그대로 + P26부터 잔머리·피곤한 눈 · **다크서클 없음** · P44부터 토트백 LEFT 어깨 · 09:00까지 의상 A | 다크서클, 패딩·바깥 옷, 머리를 푼 모습 |
+| MIRAN (EP02) | P43 B(담요·비뚤어진 안경) + 팔의 코트 뭉치 · P45–P49 코트를 다시 어깨에(팔은 소매 밖) + 눌린 단발 + 구겨진 블라우스 + **안경 똑바로** · P53–P57 A 완전 복구 · 금시계 LEFT 손목 · 빨강 0 | 'A-정돈 중'에 담요, 코트 소매에 팔, P53 이후 흐트러진 머리, 립·네일 빨강, 책상 위 빨간 롤 |
+| SEONIM (EP02) | §8 그대로 + 재우를 보지 않음 · 졸 때 눈 감음 | 재우와 눈 맞춤, 안경 착용 |
+| L3 엑스트라 | 09:00에만 · 초점 밖 · 주요 인물의 주색·실루엣 없음 | 새벽에 사람, 머스터드·검은 코트·차콜 카디건 차림, 명찰 글씨 |

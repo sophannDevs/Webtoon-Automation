@@ -1,6 +1,6 @@
 state: WAITING_FOR_IMAGES
 round: 0
-cards: 16 sheets, 64 panels
+cards: 21 sheets (16 for EP01 + 5 added for EP02), 64 panels
 page: _workspace/04_visual/ep01_flow_handoff.html
 
 ## Notes
