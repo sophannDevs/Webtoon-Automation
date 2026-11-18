@@ -1,4 +1,4 @@
-# EP02 progress (paused 2026-11-17 by the user)
+# EP02 progress — waiting for the user's Flow images (2026-11-18)
 
 ## Done
 - `00_input/brief.md` EP02 section (new episode; story assets, style bible and refs are reused)
@@ -11,11 +11,11 @@
 - `04_visual/style-bible.md` + `character-sheets.md` v1.1 (additions only): LOC_L3_LOBBY (+views, dawn/day light), VIEW_SIDE in LOC_L1, handover forms A/B, L3 clock, 남재우 token
 - `refs/ref_prompts.md`: +5 EP02 cards (JAEWOO_turnaround, JAEWOO_expressions, PROP_HANDOVER_pair, LOC_L3_LOBBY_DAWN_plate, LOC_L3_LOBBY_DAY_plate) → 21 cards total; EP01 handoff page rebuilt
 
-## Next, in order
-1. panel-director → `04_visual/ep02_shotlist.md` (58 panels). It was stopped mid-write: the unfinished preamble (no panels) is kept as `04_visual/ep02_shotlist.PARTIAL.md` — the next run may reuse it, then delete it.
-2. letterer → `04_visual/ep02_lettering.md` + `km_tool.py check --episode 02`
-3. prompt-smith → `04_visual/ep02_prompts.md` (≤250 words each)
-4. `flow_tool.py handoff --episode 02` + `04_visual/ep02_flow_status.md` (WAITING_FOR_IMAGES) → stop
+- `04_visual/ep02_shotlist.md` (58 panels), `ep02_lettering.md` (82 bubbles + 7 sfx; `km_tool.py check --episode 02` OK), `ep02_prompts.md` (58, 178–249 words), **`ep02_flow_handoff.html`**, `ep02_flow_status.md` = WAITING_FOR_IMAGES
+
+## Next
+- EP02 is ready for the user's Flow images (after EP01's: EP02 repeats attach EP01 panels). When the user says "images are ready": follow `ep01_flow_status.md` / `ep02_flow_status.md` "On resume", then validation (panel-validator, prompt-smith, ref-sheet-artist) and Phase 5 per episode.
+- Next new work: EP03 (series-arc §5 row; note in ep02_script_final §E about the handover-form last line; glossary v4).
 
 ---
 
