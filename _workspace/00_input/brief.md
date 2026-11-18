@@ -29,3 +29,18 @@
   신규: 전임자(손 주인, EP02 P1–5 얼굴 공개), 장소 L3 로비. 분량 50–60패널(50+ 하한).
 - 고정 조건은 EP01과 동일: Khmer edition(KM 줄, 글자 없는 이미지, 뷰어가 말풍선), Flow-by-hand mode.
 - 주의: EP01 검증·QA 전이므로, EP01에서 소품·외형이 바뀌면 EP02 프롬프트를 맞춰 고친다.
+
+---
+
+# Brief — EP03 (new episode, 2026-11-18)
+
+- 요청: "start episode 3". 실행 모드: Phase 0 case 2 — 새 회차. NN = 03. 브랜치: main.
+- 재사용(재작성 금지): `01_research/*`, `02_story/*`(concept·world·characters·series-arc·twist-plan·tension-curve·glossary_km v4),
+  `04_visual/style-bible.md`·`character-sheets.md`·`refs/`(레퍼런스 시트 — 신규 인물·장소·소품만 추가)
+- 연속성 원천: `03_episode/ep02_script_final.md`(P58 마감 = 노미란이 인수인계서 B를 내민다; 끝 노트 §E = EP03 인계 메모)
+  와 `ep01_script_final.md`. `continuity.md`는 EP01·EP02 QA 전이라 아직 없다.
+- EP03 골격: series-arc §5 EP03 「인수인계」 행(무료 아크의 끝) + twist-plan EP03 절(T-a 서랍 맨 아래 칸 = 영수증, T-b 내선 목소리) + tension-curve EP03 메모.
+  신규: 전입신고 민원인, 개명 신청 민원인(손·서식만 — 클리프). 분량 50–60패널(50+ 하한).
+- 플랫폼 노트(platform-ranker): EP3 끝 = 무료→유료 전환 핵심. 클리프는 미해결 미스터리 질문.
+- 고정 조건은 EP01·EP02와 동일: Khmer edition(KM 줄, 글자 없는 이미지, 뷰어가 말풍선), Flow-by-hand mode.
+- 주의: EP01·EP02 이미지는 Flow에서 제작 전. EP01에서 소품·외형이 바뀌면 EP03 프롬프트를 맞춰 고친다.

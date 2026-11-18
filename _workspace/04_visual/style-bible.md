@@ -2,6 +2,7 @@
 
 - 작성: art-director · 기준일 **2026-11-16** · EP01 Phase 4 · **v1**
 - **v1.1 · 2026-11-17 · EP02 추가 (덧붙이기만).** v1의 토큰 문장(STYLE_*, LIGHT_*, LOC_*, VIEW_*, PROP_*)은 한 글자도 바꾸지 않았다(EP01 프롬프트가 그대로 쓴다). 새로 붙인 곳에는 **(v1.1 · EP02)** 표시가 있다: §0 · §2-4-1 · §2-6 · §2-7 · §3-2(아래 행) · §3-4 · §4-3 · §5-5 · §6-1-1 · §6-2-1 · §6-3 VIEW_SIDE/VIEW_SHELVES/VIEW_NAPDOOR 활짝 · §6-5 VIEW_FROM_WINDOW/VIEW_ANCHOR_0600 · **§6-6 LOC_L3_LOBBY** · §7-5 · §7-6 · §8-1 · §9 · §10-4 · §11-1 · §12. EP02 입력: `00_input/brief.md`(EP02 절), `03_episode/ep02_script_final.md`(58패널, 최종), `03_episode/ep02_beatsheet.md`(§3-1 재사용 구도 · §3-3 신규 렌더 · §4 무글자 소품 · §6 요청), `02_story/characters.md` v1.1(§4-8 · §4-9), `02_story/world.md`(§5-3 · §9-4 · §10 · §13-3), `04_visual/ep01_shotlist.md` §A-1(VIEW_SIDE) · §D(기억 비네트)
+- **v1.2 · 2026-11-18 · EP03 추가 (덧붙이기만).** v1·v1.1의 토큰 문장(STYLE_*, LIGHT_*, LOC_*, VIEW_*, PROP_*)은 한 글자도 바꾸지 않았다(EP01·EP02 프롬프트가 그대로 쓴다). 새로 붙인 곳에는 **(v1.2 · EP03)** 표시가 있다: §0 · §2-2-1 · §2-3-1 · §2-4-2 · §2-8 · §3-2(아래 행) · §3-5 · §4-4 · §5-6 · §6-1-2 · §6-2-2 · §6-3 VIEW_DRAWERS/VIEW_SLOT/VIEW_GRILLE/VIEW_GLASS_CLOSE · §6-5 VIEW_FROM_WINDOW_FAR/VIEW_FROM_WINDOW_ACROSS/VIEW_WINDOW_FLOOR · **§6-6-1 L3 직원석·위층 계단** · §7-7 · §7-8 · §8-2 · §9 · §10-5 · §11-2 · §12. EP03 입력: `00_input/brief.md`(EP03 절), `03_episode/ep03_script_final.md`(60패널, 최종 · 검수 노트 E-1 전입신고서 연두 · E-3), `03_episode/ep03_beatsheet.md`(§2 ⊘ 소품 열 · §3-1 재사용 · §3-3 신규 렌더 · §3-4 시각 문법 · §6), `02_story/characters.md` v1.2(§2-7 · §2-8 · §4-10 · §4-11 · §4-12), `02_story/world.md`(§5-3 · §9 · §13-3), `04_visual/ep02_shotlist.md` §A · panel_053–058
 - **Flow aspect 기본값: 3:4** — 패널마다 `aspect:`를 적는다. 크기 등급(3:4 / 9:16 / 1:1 / 16:9)과 배정 규칙은 §4.
 - 입력: `03_episode/ep01_script_final.md`(64패널, 최종), `03_episode/ep01_beatsheet.md`(§3 고정 구도 COMP-*, ⊘ 무글자 소품 열), `02_story/characters.md` §4(외형 토큰 v1), `02_story/world.md` §9(장소)·§10(시각 톤), `02_story/twist-plan.md` §2-3·§2-4·§2-8·§5·§7-3, `02_story/tension-curve.md` §9(간격·속도), `01_research/trend-brief.md` §3·D7
 - 짝 문서: `04_visual/character-sheets.md` (인물 토큰 + 레퍼런스 시트 사양)
@@ -28,6 +29,11 @@
 | **EP02 소품 (v1.1)** | 인수인계서 A(완전한 빈 면) · B(위 줄 = 인계자 줄에 글자 없는 붉은 직인 원) · 접힌 서류 모서리 · 흰 덮개 띠 · L3 벽시계(숫자 없음) · 시계 바늘 문장 6개(04:40–09:00) · 숙직실 벽 내선 수화기 (§7-5) |
 | **EP02 빨강 (v1.1)** | 같은 세 범주뿐. 새로 들어오는 것은 ②범주의 서류 B 직인 원 하나(P54–58). 롤은 P25에서 주머니로 사라진다. 노미란의 몸·의상·낮 책상에 빨강 0 (§2-4-1) |
 | **EP02 레퍼런스 (v1.1)** | 필수 3장(`JAEWOO_turnaround` · `JAEWOO_expressions` · `PROP_HANDOVER_pair`) + L3 플레이트 2장 권장. 노미란 새벽 상태·서하 밤샘은 **카드 없음**(기존 카드 + 문장) → `character-sheets.md` §10-6 |
+| **EP03 장소 (v1.2)** | 새 LOC 없음. L3에 **직원석 줄**(노미란 낮 책상 = 시계 아래 · 서하 낮 책상 = 그녀의 LEFT 옆, 아주 낮은 간유리 칸막이)과 홀 안쪽 끝의 **넓은 석재 계단**을 더하고 VIEW 3개(ACROSS · STAFFSIDE · STAIRS). L1에 VIEW 4개(DRAWERS · SLOT · GRILLE · GLASS_CLOSE), L2에 VIEW 3개(FROM_WINDOW_FAR · FROM_WINDOW_ACROSS · WINDOW_FLOOR) (§6-6-1 · §6-3 · §6-5) |
+| **EP03 소품 (v1.2)** | 서류 B 뒷면(테두리 없는 흰 면 + 맨 아래 인쇄된 빈 칸 하나) · 서명 순간(잉크 점 하나) · 펼친 명부(맨 앞 서류 B) · 짙은 남색 결재판 · 노미란 낮 책상 세트 + 빨간 롤(배경) · **연두 전입신고서 `#DCE6B0`** · 빈 반려 통지 묶음 · 첫 직인 · **연살구 개명 신청서** · 서랍 · 시계 03:00 / 09:20 (§7-7) |
+| **EP03 빨강 (v1.2)** | ③범주가 world §13-3 확장으로 '빨간 비닐테이프(공용 비품)'가 된다: **노미란 낮 책상 위 롤**(P13 · P16, 배경, 아무도 들지 않음, 그녀 손과 팔 길이 이상). 그 밖은 ①②만. 노미란 몸·손·소지품 빨강 0. 재우의 롤은 안 나온다 (§2-4-2) |
+| **EP03 조명 (v1.2)** | 새 토큰 `LIGHT_FLICKER_FAR`(P23 — 회차의 유일한 떨림) · `LIGHT_GLASS_GLOW`(P31 · P46). P30 · P45 = `LIGHT_STEADY` + `LIGHT_NOFLICKER`(떨리지 않음이 비트). L3 낮은 `LIGHT_L3_DAY` 하나로 끝까지 (§3-5) |
+| **EP03 레퍼런스 (v1.2)** | 필수 2장: `MOVEIN_ref`(그녀가 보이는 컷 12 → 8컷 기준을 넘는다) · `HANDRENAME_ref`. 상태 변주·소품·직원석은 **카드 없음** → `character-sheets.md` §11-6 |
 
 ---
 
@@ -85,6 +91,15 @@ Korean webtoon style character model sheet: clean confident black ink linework o
 | 클리프의 손 HAND-CLIFF | `#45474C` + 흰 커프스 | charcoal-gray knit | 슬레이트블루(선임)·아이보리 실크(노미란 B)와 구별 |
 | **남재우 JAEWOO (v1.1 · EP02)** | 차콜 `#45474C` · 흰 셔츠 `#F3F2EE` · 스톤 그레이 `#A6A196` (포인트 은 `#BFC3C7`) | charcoal-gray / white / light stone-gray | **유일한 무채색 인물**(characters §0-4). HAND-CLIFF의 주인이라 소매 값이 같다. 머스터드(서하)와 한 컷에 설 때 두 카디건이 섞이면 다시 |
 
+#### 2-2-1. EP03 인물 주색 (v1.2 · EP03)
+
+| 인물 | 주색 | 프롬프트 색 이름 | 주의 |
+|---|---|---|---|
+| **전입 민원인 MOVEIN** | 회라일락 `#A797B5` · 생성목 크림 `#E3D9C3`(보따리) · 짙은 갈색 `#4C3F35`(바지) · 흰 양말 `#F3F1EC` · 검정 신발 | soft grayish lilac / plain unbleached cream / dark brown / spotless white | 라일락이 분홍·자홍·보라빨강으로 번지거나 회색으로 죽으면 다시(회색이면 재우와 섞인다). 보자기는 무늬 없는 크림 무명 — 빨강·분홍·색동·꽃무늬 금지 |
+| **개명의 손 HAND-RENAME** | 짙은 초콜릿 갈색 코듀로이 `#4A3527` · 베이지 반창고 `#D9C4A6` · 보통 웜 베이지 피부 | dark chocolate-brown corduroy / plain beige fabric bandage | 소매뿐. 차콜 니트 + 흰 커프스(재우) · 차콜 정장 + 금시계(노미란) · 라일락 누빔(민원인)과 겹치지 않게 |
+
+- EP03 밤의 같은 컷: 머스터드(서하) · 슬레이트블루(선임) · 회라일락(민원인) · 무채색(재우) — 겹치지 않는다. 연두 전입신고서는 라일락의 거의 보색이라 P34 · P42에서 서식이 먼저 보인다(script_final 검수 노트 E-1 ③).
+
 ### 2-3. 소품 색 (art-director 기준값)
 
 | 소품 | 색 |
@@ -100,6 +115,20 @@ Korean webtoon style character model sheet: clean confident black ink linework o
 | 사망신고(취소) 서식 | 연회청 `#AFC3D6` |
 | 대기 의자 (L2) | 파란 플라스틱 `#3B6EA8` |
 | 숙직실 난로빛 (P43) | 주황 `#E58A3A` — 문틀 너머 작은 빛만, 빨강으로 번지지 않게 |
+
+#### 2-3-1. EP03 소품 색 (v1.2 · EP03)
+
+| 소품 | 색 | 프롬프트 색 이름 |
+|---|---|---|
+| 전입신고서 | **연두 `#DCE6B0`** (world §5-3 · 검수 노트 E-1 확정) — 벽 `#A9C3AE`보다 밝고 노랗고, 영수증 `#F2E6A2`보다 녹색 | pale yellow-green, the soft light green of a new leaf |
+| 개명 신청서 | 연살구 `#F7D9C4` — 달냥이 주황 `#E8A13A`보다 훨씬 옅다 | pale apricot, a soft light peach-orange |
+| 반려 통지 | 새 종이 `#FAFAF7` + 붉은 원 하나 | plain white |
+| 결재판 | 무광 짙은 남색 `#1E2638` — 명부 바인더 `#2E5A9E`(밝은 파랑 광택 플라스틱)·수첩 `#3A4660`(리넨)과 색·재질로 갈린다 | dark navy, almost black-blue, smooth matte faux-leather |
+| L3 직원 책상 | 연회색 라미네이트 `#C9CAC4` · 가는 철제 다리 `#8A9096` | plain pale gray laminate office desk |
+| L3 위층 계단 | 바닥과 같은 석재 `#CDBFA5` · 짙은 회색 금속 난간 `#5E6266` · 나무 손잡이 `#8C6B4E` | polished beige stone, dark gray metal balustrade, smooth wooden handrail |
+| 꺼진 모니터 | `#16181B` (L3 표시 면과 같은 검정) | switched-off, plain black screen |
+
+- **램프 아래 종이 색 [주의]:** L1 스탠드의 노란 빛은 연두를 노랑으로, 연살구를 주황으로 민다. 서식이 노란 원 안에 있는 컷(P42 · P45 · P59)은 `under the warm lamp light the paper still reads clearly as pale yellow-green, not yellow` / `… as pale apricot, not orange and not pink`를 덧붙인다.
 
 ### 2-4. 예약색 빨강 — EP01은 세 범주뿐 [고정]
 
@@ -124,6 +153,27 @@ world §13-3의 확장(빨간 비닐테이프 공용 비품)은 EP03부터다. E
 
 - **노미란의 몸·의상·소지품·낮 책상에 빨강 0**(EP19 리플레이 전까지 · beatsheet §3-4). P53–P58은 카운터 위만 그리고 그녀의 책상 면은 프레임 밖(R11: EP03 낮 창구의 롤을 앞당기지 않는다).
 - 서류 B 컷에서 붉은 원은 **화면에서 가장 강한 색**이다(EP01 P64의 롤과 같은 문법). L3의 의자·옷·화분·표시 면에 빨강·주황을 쓰지 않는다.
+
+#### 2-4-2. EP03 빨강 (v1.2 · EP03) — ③범주가 world §13-3 확장으로 넓어진다
+
+EP03부터 ③범주는 world §13-3의 **'빨간 비닐테이프(민원여권과 공용 비품)'**다. EP03에 새로 들어오는 것은 **노미란 낮 창구 책상 위의 롤 하나**뿐이다(twist-plan §5 EP03 · F-18 첫 변주 · EP19 리플레이 원본).
+
+| 범주 | EP03 형태 | 패널 |
+|---|---|---|
+| ① 4번 조각의 테이프 | EP01과 같음 (흰 조각 위·아래 가로 두 줄) | 수칙 종이가 보이는 컷: P27 · P29 · P37 · P40(초점 밖) · P56 (+ VIEW_B 와이드의 작은 종이) |
+| ② 인주·직인 자국 | 서류 B 위 줄 원 안의 글자 없는 붉은 원(낮 P1 · P4 · P13 · P14 · P15 / 밤 명부 맨 앞 P28) · 영수증의 작은 붉은 원(P20) · **P47 그녀의 첫 직인**: 나무 직인 끝의 붉은 인주 + 흰 반려 통지 위 붉은 원 · P48 민원인 매듭 사이 반려 통지의 붉은 원(작게) | 책상 위 인주 케이스는 VIEW_DESK 그대로. **서랍 속 여분 인주 케이스는 뚜껑을 닫는다**(P22) |
+| ③ 빨간 비닐테이프 (공용 비품) | **노미란 낮 책상 위 롤 — 배경 소품** | **P13**(작지만 또렷이) · **P16**(프레임 귀퉁이, 초점 밖). 그 밖 0 |
+
+**낮 책상 롤 배치 규칙 [고정]:**
+1. **자리:** 노미란 낮 책상의 **안쪽 오른쪽 귀퉁이**(그녀 기준 RIGHT), 서류 받침 옆에 옆으로 눕혀 둔다. 서하의 책상·명부·그녀의 LEFT 손이 일하는 쪽(LEFT)의 반대편이라 **손과 롤 사이에 늘 팔 길이 이상**이 남는다(characters §4-12).
+2. **같은 물건 종류:** 토큰 `PROP_TAPE_ROLL_DESK`(§7-7)는 EP01 `PROP_TAPE_ROLL_RED`와 같은 구절로 시작한다(손바닥만 한 광택 빨간 비닐테이프, 짧게 찢긴 꼬리). 독자가 "전임자의 롤과 같은 것"으로 알아봐야 F-18이 선다.
+3. **아무도 들지 않고, 만지지 않고, 보지 않고, 가리키지 않는다.** 노미란의 손·소매·코트·결재판에 닿지 않는다. 그녀의 시선과 손짓(P13 아래 줄 가리키기)은 반대쪽(카운터 위 서류)으로 간다.
+4. **배경의 무게:** 화면 가운데 배치·특별한 빛·초점 강조 금지 — 펜꽂이·서류 받침과 같은 무게. 단 P13에서는 모양과 빨강이 **분명히 읽혀야** 한다(EP19 리플레이 원본). P16은 초점 밖.
+5. **P1–P12에는 책상 면이 없다**(EP02 R11 연장, §6-6-1) → 롤도 없다. P17 · P18은 프레임 밖. 밤(L1)에는 어떤 롤도 없다 — 재우의 롤은 EP02 P25부터 주머니 속이고 비치지 않는다.
+6. **빨강 문장:** P13 `The only red in the image is the small roll of red tape lying at the back corner of the desk and the small red seal mark on the form on the counter.` · P16 `The only red in the image is the out-of-focus roll of red tape at the corner of the frame.` (서류 B의 붉은 원이 보이면 함께 적는다)
+
+- **빨강 0:** 노미란의 몸·립·네일·의상·소지품(EP19 리플레이 전까지) · 결재판 · 전입신고서 · 보따리·보자기 · 민원인의 옷 · 개명 신청서 · 반창고 · 코듀로이 · 직원석의 다른 비품 · 계단 · 기억 비네트 3컷.
+- 빨강이 들어가는 컷에서 붉은 원·롤이 **화면에서 가장 강한 색**이다(EP01 P64 · EP02 P54 문법). P57–P60(클리프)에는 빨강이 없다 — EP01 클리프(빨간 롤)와 반대.
 
 ### 2-5. 블록별 무드 팔레트 (컬러 스크립트)
 
@@ -173,6 +223,20 @@ world §13-3의 확장(빨간 비닐테이프 공용 비품)은 EP03부터다. E
 | ⑦ 09:00 | P53–58 | `LIGHT_L3_DAY` 평범한 낮 백색광, 저채도 베이지·회색. 빨강 = 서류 B의 직인 원 하나(화면에서 가장 강한 색). **클리프의 긴장은 조명이 아니라 구도로**(같은 빛을 끝까지 유지) |
 | 기억 비네트 | P8 · P10 · P20 · P37 · P47 · P55 | 원본 컷을 채도 약 -40%, 회백색 테두리 (§4-3) |
 
+### 2-8. EP03 컬러 스크립트 (v1.2 · EP03)
+
+| 블록 | 패널 | 팔레트 · 빛 |
+|---|---|---|
+| ① 뒷면 | P1–5 | EP02 S06 그대로: `LIGHT_L3_DAY`, 저채도 베이지·회색. 빨강 = 서류 B의 붉은 원 하나. **P5 뒷면은 빨강 0** — 하얀 면과 가는 칸 하나, 회차에서 가장 조용한 흰색 |
+| ② 마지막 줄 | P6–13 | 같은 빛. P6 · P11 기억 비네트는 바랜 색(빨강 0). **P13 직원석 첫 공개:** 연회색 책상 위 파란 바인더 · 남색 결재판 · 작은 빨간 롤 — 낮 화면에 처음 생기는 원색 셋 |
+| ③ 서명 | P14–18 | 같은 빛을 끝까지(패배는 빛이 아니라 구도로, EP02 S06과 같은 문법). P17 밝은 2층 높이 홀의 넓은 돌계단(위) ↔ 작은 서하(아래). P18 바닥 — 연회색 책상 위 파랑·검정 |
+| ④ 22시 | P19–24 | 지하로 돌아온다: P19 `LIGHT_CORRIDOR`(EP01 P7과 같은 색) → L1 녹백 형광 + 스탠드 노랑. **P23 복도 끝 떨림(회차 유일)** |
+| ⑤ 제가 담당자입니다 | P25–33 | 녹백 + 스탠드. **새 색: 유리 너머의 회라일락과 크림 보따리**(지하에서 가장 부드러운 색). P30 떨리지 않는 형광등 — EP01 P25와 같은 색, 다른 결과 |
+| ⑥ 전입신고 | P34–49 | 같은 팔레트 + **연두 서식**(라일락의 보색). P47 그녀의 첫 붉은 원이 화면에서 가장 강한 색. P48 라일락 점이 복도 끝 어둠으로 |
+| ⑦ 받으면 안 됐는데 | P50–54 | 녹백 + 스탠드. P51 유리 너머 차가운 복도빛 속 무채색 재우와 파란 대기 의자(따뜻한 빛 없음). P52 빛 가장자리(`LIGHT_LAMP_EDGE`) |
+| ⑧ 새 이름 | P55–60 | 03:00, 같은 팔레트. P56 유리 너머 빈 어둠. **P57 연살구 한 장**이 차가운 투입구로 — 회차의 마지막 새 색. P59 노란 원이 연살구 서식과 파란 명부만 감싼다(`LIGHT_REVEAL` 선택). P57–P60 빨강 0 |
+| 기억 비네트 | P6 · P11 · P28 | 원본 컷을 채도 약 -40%, 회백색 테두리 (§4-4) · 비네트 안 빨강 0 |
+
 ---
 
 ## 3. 분위기 · 조명
@@ -207,6 +271,8 @@ world §13-3의 확장(빨간 비닐테이프 공용 비품)은 EP03부터다. E
 | `LIGHT_0600` (v1.1 · EP02 · P42 · **조건부**: worldbuilder 승인 시) | `beyond the glass, the fluorescent tubes along the once-dark far end of the corridor are now lit, steady and even` |
 | `LIGHT_L3_DAWN` (v1.1 · EP02) | `the ceiling lights are off; the only light is a cold blue pre-dawn glow coming through the glass entrance doors and lying in long pale blue rectangles across the polished beige floor; the rest of the hall rests in soft blue-gray shadow; beyond the glass only a deep cold blue sky and an empty paved forecourt, no signs, no cars; no warm light anywhere` |
 | `LIGHT_L3_DAY` (v1.1 · EP02) | `all the ceiling lights are on: plain, even, flat white office light, with pale gray winter daylight coming through the glass entrance doors; ordinary, calm and steady, no dramatic shadows` |
+| `LIGHT_FLICKER_FAR` (v1.2 · EP03 · P23 전용 — 회차의 유일한 떨림) | `far down the corridor beyond the glass, the last lit fluorescent tube before the dark section stutters and dims once, a faint unstable glow at the edge of the darkness` |
+| `LIGHT_GLASS_GLOW` (v1.2 · EP03 · P31 · P46 — 유리에 바짝 다가온 민원인 얼굴) | `her face close behind the glass is half lit by the faint warm glow spilling through the window from the duty room's desk lamp, the other half in the cold, dim corridor light` |
 
 ### 3-3. 씬별 조명
 
@@ -239,6 +305,25 @@ world §13-3의 확장(빨간 비닐테이프 공용 비품)은 EP03부터다. E
 | S04 P44 | L2 | LIGHT_CORRIDOR (P7·P28과 같은 빛) + 휴대폰 빈 화면의 흰 빛 |
 | S05 P45–52 (06:0x) | L3 | **LIGHT_L3_DAWN**. 씬 안에서 바꾸지 않는다(P50의 따뜻함은 빛이 아니라 표정) |
 | S06 P53–58 (09:00) | L3 | **LIGHT_L3_DAY**. 씬 안에서 바꾸지 않는다 |
+
+### 3-5. EP03 씬별 조명 (v1.2 · EP03)
+
+**떨림은 P23 한 번뿐**(민원인 출현 경고, 복도 끝). `LIGHT_BLACKOUT` · `LIGHT_CLIFF` · `LIGHT_COMEDY`는 쓰지 않는다(정정도, 그녀 뒤의 그림자도 없다). **P30 · P45는 일부러 떨리지 않는다** — 기록과 일치하는 말 = 안전(EP01 P41과 같은 문법). 그 부재가 비트이므로 프롬프트에 적는다.
+
+| 씬 · 패널 | 장소 | 조명 |
+|---|---|---|
+| S01 P1–P18 (09:0x) | L3 | **LIGHT_L3_DAY** 하나로 끝까지. 직원석 뷰(P13 · P16 · P18)·계단 와이드(P17)도 같은 천장등. 패배(P14–P18)도 빛을 바꾸지 않는다 |
+| S02 P19 (22:00) | L2 | LIGHT_CORRIDOR (EP01 P7 · P28과 같게) |
+| S03 P20–P22 | L1 | LIGHT_L1 + LIGHT_LAMP. P21 일지 면은 노란 원 안. P22 서랍은 책상 아래 그늘(노란 빛이 가장자리만) |
+| S04 P23 | L1 → 유리 너머 L2 | LIGHT_CORRIDOR + **LIGHT_FLICKER_FAR** |
+| S04 P24–P29 | L1 (P26은 복도 쪽 L2) | LIGHT_L1 + LIGHT_LAMP. P24 · P25 유리 너머 민원인은 복도 빛을 등진 역광. P26 = 복도의 차가운 빛 + 창구에서 떨어지는 옅은 온기 |
+| S04 P30 | L1 | LIGHT_L1 + LIGHT_LAMP + **LIGHT_STEADY + LIGHT_NOFLICKER** — EP01 P25와 같은 형광등, 이번엔 고요. 효과음 없음 |
+| S04 P31 · P46 | L1 유리 클로즈업 | LIGHT_L1 + **LIGHT_GLASS_GLOW** |
+| S04 P32–P49 | L1 | LIGHT_L1 + LIGHT_LAMP. **P45 + LIGHT_STEADY + LIGHT_NOFLICKER**. 그 밖 떨림 0 |
+| S05 P50 · P52–P54 | L1 | LIGHT_L1 + LIGHT_LAMP. 재우가 보이면 + LIGHT_LAMP_EDGE(몸은 노란 원 밖) |
+| S05 P51 | 유리 너머 L2 | LIGHT_CORRIDOR — 재우에게 따뜻한 빛 없음, 정상 그림자 |
+| S06 P55–P58 (03:00경) | L1 | LIGHT_L1 + LIGHT_LAMP. P56 유리 너머 어둡고 빈 복도. P57 투입구 · P58 말구멍: **유리 반사 없음**(평평한 어둠, EP04 보호) |
+| S06 P59–P60 | L1 | `LIGHT_REVEAL`(선택 — 노란 원이 두 서류와 그녀만 감싸고 방은 차분한 푸른 그림자). 안 쓰면 LIGHT_L1 + LIGHT_LAMP. 떨림·그림자 침입 없음 |
 
 ---
 
@@ -299,6 +384,27 @@ world §13-3의 확장(빨간 비닐테이프 공용 비품)은 EP03부터다. E
 | P37 | EP02 P27 | 7번 자리(맨 아래)를 짚는 손끝 | 같은 회차, P27 먼저 |
 | P47 | EP01 P48 | **일지 면과 쓰는 손만**. 칸막이·당직석·수칙 종이는 비네트에 넣지 않는다(F-23 보호) | EP01 PNG 먼저 |
 | P55 | EP02 P34 | 재우가 내민 서류 A(빈 면)와 그의 손. **비네트 안에 빨강 없음** — 큰 컷의 서류 B와 대조되는 것은 붉은 원 하나 | 같은 회차, P34 먼저 |
+
+### 4-4. EP03 비율 · 기억 비네트 (v1.2 · EP03)
+
+**권장 배정** (panel-director가 바꿀 수 있다. 단 원본 구도를 반복하는 짝은 원본과 같은 비율 — §5-6):
+
+| 등급 | 패널 | 근거 |
+|---|---|---|
+| TALL 9:16 | P1(↺EP02 P58) · P5(뒷면 공개, 뒤 480) · P6 · P11(눈 + 비네트, EP02 P37 · P55와 같게) · P13(직원석 첫 공개, 뒤 480) · P14(↺EP02 P58, P1과 짝) · P17(계단 — 위와 아래) · P18(바닥, 뒤 480) · P19(↺COMP-ANCHOR) · P26(↺EP01 P16) · P34(↺EP01 P40) · P47(↺EP01 P45) · P52(↺EP02 P33) · P58(공개 1컷 전 정지, 뒤 480) · P60(최종 컷) | 느림·공개·정지점·세로 공간 |
+| SQ 1:1 | P10(↺EP02 P56) · P12 · P16(↺EP02 P54) · P20(↺COMP-DESK) · P21 · P44(P21 짝) · P30(↺EP01 P25) · P31 · P33(↺EP02 P36) · P35 · P36(↺EP01 P46) · P39 · P41 · P46 · P57 | 클로즈업·손·빠른 한마디 |
+| STD 3:4 | 나머지 (P29 = EP01 P23 · P24 = COMP-BELL · P56 = COMP-COLD-1 · P55 = EP02 P26 · P22 ↔ P49 서로 같은 비율) | 대화·투샷·미디엄 |
+
+- **P59는 3:4**(두 서류를 나란히 — 폭이 필요하다. 느림은 뒤 720px가 맡는다). 연살구 서식과 펼친 명부가 **같은 크기**로 보이게 둘 다 화면 아래 2/3에 나란히 둔다.
+- 서류가 주인공인 컷(P1 · P4 · P5 · P14 · P28 · P59)은 종이를 충분히 크게.
+
+**기억 비네트 — EP03 3컷: P6 · P11 · P28.** 방식은 §4-3 그대로(Flow가 한 장 안에 그리는 '액자 속 기억 그림', 원본 PNG 첨부, Avoid 줄에서 `panel borders`만 뺀다). beatsheet §3-2의 "원본 PNG 크롭"은 대안으로만 남는다.
+
+| 비네트 | 원본 | 크롭 · 주의 | 의존 |
+|---|---|---|---|
+| P6 | EP01 P9 | 파란 바인더 위 노미란의 손바닥만. 책상의 영수증·인주는 비네트에 넣지 않는다 → **비네트 안 빨강 0** | EP01 PNG 먼저 |
+| P11 | EP02 P38 | 노란 원 안으로 들어온 은반지 RIGHT 손 + 빛 가장자리의 재우 옆얼굴 | EP02 PNG 먼저 |
+| P28 | EP01 P24 | 미소가 사라진 구정민 클로즈업(젖음 그대로). EP01 P24 안의 인셋은 자른다. 큰 컷 = 펼친 명부(§7-7 `PROP_ROSTER_OPEN_B`) | EP01 PNG 먼저 |
 
 ---
 
@@ -364,6 +470,27 @@ attach: `refs/SEOHA_turnaround.png, refs/JEONGMIN_turnaround.png, refs/PROP_PAGE
 | P56 | P8 `COMP-HANDOVER` | 노미란의 자세·입만 웃는 미소 | 장소 L3 낮 창구(VIEW_L3_DAYWINDOW), 열쇠 없음 |
 | P26 ↔ P42 | P50 (L1 와이드) | 서로 같은 VIEW·같은 비율 | 시계 04:40 ↔ 06:00, 선임 눈 감음 ↔ 옅은 미소 · 시계를 보이려면 VIEW_SIDE(§6-2-1) |
 
+### 5-6. EP03 재사용 구도 (v1.2 · EP03)
+
+- 목록은 beatsheet §3-1 표가 기준이다(P1 · P4 · P10 · P14 · P16 · P19 · P20 · P24–P30 · P32–P34 · P36–P38 · P40 · P42 · P44 · P45 · P47–P50 · P52 · P53 · P55 · P56). §5-5와 같이 **구도만** 빌리고 인물·소품 상태는 EP03 문장으로 새로 쓴다. 원본 PNG를 구도 레퍼런스로 첨부(3장 이내, 아직 없으면 문장만).
+- **같은 순간을 다시 그리는 컷:** P1 ← EP02 P58. PNG를 복사하지 않고 새로 그린다(flow_tool은 md5 중복을 거른다).
+- **구도·비율·빛까지 같아야 하는 짝** (반전이 같은 그림에 기대는 곳):
+
+| EP03 | 원본 | 같은 것 | 바뀌는 것 |
+|---|---|---|---|
+| **P29** | EP01 P23 | VIEW_B 어깨 너머, 4번 조각이 프레임 안, 같은 거리·높이·비율(3:4) | 그녀의 얼굴(밤샘 · 결연 ④). 유리 너머 = 작은 라일락 민원인(카운터가 가슴께에서 자른다) |
+| **P30** | EP01 P25 | 그녀 머리 위 같은 형광등, 같은 클로즈업(1:1) | **LIGHT_STEADY + LIGHT_NOFLICKER** — 떨림·어둠 없음. 표정 ②(동공만 흔들림) |
+| P19 | EP01 P7 · P28 · EP02 P44 `COMP-ANCHOR` | VIEW_ANCHOR 문장 그대로(시계 10:00 = 22:00), 같은 카메라·거리·높이, 9:16, 등 뒤로 닫히는 방화문 | 휴대폰 없음: 두 팔로 명부 + 일지를 가슴에, RIGHT 손가락에 열쇠, 토트백 LEFT 어깨(character-sheets §11-3) |
+| P20 | EP02 P14 · EP01 P33 `COMP-DESK` | VIEW_DESK 부감, 책상 고정 배치, **영수증 높이 = EP02 P14** | 명부를 제자리에 놓는 서하의 손, 가장자리의 선임 손 + 종이컵 |
+| P16 | EP02 P54 · EP01 P9 `COMP-DESK`(두 손) | 두 손 부감 구도(1:1) | 장소 = L3 직원석(VIEW_L3_STAFFSIDE). 방향 반대: 노미란 LEFT 손바닥이 바인더를 아주 낮은 칸막이 너머로 민다, 열쇠는 서하 손 아래, 귀퉁이에 초점 밖 롤 |
+| P10 | EP02 P56 · EP01 P8 `COMP-HANDOVER` | 노미란의 기울인 자세·입만 웃는 미소(1:1), 노미란 = 화면 가운데 왼쪽 | 단독 미디엄(서하는 프레임 밖 또는 오른쪽 가장자리) |
+| P56 | EP01 P1 `COMP-COLD-1` | VIEW_B 어깨 너머, 화면 왼쪽 가장자리 수칙 종이, 3:4 | 유리 너머가 **비었다**. 벨·손은 프레임 밖(EP10 보호) |
+| P34 | EP01 P40 `COMP-COLD-3` | 앵글② 와이드, 앞쪽 아래 서하의 뒷모습, 9:16 | 유리 너머 = 작은 노부인(말구멍이 입보다 높다), 투입구 바깥 턱의 연두 서식 |
+
+- **EP03 안의 반복 (이 회차 앞 컷 PNG 첨부, 원본을 먼저 만든다):** P1 → P14(같은 서류·펜, 펜 끝만 닿는다) · P4 → P5(같은 카운터·같은 손, 서류만 뒤집힘) · P13 → P16 · P18(같은 직원석·같은 책상 세트) · P21 → P44(같은 일지 면) · P22 → P49(같은 서랍).
+- **보호 규칙 (beatsheet §3-1):** P21 · P44는 EP01 P48 구도(상판을 짚은 손 + 초점 밖 칸막이)를 쓰지 않는다(F-23). P56–P60에 벨 누르는 손 없음(EP10). P57–P59 유리 반사 없음(EP04).
+- **P25 시점 [결정]:** 대본·characters §4-10 '첫 등장'대로 **당직실 안쪽 시점**(허리 높이 카운터가 그녀를 가슴께에서 자른다, 발 없음). beatsheet의 "앵글① ↺EP01 P14"에서는 역광 상반신의 크기·자리만 빌린다 — 복도 쪽 시점으로 그리면 P26의 '발견'(양말)이 먼저 샌다.
+
 ---
 
 ## 6. 장소 고정 토큰 (LOC_*)
@@ -404,6 +531,23 @@ EP01은 world의 **L1(당직실) + L2(지하 2층 계단·복도)**만 쓴다. L
 
 - S03·S04는 씬 안에서 장소가 바뀐다(P31 유리 너머 L2, P44 방화문). EP01처럼 하위 ID로 나누거나 패널마다 location을 적는다. S05→S06은 같은 LOC, **조명만 다른 두 씬**이다(같은 공간·같은 배치).
 
+#### 6-1-2. EP03 씬 ↔ 장소 (v1.2 · EP03)
+
+| scene_id (beatsheet) | 패널 | LOC | VIEW · 메모 |
+|---|---|---|---|
+| S01 (09:0x 낮) | P1–18 | **LOC_L3_LOBBY** + LIGHT_L3_DAY | P1 · P4 · P5 · P14 카운터 상판 클로즈업(§6-6) · P2 · P7 · P8 **VIEW_L3_ACROSS** · P3 · P10 · P15 VIEW_L3_DAYWINDOW(노미란 미디엄) · P9 DAYWINDOW 어깨 너머 + 손 전경 · P6 · P11 · P12 서하 클로즈업(배경 = 흐린 칸막이·벽) · **P13 · P16 · P18 VIEW_L3_STAFFSIDE** · **P17 VIEW_L3_STAIRS** (§6-6-1) |
+| S02 (22:00) | P19 | LOC_L2_CORRIDOR + LIGHT_CORRIDOR | VIEW_ANCHOR (시계 10:00 = 22:00, 문장 그대로) |
+| S03 (22:0x) | P20–22 | LOC_L1_DUTYROOM | P20 VIEW_DESK · P21 일지 클로즈업(칸막이·당직석 상판 프레임 밖) · P22 VIEW_DRAWERS |
+| S04 | **P23** | **LOC_L2_CORRIDOR** (당직실 안에서 유리 너머) | VIEW_FROM_WINDOW_FAR + LIGHT_FLICKER_FAR. 패널 location에 L2로 적는다 |
+| S04 | P24 · P25 · P27–P49 | LOC_L1_DUTYROOM | P24 COMP-BELL · P25 안쪽 시점(§5-6) · P27 · P29 · P34 VIEW_B · P28 명부 클로즈업 · P30 EP01 P25 · P31 · P46 VIEW_GLASS_CLOSE · P35 · P41 VIEW_SLOT · P36 손 · P37 · P40 수칙 종이 · P42 VIEW_A 계열(EP01 P15) · P44 = P21 · P47 직인 클로즈업 · P49 VIEW_DRAWERS |
+| S04 | **P26** | **LOC_L2_CORRIDOR** (복도 쪽) | VIEW_WINDOW_FLOOR. 패널 location에 L2 |
+| S05 | P50 · P52–54 | LOC_L1_DUTYROOM | P50 EP01 P11 구도 · P52 VIEW_C(출입문 틀) · P53 EP02 P40 투샷 · P54 미디엄 |
+| S05 | **P51** | **LOC_L2_CORRIDOR** (당직실 안에서 유리 너머) | VIEW_FROM_WINDOW_ACROSS |
+| S06 (03:00경) | P55–60 | LOC_L1_DUTYROOM | P55 VIEW_SIDE + `PROP_CLOCK_TIME_0300` · P56 VIEW_B(COMP-COLD-1) · P57 VIEW_SLOT · P58 VIEW_GRILLE · P59 책상 클로즈업(스탠드 원) · P60 얼굴 |
+
+- S04 · S05는 씬 안에서 장소가 바뀐다(P23 · P26 · P51). EP01 · EP02처럼 하위 ID로 나누거나 패널마다 location을 적는다. 이음새 = 유리 창구.
+- S01은 한 LOC 안에서 카메라만 옮긴다: **민원인 쪽(P1–P12) → 직원 쪽(P13 · P16 · P18) → 홀 와이드(P17)**. 조명은 하나. P1–P12는 직원 책상 면이 보이지 않는다(§6-6-1).
+
 ### 6-2. 당직실 방향 [고정 — 모든 L1 컷의 지리]
 
 당직자는 당직석에 앉아 **유리 창구를 마주 본다(등은 방 안쪽).**
@@ -420,6 +564,17 @@ EP01은 world의 **L1(당직실) + L2(지하 2층 계단·복도)**만 쓴다. L
 - **당직실 시계는 하나:** 뒷벽 서가 위 가운데. 시계가 프레임에 들어오는 뷰 = VIEW_A(그녀 뒤 위쪽) · VIEW_SIDE(화면 왼쪽 위, 서가 위) · VIEW_SHELVES(정면). **VIEW_B · VIEW_C · VIEW_DESK에는 시계가 없다**(VIEW_C는 시계가 카메라 뒤). 시각 컷(P26 · P30 · P32 · P39 · P42)은 이 셋 중에서 고르거나, 프레임에 없으면 panel-director가 작은 시계 인셋을 판단한다(beatsheet R10).
 - **S01의 시계는 배경 소품**(EP01과 같다): 바늘을 묘사하지 않는다. 바늘 문장은 §7-5의 시각 컷에만 쓴다.
 - **재우의 자리:** 빛 가장자리. 서가에 한쪽 어깨를 기대거나(P11) 그녀 의자 뒤 그녀의 오른쪽 뒤(EP01 P64 카메라 쪽, P1–P3). **초록 회전의자(당직석)에 앉지 않는다.** 접이식 의자는 선임 자리다.
+
+#### 6-2-2. EP03에 필요한 지리 (v1.2 · EP03 · §6-2 · §6-2-1에서 나온 것, 새 배치 없음)
+
+- **복도 좌우는 뷰마다 다르다:** 당직실 **안에서** 유리를 보면 방화문·계단 = 화면 왼쪽, 어두운 끝 = **화면 오른쪽**. 복도 **쪽에서** 창구 벽을 마주 보면(VIEW_A · VIEW_WINDOW_FLOOR) 반대로 어두운 끝 = **화면 왼쪽**, 방화문 = 화면 오른쪽.
+  - P23 민원인은 어두운 끝(안쪽 시점 화면 오른쪽)에서 걸어 나온다. P48 같은 쪽으로 돌아간다.
+  - P26 신발 코끝 = 어두운 끝 쪽 = VIEW_WINDOW_FLOOR에서 **화면 왼쪽**.
+- **창구 높이:** 말구멍 = 어른 얼굴 높이 · 투입구 = 카운터 높이 · 벨 = 유리 바깥 선반. 148cm 민원인은 안쪽 시점에서 카운터 위로 머리·어깨·보따리 윗부분만 보이고, 턱을 들어 말구멍을 올려다본다(말구멍이 입보다 높다).
+- **대기 의자:** 창구 바로 맞은편(복도 반대쪽 벽)에 서로 붙은 파란 플라스틱 의자 셋 + 회색 철제 소화전함(빨강 금지). P51은 당직석에서 유리 너머 정면으로 본다.
+- **서랍:** 책상 **오른쪽 끝** 아래(앉은 사람의 RIGHT, 출입문 쪽) 3단. 맨 아래 칸 = 수칙 5(world §9-1) — 그림에서는 닫힌 서랍일 뿐이다.
+- **HAND-RENAME:** 안쪽 시점(VIEW_SLOT)에서 이 왼손은 **화면 오른쪽**에서 들어오고 엄지가 화면 가운데 쪽(characters §4-11).
+- **시계:** P55 03:00 = VIEW_SIDE(화면 왼쪽 위, 서가 위 시계 하나). 바늘 문장은 §7-7.
 
 ### 6-3. LOC_L1_DUTYROOM — 야간 특수민원 당직실 (주 무대)
 
@@ -461,6 +616,29 @@ seen from the duty desk looking back into the room: the gray steel archive shelv
 ```
 - 비고: 서가 위 시계는 배경 소품이다. EP01에서 클로즈업하지 않고 바늘 위치를 묘사하지 않는다.
   - (v1.1 · EP02) EP02는 이 시계를 **타이머**로 쓴다: P26 04:40 · P30 05:56 · P32 05:57 · P39 05:59 · P42 06:00. 바늘 문장은 §7-5 `PROP_CLOCK_TIME_*`. 그 밖의 EP02 컷에서는 EP01처럼 배경이다.
+  - (v1.2 · EP03) EP03은 P55에서만 바늘을 쓴다: 03:00 = §7-7 `PROP_CLOCK_TIME_0300`. 그 밖의 EP03 컷에서는 배경이다.
+- **VIEW_DRAWERS** (v1.2 · EP03 P22 · P49) — 책상 오른쪽 끝 옆, 무릎 높이 로우 앵글. 서랍 3단(§6-2-2):
+```
+a low angle at knee height beside the right end of the duty desk: the side of the old gray-green steel office desk with chipped paint and, under its right end, a pedestal of three stacked steel drawers with plain metal pull handles and empty label slots; the gray speckled terrazzo floor below and the dark space under the desk beside them
+```
+  - P22: `the top drawer pulled open, holding a few plain pens and a closed round metal ink case; the middle drawer pulled open, holding a neat stack of blank plain white sheets with no writing; the bottom drawer firmly shut, her knees in navy slacks just in front of it`
+  - P49: `her small hand pushing the middle drawer shut with the small wooden seal stamp and the stack of blank white sheets inside; the top drawer closed; the bottom drawer still firmly shut`
+  - **맨 아래 칸은 열지도, 비추지도, 강조하지도 않는다**(F-20 — 그림만, 설명 없음). 여분 인주 케이스는 뚜껑을 닫는다(빨강이 보이지 않게). 손잡이·라벨 칸은 빈칸.
+- **VIEW_SLOT** (v1.2 · EP03 P35 · P41 · P57) — 투입구 클로즈업, 당직실 안쪽에서:
+```
+a close-up from inside the duty room at counter height: the flat stainless-steel document slot at the bottom of the thick glass service window, the inner sill of the counter in front of it and the outer ledge just beyond the glass, the aluminum window frame at one side; beyond the glass only the dim corridor
+```
+  - P35 · P41: + `the glass shows only a faint normal reflection of the warm desk lamp`. P41은 유리 너머 말구멍 아래로 민원인의 입가(character-sheets §11-1).
+  - **P57:** + `the glass above the slot is plain and dark with no reflection at all; the frame stays at counter height, no face, no body`. HAND-RENAME 왼손은 화면 오른쪽에서 들어온다(character-sheets §11-2).
+- **VIEW_GRILLE** (v1.2 · EP03 P58) — 말구멍 익스트림 클로즈업, 반사 없음(EP04 보호):
+```
+an extreme close-up of the round perforated stainless-steel speaking grille set in the thick glass at face height, its small holes dark; beyond the glass nothing but deep darkness; the glass is plain and dark with no reflection at all: no face, no figure, no light from the room
+```
+- **VIEW_GLASS_CLOSE** (v1.2 · EP03 P31 · P46) — 유리에 바짝 다가온 얼굴, 당직실 안쪽에서:
+```
+a close-up from inside the duty room through the thick glass service window, just below the round perforated steel speaking grille: a face close behind the glass on the corridor side, the aluminum window frame at one edge; the glass shows only a faint normal reflection of the warm desk lamp, never a second face or figure
+```
+  - + `LIGHT_GLASS_GLOW`(§3-2). 말구멍은 그녀 입보다 높다 — 얼굴은 말구멍 아래, 턱을 든다.
 
 ### 6-4. LOC_L2_STAIRWELL — 지하 2층 비상계단 층참
 
@@ -495,6 +673,21 @@ seen from inside the duty room through the thick glass service window, looking d
 camera in the corridor at eye level facing the fire door, exactly the same position as the earlier anchor shot: she stands with her back to the camera and pushes the horizontal push bar, the heavy gray steel fire door swinging open away from her into the dim stairwell; above the door the round wall clock with a plain white face, a thin black rim, black hands and only twelve tick marks shows exactly six o'clock, the short hour hand pointing straight down and the long minute hand pointing straight up in one straight vertical line; pale green walls with a dark green band on both sides, exposed pipes overhead
 ```
   - 시계가 06:00(세로 일직선)이 아니면 REGEN. 첨부 첫 자리 = EP01 panel_007 PNG(있으면). [선택] 열리는 문 너머 계단 위쪽에서 떨어지는 아주 옅은 차가운 회청색 빛(06:00 = 계단이 1층에 닿는다, world §1-3) — 쓰면 그 한 구절만 덧붙인다.
+- **VIEW_FROM_WINDOW_FAR** (v1.2 · EP03 P23) — 당직실 안에서 유리 너머 복도의 **어두운 끝(그녀의 오른쪽)**을 비스듬히. VIEW_FROM_WINDOW(가까운 끝)의 반대 방향:
+```
+seen from inside the duty room through the thick glass service window, looking diagonally to the right along the corridor toward its far end: alternate fluorescent tubes lit along the low ceiling, the row of identical gray steel doors with blank name plates receding along the opposite wall, the far third of the corridor sinking into greenish blue-black darkness; the glass shows only a faint normal reflection of the warm desk lamp
+```
+  - + LIGHT_CORRIDOR + `LIGHT_FLICKER_FAR` + 민원인 실루엣(character-sheets §11-1). 방화문·복도 시계는 프레임 밖(반대쪽).
+- **VIEW_FROM_WINDOW_ACROSS** (v1.2 · EP03 P51) — 당직석에서 유리 너머 정면, 복도 맞은편 벽:
+```
+seen from the duty desk through the thick glass service window, looking straight across the narrow corridor at the opposite wall: three joined blue plastic waiting chairs against the pale institutional-green wall with its dark green band, a gray steel fire-hose cabinet beside them, one fluorescent tube lit on the low ceiling above, the gray speckled terrazzo floor between; the glass shows only a faint normal reflection of the warm desk lamp
+```
+  - + LIGHT_CORRIDOR. 의자에 앉은 재우는 차가운 빛만 받고 정상 그림자를 드리운다(character-sheets §11-4). 소화전함은 회색(빨강 금지).
+- **VIEW_WINDOW_FLOOR** (v1.2 · EP03 P26) — 복도 쪽 바닥 높이, 창구 벽을 마주 본다(EP01 P16 '발견' 문법):
+```
+a low close-up on the corridor side at floor level, facing the duty room's window wall: the dry gray speckled terrazzo floor meeting the base of the pale institutional-green wall with its dark green band below the service window counter; cold, dim corridor light with only a faint warm glow falling from the window above; no water, no dust, no footprints
+```
+  - 이 뷰에서 복도 끝 어둠 = **화면 왼쪽**, 방화문 = 화면 오른쪽(§6-2-2). 민원인 신발의 코끝은 화면 왼쪽을 향한다.
 
 ### 6-6. LOC_L3_LOBBY — 1층 본관 로비 (v1.1 · EP02 신규)
 
@@ -535,6 +728,40 @@ one service window of the long counter seen from the citizen's side at standing 
 - 조명: 새벽 = `LIGHT_L3_DAWN`, 09:00 = `LIGHT_L3_DAY`(§3-2). 시계: 새벽 컷에서 보이면 `PROP_CLOCK_TIME_DAWN`, 09:00 = `PROP_CLOCK_TIME_0900`(§7-5).
 - 사람: 새벽 = **서하와 노미란 외에 아무도 없다**(Avoid 줄에 `extra people`). 09:00 = character-sheets §10-4의 엑스트라 문장(초점 밖, 주요 인물의 주색 금지). 엑스트라는 카운터 앞 전경이나 노미란 창구에 오지 않는다.
 - 바깥(유리 너머): 새벽의 깊은 푸른 하늘과 빈 포장 앞마당뿐. 낮에는 흐린 회색 겨울빛. **간판·차·번호판·글자 없음.** 비 없음(마른 밤이 마른 새벽으로 이어진다).
+
+#### 6-6-1. L3 직원석 · 위층 계단 · EP03 뷰 (v1.2 · EP03)
+
+EP03 S01(P1–P18)은 L3 낮을 **카운터 안쪽까지** 쓴다. 위 배치는 그대로 두고 아래를 덧붙인다(beatsheet §3-3 · §6 · characters §4-12 "배치는 art-director").
+
+**배치 추가 [고정]:**
+- **직원석 줄:** 카운터의 높은 앞턱 뒤, 창구마다 직원 책상 하나. 직원은 카운터(민원인)를 향해 앉고, 등 뒤가 회백 벽(그 높은 곳에 큰 시계·꺼진 표시 면). 책상 사이는 카운터의 것과 같은 간유리지만 **책상 위 한 뼘 높이의 아주 낮은 칸막이**다(바인더를 밀어 넘길 수 있는 높이).
+- **노미란의 낮 책상** = 시계 바로 아래 창구(§6-6). **서하의 낮 책상 = 바로 옆, 노미란의 LEFT 쪽**(민원인 쪽에서 보면 노미란 창구의 오른쪽 이웃). 그래서 노미란의 LEFT 손(금시계)이 바인더를 칸막이 너머로 민다(P16). EP02 P53의 '오른쪽 가장자리 너머 이웃 창구의 초점 밖 직원'은 그 다음 창구로 읽는다(EP02 프롬프트 변경 없음).
+- **노미란 낮 책상 위 [고정]:** 앞(카운터 쪽) 가운데는 빈 면 · 안쪽 가운데 꺼진 모니터(검은 화면) · **안쪽 오른쪽 귀퉁이 = 회색 철제 서류 받침(빈 종이 몇 장) + 펜꽂이 + 뚜껑 닫힌 작은 나무 직인 상자 + 그 옆에 옆으로 눕힌 빨간 비닐테이프 롤**(§2-4-2) · 왼쪽(서하 쪽) = 파란 명부 바인더(P13, 그녀 팔꿈치 옆).
+- **서하의 낮 책상 [고정]:** 거의 빈 신입의 책상 — 꺼진 모니터, 펜꽂이뿐. 의자는 노미란과 같은 회색 사무용 의자. P16부터 명부 → P18 명부 + 일지 + 열쇠.
+  - **토트백 [art-director 연속성 결정]:** EP02 P53–P56의 서하는 토트백을 LEFT 어깨에 메고 카운터 앞에 서 있다. 그래서 **P1–P12 토트백 = LEFT 어깨**, **P13의 서하 책상 의자는 비어 있다**(대본 P13 괄호의 "의자 등받이에 네이비 토트백"을 이것으로 대신한다 — 대사·비트 변경 없음), **P16부터 의자 등받이**(그녀가 카운터 안쪽 자기 자리로 돌아온 뒤). 그 책상이 서하의 것이라는 표시는 P16(명부가 그녀의 손 쪽으로 넘어간다)이 맡는다.
+- **결재판 자리:** P1–P15 카운터 상판의 노미란 쪽 가장자리(앞턱 바로 앞)에 놓여 있다 → P7 그녀가 손끝으로 두드린다(대본 "책상 위"를 카운터 상판으로 읽는다 — 책상 면은 P13 전에 보이지 않는다) → P15 서류를 끼운다 → P17 LEFT 겨드랑이.
+- **P1–P12: 직원 책상 면은 프레임 밖**(EP02 R11 연장 — 롤의 첫 노출은 P13). 민원인 쪽 뷰는 카운터 상판·앞턱 위만 쓴다.
+- **위층 계단 [고정]:** 홀 **안쪽 끝 벽(정문 맞은편)의 왼쪽**, 카운터 안쪽 끝 바로 너머에서 넓은 석재 계단이 안쪽 벽을 따라 위층으로 오른다(바닥과 같은 광택 베이지 석재, 짙은 회색 금속 난간 + 매끈한 나무 손잡이). 같은 벽의 **오른쪽 구석 = 지하로 내려가는 작은 회색 철문**(§6-6). 위로 = 넓고 밝은 돌계단 / 아래로 = 작은 회색 철문 — 그림 운율만(F-40, 대사로 설명하지 않는다). 계단 위쪽은 프레임 위로 나가고, 위층의 사람·표지·국기는 그리지 않는다(과장 디자인은 EP12).
+  - EP02 L3 컷과의 관계: VIEW_L3_OUTWARD는 반대 방향이라 계단이 안 보인다. VIEW_L3_INWARD(EP02 P45) 원문은 계단을 말하지 않는다 — 그 컷의 안쪽 왼쪽 끝은 작고 흐리므로 그대로 둔다(EP02 프롬프트 변경 없음). panel-validator는 EP02 P45에 계단이 없어도 실패로 보지 않는다.
+- **시계:** EP03 S01은 시계를 **프레임 밖에 두는 것이 기본**이다(beatsheet §3-3: 09:0x는 EP02 P53에서 이미 보였다). 민원인 쪽 뷰는 노미란 머리 위에서 자른다. P17 와이드에 들어오면 `PROP_CLOCK_TIME_0920`(§7-7). P1–P15에 들어오게 되면 EP02 `_0900` 문장을 쓴다(몇 분 차이는 그리지 않는다).
+
+- **VIEW_L3_ACROSS** (v1.2 · EP03 P2 · P7 · P8) — 카운터를 사이에 둔 옆모습 투샷. 책상 면은 보이지 않는다:
+```
+seen from the side at standing eye level, looking along the line of the long service counter: the pale gray laminate counter top with its raised front ledge crosses the lower part of the frame between two people facing each other across it, the staff member behind the ledge on the left of the frame and the visitor standing in front of the counter on the right; beside them a low frosted-glass partition at the edge of the service window, softly out of focus, and further service windows receding behind; the warm off-white wall above; the large wall clock is out of the frame; everything below the counter top is out of the frame
+```
+  - 축: **노미란 = 화면 왼쪽, 서하 = 화면 오른쪽**(EP02 P56 · EP03 P10 COMP-HANDOVER와 같은 쪽). S01 투샷은 이 축을 지킨다(panel-director가 씬 전체를 뒤집을 때만 반대).
+- **VIEW_L3_STAFFSIDE** (v1.2 · EP03 P13 · P16 · P18) — 카운터 안쪽, 직원석. 노미란 책상 뒤 오른쪽에서 카운터 쪽을 본다(시계·표시 면은 카메라 뒤):
+```
+seen from the staff side behind the long service counter, at standing eye level, from just behind and to the right of one staff desk: in the foreground a plain pale gray office desk with a laminate top and thin steel legs, a switched-off flat computer monitor with a plain black screen at the back, a gray steel document tray holding a few blank sheets, a pen cup and a small closed wooden box at its back right corner; beyond the desk the back of the counter's raised ledge and the pale gray counter top, and past them the public side of the bright lobby with its navy-gray waiting chairs, softly out of focus; on the left, a very low frosted-glass divider only a hand's height above the desktops separates this desk from the next staff desk, which is almost bare: another switched-off monitor with a plain black screen and a pen cup
+```
+  - P13: + `PROP_TAPE_ROLL_DESK`(§7-7) + `a blue two-ring plastic binder with a blank cover lying on the left side of the desk, by her elbow` + 카운터 상판의 서류 B·결재판 + P13 빨강 문장(§2-4-2).
+  - P16: 같은 뷰, 두 손 부감으로 가깝게(§5-6). 롤은 노미란 쪽 프레임 귀퉁이에 초점 밖.
+  - P18: 같은 뷰를 왼쪽 이웃 책상(서하)으로 옮긴다 — 노미란 책상은 프레임 오른쪽 밖(롤 없음).
+- **VIEW_L3_STAIRS** (v1.2 · EP03 P17) — 홀 앞쪽에서 안쪽 왼쪽 구석으로 비스듬히. 위 = 계단의 노미란, 아래 = 카운터의 작은 서하:
+```
+seen from the front part of the hall at standing eye level, looking diagonally toward its far left corner: the long service counter with its low frosted-glass partitions runs along the left side of the frame, receding toward the far end; beyond the inner end of the counter, a broad open staircase of polished beige stone with a dark gray metal balustrade and a smooth wooden handrail rises along the far wall toward the upper floor, its top leaving the frame; small in the far right corner of the far wall, the plain gray steel door to the emergency stairs; rows of navy-gray waiting chairs on the right; the polished floor softly reflecting the flat light; no people and no signs on the upper floor
+```
+  - 시계가 프레임에 들면 `PROP_CLOCK_TIME_0920`. 엑스트라(character-sheets §11-4)는 의자·바닥에만, 초점 밖 — 계단 위에는 노미란뿐.
 
 ---
 
@@ -659,6 +886,80 @@ one service window of the long counter seen from the citizen's side at standing 
 | 서하 | P1–P25 의상 A · **P26부터 밤샘 상태**(잔머리·피곤한 눈, 다크서클 없음) · P44부터 네이비 토트백 LEFT 어깨 · 09:00까지 의상 A(실내) |
 | 숙직실 문 | (EP01 P50 닫힘) → P43 활짝 열림 |
 
+### 7-7. EP03 소품 토큰 (v1.2 · EP03)
+
+> 모두 **빈 면**이다. 영문의 "blank / no writing"을 줄이지 않는다. 서류 내용(앞면·뒷면·인수자 줄·일지 첫 줄·수칙 1·전입신고서·개명 신청서)은 전부 낭독 말풍선으로만 전한다(script_final `env` 0). **서명은 그리지 않는다**(P14).
+
+**인수인계서 B — 새 상태 (앞면은 §7-5 `PROP_HANDOVER_B` 그대로)**
+
+| 토큰 | 영문 | 쓰는 곳 · 규칙 |
+|---|---|---|
+| `PROP_HANDOVER_B_BACK` (뒷면) | `the back of the same sheet of bright-white A4 paper, portrait: a plain blank white page with no border on this side; only near the very bottom edge, one single long, thin printed box running across the page, about one line tall, drawn in the same thin dark-gray printed line as the boxes on the front, completely empty; no writing, no signature, no seal mark, nothing handwritten, nothing taped or pasted on, no red` | **P5.** 칸은 **인쇄된 선**(자로 그은 듯 고르고 가늘다) **하나**. 손글씨·덧붙인 띠·테이프·풀 자국 금지(R2 — '덧대는 사람'을 앞당기지 않는다). 앞면의 테두리·붉은 원이 비쳐 보이게 그리지 않는다. 뒤집었다는 것은 손(종이를 들어 올린 손가락)과 그 밑의 카운터·열쇠로 읽힌다. **`PROP_HANDOVER_pair`를 첨부하지 않는다**(Flow가 앞면 테두리를 옮겨 그린다) — P4 PNG 첨부 |
+| `PROP_HANDOVER_B_SIGN` (서명 순간) | `the tip of a plain ballpoint pen touching the empty lower signature line of the form, leaving a single tiny dot of black ink under the tip; nothing is written` | **P14.** 위 줄 원의 붉은 원은 그대로. 글씨·서명이 생기면 REGEN |
+| 서명 뒤의 서류 [규칙] | 서류 B 문장 + `its lower signature line hidden under her fingers` (또는 결재판 클립·바인더 가장자리·초점 흐림) | **P15 · P28.** 서명 뒤의 서류는 **아래 줄이 보이지 않게** 그린다 — 빈 줄을 보이면 '서명 안 함'으로 읽히고, 글씨를 그리면 무글자 규칙이 깨진다. 명부 맨 앞의 것은 사본이지만 **원본과 똑같이** 그린다(붉은 원 포함) |
+
+**명부 · 결재판 · 낮 책상**
+
+| 토큰 | 영문 | 쓰는 곳 |
+|---|---|---|
+| `PROP_ROSTER_OPEN_B` | `the blue two-ring plastic binder lying open: on the left, held on the rings as the very first sheet, the bright-white form with a bold dark-gray double-line border and one small solid red seal mark in the circle at the end of its upper signature line, its bottom quarter covered by her other hand holding the page flat; on the right, a page of blank grid table cells with no writing` | P28 (손끝이 오른쪽 빈 칸 하나에) |
+| `PROP_ROSTER_OPEN_GRID` | `the blue two-ring plastic binder lying open at a page of blank grid table cells with no writing` | P59 (서류 B는 보이지 않는다 — 연살구 서식과 운율을 맞출 빈 칸 표만) |
+| `PROP_APPROVAL_FOLDER` (결재판) | `a dark navy hardboard approval folder with a smooth matte faux-leather cover that opens like a book, a plain metal clip inside; no text, no logo, no label, no emblem, no red` | P7 · P13 카운터 상판 노미란 쪽 · P15 서류를 클립에 · P17 LEFT 겨드랑이. 명부(밝은 파랑 광택 2공 바인더)와 색·재질로 구별 |
+| `PROP_TAPE_ROLL_DESK` (낮 책상 롤) | `a palm-sized roll of glossy bright red vinyl tape with a short torn tail, lying on its side at the back right corner of the desk beside the document tray, just one more piece of ordinary office stationery that nobody is touching` | P13. P16은 + `softly out of focus at the corner of the frame`. 배치 규칙 §2-4-2 |
+| 노미란 · 서하 낮 책상 | VIEW_L3_STAFFSIDE 문장에 포함(§6-6-1) | P13 · P16 · P18 |
+
+**전입신고 · 반려**
+
+| 토큰 | 영문 | 쓰는 곳 |
+|---|---|---|
+| `PROP_FORM_MOVEIN` (전입신고서 · 검수 노트 E-1 원문) | `a single sheet of pale yellow-green paper, the soft light green of a new leaf, clearly yellower than the pale institutional-green wall paint and the gray-green desk, clearly greener than the small pale-yellow receipts (not mint, not jade, not celadon, not lime, not neon), printed only with rows of empty ruled boxes, no text, no numbers` | P34 · P35 · P36 · P38 · P41 · P42 · P45. 직인 원 없음(반려의 붉은 원은 흰 반려 통지에 찍는다) |
+| 접힌 채 매듭에 | `a folded sheet of the same pale yellow-green paper tucked into the knot of cloth at the front of her chest` | P25–P31 (보여도 되고 안 보여도 된다) · P34 꺼내는 순간 |
+| 턱 위 | `lying flat and neat on the outer ledge in front of the steel document slot` | P34 |
+| 반쯤 걸림 | `stuck halfway in the flat steel slot, half on the outer ledge and half inside` | P35 · P36 · P38 (P41에서 당겨 들일 때까지 같은 상태) |
+| 램프 아래 | + `under the warm lamp light the paper still reads clearly as pale yellow-green, not yellow` | P42 · P45 |
+| `PROP_NOTICE_STACK` (빈 반려 통지 묶음) | `a neat stack of blank plain white sheets, no writing, no marks` | P22 · P49 둘째 서랍 |
+| `PROP_SEAL_STAMP` (첫 직인 · §7-3 `PROP_SEAL` · `PROP_NOTICE`의 순간) | `a small cylindrical wooden seal stamp, its end wet with red ink, brought down onto a blank plain white sheet, leaving one solid red circle with no characters inside` | P47 (서하의 RIGHT 손, character-sheets §11-3). P48 = §7-3 `PROP_NOTICE`가 민원인 매듭 사이에 |
+
+**개명 신청**
+
+| 토큰 | 영문 | 쓰는 곳 |
+|---|---|---|
+| `PROP_FORM_RENAME` (characters §4-11 원문 + 배치 결정) | `a single sheet of pale apricot paper, a soft light peach-orange paler than any orange in the scene (not pink, not red), printed only with rows of empty ruled boxes, no text, no numbers, no seal mark; portrait, the same size as the other forms, its empty boxes laid out in rows like a table, with one wider empty box across the middle` | P57 · P59 (+ EP04 P1–5 · `HANDRENAME_ref`). **빈 직인 칸 없음**(art-director 결정 — P59에서 명부의 빈 칸 표와 운율을 맞춘다). 가운데 넓은 칸 = 반창고 검지가 놓이는 '새 이름' 칸(낭독은 목소리) |
+| 램프 아래 | + `under the warm lamp light the paper still reads clearly as pale apricot, not orange and not pink` | P59 |
+
+**시계 바늘 (EP03)** — §7-5 형식. 시계 문장 바로 뒤에 붙인다.
+
+| 토큰 | 영문 | 패널 | REGEN 기준 |
+|---|---|---|---|
+| `PROP_CLOCK_TIME_0300` | `showing exactly three o'clock: the short hour hand points straight to the right at the 3 position and the long minute hand points straight up, the two hands forming a right angle` | P55 (당직실 서가 위) | 시침이 **왼쪽**(= 9:00, 거울상)이거나 직각이 아니면 |
+| `PROP_CLOCK_TIME_0920` (L3) | `showing twenty past nine: the short hour hand points to the left, a little above the 9 position, and the long minute hand points down to the lower right at the 4 o'clock position` | P17 (시계가 프레임에 들 때만) | 10:10 광고 시계·3:00처럼 보이면 |
+
+- P19 복도 시계 22:00 = VIEW_ANCHOR의 10:00 문장 그대로(분침이 12가 아니면 REGEN).
+- **이삿짐 상자는 없다.** beatsheet §3-3의 "끈으로 묶은 무지 상자"는 characters §4-10의 **등에 진 크림 이불 보따리**로 대체됐다(인물 토큰에 포함, character-sheets §11-1).
+
+### 7-8. EP03 연속성 타임라인 (v1.2 · EP03 · 그림에서 바뀌는 것만)
+
+| 대상 | EP03 흐름 |
+|---|---|
+| 인수인계서 B | P1 카운터 상판, 펜 아래 · 열쇠 위(EP02 P58 그대로) → P2 서하가 자기 쪽으로 당김 → P4 앞면 손끝 → **P5 뒤집음(뒷면)** → P6 · P12 그녀 손 → **P14 펜 끝이 아래 줄에(잉크 점)** → P15 노미란이 집어 결재판 클립에(아래 줄 가림) → P17 결재판째 위층으로 → (사본) P28 명부 맨 앞(아래 1/4 가림) |
+| 결재판 | P7 카운터 상판 노미란 쪽 → P13 같은 자리 → P15 서류 B를 끼움 → P17 LEFT 겨드랑이로 계단을 오른다 → 이후 없음 |
+| 명부 바인더 | (EP02 이후 화면 밖에서 노미란 낮 책상으로 — beatsheet R7) **P13 노미란 책상 왼쪽, 팔꿈치 옆** → **P16 노미란 LEFT 손바닥이 칸막이 너머 서하 책상으로** → P17 서하가 안고 카운터 안쪽에 → P18 서하 낮 책상(위에 일지, 그 위 열쇠) → **P19 가슴에(일지와 함께)** → P20 L1 책상 오른쪽 제자리(일지가 위) → P28 펼침(맨 앞 서류 B) → P43 그녀의 시선 · P54 재우의 시선 → P55 닫힌 채 그녀 손바닥 아래 → P59 펼침(빈 칸 표) |
+| 당직 일지 | 서하 품(EP02 P49) → P8 카운터 상판, 노미란 손바닥이 표지를 덮음 → P18 명부 위 → P19 가슴에 → P20 명부 위 → P21 새 면, 펜 끝이 첫 줄(글자 없음) → P44 같은 면, 손끝이 첫 줄 |
+| 열쇠 | P1 서류 B 밑 → P16 서하 손 아래(낮 책상) → P18 일지 위 → P19 RIGHT 손가락에 → P20 책상 위 바인더 옆(EP02 P14 자리) |
+| 펜 | P1 서하 손, 아래 줄 위 한 뼘 → P2 카운터에 눕힘 → P9 다시 쥠(마디가 하얗다) → P14 아래 줄에 닿음 |
+| 빨간 롤 (낮) | P13 노미란 책상 안쪽 오른쪽 귀퉁이 → P16 같은 자리, 초점 밖 → 이후 화면 밖. 아무도 만지지 않는다 |
+| 서하 토트백 | P1–P12 LEFT 어깨 → P13 서하 책상 의자 빔 → P16부터 의자 등받이 → P19 LEFT 어깨(앵커) → L1 당직석 의자 등받이(EP01 상태) |
+| 영수증 | P20 = EP02 P14 높이. 회차 내내 같다(되감김 없음) |
+| 종이컵 | P20 선임 손이 책상 모서리에 → P32 선임 손의 컵 → P50 새 컵을 서하가 펼친 수첩 오른쪽 아래 귀퉁이(EP01 P34의 커피 링 위)에 → P55 같은 자리 |
+| 직인 | 책상 위 나무 상자(EP01 고정) → P47 그녀 RIGHT 손이 내리찍음 → P49 직인을 반려 통지 묶음과 함께 둘째 서랍에 → 이후 책상 위 나무 상자는 **뚜껑 닫힌 채 그 자리**(고정 배치 유지 — 비었는지는 보이지 않는다) |
+| 반려 통지 | P22 둘째 서랍 빈 흰 묶음 → P47 한 장에 붉은 원 → P48 민원인 매듭 사이 → 남은 묶음 P49 서랍으로 |
+| 전입신고서 | P25–P31 매듭 사이 접힌 채 → P34 투입구 바깥 턱에 반듯이 → P35 그녀 손이 밀어냄, 반쯤 걸림 → P36–P38 걸린 채 → P41 당겨 들임 → P42 그녀 손 → P45 선 채 든다 → 이후 그리지 않는다 |
+| 민원인 신발 | P25–P46 등 뒤 한 걸음 바닥, 코끝 = 복도 끝(어둠) 쪽, 같은 자리·같은 모양 → **P48 손도 허리도 쓰지 않고 신는다** → 신은 채 어둠으로 |
+| 연살구 서식 | P57 투입구로 들어와 그녀 손에 → P59 그녀 손, 펼친 명부 옆 → (EP04) |
+| 형광등 | P23 복도 끝 한 번 떨림(유일) · P30 · P45 그녀 머리 위 떨리지 않음 · 그 밖 정상 |
+| 선임 | P20 손 → P27 배경(그녀를 본다) → P32 → P36 그녀의 RIGHT 손목을 잡음 → P38 → P41 놓음 → P43 · P49 화면 밖 목소리 → P50 → P55 눈 감음 |
+| 재우 | P51 대기 의자 → P52 출입문 틀 → P53 → P54 복도 쪽으로 반쯤 돌아섬 → 이후 없음. 롤은 주머니 속, 비치지 않는다 |
+
 ---
 
 ## 8. 말풍선 공간 규약 (bubble space)
@@ -704,6 +1005,14 @@ one service window of the long counter seen from the citizen's side at standing 
 - **화면 밖 목소리 방향:** P31–P32 계단 목소리 = 방화문 쪽(§6-2-1: VIEW_B 화면 왼쪽 / VIEW_A 화면 오른쪽) · P33 출입문 실루엣 = 문틀 쪽 · P50–P52 지호 = 휴대폰 쪽.
 - 무대사 컷(P3 · P55)은 빈자리 없이 구도를 다 쓴다. P58은 마감 캡션 띠(아래 8%)만 비운다(EP01 P64와 같은 문장).
 
+### 8-2. EP03 자연스러운 빈자리 (v1.2 · EP03)
+
+- **L3:** VIEW_L3_ACROSS = 두 사람 머리 위 흐린 벽 · VIEW_L3_STAFFSIDE = 카운터 너머 흐린 로비의 위쪽(서하 얼굴·롤·서류 받침은 덮지 않는다) · VIEW_L3_STAIRS = 계단 위 높은 벽과 천장(노미란·계단 꼭대기는 피한다, 꼬리 = 노미란 쪽) · 카운터 상판 클로즈업 = 흐린 간유리 칸막이 쪽 옆면(손이 들어오는 쪽은 피한다).
+- **L1:** VIEW_DRAWERS = 책상 옆판 위의 어두운 면·책상 밑 그늘(맨 아래 칸은 덮지도 가리키지도 않는다) · VIEW_SLOT = 유리 너머 어두운 복도(P57 목소리 꼬리 = 투입구 쪽 화면 밖) · VIEW_GRILLE = 말구멍 둘레의 어두운 유리(흰 말풍선이 잘 읽힌다. 말구멍 자체는 덮지 않는다) · VIEW_GLASS_CLOSE = 그녀 머리 위 유리 너머 어둠(P46 기억 말풍선은 프레임 위쪽, 흐릿하게) · P55 VIEW_SIDE = 천장·서가 위 어둠(**시계 면 피함**) · P59 = 스탠드 원 밖의 어두운 책상 면(두 서류는 덮지 않는다).
+- **L2:** VIEW_ANCHOR(P19 효과음) = EP01 P7 · P28과 같은 자리 · VIEW_FROM_WINDOW_FAR · ACROSS · WINDOW_FLOOR = 무대사(빈자리 없음).
+- **화면 밖 목소리 방향:** P43 · P49 선임 = 서가 쪽(그녀 뒤) 가장자리 · P57–P59 창구 목소리 = 투입구·말구멍 쪽(꼬리를 유리 반사에 대지 않는다) · P1 리캡 = 위쪽 화면 밖.
+- 무대사 컷(P23 · P26 · P30 · P48 · P51)은 빈자리 없이 구도를 다 쓴다. P60은 마감 캡션 띠(아래 8%)만 비운다(EP01 P64와 같은 문장).
+
 ---
 
 ## 9. 레퍼런스 시트 (요약 · 상세는 character-sheets §7)
@@ -719,6 +1028,9 @@ one service window of the long counter seen from the citizen's side at standing 
 | **소품 (EP02 필수 · v1.1)** | PROP_HANDOVER_pair (서류 A와 B 나란히 — 차이는 붉은 원 하나) | 16:9 |
 | **장소 플레이트 (EP02 권장 · v1.1)** | LOC_L3_LOBBY_dawn_plate(OUTWARD, 새벽) · LOC_L3_LOBBY_day_plate(INWARD, 09:00, 새벽 플레이트 첨부) | 16:9 / 16:9 |
 | EP02 카드 없음 (v1.1) | 노미란 'A-정돈 중'·의상 B+코트 뭉치, 서하 밤샘, 선임 졸음 — 기존 카드 + 상태 문장으로 충분 (character-sheets §10-6) | — |
+| **인물 (EP03 필수 · v1.2)** | `MOVEIN_ref` — 전신 3뷰 + 머리 클로즈업 + 작은 머리 습작 2 + 발·신발 클로즈업 한 장 (그녀가 보이는 컷 12 ≥ 8) | 16:9 |
+| **손 · 소품 (EP03 필수 · v1.2)** | `HANDRENAME_ref` — 같은 왼손 습작 3(벨 · 연살구 서식을 미는 손 · 반창고 검지가 빈 칸 위). `HANDCLIFF_ref` · `JAEWOO_*` 첨부 금지 | 16:9 |
+| EP03 카드 없음 (v1.2) | 민원인 표정 시트 · 서하 밤 2 · 노미란 낮 A · 선임 손 · 재우 대기 의자 · 연두 서식 · 결재판 · 서류 B 뒷면 · 직원석 · 위층 계단 — 기존 카드 + 문장, 또는 같은 회차 PNG 첨부(P13 → P16 · P18) (character-sheets §11-6) | — |
 
 - 레퍼런스만은 연출색이 없는 중립 조명(STYLE_REF)으로 그린다. 텍스트·라벨 없음. 저장: `_workspace/04_visual/refs/<카드명>.png`.
 - 패널 렌더 전에 확정한다. 확정된 시트가 시리즈 외형 기준이다(회차 간 재사용).
@@ -799,6 +1111,40 @@ one service window of the long counter seen from the citizen's side at standing 
 | L3 카운터 너머 노미란 책상 면과 그 위 물건이 보임 | REGEN (R11) |
 | 노미란 'A-정돈 중'에서 머리가 말끔함 | 경미 — 다른 것이 맞으면 ACCEPT, 같은 문제가 반복되면 문장 강화 |
 
+### 10-5. EP03 범위 · 금지 · 드리프트 (v1.2 · EP03)
+
+**무글자 규칙은 그대로다(§10-1).** 서류 B 앞·뒷면 · 명부 · 일지 · 결재판 · 전입신고서 · 반려 통지 · 개명 신청서 · 수칙 종이 · 시계 · 모니터 · 표시 면 · 서랍 라벨 칸 전부 빈 면. 서명 글씨 0(P14는 잉크 점 하나까지).
+
+**EP01 · EP02 규칙의 EP03 적용 범위:**
+1. 엑스트라(§10-2 7 · §10-4 2): **S01(L3 낮)에만** 초점 밖 엑스트라(character-sheets §11-4 문장). 노미란 창구·서하 책상·계단 위에는 오지 않는다. 지하에는 이름 있는 인물 + 민원인 + 손 하나뿐.
+2. 떨림(§3-1 3): **P23 한 번**(복도 끝, 출현 경고). 어둠 컷·정정 없음.
+3. 반사(§10-2 4): 정상 반사만. **P57–P59 유리 반사 없음**(평평한 어둠), 클리프 손 컷은 카운터 높이 아래.
+4. 반지(§10-4 5): 재우 RIGHT 검지 하나(P51–P54). HAND-RENAME · 민원인 · 노미란 · 선임 반지 0.
+5. 젖음(§10-2 5): 0. 웅덩이 0(구정민 없음, P28 비네트 안의 젖은 구정민만 예외). 민원인은 마르고 깨끗하다.
+6. 창문·낮빛: L3에만(§10-4 1).
+7. 빨강: §2-4-2. ③범주 확장은 노미란 낮 책상 위 롤 하나.
+
+**EP03 드리프트 감시 (panel-validator):**
+
+| 자주 생길 일 | 판정 |
+|---|---|
+| P1–P12에 노미란 책상 면이 보임(롤의 첫 노출이 앞당겨짐) | REGEN |
+| 롤이 손에 들림 · 노미란 손·코트·결재판에 닿음 · 화면 가운데·특별한 빛 / P13에서 롤이 안 보이거나 빨강이 아님 | REGEN |
+| 노미란 쪽 빨강(립·네일·결재판·코트) / 결재판이 명부와 같은 파랑 / 결재판에 글씨·문장(엠블럼) | REGEN |
+| 서류 B 뒷면에 테두리·글씨·손글씨·덧붙인 띠·비친 붉은 원 / 칸이 둘 이상 | REGEN (R2) |
+| P14 서명 글씨 / P15 · P28 서류 아래 줄에 글씨 | REGEN |
+| 전입신고서가 민트·옥색·셀라돈·라임·형광 · 벽색에 녹음 · 노랑 영수증과 구별 안 됨 · 램프 아래 노랑 | REGEN |
+| 개명 신청서가 분홍·주황·빨강 · 직인 원·글자 / P59 램프 아래 주황 · 두 서류 크기 차가 큼 | REGEN (P59 크기는 문장 강화 후 1회 ACCEPT 가능) |
+| P23 외의 떨림 / P30 · P45 떨림 · 어둠 · 효과음 그림 | REGEN |
+| P55 시계가 9:00(거울) / P19 시계가 10:10 / P17 시계가 10:10 · 3:00 | REGEN |
+| 민원인: 창구 앞에서 신발을 신음 · 신발이 흩어짐·유리 안쪽 · 보자기 빨강·분홍·꽃무늬 · 유령 처리 · 서하만큼 큼 | REGEN (character-sheets §11-7) |
+| HAND-RENAME: 오른손 · 반지 · 흰 커프스 · 피 · 손이 둘 · 유리 반사·얼굴·그림자 | REGEN |
+| P56–P60에 벨 누르는 손 | REGEN (EP10 보호) |
+| P21 · P44가 EP01 P48 구도(상판을 짚은 손 + 초점 밖 칸막이) | REGEN (F-23) |
+| 서랍 맨 아래 칸이 열림·강조됨 | REGEN (F-20) |
+| 계단 위층에 사람·표지·국기 / 직원석 모니터에 화면 내용(아이콘·글자) | REGEN (C3 text-free) |
+| P1–P12 서하에게 토트백이 없음 / P13 서하 의자에 토트백 | 경미 — 다른 것이 맞으면 ACCEPT(§6-6-1 결정) |
+
 ---
 
 ## 11. 하류 인계 · 결정 · 열린 항목 (팀 메시징 대체)
@@ -846,6 +1192,31 @@ one service window of the long counter seen from the citizen's side at standing 
 - L3 벽시계(world 확인 요청 ①)는 지하 시계와 같은 디자인으로 그렸다. worldbuilder가 다르게 정하면 PROP_CLOCK_L3 문장만 고친다(아직 그려지지 않았다).
 - 비네트 P8 · P10 · P20 · P47은 EP01 PNG가 생긴 뒤에만 만들 수 있다.
 
+### 11-2. EP03 인계 (v1.2 · EP03)
+
+| 대상 | 가져갈 것 |
+|---|---|
+| **ref-sheet-artist** | character-sheets §11-6 카드 사양 → `refs/ref_prompts.md`에 **블록 추가만**(기존 21장 블록은 그대로): 필수 `MOVEIN_ref`(카드 22) · `HANDRENAME_ref`(카드 23). 둘은 서로 의존하지 않는다. HANDRENAME_ref에는 `HANDCLIFF_ref` · `JAEWOO_*`를 첨부하지 않는다. 상태 변주·소품·직원석은 카드 없음 |
+| **panel-director** | §6-1-2 씬↔LOC(P23 · P26 · P51은 L2) · §6-2-2 지리(복도 좌우는 뷰마다 다르다) · §6-3 · §6-5 · §6-6-1 새 VIEW · §4-4 비율 · 비네트 3컷 · §5-6 짝 구도(P29 · P30 같은 그림, P25 안쪽 시점) · §7-8 연속성 · §3-5 조명(떨림 P23 하나) · §8-2 빈자리. **결정 3개:** P1–P12 직원 책상 면 없음 · 결재판은 카운터 상판 · 토트백 P1–P12 LEFT 어깨 / P13 빈 의자 / P16부터 의자 |
+| **letterer** | §8-2 새 뷰의 빈자리, 화면 밖 목소리 방향 |
+| **prompt-smith** | 새 토큰 원문: VIEW_L3_ACROSS · VIEW_L3_STAFFSIDE · VIEW_L3_STAIRS · VIEW_DRAWERS · VIEW_SLOT · VIEW_GRILLE · VIEW_GLASS_CLOSE · VIEW_FROM_WINDOW_FAR · VIEW_FROM_WINDOW_ACROSS · VIEW_WINDOW_FLOOR · LIGHT_FLICKER_FAR · LIGHT_GLASS_GLOW · PROP_HANDOVER_B_BACK · PROP_HANDOVER_B_SIGN · PROP_ROSTER_OPEN_B · PROP_ROSTER_OPEN_GRID · PROP_APPROVAL_FOLDER · PROP_TAPE_ROLL_DESK · PROP_FORM_MOVEIN(+ 상태) · PROP_NOTICE_STACK · PROP_SEAL_STAMP · PROP_FORM_RENAME · PROP_CLOCK_TIME_0300 · _0920. 빨강 문장 §2-4-2. 램프 아래 종이 색 문장 §2-3-1. 비네트 3컷은 Avoid에서 `panel borders`만 뺀다. P5에는 `PROP_HANDOVER_pair`를 붙이지 않는다. 플레이트 파일 이름은 `ref_prompts.md`의 표기(`LOC_L3_LOBBY_DAY_plate`) |
+| **panel-validator** | §2-4-2 빨강 · §7-7 시계 REGEN 기준 · §10-5 EP03 드리프트 · character-sheets §11-7 인물 축 |
+
+**v1.2 결정:**
+1. L3 직원석: 서하 낮 책상 = 노미란의 LEFT 옆(아주 낮은 간유리 칸막이). 롤 = 노미란 책상 안쪽 오른쪽 귀퉁이, 서류 받침 옆에 옆으로 눕힘.
+2. 위층 계단 = 홀 안쪽 벽의 왼쪽(카운터 안쪽 끝 너머), 지하 철문 = 같은 벽 오른쪽 구석. 위 = 넓은 돌계단 / 아래 = 작은 철문.
+3. 서류 B 뒷면 = 테두리 없는 흰 면 + 맨 아래 인쇄된 빈 칸 하나, 비침 없음. 서명 뒤의 서류는 아래 줄을 가린다. 명부 맨 앞 사본은 원본과 똑같이.
+4. 전입신고서 = 연두 `#DCE6B0`(E-1 확정, 직인 원 없음). 개명 신청서 = 연살구 `#F7D9C4`, 표처럼 줄지은 빈 칸 + 가운데 넓은 칸 하나, **빈 직인 칸 없음**.
+5. 직인은 P49에 서랍으로, 책상 위 나무 상자는 뚜껑 닫힌 채 남는다(고정 배치 유지). 서랍 속 여분 인주 케이스는 닫힘.
+6. 이삿짐 상자 없음(보따리로 대체). EP03 L3 시계는 프레임 밖이 기본, P17 와이드 = 09:20.
+7. P25는 당직실 안쪽 시점(발 가림). 토트백 연속성(§6-6-1).
+
+**열린 항목 (v1.2):**
+- world §9-4에 위층 계단·직원석 배치가 아직 없다(beatsheet §6 요청). §6-6-1을 worldbuilder가 그대로 옮기면 된다(그림은 이 문서를 따른다).
+- characters §4-10 소품 행의 "[제안] 옅은 옥색" 문구가 남아 있다('서식' 상태 토큰은 연두로 갱신됨). 그림은 연두를 따른다 — character-designer 정리 요청.
+- 개명 신청서에 빈 직인 칸을 두지 않았다. EP04가 다른 칸 배치를 원하면 **EP03 Phase 4 전에** 알려야 한다(한 번 그리면 EP04 P1–5가 같은 서식을 되풀이한다).
+- 비네트 P6 · P28은 EP01 PNG, P11은 EP02 PNG가 생긴 뒤에만 만들 수 있다.
+
 ---
 
 ## 12. 변경 이력
@@ -854,5 +1225,6 @@ one service window of the long counter seen from the citizen's side at standing 
 |---|---|---|
 | v1 | 2026-11-16 | 최초 작성: 화풍·STYLE_GLOBAL/REF, 팔레트·예약 빨강, 조명 토큰, Flow 비율 등급, 조립 규칙·COMP 표, LOC 3개(+VIEW), PROP 토큰, 말풍선 공간, 금지·드리프트 |
 | v1.1 | 2026-11-17 | **EP02 추가 — 덧붙이기만, v1 토큰 문장 변경 0**(EP01 프롬프트 영향 없음). 신규 장소 `LOC_L3_LOBBY` + VIEW_L3_INWARD/OUTWARD/CHAIRS/DAYWINDOW, 조명 LIGHT_L3_DAWN/DAY · LIGHT_LAMP_EDGE · LIGHT_NOFLICKER · LIGHT_0600(조건부). L1에 VIEW_SIDE(EP01 shotlist §A-1 원문 편입) · VIEW_SHELVES · 숙직실 문 활짝 변주, L2에 VIEW_FROM_WINDOW · VIEW_ANCHOR_0600. 소품 PROP_HANDOVER_A/B/FOLDED · PROP_COVER_STRIP · PROP_CLOCK_L3 · PROP_CLOCK_TIME_*(04:40–09:00) · PROP_NAP_HANDSET · PROP_PHONE_BUZZ · PROP_LEDGER_TEAR · PROP_PAPER_CUPS_2. EP02 빨강(같은 세 범주, 서류 B 직인 원 추가), L3 팔레트, EP02 컬러 스크립트·씬 조명, 비율 권장, 기억 비네트 6컷(EP01 shotlist §D 방식), 재사용 짝, 연속성 타임라인, 빈자리, 레퍼런스 3+2장, EP02 범위·드리프트, 인계 |
+| v1.2 | 2026-11-18 | **EP03 추가 — 덧붙이기만, v1·v1.1 토큰 문장 변경 0**(EP01·EP02 프롬프트 영향 없음, 이미지는 아직 없다). 새 LOC 없음. L3에 직원석 줄(노미란 낮 책상 · 서하 책상 = 그녀의 LEFT 옆) · 위층 돌계단 배치 + VIEW_L3_ACROSS/STAFFSIDE/STAIRS. L1에 VIEW_DRAWERS/SLOT/GRILLE/GLASS_CLOSE, L2에 VIEW_FROM_WINDOW_FAR/FROM_WINDOW_ACROSS/WINDOW_FLOOR. 조명 LIGHT_FLICKER_FAR · LIGHT_GLASS_GLOW + EP03 씬 조명(떨림 P23 하나, P30 · P45 떨리지 않음). 소품 PROP_HANDOVER_B_BACK/SIGN · PROP_ROSTER_OPEN_B/GRID · PROP_APPROVAL_FOLDER · PROP_TAPE_ROLL_DESK · PROP_FORM_MOVEIN(연두 #DCE6B0, E-1) · PROP_NOTICE_STACK · PROP_SEAL_STAMP · PROP_FORM_RENAME(연살구, 직인 칸 없음) · PROP_CLOCK_TIME_0300/_0920. EP03 빨강(③ 공용 비품 확장 = 낮 책상 롤, 배치 규칙), 인물·소품 색, 컬러 스크립트, 비율 권장, 기억 비네트 3컷, 재사용 짝, 지리, 연속성 타임라인, 빈자리, 레퍼런스 필수 2장(MOVEIN_ref · HANDRENAME_ref), EP03 범위·드리프트, 인계 |
 
 - 일관성 토큰(STYLE_GLOBAL, LOC, PROP)은 패널이 그려진 뒤에는 바꾸지 않는다. 바꾸면 영향 패널 목록을 이 표에 적고 prompt-smith에게 알린다(이 실행에서는 문서로).

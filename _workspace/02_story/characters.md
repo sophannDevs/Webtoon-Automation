@@ -2,6 +2,8 @@
 
 - 작성: character-designer · 기준일 **2026-11-16** · EP01 초기 실행 · **외형 토큰 v1** → **2026-11-17 EP02 보강 · 외형 토큰 v1.1** (추가만: 전임자 남재우 §0-4·§2-6·§3-7·§4-8, EP02 상태 토큰 §4-9, §5·§6·§7·§8 새 행. **기존 토큰은 한 글자도 바꾸지 않았다.** 이력 §4-7)
 - EP02 보강 입력: `00_input/brief.md` EP02, `series-arc.md` §5 EP02 행·§6-4·§8-2·§9-1, `twist-plan.md` §2-4·§3 EP02·§5·§7-3, `world.md` §2-3·§2-4·§13(잔류 당직자), `03_episode/ep01_script_final.md` P58–P64(클리프의 손)
+- **2026-11-18 EP03 보강 · 외형 토큰 v1.2** (추가만: 전입 민원인 MOVEIN §0-5·§2-7·§3-8·§4-10, 개명 신청의 손·목소리 HAND-RENAME §2-8·§3-9·§4-11, EP03 낮 1·밤 2 상태 §4-12, §5·§6·§7·§8 새 행. **v1·v1.1 토큰은 한 글자도 바꾸지 않았다.** 이력 §4-7)
+- EP03 보강 입력: `00_input/brief.md` EP03, `series-arc.md` §5 EP03·EP04 행·§6-4, `twist-plan.md` §3 EP03·EP04·§5, `world.md` §5(민원인 원리·서식)·§9-1·§10·§13, `03_episode/ep02_script_final.md` P53–P58·검수 노트 §E, `04_visual/character-sheets.md` §10(EP02 상태 토큰)
 - 입력: `_workspace/02_story/concept.md`(§5 인물 핵심, §6 금지, §11 EP01 약속, §13 인계), `_workspace/02_story/world.md`(§2 법칙, §3-4 증거 사슬, §5-1 민원인 원리, §7 세력, §10 시각 톤·의상 제약, §12-1 인계), `_workspace/01_research/trend-brief.md`(D7 4인 상한, D8 가치관 지뢰, M4·M9 관계성)
 - 다음 독자: series-plotter → twist-master → tension-engineer → episode-outliner·dialogue-writer. 비주얼팀(art-director → ref-sheet-artist·panel-director·prompt-smith)은 **§4 외형 토큰 블록**을 그대로 가져간다.
 - 표기 (concept·world와 같음)
@@ -51,6 +53,18 @@
 - EP02 디자인 인물은 4명(서하·재우·선임·노미란) = 상한 안. 지호는 목소리만, L3 엑스트라는 디자인하지 않는다(§4-9).
 - HAND-CLIFF(§4-6)는 **재우의 오른손 클로즈업 토큰**으로 그대로 남는다. 원문을 바꾸지 않는다.
 - 주색: 재우는 **무채색**(차콜·흰색·스톤 그레이)이다. 다섯 번째 '색'은 색이 없는 것 — 기록에서 지워지는 사람. 네 사람의 주색(머스터드·검정·슬레이트블루·젖은 카키)과 겹치지 않는다.
+
+### 0-5. EP03 추가 캐스트 (2026-11-18) [고정]
+
+| 레퍼런스 ID | 이름 | 크메르어 표기 | 역할 | EP03 | 레퍼런스 시트 | 실루엣 한 줄 |
+|---|---|---|---|---|---|---|
+| **MOVEIN** | 전입 민원인 (이름 없음) | 화자 표기 **អ្នកផ្លាស់មកនៅ** [제안 · §5] | 밤 2의 민원(1회용). "이 당직실로 전입하겠습니다." 서하가 명부상 담당자가 된 첫 밤, 그녀를 처음으로 '담당자'로 찾는 민원인 → 수칙 1 역전, 서하의 첫 정당한 반려 | 밤 2 (중반) | **1장** `MOVEIN_ref` (턴어라운드 + 발 + 표정 머리, §4-10 · 조건부 필수) | 아주 작은 노부인, 등에 진 크림색 이불 보따리(매듭이 가슴 앞), 회라일락 누빔 코트, 신발 없는 흰 양말 = "보따리를 진 작은 라일락 점" |
+| **HAND-RENAME** | 개명 신청 (손·목소리만) | 화자 표기 **សំឡេងពីបញ្ជរ** [제안 · §5] | EP03 클리프: 호출벨 → 연살구색 개명 신청서 → "바꾸려는 새 이름은… 강서하입니다." EP04 P1–5가 이 컷을 되풀이한다 | 끝 (클리프) | **1장** `HANDRENAME_ref` (손·서식 소품 카드, §4-11 · 필수) | 왼손 하나, 짙은 갈색 코듀로이 소매, 검지의 베이지 반창고, 연살구 종이 |
+
+- EP03 디자인 인물은 5명(서하·노미란·선임·재우·전입 민원인) = series-arc §6-4 EP03의 5, 상한 안. HAND-RENAME은 EP01 HAND-CLIFF처럼 손 토큰이라 세지 않는다.
+- 주색: 전입 민원인 = **회라일락**. 기존 다섯(머스터드·검정·슬레이트블루·젖은 카키·무채색)과 겹치지 않는다. 개명 손 = **짙은 갈색 코듀로이**(소매만). 둘 다 빨강 없음.
+- **전입 민원인:** 신발을 창구 앞에 가지런히 벗어 두고, 아주 공손하게, 이 당직실에서 살겠다고 한다.
+- **개명 신청:** 얼굴도 몸도 없이, 왼손 하나와 연살구색 종이 한 장이 그녀의 이름을 새 이름으로 달라고 한다.
 
 ---
 
@@ -161,6 +175,33 @@
 | 지키는 금기 | 관할 안에서 **자기 이름을 말하지 않는다**(그도 당직자다, 수칙 2) → 이름 공개가 EP06까지 미뤄지는 규칙상 이유. **서하의 이름도 부르지 않는다**(그녀를 이 밤의 기록에 올리지 않으려고). 자기 신분을 단정하지 않는다: "관뒀다/안 관뒀다"는 말하지 않고 "도망쳤다"(행동)만 말한다(F-08 보호, 법칙 ①). 4번을 "거짓"이라고 단정하지 않는다(T2) |
 | 시각 연출 메모 (twist-master·panel-director) [권장] | ① **스탠드의 노란 원 안으로 몸이 들어오지 않는다.** 빛 안에 들어오는 것은 손뿐이다(EP01 P61과 같은 문법). 얼굴은 빛 가장자리에서 반만 따뜻하다 ② 첫 공개는 EP01 P61 손 구도를 그대로 반복한 뒤 소매를 따라 올라가 얼굴 ③ **사람으로 그린다:** 정상 그림자, 마른 옷, 산 사람의 피부. EP10 전에는 어떤 어긋남도 없다 ④ 서가 사이 어둠에서 나온다(EP01 P34 "부스럭"은 그였다, F-50) ⑤ 로맨스 코드로 연출하지 않는다: 같은 자리에 먼저 앉았던 동기·전우 |
 
+### 2-7. 전입 민원인 (MOVEIN · អ្នកផ្លាស់មកនៅ) — EP03 괴이 민원인 [고정: 외형·어긋남·말투 / 권장: 사연] · EP03 추가
+
+| 항목 | 내용 |
+|---|---|
+| 역할 | EP03 밤 2의 민원(1회용, series-arc §6-4): **"이 당직실로 전입하겠습니다."** 그날 낮 인수인계서에 서명해 명부상 담당자가 된 서하를 처음으로 '담당자'로 찾는다 → 서하 "제가 담당자입니다."(E10) — 이번에는 사실이라 불이 꺼지지 않는다. 서하는 접수하고(수칙 1), 처음으로 **기록과 맞는 사유로 반려**한다(접수 ≠ 수리, world §5-4) |
+| 보이는 나이 | 70대 중반 여성. 기록의 시점(1990년대 후반 [권장])에 맞춘, 철 지났지만 단정한 차림 |
+| **어긋난 한 군데** [고정] | **신발을 벗었다.** 창구 앞의 그녀는 늘 티 없는 흰 면양말 차림이고, 그녀의 낡은 검정 효도화가 등 뒤 복도 바닥에 **코끝을 복도 끝 어둠 쪽으로 돌려 가지런히** 놓여 있다 — 자기 집 현관에 벗어 둔 것처럼. 이것 하나뿐이다: 젖음·먼지·창백함·그림자 이상·이상한 반사는 쓰지 않는다(world §5-1). 집이나 절에 들어갈 때 신발을 벗는 것은 한국과 캄보디아에 공통이라, 글자 없이 "그녀는 여기를 집으로 안다"가 읽힌다 |
+| 왜 신발인가 [권장 원리] | 그녀의 **주민등록상 거주지가 비어 있다**(거주불명 류 — 기록에 집이 없다). 기록이 어긋난 자리가 몸에 드러난다(world §5-1): 집이 없는 기록을 가진 사람이 '집에 들어가는 사람'의 발로 온다. 입으로는 이곳을 '집'이라고 단정하지 않는다(법칙 ①) — **집이라는 말은 신발이 대신 한다.** 왜 비었는지·언제부터인지는 twist-master |
+| 원하는 것 | 이 당직실을 자기 주소로 기록하는 것. 밤마다 모두를 '받아 주는'(수칙 1) 유일한 창구에서 사는 것 |
+| 악의 | 없다. 수리되면 법칙 ⑤: 서명한 자가 그녀가 비운 칸(주소 없음)을 채운다 → **낮에 있을 곳이 없는 사람**이 된다(world W-5와 같은 결) [권장 · 결과 문구는 twist-master·outliner]. 그녀는 그것을 알리지도 숨기지도 않는다 |
+| 테마 | 서하의 결함(떠안음)을 정면으로 시험하는 민원: 문자 그대로 "받아 달라"는 사람. 같은 날 낮, 서하는 남의 짐(인수인계서)을 알면서 받았다. 밤에는 남을 받지 않는 법을 처음 쓴다 — 가엾고 정중한 노인을 기록을 근거로 돌려보내는 것이 첫 "아니요"의 진짜 값이다. 사이다는 절차의 정확함에서, 씁쓸함은 양말에서 온다 |
+| 반려 사유 메모 | 기록과 맞아야 한다(거짓 사유 = 정정). 후보 [권장]: **"이곳은 기록상 주거지가 아닙니다."** — 이 방은 낮의 기록에서 잠긴 '제2문서고'다(world §9-1). 마지막 줄까지 읽는 서하의 강점과 맞는다. 확정은 episode-outliner·twist-master |
+| 아크 | 1회용. 접수 → 담당자 확인 → 반려 → 화내지 않고 신발을 다시 신고 복도 끝 어둠으로 돌아간다(신발을 신는 컷 = '떠난다'의 시각 신호). 재등장 없음 [권장] |
+| 시각 연출 메모 | ① **첫 등장은 구도로 숨긴다:** 당직실 안쪽에서 보면 허리 높이 카운터가 그녀를 가슴께에서 자른다(148cm). 보이는 것은 머리·어깨·보따리 윗부분뿐 ② 2~3컷 뒤 **'발견':** 복도 쪽 낮은 클로즈업 — 흰 양말과 가지런한 신발(world §10-5) ③ 말구멍(어른 얼굴 높이)이 그녀 입보다 높다 → 턱을 들고 말한다 ④ [선택 · outliner] 그녀가 오기 **전에** 신발이 먼저 창구 앞에 놓여 있고, 그녀는 어둠에서 양말 차림으로 걸어 나온다 |
+| 존엄 메모 (AA D8) | 노숙·빈곤을 희화화하지 않는다. 옷은 철 지났지만 깨끗하고 단정하다. 공포는 정중함과 양말에서만 나온다 |
+
+### 2-8. 개명 신청 (HAND-RENAME · 손·목소리만) — EP03 클리프 [고정: 손·목소리 형식 / 봉인: 정체] · EP03 추가
+
+| 항목 | 내용 |
+|---|---|
+| 역할 | EP03 클리프(twist-plan §3 EP03 T-b): 띵 → 투입구로 들어오는 **연살구색 개명 신청서** → 목소리 **"바꾸려는 새 이름은… 강서하입니다."** EP04 P1–5가 같은 컷을 되풀이한다(답 반: 이름을 이 밤의 기록에 올린 것은 노미란의 풀네임 호명 / 질문 반: 진짜 신청인은 누구인가) |
+| 보이는 것 | **왼손 하나, 소맷부리, 서식, 목소리.** 얼굴·몸·머리카락·그림자·유리에 비친 모습은 보이지 않는다 |
+| 손 주인 [봉인 경계] | series-arc §5 EP04: 창구 앞에 서는 것은 위임장 없는 **개명 대리인**, 진짜 신청인은 유리에만 비친다. 그러므로 **이 손은 EP04에서 창구 앞에 서는 사람이 물려받는다** [권장 · twist-master 확정]. 이 문서는 그가 누구인지 정하지 않는다 |
+| 지킬 경계 | ① 성별·나이·신분 단서를 주지 않는다 ② 기존 인물 누구의 손으로도 읽히지 않는다(§4-11 대비표) — 특히 재우(오른손 은반지)와 노미란(왼손 금시계) ③ **클리프 구도에 창구 유리의 반사를 넣지 않는다** — 유리 속 '한 명 더'는 EP04 초반의 단서(수칙 3)이고, EP01부터 유리의 정상 반사가 기준선이다 |
+| 서하 쪽 금기 | 서하는 서식의 새 이름 칸을 **소리 내어 읽을 수 없다**(수칙 2: 자기 이름). 그래서 새 이름은 목소리가 말한다. 서하는 그 말을 따라 하지 않는다 |
+| 목소리 | §3-9 |
+
 ---
 
 ## 3. 말투 시그니처 (dialogue-writer용 · 크메르어로 옮겨도 살아남게)
@@ -236,6 +277,46 @@
   - "도망쳤다" → `រត់ចោល`. 자기 신분에는 `ឈប់`(관두다)을 쓰지 않고 다른 것에만 쓴다: "세는 건 관뒀어" → `ឈប់រាប់ហើយ`. E11 «…ឈប់ក្រោយបីថ្ងៃ…»와 같은 동사라 재독 때 울린다.
   - **05:59 제안의 KM은 수칙 7의 고정 동사 `ចេញពីធ្វើការ`(퇴근)를 그대로 써야** 수칙 7 반전이 크메르어에서 작동한다. "나머진 내가 받을게요"는 `ទទួល` + `បន្ទុក`(짐)으로: 담당자 `អ្នកទទួលបន្ទុក`, E12의 `បន្ទុក`와 같은 뿌리라서 "그가 짐을 받는 사람이 되겠다"는 뜻이 단어에서 들린다.
 - 예 (한국어, 형식 예 · twist-plan 대사 그대로): "이번에도 4번 따라 했지?" / "떼려고 하지 마." / "지정 납부, 네가 가르쳐 줬잖아." / "내가 도망쳐서 네가 온 거잖아." / "수고했어요. 이제 퇴근해요. 나머진 내가 받을게요." / "그거 받으면 안 됐는데."
+
+### 3-8. 전입 민원인 — 말투 시그니처 · EP03 추가 [초안 · KM 확정은 dialogue-writer·glossary]
+
+| 항목 | 내용 |
+|---|---|
+| 격식 | 처음부터 끝까지 최고 격식, 행정 문어. 여기에 **살림의 말**(짐·이불·식구·세대)이 섞인다. 행정 용어가 조금 옛것이다(예: '동사무소') [권장] |
+| 문장 형식 | **의지 선언형("~하겠습니다").** 요청하지 않고 질문하지 않는다. 예외 하나: 모든 민원인의 절차 질문 **"담당자분 계십니까?"**(twist-plan EP03 T-a, E10의 방아쇠) |
+| 길이·리듬 | 느리고 짧은 평서문. 막히면 같은 말을 되풀이하지 않고 **약속을 하나씩 덧붙인다**("짐은 이것뿐입니다." → "조용히 지내겠습니다." → "아무것도 만지지 않겠습니다.") — 문장이 짧아질수록 인사가 한 단씩 깊어진다. 같은 문장을 그대로 반복하는 구정민과 반대 방향의 압박 |
+| 호칭 | 서하 → **"담당자님"** — 서하를 담당자라고 부르는 첫 민원인(이제 사실이다). 자기 이름을 말하지 않는다 |
+| 안전한 말의 형태 (밤의 법칙) | 의지·약속은 사실 단정이 아니다(EP02 재우의 `នឹង…`와 같은 판단). 이곳을 "제 집"이라고 하지 않는다 — 기록과 어긋나는 말이라서. 그 말은 신발이 한다(§2-7) |
+| 절대 안 하는 것 | 화내기·울기·애원의 감정어. 질문(위 예외 밖). 요구를 다른 말로 바꾸기. "여기가 제 집입니다" 같은 단정. 신발을 신은 채 창구 앞에 서기 |
+
+- **구정민과 구별 (둘 다 공손한 행정 문어):**
+
+| | 구정민 (EP01) | 전입 민원인 (EP03) |
+|---|---|---|
+| 형식 | 요청형("부탁드립니다", "필요합니다") | 의지형("~하겠습니다") |
+| 막히면 | 같은 문장을 글자 하나 안 바꾸고 반복 | 약속을 하나 덧붙이고 몸을 더 낮춘다 |
+| 질문 | 명부를 찌르는 질문 | 절차 질문 하나뿐 |
+| 첫마디 | 늦은 시각에 대한 사과 | 사과 없이 의지부터 |
+| 공포의 근원 | 반복 | 끝없이 공손한 양보 |
+
+- **크메르어 메모 [초안]**
+  - 1인칭 **`នាងខ្ញុំ`**(격식 있는 여성 1인칭, 조금 옛스럽다) — 서하의 `ខ្ញុំ`과 갈린다.
+  - **`ចាស`를 쓰지 않는다.** `ចាស → ទេ`는 서하 아크의 축이라, 같은 장면의 노부인이 `ចាស`를 되풀이하면 축이 흐려진다. 공손함은 `សូម…`와 문어 어휘로 만든다.
+  - 의지 표지 `នឹង…`(안전한 형식). 담당자 = `អ្នកទទួលបន្ទុក`(E3·E9 고정 용어 그대로, 동의어 금지).
+  - "담당자분 계십니까?"는 E5의 **앞 문장만** 글자 그대로 «តើអ្នកទទួលបន្ទុក មានវត្តមានទេ?» 쓰고, 뒤 문장 «ខ្ញុំត្រូវការត្រា។»(직인)는 붙이지 않는다 [권장] — 두 문장 전체의 에코는 EP10 재우의 몫(glossary E5).
+  - 서하가 그녀를 부를 일이 있으면 크메르어에서는 `លោកយាយ`가 가장 자연스럽다 [초안] (한국어 대사가 "민원인님"이어도 dialogue-writer 판단).
+- 예 (한국어, 형식 예): "이 당직실로 전입하겠습니다." / "담당자분 계십니까?" / "짐은 이것뿐입니다." / "조용히 지내겠습니다." / "아무것도 만지지 않겠습니다." / (반려 뒤, 선택) "…접수해 주셔서 감사합니다."(수칙 1 역전의 씁쓸한 에코)
+
+### 3-9. 개명 신청 목소리 — 말투 시그니처 · EP03 추가 [초안]
+
+| 항목 | 내용 |
+|---|---|
+| 화자 | 창구 밖, 화면 밖. 말풍선 꼬리는 말구멍·투입구 쪽 화면 밖으로 |
+| 격식·형식 | 행정 문어, 최고 격식, **비인칭**: 주어·1인칭·소유가 없다. 서식의 칸을 읽듯 "[칸 이름]은 … 입니다" |
+| 길이·리듬 | 짧고 평평하다. 새 이름 앞의 "…" 한 번이 리듬의 전부 |
+| 절대 안 하는 것 | "제 이름", "저는", **현재 이름**, 신청인의 신원·관계 진술, 질문, 서하를 부르는 말(그녀는 '새 이름'으로만 불린다), 감정어. 이유: EP04에서 창구 앞이 **대리인**으로 밝혀진다 — 대리인이 "제 이름"이라고 말했다면 법칙 ①에 걸렸어야 한다(공정성) |
+| 크메르어 메모 [초안] | **성별이 드러나는 말을 쓰지 않는다:** 첨사 `បាទ`·`ចាស`, 1인칭 `ខ្ញុំ`·`ខ្ញុំបាទ`·`នាងខ្ញុំ` 모두. 그래야 크메르어 독자에게도 목소리의 성별이 열려 있다. 새 이름은 glossary §2 `កាង សឺហា`와 바이트 동일. 예: «ពាក្យសុំប្ដូរឈ្មោះ។» / «ឈ្មោះថ្មីដែលសុំប្ដូរទៅ… គឺ កាង សឺហា។» |
+| 예 (한국어) | "개명 신청입니다." [초안] / **"바꾸려는 새 이름은… 강서하입니다."** [twist-plan 고정] |
 
 ---
 
@@ -361,6 +442,7 @@
 |---|---|---|
 | v1 | 2026-11-16 | 최초 확정: SEOHA, MIRAN(의상 A·B), SEONIM, JEONGMIN, 부속 소품 5종, HAND-CLIFF |
 | v1.1 | 2026-11-17 | **추가만. 기존 토큰(SEOHA·MIRAN·SEONIM·JEONGMIN·소품·HAND-CLIFF)은 한 글자도 바꾸지 않았다.** 신규: **JAEWOO**(전임자 전신, HAND-CLIFF 상속, §4-8). EP02 상태 토큰: 서하 밤샘, 노미란 'A-정돈 중', L3 엑스트라(§4-9). HAND-CLIFF 원문 유지, 주인 = JAEWOO |
+| v1.2 | 2026-11-18 | **추가만. v1·v1.1 토큰(SEOHA·MIRAN·SEONIM·JEONGMIN·소품·HAND-CLIFF·JAEWOO·EP02 상태)은 한 글자도 바꾸지 않았다.** 신규: **MOVEIN**(전입 민원인 전신, §4-10), **HAND-RENAME**(개명 신청의 왼손 + 연살구 서식, §4-11). EP03 낮 1·밤 2 상태 메모와 낮 엑스트라 덧붙임 문장(§4-12). 새 카드 2장(`MOVEIN_ref` 조건부 필수, `HANDRENAME_ref` 필수) |
 
 ### 4-8. TOKEN-JAEWOO · 남재우 (ណាម ជែវូ) · 전임자 — v1.1 신규 (EP02 Phase 4 전)
 
@@ -416,6 +498,89 @@
 | L3 엑스트라 (09:00 낮 로비) | 디자인하지 않는 배경 인물 | 얼굴 단순, 초점 밖. 주요 인물의 주색·실루엣을 피한다. `background: a few ordinary office workers and citizens in muted winter clothes (gray, beige, dark green), simplified faces, slightly out of focus; nobody wears a mustard-yellow cardigan, a long black coat draped over the shoulders, a slate-blue work jacket, a khaki trench coat, or a charcoal cardigan with a white shirt; no red, no ID card text, no signs, no text anywhere`. 06:00 새벽 L3는 비어 있는 쪽을 권장(사람이 필요하면 원거리 실루엣의 청사 방호원 1명, 짙은 회색 제복, 로고·글자 없음) |
 | 재우 EP10 민원인 형태 [초안 · EP10 전에 다시 호출] | — | '한 군데 어긋남' 후보: **서명하지 않은 오른손의 손끝에서 마르지 않는 검푸른 볼펜 잉크가 떨어진다.** 구정민의 물과 같은 문법(떨어지고, 바닥에 자국, 첫 컷에서 숨기고 발견). 빨강 금지(인주와 구분), 피로 읽히지 않게 검푸른 잉크색. EP09 어둠 속 전조 컷도 이 방향에 맞춘다 |
 
+### 4-10. TOKEN-MOVEIN · 전입 민원인 (អ្នកផ្លាស់មកនៅ) — v1.2 신규 (EP03 Phase 4 전)
+
+| 항목 | 고정값 |
+|---|---|
+| 연령·성별 | 70대 중반으로 보이는 여성, 한국인 |
+| 키·체형 | **148cm**(작품에서 가장 작다, 서하보다 한 뼘 작다). 살짝 굽었지만 단정한 자세, 아주 가만히 선다 |
+| 피부톤 | 건강한 노인의 웜톤, 부드러운 잔주름. **산 사람의 피부**: 창백하거나 푸르지 않다 |
+| 헤어 | **짧고 촘촘한 철회색 파마**(한국 할머니의 뽀글 파마), 머리에 단정히 붙음 |
+| 눈 | 작고 순한 홑꺼풀 눈, 웃으면 초승달로 접힌다. 거의 깜빡이지 않는 차분한 시선 |
+| 의상 A (고정 · 유일) | **회라일락 무릎 길이 누빔 패딩 코트**(1990년대 후반 스타일, 작은 스탠드 칼라까지 단추를 잠금) + 목에 보이는 크림색 니트 터틀넥 깃 + 짙은 갈색 울 바지 + **흰 면양말(신발 없음)** |
+| 의상 B | 없다 |
+| 식별 특징 | ① **등에 진 크림색 무명 이불 보따리:** 개킨 이불을 무늬 없는 생성목 천으로 싸서 등에 지고, 천의 두 귀를 **가슴 앞에서 매듭**지었다. 보따리 윗부분이 어깨 위로 솟는다(앞·뒤 어느 쪽에서도 보인다). 내려놓지 않는다 ② **짧고 촘촘한 철회색 파마** |
+| **어긋난 한 군데** | **신발 없이 흰 양말.** 작고 낡은 검정 효도화(낮은 굽)가 등 뒤 한 걸음 바닥에 코끝을 복도 끝 쪽으로 돌려 가지런히 놓여 있다. 창구 앞의 그녀는 언제나 양말이다. 신발은 퇴장 컷에서만 다시 신는다 |
+| 소품 | 가슴 앞 매듭 사이에 접어 끼운 **전입신고 서식** 한 장(빈 칸뿐). 색은 world §5-3에 아직 없다 → **[제안] 옅은 옥색**(연회청·연살구·연분홍·연보라·연노랑·흰색과 겹치지 않는 남은 색). art-director·worldbuilder가 확정하고, 회녹색 책상 위 대비를 확인한다 |
+| 표정 디폴트 | 평온하게 입을 다문 할머니의 미소, 초승달 눈 |
+| 색 팔레트 | 회라일락 `#A797B5` · 생성목 크림 `#E3D9C3` · 짙은 갈색 `#4C3F35` (+ 흰 양말 `#F3F1EC`, 검정 신발) |
+| 시그니처 자세 | 두 손을 매듭 아래에 포개고, 턱을 들어 말구멍을 올려다본다 |
+| 앉는 자리 | 앉지 않는다(대기 의자에도). 유리 밖에 선다. 유리 안쪽·관할 밖으로 가지 않는다 |
+| 없는 것 | 안경·모자·장신구·반지·핸드백 없음. 빨강 없음. 젖음·먼지 없음 |
+
+- **한 줄 토큰(KO):** `전입 민원인/70대 중반으로 보이는 여/148cm 아주 작고 살짝 굽었으나 단정/짧고 촘촘한 철회색 파마/웃으면 초승달로 접히는 작은 홑꺼풀 눈, 거의 깜빡이지 않는 시선/건강한 웜톤 잔주름 피부/회라일락 무릎 길이 누빔 코트(스탠드 칼라까지 잠금)+크림 터틀넥+짙은 갈색 바지/등에 진 크림색 무명 이불 보따리, 가슴 앞 매듭/신발 없이 흰 면양말/평온한 입 다문 미소`
+- **한 줄 토큰(EN, FULL · 발이 보이는 컷):** `the move-in complainant, a tiny elderly Korean woman who looks about 75; very petite 148 cm build, slightly stooped yet neat and dignified, standing very still; short, tightly permed iron-gray hair set close to her head; small, gentle single-lidded eyes that crinkle into crescents, a calm, steady gaze that rarely blinks; warm-toned, softly lined skin of a healthy living person (no pallor, no wounds); a knee-length quilted padded coat in a soft grayish lilac that still reads clearly as lilac, buttoned up to a small stand-up collar, in a slightly dated late-1990s style, the folded neck of a cream knit turtleneck showing at her throat, dark brown wool slacks; on her back a large, soft, square bundle of folded bedding wrapped in plain unbleached cream cotton cloth, two corners of the cloth tied in a knot at the front of her chest, the top of the bundle rising above her shoulders; on her feet only thin, spotless plain white cotton socks, NO shoes on her feet; default expression a serene, closed-lip grandmotherly smile; completely dry and clean; no glasses, no hat, no jewelry, no rings, no handbag; no red anywhere`
+- **SHORT (EN · 상반신 컷 — 발 문장을 아예 뺀다):** `the move-in complainant (a tiny elderly Korean woman about 75 with short, tightly permed iron-gray hair and a serene closed-lip smile with crescent eyes, in a soft grayish-lilac quilted padded coat buttoned to a small stand-up collar, a large cream cotton-wrapped bundle of bedding on her back knotted at the front of her chest, its top rising above her shoulders)`
+- **상태 토큰 (EN):**
+
+| 상태 | 영문 | 메모 |
+|---|---|---|
+| 신발 (발이 보이는 모든 컷에 FULL과 함께) | `her own small, worn black low-heeled comfort shoes placed neatly side by side on the dry floor one step behind her heels, toes turned to point back toward the dark end of the corridor, as if left at the front door of her own home` | 신발은 늘 이 자리·이 모양 |
+| 첫 등장 (안쪽 시점 · 발 가림) | `seen from inside the duty room across the waist-high counter: only her head, her shoulders and the top of the bundle show above the counter edge; she tilts her face up toward the round speaking grille, which is higher than her mouth` | SHORT와 함께 |
+| 발견 (복도 쪽 낮은 클로즈업) | `low close-up on the corridor side: a pair of small feet in spotless thin white cotton socks standing on dry gray speckled terrazzo, and right behind her heels her own small worn black low-heeled comfort shoes placed neatly side by side, toes pointing back toward the dark end of the corridor; no water, no dust, no footprints` | world §10-5 발견 문법 |
+| 서식 | `taking a single folded form from the knot at the front of her chest and pushing it flat into the steel document slot with both small hands; only the paper passes through` + 서식 `pale light yellow-green paper (about #DCE6B0, spring-green) with rows of empty boxes, no text` [제안 색] | 손가락은 투입구를 넘지 않는다(world §5-1) |
+| 퇴장 | `seen from behind: stepping back into her small black comfort shoes without bending down or using her hands, the bundle on her back, walking away toward the dark far end of the corridor` | 신발을 신는 유일한 컷 |
+
+- **표정 시트 5종:** ① 디폴트 `a serene, closed-lip grandmotherly smile, eyes crinkled into crescents, perfectly still` ② 깊은 인사 `a slow, deep, polite bow, the bundle on her back rising above her bowed head` ③ 방을 고르는 눈 `looking past the clerk into the room behind the glass with a fond, appraising look, as if choosing the corner where she will lay out her bedding` — 가장 섬뜩하게 ④ 미소가 사라진 기다림 `the smile gone, a still, blank, patient face, waiting` ⑤ 반려를 받아들임 `eyes lowered, a small accepting nod, lips gently pressed together`. **화난 얼굴·우는 얼굴은 만들지 않는다.**
+- **Flow 드리프트 주의:**
+  - 창구 앞 컷은 언제나 **양말**. 신발이 발에 있으면 다시(퇴장 컷만 예외). 신발은 등 뒤 바닥에 한 켤레, 가지런히, 코끝은 복도 끝 쪽. 흩어지거나 손에 들리거나 유리 안쪽에 있으면 다시. 발이 프레임 밖이면 FULL 대신 SHORT를 쓴다(Flow가 신발을 지어내지 않게).
+  - 보자기는 **무늬 없는 크림색 무명**. 전통 비단 보자기의 빨강·분홍·색동·꽃무늬로 그리면 다시(예약 빨강).
+  - 라일락은 회색빛 연보라. 분홍·자홍·보라빨강으로 번지거나 회색으로 죽으면 다시(회색이면 재우·노미란 B와 섞인다).
+  - 유령으로 그리지 않는다(창백·투명·그림자 없음·흐린 발). 젖지 않았다(구정민과 구별), 먼지·때 없다. 해진 옷·노숙 차림으로 그리지 않는다.
+  - 안경·모자·장신구 금지(선임의 돋보기·노미란의 금테가 번지기 쉽다).
+  - 서하보다 확실히 작다. 같은 컷에서 키가 비슷해지면 다시.
+  - 유리에 비친 모습은 정상(수칙 3 몫). 유리 안쪽에 들어오지 않는다.
+- **같은 컷 구별:** 서하(유리 안, 머스터드, 25세) ↔ 그녀(유리 밖, 라일락, 75세, 더 작다). 선임·재우(남자, 슬레이트블루·무채색, 크다) ↔ 그녀(노부인, 라일락, 보따리). 프롬프트에서 옷과 보따리로 부른다: `the tiny old woman in the lilac padded coat with the bundle on her back`.
+- **시트 메모 (art-director·ref-sheet-artist):** `MOVEIN_ref` 1장(16:9) = `three full-body views of the same tiny elderly woman side by side (front; three-quarter turned to her left; back view showing the cream cloth-wrapped bundle of bedding on her back), plus a head-and-shoulders front close-up with her serene smile, plus two small head studies (looking past the viewer with a fond, appraising look; the smile gone, blank and patient), plus a low close-up of her feet in white socks with her black comfort shoes placed neatly side by side behind her heels` + FULL. 반드시 보일 것: 모든 전신 뷰에 신발 없는 흰 양말(신발은 발 클로즈업 칸에만), 가슴 앞 매듭과 어깨 위로 솟은 보따리, 회라일락 누빔, 뽀글 파마. **표정 시트는 따로 만들지 않는다**(1회용, 표정 변화가 작다). **조건:** 그녀가 나오는 컷이 8컷 이상이면 필수, 그보다 적으면 카드 없이 그녀의 첫 합격 패널을 이후 컷에 첨부(art-director 판단).
+
+### 4-11. HAND-RENAME · 개명 신청의 손 + 연살구 서식 — v1.2 신규 (EP03 Phase 4 전)
+
+| ID | 대상 | 고정값 | 영문 토큰 (Flow용) |
+|---|---|---|---|
+| **HAND-RENAME** | 개명 신청의 손 | **왼손.** 성별을 알 수 없고 나이를 특정할 수 없는(주름지지도 앳되지도 않은) 평범한 어른의 손. 보통 크기, 손가락은 평범하고 끝이 조금 뭉툭. 보통 웜 베이지 피부, **마른 손**. 짧고 칠하지 않은 손톱. **검지 가운데 마디에 무늬 없는 베이지 천 반창고 한 겹**(깨끗하다, 피 없음). 소매: **짙은 초콜릿 갈색 코듀로이 재킷**의 해진 소맷부리가 손목뼈를 덮고, 셔츠 커프스는 보이지 않는다. 반지·시계·팔찌 없음. 얼굴·몸·머리카락은 화면에 넣지 않는다 | `an ordinary adult LEFT hand of indeterminate gender and no particular age (neither wrinkled nor youthful), medium-sized with plain, slightly blunt fingers, medium warm-beige skin, completely dry; short, plain, unpolished nails; a plain beige fabric adhesive bandage wrapped once around the middle of the index finger, clean, no blood; the worn cuff of a dark chocolate-brown corduroy jacket with clearly visible vertical ribs falling over the wrist bone, no shirt cuff showing; no ring, no watch, no bracelet; no face, no body, no hair visible` |
+| **PROP-FORM-RENAME** | 개명 신청서 | world §5-3 **연살구색** 종이: 부드럽고 옅은 복숭아빛 주황, 화면의 어떤 주황(달냥이 고양이)보다 옅다. 분홍(EP05 정보공개 청구서)·주황·빨강으로 번지지 않게. 빈 칸만, 글자·숫자·직인 자국 없음. 칸 배치·빈 직인 칸 여부는 art-director(world §5-3 형식) | `a single sheet of pale apricot paper, a soft light peach-orange paler than any orange in the scene (not pink, not red), printed only with rows of empty ruled boxes, no text, no numbers, no seal mark` |
+
+- **상태 토큰 (EN):**
+  - 벨: `the fingertips of that LEFT hand pressing down once on the top of the brass dome call bell on the outer ledge of the service window; the frame stays below the glass` ("띵" 한 번, world §5-2)
+  - 투입구: `that LEFT hand pushing the pale apricot form flat into the steel document slot under four fingertips; only the paper passes through, the fingertips stop at the slot` — 창구 안쪽에서 보면 이 왼손은 **화면 오른쪽**에서 들어오고 엄지가 화면 가운데 쪽이다
+  - 칸 짚기: `the bandaged LEFT index finger resting on one empty box in the middle of the pale apricot form` (새 이름 칸. 낭독은 목소리가 한다)
+- **대비표 (이 손이 누구의 손으로도 읽히지 않게):**
+
+| 손 | 좌우 | 피부 | 소매 | 표식 |
+|---|---|---|---|---|
+| **HAND-RENAME** | **LEFT** | 보통 웜 베이지, 마름 | 짙은 갈색 코듀로이, 셔츠 커프스 없음 | 검지 베이지 반창고, 반지·시계 없음 |
+| HAND-CLIFF / JAEWOO | RIGHT | 가늘고 창백한 쿨톤 | 차콜 가는 골지 니트 + 흰 셔츠 커프스 | 검지 은반지, 빨간 롤 |
+| MIRAN | LEFT | 밝은 쿨톤 | 차콜 정장 + 아이보리 실크 커프스 | 금색 팔찌형 시계, 누드 손톱 |
+| SEOHA | 양손 | 밝은 웜톤, 작은 손 | 머스터드 꽈배기 소매가 손등을 반쯤 덮음 | — |
+| SEONIM | 양손 | 그을린 피부, 크고 거친 손 | 슬레이트블루 작업 점퍼 | — |
+| JEONGMIN | 양손 | 밝은 피부, **젖음** | 젖은 카키 트렌치 | 투명 비닐 파일 |
+| MOVEIN | 양손 | 잔주름진 노인의 손 | 회라일락 누빔 | 보따리 매듭 |
+
+- **HAND-RENAME 규칙 [고정]:** ① EP04에서 창구 앞에 서는 사람(series-arc §5 EP04 '개명 대리인')이 **이 토큰을 그대로 물려받는다** [권장 · twist-master 확정]. 손 주인 결정이 이 토큰과 맞지 않으면 **EP03 Phase 4 전에** character-designer를 다시 부른다(한 번 그리면 바꿀 수 없다 — HAND-CLIFF와 같은 규칙) ② **반창고 아래에 무엇이 있는지는 정하지 않는다** [봉인 경계 · EP04 설계 몫] ③ 클리프 컷은 **카운터 높이 아래(벨 선반·투입구)로 자른다** — 유리와 그 반사는 프레임에 넣지 않는다(§2-8). EP04 P1–5가 같은 구도를 되풀이한 뒤 위로 올라갈지는 EP04 설계 몫(EP01 P61 → EP02 P2와 같은 문법이 가능하다) ④ EP01 HAND-CLIFF의 거울 구도다: 오른손·검지 은반지·빨간 롤 ↔ 왼손·검지 반창고·연살구 서식
+- **Flow 드리프트 주의:** 반드시 **왼손**(엄지 방향으로 확인). 반지·시계·팔찌가 생기면 다시. 소매가 차콜 니트·정장·머스터드·라일락으로 바뀌거나 **흰 셔츠 커프스가 보이면 다시**(재우와 섞인다). 코듀로이 골이 보여야 한다. 반창고에 빨강·피 금지. 손이 젖거나 잉크가 묻으면 다시(구정민·EP10 재우). 서식이 분홍·주황·빨강이면 다시. 화면에 손은 하나뿐, 얼굴·몸·그림자 없음.
+- **시트 메모:** `HANDRENAME_ref` 1장(16:9, **필수**) = `three studies of the same ordinary adult LEFT hand on a plain light-gray background, cropped at mid-forearm: fingertips pressing the top of a small brass dome call bell; the hand pushing a pale apricot blank form flat under its fingertips; the bandaged index finger resting on one empty box in the middle of the form` + HAND-RENAME + PROP-FORM-RENAME 토큰. 반드시 보일 것: 코듀로이 골, 셔츠 커프스 없음, 깨끗한 반창고, 반지·시계 없음, 연살구(분홍·주황 아님), 글자 없음. **첨부 금지:** `HANDCLIFF_ref`·`JAEWOO_*`(반지·커프스가 옮아온다). 사용: EP03 클리프 컷, EP04 P1–5.
+
+### 4-12. EP03 상태 토큰 · 낮 1 + 밤 2 (기존 토큰 변경 없음 · 새 카드 없음)
+
+| 인물·대상 | EP03 상태 | 메모 · 영문 |
+|---|---|---|
+| 강서하 | **09:00 서명 = EP02 P53–P58 상태 그대로**(의상 A + 밤샘 + 네이비 토트백 LEFT 어깨). 낮 근무(창구 자리) = 의상 A + 밤샘, 토트백은 의자 등받이 [권장]. 바깥 컷이 있으면 의상 B(네이비 롱 패딩). **밤 2 = 의상 A + 밤샘 그대로** | 밤샘은 §4-9 원문 + character-sheets §10-2 풀이를 그대로 쓰고 **단계를 올리지 않는다**(다크서클 금지 = 재우의 얼굴 앵커). 서명하는 손 = character-sheets §10-2 '펜' 토큰. 표정은 기존 시트로 충분. 카드 불필요 |
+| 노미란 | **낮 1 = 의상 A 원문**(EP02 P53–P57과 같다, 완전 복구). **밤 2 등장 없음** [권장]. EP03에 의상 B·'A-정돈 중' 없음 | 손 컷 = character-sheets §10-3 LEFT 손 토큰. **낮 창구 책상의 빨간 비닐테이프 롤은 배경 소품이다:** 그녀가 들지 않고, 손·몸·코트에 닿지 않으며, 그녀가 보지 않는다(twist-plan §5 · 몸의 빨강은 EP19 리플레이 전까지 금지). 같은 컷에 있어도 되지만 손과 롤 사이에 거리를 둔다. EP02는 책상 면을 숨겼고 롤의 첫 노출이 EP03이다(배치는 art-director). 결재판이 위층으로 올라가는 컷(EP07 단서)이 그녀의 손이면 같은 LEFT 손 + 글자 없는 결재판, 위층의 사람은 화면 밖(과장 디자인은 EP12). 카드 불필요(`MIRAN_turnaround`·`MIRAN_expressions` 첨부) |
+| 선임 | 밤 2 변경 없음 | 낮에 나오지 않는다 |
+| 남재우 | 밤 2 변경 없음(같은 옷, §4-8) | 낮에 나오지 않는다 [권장]. 전입 민원인과 같은 컷: 길쭉한 남자·무채색 ↔ 작은 노부인·라일락 |
+| 낮 엑스트라 (L3 창구 · 민원1팀) | §4-9 L3 엑스트라 원문 + 아래 덧붙임 | 덧붙임(EN, 원문 끝에 붙인다): `; nobody is a tiny elderly woman in a lilac padded coat, nobody carries a cloth-wrapped bundle on their back, nobody stands in socks without shoes, and nobody wears a brown corduroy jacket or has a bandage on a finger` — 밤의 두 민원인을 닮은 낮 인물은 독자에게 거짓 단서가 된다. 민원1팀 동료가 필요하면 같은 규칙(초점 밖, 단순한 얼굴, 빈 공무원증, 주요 인물의 주색 없음). 카드 불필요 |
+| 구정민 | 등장 없음 | EP08 재등장 |
+
 ---
 
 ## 5. 이름·호칭 크메르어 표기 (`glossary_km.md` 등록용)
@@ -443,9 +608,16 @@
 | 너 (재우 → 서하) | ឯង | [초안] 자신은 `គ្នា` |
 | 나 (재우, 반말) | គ្នា | [초안] 해요체로 물러설 때는 `ខ្ញុំ` |
 | (서하 → 재우) | លោក | [초안] 이름을 모르는 동안(EP02–05). EP06부터 이름 |
+| 전입 민원인 (화자 표기) | អ្នកផ្លាស់មកនៅ | EP03 [제안 → glossary 확정 후 고정]. "이사 와서 사는 사람". 이름 없음 |
+| 나 (전입 민원인) | នាងខ្ញុំ | [초안] 격식 있는 여성 1인칭. `ចាស`는 쓰지 않는다(§3-8) |
+| (서하 → 전입 민원인) | លោកយាយ | [초안] 노부인에게 가장 자연스러운 존칭. 한국어가 "민원인님"이면 dialogue-writer가 고른다 |
+| 개명 신청 목소리 (화자 표기) | សំឡេងពីបញ្ជរ | EP03 클리프 [제안 → glossary 확정 후 고정]. "창구에서 온 목소리". EP04에서 정체가 생기면 새 행을 더하고 이 행은 바꾸지 않는다 |
+| 전입신고 | ការចុះបញ្ជីស្នាក់នៅ | [초안] 용어. 사망신고 `ការចុះបញ្ជីមរណភាព`와 같은 틀 |
+| 개명 신청서 | ពាក្យសុំប្ដូរឈ្មោះ | [초안] 용어. `ប្ដូរ`는 glossary §0의 ដ 아래첨자 |
 
 - 남재우 표기 근거: 피할 소리 목록을 지켰고, 기존 이름의 음절(សឺ·ហា·មីន·ជុង·ជី·ហូ)과 겹치지 않는다(대사에서 이름끼리 헷갈리지 않게). 레퍼런스 ID `JAEWOO`도 `SEONIM`·`JEONGMIN`과 글자 모양이 갈린다. 성 `ណាម`은 크메르어 `នាម`(이름, 문어)과 소리가 같다: 이름이 지워지는 인물에게 둔 은근한 울림이다. 원어민 감수에서 어색하면 **첫 사용(EP06) 전까지만** 바꿀 수 있다.
 - 선임은 이름이 없다. 대본의 화자 표기(`KM: <화자>៖`)는 호칭과 같은 `លោកពូ`를 권장한다. 정체가 공개되어 이름이 생기면 그때 새 행을 추가하고 이 행은 바꾸지 않는다.
+- **EP03 메모:** 두 민원인 모두 **이름이 없다** → 이름 행을 만들지 않고 화자 표기만 둔다. 관할 안에서 남의 이름을 낭독하면 그 사람이 이 밤의 기록에 오르고, 그 무기는 EP06(수칙 2 역전)의 몫이다 → EP03에서 서하가 민원인의 이름을 읽는 장면을 만들지 않는다 [권장]. 두 화자 표기는 띄어쓰기가 없어 뷰어가 묶을 필요가 없고, 기존 이름 음절(សឺ·ហា·មីន·ជុង·ជី·ហូ·ជែ·វូ)과 겹치지 않는다. `ផ្លាស់មកនៅ`("이사 와서 살다")는 일상어라 캄보디아 독자에게 바로 읽히고, `សំឡេងពីបញ្ជរ`는 기존 `សំឡេងពីក្រោយ`·`សំឡេងពីជណ្ដើរ`와 같은 틀이며 `បញ្ជរ`는 수칙 1의 '창구'다.
 
 ---
 
@@ -480,6 +652,8 @@
 | 노미란 ↔ 남재우 (EP02~) | 떠넘긴 자와 첫 막내. 밤마다 숙직실 문 하나 사이에 있지만 그녀는 모른다(되감기면 잊는다) | 그는 숙직실 문 쪽을 보지 않는다. 그녀의 이름을 말하지 않는다(무기를 쓰지 않는 회피) | 서명 없는 면직 폭로(EP08) → 그의 민원(EP10) → 서하의 이관으로 그녀가 정정 사유를 쓴다(EP11) |
 | 선임 ↔ 남재우 (EP02~) | 서로 아는 척하지 않는다 [권장 연출] | 그는 선임에게 묻지 않고, 선임은 그를 부르지 않는다. 그는 선임에 대해 단정하지 않는다(선임이 되감김을 기억하는지 그가 아는지는 말하지 않는다 · M5 경계) | EP17 선임 정체 공개 때 재우의 테이프 의미가 함께 회수된다 |
 | 구정민 ↔ 남재우 | 같은 끝의 앞사람과 뒷사람(기억을 다 낸 당직자 → 민원인) | EP02 만나지 않음 [권장] | EP10 같은 질문의 에코 |
+| 서하 ↔ 전입 민원인 (EP03) | 받아 달라는 사람과, 받지 않는 법을 처음 쓰는 사람 | 서하를 처음으로 '담당자'로 찾는다 → 접수 → 기록 근거 반려. 같은 날 낮 서하는 노미란의 짐을 받았다(거울) | 1회용. 문간의 신발이 첫 "아니요"의 값으로 남는다 |
+| 서하 ↔ 개명 신청 (EP03 끝) | 그녀의 이름을 새 이름으로 달라는 손 | 클리프 | EP04 P1–5 답 반(노미란의 풀네임 호명) / 질문 반(진짜 신청인). 손은 EP04 창구 앞 대리인이 물려받는다 [권장] |
 
 ---
 
@@ -506,6 +680,13 @@
 | C17 | 이름 공개가 EP06인 이유 | **그도 당직자라 수칙 2에 묶인다** | 자기 이름을 말할 수 없다 → 서하가 기록을 근거로 말해야 처음 불린다(EP06 수칙 2 역전과 맞물림). 서하의 이름을 부르지 않는 것은 그녀를 기록에 올리지 않으려는 배려 |
 | C18 | 전임자 말투 | **목격형 되묻기** + 동갑 반말 ↔ 해요체 후퇴 | 선임(전언)·서하(절차)와 삼각을 이룬다. 질문·기록과 맞는 말만 하므로 법칙 ①과 충돌하지 않는다 |
 | C19 | EP10 민원인 형태 | [초안] 오른손 손끝의 검푸른 잉크 | 서명 없는 면직이라는 기록의 어긋남이 '서명하는 손'에 드러난다(series-arc §8-2 권장). 구정민의 물과 같은 문법. EP10 전에 재호출해 확정 |
+| C20 | 전입 민원인의 나이·성별 | **70대 중반 여성 · 148cm** | 실루엣이 기존 다섯과 가장 멀다(가장 작고 가장 늙었다). 구정민(30대 남성 직장인)과 겹치지 않는다. 크메르어에서도 `បាទ`(구정민)와 저절로 갈리고, `នាងខ្ញុំ`로 서하의 `ខ្ញុំ`과 갈린다. "받아 달라"는 민원을 가장 거절하기 어려운 얼굴에 실어 첫 반려의 값을 만든다. **기각:** 중년 남성 직장인(구정민과 겹침), 아이(수위·Flow 부담) |
+| C21 | 전입 민원인의 어긋남 | **흰 양말 + 문간에 가지런히 벗어 둔 신발** | 집에 들어갈 때 신발을 벗는 관습은 한국·캄보디아 공통이라 글 없이 "여기를 집으로 안다"가 읽힌다. 정지 그림과 Flow에서 매 컷 같은 모양으로 재현된다. 카운터가 발을 가려 '발견' 연출이 저절로 생긴다. 물(구정민)·잉크(재우 EP10)와 다른 계열이라 문법은 같고 모양은 다르다. **기각:** 녹지 않는 눈(구정민의 젖음과 너무 가깝다), 그림자·창문 빛 이상(Flow 불안정, 스탠드 노랑 '유일한 온기' 규칙과 충돌), 먼지(철회색 머리와 섞인다), 열쇠(당직 열쇠의 상징과 섞인다) |
+| C22 | 전입 민원인의 말투 | **의지 선언형("~하겠습니다") + 덧붙는 약속** | 서하(절차)·선임(전언)·구정민(요청)·재우(목격형 되묻기)에 이은 다섯 번째 '안전한 말'. 의지는 사실 단정이 아니라 법칙 ①과 충돌하지 않는다. 구정민의 반복과 반대 방향의 압박 |
+| C23 | 개명 신청의 손 | **왼손 · 짙은 갈색 코듀로이 · 검지 반창고 · 반지·시계 없음** | EP01 클리프의 거울(오른손·검지 은반지·빨간 롤 ↔ 왼손·검지 반창고·연살구 서식): 독자는 '또 하나의 클리프 손'을 알아보지만 재우로 읽지 않는다. 노미란의 왼손(금시계·차콜 정장 + 아이보리 커프스)과는 소매·시계로, 재우와는 셔츠 커프스 유무로도 갈린다. 반창고는 의미를 정하지 않은 표식이다(EP04 대리인 설계의 여지) |
+| C24 | 개명 신청의 목소리 | **비인칭 · 1인칭·소유·성별 표지 없음** | EP04에서 창구 앞이 대리인으로 밝혀질 때의 공정성(대리인이 "제 이름"이라 했다면 법칙 ①에 걸렸어야 한다). 크메르어 성별 첨사(`បាទ`/`ចាស`)를 빼야 목소리의 성별이 열려 있다 |
+| C25 | EP03 레퍼런스 카드 | `MOVEIN_ref` 1장(8컷 이상이면 필수) · `HANDRENAME_ref` 1장(필수) · 낮 상태 0장 | 1회용 민원인은 표정 시트까지 만들 이유가 작다(표정 변화가 작고, 사용자 부담). 손은 클리프 + EP04 P1–5 + EP04 대리인 상속이라 기준이 꼭 필요하다(HANDCLIFF_ref와 같은 이유). 낮 상태는 기존 카드 + 문장으로 충분(character-sheets §10-6의 EP02 판단과 같음) |
+| C26 | 노미란의 밤 2 | 등장 없음 [권장] | 명부상 담당자가 서하로 넘어가 숙직실에 남을 이유가 없다. 의상 B·'A-정돈 중'이 EP03에 없어 Flow 부담이 준다. 그녀가 밤에 다시 오는 것은 EP11(이관으로 불려 옴)의 몫 |
 
 - concept [고정]·world [고정]과 충돌한 항목은 없다. world §10-4 의상 제약(11월 지하의 추위, 관공서 사무복, 정장은 팀장급까지, 빈 공무원증, 빨강 금지, 철 지난 민원인 차림, 선임은 당직석에 앉지 않음)을 모두 반영했다.
 
@@ -527,5 +708,10 @@
 | **art-director → ref-sheet-artist·prompt-smith (EP02)** | §4-8 전체(영문 한 줄 그대로), §4-9 상태 토큰 | `JAEWOO_ref`(턴어라운드 + 표정 6 + 오른손 클로즈업). `HANDCLIFF_ref`와 손을 같은 원본에서. character-sheets에 섹션만 추가 |
 | **twist-master** | §2-6 비밀·봉인 경계 | 반지 습관·출처 [권장], 빈 목줄 사연 [권장] 채택 여부. **EP05 영수증 낭독에서 그의 이름을 읽으면 첫 공개가 EP06에서 EP05로 당겨진다** → 읽지 않게 하거나 series-arc를 고친다. EP10 '한 군데' 방향(§4-9) |
 | **panel-validator (EP02)** | §4-8 드리프트 주의 | 재우: 오른손 검지 은반지 · 빈 클립 · 흰 커프스 · 안경 없음 · 사람으로 보임. 서하와 카디건 색 섞임. 서하에게 다크서클이 번졌는지 |
+| **episode-outliner · dialogue-writer (EP03)** | §0-5, §2-7·§2-8, §3-8·§3-9, §4-12 | 반려 사유(기록 근거) 확정 — 권장 "기록상 주거지가 아님(제2문서고)". "담당자분 계십니까?"는 E5 앞 문장만. 서하는 새 이름을 읽지 않는다(수칙 2) → 목소리가 말한다. 신발 발견 구도(첫 등장은 카운터가 발을 가림), 신발이 먼저 와 있는 컷을 쓸지. 노미란 밤 2 비등장 |
+| **twist-master (EP03·EP04)** | §2-7 원리, §2-8 경계, §4-11 규칙 | HAND-RENAME 주인 = EP04 창구 앞 대리인 확정(안 맞으면 EP03 Phase 4 전 재호출). 반창고 아래 [봉인]. 전입 민원인의 빈 주소 사연·수리 시 결과 문구 |
+| **art-director → ref-sheet-artist·prompt-smith (EP03)** | §4-10·§4-11 영문 그대로, §4-12 덧붙임 문장 | 카드 2장(`MOVEIN_ref` 조건부 필수, `HANDRENAME_ref` 필수). **전입신고서 색 확정**(제안: 옅은 옥색) → worldbuilder에 world §5-3 행 추가 요청. 낮 창구 책상의 빨간 롤 배치(노미란 손과 거리). `HANDRENAME_ref`와 클리프 컷에 `HANDCLIFF_ref`·`JAEWOO_*` 첨부 금지. character-sheets에 섹션만 추가 |
+| **panel-validator (EP03)** | §4-10·§4-11 드리프트 주의 | 전입 민원인: 창구 앞 양말 · 신발 위치·모양 · 크림 무지 보자기 · 라일락 · 서하보다 작음 · 사람으로 보임. 개명 손: LEFT · 반지·시계 없음 · 코듀로이 골 · 셔츠 커프스 없음 · 반창고 깨끗 · 연살구(분홍·주황 아님) · 유리·반사 없음 |
+| **dialogue-writer · glossary 담당 (EP03)** | §3-8·§3-9 크메르어 메모, §5 새 행 | 화자 표기 두 개 확정. 전입 민원인 `នាងខ្ញុំ`·`ចាស` 금지. 개명 목소리 성별 표지 0. 새 이름 `កាង សឺហា` 바이트 동일. 용어 전입신고·개명 신청서 |
 
 - 외형 토큰을 바꾸면 이 문서의 §4-7 이력에 적고 비주얼팀에 알린다. 바꾼 토큰은 이미 그린 레퍼런스 시트·패널과 충돌하므로, Phase 4가 시작된 뒤에는 바꾸지 않는 것이 원칙이다.

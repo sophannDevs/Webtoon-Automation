@@ -2,6 +2,7 @@
 
 - 작성: art-director · 기준일 **2026-11-16** · EP01 Phase 4 · **v1** (외형 토큰 원본 = `02_story/characters.md` §4 v1)
 - **v1.1 · 2026-11-17 · EP02 추가 → §10** (외형 토큰 원본 = `characters.md` §4-8 · §4-9 v1.1). **§0–§8의 토큰·표정·상태 문장은 한 글자도 바꾸지 않았다**(EP01 프롬프트가 쓴다). 신규: 남재우 JAEWOO(§10-1), EP02 상태(서하 밤샘 · 노미란 B+코트 뭉치 / 'A-정돈 중' / 손 · 선임 졸음, §10-2–§10-4), 인물 구분(§10-5), 레퍼런스 카드 17–21(§10-6), 검수표(§10-7)
+- **v1.2 · 2026-11-18 · EP03 추가 → §11** (외형 토큰 원본 = `characters.md` v1.2 §4-10 · §4-11 · §4-12). **§0–§10의 토큰·표정·상태 문장은 한 글자도 바꾸지 않았다**(EP01·EP02 프롬프트가 쓴다). 신규: 전입 민원인 MOVEIN(§11-1), 개명의 손 HAND-RENAME(§11-2), EP03 상태(서하 · 노미란 · 선임 손 · 재우 · L3 엑스트라, §11-3–§11-4), 인물 구분(§11-5), 레퍼런스 카드 22–23(§11-6), 검수표(§11-7)
 - 짝 문서: `04_visual/style-bible.md` (화풍·LOC·PROP·조명·말풍선 공간·금지)
 - 다음 독자: **ref-sheet-artist**(§7 → `refs/ref_prompts.md`), panel-director, prompt-smith, panel-validator(§8)
 - Flow-by-hand: 아래 영문 토큰은 **그대로 붙여 넣는 완결된 영어**다. 토큰 이름(SEOHA 등)은 프롬프트에 쓰지 않는다. 인물 이름은 써도 되지만 이름만으로는 Flow가 모르므로 외형 문장을 항상 함께 넣는다.
@@ -34,6 +35,7 @@
 - 같은 컷에서 주색 넷(머스터드·검정·슬레이트블루·젖은 카키)은 겹치지 않는다(characters §4-1).
 - 디자인하지 않는 인물: 강지호(목소리만, 휴대폰 빈 화면), 엄마(언급), 전임자(손만 = HAND-CLIFF. 전신 토큰은 EP02 Phase 4 전 character-designer), 과장(언급). **이들을 그리지 않는다.**
 - (v1.1) EP02 캐스트는 **§10-0**. 전임자 = 남재우 JAEWOO(§10-1)가 HAND-CLIFF를 물려받았다.
+- (v1.2) EP03 캐스트는 **§11-0**. 새 인물: 전입 민원인 MOVEIN(1회용, §11-1) · 개명의 손 HAND-RENAME(손만, EP04로 이어짐, §11-2).
 
 ---
 
@@ -335,6 +337,7 @@ ref-sheet-artist는 아래 카드마다 `refs/ref_prompts.md`에 블록 하나�
 |---|---|---|
 | v1 | 2026-11-16 | characters §4 v1 토큰을 그대로 옮김(FULL). SHORT·상태 토큰·표정 영문 추가(서하 표정 ⑦⑧ 추가: P6·블랙코미디 컷용). 노미란 의상 B FULL을 자족형으로 보강(내용 동일). 레퍼런스 카드 16장 사양(필수 12) |
 | v1.1 | 2026-11-17 | **EP02 추가(§10), §0–§8 변경 0.** JAEWOO FULL = characters §4-8 영문 원문 그대로 + SHORT · 표정 6종 영문 · 상태 토큰(P1 빈손 · P2 오르는 컷 등). 서하 밤샘(원문 + 프롬프트용 풀이), 노미란 P43 B+코트 뭉치 · 'A-정돈 중'(원문 + 자족형 FULL, 내용 동일) · 손 클로즈업, 선임 졸음 등, L3 엑스트라(원문). 카드 17–21(필수 3: JAEWOO_turnaround · JAEWOO_expressions · PROP_HANDOVER_pair / 권장 2: L3 플레이트). 상태 변주는 카드 없음 |
+| v1.2 | 2026-11-18 | **EP03 추가(§11), §0–§10 변경 0.** MOVEIN FULL · SHORT = characters §4-10 영문 원문 그대로 + 표정 5종 · 상태 토큰(원문 + P23 실루엣 · P24 손 · P34 턱 위 서식 · P41 입가 · P48 퇴장). HAND-RENAME FULL = characters §4-11 원문 + 서식 토큰(배치 결정: 표처럼 줄지은 빈 칸 + 가운데 넓은 칸, 직인 칸 없음). EP03 상태: 서하(뒷면 · 서명 순간 · 앵커의 명부 · 서랍 · 첫 직인 등) · 노미란 낮 A · 선임 손 문장(신규) · 재우 대기 의자 · L3 엑스트라 덧붙임. 카드 22–23(필수 2: `MOVEIN_ref` — 그녀가 보이는 컷 12 ≥ 8 · `HANDRENAME_ref`). 상태 변주·소품은 카드 없음 |
 
 - 새 인물(전임자 전신 등)은 이 문서에 섹션만 추가하고 글로벌 규약(style-bible)은 유지한다.
 
@@ -570,3 +573,249 @@ ref-sheet-artist는 `refs/ref_prompts.md`에 아래 블록을 **추가만** 한�
 | MIRAN (EP02) | P43 B(담요·비뚤어진 안경) + 팔의 코트 뭉치 · P45–P49 코트를 다시 어깨에(팔은 소매 밖) + 눌린 단발 + 구겨진 블라우스 + **안경 똑바로** · P53–P57 A 완전 복구 · 금시계 LEFT 손목 · 빨강 0 | 'A-정돈 중'에 담요, 코트 소매에 팔, P53 이후 흐트러진 머리, 립·네일 빨강, 책상 위 빨간 롤 |
 | SEONIM (EP02) | §8 그대로 + 재우를 보지 않음 · 졸 때 눈 감음 | 재우와 눈 맞춤, 안경 착용 |
 | L3 엑스트라 | 09:00에만 · 초점 밖 · 주요 인물의 주색·실루엣 없음 | 새벽에 사람, 머스터드·검은 코트·차콜 카디건 차림, 명찰 글씨 |
+
+---
+
+## 11. EP03 추가 (v1.2 · 2026-11-18)
+
+> 원본: `characters.md` v1.2 §0-5 · §2-7 · §2-8 · §4-10 TOKEN-MOVEIN · §4-11 HAND-RENAME · §4-12 EP03 상태. 장면 근거: `ep03_script_final.md`(60패널 · 검수 노트 E-1 · E-3) · `ep03_beatsheet.md`(§2 · §3-3). 장소·조명·소품은 style-bible §6-6-1 · §6-3 · §6-5 · §3-5 · §7-7. **§0–§10은 그대로 유효하다.** 여기에는 EP03에 새로 필요한 것만 있다.
+
+### 11-0. EP03 캐스트 요약
+
+| ID | 이름 (KM 화자) | 주색 | 식별 표식 | EP03 등장 | 레퍼런스 |
+|---|---|---|---|---|---|
+| SEOHA | 강서하 | 머스터드 | 점 RIGHT 눈 밑 · 빈 공무원증 + 네이비 목줄 | 거의 전편 — 의상 A + 밤샘 상태 그대로(낮 L3 → 밤 L1) | 기존 |
+| MIRAN | 노미란 | 검정·차콜 | 금테 하프림 · 금시계 LEFT 손목 | **낮만** P1–P17(의상 A 완전 복구) · 손 P1 · P8 · P13 · P16 · 밤 등장 없음 | 기존 |
+| SEONIM | 선임 | 슬레이트블루 | 흉터 LEFT 눈썹 · 목의 돋보기 | 손 P20 · P36 · P41 · P27(배경) · P32 · P38 · P50 · P55 · 목소리 P43 · P49 | 기존 |
+| JAEWOO | 남재우 (អ្នកមុន) | 무채색 | RIGHT 검지 은반지 · 빈 클립 목줄 · 다크서클 | P51 · P52 · P53 · P54 (+ P11 비네트) | 기존 |
+| **MOVEIN** [신규 · 1회용] | 전입 민원인 (អ្នកផ្លាស់មកនៅ) | **회라일락** | 등의 크림 이불 보따리(가슴 앞 매듭) · 철회색 뽀글 파마 · **신발 없이 흰 양말**(신발은 등 뒤 바닥) | 실루엣 P23 · 손 P24 · P25 · 발 P26 · P27 · P31 · P34 · P38 · 입가 P41 · P43 · P46 · P48 = **12컷** | **신규 `MOVEIN_ref`** (필수) |
+| **HAND-RENAME** [신규 · 손만] | 개명 신청 (សំឡេងពីបញ្ជរ) | 짙은 갈색 코듀로이 | **LEFT** 손 · 검지 가운데 마디 베이지 반창고 · 반지·시계 없음 | P57 (+ EP04 P1–5) | **신규 `HANDRENAME_ref`** (필수) |
+| (배경) | L3 낮 엑스트라 | 회색·베이지·짙은 녹색 | 디자인하지 않는다 | S01(P1–P18) 초점 밖만 | — |
+| (목소리) | 창구의 목소리 | — | 그리지 않는다(얼굴·몸·반사 없음) | P57–P59 | — |
+
+- 같은 밤 컷의 주색: 머스터드 · 슬레이트블루 · 회라일락 · 무채색 — 겹치지 않는다. 구정민(P28 비네트 제외)·지호는 EP03에 없다.
+- **이삿짐 상자는 없다.** beatsheet §3-3의 "끈으로 묶은 무지 상자"는 characters §4-10의 **등에 진 이불 보따리**로 대체됐다.
+
+### 11-1. 전입 민원인 — MOVEIN (EP03 괴이 민원인 · 1회용)
+
+- identity_tag: `MOVEIN` · 70대 중반으로 보이는 여 · **148cm**(작품에서 가장 작다, 서하보다 한 뼘 작다). 프롬프트에서는 옷과 보따리로 부른다: `the tiny old woman in the lilac padded coat with the bundle on her back`
+- 레퍼런스: `refs/MOVEIN_ref.png` (§11-6 카드 22 — 턴어라운드 + 발 + 작은 머리 습작 한 장. **표정 카드는 따로 없다**)
+- 어긋난 한 군데 = **신발 없이 흰 양말**(신발은 등 뒤 바닥에 가지런히). 그 밖의 이상(젖음·먼지·창백함·그림자·반사)은 없다. 존엄 메모(characters §2-7): 노숙·빈곤을 희화화하지 않는다 — 철 지났지만 깨끗하고 단정하다. 공포는 정중함과 양말에서만.
+
+**FULL (characters §4-10 영문 원문 그대로 · 일관성 토큰 · 발이 보이는 컷과 레퍼런스 시트):**
+```
+the move-in complainant, a tiny elderly Korean woman who looks about 75; very petite 148 cm build, slightly stooped yet neat and dignified, standing very still; short, tightly permed iron-gray hair set close to her head; small, gentle single-lidded eyes that crinkle into crescents, a calm, steady gaze that rarely blinks; warm-toned, softly lined skin of a healthy living person (no pallor, no wounds); a knee-length quilted padded coat in a soft grayish lilac that still reads clearly as lilac, buttoned up to a small stand-up collar, in a slightly dated late-1990s style, the folded neck of a cream knit turtleneck showing at her throat, dark brown wool slacks; on her back a large, soft, square bundle of folded bedding wrapped in plain unbleached cream cotton cloth, two corners of the cloth tied in a knot at the front of her chest, the top of the bundle rising above her shoulders; on her feet only thin, spotless plain white cotton socks, NO shoes on her feet; default expression a serene, closed-lip grandmotherly smile; completely dry and clean; no glasses, no hat, no jewelry, no rings, no handbag; no red anywhere
+```
+
+**SHORT (characters §4-10 원문 · 상반신 컷 — 발 문장을 아예 뺀다):**
+```
+the move-in complainant (a tiny elderly Korean woman about 75 with short, tightly permed iron-gray hair and a serene closed-lip smile with crescent eyes, in a soft grayish-lilac quilted padded coat buttoned to a small stand-up collar, a large cream cotton-wrapped bundle of bedding on her back knotted at the front of her chest, its top rising above her shoulders)
+```
+- **FULL/SHORT 규칙:** 발이 프레임에 있으면 FULL + 아래 '신발' 문장. 발이 프레임 밖이면 **SHORT만**(Flow가 신발을 지어내지 않게). 그녀가 화면의 주인공이어도 발이 없으면 SHORT.
+
+**불변 (일관성 핵심):** 아주 작은 키(같은 컷의 서하보다 확실히 작다) · 살짝 굽었지만 단정한 자세 / 짧고 촘촘한 **철회색 파마** / 웃으면 초승달로 접히는 작은 홑꺼풀 눈, 거의 깜빡이지 않는 시선 / 산 사람의 웜톤 잔주름 피부 / **회라일락 무릎 길이 누빔 코트**(스탠드 칼라까지 잠금) + 크림 터틀넥 깃 + 짙은 갈색 바지 / **등에 진 크림 무명 이불 보따리, 가슴 앞 매듭**(내려놓지 않는다, 어깨 위로 솟는다) / **흰 면양말, 신발은 등 뒤 바닥**. 의상 B 없음. 안경·모자·장신구·반지·핸드백·빨강 없음.
+
+**표정 (가변 · 5종 · characters §4-10 — 시트에는 ① 클로즈업 + ③ · ④ 작은 머리 습작):**
+
+| # | 상황 | 영문 | EP03 |
+|---|---|---|---|
+| ① | 디폴트 | `a serene, closed-lip grandmotherly smile, eyes crinkled into crescents, perfectly still` | P25 · P27 · P31 · P34 |
+| ② | 깊은 인사 | `a slow, deep, polite bow, the bundle on her back rising above her bowed head` | P43 · P48(퇴장 전) |
+| ③ | 방을 고르는 눈 (가장 섬뜩하게) | `looking past the clerk into the room behind the glass with a fond, appraising look, as if choosing the corner where she will lay out her bedding` | P38 |
+| ④ | 미소가 사라진 기다림 | `the smile gone, a still, blank, patient face, waiting` | P46 |
+| ⑤ | 반려를 받아들임 | `eyes lowered, a small accepting nod, lips gently pressed together` | P48 (작게) |
+
+- 화난 얼굴·우는 얼굴은 만들지 않는다. P41의 '미소가 아주 조금 굳는다'는 ①의 미세 변화다(과장 금지, 검수 노트 E-3).
+
+**상태 토큰 (패널 묘사에 덧붙인다):**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 신발 (발이 보이는 모든 컷 · characters 원문) | `her own small, worn black low-heeled comfort shoes placed neatly side by side on the dry floor one step behind her heels, toes turned to point back toward the dark end of the corridor, as if left at the front door of her own home` | P26 · 발이 보이는 와이드 · P48(신기 직전까지). 늘 이 자리·이 모양 |
+| 실루엣 (복도 끝) | `far down the dim corridor, a very small dark silhouette walking slowly out of the darkness toward the window, a large round bundle rising above her shoulders, no details visible` | P23 (style-bible VIEW_FROM_WINDOW_FAR · 화면 오른쪽 어둠에서) |
+| 벨을 누르는 손 (역광) | `a small, backlit, softly lined hand reaching up to press the brass dome call bell on the outer ledge, the edge of a soft grayish-lilac quilted sleeve at the wrist, details lost in shadow` | P24 (COMP-BELL). 역광이어도 소매에 라일락이 남게 — HAND-RENAME의 갈색 코듀로이와 갈린다 |
+| 첫 등장 (안쪽 시점 · 발 가림 · characters 원문) | `seen from inside the duty room across the waist-high counter: only her head, her shoulders and the top of the bundle show above the counter edge; she tilts her face up toward the round speaking grille, which is higher than her mouth` | P25 (SHORT와 함께) · 안쪽 시점 컷(P27 · P29 · P34 · P38 · P43)의 기본 크기 |
+| 발견 (복도 쪽 낮은 클로즈업 · characters 원문) | `low close-up on the corridor side: a pair of small feet in spotless thin white cotton socks standing on dry gray speckled terrazzo, and right behind her heels her own small worn black low-heeled comfort shoes placed neatly side by side, toes pointing back toward the dark end of the corridor; no water, no dust, no footprints` | P26 (style-bible VIEW_WINDOW_FLOOR — 코끝 = 화면 왼쪽) |
+| 말구멍 쪽으로 | `leaning close to the glass with her chin raised toward the round speaking grille, her two small hands folded under the knot at her chest` | P27 · P31 |
+| 유리에 바짝 (얼굴) | SHORT + style-bible `LIGHT_GLASS_GLOW` + `the round speaking grille just above her mouth` | P31(① · 턱을 든 채 천천히 고개를 숙인다) · P46(④) — style-bible VIEW_GLASS_CLOSE |
+| 서식을 턱에 (대본 P34) | `taking a folded pale yellow-green form from the knot at the front of her chest and laying it flat and neat on the outer ledge in front of the steel document slot, then folding both small hands under the knot again; the bundle stays on her back` | P34 |
+| 서식을 투입구로 (characters 원문 — 대본에는 없는 동작) | `taking a single folded form from the knot at the front of her chest and pushing it flat into the steel document slot with both small hands; only the paper passes through` | 예비. 손가락은 투입구를 넘지 않는다(world §5-1) |
+| 방을 훑는 눈 | 표정 ③ + `her eyes moving past the clerk's shoulder into the room behind the glass` | P38 |
+| 입가만 | `beyond the glass, below the round speaking grille, only the lower half of her raised face: her closed-lip smile stiffening just very slightly` | P41 (style-bible VIEW_SLOT) |
+| 깊은 인사 | 표정 ② + `both small hands resting on the knot at her chest` | P43 |
+| 퇴장 (characters 원문 + 대본 P48) | `small beyond the glass, turning away: stepping back into her small black comfort shoes without bending down or using her hands, the white sheet with its one small red circle already tucked into the knot at her chest, the bundle on her back, about to walk away toward the dark far end of the corridor` | P48 — **신발을 신는 유일한 컷**. 한 장 = 한 순간: 신발에 발을 넣는 순간을 고른다. 걸어가는 쪽 = 안쪽 시점 화면 오른쪽 |
+
+**금지 · 드리프트 (characters §4-10 그대로 · panel-validator):**
+- 창구 앞에서는 언제나 **양말**. 신발이 발에 있으면 다시(P48만 예외). 신발은 등 뒤 한 걸음 바닥에 한 켤레, 가지런히, 코끝은 복도 끝(어둠) 쪽. 흩어지거나 손에 들리거나 유리 안쪽에 있으면 다시.
+- 보자기는 **무늬 없는 크림 무명**. 전통 비단 보자기의 빨강·분홍·색동·꽃무늬로 그리면 다시(예약 빨강).
+- 라일락은 회색빛 연보라. 분홍·자홍·보라빨강으로 번지거나 회색으로 죽으면 다시(회색이면 재우와 섞인다).
+- 유령으로 그리지 않는다(창백·투명·그림자 없음·흐린 발). 젖지 않았다(구정민과 구별), 먼지·때 없다. 해진 옷·노숙 차림 금지.
+- 안경·모자·장신구 금지(선임 돋보기·노미란 금테가 번지기 쉽다).
+- 서하보다 확실히 작다. 같은 컷에서 키가 비슷해지면 다시. 말구멍(어른 얼굴 높이)이 그녀 입보다 높다.
+- 유리 반사는 정상(수칙 3 몫). 유리 안쪽에 들어오지 않고, 앉지 않는다(대기 의자에도).
+- 빨강은 P48 매듭 사이 반려 통지의 붉은 원(작게)뿐.
+
+### 11-2. 개명 신청의 손 — HAND-RENAME (EP03 클리프 · 손만)
+
+- identity_tag: `HAND-RENAME` · **왼손** · 성별·나이 단서 없음 · 주인은 봉인(EP04에서 창구 앞에 서는 '개명 대리인'이 이 토큰을 그대로 물려받는다 [권장 · twist-master 확정], characters §4-11). EP01 HAND-CLIFF의 거울: 오른손·검지 은반지·빨간 롤 ↔ 왼손·검지 반창고·연살구 서식.
+- 레퍼런스: `refs/HANDRENAME_ref.png` (§11-6 카드 23 · 필수). **첨부 금지: `HANDCLIFF_ref` · `JAEWOO_*`**(반지·흰 커프스가 옮아온다).
+
+**FULL (characters §4-11 영문 원문 그대로):**
+```
+an ordinary adult LEFT hand of indeterminate gender and no particular age (neither wrinkled nor youthful), medium-sized with plain, slightly blunt fingers, medium warm-beige skin, completely dry; short, plain, unpolished nails; a plain beige fabric adhesive bandage wrapped once around the middle of the index finger, clean, no blood; the worn cuff of a dark chocolate-brown corduroy jacket with clearly visible vertical ribs falling over the wrist bone, no shirt cuff showing; no ring, no watch, no bracelet; no face, no body, no hair visible
+```
+
+**서식 (style-bible §7-7 `PROP_FORM_RENAME` = characters §4-11 원문 + art-director 배치 결정):**
+```
+a single sheet of pale apricot paper, a soft light peach-orange paler than any orange in the scene (not pink, not red), printed only with rows of empty ruled boxes, no text, no numbers, no seal mark; portrait, the same size as the other forms, its empty boxes laid out in rows like a table, with one wider empty box across the middle
+```
+
+**상태 토큰 (characters §4-11 원문):**
+
+| 상태 | 영문 | 쓰는 곳 |
+|---|---|---|
+| 투입구 | `that LEFT hand pushing the pale apricot form flat into the steel document slot under four fingertips; only the paper passes through, the fingertips stop at the slot` | **P57** — 창구 안쪽 시점(style-bible VIEW_SLOT)에서 이 왼손은 **화면 오른쪽**에서 들어오고 엄지가 화면 가운데 쪽. 소맷부리가 프레임 가장자리에서 잘려도 코듀로이 골이 한 줄은 보이게 |
+| 칸 짚기 | `the bandaged LEFT index finger resting on one empty box in the middle of the pale apricot form` | 레퍼런스 시트 · EP04 |
+| 벨 | `the fingertips of that LEFT hand pressing down once on the top of the brass dome call bell on the outer ledge of the service window; the frame stays below the glass` | **레퍼런스 시트에만.** EP03 패널에는 그리지 않는다(P56 벨은 효과음, 손은 프레임 밖 — EP10 보호, beatsheet R11) |
+
+- **P57 규칙:** 화면에 손은 하나 · 얼굴·몸·머리카락·그림자 없음 · **카운터 높이 아래로 자른다**(투입구 위 유리는 반사 없는 평평한 어둠) · 서하의 손(머스터드 소매)이 반사적으로 서식 끝을 받는다(§11-3) · 빨강 0.
+- **금지 · 드리프트 (characters §4-11 그대로):** 반드시 **왼손**(엄지 방향으로 확인) · 반지·시계·팔찌가 생기면 다시 · 소매가 차콜 니트·정장·머스터드·라일락으로 바뀌거나 **흰 셔츠 커프스가 보이면 다시**(재우와 섞인다) · 코듀로이 골이 보여야 한다 · 반창고에 빨강·피 금지 · 손이 젖거나 잉크가 묻으면 다시 · 서식이 분홍·주황·빨강이면 다시 · **반창고 아래는 그리지 않는다**(봉인).
+- 대비표(이 손이 누구의 손으로도 읽히지 않게)는 characters §4-11 표를 그대로 쓴다.
+
+### 11-3. 강서하 — EP03 상태 (FULL/SHORT·표정은 §1 그대로)
+
+- **밤샘은 §10-2 문장 그대로, 단계를 올리지 않는다**(characters §4-12). 다크서클 금지(재우의 얼굴 앵커). 의상 A 전편.
+- 표정(§1 번호): ⑧ P2 · P42 · ④ P7 · P8 · P29 · P45 · ③ P18 · ② P30(동공만 흔들림) · P60 · ⑥ P33.
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| L3 카운터 앞 (민원인 쪽) | §10-2 밤샘 문장 + `a plain navy canvas tote bag on her LEFT shoulder` | P1–P12 (토트백 연속성 = style-bible §6-6-1) |
+| 뒷면을 든 손 | `her small fingers, half covered by the mustard cardigan cuffs, holding up the sheet she has just turned over, her fingertip stopped on the single thin box at the very bottom of its blank back` | P5 (+ style-bible `PROP_HANDOVER_B_BACK`) |
+| 하얀 마디 | `her small RIGHT hand gripping a plain ballpoint pen so hard that her knuckles turn white, half covered by the mustard cardigan cuff` | P9 (전경) |
+| 서명 순간 | `her small RIGHT hand, half covered by the mustard cardigan cuff, holding a plain ballpoint pen` + style-bible `PROP_HANDOVER_B_SIGN` | P14 (얼굴은 프레임 밖) |
+| 낮 책상의 바닥 | `sitting at a plain pale gray office desk, both small hands laid flat on top of a small pile — the blue binder, the black ledger on it and the bunch of keys on top — her head bowed, seen in profile` + 표정 ③ | P18 |
+| 앵커 (22:00) | `holding the blue two-ring plastic binder and the thick black hardcover ledger hugged to her chest with both arms, the bunch of old steel keys hanging from the fingers of her RIGHT hand, no phone at her ear, a plain navy canvas tote bag on her LEFT shoulder` | P19 (COMP-ANCHOR) |
+| 일지 첫 줄 | `the tip of a plain ballpoint pen in her small RIGHT hand resting on the first ruled line of a fresh blank page of the black ledger, nothing written` | P21 (P44 = 펜 대신 손끝이 같은 줄) |
+| 서랍 | style-bible VIEW_DRAWERS의 P22 · P49 문장 | P22 · P49 |
+| 서식을 밀어냄 | `her small RIGHT hand, half covered by the mustard cardigan cuff, pushing the corner of the pale yellow-green form back out through the steel slot from the inside` | P35 |
+| 손목이 잡힌 채 맨 위 칸 | `her RIGHT wrist held in a big rough hand while the fingertip of her LEFT hand touches the very top row of the rules sheet on the partition` | P37 (칸막이 = 그녀의 LEFT) |
+| 당겨 들임 | `her small RIGHT hand drawing the pale yellow-green form in through the steel slot` | P41 |
+| 선 채 서식 | `standing up behind the desk, holding the pale yellow-green form in both hands, looking straight through the glass` + 표정 ④ | P45 |
+| 첫 직인 | `her small RIGHT hand, half covered by the mustard cardigan cuff, bringing a small cylindrical wooden seal down onto a blank plain white sheet, leaving one solid red circle with no characters inside` | P47 |
+| 컵을 수첩 귀퉁이에 | `setting a plain white paper cup down on the bottom-right corner of the open navy-linen notebook's blank right-hand page, on the old light-brown coffee ring` | P50 |
+| 명부 위 손바닥 | `her small palm laid flat on the closed blue binder on the desk` | P55 |
+| 반사적으로 받음 | `her small hand, half covered by the mustard cardigan cuff, reflexively taking hold of the edge of the pale apricot form as it slides in through the slot` | P57 |
+| 두 서류 | `in the warm lamp light, her hand holding the pale apricot form beside the blue binder lying open at a page of blank grid cells, the two at the same size, side by side` | P59 |
+| 최종 컷 | 표정 ② + `her lips pressed shut` | P60 — **입은 다문다**(그 이름을 말하지 않는다) |
+
+- 손 컷은 머스터드 소매가 손등을 반쯤 덮는다(§1 '손 클로즈업'). 반지·네일 없음. 그녀가 자기 이름을 쓰는 그림은 없다(서명 글씨 0, P21 일지에도 글자 0).
+
+### 11-4. 노미란 · 선임 · 재우 · L3 엑스트라 — EP03
+
+**노미란 (낮 1만 · 의상 A 원문 = §2 FULL A · 손 = §10-3 LEFT 손 문장 · 표정 ① 기본):**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 팔짱 · 기댐 | `arms folded, leaning lightly on the staff side of the counter's raised ledge` + 표정 ① | P3 |
+| 결재판 톡 | `tapping the dark navy approval folder lying on the counter top with one fingertip of her LEFT hand` | P7 |
+| 일지를 덮는 손바닥 | `leaning over the ledge and laying her LEFT palm flat on the cover of the thick black ledger on the counter top` | P8 |
+| 낮은 웃음 (후경) | `leaning close with a low laugh, speaking quietly, her cold eyes not smiling` | P9 |
+| 카운터에 기댐 (COMP-HANDOVER) | §10-3 '카운터에 기댐' + 표정 ① | P10 |
+| 아래 줄 가리키기 | `pointing with the fingertip of her LEFT hand at the empty lower signature line of the form on the counter top` | P13 (롤과 반대쪽 손) |
+| 결재판에 끼움 | `picking up the form and slipping it under the clip of the dark navy approval folder, reading it aloud in a businesslike way, a satisfied closed-lip smile` | P15 |
+| 바인더를 밀어 넘김 | §10-3 LEFT 손 문장 + `her LEFT palm sliding the blue two-ring binder across the very low frosted-glass divider onto the next desk` | P16 |
+| 계단 | `seen from behind at three-quarters, climbing the broad stone staircase with the dark navy approval folder tucked under her LEFT arm, the long black coat still draped over her shoulders with her arms not in the sleeves` | P17 |
+
+- **빨간 롤:** 들지 않고, 닿지 않고, 보지 않는다. 손과 롤 사이 팔 길이 이상(style-bible §2-4-2). 몸·립·네일·결재판 빨강 0. 밤 등장 없음.
+
+**선임 (FULL/SHORT·표정은 §3 그대로):**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| **손 (신규 문장)** | `the senior night-duty man's large, rough, weathered tan hand with thick fingers and short blunt nails, the worn cuff of a faded slate-blue zip-up work jacket at the wrist; no ring, no watch` | P20(종이컵을 책상 모서리에) · P36(그녀의 RIGHT 손목을 잡는다 — 처음으로) · P41(놓는다) |
+| 시선을 피하지 않음 | `in the background, sitting backwards astride the gray steel folding chair, for once looking straight at the young woman instead of looking away` | P27 |
+| 컵 속을 봄 (COMP-E1) | §3 '거꾸로 앉기' + `looking down into the paper cup in his hand, not at her` | P32 |
+| 새 컵 | `setting a fresh plain white paper cup on the corner of the desk` | P50 |
+| 졸음 | §10-4 '졸음' | P55 |
+
+- 재우와 같은 컷이 없다(P51–P54). 있게 되면 그를 보지 않는다.
+
+**재우 (FULL/SHORT·표정은 §10-1 그대로):**
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 대기 의자 | `sitting on one of the three joined blue plastic waiting chairs across the corridor, elbows on his knees, hands loosely clasped, his eyes on the desk beyond the glass; a normal shadow under the chair, dry clothes, only the cold corridor light on him` | P51 (style-bible VIEW_FROM_WINDOW_ACROSS) |
+| 문틀 (빛 가장자리) | `leaning in the entrance doorframe, his face at the very edge of the desk lamp's warm circle, half warm and half cold, his body outside the warm light` + 표정 ④ + `LIGHT_LAMP_EDGE` | P52 |
+| 두 카디건 | EP02 P40 투샷 — 서하는 앉고 그는 선다 | P53 |
+| 돌아섬 | `half turned toward the dark corridor, his eyes dropping to the blue binder on the desk` | P54 |
+
+- 롤은 주머니 속 — 비치지 않는다. 반지 RIGHT 검지. 유령 처리 금지(정상 그림자, 마른 옷).
+
+**L3 낮 엑스트라 (S01 · P1–P18 배경만):** §10-4 원문 끝에 characters §4-12 덧붙임을 그대로 잇는다:
+```
+background: a few ordinary office workers and citizens in muted winter clothes (gray, beige, dark green), simplified faces, slightly out of focus; nobody wears a mustard-yellow cardigan, a long black coat draped over the shoulders, a slate-blue work jacket, a khaki trench coat, or a charcoal cardigan with a white shirt; no red, no ID card text, no signs, no text anywhere; nobody is a tiny elderly woman in a lilac padded coat, nobody carries a cloth-wrapped bundle on their back, nobody stands in socks without shoes, and nobody wears a brown corduroy jacket or has a bandage on a finger
+```
+- 노미란 창구·서하 책상·계단 위에는 오지 않는다(P17 계단 위는 노미란뿐). 민원1팀 동료가 필요하면 같은 규칙(초점 밖, 단순한 얼굴, 빈 공무원증).
+
+### 11-5. 인물 간 구분 — EP03 추가 (§6 · §10-5에 덧붙임)
+
+| 짝 | 헷갈릴 수 있는 것 | 구분 장치 (프롬프트에 둘 다 넣는다) |
+|---|---|---|
+| 서하 ↔ 민원인 | 같은 유리 앞뒤의 두 여성 | 유리 안·머스터드·25세 ↔ 유리 밖·회라일락·75세·**더 작다**·보따리. 프롬프트: `the young woman in the mustard cardigan` / `the tiny old woman in the lilac padded coat with the bundle on her back` |
+| 민원인 ↔ 선임 · 재우 | 같은 밤의 인물 | 작은 노부인·라일락·보따리 ↔ 큰 남자 둘(슬레이트블루 · 무채색) |
+| 민원인 손(P24) ↔ HAND-RENAME(P57) | 둘 다 '창구 밖의 손' | 잔주름진 작은 손 + 라일락 누빔 소매 ↔ 보통 어른 **LEFT** 손 + 갈색 코듀로이 + 검지 반창고 |
+| HAND-RENAME ↔ 재우 · 노미란 손 | 손 클로즈업 | characters §4-11 대비표: LEFT · 코듀로이 · 반창고 ↔ RIGHT · 차콜 니트 + 흰 커프스 · 은반지 ↔ LEFT · 차콜 정장 + 아이보리 커프스 · 금시계 |
+| 결재판 ↔ 명부 바인더 | 노미란 손의 두 파란 물건 | 무광 짙은 남색 하드보드(책처럼 열림, 안에 클립) ↔ 밝은 파랑 광택 플라스틱 2공 바인더 |
+| 연두 서식 ↔ 벽 · 책상 · 영수증 | 녹색 계열 | 노란 기의 새잎 연두 ↔ 기관 연녹 · 회녹 ↔ 연노랑 (style-bible §2-3-1) |
+
+### 11-6. 레퍼런스 카드 — EP03 (ref-sheet-artist 지시서 · §7 공통 조건 그대로)
+
+ref-sheet-artist는 `refs/ref_prompts.md`에 아래 블록을 **추가만** 한다(기존 21장 블록은 그대로). 프롬프트 = STYLE_REF(style-bible §1) + 레이아웃 + FULL 토큰(또는 소품 토큰) + 반드시 보일 것 + `Avoid: any text, labels, speech bubbles, watermark.`
+
+| # | 카드 | 필수 | aspect | 레이아웃 (영문 핵심) | 반드시 보일 것 | 첨부 |
+|---|---|---|---|---|---|---|
+| 22 | `MOVEIN_ref` | **필수** | 16:9 | characters §4-10 시트 메모 그대로: `three full-body views of the same tiny elderly woman side by side (front; three-quarter turned to her left; back view showing the cream cloth-wrapped bundle of bedding on her back), plus a head-and-shoulders front close-up with her serene smile, plus two small head studies (looking past the viewer with a fond, appraising look; the smile gone, blank and patient), plus a low close-up of her feet in white socks with her black comfort shoes placed neatly side by side behind her heels` + §11-1 FULL | **세 전신 뷰 모두 신발 없는 흰 양말** — 신발은 발 클로즈업 칸에만, 그것도 발에 신지 않고 뒤꿈치 뒤 바닥에(`in all three full-body views she stands in white socks with NO shoes; the only shoes on the sheet are the empty pair behind her heels in the feet close-up`) · 가슴 앞 매듭과 어깨 위로 솟은 보따리(뒷모습에서 보따리 전체) · 회라일락 누빔 + 스탠드 칼라 + 크림 터틀넥 깃 · 짧고 촘촘한 철회색 파마 · 작은 초승달 눈. 무늬 없는 크림 보자기, 안경·모자·장신구·핸드백·빨강 없음, **매듭은 비어 있다**(서식·반려 통지 없음 — 패널에서 문장으로 더한다) | 없음 |
+| 23 | `HANDRENAME_ref` | **필수** | 16:9 | characters §4-11 시트 메모 그대로: `three studies of the same ordinary adult LEFT hand on a plain light-gray background, cropped at mid-forearm: fingertips pressing the top of a small brass dome call bell; the hand pushing a pale apricot blank form flat under its fingertips; the bandaged index finger resting on one empty box in the middle of the form` + §11-2 FULL + 서식 토큰 | 세 습작 모두 **같은 왼손**(위에서 본 손등 — `the thumb on the right side of each hand`) · 검지 가운데 마디의 깨끗한 베이지 천 반창고 · 짙은 초콜릿 갈색 코듀로이 소맷부리의 세로 골 · 셔츠 커프스 없음 · 반지·시계·팔찌 없음 · 연살구(분홍·주황 아님) · 서식은 표처럼 줄지은 빈 칸 + 가운데 넓은 빈 칸 하나, 직인 원·글자·숫자 없음 · 빨강 0 | **없음. `HANDCLIFF_ref` · `JAEWOO_*` 첨부 금지** |
+
+- **MOVEIN_ref 판단 (characters §4-10 조건 '8컷 이상이면 필수'):** 그녀가 보이는 컷 **12**(P23 실루엣 · P24 손 · P25 · P26 발 · P27 · P31 · P34 · P38 · P41 입가 · P43 · P46 · P48). 얼굴·몸·발이 알아볼 만한 컷만 세어도 **9**(P25 · P26 · P27 · P31 · P34 · P38 · P43 · P46 · P48) → **필수**. 1회용이지만 첫 합격 패널을 기준으로 삼기에는 컷이 많고, 양말/신발 · 보따리 · 라일락은 Flow가 흔들기 쉬운 세 가지다. 표정 카드는 따로 만들지 않는다(characters 결정 — 이 시트의 클로즈업 + 작은 머리 습작 둘로 충분).
+- 만드는 순서: 22와 23은 서로 의존하지 않는다. 기존 21장 뒤에 붙인다. 사용자 부담: EP03 필수 2장.
+
+**별도 카드가 필요 없는 EP03 상태·소품 (판단):**
+
+| 대상 | 카드 | 이유 · 대신 첨부할 것 |
+|---|---|---|
+| 서하 밤 2 · 낮 L3 | 불필요 | §10-2 밤샘 문장 그대로, 단계를 올리지 않는다. `SEOHA_turnaround` / `_expressions` |
+| 노미란 낮 A | 불필요 | 의상 A 원문(완전 복구) = `MIRAN_turnaround` + `_expressions`. 손 = §10-3 문장 |
+| 선임 손 | 불필요 | §11-4 손 문장 + `SEONIM_turnaround` |
+| 재우 대기 의자 · 문틀 | 불필요 | `JAEWOO_turnaround` / `_expressions` + §11-4 문장 |
+| 연두 전입신고서 · 결재판 · 반려 통지 · 서류 B 뒷면 | 불필요 | 평평한 종이·판 — style-bible §7-7 문장. 서류 B 뒷면 컷(P5)에는 `PROP_HANDOVER_pair`를 붙이지 않는다(앞면 테두리가 옮아온다) — P4 PNG 첨부 |
+| L3 직원석 · 빨간 롤 · 위층 계단 | 불필요 (플레이트 없음) | P13을 먼저 만들어 P16 · P18에 첨부(같은 책상 세트). P17은 `LOC_L3_LOBBY_DAY_plate` + 문장 |
+
+**어떤 패널에 무엇을 첨부하나 (prompt-smith 참고 · 3장 이내):**
+
+| 레퍼런스 | 주로 붙일 패널 |
+|---|---|
+| `MOVEIN_ref` | P25 · P26 · P27 · P31 · P34 · P38 · P41 · P43 · P46 · P48 (P23 실루엣 · P24 손은 선택) |
+| `HANDRENAME_ref` | P57 (+ EP04 P1–5) |
+| `SEOHA_turnaround` / `_expressions` | 그녀의 얼굴·몸이 보이는 컷. 손 컷(P1 · P4 · P5 · P9 · P14 · P21 · P22 · P35 · P41 · P44 · P47 · P49 · P57 · P59)은 소품 카드·같은 회차 PNG 우선 |
+| `MIRAN_turnaround` + `_expressions` | P2 · P3 · P7 · P9 · P10 · P13 · P15 · P17 (손 컷 P1 · P8 · P16은 turnaround만) |
+| `SEONIM_turnaround` (+ `_expressions`) | P27 · P32 · P38 · P50 · P55 · 손 P20 · P36 |
+| `JAEWOO_turnaround` / `_expressions` | P51–P54 / P52 · P54 |
+| `PROP_HANDOVER_pair` | P1 · P4 · P14 · P15 · P28 (**P5는 붙이지 않는다**) |
+| `PROP_PAGES_pair` | P37 · P40 (+ 종이가 큰 P27 · P29) |
+| `LOC_L3_LOBBY_DAY_plate` (ref_prompts.md 표기) | P2 · P3 · P7 · P10 · P17 (직원석 P13은 플레이트 대신 문장) |
+| L1 · L2 플레이트 | §7-3 그대로 (DESK → P20 · CORRIDOR → P19 · DUTYROOM → P55) |
+| EP01 · EP02 PNG | style-bible §5-6 · beatsheet §3-1 재사용 구도, 기억 비네트 원본(P6 ← EP01 P9 · P11 ← EP02 P38 · P28 ← EP01 P24) |
+| EP03 PNG | P1 → P14 · P4 → P5 · P13 → P16 · P18 · P21 → P44 · P22 → P49 |
+
+### 11-7. 패널 검수표 — EP03 인물 축 (§8 · §10-7에 덧붙임 · panel-validator)
+
+| 인물 | 반드시 맞아야 하는 것 | 실패 예 |
+|---|---|---|
+| MOVEIN | 창구 앞은 **양말**(신발은 등 뒤 바닥, 코끝 = 어둠 쪽, 같은 자리·같은 모양) · 보따리 + 가슴 앞 매듭 · 회라일락 · 철회색 뽀글 · 서하보다 작다 · 마르고 깨끗한 산 사람 · 유리 밖 · P48만 신발을 신는다 | 신발을 신고 창구 앞, 흩어진 신발, 빨강·꽃무늬 보자기, 분홍·회색 코트, 안경·모자, 창백·투명·그림자 없음, 젖음, 서하와 키가 같음, 유리 안쪽, 앉음 |
+| HAND-RENAME | **LEFT** 손 · 검지 반창고(깨끗) · 갈색 코듀로이 골 · 셔츠 커프스 없음 · 반지·시계 없음 · 연살구 서식 · 손 하나 · 카운터 높이 아래 · 화면 오른쪽에서 들어옴(안쪽 시점) | 오른손, 반지, 흰 커프스, 피, 분홍·주황 서식, 얼굴·그림자·유리 반사, 손이 둘 |
+| SEOHA (EP03) | §8 · §10-7 그대로 + 밤샘 단계 그대로(다크서클 없음) · P1–P12 토트백 LEFT 어깨 · P19 휴대폰 없음(명부·일지를 안음, 열쇠는 RIGHT 손가락) · 서명·이름 글씨 0 · P60 입을 다문다 | 다크서클, 서명 글씨, P19 휴대폰, P60 입을 벌림 |
+| MIRAN (EP03) | 의상 A 완전 복구 · LEFT 손 금시계 · 빨강 0 · 롤과 거리(손·시선) · P17 결재판 LEFT 겨드랑이 · 밤 등장 없음 | 롤에 손·시선, 빨간 립·네일, 코트 소매에 팔, 흐트러진 머리('A-정돈 중'은 EP02뿐) |
+| SEONIM (EP03) | §8 그대로 + P27 그녀를 본다 · 손은 크고 거친 그을린 손 + 슬레이트블루 소맷부리 · 재우를 보지 않음 | 안경 착용, 반지·시계, 재우와 눈 맞춤 |
+| JAEWOO (EP03) | §10-7 그대로 + P51 차가운 복도빛·정상 그림자·마른 옷 · 롤 없음 · 몸은 노란 원 밖 | 따뜻한 빛 속 재우, 그림자 없음, 빨강, 젖음 |
+| L3 엑스트라 (EP03) | §10-7 그대로 + characters §4-12 덧붙임(라일락 노부인·보따리·양말·갈색 코듀로이·반창고 없음) · 계단 위·노미란 창구·서하 책상에 없음 | 밤 민원인을 닮은 낮 인물, 계단 위의 사람 |

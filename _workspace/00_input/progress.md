@@ -1,3 +1,19 @@
+# EP03 progress — waiting for the user's Flow images (2026-11-18)
+
+## Done
+- `03_episode/ep03_beatsheet.md` (60 panels), `ep03_script.md`, **`ep03_script_final.md`** (60 panels / 80 KM lines / 4 sfx / caption); `glossary_km.md` v6
+- `02_story/characters.md` v1.2 (new: 전입신고 민원인 = MOVEIN, 개명 신청 = HAND-RENAME hand only); move-in form colour = light yellow-green (#DCE6B0), recorded in world §5-3
+- `04_visual/style-bible.md` + `character-sheets.md` v1.2 (additions only)
+- `refs/ref_prompts.md`: +2 cards (MOVEIN_ref, HANDRENAME_ref) → 23 cards total
+- `04_visual/ep03_shotlist.md` (60), `ep03_lettering.md` (81 bubbles + 4 sfx; `km_tool.py check --episode 03` OK), `ep03_prompts.md` (60, 171–250 words), **`ep03_flow_handoff.html`**, `ep03_flow_status.md` = WAITING_FOR_IMAGES
+- All three handoff pages rebuilt (23 sheets each)
+
+## Next
+- EP01, EP02 and EP03 all wait for the user's Flow images. Make the 23 sheets first, then EP01 → EP02 → EP03 panels (repeats attach earlier episodes' panels). On "images are ready": follow each `epNN_flow_status.md` "On resume", then validation and Phase 5 per episode.
+- Next new work: EP04 「유리에 비친 사람」 (first paid episode). Notes: EP04 P1–5 replays EP01 P08 (Mi-ran's full-name call; not P12) + EP03 P15, plus P56–59 byte-identical; the applicant is still unidentified (see ep03_script_final notes E-4).
+
+---
+
 # EP02 progress — waiting for the user's Flow images (2026-11-18)
 
 ## Done
