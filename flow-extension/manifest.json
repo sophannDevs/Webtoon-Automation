@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Webtoon Flow Runner",
+  "version": "1.0.0",
+  "description": "Loads a webtoon Flow handoff page and runs its character-sheet and panel prompts in Google Flow from a side panel.",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "activeTab", "scripting", "tabs", "sidePanel", "downloads", "debugger"],
+  "host_permissions": ["https://*/*"],
+  "background": { "service_worker": "src/background.js" },
+  "side_panel": { "default_path": "src/sidepanel.html" },
+  "action": { "default_title": "Open Webtoon Flow Runner" },
+  "content_scripts": [
+    {
+      "matches": ["https://flow.google.com/*", "https://labs.google/*"],
+      "js": ["src/page-hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://flow.google.com/*", "https://labs.google/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Webtoon Flow Runner</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Webtoon Flow Runner</h1>
+      <span id="conn" class="badge b-off" title="Connection to the Google Flow tab">Checking…</span>
+    </div>
+    <div id="episode" class="sub">No handoff file loaded</div>
+    <div id="stages" class="stages">
+      <span id="stage1" class="stage">Stage 1: Characters [0/0]</span><span class="arrow">→</span>
+      <span id="stage2" class="stage">Stage 2: Panels [0/0]</span>
+    </div>
+    <div class="btn-row top-actions">
+      <button id="h-start" class="primary">▶ Start All</button>
+      <button id="h-stop" class="danger">Stop</button>
+      <button id="h-clear" title="Remove the loaded episode, statuses and cached reference images so you can load the file again">Clear data</button>
+    </div>
+    <div id="auto-banner" class="banner" hidden>
+      <span id="auto-text"></span>
+      <span class="btn-row"><button id="auto-go" class="primary">Start now</button><button id="auto-cancel">Cancel</button></span>
+    </div>
+    <div class="progress-wrap">
+      <div class="bar"><div id="bar-fill"></div></div>
+      <div id="bar-text" class="sub">0 / 0</div>
+    </div>
+  </header>
+
+  <details id="loader" class="card" open>
+    <summary>Load handoff file</summary>
+    <div id="drop" class="drop" tabindex="0">
+      Drop <code>ep01_flow_handoff.html</code> here
+      <label class="btn">Choose file…<input id="file" type="file" accept=".html,.htm,text/html" hidden></label>
+    </div>
+    <div class="row">
+      <input id="url" type="text" spellcheck="false" placeholder="file:///…/ep01_flow_handoff.html">
+      <button id="load-url">Load</button>
+    </div>
+    <div id="file-access" class="hint"></div>
+    <div id="load-msg" class="hint"></div>
+    <ul id="warnings" class="warnings"></ul>
+  </details>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="characters" role="tab">Characters <span id="n-characters" class="count">0</span></button>
+    <button class="tab" data-tab="panels" role="tab">Panels <span id="n-panels" class="count">0</span></button>
+    <button class="tab" data-tab="queue" role="tab">Queue &amp; Logs</button>
+  </nav>
+
+  <main>
+    <section id="tab-characters" class="pane active">
+      <div class="filters">
+        <input class="search" data-kind="character" type="search" placeholder="Search name, prompt…">
+        <select class="status-filter" data-kind="character">
+          <option value="">All statuses</option><option>Pending</option><option>Generating</option><option>Downloading</option><option>Completed</option><option>Failed</option><option>Blocked</option>
+        </select>
+      </div>
+      <div id="list-character" class="list"></div>
+    </section>
+
+    <section id="tab-panels" class="pane">
+      <div class="filters">
+        <input class="search" data-kind="panel" type="search" placeholder="Search panel, scene, prompt…">
+        <select class="status-filter" data-kind="panel">
+          <option value="">All statuses</option><option>Pending</option><option>Generating</option><option>Downloading</option><option>Completed</option><option>Failed</option><option>Blocked</option>
+        </select>
+      </div>
+      <div id="list-panel" class="list"></div>
+    </section>
+
+    <section id="tab-queue" class="pane">
+      <div class="card">
+        <div class="btn-row">
+          <button id="b-start" class="primary">Start All</button>
+          <button id="b-pause">Pause</button>
+          <button id="b-resume">Resume</button>
+          <button id="b-stop" class="danger">Stop</button>
+          <button id="b-retry">Retry Failed</button>
+        </div>
+        <div id="queue-state" class="hint">Idle.</div>
+        <label class="field">Run scope
+          <select id="s-scope"><option value="all">Characters, then panels</option><option value="character">Characters only</option><option value="panel">Panels only</option></select>
+        </label>
+      </div>
+
+      <details class="card" open>
+        <summary>Settings</summary>
+        <label class="field">Cooldown between prompts: <b id="v-delay">5</b>s
+          <input id="s-delay" type="range" min="3" max="15" step="1">
+        </label>
+        <label class="field">Timeout per image (seconds)
+          <input id="s-timeout" type="number" min="30" max="900" step="10">
+        </label>
+        <label class="field">Retries after a failure
+          <input id="s-retries" type="number" min="0" max="5" step="1">
+        </label>
+        <label class="field">Image must stay unchanged for (seconds)
+          <input id="s-stable" type="number" min="1" max="30" step="1">
+        </label>
+        <label class="field">Flow mode / model text (optional)
+          <input id="s-mode" type="text" placeholder="exact text of the option in Flow">
+        </label>
+        <label class="field">Outputs per prompt text (optional)
+          <input id="s-outputs" type="text" placeholder="e.g. x1">
+        </label>
+        <label class="field">Save images to
+          <select id="s-save-mode">
+            <option value="downloads">Chrome's Downloads folder (can be renamed by other extensions)</option>
+            <option value="folder">A folder I choose (exact names, recommended)</option>
+          </select>
+        </label>
+        <label class="check"><input id="s-chrome-in-project" type="checkbox"> Chrome's download folder is already my <code>Webtoon-Automation</code> project folder (don't add that name again)</label>
+        <div class="btn-row"><button id="b-choose-folder">Choose folder…</button></div>
+        <div id="folder-label" class="hint"></div>
+        <label class="check"><input id="s-auto-run" type="checkbox"> Auto-run everything right after a file is loaded</label>
+        <label class="field">Auto-run countdown (seconds, 0 = start immediately)
+          <input id="s-auto-delay" type="number" min="0" max="30" step="1">
+        </label>
+        <label class="check"><input id="s-auto-panels" type="checkbox"> Auto-start Panels after Characters</label>
+        <label class="field">Download subfolder: Characters (inside Chrome's Downloads folder)
+          <input id="s-dir-characters" type="text" spellcheck="false" placeholder="Webtoon-Automation/_workspace/04_visual/refs">
+        </label>
+        <label class="field">Download subfolder: Panels
+          <input id="s-dir-panels" type="text" spellcheck="false" placeholder="Webtoon-Automation/_workspace/05_panels/ep01">
+        </label>
+        <label class="field">Aspect ratio → label shown in Flow (one per line, <code>ratio = label | label</code>)
+          <textarea id="s-aspect-map" rows="5" spellcheck="false"></textarea>
+        </label>
+        <label class="check"><input id="s-require-aspect" type="checkbox"> Fail the item if the aspect ratio can't be set</label>
+        <label class="field">When a required reference image is missing
+          <select id="s-on-missing">
+            <option value="skip">Mark the item Blocked and continue with the next one</option>
+            <option value="pause">Pause the queue so I can upload it, then Resume</option>
+          </select>
+        </label>
+        <label class="check"><input id="s-auto-agree" type="checkbox"> Click "I agree" on Flow's "Rights to use this image" dialog</label>
+        <label class="field">Sentence put in front of every prompt that has references (empty = off). Stops Flow from copying the character sheet itself.
+          <textarea id="s-ref-prefix" rows="4"></textarea>
+        </label>
+        <label class="field">Wait for a reference to upload in Flow (seconds)
+          <input id="s-ref-timeout" type="number" min="5" max="180" step="5">
+        </label>
+      </details>
+
+      <div class="card">
+        <div class="btn-row">
+          <button id="b-probe">Probe Flow page</button>
+          <button id="b-options" title="Opens Flow's settings menu and lists the option labels">List Flow settings options</button>
+          <button id="b-reset">Reset all statuses</button>
+          <button id="b-clear" class="danger">Clear loaded data</button>
+        </div>
+        <pre id="probe-out" class="probe" hidden></pre>
+      </div>
+
+      <details class="card" open>
+        <summary>Reference image cache <span id="n-assets" class="count">0</span></summary>
+        <div class="hint">Every generated image is kept here so it can be attached in Flow as a reference later. You can also upload your own.</div>
+        <div class="btn-row">
+          <button id="b-ref-folder" title="Reads the saved character sheets / panels from the folder chosen in Settings, so nothing has to be uploaded by hand">Load saved images from folder</button>
+          <button id="b-ref-upload">Upload reference image(s)…</button>
+          <button id="b-ref-clear" class="danger">Clear cache</button>
+        </div>
+        <div id="asset-list" class="assets"></div>
+      </details>
+
+      <details class="card" id="log-box" open>
+        <summary>Execution log <span id="n-log" class="count">0</span></summary>
+        <div class="btn-row">
+          <button id="b-log-copy">Copy</button>
+          <button id="b-log-clear">Clear</button>
+        </div>
+        <ol id="log" class="log"></ol>
+      </details>
+    </section>
+  </main>
+
+  <input id="ref-file" type="file" accept="image/*" hidden>
+  <input id="ref-file-multi" type="file" accept="image/*" multiple hidden>
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>

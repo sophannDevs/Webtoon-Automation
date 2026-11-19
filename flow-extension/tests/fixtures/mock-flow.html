@@ -1,0 +1,137 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Mock Google Flow</title>
+<style>
+body{margin:0;background:#000;color:#ddd;font:14px system-ui;display:flex;min-height:100vh}
+nav{width:200px;padding:12px}main{flex:1;padding:12px}
+.bar{position:fixed;left:240px;right:40px;bottom:16px;background:#222;border-radius:16px;padding:10px;display:flex;gap:8px;align-items:flex-end}
+[role=textbox]{flex:1;min-height:40px;max-height:120px;overflow:auto;outline:none;padding:6px}
+[role=textbox]:empty::before{content:attr(data-ph);color:#888}
+button{background:#333;color:#eee;border:1px solid #555;border-radius:8px;padding:6px 10px}
+#menu{position:fixed;bottom:80px;right:120px;background:#2a2a2a;padding:8px;border-radius:8px;display:none;gap:6px;flex-wrap:wrap;width:260px}
+#menu.open{display:flex}
+#toast{position:fixed;top:10px;right:10px}
+.res img{width:220px;margin:6px;border:1px solid #555}
+.prog{display:none;width:200px;height:8px}
+#refs{display:flex;gap:6px}.refchip{position:relative}.refchip .rm{position:absolute;top:-6px;right:-6px;padding:0 4px}
+#addmenu{position:fixed;bottom:80px;left:260px;background:#2a2a2a;padding:8px;border-radius:8px;display:flex;flex-direction:column;gap:6px}
+#addmenu[hidden]{display:none}
+</style></head><body>
+<nav><button aria-label="Settings">settings</button><div>All media</div></nav>
+<main><div class="res" id="res"></div><div class="prog" id="prog" role="progressbar"></div></main>
+<div id="toast"></div>
+<script>if(localStorage.mockBusyDecor==='1'){const d=document.createElement('div');d.setAttribute('role','progressbar');d.style.cssText='width:40px;height:6px;background:#888';document.querySelector('main').appendChild(d);}</script>
+<form class="bar" onsubmit="event.preventDefault()">
+  <div id="refs"></div>
+  <button type="button" aria-label="Add ingredients to the prompt box" id="addref">add</button>
+  <div role="textbox" contenteditable="true" data-ph="What do you want to create?" aria-label="Prompt"></div>
+  <button type="button" aria-label="Settings trigger" id="trig">Nano Banana 2.1 <span id="cur">crop_portrait</span> <span id="cnt">x2</span></button>
+  <button type="submit" aria-label="Start generation" id="go" class="generate-icon-button">Start generation arrow_forward</button>
+</form>
+<div id="addmenu" role="menu" hidden></div>
+<div id="menu" role="menu">
+  <button role="menuitemradio" data-a="16:9">crop_16_9 16:9</button>
+  <button role="menuitemradio" data-a="9:16">crop_9_16 9:16</button>
+  <button role="menuitemradio" data-a="1:1">crop_square 1:1</button>
+  <button role="menuitemradio" data-a="4:3">crop_landscape 4:3</button>
+  <button role="menuitemradio" data-a="3:4">crop_portrait 3:4</button>
+  <button role="menuitemradio" data-n="x1">x1</button>
+  <button role="menuitemradio" data-n="x2">x2</button>
+</div>
+<script>
+const SIZES={'16:9':[640,360],'9:16':[360,640],'1:1':[512,512],'4:3':[640,480],'3:4':[480,640]};
+const ICON={'16:9':'crop_16_9','9:16':'crop_9_16','1:1':'crop_square','4:3':'crop_landscape','3:4':'crop_portrait'};
+let aspect='3:4', count=2;
+window.__runs=[];
+const $=id=>document.getElementById(id), menu=$('menu');
+$('trig').onclick=()=>menu.classList.toggle('open');
+document.addEventListener('click',e=>{if(!e.target.closest('#menu,#trig'))menu.classList.remove('open')});
+menu.onclick=e=>{const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.a){aspect=b.dataset.a;$('cur').textContent=ICON[aspect]}
+  if(b.dataset.n){count=+b.dataset.n[1];$('cnt').textContent=b.dataset.n}
+  menu.classList.remove('open')};
+function png(w,h,label){const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');
+  x.fillStyle='#'+Math.floor(Math.random()*0xffffff).toString(16).padStart(6,'0');x.fillRect(0,0,w,h);
+  x.fillStyle='#fff';x.font='28px sans-serif';x.fillText(label,12,40);
+  return new Promise(r=>c.toBlob(b=>r(URL.createObjectURL(b)),localStorage.mockJpeg==='1'?'image/jpeg':'image/png'))}
+async function addImg(w,h,label){const img=new Image();img.src=localStorage.mockRemote?localStorage.mockRemote+'/img.jpg?'+Math.random():await png(w,h,label);await img.decode();$('res').prepend(img)}
+addImg(100,100,'old'); // pre-existing, must be ignored
+// ---- reference images (Attach in Flow): modes via localStorage.mockAttach = menu (default) | input | drop | none
+const amode=()=>localStorage.mockAttach||'menu';
+async function attachFile(file){
+  if(!file||amode()==='none')return;
+  $('prog').style.display='block'; await new Promise(r=>setTimeout(r,600)); $('prog').style.display='none';
+  if(localStorage.mockConsent==='1'){ // Flow's modal: nothing continues until "I agree" is pressed (markup as in the real dialog)
+    await new Promise(res=>{
+      const box=document.createElement('mat-dialog-container'); box.setAttribute('role','dialog');
+      box.style.cssText='position:fixed;left:30%;top:30%;width:420px;background:#222;color:#fff;padding:20px;z-index:99999';
+      box.innerHTML='<h2>Rights to use this image</h2><p>Make sure that you have the necessary rights.</p><button class="mdc-button mat-mdc-button-base" id="cancel-btn"><span class="mdc-button__label">Cancel</span></button><button class="mdc-button mat-mdc-button-base flow-button-transparent" id="agree-btn"><span class="mdc-button__label">I agree</span></button>';
+      document.body.appendChild(box);
+      box.querySelector('#agree-btn').onclick=()=>{box.remove();window.__agreed=(window.__agreed||0)+1;res()};
+    });
+  }
+  const chip=document.createElement('div'); chip.className='refchip'; chip.dataset.name=file.name; chip.dataset.size=file.size;
+  chip.innerHTML='<img width="48" height="48" alt=""><button type="button" aria-label="Remove reference" class="rm">close</button>';
+  chip.querySelector('img').src=URL.createObjectURL(file);
+  chip.querySelector('.rm').onclick=()=>chip.remove();
+  $('refs').appendChild(chip);
+}
+$('addref').onclick=()=>{
+  const m=$('addmenu');
+  if(!m.hidden){m.hidden=true;return}
+  m.innerHTML=amode()==='menu'?'<button type="button" role="menuitem" id="upload-item">Upload image</button><button type="button" role="menuitem">Recent media</button>':'<button type="button" role="menuitem">Recent media</button>';
+  const up=$('upload-item'); if(up) up.onclick=()=>{const inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.onchange=()=>attachFile(inp.files[0]);inp.click();m.hidden=true};
+  m.hidden=false;
+};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('addmenu').hidden=true});
+if(amode()==='input'){const i=document.createElement('input');i.type='file';i.accept='image/*';i.hidden=true;i.id='refinput';i.onchange=()=>attachFile(i.files[0]);document.querySelector('.bar').appendChild(i)}
+if(amode()==='drop'){const b=document.querySelector('.bar');b.addEventListener('dragover',e=>e.preventDefault());b.addEventListener('drop',e=>{e.preventDefault();attachFile(e.dataTransfer.files[0])})}
+if(amode()==='picker'){ // Flow's real picker: "+" opens a cdk-virtual-scroll list (only the rows in view exist), "Upload media", "Add to prompt"
+  const items=JSON.parse(localStorage.mockExisting||'[]').map((n,i)=>({name:n,file:null,id:'00000000-0000-4000-8000-'+String(i).padStart(12,'0')}));
+  const ROW=60, VIEW=300, EXTRA=1;
+  let nextId=items.length;
+  $('addref').onclick=()=>{
+    if(document.getElementById('picker')){document.getElementById('picker').remove();return}
+    const box=document.createElement('div');box.id='picker';box.style.cssText='position:fixed;left:10%;top:10%;width:560px;background:#222;color:#fff;padding:12px;z-index:9000';
+    let sel=null, top=0;
+    const list=()=>items.slice().reverse(); // newest first, like Flow
+    const draw=()=>{
+      const rows=list();
+      box.innerHTML='<cdk-virtual-scroll-viewport style="display:block;height:'+VIEW+'px;overflow:auto;position:relative"><div style="height:'+(rows.length*ROW)+'px"><div class="cdk-virtual-scroll-content-wrapper"></div></div></cdk-virtual-scroll-viewport><button type="button" id="upmedia"><i class="material-icons">upload</i> Upload media</button> <button type="button" id="addprompt" disabled>Add to prompt</button>';
+      const vp=box.querySelector('cdk-virtual-scroll-viewport'), wrap=box.querySelector('.cdk-virtual-scroll-content-wrapper');
+      const render=()=>{
+        top=vp.scrollTop;
+        const first=Math.max(0,Math.floor(top/ROW)-EXTRA), last=Math.min(rows.length,first+Math.ceil(VIEW/ROW)+2*EXTRA);
+        wrap.style.transform='translateY('+(first*ROW)+'px)'; wrap.innerHTML='';
+        for(let i=first;i<last;i++){const it=rows[i];
+          const c=document.createElement('div');c.className='asset-item-container';
+          c.innerHTML='<button type="button" role="option" class="asset-item'+(sel===it?' asset-item-active':'')+'" aria-selected="'+(sel===it)+'" style="height:'+ROW+'px;width:100%;display:flex;gap:8px;align-items:center"><div class="asset-thumbnail"><img alt="" class="asset-thumbnail-image" width="40" height="40" src="https://flow-img.test/image/'+it.id+'?Expires=1&KeyName=k&Signature=s"></div><div class="asset-text"><span class="asset-title">'+it.name+'</span><span class="type-subtitle">Image</span></div></button>';
+          c.querySelector('button').onclick=(e)=>{if(localStorage.mockPickTrusted==='1'&&!e.isTrusted){c.querySelector('button').classList.add('asset-item-active');return;} /* real Flow: a script click only highlights the row; Add to prompt stays disabled */ sel=it;if(localStorage.mockPickDirect==='1'){box.querySelector('#addprompt').onclick();return} /* this Flow build: clicking a row attaches it and closes the picker */ render();box.querySelector('#addprompt').disabled=false};
+          wrap.appendChild(c)}
+      };
+      vp.addEventListener('scroll',render); render(); vp.scrollTop=top; 
+      box.querySelector('#addprompt').disabled=!sel;
+      box.querySelector('#addprompt').onclick=async()=>{if(!sel)sel=rows[0]; /* Flow adds its default highlighted row (the first) when nothing was selected */ const chip=document.createElement('div');chip.className='refchip';chip.dataset.name=sel.name;chip.dataset.size=sel.file?sel.file.size:1;
+        // the prompt-bar thumbnail is NOT the original picture (Flow shows a cropped / re-encoded one): it must never block the attach
+        chip.innerHTML='<img width="48" height="48" alt=""><button type="button" aria-label="Remove reference" class="rm">close</button>';chip.querySelector('img').src=await png(48,48,'thumb');chip.querySelector('.rm').onclick=()=>chip.remove();$('refs').appendChild(chip);box.remove();window.__picked=(window.__picked||0)+1;
+        (window.__pickedIds=window.__pickedIds||[]).push(sel.id);
+        const old=$('addref'),nw=old.cloneNode(true);nw.onclick=old.onclick;old.replaceWith(nw)}; // Flow re-renders the bar
+      box.querySelector('#upmedia').onclick=()=>{const inp=document.createElement('input');inp.type='file';inp.accept='image/*';inp.onchange=async()=>{const f=inp.files[0];
+        $('prog').style.display='block';await new Promise(r=>setTimeout(r,600));$('prog').style.display='none';
+        if(localStorage.mockConsent==='1'){await new Promise(res=>{const d=document.createElement('mat-dialog-container');d.setAttribute('role','dialog');d.style.cssText='position:fixed;left:30%;top:30%;background:#333;color:#fff;padding:20px;z-index:99999';d.innerHTML='<h2>Rights to use this image</h2><button><span class="mdc-button__label">Cancel</span></button><button id="agree-btn"><span class="mdc-button__label">I agree</span></button>';document.body.appendChild(d);d.querySelector('#agree-btn').onclick=()=>{d.remove();window.__agreed=(window.__agreed||0)+1;res()}})}
+        items.push({name:f.name,file:f,id:'00000000-0000-4000-9000-'+String(nextId++).padStart(12,'0')});window.__uploads=(window.__uploads||0)+1;top=0;draw()};inp.click()};
+    };
+    draw();document.body.appendChild(box);
+  };
+}
+$('go').onclick=async(e)=>{
+  if(localStorage.mockTrustedOnly==='1'&&!e.isTrusted)return; // simulate a button that ignores script-made clicks
+  const p=document.querySelector('[role=textbox]').innerText.trim(); if(!p)return;
+  window.__runs.push({prompt:p,aspect,count,refs:[...document.querySelectorAll('.refchip')].map(c=>({name:c.dataset.name,size:+c.dataset.size}))});
+  const delay=+(localStorage.mockDelay||1200);
+  if(p.includes('FAIL_ME')){setTimeout(()=>{$('toast').innerHTML='<div role="alert">Something went wrong. Try again.</div>'},400);return}
+  $('toast').innerHTML='';$('prog').style.display='block';
+  await new Promise(r=>setTimeout(r,delay)); $('prog').style.display='none';
+  const [w,h]=SIZES[aspect];
+  for(let i=0;i<count;i++){await addImg(i?w/2:w,i?h/2:h,aspect+' #'+i)}
+};
+</script></body></html>
