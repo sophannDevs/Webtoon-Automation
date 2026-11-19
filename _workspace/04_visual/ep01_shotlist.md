@@ -1,1024 +1,1046 @@
-# EP01 샷리스트 「수칙 4번」 — panel-director
+# EP01 샷리스트 — 「맑은 날의 우산」 EP1 「맑은 날의 비」 · panel-director
 
-- 작성: panel-director · 기준일 **2026-11-17** · EP01 Phase 4 · **v1**
-- 입력: `03_episode/ep01_script_final.md`(64패널, 최종) · `03_episode/ep01_beatsheet.md`(§3 COMP-*, ⊘ 무글자 소품, gap) · `04_visual/style-bible.md` v1(§4 비율, §5-3 COMP 표, §6 LOC/VIEW, §7 PROP, §3 LIGHT, §8 말풍선 공간) · `04_visual/character-sheets.md` v1(FULL/SHORT/상태 토큰, 표정 번호) · `04_visual/refs/ref_prompts.md`(카드 16장) · `02_story/tension-curve.md` §9 · `webtoon-khmer-edition` §3–4
-- 다음 독자: **letterer**(`bubble space` → `art_space`·`place`, `gap_after`) → **prompt-smith**(Flow 프롬프트, `attach`) → 사용자(Flow) → panel-validator
-- 총 **64패널**(panel_001–panel_064 = 대본 P01–P64, 번호·순서 동일). 팀 메시징이 없는 실행이라 상류·하류 전달 사항은 문서 끝 §H에 모았다.
+- 작성: panel-director · 2026-11-19 · Flow-by-hand + Khmer edition · v1
+- 입력: `03_episode/ep01_script_final.md`(최종본, 62패널, KM 줄, 지문, ⟨gap⟩), `03_episode/ep01_beatsheet.md`(§2 패널 표, §3 고정 규칙, §6 art_space, §7 타임라인·의상, §8 등장인물), `04_visual/style-bible.md` v1, `04_visual/character-sheets.md` v1, `02_story/world.md` §1–§3.
+- **패널 62개.** `panel_001`–`panel_062` = 대본 `P01`–`P62`(번호·순서 동일). 대사 패널 40 / 무대사 22. 효과음 2(panel_003, panel_055), 끝 캡션 1(panel_062).
+- 작업 언어는 한국어. prompt-smith가 그대로 옮길 **camera / composition / subject / art_space는 영어**로 쓴다. 대사(dialogue_ref)는 한국어 원문 — 크메르어는 대본 `KM:` 줄이 원본이고 letterer가 옮긴다.
+- 좌/우: `LEFT/RIGHT` 대문자 = 인물 본인 기준(시계 = 태오 LEFT 손목). `screen-left/right` = 화면 기준.
+- **Khmer edition (one line):** No text of any kind in any image — no letters, numbers, speech bubbles, captions, sound-effect lettering, signs or screens with writing; every panel keeps its `art_space` as calm, empty background, objects that could carry writing are drawn blank, and the viewer (`km_tool.py build`) draws the Khmer bubbles there later.
 
-## 읽는 법
+## 1. 장소 목록 (scene_id ↔ LOC_* ↔ 날씨 ↔ 시간 ↔ 배경)
 
-- **좌우:** `화면 왼쪽/오른쪽` = 화면 기준. `LEFT/RIGHT`(대문자) = 인물·사물 **자신의** 좌우(style-bible 표기와 같다). 정면 그림에서 서하의 RIGHT 눈 밑 점은 화면 왼쪽에 보인다.
-- **좌표:** `x`/`y` = 패널 왼쪽 위에서 잰 % (x 가로, y 세로). 위치는 근사치다. letterer가 `art_space`와 `place`로 옮긴다.
-- **`bubble space:`** (fx/note 첫 항목) = 그 컷에서 **그림이 비워 둘 조용한 배경**(민무늬 벽·천장·유리 너머 어두운 복도·서가 사이 어둠·초점 밖 배경). 얼굴·손·핵심 소품(수칙 종이·스티커·시계 면·벨·서식)은 그 자리에 두지 않는다. 효과음(sfx)은 소리 나는 물건 곁의 작은 빈자리. 무대사 컷은 `silent`.
-- **Khmer edition:** 어떤 이미지에도 글자·숫자·말풍선·가짜 글씨가 없다. 글이 적힐 물건(수칙 종이·4번 조각·명부·일지·영수증·서식·보완 요청서·수첩·휴대폰 화면·공무원증·시계·내선 버튼)은 **빈 면**으로, 그 컷의 주인공일 때는 **충분히 크게** 그린다(EP01에는 물건 위 글씨 `env`가 없다 — 내용은 전부 낭독 말풍선).
-- **characters:** 주 인물(가장 크게 보이는 1명) = character-sheets **FULL**, 나머지 = **SHORT**, 손·뒷모습·실루엣 = 상태 토큰. 표정은 character-sheets 번호(예: 서하 ⑧)와 그 영문 문장을 쓴다.
-- **repeat:** 고정 구도 반복. 짝 패널의 `camera`·`composition`·`lighting`(P52 제외)·`bubble space`는 **글자까지 같다**. 바뀌는 것은 `repeat:` 줄에만 적었다. 반복 컷 카드에는 원본 PNG를 첨부한다.
-- **attach:** 사용자가 Flow에 손으로 붙일 이미지(패널당 3장 이내). `refs/…` = 레퍼런스 카드, `_workspace/05_panels/ep01/panel_NNN.png` = 먼저 만든 원본 패널.
+| scene_id | panels | location | weather | time · light (style-bible §3-2) | state | background (style-bible §6 token wording) |
+|---|---|---|---|---|---|---|
+| S1 | P01–P14 | LOC_PLAZA | W_BREAK | D1 midday · `bright white-gold midday sunlight, short crisp shadows` | dry pavers; wet circles/puddle only under her | small square before an old Korean covered-market entrance, pale grey concrete pavers, one drain grate, one old plane tree at the arch-side corner, low two-storey buildings, power lines; a faded green-and-white striped canvas awning juts out from the market arch; any board above the arch is blank or cropped out of frame |
+| S2 | P15 | LOC_HYDRANGEA_ALLEY | W_BREAK | D1 midday · same midday light, falling into the alley | no cloud | narrow alley along the market's outer wall, old stone wall opposite, hydrangeas in a soil strip and black rubber tubs, mossy drain, one old streetlamp, green iron staircase on the wall; hydrangeas just in full bloom, deep blue-violet, full round heads |
+| S3 | P16–P28 | LOC_EAVES_STALL | W_BREAK | D1 midday · midday light; arch-side half a tone darker (awning shade) | **shutter DOWN · NO tape line** · cart in the alley-side half | tiny stall under a short dark-green corrugated-metal eave with wooden rafters, faded mint-green roll-up shutter, one brass hook centred under the shutter box, bare grey concrete floor under the eave, no tape line yet; arch-side half: built-in dark wooden workbench with a small vise and a thread-spool shelf holding one yellow spool, low round stool, one bare bulb on the rafter above, iron-pipe repair rail on the arch-side wall with repaired umbrellas tagged by half-cut cloth ribbons; alley-side half: pastel mint shaved-ice push cart with folded pink parasol, tin downpipe at the corner, a folding table and two pastel stools outside the eave in the sun |
+| S4 | P29–P35 | LOC_EAVES_STALL | W_BREAK | D1 early afternoon · bright white-gold sun, shadows starting to lengthen, sun slanting in from the alley side onto the cart | **shutter UP** (dark storage inside) · **tape line from P29** | same LOC_EAVES_STALL token with the last phrase `white cloth-tape line on grey concrete from the shutter's centre to the eave edge` + both half phrases |
+| S5 | P36–P39 | LOC_EAVES_STALL | W_BREAK | D1 late afternoon · low warm late-afternoon sun from the alley side, long shadows | shutter UP · tape line · cart in place | same as S4 |
+| S6 | P40–P41 | LOC_EAVES_STALL | W_BREAK → dusk | D1 dusk · `soft apricot dusk sky reflected on damp pavement, first bulbs switched on` | **shutter DOWN · cart INSIDE the shutter** · table/stools put away · tape line | same as S4, minus the cart, table and stools |
+| S7 | P42–P48 | LOC_EAVES_STALL | none (after an off-screen early-evening town shower; no rain falling) | D1 night · `night, a single bare incandescent bulb making one warm amber circle over the workbench, everything else in deep navy-blue darkness, the centre hook on the edge of the light, half lit and half in shadow` + wet concrete reflecting the bulb | shutter DOWN · cart inside · tape line | same as S6 |
+| S8 | P49–P60 | LOC_EAVES_STALL | W_BREAK | D2 morning · `pearly blue-grey morning light, soft long shadows, pavement drying in pale patches` (cloud panels P52–P60: `pavement already dry`); P59–P60: the sun comes out — fresh crisp white-gold light | shutter DOWN all scene · cart inside · tape line · P49–P51 under the eave, P52–P60 just outside the eave in the sun | same as S6 |
+| S9 | P61–P62 | LOC_PLAZA | W_BREAK | D2 morning, sun out · crisp white-gold morning sunlight, crisp shadows, `pavement already dry` | — | same as S1 (P61 frames only the stall-side corner of the plaza; P62 is inside her umbrella) |
+
+- 장소가 바뀌는 곳(또는 같은 장소에서 시간·셔터 상태가 바뀌는 곳)에만 `--- SCENE BREAK ---`를 둔다: S1→S2(P15 앞), S2→S3(P16 앞), S3→S4(P29 앞), S4→S5(P36 앞), S5→S6(P40 앞), S6→S7(P42 앞), S7→S8(P49 앞), S8→S9(P61 앞). 8곳.
+- S8 안의 P59 '해가 남'은 같은 W_BREAK 안의 빛 변화다(시간·장소 급변 아님). 하늘·해는 프레임에 그리지 않는다(panel_059).
+
+## 2. 패널 크기 → Flow 화면비
+
+| size (이 샷리스트) | Flow aspect | 패널 |
+|---|---|---|
+| full-bleed | **9:16** | P06(캡처), P52, P61(반전) |
+| large | **9:16** | P02, P05, P37, P38, P41(COMP_A), P48(COMP_A) |
+| large | **3:4** | P54(회차 최대 정적, gap XL) |
+| medium · medium close | **3:4** | P07–P10, P12–P14, P18, P20, P21, P23, P25, P26, P30–P32, P34–P36, P39, P40, P49–P51, P55–P59 |
+| medium-wide | **4:3** | P16, P19, P24, P27, P28, P29, P33 |
+| wide strip | **16:9** | P01, P03, P15, P42 |
+| small · insert | **1:1** | small: P04, P47 · insert: P11, P17, P22, P43–P46, P53, P60, P62 |
+
+합계: 9:16 = 9 · 3:4 = 30 · 4:3 = 7 · 16:9 = 4 · 1:1 = 12 → **62**. 화면비는 비트시트 §2 그대로다(바꾼 것 없음). P54는 3:4 그대로 두되 가장 크게 잡은 얼굴 + gap XL로 '큰 컷'을 만든다.
+
+## 3. 연출 규약 (모든 패널 공통)
+
+### 3-1. 시점 코드 → 화면 방향
+
+| code | camera | screen layout |
+|---|---|---|
+| `HIGH` (plaza) | 45° oblique high angle from second-floor height across the plaza, looking at the market facade. **Never straight down.** | arch + striped awning + plane tree screen-LEFT, the stall screen-RIGHT. Top edge cuts above the 2F windows → no sky, no other clouds. Used by P01 and P61 (same camera). |
+| `FACADE` (plaza) | eye level from across the plaza, facing the market front | arch screen-left, stall screen-right, hydrangea alley mouth far right |
+| `SIDE` (plaza) | low/eye-level side view of the two figures; the **"P6 axis"** = camera on the plaza side, perpendicular to the line between them, Taeo screen-LEFT / Danbi screen-RIGHT | Taeo came from the arch side, so he stays screen-left all through B1–B2 |
+| `FRONT` (stall) | from the plaza, facing the shutter, eye level | **ARCH side = screen LEFT (Taeo's half: workbench, stool, bulb, rail)**, **ALLEY side = screen RIGHT (Danbi's half: cart, parasol, downpipe, table)**; vertical centre axis hook → keyhole → tape line between them |
+| `REVERSE` (stall) | from under the eave looking out to the plaza | Taeo screen-RIGHT, Danbi screen-LEFT; eave underside across the top; plane tree right |
+| `SIDE-ALLEY` | from the alley-side end, looking along the shutter toward the arch | shutter receding on screen-RIGHT, sunlit plaza screen-LEFT, arch far background; Danbi's half nearest the camera |
+| `SIDE-ARCH` | from the arch-side end, looking along the shutter toward the alley | shutter receding on screen-LEFT, plaza screen-RIGHT; Taeo's workbench nearest the camera |
+| `COMP_A` | FRONT, chest height, dead centre on the axis, from a little above the shutter box (a calm band of eave edge and plain shutter-box housing across the top ~14 %) to the floor at the eave edge, 9:16 | shutter DOWN; hook at the top centre just below the calm band; keyhole bottom centre; tape line to the camera; LEFT edge = workbench corner; **RIGHT edge = tin downpipe (EP1: cart is inside, so NO cart)**. P41 and P48 are the identical frame. |
+| `ALLEY-MOUTH` | from the plaza end into the hydrangea alley, eye level | market wall + green iron stairs screen-LEFT, stone wall screen-RIGHT (its flat top = bubble space) |
+
+### 3-2. 빛 방향 (화면 기준, FRONT 시점)
+
+- D1 midday: sun high, slightly from screen-right (alley side); arch-side half one tone darker in the awning's shade; short crisp shadows.
+- D1 early → late afternoon → dusk: sun slants lower and lower from screen-right (alley side), reaching the cart; shadows lengthen toward screen-left. Dusk = low apricot light from the right, first bulb on at the workbench (left).
+- D1 night: only the workbench bulb (left); deep navy elsewhere; the hook on the edge of the light.
+- D2 morning: soft pearly light from screen-left (arch side), soft long shadows to the right; P59 on: crisp white-gold sun.
+
+### 3-3. 고정 규칙 (위반 = REGEN)
+
+1. **이미지 글자 0.** Shutter faces, the board above the arch, the cart board, awnings: blank. Folding rule = tick lines only. Watch = cream dial, plain bar markers, no numbers. Repair tags = half-cut cloth ribbons (muted blue/green/lilac/white), no numbers. No papers, receipts, notes, phone screens anywhere in EP1.
+2. **Taeo never looks up before panel_061.** His eyes go only to her hands, the handle, the ribs, the tape, Bomi's umbrella, his watch, his work — level or lower. panel_061 is the first and only upward look (slot T9).
+3. **Gold only in panel_062** (one sun-glint raindrop). No gold in P05, P06, P10, P13, P47, P52–P61. No glow, halo, sparkle or aura anywhere.
+4. **Strong yellow = Taeo's family only:** his umbrella, the yellow thread, the yellow tip cap, the yellow spool. Brass (watch, hook, keys) = aged dull brownish brass. No red/orange object (syrup jars, Bomi's raincoat, Okja's brick-red vest, the strawberry charm) touching or next to any yellow — only Danbi's small strawberry clip is exempt.
+5. **Cloud:** one small grey volumetric cloud, ~1 m (open-umbrella) wide, a clear one-metre gap above her head/umbrella, flat darker underside, no outline, straight vertical column, rain only inside the column, dry ground except one wet circle/puddle at her feet. Under the eave it is squashed flat (`CLOUD_EAVE`). Camera: low, side, or 45° oblique — **never straight down over her head**.
+6. Same scene_id = same LOC, weather, light, outfit and wetness (wetness stays for the scene even after the cloud goes).
+7. Continuity locks: tape line only from panel_029 · cart inside the shutter from panel_040 (none in P40–P48) · no frayed canvas flap on the eave in EP1 · no keys hung on the hook (no 'returned key' custom in EP1) · Taeo always the same rolled-sleeve faded denim shirt + dark navy apron · Taeo's pink ear tips forbidden in EP1 · Okja's reading glasses sit on her head except in panel_025.
+8. Height: Danbi's crown = Taeo's shoulder. Hook ≈ 2.2 m (she reaches up on tiptoe). Extras only far, faces blurred, umbrellas closed, never looking up.
+
+### 3-4. art_space (말풍선 빈자리) 규칙
+
+- Default: the upper area on the speaker's side (FRONT: Taeo upper-left, Danbi upper-right; REVERSE the opposite). 1 bubble ≈ half the width × upper 1/5 (3:4) · 1/4 (1:1) · 1/3 (4:3) · 1/6 (9:16); 2 bubbles ≈ upper 1/3 (3:4) or 1/4 (9:16).
+- Never over faces, hands, the handle, the yellow thread/cap, keys, the keyhole or the hook.
+- **Cloud rule:** when the cloud is in frame, the bubble goes to the opposite side, at least one cloud-width away (crop the cloud at its corner when the frame is tight); 9:16 may use the lower third of dry pavement instead. Never next to/above/below the cloud, never inside the rain column — the cloud must never read as a thought bubble.
+- Good calm areas: clear W_BREAK sky, the blank lowered shutter face, the eave underside, the dark open storage (shutter UP), the stone-wall top, dry pavement in low/high shots, the darkness outside the bulb's circle.
+- **The viewer's limits** (letterer, `ep01_lettering.md` §0–§2): a bubble centred at x can be at most (100 − x) % wide, and Khmer is two lines at most. So a two-line bubble cannot sit right of a centred hook (only ~30 % there): in every FRONT stall frame the hook sits small at the very top edge (top ~6 %) or just out of frame, and the bubble band runs across the centre below it (P16, P19–P21, P24, P29, P31). P27 and P28 stay 4:3 with headroom (top ~60 % / ~57 % clear). COMP_A starts a little higher so a calm top band (~14 %) sits above the hook (P41 = P48).
+- **The `art_space` line of every panel is copied word for word from `ep01_lettering.md`** — that file is the authority for the wording; prompt-smith uses it as is.
+- Silent panels (`art_space: none`) may use the full frame. Exceptions: panel_048 keeps the same two empty areas as panel_041 (identical COMP_A frame, no bubbles); panel_003 keeps a small SFX patch; panel_062 keeps its bottom sixth empty for the end caption.
+
+### 3-5. 세로 스크롤 리듬 지도
+
+| beat | panels | rhythm |
+|---|---|---|
+| B1 콜드 오픈 | P01–P06 | wide → large → wide → small → large → **full-bleed capture**, gap L — slow, silent, establishing |
+| B2 첫 말맛 | P07–P14 | 3:4 ping-pong under the yellow, one 1:1 hand insert (P11) as the held beat |
+| B3 목표 소품 | P15–P21 | wide alley → 4:3/3:4 stall two-shots, one 1:1 tool insert |
+| B4 목표 충돌 | P22–P28 | 1:1 keys → 3:4 glare → 4:3 entrance → 3:4 close (small twist P25) → 4:3 verdict |
+| B5 티격태격 | P29–P35 | densest dialogue; 3:4 mirrored two-shots on the tape line, ends on a silent beat (gap L) |
+| B6 숨긴 문제 | P36–P41 | 3:4 → two tall 9:16 (Bomi's near-discovery) → 3:4 look → dusk → **COMP_A ①** |
+| B7 조용한 수선 | P42–P48 | wide night → five 1:1 hand inserts with M gaps → **COMP_A ②**, gap L |
+| B8 발견 | P49–P54 | 3:4 → **full-bleed dome** → 1:1 thread → **large face, gap XL** |
+| B9 묻힌 한마디 | P55–P58 | quick 3:4 ping-pong under her loud rain |
+| B10 엔딩 훅 | P59–P62 | still two-shot (L) → watch insert (L) → **full-bleed HIGH reversal** → 1:1 gold drop + caption |
+
+<!-- HEADER DONE: location table + aspect table + conventions -->
 
 ---
 
-## A. 장소 목록 (scene_id ↔ LOC ↔ VIEW ↔ 배경 한 줄)
-
-| scene_id | 패널 | location | 주 VIEW | 조명 | 배경 한 줄 |
-|---|---|---|---|---|---|
-| S01 | P1–3 | LOC_L1_DUTYROOM | VIEW_B | LIGHT_L1 + LIGHT_LAMP, 유리 너머 복도 역광 | 지하 2층 1990년대 관공서 당직실, 연녹 벽·진녹 띠, 테라조, 철망 형광등, 통유리 창구(말구멍·투입구·바깥 놋쇠 벨), 밤 (루프 2의 미래 = P38–40과 같은 순간) |
-| S02a | P4–6 | LOC_L2_STAIRWELL | B2 층참 | LIGHT_STAIR | 노출 콘크리트 비상계단, 진녹 난간, 철망 전구 하나, 회색 방화문, 반 층 아래 사슬 격자문, 전부 마름 (21:5x) |
-| S02b | P7 | LOC_L2_CORRIDOR | VIEW_ANCHOR | LIGHT_CORRIDOR | 방화문 안쪽 복도, 문 위 숫자 없는 시계 10:00 정각 |
-| S03 | P8–10 | LOC_L1_DUTYROOM | VIEW_C · VIEW_DESK · VIEW_NAPDOOR | LIGHT_COMEDY | 같은 당직실, 평범하고 고른 사무실 빛(블랙코미디) |
-| S04 | P11–21 | LOC_L1_DUTYROOM | VIEW_SIDE(신규) · VIEW_A · VIEW_B · VIEW_C | LIGHT_L1 + LIGHT_LAMP (P12 복도 끝 떨림, P15 LIGHT_COMEDY) | 같은 당직실, 녹백 형광 + 스탠드 한 점 |
-| S05a | P22–27 | LOC_L1_DUTYROOM | VIEW_SIDE · VIEW_B · VIEW_DESK | LIGHT_L1 + LIGHT_LAMP → P25 LIGHT_FLICKER → P26 LIGHT_BLACKOUT → P27 LIGHT_L1 | 같은 당직실 (반전 1: 떨림 → 어둠 → 빈자리) |
-| S05b | P28–30 | LOC_L2_CORRIDOR | VIEW_ANCHOR | LIGHT_CORRIDOR | 앵커 복도 (P7과 같게) |
-| S06a | P31 | LOC_L2_CORRIDOR | VIEW_LONG | LIGHT_CORRIDOR | 방화문을 등지고 본 긴 복도, 중간의 불 켜진 창구, 끝 1/3 어둠 |
-| S06b | P32–39 | LOC_L1_DUTYROOM | S03·S04와 같은 VIEW | P32–33 LIGHT_COMEDY · P34–39 LIGHT_L1 + LIGHT_LAMP (P35 복도 끝 떨림) | 같은 당직실 (루프 2 — 같은 색, 같은 빛) |
-| S07 | P40–49 | LOC_L1_DUTYROOM | VIEW_B · VIEW_A · VIEW_C · VIEW_NAPDOOR(열림) | LIGHT_L1 + LIGHT_LAMP · P41 LIGHT_STEADY · P43 숙직실 난로빛 | 같은 당직실 |
-| S08 | P50–57 | LOC_L1_DUTYROOM | VIEW_C · 클로즈업 | LIGHT_REVEAL (떨림 없음) | 같은 당직실, 스탠드 원이 그녀와 수칙 종이만 감싸고 방은 차분한 푸른 그림자 |
-| S09 | P58–64 | LOC_L1_DUTYROOM | 클로즈업 · 어깨 너머 · VIEW_SIDE 축 | LIGHT_REVEAL → P60부터 LIGHT_CLIFF | 같은 당직실. **유리는 프레임 밖이거나 반사 없는 평평한 어둠**(그녀 뒤 사람이 비치면 안 된다) |
-
-- 장소 토큰은 style-bible §6 원문을 그대로 쓴다. 같은 scene_id 안에서는 같은 LOC 문장을 쓰고, 컷마다 VIEW 문장만 바꾼다.
-- S02·S05·S06은 씬 안에서 장소가 바뀌어 하위 ID(a/b)로 나눴다(style-bible §6-1 권고). 이음새는 방화문과 복도 시계다.
-
-### A-1. 신규 카메라 뷰 VIEW_SIDE (art-director 확인 요청 · §H)
-
-style-bible §6-2 방향(서하의 왼쪽 = 칸막이·숙직실 문, 오른쪽 = 출입문, 뒤 = 서가)을 그대로 따른, **출입문 쪽 끝에서 방을 가로지르는** 뷰다. 낭독·벨·종이컵 장면(P11·P12·P13·P20·P22·P34·P35·P36)에서 선임의 얼굴, 서하의 얼굴, 유리 너머 복도, 칸막이 종이, 숙직실 문을 **한 그림에** 담을 수 있는 유일한 각도라 정의했다. prompt-smith는 아래 영문을 LOC_L1_DUTYROOM 토큰 뒤에 VIEW 문장으로 쓴다.
-
-```
-seen from the entrance-door end of the duty room, looking across the room at seated eye level: the thick glass service window runs along the right side of the frame with the dim corridor beyond it; the gray-green duty desk and the cracked green swivel chair in the right foreground; the gray steel archive shelves with dark gaps and the gray steel folding chair along the left side; in the background, the low gray partition at the far end of the desk with the small taped paper sheet, and behind it the closed cream nap-room door in the far wall
-```
-
-## B. 비율 · 크기
-
-| size | Flow aspect | 패널 | 수 |
-|---|---|---|---|
-| medium (STD) | **3:4** | P1·4·6·10·11·12·13·14·15·17·19·20·21·22·23·24·34·35·36·38·41·43·44·47·48·49·50·54·57·62 | **30** |
-| large / full-bleed (TALL: 느림·공개·앵커) | **9:16** | P3·5·7·16·18·27·28·31·37·40·42·45·51·52·53·55·58·60·61·64 | **20** |
-| small / insert (SQ: 클로즈업·빠름·어둠) | **1:1** | P2·8·9·25·26·29·30·32·33·39·46·56·63 | **13** |
-| insert band (BAND) | **16:9** | P59 | **1** |
-
-- style-bible §4-1 권장 배정을 따랐고, 두 곳만 바꿨다: **P55 3:4 → 9:16**(반전 2 대사 정점 + 기억 비네트 + 말풍선 2개를 한 컷에 세우려면 세로 공간이 필요), **P59 = 16:9 채택**(눈 띠 + 화면 뒤쪽 가장자리의 효과음). COMP 짝은 모두 원본과 같은 비율이다.
-- Flow에 3:4가 없으면 9:16으로 만들고 중요한 것을 가운데로 모은다. 그때도 `bubble space` 비율 위치는 그대로 둔다.
-
-## C. 고정 구도 반복 (COMP-*) — 원본 → 반복
-
-| ID | 원본 | 반복 | 비율 | 반복 컷에서만 바뀌는 것 |
-|---|---|---|---|---|
-| COMP-COLD-1 | **panel_001** | panel_038 | 3:4 | 없음(같은 순간) |
-| COMP-COLD-2 | **panel_002** | panel_039 | 1:1 | 없음(같은 순간) |
-| COMP-COLD-3 | **panel_003** | panel_040 | 9:16 | 없음(같은 순간). P40은 대사가 있어 위 18%를 쓴다 — P3도 같은 자리를 비워 두었다 |
-| COMP-ANCHOR | **panel_007** | panel_028 | 9:16 | 표정만: 통화 끝의 부드러운 얼굴 → ② 공포로 굳음 |
-| COMP-HANDOVER | **panel_008** | panel_032 | 1:1 | 서하 표정·입: 입을 열다 만 불안 → ⑧ 무표정, 입 모양으로 "그치?"를 함께 |
-| COMP-DESK | **panel_009** | panel_033 | 1:1 | 영수증 묶음이 조금 높다(셀 수 없게) · 서하 고개를 숙이지 않고 무표정, 눈이 묶음을 스친다 |
-| COMP-READ | **panel_012** | panel_035 | 3:4 | 서하도 읊고 눈은 숙직실 문에 · 선임 ④ 실눈 · 종이컵은 펼친 수첩 오른쪽 아래 귀퉁이 · 숙직실 문틈에 불빛 |
-| COMP-BELL | **panel_013** | panel_036 | 3:4 | 벨 위 물방울 · 서하가 투입구로 손을 뻗어 서식을 받는다 · 종이컵·문틈 불빛은 P35와 같은 상태 |
-| COMP-PAUSE | **panel_018** | panel_037 | 9:16 | 왼쪽 아래 가장자리에 초점 밖 서하의 옆얼굴·어깨(그 멈칫을 지켜봄) |
-| COMP-STICKER | **panel_005** | panel_052 | 9:16 | 장소 L2 → L1(배경: 어두운 콘크리트 → 스탠드의 따뜻한 흐림) · 손이 떨린다 |
-| 기억 비네트 | **panel_009** | panel_024 (위 왼쪽 비네트) | — | §D |
-| 기억 비네트 | **panel_021** | panel_055 (위 왼쪽 비네트) | — | §D |
-
-- **만드는 순서:** 원본(P1·2·3·5·7·8·9·12·13·18·21)을 반복 컷(P24·28·32·33·35–40·52·55)보다 먼저 만든다. 번호 순서대로 만들면 자연히 지켜진다. 반복 컷도 PNG를 복사하지 않고 **다시 그린다**(flow_tool은 md5가 같은 파일을 중복으로 거른다, style-bible §5-3).
-- tension-curve §9-3의 "P21 ↔ P54(기억 말풍선)"는 비트시트 R9 이전 번호다. 이 문서는 비트시트·대본대로 **P21 → P55 비네트**로 둔다.
-
-## D. 리플레이 인셋 → 기억 비네트 (P24 · P55)
-
-Flow는 두 이미지를 합성하지 못한다. 그래서 인셋을 **Flow가 한 장 안에 그리는 '액자 속 기억 그림'**으로 설계했다.
-- **모양:** 패널 위 왼쪽에 작은 사각 그림(P24 = 폭 약 46% × 높이 약 34%, P55 = 폭 약 60% × 높이 약 30%). 3–4px 굵기의 회백색(dingy off-white) 테두리 + 아래·오른쪽의 얇은 어두운 그림자. 안의 그림은 **채도를 약 40% 낮춘 바랜 색**, 같은 화풍, 원본 컷과 같은 각도·같은 순간.
-- **첨부:** 비네트의 원본 패널 PNG를 첨부하고("the small framed memory picture shows the same moment as the attached earlier panel, in faded colors"), 원본의 인물·소품 문장도 짧게 다시 쓴다(Flow가 참조를 덜 따를 때의 안전장치).
-- **기억 말풍선(`type: memory`) 자리:** 원본 컷이 이미 위쪽에 빈 띠(말풍선 자리)를 갖고 있으므로, 비네트 안의 **위쪽 1/3이 그 빈 띠**가 되게 자른다 → 기억 말풍선은 대본 지시대로 "인셋 안"에 들어간다. 필요하면 비네트 오른쪽 바깥 어둠까지 넘어가도 된다.
-- **이 결정의 범위:** style-bible §4-2 규칙 1(한 장 안에 테두리·콜라주 금지, 예외 P53)의 예외를 **P24·P53·P55** 셋으로 넓힌다. §4-2 규칙 5·§11 열린 항목(원본 PNG 크롭 합성)은 **대안**으로만 남긴다: Flow가 비네트를 엉뚱하게 그리거나(내용이 본 그림과 섞임) 두 번 다시 그려도 안 되면, 그 자리를 조용한 배경으로 비운 버전으로 다시 받고 합성 여부는 리더·사용자가 정한다(그림을 새로 지어내지 않는다).
-- prompt-smith: 이 세 컷의 Avoid 줄에서 `panel borders`만 뺀다(나머지는 그대로).
-
----
-
-## E. 패널
+## 4. 패널
 
 ### panel_001
-- scene_id: S01 / location: LOC_L1_DUTYROOM · VIEW_B
-- beat: B01 ① 콜드오픈 — 결과를 모르는 선언 (루프 2의 미래 = P38과 같은 순간) · 긴장 7 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이(eye-level), over-the-shoulder medium — 앉은 서하 뒤에서 유리 창구 쪽으로
-- composition: [COMP-COLD-1] 앞쪽 아래 오른쪽(x 55–100%, y 55–100%)에 서하의 뒷머리와 오른쪽 어깨(낮은 포니테일·네이비 머리끈, 오른뺨 가장자리만). 화면 왼쪽 가장자리(x 0–18%, y 42–68%) 낮은 회색 칸막이에 작은 수칙 종이: 흰 4번 조각 + 짧은 빨간 테이프 두 줄, 오른쪽 위 귀퉁이에 색 점만 한 바랜 스티커. 가운데(x 35–65%, 머리 y 30–42%) 두꺼운 통유리 너머 복도 역광 속 마른 남자의 상반신 실루엣, 가슴에 납작한 파일. 유리의 얼굴 높이에 둥근 말구멍, 카운터 높이에 투입구. 책상 상판은 아래 가장자리에 스탠드의 따뜻한 빛 번짐만(다른 책상 소품은 프레임 밖). 위 22%는 유리 위쪽 너머 어둑한 복도 천장.
-- characters: SEOHA(뒷모습 상태 토큰 + SHORT, 얼굴 안 보임) · JEONGMIN(역광 실루엣 상태 토큰 — 젖음은 그림자에 묻힘)
-- props: PROP_RULESHEET_SMALL(빈 모눈, 글씨 없음) · 유리 바깥 선반의 PROP_CALLBELL(작게)
-- lighting: LIGHT_L1 + LIGHT_LAMP, 유리 너머 복도 역광 · 빨강 = 수칙 종이의 테이프 두 줄뿐
-- dialogue_ref (1): ① 서하 dialogue "수칙 4번은 지키지 않겠습니다." (낮고 평평, 꼬리 ↘ 그녀의 뒷머리)
-- repeat: COMP-COLD-1 **원본** → panel_038
-- attach: refs/SEOHA_turnaround.png, refs/JEONGMIN_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 22% 가운데~왼쪽(x 5–70%, y 2–22%) — 유리 위쪽 너머 어둑한 복도 천장. 실루엣 머리(y 30% 아래)와 칸막이 종이에 걸리지 않게. / 책상 소품을 프레임 밖에 두는 이유: P38과 같은 순간(루프 2)이라 책상 상태를 두 번 맞출 필요를 없앤다. / 젖음 공개는 P16(F-12①) — 여기서는 숨긴다.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B1 콜드 오픈 · tension 4 · ⟨웃음⟩⟨복선⟩ F1
+- size: wide strip (aspect 16:9)
+- camera: HIGH — 45° oblique high angle from second-floor height across the plaza (camera fixed in the buildings opposite the market), normal lens, looking at the market facade; NOT straight down. **This exact camera position and angle are reused in panel_061.**
+- composition: Facade seen from above. LEFT third: the market arch with the faded green-and-white striped awning jutting out and the old plane tree at the arch-side corner. RIGHT edge: the stall — dark-green corrugated eave, faded mint shutter DOWN (blank). Top edge cuts just above the second-floor windows: no sky in frame. Dry pale-grey pavers with one drain grate fill the middle and lower two-thirds. Centre: a small pink umbrella crossing the plaza left→right toward the stall, one small grey cloud floating a clear metre above it, a short trail of fading wet circles behind it on the dry pavers. Under the stall's eave edge at the right: a tall figure holding an ALREADY OPEN yellow umbrella — reads only as a small bright-yellow dot, face hidden. Two or three blurred passers-by, all carrying CLOSED umbrellas. Sun high from slightly screen-right, short crisp shadows.
+- subject: Danbi (tiny, Day-1 outfit, under her pink umbrella); her cloud L2 (light grey, thin straight rain lines onto her umbrella only); Taeo (tiny, open yellow umbrella, face unreadable, head level); extras with closed umbrellas, faces blurred.
+- emotion: quiet, odd, funny — a sunny day, one person in her own rain. No faces readable.
+- motion/direction: eye enters at the arch (upper-left), follows the pink umbrella across to the yellow dot at the right edge, then drops into panel_002.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: Clue F1 = the only open umbrella in the sunshine besides hers is the yellow one, already up (no opening motion). Her cloud is the only cloud in the picture (sky out of frame). Board over the arch blank or cropped; shutter blank. No red object near the yellow dot.
 
 ### panel_002
-- scene_id: S01 / location: LOC_L1_DUTYROOM · 서가 방향(당직석 쪽에서 본 뒷벽)
-- beat: B01 ① 첫 질문 · 긴장 7 · gap_after 120
-- size: small · aspect: **1:1**
-- camera: 눈높이에서 약간 낮게, medium close-up — 당직석 쪽에서 선임을 정면 3/4로
-- composition: [COMP-COLD-2] 선임이 거꾸로 돌려 앉은 회색 접이식 의자에서 상체를 앞으로 확 내민다. 얼굴은 가운데~오른쪽(x 40–85%, y 35–78%), 큰 두 손이 의자 등받이를 움켜쥔다(아래 가장자리). 목의 검은 줄 돋보기가 가슴께에 매달려 흔들린다. 뒤는 회색 철제 서가와 그 사이의 어두운 틈. 위 왼쪽 1/4(x 0–48%, y 0–32%)은 서가 사이 어둠.
-- characters: SEONIM(FULL + 거꾸로 앉기 상태 토큰, 종이컵 없이 두 손으로 등받이) — 표정 ③ `eyes suddenly wide open, leaning his whole body forward in alarm`
-- props: PROP_FOLDING_CHAIR
-- lighting: LIGHT_L1(위에서 차가운 형광, 눈썹·턱 아래 짧은 그림자), 스탠드 빛은 닿지 않음
-- dialogue_ref (1): ① 선임 dialogue "너 미쳤어?" (꼬리 ↘ 그의 입)
-- repeat: COMP-COLD-2 **원본** → panel_039
-- attach: refs/SEONIM_turnaround.png, refs/SEONIM_expressions.png
-- fx/note: bubble space: 위 왼쪽 1/4(x 3–48%, y 3–32%) — 서가 사이 어둠. / LEFT 눈썹 흉터(정면 그림에서 화면 오른쪽) 또렷이. 돋보기는 쓰지 않는다.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B1 · tension 4 · ⟨웃음⟩⟨복선⟩ (R1 첫 노출)
+- size: large (aspect 9:16)
+- camera: SIDE, low angle (knee height), medium-full, normal lens; vertical frame so cloud → gap → umbrella → Danbi → puddle stack top to bottom.
+- composition: Danbi walking left→right, three-quarter profile facing screen-right, slightly left of centre, framed from her boots up to the cloud. Top quarter: the small light-grey cloud a clear one-metre above her pink umbrella, straight thin rain column falling onto the umbrella only. Middle: pink umbrella over her, the third rib wrapped in lumpy old grey cloth tape turned toward the camera. Bottom: dry pale-grey pavers, one small wet circle and a puddle only under her pale pink rain boots. Background: clear blue sky and the sunlit plaza, soft. Far background at the RIGHT edge, small: the yellow dot (open yellow umbrella under the stall's eave).
+- subject: Danbi, Day-1 outfit (mint denim pinafore dress, cream T-shirt, pale pink rain boots, top bun with mint scrunchie, red strawberry clip above her LEFT ear — on her far side here, so the top bun + mint scrunchie carry her identity); dry under the umbrella. Cloud L2.
+- emotion: Danbi: D1 eager smile, forced and a little stiff — trying hard to look fine.
+- motion/direction: walking left→right (same direction as panel_001); eye travels down from the cloud to the puddle.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- fx/note: R1 shown, never explained. Rain only inside the column; everything outside is dry and sunlit. Cloud grey, volumetric, shaded underside, no outline (never a white bubble shape). Yellow dot tiny and far.
 
 ### panel_003
-- scene_id: S01 / location: LOC_L1_DUTYROOM · VIEW_B
-- beat: B02 ① 결과를 자른다 · 시간 점프 정지점 · 긴장 7 · gap_after 480
-- size: large · aspect: **9:16**
-- camera: 앉은 눈높이보다 조금 높게, wide — 서하 뒤에서 창구 전체를
-- composition: [COMP-COLD-3] 아래 30%(y 70–100%) 앞쪽에 당직석에 앉은 서하의 뒷모습(뒷머리·어깨·초록 회전의자 등받이, 가운데에서 약간 오른쪽). 가운데(y 30–68%) 두꺼운 통유리 너머, 복도 역광 속 마른 남자 실루엣이 유리의 말구멍 쪽으로 천천히 상체를 숙인다(얼굴은 그림자). 화면 왼쪽 가장자리 구석(x 0–15%, y 50–65%) 칸막이의 작은 수칙 종이, 흰 4번 조각과 짧은 빨간 테이프 두 줄. 스탠드의 따뜻한 빛은 왼쪽 아래 그녀의 어깨에만. 위 18%(y 0–18%)는 유리 위쪽 너머 어둑한 복도 천장.
-- characters: SEOHA(뒷모습 상태 토큰) · JEONGMIN(역광 실루엣 상태 토큰, 숙이는 자세)
-- props: PROP_RULESHEET_SMALL · PROP_CALLBELL(작게)
-- lighting: LIGHT_L1 + LIGHT_LAMP, 유리 너머 복도 역광 · 빨강 = 테이프 두 줄뿐
-- dialogue_ref: 없음(무대사)
-- repeat: COMP-COLD-3 **원본** → panel_040
-- attach: refs/SEOHA_turnaround.png, refs/JEONGMIN_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: silent(이 컷은 말풍선 없음) — 단 P40 짝과 같은 구도라 위 18%(x 5–95%, y 2–18%) 유리 위쪽 너머 어둑한 복도 천장은 그림에서 비워 둔다. / 결과는 자른다: 손이 유리를 넘거나 무슨 일이 벌어지는 그림 금지.
-
---- SCENE BREAK --- (S01 → S02a · L1 당직실 → L2 비상계단 · 시간 되돌림: 21:5x)
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B1 · tension 5 · ⟨웃음⟩⟨복선⟩ F2
+- size: wide strip (aspect 16:9)
+- camera: FACADE, eye level, wide, from across the plaza facing the market front; slight wide-angle.
+- composition: Danbi just right of centre (about x 55–60 %) on the dry plaza, in front of the stall's ALLEY-side half (mint shutter DOWN, dark-green eave, tin downpipe behind her); the deep blue-violet hydrangeas of the alley mouth kept LOW at the far right, below mid-height. A gust: her pink umbrella flips inside-out and is yanked out to her RIGHT (away from the yellow), ending before x ~70 %; the taped third rib snaps right at the tape and juts outward. To the right of the snapping rib, the patch x ~72–96 %, y ~8–50 % is plain: sunlit wall, eave edge and clear sky only (SFX space). Her cloud, now L3 (slate blue-grey, heavy straight column), pours onto her. LEFT edge, cropped by the frame: the rim of an ALREADY OPEN sunflower-yellow canopy gliding in toward her at head height — only part of the canopy, no person readable, no opening motion, no motion lines on it. Everything outside the column dry and sunlit.
+- subject: Danbi Day-1, rain starting to hit her hair; cloud L3; inside-out pink umbrella with the snapped taped rib; edge of the yellow canopy (Taeo off-frame left).
+- emotion: Danbi: mouth in an "ah!" O-shape, eyebrows up, shoulders jerked (D6 startled).
+- motion/direction: gust pulls right; yellow enters from the left — eye goes to the snap (right), back to the yellow (left), then down.
+- dialogue_ref: 없음 (대사 없음) · [효과음] 뚝! (살 꺾이는 소리 — 뷰어가 KM ក្រាក់! 으로 씀)
+- art_space: a small clear patch of sunlit background to the right of the snapping rib, centre-right of the image (about x 72-96 %, y 8-50 %), outside the rain column and far from the yellow canopy at the left edge
+- fx/note: The snap SFX sits next to the rib, never near the yellow. Wind does not move the cloud or tilt the column (straight vertical). Shutter and alley mouth free of any signs. The yellow canopy is already open and steady (F2).
 
 ### panel_004
-- scene_id: S02a / location: LOC_L2_STAIRWELL · B2 층참
-- beat: B03 ② 마른 밤 기준선 · 사슬 문 · 긴장 3 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 약간 high-angle(위 계단참에서), medium — 허리 위
-- composition: 서하가 화면 왼쪽~가운데(x 15–55%), 머리 y 42–55%, 층참에 서서 휴대폰을 귀에. 진녹 철제 난간이 대각선으로 오른쪽 아래로 내려가고, 반 층 아래 계단이 오른쪽 아래 어둠(x 55–100%, y 58–100%)으로 이어져 굵은 사슬·자물쇠가 걸린 철제 격자문에서 끝난다(사슬만 희미하게 반짝). 화면 왼쪽 가장자리에 회색 방화문 일부(가로 밀대). 위 40%는 층참 윗벽(누런 회백)과 그 위 어둠.
-- characters: SEOHA(FULL + 계단·앵커 상태 토큰: RIGHT 손으로 휴대폰을 RIGHT 귀에 = 화면 왼쪽, LEFT 어깨 네이비 토트백) — 표정: 편안한 통화 얼굴(① 기본보다 풀린 `a relaxed small smile`)
-- props: 휴대폰(무지 연회색 실리콘 케이스, 화면은 뺨에 붙어 안 보임) · 토트백(무지) · 사슬 격자문
-- lighting: LIGHT_STAIR · 모든 면이 마름(F-13) · 빨강 없음
-- dialogue_ref (2): ① 지호(전화) dialogue "누나, 거기서도 별 보여?" (꼬리 → 휴대폰, 화면 왼쪽) ② 서하 dialogue "지하야." (꼬리 → 입)
-- attach: refs/SEOHA_turnaround.png, refs/LOC_L2_STAIRWELL_plate.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 층참 윗벽과 위쪽 어둠. ①은 왼쪽, ②는 오른쪽 아래로 엇갈리게. / 사슬 문은 배경으로만(대사로 말하지 않는다, F-15). 비상구 표지·초록 피난 그림 금지.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B1 · tension 5 · ⟨웃음⟩
+- size: small (aspect 1:1)
+- camera: close-up, eye level just below her face, front three-quarter; NOT top-down.
+- composition: Her face fills the centre; heavy straight raindrops from directly above hit her forehead and nose, confined to a column the width of her head and shoulders. Lower-left corner: the edge of the inside-out pink umbrella in her fist. Behind her head, soft-focus: the dry sunlit plaza and clear blue sky — sunshine all around her. Cloud out of frame above.
+- subject: Danbi Day-1, wet state L3 begins: fringe plastered to her forehead, strands stuck to her cheeks, top bun drooping, shoulders darkening. Cloud L3 (off-frame).
+- emotion: comic crumpled pout — eyes squeezed shut, mouth wobbling into a cry-face (funny, not tragic).
+- motion/direction: drops fall straight down; eye drops into panel_005.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: No sweat drops or comic symbols. The sunny dry background must read (rain only on her).
 
 ### panel_005
-- scene_id: S02a / location: LOC_L2_STAIRWELL · 층참(클로즈업)
-- beat: B03 ② 세상에 하나뿐인 것 심기 ⟨이중의미⟩ · 긴장 3 · gap_after 40
-- size: large · aspect: **9:16**
-- camera: close-up, 눈높이보다 약간 위에서 내려다봄
-- composition: [COMP-STICKER] 서하의 LEFT 손이 네이비 리넨 수첩의 오른쪽 가장자리를 잡고 세로로 든다. 표지 오른쪽 위 귀퉁이의 새 달냥이 스티커(지름 약 폭의 28%)가 화면 가운데(x 40–70%, y 44–60%), 그 위를 LEFT 엄지가 쓰다듬는다. 머스터드 카디건 소매가 손등을 반쯤 덮는다. 수첩 표지가 가운데~아래(y 38–100%)를 채우고 흰 실 제본이 왼쪽에. 위 30%(y 0–30%)는 초점 밖 배경.
-- characters: SEOHA(손 클로즈업 상태 토큰 — LEFT 손, RIGHT 손은 프레임 밖에서 휴대폰을 귀에)
-- props: PROP_NOTEBOOK(표지, 글씨·로고 없음) · **PROP_STICKER_NEW**(고양이 자신의 LEFT 귀 = 화면 오른쪽 귀가 크다, 황금빛 주황 — 빨강 아님)
-- lighting: LIGHT_STAIR — 배경은 어두운 콘크리트 층참과 철망 전구의 희미한 흰 번짐, 스티커는 화면에서 가장 채도 높은 색
-- dialogue_ref (2): ① 지호(전화) dialogue "달냥이 아직 붙어 있지?" ② 지호(전화) dialogue "떼지 마. 세상에 하나뿐이야." (둘 다 꼬리 ↗ 위 오른쪽 가장자리 = 프레임 밖 휴대폰)
-- repeat: COMP-STICKER **원본** → panel_052
-- attach: refs/PROP_STICKERS_pair.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 30%(x 4–96%, y 2–30%) — 초점 밖 배경. 스티커(y 44–60%)는 절대 덮지 않는다. / 반전 2(P53)의 생명: 큰 귀의 쪽과 그림이 PROP_STICKERS_pair와 같아야 한다.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B1 · tension 6 · ⟨설렘⟩⟨복선⟩ F2
+- size: large (aspect 9:16)
+- camera: low angle from right beside her head, at her eye height, tilted up about 40° (next to her point of view); normal lens.
+- composition: The underside of an already-open sunflower-yellow canopy slides in from the upper-LEFT (arch side) and covers the top two-thirds of the frame; its shaft runs diagonally down to the lower-LEFT edge, where only a hand grips the light natural-wood crook handle — rolled faded-denim cuff, brass watch on that LEFT wrist. Her rain now drums on the canopy: dark splash spots seen through the sunlit yellow fabric and a fringe of drops falling off its right rim. Upper-right corner beyond the rim: clear blue sky. Lower-right foreground, soft focus: the crown of her wet head (drooping top bun, mint scrunchie) and the tip of her inside-out pink umbrella.
+- subject: Taeo — hand and cuff only; yellow umbrella open and steady; Danbi's head (partial, wet); cloud L2 above the canopy (hidden; shown only by the drumming).
+- emotion: hush — sudden shelter; no faces.
+- motion/direction: canopy glides left→right over her; eye from the hand (lower-left) up the shaft to the canopy, down to her head.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- fx/note: NO opening motion, no sound, no motion lines — it was already open. NO gold anywhere. Watch = dull brownish brass, plain bar markers.
 
 ### panel_006
-- scene_id: S02a / location: LOC_L2_STAIRWELL · B2 층참
-- beat: B03 ② 잃을 것 = 약속 · 긴장 3 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 눈높이, 약간 옆에서 medium — 허리 위
-- composition: 서하가 진녹 난간에 등을 기대고 편하게 서 있다, 가운데(x 25–75%), 머리 y 40–52%. 뒤로 층참 벽, 오른쪽 아래로 계단이 어둠으로 내려간다(사슬 문은 보이지 않아도 된다). 위 40%는 층참 윗벽과 위쪽 어둠(철망 전구는 프레임 위 밖, 빛만 위에서).
-- characters: SEOHA(FULL + 계단·앵커 상태 토큰) — 표정 ⑦ `a relaxed, genuinely warm smile with soft eyes` (회차에서 가장 따뜻한 얼굴)
-- props: 휴대폰(무지, 화면 안 보임) · 토트백
-- lighting: LIGHT_STAIR · 빨강 없음
-- dialogue_ref (2): ① 지호(전화) dialogue "토요일 시상식, 진짜 와야 돼. 약속!" (꼬리 → 휴대폰, 화면 왼쪽) ② 서하 dialogue "응, 약속." (꼬리 → 입)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/LOC_L2_STAIRWELL_plate.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 층참 윗벽. / 약속(F-11①)은 그림이 아니라 말로만 — 시상식 이미지 금지.
-
---- SCENE BREAK --- (S02a → S02b · 비상계단 → 방화문 안쪽 복도)
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B1 · tension 6 · ⟨정적⟩⟨복선⟩ F3 · **캡처 컷**
+- size: full-bleed (aspect 9:16)
+- camera: SIDE, low angle (hip height), medium-wide two-shot — **"P6 axis"**: camera on the plaza side, perpendicular to the line between them, the canopy shaft on the frame's vertical centre line, normal lens. (Reserved for the EP12 finale — record it exactly.)
+- composition: Top fifth: clear blue sky with her small grey cloud (L2) a clear metre above the yellow canopy, its straight column landing on the canopy. Middle: the large sunflower-yellow canopy domed over both — the strongest colour of the episode — small splashes on top and a thin stream running off its LEFT rim. Lower half, both from mid-thigh up: Taeo screen-LEFT, tall, three-quarter toward her, holding the crook handle with his LEFT hand on her side; his outer (right, screen-left) shoulder sticks out past the canopy's left rim and is darkened by the runoff. Danbi screen-RIGHT under the centre of the canopy, her crown at his shoulder height, holding the inside-out pink umbrella low at her waist, snapped taped rib toward the camera. Background: sunlit dry plaza, soft.
+- subject: Taeo O1 (rolled-sleeve faded denim shirt, dark navy apron, pencil behind RIGHT ear, brass watch on LEFT wrist), outer shoulder wet. Danbi Day-1, wet L3 state (hair darkened and flattened, fringe stuck, shoulders dark). Cloud L2.
+- emotion: Taeo: T3 — deadpan, eyes DOWN on the bent rib in her hand, deliberately not up. Danbi: looking up at the yellow canvas from beneath, lips parted, stunned stillness. Both silent.
+- motion/direction: eye from the cloud down the column onto the yellow, then along his downward eye-line to her broken rib (the leading line), then down to the next panel.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: L
+- fx/note: The episode's capture image — spend the most care here. NO gold. His eyes are the clue (F3): on the rib, never on the sky. Rain only in the column and off the canopy rim; no rain anywhere else.
 
 ### panel_007
-- scene_id: S02b / location: LOC_L2_CORRIDOR · VIEW_ANCHOR
-- beat: B04+B05 ② **앵커 컷 원본** · 긴장 4 · gap_after 240
-- size: large · aspect: **9:16**
-- camera: 복도 안 눈높이, 방화문을 정면으로 본 frontal medium — 허리 위
-- composition: [COMP-ANCHOR] 서하가 화면 가운데(x 25–75%), 머리 y 30–45%, 허리 위까지. 그녀 바로 뒤에서 무거운 회색 철제 방화문이 닫히는 중(가로 밀대가 보임). 문 위 가운데(x 50%, y 8–20%)에 숫자 없는 흰 둥근 시계: 정확히 10시 정각(짧은 시침 = 10시 방향, 긴 분침 = 정확히 위). RIGHT 손으로 휴대폰을 RIGHT 귀에(정면이라 화면 왼쪽), LEFT 어깨에 네이비 캔버스 토트백(화면 오른쪽), 마른 옷. 양옆 연녹 벽과 진녹 띠, 위로 노출 배관. 위 왼쪽(x 3–38%, y 3–26%)은 민무늬 벽과 배관뿐. 방화문 오른쪽 가장자리 중간(x 72–96%, y 34–50%)은 민무늬 문면.
-- characters: SEOHA(FULL + 계단·앵커 상태 토큰) — 표정: 통화 끝의 부드러운 얼굴 `a soft, slightly wistful half-smile, gentle eyes`
-- props: PROP_CLOCK(10:00, 숫자·로고 없음) · 휴대폰(무지, 화면 안 보임) · 토트백
-- lighting: LIGHT_CORRIDOR · 빨강 없음(소화전함은 회색)
-- dialogue_ref (1 + sfx): ① 지호(전화) dialogue "누나, 버텨!" (꼬리 ↘ 휴대폰, 화면 왼쪽 — 통화의 마지막 말풍선) · sfx "쿵" (방화문)
-- repeat: COMP-ANCHOR **원본** → panel_028
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/LOC_L2_CORRIDOR_plate.png
-- fx/note: bubble space: 위 왼쪽(x 3–38%, y 3–26%) — 시계 왼쪽의 민무늬 벽·배관, 시계 면은 절대 덮지 않는다 · sfx: 방화문 오른쪽 가장자리 중간(x 72–96%, y 34–50%)의 민무늬 문면. / 시계가 10:10이면 REGEN(반전 1은 P7·P28 시계가 같아야 선다). 좌우 표식(점·휴대폰 손·토트백 어깨) 뒤집히면 REGEN.
-
---- SCENE BREAK --- (S02b → S03 · L2 복도 → L1 당직실)
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 첫 말맛 · tension 5 · ⟨웃음⟩⟨복선⟩⟨이중의미⟩ F3·F10
+- size: medium close (aspect 3:4)
+- camera: close-up over-the-shoulder from behind Danbi's right shoulder, chest height (slightly low), at Taeo; SIDE axis kept (he is screen-left).
+- composition: Right foreground, soft: back of Danbi's wet head (drooping top bun, mint scrunchie) and dark wet shoulder. Centre-left: Taeo's face and shoulders, three-quarter toward camera, eyes lowered to the inside-out pink umbrella in her hands (below frame). Top band: underside of the yellow canopy; beyond its LEFT rim the upper-left corner is clear blue sky. A few drops falling off the rim onto his outer shoulder at mid-left. Cloud off-frame above the canopy.
+- subject: Taeo O1, outer shoulder darkened; Danbi (back of head, wet L3). Cloud L2 (off-frame; drumming on the canopy).
+- emotion: Taeo: T3 deadpan, eyes down on her broken umbrella; matter-of-fact.
+- motion/direction: his eye-line points down-right out of frame (to the umbrella) → into panel_008.
+- dialogue_ref: 태오 "바람 쪽으로 펴지 마세요. 뒤집힙니다."
+- art_space: upper-left corner of the image (left ~45 % x top ~22 %): clear blue sky beyond the canopy's left rim, above Taeo's head
+- fx/note: His first line; the cause is exactly 'wind'. No upward glance, no reaction to the rain or her wet hair.
 
 ### panel_008
-- scene_id: S03 / location: LOC_L1_DUTYROOM · VIEW_C
-- beat: B06 ② 떠넘김 1 (굴욕 1/3) · 긴장 4 · gap_after 40
-- size: small · aspect: **1:1**
-- camera: 눈높이 medium wide — 방 안쪽(서가 쪽)에서 창구 벽 방향, 무릎 위
-- composition: [COMP-HANDOVER] 화면 가운데 왼쪽(x 18–55%) 당직석 책상 옆에 선 노미란: 검정 코트를 어깨에만 걸치고(소매가 비어 늘어짐) 한 손가락에 열쇠 꾸러미를 걸어 흔든다. 화면 오른쪽(x 68–95%) 창구 벽 끝 출입문 문간에 선 서하(토트백), 노미란 쪽을 본다. 두 사람 머리는 40% 선 아래(y 40–55%). 배경: 빈 초록 회전의자, 통유리 창구와 그 너머 어둑한 복도, 책상 왼쪽 끝 칸막이. 위 40%(y 0–40%)는 천장 배관·윗벽·유리 위쪽 너머 어두운 복도.
-- characters: MIRAN(FULL 의상 A + 열쇠 흔들기 상태 토큰) — 표정 ① `a polite closed-lip smile with cold, unsmiling eyes` · SEOHA(SHORT) — 입을 열다 만 불안 `an anxious, eager-to-please half-smile, lips parted as if about to speak`
-- props: PROP_KEYS · 노미란 허리 릴의 공무원증(뒤집혀 빈 뒷면) · 서하의 빈 공무원증
-- lighting: LIGHT_COMEDY(고르고 평평, 떨림 없음) · 빨강 = 칸막이 종이의 테이프(작게)뿐
-- dialogue_ref (2): ① 노미란 dialogue "강서하 주무관, 우리 오늘 당직 좀 바꿔 주자. 그치?" ② 노미란 dialogue "과장님도 다 그렇게 하셨어." (둘 다 꼬리 ↙ 노미란)
-- repeat: COMP-HANDOVER **원본** → panel_032
-- attach: refs/MIRAN_turnaround.png, refs/SEOHA_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 천장·윗벽·유리 위쪽 어둠. / 배치: ①(긴 줄, w 약 60%)은 위 왼쪽, ②는 그 아래 오른쪽. / 블랙코미디는 표정과 구도로만(땀방울·만화 기호 금지). 코트 소매에 팔이 들어가면 REGEN.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 · tension 5 · ⟨웃음⟩⟨복선⟩
+- size: medium (aspect 3:4)
+- camera: SIDE, waist-up single of Danbi, camera slightly low (chest height) so the background beyond the canopy rim is sky.
+- composition: Danbi on the right half, three-quarter facing screen-left toward Taeo (only his denim sleeve and the crook handle at the left edge), both hands flapping, one still holding the inside-out pink umbrella. The yellow canopy's underside across the top; beyond its LEFT rim, clear sky in the upper-left. Rain drumming on top (small splashes at the rim); cloud off-frame.
+- subject: Danbi Day-1, wet L3 state. Cloud L2 (off-frame).
+- emotion: Danbi: D2 flustered rambling — mouth open mid-sentence, eyebrows up, hands waving, eyes busily checking his face.
+- motion/direction: her gaze and gestures point left (to him); eye then down.
+- dialogue_ref: 단비 "아, 이 우산요?" "해 가리는 거예요."
+- art_space: upper-left third of the image (left ~42 % x top ~30 %): clear blue sky beyond the canopy's left rim, above Danbi's waving hands
+- fx/note: Bubble ② is a fixed line, quoted back in panel_034 (and EP9). He does not answer here.
 
 ### panel_009
-- scene_id: S03 / location: LOC_L1_DUTYROOM · VIEW_DESK
-- beat: B06 ② 명부 ≠ 열쇠 · 다리 단서 원본 (굴욕 2/3) ⟨이중의미⟩ · 긴장 4 · gap_after 40
-- size: small · aspect: **1:1**
-- camera: high-angle 약 45° 부감, 책상 와이드 — 회전의자 뒤쪽 위에서, 책상의 좌우 = 앉은 사람의 좌우
-- composition: [COMP-DESK] 위 38%(y 0–38%)는 책상 너머 통유리 창구와 그 너머 어둑한 복도. 가운데~아래에 책상 고정 배치: 앞 왼쪽 흰 거위목 스탠드, 앞 오른쪽 베이지 내선 전화, 오른쪽에 파란 2공 바인더와 그 위쪽 절반에 얹힌 검은 일지, 안쪽 가운데 철제 서류함의 낮은 연노랑 영수증 묶음, 그 옆 누런 테이프 디스펜서, 작은 나무 상자의 직인과 둥근 인주 케이스, 펜꽂이. 왼쪽 끝 칸막이에 작은 수칙 종이(왼쪽 가장자리, y 40–60%). 오른쪽 가장자리에서 노미란의 팔이 들어온다(어깨에서 잘림): LEFT 손바닥(가는 금색 팔찌시계)이 바인더의 드러난 파란 표지 위, RIGHT 손가락에서 열쇠 꾸러미가 떨어진다. 아래 가운데(x 30–60%, y 78–100%) 책상 앞 모서리 위로 내민 서하의 두 손바닥이 열쇠를 받는다. 왼쪽 아래(x 0–35%, y 70–100%)에 선 서하를 위·뒤에서 본 3/4: 오른쪽(노미란 쪽)으로 돌린 얼굴 옆선, 시스루 앞머리, 낮은 포니테일.
-- characters: MIRAN(SHORT 의상 A — 팔·손만, 명부 위 손바닥 상태 토큰) · SEOHA(SHORT) — 반사적으로 고개를 숙인다 `head bowed reflexively, eyes down`
-- props: PROP_ROSTER(닫힘, 빈 표지) · PROP_DUTYLOG(닫힘) · **PROP_RECEIPTS**(낮은 묶음, 빈 연노랑 + 글자 없는 작은 붉은 원) · PROP_SEAL · PROP_DISPENSER · PROP_EXT_PHONE(숫자 없는 버튼) · PROP_LAMP · PROP_KEYS · 유리 상판 밑 빈 종이
-- lighting: LIGHT_COMEDY + 스탠드는 켜져 있음(작은 노란 원) · 빨강 = 인주 케이스·영수증의 작은 원·칸막이 종이 테이프뿐
-- dialogue_ref (2): ① 노미란 dialogue "명부엔 내 이름 있어. 수당도 내 앞으로. 알지?" (꼬리 ↗ 오른쪽 가장자리 = 프레임 밖 노미란) ② 서하 dialogue "…아, 네. 죄송합니다, 알겠습니다." (꼬리 ↙ 서하)
-- repeat: COMP-DESK **원본** → panel_033 · **기억 비네트 원본** → panel_024
-- attach: refs/LOC_L1_DESK_plate.png, refs/MIRAN_turnaround.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 38%(x 3–97%, y 2–38%) — 책상 너머 유리와 어두운 복도. / 배치: ①은 긴 줄(w 60% 이상)이라 위 왼쪽에 넓게, ②는 그 아래. / 소품은 전부 빈 면, 영수증은 셀 수 없게 낮은 묶음(F-16①). P24 비네트가 이 컷 오른쪽 가운데(바인더 위 손)를 다시 그리므로 손·시계·바인더를 또렷하게.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 · tension 6 · ⟨웃음⟩ R3 씨앗
+- size: medium close (aspect 3:4)
+- camera: SIDE, slightly low, medium-close two-shot favouring Danbi; Taeo's three-quarter face and shoulder at the left third.
+- composition: Danbi chest-up, right of centre; Taeo at the left third, eyes down on the broken rib (below frame). Top: the yellow canopy's rim with splash crowns along it (the rain one step heavier) and a stream of water pouring off the LEFT rim onto his outer shoulder at mid-left. The canopy's left rim crosses about a third of the way down; Taeo's face sits below it, and the upper-left area above the rim (left ~44 %, top ~35 %) is clear sky.
+- subject: Danbi wet L3; Taeo's outer shoulder soaked. Cloud L3 (off-frame above the canopy; the splash crowns show it).
+- emotion: Danbi: D3 wincing self-correction — eyes squeezed shut, one palm raised. Taeo: T3 deadpan, unmoved, still only looking at the rib while water pours on his shoulder.
+- motion/direction: right-to-left ping-pong; the stream falls on him and he doesn't react.
+- dialogue_ref: 단비 "요즘 햇볕이 엄청 세서… 피부과 선생님이 그러는데…" "아니, 그게 아니라…"
+- art_space: upper-left third of the image (left ~44 % x top ~35 %): clear blue sky above the canopy's left rim - above the rim, the water stream and Taeo's face
+- fx/note: R3 seed — her self-correction = rain one step heavier (L2→L3). Comedy contrast: her rambling vs his stillness.
 
 ### panel_010
-- scene_id: S03 / location: LOC_L1_DUTYROOM · VIEW_NAPDOOR
-- beat: B06 ② 떠넘김 3 · 퇴장 (굴욕 3/3) · 긴장 4 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 눈높이 medium — 서하의 오른쪽 어깨 너머(전경 초점 밖)에서 숙직실 문 쪽
-- composition: 화면 오른쪽 앞(x 62–100%, y 40–100%) 초점 밖 서하의 옆얼굴·어깨, 시선은 왼쪽 문으로. 화면 왼쪽 중경(x 10–50%) 크림색 숙직실 문으로 걸어가는 노미란, 코트를 어깨에 걸친 뒷모습 3/4, 어깨 너머로 고개를 돌려 말한다. 문 윗선은 y 38% 아래. 위 38%는 문 위의 회백 윗벽과 천장.
-- characters: MIRAN(FULL 의상 A + 퇴장 상태 토큰) — 표정 ① · SEOHA(SHORT, 전경 초점 밖) — 닫히는 문을 좇는 시선
-- props: VIEW_NAPDOOR 문(간유리 창, 놋쇠 손잡이)
-- lighting: LIGHT_COMEDY · 빨강 없음
-- dialogue_ref (2): ① 노미란 dialogue "신입은 사흘 못 버텨." ② 노미란 dialogue "전임자도 사흘 만에 관뒀어." (둘 다 꼬리 ↙ 노미란)
-- attach: refs/MIRAN_turnaround.png, refs/SEOHA_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 38%(x 3–80%, y 2–38%) — 문 위 민무늬 윗벽과 천장. / EP03 '그 시선' 리플레이 원본(F-10): 서하의 시선이 문을 향한다는 것이 분명해야 한다.
-
---- SCENE BREAK --- (S03 → S04 · 장소 동일 L1 · 선임 등장)
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 · tension 6 · ⟨설렘⟩ 우발 접촉 1회
+- size: medium (aspect 3:4)
+- camera: SIDE, eye level, medium two-shot (waist up), slightly wider than panel_009 so the cloud shows.
+- composition: Taeo screen-LEFT, Danbi screen-RIGHT, the yellow canopy over both. Her cloud (L3, slate blue-grey) visible above the canopy at the top-RIGHT, cropped by the right edge, column landing on the canopy. Centre, chest height: the natural-wood crook handle — his LEFT hand gripping it (watch visible), her small right hand (thin mint hair tie on the wrist) landing ON TOP of his hand as she reaches to take it.
+- subject: Taeo O1 (outer shoulder wet); Danbi Day-1 wet L3. Cloud L3.
+- emotion: Danbi: words cut off mid-sentence, eyes dropping to their hands (D6, small startle). Taeo: T1 deadpan, eyes down on the hands/handle.
+- motion/direction: her hand moves left onto his; eye goes to the hands and stops.
+- dialogue_ref: 단비 "괜찮아요, 제가 들—"
+- art_space: upper-left corner of the image (left ~45 % x top ~22 %): clear sky beyond the canopy's left rim - away from the hands, the handle and the cloud at the top-right
+- fx/note: The only accidental touch of EP1. NO gold. Natural pink cheeks only, no blush effects.
 
 ### panel_011
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_SIDE
-- beat: B07 ② 선임 등장(서프) · 긴장 5 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 눈높이 medium wide (VIEW_SIDE) — 무릎 위
-- composition: 화면 왼쪽(x 0–45%) 서가 사이 어두운 틈에서 걸어 나오는 선임(크고 굽은 실루엣, 얼굴 3/4), 오른손으로 흰 종이컵을 책상 모서리(가운데, x 45–55%, y 62–70%)에 내려놓는다. 그 뒤에 거꾸로 놓인 회색 접이식 의자. 화면 오른쪽(x 58–100%) 초록 회전의자 등받이를 잡은 채 흠칫 몸을 뒤로 빼며 그를 돌아보는 서하. 오른쪽 가장자리는 통유리 창구와 어둑한 복도. 위 38%는 서가 꼭대기 어둠과 천장.
-- characters: SEONIM(FULL + 등장 상태 토큰) — 표정 ① · SEOHA(SHORT) — 흠칫 놀람 `startled, eyes wide, shoulders pulled in`
-- props: PROP_PAPER_CUP(무지, 손대지 않음) · PROP_FOLDING_CHAIR · PROP_SWIVEL_CHAIR
-- lighting: LIGHT_L1 + LIGHT_LAMP · 빨강 = 칸막이 종이 테이프(배경, 작게)뿐
-- dialogue_ref (2): ① 선임 dialogue "거긴 네 자리야. 난 안 앉아." ② 선임 dialogue "마셔. 긴 밤이래." (둘 다 꼬리 ↙ 선임)
-- attach: refs/SEONIM_turnaround.png, refs/SEOHA_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 38%(x 3–80%, y 2–38%) — 서가 꼭대기 어둠과 천장. / 선임은 초록 회전의자에 앉지 않는다(F-07①). 종이컵은 이후 P12·P21에서도 같은 모서리, 손대지 않음(F-49①).
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 · tension 6 · ⟨정적⟩
+- size: insert (aspect 1:1)
+- camera: insert close-up at hand height, eye level, shallow focus.
+- composition: Centre-lower: the light natural-wood crook handle; his long fingers, brass watch on his LEFT wrist, rolled denim cuff; her small right hand (thin mint hair tie) resting on top of his, both still — his hand just starting to slide out from under hers, leaving the handle to her. Upper quarter: soft-focus background only (dry sunlit plaza, a slice of clear sky), nothing sharp.
+- subject: two hands; watch = round brass, cream dial, plain bar markers, no numbers, brown leather strap.
+- emotion: one held beat of stillness.
+- motion/direction: his hand withdraws down-left; the handle passes to her.
+- dialogue_ref: 태오 "손잡이 끝을 잡으세요."
+- art_space: upper quarter of the image, left half: soft-focus empty background (dry plaza, a slice of sky) - nothing over the hands
+- gap_after: M
+- fx/note: Brass is dull and brownish (no competition with the yellow). The hands are dry under the canopy; rain L3 off-frame.
 
 ### panel_012
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_SIDE
-- beat: B08 ② 수칙 1 · 습관 단서 · 긴장 5 · gap_after 0
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium two-shot (VIEW_SIDE)
-- composition: [COMP-READ] 화면 오른쪽 앞(x 52–100%, 머리 y 32–50%) 당직석에 앉은 서하, 몸은 오른쪽 유리 쪽, 고개는 왼쪽 선임 쪽으로 돌려 얼굴 3/4(RIGHT 눈 밑 점이 보인다). 화면 왼쪽 중경(x 0–42%, 머리 y 40–55%) 서가 앞 접이식 의자에 거꾸로 앉은 선임, 팔뚝을 등받이에 얹고 서하를 보며 외워 읊는다(빈손, 돋보기는 목줄에 걸린 채 손대지 않음). 가운데 안쪽 배경: 책상 왼쪽 끝 낮은 칸막이와 작은 수칙 종이(흰 4번 조각·짧은 빨간 테이프 두 줄), 그 뒤 벽에 닫힌 크림색 숙직실 문. 오른쪽 가장자리: 통유리 창구, 그 너머 어둑한 복도 깊은 곳(y 40–46%)의 작은 형광등. 책상 위 종이컵(위치는 props). 위 40%(y 0–40%)는 천장 배관·윗벽·서가 꼭대기 어둠.
-- characters: SEONIM(FULL + 거꾸로 앉기 + 외워 읊기 상태 토큰) — 표정 ① · SEOHA(SHORT) — 입술이 소리 없이 반 박자 먼저 움직인다 `lips slightly parted, silently mouthing words` (말풍선 없음)
-- props: PROP_RULESHEET_SMALL · PROP_PAPER_CUP(책상 앞 모서리, 손대지 않음) · 숙직실 문 닫힘(문틈 불빛 없음)
-- lighting: LIGHT_L1 + LIGHT_LAMP + LIGHT_FLICKER(유리 너머 복도 끝 형광등 한 개만) · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (2): ① 선임 dialogue "1번. 22시부터 06시까지 창구를 찾은 민원인은 모두 접수한다." ② 선임 dialogue "돌려보내지 않는다." (둘 다 꼬리 ↙ 선임)
-- repeat: COMP-READ **원본** → panel_035
-- attach: refs/SEONIM_turnaround.png, refs/SEOHA_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 천장 배관·윗벽·서가 꼭대기 어둠. 복도 끝 떨리는 형광등(y 40–46%)은 그 아래에 남긴다. / 배치: ①은 긴 수칙 문구(w 60% 이상 필요)라 위 왼쪽에 넓게, ②는 그 아래 짧게. / F-14①: 서하의 입 모양이 보여야 한다. 수칙 종이는 작은 배경 소품(빈 모눈).
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 · tension 6 · ⟨설렘⟩⟨복선⟩⟨이중의미⟩ F3 (안도 = 미스디렉션)
+- size: medium close (aspect 3:4)
+- camera: close-up over-the-shoulder from behind Danbi's right shoulder, chest height — same setup as panel_007, tighter on his eyes.
+- composition: Right foreground: her wet shoulder visibly DROPPING (relief). Centre-left: Taeo's face, eyelids lowered, eyes on the bent rib of her umbrella (below frame). Top band: the yellow canopy underside and its left rim; upper-left: clear sky.
+- subject: Taeo; Danbi (shoulder, back of the wet head). Cloud L3→L2 (off-frame; the drumming softens).
+- emotion: Taeo: T3 deadpan, attentive only to the rib. Danbi: relief in the shoulder line — 'he's only looking at the umbrella'.
+- motion/direction: his downward eye-line is the line of the panel.
+- dialogue_ref: 태오 "세 번째 살. 휘었네요."
+- art_space: upper-left fifth of the image (left ~45 % x top ~20 %): clear sky beyond the canopy's left rim, above Taeo's head
+- fx/note: Fixed line, imitated in panel_031 (identical KM). Her relief is the misdirection; his eyes clearly DOWN.
 
 ### panel_013
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_SIDE
-- beat: B09 ③ 수칙 2 → 첫 민원인(호출벨) · 긴장 6 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium two-shot (VIEW_SIDE)
-- composition: [COMP-BELL] COMP-READ와 같은 카메라·같은 배치. 화면 왼쪽 중경(x 0–42%) 접이식 의자에 거꾸로 앉은 선임. 화면 오른쪽 앞(x 52–100%) 당직석의 서하. 오른쪽 유리 너머 바깥 선반(x 72–92%, y 55–66%) 위 작은 놋쇠 돔 호출벨과 그것을 누른 역광의 손(디테일은 그림자). 가운데 안쪽 배경: 칸막이의 작은 수칙 종이, 닫힌 크림색 숙직실 문. 위 40%(y 0–40%)는 천장 배관·윗벽·서가 꼭대기 어둠. 벨 바로 위 유리(x 70–96%, y 42–54%)는 어둑한 복도.
-- characters: SEONIM(SHORT, 낭독하던 입 모양 그대로) · SEOHA(FULL) — 창구 쪽으로 고개를 홱 돌린다(오른쪽 옆얼굴), 놀람 · JEONGMIN(벨을 누른 손 상태 토큰)
-- props: PROP_CALLBELL · PROP_RULESHEET_SMALL · PROP_PAPER_CUP(책상 앞 모서리, 손대지 않음) · 숙직실 문 닫힘(문틈 불빛 없음)
-- lighting: LIGHT_L1 + LIGHT_LAMP, 유리 너머 복도 역광 · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (2 + sfx): ① 선임 dialogue "2번. 당직자는 자기 이름을 말하지 않는다." ② 선임 dialogue "3. 호출벨이 울리면—" (둘 다 꼬리 ↙ 선임) · sfx "띵!" (벨)
-- repeat: COMP-BELL **원본** → panel_036
-- attach: _workspace/05_panels/ep01/panel_012.png, refs/SEONIM_turnaround.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 천장·윗벽·서가 꼭대기 어둠 · sfx: 벨 바로 위 유리의 어둑한 복도(x 70–96%, y 42–54%). / P12와 G0으로 붙는 같은 순간의 연속 — P12 PNG를 첨부해 방·인물 배치를 맞춘다.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 · tension 5 · ⟨설렘⟩ 닿을 뻔 1
+- size: medium (aspect 3:4)
+- camera: SIDE, eye level, medium two-shot.
+- composition: Taeo screen-LEFT, Danbi screen-RIGHT. Her cloud (L1, pale silver, thinning from its edges, a few last drops) only partly in frame at the top-RIGHT corner. Danbi holds the yellow umbrella's crook handle out to him at chest height (canopy still open above them); his hand rises to take it — fingertips one knuckle apart, her fingers already letting go first.
+- subject: Danbi wet (L3 state stays; drops falling from her fringe); Taeo O1. Cloud L1 fading.
+- emotion: Danbi: D7 delighted open smile, eyes crescents, water still dripping from her bangs. Taeo: T1 deadpan, eyes on the handle.
+- motion/direction: handle moves left, back to him.
+- dialogue_ref: 단비 "고마워요, 고마워요, 사장님!"
+- art_space: upper-left corner of the image (left ~45 % x top ~22 %): clear sky beyond the canopy's left rim - away from the hands and the fading cloud at the top-right
+- fx/note: Near-touch #1. Her wetness stays though the cloud fades. No gold.
 
 ### panel_014
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_B 축(방 안에서 유리 너머로, 서하 어깨 없이)
-- beat: B10 ③ 위협 진입 · 긴장 6 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium — 방 안에서 통유리 너머의 남자를 정면으로
-- composition: 화면 가운데(x 25–75%, 머리 y 40–52%) 통유리 너머 복도 역광 속 마른 남자의 상반신 실루엣, 비닐 파일을 가슴에 안고 정중히 고개를 숙인다. 얼굴 높이에 둥근 말구멍, 아래 가장자리 근처(y 85–95%)에 납작한 투입구와 바깥 선반의 놋쇠 벨. 아래 왼쪽 가장자리(x 0–20%, y 85–100%)에 서하의 머스터드 어깨 끝(초점 밖). 위 38%는 유리 위쪽 너머 복도 천장(고른 흐린 빛).
-- characters: JEONGMIN(역광 실루엣 상태 토큰 — 젖음이 보이지 않는다) · SEOHA(어깨 끝만)
-- props: PROP_CALLBELL · 비닐 파일(실루엣)
-- lighting: LIGHT_L1 + LIGHT_LAMP(방 안), 유리 너머 복도 역광 · 빨강 없음
-- dialogue_ref (2): ① 구정민 dialogue "늦은 시간에 죄송합니다." ② 구정민 dialogue "사망신고를 취소하러 왔습니다." (둘 다 꼬리 ↓ 유리 너머 그의 머리)
-- attach: refs/JEONGMIN_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 38%(x 3–97%, y 2–38%) — 유리 위쪽 너머 복도 천장. / P14 ① = P36 ② 대사 원본(구도 반복은 아님). style-bible §6-1의 "VIEW_A(P14)"를 바꿨다: 역광 실루엣("behind the glass" 상태 토큰)은 방 안에서 유리 너머로만 성립한다.
+- scene_id: S1 / location: LOC_PLAZA
+- beat: B2 · tension 5 · ⟨웃음⟩⟨복선⟩ F4
+- size: medium (aspect 3:4)
+- camera: FACADE, eye level, medium two-shot from the plaza side; the stall behind them.
+- composition: Taeo screen-LEFT (arch side), Danbi screen-RIGHT. Behind them, slightly soft: the stall's faded mint shutter (DOWN, blank) and the dark-green eave edge. Taeo has just furled the yellow umbrella and gives it one shake — a small arc of droplets flicking off toward the ground at his side (left). Danbi blinking at him. NO cloud anywhere in frame.
+- subject: Taeo O1 (outer shoulder still damp); Danbi Day-1, still wet (hair dark, fringe stuck) though the cloud is gone.
+- emotion: Taeo: T1 deadpan. Danbi: blinking, eyebrows up, mouth small (light D6).
+- motion/direction: droplets flick down-left; eye moves right to her blink.
+- dialogue_ref: 태오 "사장 아닙니다. 수선공입니다."
+- art_space: upper-left fifth of the image (left ~45 % x top ~20 %): the flat blank mint shutter face and the shaded eave underside above Taeo's head
+- gap_after: M
+- fx/note: He closes the umbrella only AFTER the cloud is completely gone (F4) — no cloud in frame; the only droplets come from his shake. Shutter blank.
+
+--- SCENE BREAK --- (S1 LOC_PLAZA → S2 LOC_HYDRANGEA_ALLEY)
 
 ### panel_015
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_A
-- beat: B11 ③ 블랙코미디 밸브 · 접수 ⟨이중의미⟩ · 긴장 5 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이보다 약간 높게, 정면 medium — 복도 쪽에서 통유리 너머의 서하
-- composition: 화면 가운데(x 25–80%, 머리 y 38–52%) 유리 너머 당직석에 앉아 정면을 향한 서하, 두 손 아래 책상 위에 연회청 빈 서식이 앞면을 위로 하고 놓여 있다(x 30–75%, y 62–82%, 크게). 화면 왼쪽 가장자리 앞(x 0–18%, y 30–100%) 초점 밖의 어두운 남자 어깨·옆머리(그림자, 물기 안 보임). 아래 가장자리에 말구멍·투입구·바깥 놋쇠 벨. 오른쪽(그녀의 LEFT) 칸막이와 스탠드. 위 38%는 유리 너머 방 안쪽 서가와 천장의 어둑함(유리는 옅은 정상 반사만).
-- characters: SEOHA(FULL) — 표정 ⑧ `a flat, polite, deadpan civil-servant face with slightly lowered eyelids` · JEONGMIN(전경 초점 밖 그림자 — 젖음 숨김)
-- props: **PROP_FORM_DEATH**(비닐 없이, 빈 칸·빈 직인 원, 글씨 없음, 크게) · PROP_CALLBELL · PROP_LAMP
-- lighting: LIGHT_COMEDY(평상 조명, 떨림 없음) · 빨강 = 칸막이 테이프(작게)뿐
-- dialogue_ref (2): ① 서하 dialogue "신청인이… 사망자 본인이시네요." ② 서하 dialogue "…본인 확인되셨네요." (둘 다 꼬리 ↓ 서하)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/JEONGMIN_turnaround.png
-- fx/note: bubble space: 위 38%(x 15–97%, y 2–38%) — 유리 너머 방 안쪽 서가·천장 어둠(전경 남자 어깨가 있는 왼쪽 가장자리는 피함). / F-53①: 서식은 빈 면으로 크게. 웃음은 무표정과 정면 구도로만.
+- scene_id: S2 / location: LOC_HYDRANGEA_ALLEY
+- beat: B3 목표 소품 · tension 4 · ⟨웃음⟩⟨장사⟩
+- size: wide strip (aspect 16:9)
+- camera: ALLEY-MOUTH, eye level, wide, from the plaza-side end looking into the alley.
+- composition: Market outer wall with the green iron staircase and the one old streetlamp on the LEFT. The old stone wall on the RIGHT is low (about chest height), so its flat top runs from the lower-right toward the vanishing point at about two-thirds height; the right half of the frame above it (x ~42–88 %, top ~70 %) is only clear sky and the plain upper face of the wall — nothing else. Deep blue-violet hydrangeas in the soil strip and black rubber tubs: full on the left side, kept LOW along the base of the stone wall on the right (below the wall top). Mossy drain. In the left ~40 % of the frame: Danbi tugging the pastel mint ice cart (cream trim, blank cream board, silver hand-crank ice shaver, folded strawberry-pink parasol, glass jars of red strawberry syrup) out from among the hydrangeas, bending her face close to one syrup jar and whispering to it. Midday light falling into the alley, short shadows.
+- subject: Danbi Day-1, hair still damp (fringe damp, shoulders drying). PROP_ICE_CART. No cloud.
+- emotion: Danbi: sheepish coaxing whisper to the jar, like talking to a pet (comic; D4).
+- motion/direction: the cart is pulled toward the camera (out to the stall → next scene); the eye reads Danbi on the left, then rests on the open right half.
+- dialogue_ref: 단비 "딸기야, 오늘이 첫날이다…" "떨지 마…"
+- art_space: right half of the image from the top down to about two-thirds height (x ~42-88 %, y 0-70 %): clear sky above the stone wall's flat top and the plain upper wall face - no hydrangea heads or streetlamp there
+- gap_after: M
+- fx/note: No yellow in this frame, so the red syrup jars are fine here. Cart board blank cream. No cloud.
+
+<!-- SECTION 1 DONE: P01 – P15 -->
+
+--- SCENE BREAK --- (S2 LOC_HYDRANGEA_ALLEY → S3 LOC_EAVES_STALL, midday, shutter DOWN, no tape line)
 
 ### panel_016
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_A(창구 바깥 — 복도 쪽, 클로즈업)
-- beat: B12 ③ 어긋남 '발견' · 긴장 6 · gap_after 240
-- size: large · aspect: **9:16**
-- camera: high-angle close-up — 복도 쪽에서 바깥 선반과 바닥을 내려다봄
-- composition: 위쪽(x 25–55%, y 18–32%) 유리 앞 바깥 선반 위 놋쇠 돔 벨, 그 위로 떨어지는 물방울 한 개. 화면 왼쪽(x 0–30%, y 10–62%) 물에 젖어 짙어진 카키 트렌치코트 자락이 늘어져 물이 떨어진다. 아래(y 64–92%) 젖은 검정 구두와 마른 테라조 바닥의 작은 웅덩이, 젖은 발자국이 아래 오른쪽 복도 끝 어둠으로 이어진다. 벨 뒤 유리 너머는 당직실의 흐린 따뜻한 빛.
-- characters: JEONGMIN(자락·구두만 상태 토큰 — 얼굴·몸 위쪽 없음)
-- props: PROP_CALLBELL(`water drops beaded on its brass dome`) · 웅덩이 1단계 `a small puddle`
-- lighting: LIGHT_L1이 유리 너머에서 새고 복도는 LIGHT_CORRIDOR의 어둑함, 물에 차가운 하이라이트 · 빨강 없음
-- dialogue_ref (sfx): sfx "똑" (벨 위 물방울)
-- attach: refs/JEONGMIN_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: sfx — 벨 오른쪽 유리의 흐린 면(x 60–92%, y 12–28%). / F-12①: 비는 없다, 젖은 것은 그와 물방울·웅덩이·발자국뿐(P4 마른 밤과 충돌). 웅덩이 타이머 시작.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B3 · tension 4 · ⟨설렘⟩⟨장사⟩
+- size: medium-wide (aspect 4:3)
+- camera: FRONT, eye level, medium-wide two-shot from the plaza.
+- composition: The whole stall front, framed tight: the shutter box runs along the very top edge, so the small empty brass S-hook sits at the very top edge (top ~6 %) or just out of frame; shutter DOWN (blank faded-mint face), single keyhole at the bottom centre, bare grey concrete floor (NO tape line). Arch-side (screen-LEFT): Taeo at the far LEFT edge (left of x ~14 %) by the iron-pipe repair rail on the side wall, hanging the furled yellow umbrella by its crook, eyes on the handle, giving one small nod. Alley-side (screen-RIGHT): Danbi has parked the mint cart and is bent forward over it, popping the strawberry-pink parasol open with one hand while waving at him with the other — her head stays below the upper third; the opened parasol leans out at the far RIGHT edge (right of x ~84 %); tin downpipe at the right corner. The upper third between x ~14 % and ~84 % is blank shutter only. The yellow umbrella (far left) and the syrup jars (far right) sit at opposite ends of the frame. Midday sun from slightly right; the arch-side half a tone darker.
+- subject: Danbi Day-1, hair and shoulders damp, fringe still damp (S3 wetness). Taeo O1, dry. Rail umbrellas with half-cut ribbons (muted blue, green, lilac, white).
+- emotion: Danbi: D7 bright neighbourly wave. Taeo: T1, a single nod, eyes on the handle.
+- motion/direction: her wave goes left to him; the empty vertical centre axis (hook → keyhole) stands between them.
+- dialogue_ref: 단비 "이 시장 입구에, 내 첫 가게!" "여름 오기 전에… 혼자 힘으로!"
+- art_space: upper third of the image from x ~14 % to ~84 % (blank mint shutter face under the eave); the small hook sits at the very top edge above this band (or just out of frame); Taeo, the rail with the yellow umbrella at the far left and the opened parasol at the right stay outside it
+- gap_after: M
+- fx/note: Both still think the other is the 'shop next door'. Shutter and cart board blank. No tape line (S3). Ribbons colour-only — no yellow, red or orange ribbons.
 
 ### panel_017
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_A(복도 쪽에서 유리 너머)
-- beat: B13 ③ 4번 낭독 시작(서스) · 긴장 6 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 눈높이 medium wide — 복도 쪽, 기다리는 민원인의 뒤쪽 3/4에서 유리 너머 방 안
-- composition: 화면 왼쪽 앞(x 0–35%, 머리 y 24–42%) 유리 앞에 선 구정민의 뒷모습 3/4(젖은 머리·어깨, 물이 떨어짐), 발밑에 조금 넓어진 웅덩이(아래 왼쪽). 유리 너머 가운데~오른쪽: 당직석에 앉아 정면을 향한 서하, 그 뒤 접이식 의자에 거꾸로 앉아 읽는 선임. 화면 오른쪽(그녀의 LEFT) 칸막이와 작은 수칙 종이, 스탠드. 위 22% 오른쪽은 유리 위쪽 너머 방 천장의 어둑함.
-- characters: SEONIM(FULL + 외워 읊기 상태 토큰, 유리 너머) · SEOHA(SHORT, 불안) · JEONGMIN(SHORT, 뒷모습 — P16 이후라 젖음이 보여도 된다)
-- props: PROP_RULESHEET_SMALL · 웅덩이 2단계 `a slightly wider puddle` · PROP_CALLBELL
-- lighting: 방 안 LIGHT_L1 + LIGHT_LAMP, 복도 쪽 LIGHT_CORRIDOR의 어둑함 · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (1): ① 선임 dialogue "4번. 민원인이 담당자를 찾으면…" (꼬리 ↓ 유리 너머 선임)
-- attach: refs/SEONIM_turnaround.png, refs/JEONGMIN_turnaround.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 오른쪽(x 40–96%, y 2–22%) — 유리 위쪽 너머 방 천장 어둠(구정민 머리가 있는 왼쪽은 피함). / 제목 서스펜스: 4번 문장은 여기서 끊긴다.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B3 · tension 4 · ⟨설렘⟩⟨복선⟩⟨장사⟩ F5
+- size: insert (aspect 1:1)
+- camera: insert, oblique three-quarter high angle over the workbench (not straight down), close.
+- composition: Lower two-thirds: the unrolled faded khaki-olive canvas tool roll with brown leather ties on the dark wooden worktop — pliers, small awl, spare silver umbrella ribs, black thread spools. His fingers (rolled denim cuff at the frame edge) push ONE new bright-yellow spool back down into its pocket, the spool half-hidden. Upper third: the plain dark back edge of the workbench and the shadowed wall, soft.
+- subject: Taeo's hand only (PROP_TOOL_ROLL); Danbi off-screen (voice only).
+- emotion: a casual, private, slightly hasty tuck.
+- motion/direction: fingers pushing downward into the pocket.
+- dialogue_ref: 단비(화면 밖) "우와… 공구들이 저보다 나이 많겠어요!" / 태오 "할아버지 겁니다."
+- art_space: upper third of the image: plain dark-wood back edge of the workbench and the shadowed wall, soft - nothing over the yellow spool
+- fx/note: NO red or orange in frame (no syrup jars, no strawberry charm). The yellow spool is the only strong yellow — the seed of the yellow thread (F5).
 
 ### panel_018
-- scene_id: S04 / location: LOC_L1_DUTYROOM · 서가 방향(당직석 쪽에서)
-- beat: B13 ③ 멈칫 · 레드 헤링 · 긴장 7 · gap_after 120
-- size: large · aspect: **9:16**
-- camera: 눈높이 close-up(머리·어깨) — 당직석 쪽에서
-- composition: [COMP-PAUSE] 선임의 얼굴이 가운데 아래쪽(x 20–80%, y 38–78%), 어깨가 아래 가장자리. 뒤는 회색 철제 서가와 그 틈의 어둠(초점 밖). 위 28%(y 0–28%)는 서가 위쪽 어둠. 왼쪽 아래 가장자리(x 0–22%, y 60–100%)는 초점 밖 전경 자리로 비어 있다.
-- characters: SEONIM(FULL) — 표정 ② `pausing mid-sentence, his eyes sliding away, mouth stopped half-open`
-- props: 목줄 돋보기(쓰지 않음)
-- lighting: LIGHT_L1(위에서 차가운 빛, 눈두덩 그림자) + 스탠드의 옅은 따뜻한 가장자리빛 한쪽 · 빨강 없음
-- dialogue_ref: 없음(무대사)
-- repeat: COMP-PAUSE **원본** → panel_037
-- attach: refs/SEONIM_turnaround.png, refs/SEONIM_expressions.png
-- fx/note: bubble space: silent(이 컷은 말풍선 없음) — 단 P37 짝과 같은 구도라 위 28%(x 3–97%, y 2–28%) 서가 위쪽 어둠은 그림에서 비워 둔다. / F-06①: 시선을 비키는 반 박자가 읽혀야 한다.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B3 · tension 4 · ⟨설렘⟩⟨복선⟩⟨장사⟩
+- size: medium (aspect 3:4)
+- camera: FRONT on the arch-side half, at the eye level of a seated man (lowish), medium.
+- composition: Taeo seated on the low worn round wooden stool (seat polished by years of use), centre-left, sweeping the edge of the stool seat once with his palm. Behind him: the dark wooden workbench with a small vise and the thread-spool shelf; bare bulb (off) on the rafter above. LEFT: on the side-wall iron-pipe rail, umbrellas repaired with BLACK thread, each with a half-cut cloth ribbon (muted blue, green, lilac, white). Upper part: the blank lowered shutter's left half and the eave underside. The centre hook just out of frame at the right.
+- subject: Taeo O1; PROP_GRANDPA_STOOL; repaired umbrellas.
+- emotion: Taeo: T1 deadpan with the faintest softening at the eyes (a hint of T7); no other sign of feeling.
+- motion/direction: palm along the stool edge; eye drifts left to the rail.
+- dialogue_ref: 태오 "이 자리, 할아버지가 사십 년 앉으셨습니다." "이번 장마는 제가 대신 엽니다."
+- art_space: upper third of the image, centre-right (x ~34-80 %): the blank mint shutter face above the workbench, right of the bulb - not on Taeo's face, not on the rail
+- gap_after: M
+- fx/note: The furled yellow umbrella hangs at the far end of the rail, partly cropped; nothing red near it. Ribbons colour-only, no numbers or labels. No frayed canvas flap on the eave (EP2 prop).
 
 ### panel_019
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_B 축(칸막이 클로즈업)
-- beat: B13 ③ 4번 조각 · 바랜 스티커 · 긴장 7 · gap_after 40
-- size: medium(인서트 클로즈업) · aspect: **3:4**
-- camera: 앉은 눈높이 close-up — 칸막이에 붙은 수칙 종이를 정면에서 약간 비스듬히
-- composition: 수칙 종이 전체가 가운데(x 12–88%, y 24–96%): 누렇게 바랜 크림 모눈 A5, 왼쪽 가장자리는 제본에서 뜯긴 들쭉날쭉한 선, 네 귀퉁이의 바랜 누런 테이프. 위에서 4/7 지점에 폭 90%의 새하얀 4번 조각, 위·아래 가장자리를 따라 빨간 비닐테이프 두 줄. 오른쪽 위 귀퉁이(x 72–86%, y 27–36%)에 바랜 달냥이 스티커, 오른쪽 아래 귀퉁이에 바랜 커피 반원. 7칸 자리는 전부 빈 모눈. 종이 윗선 위(y 0–22%)는 칸막이 윗면 너머 초점 밖 유리와 어둑한 복도.
-- characters: 없음(선임은 화면 밖 목소리)
-- props: **PROP_RULESHEET**(클로즈업 문장 전체, 글씨·숫자·줄 긋기 없음) · PROP_STICKER_FADED · PROP_RING_FADED
-- lighting: LIGHT_L1 + 스탠드의 따뜻한 빛이 종이 아래쪽 일부에 · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (1): ① 선임(목소리) dialogue "…'제가 담당자입니다'라고 답한다." (꼬리 → 왼쪽 프레임 가장자리 = 화면 밖 선임)
-- attach: refs/PROP_PAGES_pair.png, refs/PROP_STICKERS_pair.png
-- fx/note: bubble space: 위 22% 왼쪽~가운데(x 3–68%, y 2–22%) — 종이 위의 초점 밖 유리·어둠. 오른쪽 위 스티커(x 72–86%)를 덮지 않게 왼쪽으로 치우친다. / F-04②: 바랜 스티커가 보여야 한다. 가짜 글씨·번호가 생기면 REGEN. 종이는 빈 면으로 크게.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B3 · tension 4 · ⟨웃음⟩⟨복선⟩
+- size: medium-wide (aspect 4:3)
+- camera: FRONT, eye level, medium-wide two-shot.
+- composition: Framed from the knees up with headroom: the shutter box along the very top edge, the small empty hook at the very top edge (top ~6 %) or just out of frame; the upper third across the full width is blank shutter. Danbi on the right half flings both arms wide at shoulder height (inflating the crowd) — hands and head below the upper third. Taeo on the left at the rail, leaning a little toward it, body half-turned away from the plaza, fingertips on the tip of a repaired umbrella — not looking at the plaza at all; his head also below the upper third. Shutter DOWN, bare floor (no tape). The plaza is behind the camera, implied by the sunlight.
+- subject: Danbi Day-1 (damp); Taeo O1.
+- emotion: Danbi: D2 big boastful grin. Taeo: T2 deadpan, eyes on the umbrella tip.
+- motion/direction: her spread arms point outward; his flat correction answers from the left — right→left ping-pong.
+- dialogue_ref: 단비 "여기 하루에 몇천 명은 지나가요!" / 태오 "지난 한 시간, 열일곱 명입니다."
+- art_space: upper third of the image across the full width (blank mint shutter face); the small hook sits at the very top edge above this band (or just out of frame); Danbi's raised hands and both heads stay below it
+- gap_after: M
+- fx/note: Clue: he has been watching the plaza the whole time. The rail's yellow umbrella (far left) touches nothing red.
 
 ### panel_020
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_SIDE(가깝게)
-- beat: B14 ③ 이중 의미 1 + 질문 ⟨이중의미⟩ · 긴장 7 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium two-shot (VIEW_SIDE, P12보다 가깝게 — 가슴 위)
-- composition: 화면 왼쪽(x 0–45%, 머리 y 38–52%) 거꾸로 앉은 선임의 옆얼굴 3/4, 무뚝뚝하게 서하 쪽을 본다. 화면 오른쪽(x 52–100%, 머리 y 40–54%) 회전의자에서 몸을 돌려 그를 향한 서하, 카디건 소매를 움켜쥔 손. 둘 사이 안쪽 배경에 초점 밖 칸막이와 숙직실 문. 위 38%는 서가 꼭대기 어둠(왼쪽)과 유리 위쪽 너머 복도(오른쪽).
-- characters: SEONIM(SHORT) — 표정 ① · SEOHA(FULL) — 매달리는 불안 `anxious, eyebrows raised, clutching her cardigan cuffs`
-- props: (작게) PROP_RULESHEET_SMALL · PROP_PAPER_CUP(책상 모서리)
-- lighting: LIGHT_L1 + LIGHT_LAMP(서하 쪽만 따뜻) · 빨강 = 테이프(작게)뿐
-- dialogue_ref (2): ① 선임 dialogue "수칙은 지키라고 있는 거지, 믿으라고 있는 게 아니야." (위 왼쪽, 꼬리 ↙ 선임) ② 서하 dialogue "선배님, 이 수칙… 누가 쓴 거예요?" (위 오른쪽, 꼬리 ↘ 서하)
-- attach: refs/SEONIM_turnaround.png, refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png
-- fx/note: bubble space: 위 38%(x 3–97%, y 2–38%) — ①은 왼쪽 서가 위 어둠, ②는 오른쪽 유리 위쪽 너머 복도. 읽는 순서 = 왼쪽 → 오른쪽(화자 위치와 같다). / E8 원본.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B3 · tension 4 · ⟨웃음⟩
+- size: medium (aspect 3:4)
+- camera: FRONT, eye level, medium two-shot (waist up), a little tighter than panel_019.
+- composition: Danbi screen-RIGHT, chest puffed out, one thumb pointing at herself, the other hand still flapping away the last embarrassment (below her chin). Taeo screen-LEFT, standing straight, hands at his sides. Framed with headroom so both heads and all hands stay below the upper third; the upper third across the full width is blank shutter, with the small hook at the very top edge. A clear gap of blank shutter between them for the awkward beat.
+- subject: Danbi Day-1 (damp); Taeo O1.
+- emotion: Danbi: D7 → D2 self-introduction energy. Taeo: T1 deadpan, eyes level on her flapping hand, never up.
+- motion/direction: her line first (upper-right), his three syllables answer from the left.
+- dialogue_ref: 단비 "저는 소단비예요! 딸기 빙수, 이 동네 최고예요!" / 태오 "문태오입니다."
+- art_space: upper third of the image across the full width: blank mint shutter face below the small hook at the very top edge - no heads or hands in it
+- gap_after: M
+- fx/note: The episode's longest bubble by characters — give it room. The silence after is carried by the empty shutter between them.
 
 ### panel_021
-- scene_id: S04 / location: LOC_L1_DUTYROOM · VIEW_C 축(서가 쪽 근경)
-- beat: B14 ③ **에코 원본** ⟨이중의미⟩ · 긴장 7 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 눈높이 medium — 선임 근경, 책상은 원경
-- composition: [COMP-E1] 화면 왼쪽~가운데 앞(x 5–60%, 머리 y 28–46%) 접이식 의자에 거꾸로 앉은 선임, 얼굴 3/4(화면 오른쪽으로 약간 돌림), 두 손에 흰 종이컵을 쥐고 컵 속을 내려다본다. 화면 오른쪽 원경(x 62–96%, y 40–80%) 당직석 책상 위 베이지 내선 전화(조용히, 울리지 않음)와 그 곁에 작게 앉아 그를 돌아보는 서하. 위 25%(y 0–25%)는 서가 꼭대기 어둠과 천장.
-- characters: SEONIM(FULL + 거꾸로 앉기 상태 토큰, 종이컵) — 표정 ① 무표정, 시선은 컵 속 · SEOHA(SHORT, 작게)
-- props: PROP_PAPER_CUP(선임 손) · PROP_EXT_PHONE(숫자 없는 버튼) · PROP_FOLDING_CHAIR
-- lighting: LIGHT_L1, 원경 책상에 LIGHT_LAMP · 빨강 없음
-- dialogue_ref (1): ① 선임 dialogue "그 수칙, 이 일 제일 오래 한 사람이 쓴 거래." (꼬리 ↙ 선임)
-- repeat: **기억 비네트 원본** → panel_055 (비네트 = 이 컷의 왼쪽 위 2/3: 선임·종이컵·위 띠)
-- attach: refs/SEONIM_turnaround.png, refs/SEONIM_expressions.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 25%(x 3–97%, y 2–25%) — 서가 꼭대기 어둠. 말풍선이 길어(w 60% 이상) 넓게 둔다. / E1·E7 원본, F-03①. P55 비네트가 이 컷을 다시 그리므로 선임의 자세·컵·위 빈 띠를 또렷하게.
-
---- SCENE BREAK --- (S04 → S05a · 장소 동일 L1 · 블록 ④ 반전 1, 유머 없음)
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B3 · tension 4 · ⟨웃음⟩
+- size: medium (aspect 3:4)
+- camera: FRONT, eye level, medium two-shot.
+- composition: Danbi screen-RIGHT holding up her key on a mint-green spiral coil wrist keychain with a tiny red strawberry charm, jingling it like a greeting; at the same moment Taeo screen-LEFT takes out his worn brass key on a blank dark-brown leather tab and leans toward the same shutter centre. Neither has noticed the other's key. Shutter DOWN; the keyhole at the bottom centre between them. Framed with headroom: the hook, if visible, small at the very top edge; both heads, hands and keys below the upper third, which is blank shutter across the full width.
+- subject: Danbi Day-1 (damp); Taeo O1; PROP_SHUTTER_KEYS.
+- emotion: Danbi: D7 cheerful. Taeo: T2, eyes on the keyhole.
+- motion/direction: both converge on the centre axis from left and right.
+- dialogue_ref: 단비 "그럼 태오 씨, 저 셔터 열게요!" / 태오 "저도 엽니다."
+- art_space: upper third of the image across the full width: blank mint shutter face (the hook, if visible, small at the very top edge) - keys, hands and the keyhole stay below it
+- fx/note: Keys = aged dull brass, identical, no engraving or numbers. The red charm is in frame, so the rail's yellow umbrella must be OUT of frame here.
 
 ### panel_022
-- scene_id: S05a / location: LOC_L1_DUTYROOM · VIEW_SIDE(넓게)
-- beat: B15 ④ 판돈의 질문 + 결함 ⟨이중의미⟩ · 긴장 7 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium wide (VIEW_SIDE)
-- composition: 화면 오른쪽(x 62–100%, 머리 y 38–52%) 통유리 너머 말구멍에 대고 묻는 구정민(젖은 상반신, 고개를 살짝 기울임), 바깥 선반이 젖어 투입구 아래에 물이 고였다. 가운데(x 35–65%, 머리 y 40–54%) 당직석의 서하가 왼쪽 어깨 너머로 고개를 돌려 선임을 본다. 화면 왼쪽(x 0–30%) 거꾸로 앉은 선임이 얼굴을 서가 쪽으로 돌려 피한다. 가운데 안쪽 배경: 칸막이의 작은 수칙 종이(흰 조각이 스탠드 빛에 걸림). 위 38%는 천장·서가 꼭대기 어둠·유리 위쪽 너머 복도.
-- characters: JEONGMIN(SHORT) — 표정 ② `head tilted slightly in a polite question` · SEOHA(FULL) — 의심이 스치는 얼굴 · SEONIM(SHORT) — 얼굴을 돌린다
-- props: PROP_RULESHEET_SMALL · 젖은 바깥 선반(웅덩이 3단계: 이 각도에서 바닥은 카운터에 가려 안 보이므로 선반의 고인 물로 보여 준다)
-- lighting: LIGHT_L1 + LIGHT_LAMP · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (2): ① 구정민 dialogue "담당자분 계십니까? 직인이 필요합니다." (위 오른쪽, 꼬리 ↓ 구정민) ② 서하 thought "(맨 위에 붙은 게… 최신 개정이니까.)" (위 왼쪽, 구름형·꼬리 없음)
-- attach: refs/SEOHA_turnaround.png, refs/JEONGMIN_turnaround.png, refs/SEONIM_turnaround.png
-- fx/note: bubble space: 위 38%(x 3–97%, y 2–38%) — 오른쪽은 유리 위쪽 너머 복도(①), 왼쪽은 서가 꼭대기 어둠(②). / E5 원본, F-54①, F-06②(선임이 얼굴을 돌림 = 미스디렉션).
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B4 목표 충돌 · tension 6 · ⟨설렘⟩⟨복선⟩ 닿을 뻔 2
+- size: insert (aspect 1:1)
+- camera: insert, eye level at the bottom of the shutter (crouching height), macro close, straight-on.
+- composition: Lower centre: the single keyhole in the bottom bar of the faded mint shutter. From the LEFT: his LEFT hand (rolled denim cuff, brass watch) with the worn brass key on the blank dark-brown leather tab. From the RIGHT: her right hand (thin mint hair tie on the wrist) with the identical bright brass key on the mint coil with the tiny red strawberry charm. Key tips stopped a hair apart right in front of the keyhole; their fingers one knuckle apart. Upper quarter: plain blank mint shutter face.
+- subject: two hands, two keys, one keyhole.
+- emotion: frozen surprise, in the hands only.
+- motion/direction: symmetrical convergence; time stops.
+- dialogue_ref: 태오 "…어." / 단비 "어?!"
+- art_space: upper quarter of the image: plain blank mint shutter face - nothing over the keys, the keyhole or the fingers
+- fx/note: Identical teeth and shape — only the key rings differ. No engraving, no numbers. No yellow in frame (the red charm is fine).
 
 ### panel_023
-- scene_id: S05a / location: LOC_L1_DUTYROOM · VIEW_B
-- beat: B16 ④ 치명적 선택 · 긴장 8 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 over-the-shoulder medium
-- composition: 앞쪽 아래 가운데~왼쪽(x 15–60%, y 60–100%) 서하의 뒷머리와 오른뺨 가장자리, 말구멍 쪽으로 몸을 약간 내민다. 화면 왼쪽 가장자리(x 0–16%, y 38–60%) 칸막이의 작은 수칙 종이(흰 4번 조각과 빨간 테이프 두 줄이 프레임 안에 걸림). 유리 너머 가운데~오른쪽(x 40–85%, 머리 y 30–45%) 젖은 구정민의 상반신, 공손히 숙인 자세, 흔들림 없는 시선, 비닐 파일. 바깥 선반의 놋쇠 벨. 위 오른쪽 1/4(x 50–97%, y 2–26%)은 그의 머리 위 어둑한 복도.
-- characters: SEOHA(뒷모습 상태 토큰 + SHORT) · JEONGMIN(FULL) — 표정 ① `a polite faint smile, a calm, steady, almost unblinking gaze`
-- props: PROP_RULESHEET_SMALL · PROP_CALLBELL · 비닐 파일
-- lighting: LIGHT_L1 + LIGHT_LAMP(그녀 어깨와 책상에만 따뜻) · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (1): ① 서하 dialogue "제가 담당자입니다." (꼬리 ↙ 그녀의 머리)
-- attach: refs/SEOHA_turnaround.png, refs/JEONGMIN_turnaround.png, refs/PROP_PAGES_pair.png
-- fx/note: bubble space: 위 오른쪽 1/4(x 50–97%, y 2–26%) — 구정민 머리 위의 어둑한 복도(style-bible §5-4 예시와 같다). / E10 원본. 수칙 종이가 프레임 안에 반드시 걸린다.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B4 · tension 6 · ⟨정적⟩
+- size: medium (aspect 3:4)
+- camera: SIDE-ALLEY, low angle (crouch height), two-shot — camera at the alley-side end looking along the shutter toward the arch; shutter receding on screen-RIGHT, sunlit plaza on screen-LEFT, the arch far in the background.
+- composition: Foreground right: Danbi crouched, three-quarter back view, cheeks puffed, glaring sideways — her head below the top fifth. Mid-ground centre (right of x ~40 %): Taeo crouched on the other side of the keyhole, half his face showing over his raised key, eyes narrowed. Their keys held up between them. Upper right (x ~36–82 %, top ~20 %): the blank mint shutter face receding near the camera; upper left (x ~0–40 %, y ~15–30 %): the sunlit plaza sky beyond the eave edge — both left plain.
+- subject: Danbi Day-1 (damp); Taeo O1; both keys.
+- emotion: Danbi: puffed cheeks, indignant. Taeo: T1 with eyes just a little narrower; gaze level on her key.
+- motion/direction: glares cross at the centre; eye moves right → left.
+- dialogue_ref: 단비 "왜 태오 씨 열쇠가 제 거랑 똑같아요?" / 태오 "할아버지 열쇠입니다."
+- art_space: upper-right: the blank mint shutter face receding near the camera (x ~36-82 %, top ~20 %); upper-left, a little lower: the bright sky beyond the eave edge (x ~0-40 %, y ~15-30 %) - not on faces or keys
+- gap_after: M
+- fx/note: No tape line. The rail at the far arch end shows no yellow (hidden behind Taeo / the eave post) because the red charm is in frame.
 
 ### panel_024
-- scene_id: S05a / location: LOC_L1_DUTYROOM · VIEW_B 축(유리 너머 클로즈업) + 기억 비네트
-- beat: B17 ④ 새 정보 ⟨반전⟩ · 긴장 8 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 close-up — 방 안에서 유리 너머 구정민의 얼굴
-- composition: 화면 오른쪽 아래 2/3(x 35–98%, y 34–98%) 유리 너머 구정민의 얼굴 클로즈업, 고개를 살짝 기울였고 미소는 사라졌다. 말구멍 가장자리가 입가 근처, 유리에 옅은 정상 반사. **위 왼쪽 기억 비네트**(x 4–50%, y 4–36%): 회백 테두리 + 얇은 그림자, 채도 약 40% 낮춘 바랜 그림 — panel_009와 같은 부감 각도로 파란 바인더 위에 놓인 노미란의 LEFT 손바닥(가는 금색 팔찌시계), 검은 일지 모서리, 비네트의 위 1/3은 그 컷처럼 책상 너머 어두운 유리. 비네트 아래(x 4–34%, y 36–98%)와 위 오른쪽(x 52–97%, y 2–30%)은 어둑한 복도.
-- characters: JEONGMIN(FULL) — 표정 ④ `the smile gone, a completely blank, patient, waiting face`, 고개 기울임 · MIRAN(비네트 안 손만, 의상 A 소매)
-- props: 비네트 안 PROP_ROSTER(닫힘, 빈 표지) · PROP_DUTYLOG
-- lighting: LIGHT_L1 + LIGHT_LAMP, 그의 얼굴에 차가운 물 하이라이트 · 비네트는 바랜 색 · 빨강 없음
-- dialogue_ref (2): ① 구정민 dialogue "명부에 없는 분이 담당자라고요?" (위 오른쪽, 꼬리 ↓ 구정민) ② 노미란(기억) memory "명부엔 내 이름 있어." (비네트 안 위쪽, 꼬리 → 비네트 속 손)
-- repeat: 기억 비네트 — 원본 **panel_009** 첨부(§D)
-- attach: _workspace/05_panels/ep01/panel_009.png, refs/JEONGMIN_turnaround.png, refs/JEONGMIN_expressions.png
-- fx/note: bubble space: ① 위 오른쪽(x 52–97%, y 2–30%) — 그의 머리 위 어둑한 복도 · ② 비네트 안 위 1/3(x 6–48%, y 6–17%) — 비네트 속 어두운 유리(대안: 비네트 바로 아래 x 4–34%, y 37–48%의 어둠). / **인셋 처리:** Flow가 한 장으로 그리는 액자형 기억 비네트(§D). panel_009를 첨부하고 "the small framed memory picture in the upper-left shows the same moment as the attached earlier panel, faded". 안 되면 위 왼쪽을 조용한 배경으로 비운 버전으로 받고 합성 여부는 리더가 정한다. Avoid 줄에서 `panel borders`만 뺀다. / F-48③: 왜 틀렸는지가 같은 컷에서 보여야 한다.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B4 · tension 5 · ⟨웃음⟩⟨장사⟩
+- size: medium-wide (aspect 4:3)
+- camera: FRONT, eye level, medium-wide.
+- composition: Framed with headroom: the shutter box along the very top edge, the small empty hook at the very top edge (top ~6 %) or just out of frame; the upper third across the full width is blank shutter. Okja bustles in from the LEFT edge (arch side) mid-stride, both hands thrown up beside her face (not above her head), the big key ring jingling on her RIGHT hip (toward the camera as she walks right). Taeo still crouched at the keyhole, centre-left, eyes on the keys in his hand. Danbi has sprung to her feet centre-right, turning to meet Okja. All heads and hands below the upper third. Shutter DOWN, bare floor.
+- subject: Okja (CHAIR_OKJA: short salt-and-pepper perm, reading glasses ON TOP OF HER HEAD with a beaded chain, brick-red quilted vest, cream blouse, grey trousers, big key ring on RIGHT hip); Danbi Day-1 (damp); Taeo O1.
+- emotion: Okja: broad surprised grin, hands up. Danbi: D2 eager appeal. Taeo: T2, eyes down on the keys (he does not look up at her).
+- motion/direction: Okja enters left→right; Danbi turns left to meet her.
+- dialogue_ref: 단비 "회장님! 여기 제 칸 맞죠?" / 옥자 "태오야?!"
+- art_space: upper third of the image across the full width (blank mint shutter face); the small hook sits at the very top edge above this band (or just out of frame); Okja's raised hands and all heads stay below it
+- fx/note: The rail's yellow umbrella must be OUT of frame — Okja's brick-red vest never near yellow. Her keys: dull brass/grey, coloured cloth tags, none yellow. Glasses stay on her head here.
 
 ### panel_025
-- scene_id: S05a / location: LOC_L1_DUTYROOM · 서하 클로즈업(살짝 올려다봄)
-- beat: B18 ④ 정정 ① 떨림 · 긴장 8 · gap_after 0
-- size: small · aspect: **1:1**
-- camera: 약간 low-angle close-up — 그녀 얼굴과 머리 위 형광등 기구
-- composition: 서하의 얼굴이 가운데 아래(x 15–80%, y 32–92%). 위 가장자리 오른쪽(x 50–95%, y 0–16%) 머리 위 철망 형광등 기구, 관이 더듬거리며 어두워진다. 위 왼쪽(x 3–45%, y 3–28%)은 어두워지는 천장.
-- characters: SEOHA(FULL) — 표정 ② `frozen in fear, eyes wide, lips pressed shut, face rigid`
-- props: 형광등 기구(철망)
-- lighting: LIGHT_FLICKER(그녀 바로 위 관만), 스탠드 빛이 아래에서 약하게 · 빨강 없음
-- dialogue_ref (sfx): sfx "치직—" (형광등)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png
-- fx/note: bubble space: sfx — 위 왼쪽 천장(x 3–45%, y 3–28%), 기구 곁. / 정정 문법 ①(world §5-5). 괴물·피·비명 얼굴 금지.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B4 · tension 5 · ⟨설렘⟩⟨반전⟩(중반 작은 반전)⟨복선⟩⟨장사⟩
+- size: medium close (aspect 3:4)
+- camera: close-up on the FRONT axis, chest height, slightly low.
+- composition: Lower third: two open palms side by side — Taeo's larger palm on the LEFT holding the worn key on the dark-brown leather tab (brass watch at his LEFT wrist), Danbi's small palm on the RIGHT holding the identical bright key on the mint coil with the tiny red strawberry charm. Middle: Okja leaning in, her reading glasses just pulled DOWN from her head onto her nose, eyes huge and round behind the lenses, nose almost touching the keys. Background soft: the blank mint shutter.
+- subject: Okja; two palms; PROP_SHUTTER_KEYS.
+- emotion: Okja's eyes pop — comic amazement tipping into 'oh no, my own mistake'. The palms hold still.
+- motion/direction: her gaze straight down onto the keys.
+- dialogue_ref: 옥자 "아이고… 둘 다 진짜네!"
+- art_space: upper fifth of the image, full width: the blank shutter face above Okja's perm - off her face and the keys
+- fx/note: The ONE panel where Okja's glasses come down onto her nose (script P25; seed for EP4) — in every other panel they sit on her head (character-sheet drift rule). Keys identical, no engraving or numbers. No yellow in frame.
 
 ### panel_026
-- scene_id: S05a / location: LOC_L1_DUTYROOM · (완전한 어둠)
-- beat: B18 ④ 정정 ② 어둠 한 컷 · 긴장 8 · gap_after 240
-- size: small · aspect: **1:1**
-- camera: —
-- composition: 완전한 어둠 한 장. 형체·실루엣·빛 없음.
-- characters: 없음
-- props: 없음
-- lighting: LIGHT_BLACKOUT
-- dialogue_ref: 없음(무대사)
-- attach: (없음)
-- fx/note: bubble space: silent. / 프롬프트 = `a completely black image, total darkness, no shapes, no silhouettes, no light`. Flow가 거부하거나 거의 검정이면 그대로 ACCEPT(실루엣만 없으면). 뒤 240px 간격과 이어져 어둠이 길어진다.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B4 · tension 5 · ⟨웃음⟩⟨장사⟩
+- size: medium (aspect 3:4)
+- camera: FRONT, eye level, medium on Okja; Taeo and Danbi cropped at the edges.
+- composition: Okja centre, glasses pushed back up onto her head, slapping her own forehead with one palm, upper body twisting — toward Taeo at the LEFT edge (his shoulder and arm) and on toward Danbi at the RIGHT edge (her shoulder and damp top bun). Framed with headroom: her head and slapping hand stay below the upper third, which is blank shutter across the full width.
+- subject: Okja; edges of Taeo and Danbi.
+- emotion: Okja: theatrical, mock-guilty grin.
+- motion/direction: her twist left→right matches the bubble order.
+- dialogue_ref: 옥자 "태오한텐 문 영감님처럼 계속 열라고 해 놓고…" "단비 씨가 신청을 하니까 새 열쇠를 줬지 뭐야!"
+- art_space: upper third of the image across the full width: blank shutter face above Okja - clear of her raised hand and face
+- fx/note: No papers or documents. No yellow in frame.
 
 ### panel_027
-- scene_id: S05a / location: LOC_L1_DUTYROOM · VIEW_DESK(세로)
-- beat: B19 ④ 정정 ③ 빈자리 · **정지점** · 긴장 7 · gap_after **720**
-- size: large · aspect: **9:16**
-- camera: high-angle 부감 — 회전의자 뒤쪽 위에서 책상과 창구
-- composition: 아래(y 66–100%) 빈 초록 회전의자가 천천히 돌고 있다(등받이 가장자리만 살짝 흐림). 가운데(y 36–66%) 책상: 굴러가는 볼펜, 연회청 빈 서식의 직인 원에 반쯤만 찍힌 붉은 반원, 스탠드·내선·바인더·서류함 고정 배치. 위(y 10–34%) 통유리 너머 바깥 선반의 놋쇠 벨이 손 없이 혼자 떨린다(아주 작은 진동 표시), 유리 너머 복도는 비었다. 사람 없음.
-- characters: 없음
-- props: PROP_SWIVEL_CHAIR(`the empty chair still slowly turning`) · PROP_PEN(`rolling across the desk`) · **PROP_FORM_DEATH**(`a half-pressed red circular seal mark on the form's seal circle`) · PROP_CALLBELL(`trembling by itself`) · VIEW_DESK 고정 소품
-- lighting: 불이 돌아온 LIGHT_L1 + LIGHT_LAMP, 정적 · 빨강 = 반원 직인 자국·인주 케이스·칸막이 테이프뿐
-- dialogue_ref: 없음(무대사)
-- attach: refs/LOC_L1_DESK_plate.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: silent. / 죽음은 화면 밖 — 몸·피·흔적 금지, 빈자리로만. 서식은 빈 칸(글씨 없음). 반전 직전 최대 정지(720).
-
---- SCENE BREAK --- (S05a → S05b · L1 당직실 → L2 앵커 복도 · 되감김 22:00)
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B4 · tension 6 · ⟨웃음⟩⟨복선⟩⟨장사⟩ 판정 · EP12 인용
+- size: medium-wide (aspect 4:3)
+- camera: FRONT, straight-on at standing eye height, a deliberate headroom three-shot (aspect stays 4:3): the frame is cut at about hip height so the figures fill only the lower ~40 % and the blank shutter fills the space above them; centred exactly on the vertical axis.
+- composition: Top ~60 % across the full width: the blank faded-mint shutter face, with only the small empty brass hook at the very top centre (or just out of frame) and a sliver of shaded eave underside at the very top edge — nothing else. Lower ~40 %: the three figures. Okja on the axis just in front of the keyhole, leaning forward and facing the camera, her referee hand-blade frozen low at chest height, chopping DOWN along the axis toward the keyhole and the floor (below the frame edge). Taeo screen-LEFT, still crouched as since panel_024; Danbi screen-RIGHT, standing but bowing her head sharply to follow the chop. All three heads sit at or below ~60 % of the frame height. The axis still reads top to bottom: small hook → empty shutter → her hand-blade → down toward keyhole and floor. Shutter DOWN.
+- subject: Okja, Danbi Day-1 (damp), Taeo O1.
+- emotion: Okja: mock-stern referee (`raising one hand like a referee, mock-stern`). Taeo: T2, eyes down. Danbi: wide-eyed, following the chop down.
+- motion/direction: the strongest vertical of the episode — the eye drops from the small hook through the empty shutter to her chop and on down; the empty space above them is the weight of the verdict.
+- dialogue_ref: 옥자 "장마 끝날 때까지 반반." "여름 두 달 치를 한 번에 낼 수 있는 사람이 남는다."
+- art_space: top ~60 % of the image across the full width: blank shutter face and eave underside, with only the small hook at the very top centre; Okja's raised hand-blade (frozen at chest height) and all three heads stay below it
+- fx/note: The episode's longest line — the headroom IS the bubble room (two stacked two-line bubbles). Leader decision: stays 4:3 with headroom, not 3:4. NO keys on the hook (no 'returned key' custom), no papers. No yellow in frame.
 
 ### panel_028
-- scene_id: S05b / location: LOC_L2_CORRIDOR · VIEW_ANCHOR
-- beat: B20 ④ **반전 1 공개: 되감김(정점)** ⟨반전⟩ · 긴장 **8** · gap_after 120
-- size: large · aspect: **9:16**
-- camera: 복도 안 눈높이, 방화문을 정면으로 본 frontal medium — 허리 위
-- composition: [COMP-ANCHOR] 서하가 화면 가운데(x 25–75%), 머리 y 30–45%, 허리 위까지. 그녀 바로 뒤에서 무거운 회색 철제 방화문이 닫히는 중(가로 밀대가 보임). 문 위 가운데(x 50%, y 8–20%)에 숫자 없는 흰 둥근 시계: 정확히 10시 정각(짧은 시침 = 10시 방향, 긴 분침 = 정확히 위). RIGHT 손으로 휴대폰을 RIGHT 귀에(정면이라 화면 왼쪽), LEFT 어깨에 네이비 캔버스 토트백(화면 오른쪽), 마른 옷. 양옆 연녹 벽과 진녹 띠, 위로 노출 배관. 위 왼쪽(x 3–38%, y 3–26%)은 민무늬 벽과 배관뿐. 방화문 오른쪽 가장자리 중간(x 72–96%, y 34–50%)은 민무늬 문면.
-- characters: SEOHA(FULL + 계단·앵커 상태 토큰) — 표정 ② `frozen in fear, eyes wide, lips pressed shut, face rigid`
-- props: PROP_CLOCK(10:00, 숫자·로고 없음) · 휴대폰(무지, 화면 안 보임) · 토트백
-- lighting: LIGHT_CORRIDOR · 빨강 없음(소화전함은 회색)
-- dialogue_ref (sfx): sfx "쿵" (방화문)
-- repeat: COMP-ANCHOR 반복 · 원본 **panel_007** 첨부 · 바뀌는 것: **표정만**(통화 끝의 부드러운 얼굴 → ② 공포로 굳음). 시계·문·휴대폰·토트백·옷·거리·높이 전부 같다
-- attach: _workspace/05_panels/ep01/panel_007.png, refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png
-- fx/note: bubble space: 위 왼쪽(x 3–38%, y 3–26%) — 시계 왼쪽의 민무늬 벽·배관, 시계 면은 절대 덮지 않는다 · sfx: 방화문 오른쪽 가장자리 중간(x 72–96%, y 34–50%)의 민무늬 문면. / (P28은 효과음만 — 위 왼쪽 빈자리는 P7과 같은 구도라서 남는다.) 시계가 P7과 다르면(10:10 등) REGEN.
+- scene_id: S3 / location: LOC_EAVES_STALL
+- beat: B4 · tension 5 · ⟨정적⟩⟨장사⟩
+- size: medium-wide (aspect 4:3)
+- camera: FRONT, a little higher than standing eye height, looking down at the floor (about 30°), medium-wide two-shot (aspect stays 4:3); the frame top sits just below the hook — the shutter box and the hook are just out of frame above.
+- composition: Top ~57 % across the full width: the blank faded-mint shutter face only. Lower part: the bare grey concrete floor with one roll of plain white cloth tape sitting exactly on the axis at the centre (Okja gone). Taeo screen-LEFT and Danbi screen-RIGHT, both squatting low on their own sides of the empty floor, over a metre apart, so their heads sit below ~57 % of the frame height; they look different ways — Taeo, squatting beside the tape roll, toward the rail (left); Danbi, chin on her fists, out toward the sunny plaza (toward camera-right).
+- subject: Danbi Day-1 (damp); Taeo O1; tape roll.
+- emotion: Danbi: D4 pondering half-smile. Taeo: T1.
+- motion/direction: eyes diverge; the tape roll pins the centre.
+- dialogue_ref: 단비 "그러니까… 비 오면 태오 씨가 잘 팔고, 해 나면 제가 잘 팔고." / 태오 "장마는 6주뿐입니다. 그다음은 여름입니다."
+- art_space: top ~57 % of the image across the full width: blank shutter face (the shutter box and the hook just out of frame above) - both heads, the bare floor and the tape roll stay below it
+- gap_after: M
+- fx/note: Floor still bare — NO tape line yet (it appears in panel_029). Tape roll plain, no print. Leader decision: stays 4:3 with the camera higher, not 3:4. Their squatting leads straight into panel_029 (he kneels to lay the tape).
+
+--- SCENE BREAK --- (S3 → S4: early afternoon, shutter UP, tape line appears)
 
 ### panel_029
-- scene_id: S05b / location: LOC_L2_CORRIDOR · VIEW_ANCHOR 축(가깝게)
-- beat: B21 ④ 대가 ① 기억나는 말 · 긴장 8 · gap_after 40
-- size: small · aspect: **1:1**
-- camera: 약간 high-angle medium close-up — 숙인 머리 너머로 손의 휴대폰
-- composition: 화면 왼쪽 위~가운데(x 8–55%, y 10–52%) 고개 숙인 서하의 얼굴, 눈은 아래. 화면 오른쪽 아래(x 45–82%, y 55–88%) RIGHT 손에 쥔 휴대폰, 화면이 위를 향한 **빈 검은 화면**. 뒤는 연녹 벽과 닫힌 방화문 일부. 오른쪽 위(x 55–97%, y 3–45%)는 민무늬 연녹 벽.
-- characters: SEOHA(FULL) — 표정 ③ `blank, unfocused eyes looking down at her phone, slack face, as if she has forgotten something`
-- props: 휴대폰(**빈 검은 화면** — 아이콘·시각·글자 없음, 충분히 크게) · 토트백(LEFT 어깨)
-- lighting: LIGHT_CORRIDOR, 따뜻한 빛 없음 · 빨강 없음
-- dialogue_ref (1): ① 지호(기억) memory "누나, 버텨!" (휴대폰 위쪽, 흐린 테)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/LOC_L2_CORRIDOR_plate.png
-- fx/note: bubble space: 위 오른쪽(x 55–97%, y 3–45%) — 휴대폰 위쪽의 민무늬 벽(얼굴과 휴대폰 사이를 피함). / E4 회수.
+- scene_id: S4 / location: LOC_EAVES_STALL
+- beat: B5 티격태격 · tension 6 · ⟨웃음⟩⟨장사⟩
+- size: medium-wide (aspect 4:3)
+- camera: FRONT, standing eye height looking slightly down, medium-wide.
+- composition: Shutter UP: the rolled shutter box runs along the very top edge, with the small brass hook under it at the very top edge (top ~6 %); just below, the dark storage interior opens across the upper third between x ~13 % and ~84 % — keep that band plain and dark, both crouching heads well below it. Taeo kneels LEFT of the axis, measuring with his grandfather's wooden folding rule (tick lines only) and pressing a fresh white cloth-tape line from the centre of the shutter threshold toward the camera to the eave edge. Danbi crouches RIGHT of the line, one palm spread wide (a hand-span), bargaining. Workbench and rail at the far left edge; cart with its folded parasol at the far right (parasol below the top third); early-afternoon sun slanting in from the right onto the cart.
+- subject: Taeo O1; Danbi Day-1 (damp); tape line (new).
+- emotion: Danbi: D2 wheedling grin. Taeo: T2, eyes down on the rule.
+- motion/direction: the tape line is a leading line from the shutter down to the bottom edge, between them.
+- dialogue_ref: 단비 "한 뼘만 더요!" "카트 바퀴가 좀 튀어나와서요…"
+- art_space: upper third of the image from x ~13 % to ~84 %, just under the rolled shutter box: the dark open storage interior and the eave underside; the small hook under the box stays at the very top edge above this band
+- fx/note: The tape line appears HERE (panel_029 on). Folding rule: tick lines only, no numbers. Syrup jars at the far right, the rail's yellow umbrella at the far left — never close.
 
 ### panel_030
-- scene_id: S05b / location: LOC_L2_CORRIDOR · VIEW_ANCHOR 축(클로즈업)
-- beat: B21 ④ 대가 ② 사라진 약속 · 긴장 8 · gap_after 480
-- size: small · aspect: **1:1**
-- camera: 눈높이 close-up
-- composition: 서하의 얼굴이 가운데~오른쪽(x 30–92%, y 28–85%), 초점 없는 눈. 왼쪽 아래 가장자리(x 0–35%, y 70–100%) 휴대폰을 쥔 손이 천천히 내려간다(약간 흐림). 위 왼쪽 1/4(x 3–48%, y 3–30%)은 흐린 연녹 벽과 배관.
-- characters: SEOHA(FULL) — 표정 ③(눈은 정면 아래 허공)
-- props: 휴대폰(내려가는 중, 화면 안 보임)
-- lighting: LIGHT_CORRIDOR · 빨강 없음
-- dialogue_ref (1): ① 서하 dialogue "…우리, 무슨 약속 했더라?" (꼬리 ↘ 입)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png
-- fx/note: bubble space: 위 왼쪽 1/4(x 3–48%, y 3–30%) — 흐린 벽. / 방화문 안쪽이라 지호의 이름을 말하지 않는다(R11). F-11② 더블탭.
-
---- SCENE BREAK --- (S05b → S06a · 같은 L2 복도, 반대 방향 · 블록 ⑤)
+- scene_id: S4 / location: LOC_EAVES_STALL
+- beat: B5 · tension 6 · ⟨웃음⟩⟨장사⟩
+- size: medium (aspect 3:4)
+- camera: FRONT, low (kneeling height), medium on Taeo.
+- composition: Taeo kneeling centre-left, head down, fingertips pressing the tape flat onto the concrete; the tape line runs from the shutter threshold down to the bottom edge. Behind: the dark storage interior (shutter up); workbench at the left.
+- subject: Taeo O1; tape line.
+- emotion: T2 deadpan, eyes on the tape; zero concession.
+- motion/direction: his pressing fingers lead the eye down the line.
+- dialogue_ref: 태오 "폭 3미터 60. 한쪽에 1미터 80입니다."
+- art_space: upper fifth of the image (x ~14-66 %): the dark, flat storage interior and eave underside above Taeo's head
+- fx/note: The numbers are only spoken — nothing written or numbered anywhere in the image.
 
 ### panel_031
-- scene_id: S06a / location: LOC_L2_CORRIDOR · VIEW_LONG
-- beat: B22 ⑤ 결심 · 긴장 6 · gap_after 120
-- size: large · aspect: **9:16**
-- camera: 눈높이, 방화문 쪽에서 복도 끝을 본 wide — 서하는 근경
-- composition: 길게 뻗은 복도가 가운데 소실점(y 45%)으로. 화면 오른쪽 벽 중간에 불 켜진 창구의 따뜻한 사각형(x 62–78%, y 42–55%), 맞은편 왼쪽 벽에 파란 대기 의자 셋, 하나 걸러 켜진 형광등, 끝 1/3은 어둠. 화면 왼쪽 아래 근경(x 5–50%, y 52–100%) 창구를 향해 걸어가는 서하의 등과 옆얼굴(오른뺨 쪽, 굳은 턱선). 위 24%는 천장(배관이 드문 쪽).
-- characters: SEOHA(FULL, 뒷모습 3/4) — 표정 ④ `resolute, level eyebrows, lips pressed firmly together, a steady straight gaze`
-- props: 토트백 · 대기 의자 · 회색 소화전함
-- lighting: LIGHT_CORRIDOR · 빨강 없음
-- dialogue_ref (1): ① 서하 thought "(하나. 울지 않는다. 둘. 마지막 줄까지 읽는다.)" (구름형, 꼬리 없음)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/LOC_L2_CORRIDOR_plate.png
-- fx/note: bubble space: 위 24%(x 4–96%, y 2–24%) — 어둑한 천장(형광등 기구는 이 띠 밖 아래쪽에). / 번호 매긴 속마음(반전 2 보조 근거).
+- scene_id: S4 / location: LOC_EAVES_STALL
+- beat: B5 · tension 6 · ⟨설렘⟩ (서로의 말을 듣고 있다)
+- size: medium (aspect 3:4)
+- camera: FRONT, low (crouch height), medium two-shot across the tape line.
+- composition: The tape line runs vertically up the centre of the frame between them. Danbi crouched screen-RIGHT, copying his kneeling posture exactly — chin tucked, eyebrows flattened into one straight line, lips pressed flat, voice 'lowered'. Taeo screen-LEFT, eyes still only on the tape, pressing it more precisely. Dark storage interior behind; the upper third across the full width is that plain dark interior and the eave underside, with the hook (if in frame) small at the very top edge and both crouching heads below it.
+- subject: Danbi Day-1 (damp); Taeo O1.
+- emotion: Danbi: D8 mock-serious deadpan (exaggerated imitation). Taeo: T2 deadpan.
+- motion/direction: mirror composition across the line.
+- dialogue_ref: 단비 "세 번째 살. 휘었네요." / 태오 "왼쪽에서 세 번째입니다."
+- art_space: upper third of the image across the full width: the dark storage interior and eave underside (the hook, if in frame, small at the very top edge) - not on faces
+- fx/note: The episode's only imitation (echoes panel_012). Mirrored poses must read at a glance. Neither smiles.
 
---- SCENE BREAK --- (S06a → S06b · L2 복도 → L1 당직실 · 루프 2 반복)
+<!-- SECTION 2 DONE: P16 – P31 -->
 
 ### panel_032
-- scene_id: S06b / location: LOC_L1_DUTYROOM · VIEW_C
-- beat: B23 ⑤ 유머 숨 고르기 ① · 긴장 5 · gap_after 0
-- size: small · aspect: **1:1**
-- camera: 눈높이 medium wide — 방 안쪽(서가 쪽)에서 창구 벽 방향, 무릎 위
-- composition: [COMP-HANDOVER] 화면 가운데 왼쪽(x 18–55%) 당직석 책상 옆에 선 노미란: 검정 코트를 어깨에만 걸치고(소매가 비어 늘어짐) 한 손가락에 열쇠 꾸러미를 걸어 흔든다. 화면 오른쪽(x 68–95%) 창구 벽 끝 출입문 문간에 선 서하(토트백), 노미란 쪽을 본다. 두 사람 머리는 40% 선 아래(y 40–55%). 배경: 빈 초록 회전의자, 통유리 창구와 그 너머 어둑한 복도, 책상 왼쪽 끝 칸막이. 위 40%(y 0–40%)는 천장 배관·윗벽·유리 위쪽 너머 어두운 복도.
-- characters: MIRAN(FULL 의상 A + 열쇠 흔들기 상태 토큰) — 표정 ① · SEOHA(SHORT) — 표정 ⑧ `a flat, polite, deadpan civil-servant face with slightly lowered eyelids`, 입술이 노미란과 함께 같은 말을 만든다
-- props: PROP_KEYS · 노미란 허리 릴의 공무원증(뒤집혀 빈 뒷면) · 서하의 빈 공무원증
-- lighting: LIGHT_COMEDY(고르고 평평, 떨림 없음) · 빨강 = 칸막이 종이의 테이프(작게)뿐
-- dialogue_ref (2): ① 노미란 dialogue "강서하 주무관, 우리 오늘 당직 좀 바꿔 주자. 그치?" (꼬리 ↙ 노미란) ② 서하(작게, 동시에) dialogue "그치?" (작은 말풍선, 첫 말풍선 끝에 겹치게, 꼬리 ↘ 서하)
-- repeat: COMP-HANDOVER 반복 · 원본 **panel_008** 첨부 · 바뀌는 것: 서하 표정·입만(입을 열다 만 불안 → ⑧ 무표정 + 함께 말하는 입). 노미란 자세·열쇠·배치는 같다
-- attach: _workspace/05_panels/ep01/panel_008.png, refs/MIRAN_turnaround.png, refs/SEOHA_expressions.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 천장·윗벽·유리 위쪽 어둠. / 배치: 노미란 말풍선(긴 줄, w 약 60%)은 위 왼쪽, 서하의 작은 말풍선은 그 끝에 겹치게. / 데자뷔 블랙코미디(같은 그림 = 루프의 확인).
+- scene_id: S4 / location: LOC_EAVES_STALL
+- beat: B5 · tension 6 · ⟨설렘⟩ R3 씨앗
+- size: medium (aspect 3:4)
+- camera: FRONT, eye level, medium two-shot, a touch wider than panel_031.
+- composition: Taeo screen-LEFT snipping the tape end with small scissors, his eyes slid sideways onto the silver hand-crank ice-shaver blade on her cart (not her face). Danbi screen-RIGHT, waving one hand then wincing; directly above HER a small cloud has just formed, squashed flat under the eave (CLOUD_EAVE, L2), thin straight rain lines onto her head — the cloud partly cropped at the top-RIGHT corner. Shutter UP, dark interior; tape line on the floor; small puddle starting at her feet only.
+- subject: Taeo O1; Danbi Day-1, hair getting wet again; cloud L2 under the eave.
+- emotion: Taeo: T3-style sideways glance at the blade, deadpan. Danbi: D9 embarrassed laugh turning into D3 wince.
+- motion/direction: his look goes right to the blade; her correction triggers the cloud — eye goes up-right to the cloud, then back left to the bubbles.
+- dialogue_ref: 태오 "빙삭기 날. 각이 정확합니다." / 단비 "아유… 싼 거예요… 아니, 그게 아니라…"
+- art_space: upper-left half of the image (x ~0-50 %, top ~35 %): the dark storage interior and eave underside, at least one cloud-width from the flat cloud in the top-right corner
+- fx/note: R3 seed — her self-correction makes the cloud appear (none → L2). Pressed flat under the eave but still a real grey cloud, no outline. Syrup jars on the cart: keep them away from any yellow (rail umbrella out of frame).
 
 ### panel_033
-- scene_id: S06b / location: LOC_L1_DUTYROOM · VIEW_DESK
-- beat: B23 ⑤ 유머 ② + 다리 단서 묻기 · 긴장 5 · gap_after 0
-- size: small · aspect: **1:1**
-- camera: high-angle 약 45° 부감, 책상 와이드 — 회전의자 뒤쪽 위에서, 책상의 좌우 = 앉은 사람의 좌우
-- composition: [COMP-DESK] 위 38%(y 0–38%)는 책상 너머 통유리 창구와 그 너머 어둑한 복도. 가운데~아래에 책상 고정 배치: 앞 왼쪽 흰 거위목 스탠드, 앞 오른쪽 베이지 내선 전화, 오른쪽에 파란 2공 바인더와 그 위쪽 절반에 얹힌 검은 일지, 안쪽 가운데 철제 서류함의 낮은 연노랑 영수증 묶음, 그 옆 누런 테이프 디스펜서, 작은 나무 상자의 직인과 둥근 인주 케이스, 펜꽂이. 왼쪽 끝 칸막이에 작은 수칙 종이(왼쪽 가장자리, y 40–60%). 오른쪽 가장자리에서 노미란의 팔이 들어온다(어깨에서 잘림): LEFT 손바닥(가는 금색 팔찌시계)이 바인더의 드러난 파란 표지 위, RIGHT 손가락에서 열쇠 꾸러미가 떨어진다. 아래 가운데(x 30–60%, y 78–100%) 책상 앞 모서리 위로 내민 서하의 두 손바닥이 열쇠를 받는다. 왼쪽 아래(x 0–35%, y 70–100%)에 선 서하를 위·뒤에서 본 3/4: 오른쪽(노미란 쪽)으로 돌린 얼굴 옆선, 시스루 앞머리, 낮은 포니테일.
-- characters: MIRAN(SHORT 의상 A — 팔·손만, 명부 위 손바닥 상태 토큰) · SEOHA(SHORT) — 고개를 숙이지 않는다, 무표정 ⑧, 눈이 서류함 묶음을 한 번 스친다
-- props: PROP_ROSTER(닫힘, 빈 표지) · PROP_DUTYLOG(닫힘) · **PROP_RECEIPTS**(`the stack of pale-yellow slips is slightly higher than before, just a little`) · PROP_SEAL · PROP_DISPENSER · PROP_EXT_PHONE · PROP_LAMP · PROP_KEYS · 유리 상판 밑 빈 종이
-- lighting: LIGHT_COMEDY + 스탠드는 켜져 있음(작은 노란 원) · 빨강 = 인주 케이스·영수증의 작은 원·칸막이 종이 테이프뿐
-- dialogue_ref (2): ① 노미란 dialogue "신입은 사흘—" (꼬리 ↗ 오른쪽 가장자리 = 프레임 밖 노미란) ② 서하(무표정) dialogue "…못 버티죠." (꼬리 ↙ 서하)
-- repeat: COMP-DESK 반복 · 원본 **panel_009** 첨부 · 바뀌는 것: 영수증 묶음이 **조금** 높다(셀 수 없게, F-16②) · 서하가 고개를 숙이지 않고 무표정, 눈이 묶음을 스친다. 나머지 배치·각도·노미란 손은 같다
-- attach: _workspace/05_panels/ep01/panel_009.png, refs/MIRAN_turnaround.png, refs/SEOHA_expressions.png
-- fx/note: bubble space: 위 38%(x 3–97%, y 2–38%) — 책상 너머 유리와 어두운 복도. / 배치: ①은 위 왼쪽, ②는 그 아래. / 영수증은 장수를 세지 않는다(말로도 그림으로도).
+- scene_id: S4 / location: LOC_EAVES_STALL
+- beat: B5 · tension 7 · ⟨웃음⟩⟨복선⟩⟨들킬뻔⟩(작은) F6
+- size: medium-wide (aspect 4:3)
+- camera: REVERSE, eye level, from deep under the eave looking out at the sunny plaza.
+- composition: Top band: the dark-green eave underside with its wooden rafters, framing the shot. Foreground screen-LEFT: Danbi, water dripping from her hair, the flat L2 cloud squashed under the eave right above her at the upper-left; the tin downpipe at the left edge. Foreground screen-RIGHT: Taeo kneeling, eyes on the tape. Background, across the bright plaza: Mansik at his fish-cake cart, eyes down on his steaming pot, mouth open, calling out; the plane tree at the right edge; low buildings. A band of clear sky between the eave edge and the rooftops.
+- subject: Mansik (NEIGHBOR_MANSIK: grey buzz cut, droopy eyes, grey T-shirt, dark olive rubber apron, white towel round his neck, fish-cake skewer in his RIGHT hand, black rain boots); Danbi Day-1 (hair dripping, shoulders damp); Taeo O1.
+- emotion: Mansik: amused sports-commentator grin, eyes DOWN on the pot (never up). Danbi: caught, eyes darting. Taeo: T2, silent — he does NOT correct the wrong claim.
+- motion/direction: eye from wet Danbi (left) → across the plaza to Mansik (centre) → to Taeo's silence (right).
+- dialogue_ref: 만식 "물받이 새네!"
+- art_space: the clear sky band over the plaza, centre-right (x ~44-76 %), above Mansik and just below the eave edge - on the opposite side from the cloud at the upper-left, not in the plane tree
+- fx/note: Mansik never looks up. Taeo's silence is the clue (he corrects every number but not this). Fish-cake cart: no signs, no writing. Rail umbrella (yellow) out of frame.
 
 ### panel_034
-- scene_id: S06b / location: LOC_L1_DUTYROOM · VIEW_SIDE
-- beat: B24 ⑤ 커피 링 + 루프 2에만 있는 소리 ⟨이중의미⟩ · 긴장 6 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium two-shot (VIEW_SIDE)
-- composition: 화면 왼쪽 중경(x 10–45%, 머리 y 40–54%) 선임이 서가 앞에서 종이컵을 내민다, 얼굴은 서하 쪽 — 그 왼쪽 뒤로 서가 사이의 어두운 틈(x 0–18%, y 38–60%). 화면 오른쪽 앞(x 52–100%) 당직석의 서하가 컵을 받아 책상 위 펼친 수첩의 오른쪽 페이지 오른쪽 아래 귀퉁이에 내려놓는다(x 60–85%, y 72–88%). 가운데 안쪽 배경: 칸막이, 그 뒤 **닫힌 크림색 숙직실 문과 문 아래 틈의 가는 불빛**. 위 38%는 천장·서가 꼭대기 어둠·유리 위쪽 너머 복도.
-- characters: SEONIM(FULL) — 표정 ①, 서가 쪽 소리에 돌아보지 않는다 · SEOHA(SHORT) — 담담, 컵을 수첩에 내려놓는 손
-- props: PROP_PAPER_CUP · **PROP_NOTEBOOK_OPEN**(빈 모눈, 글씨 없음) · 숙직실 문(`a thin line of light under the closed door`)
-- lighting: LIGHT_L1 + LIGHT_LAMP · 빨강 = 칸막이 테이프(작게)뿐 · 커피는 갈색
-- dialogue_ref (2 + sfx): ① 선임 dialogue "마셔. 긴 밤이래." (꼬리 ↙ 선임) · sfx "부스럭" (서가 사이 어둠) · ② 선임 dialogue "…쥐래." (꼬리 ↙ 선임)
-- attach: refs/SEONIM_turnaround.png, refs/SEOHA_turnaround.png, refs/PROP_PAGES_pair.png
-- fx/note: bubble space: 위 38%(x 20–97%, y 2–38%) — 천장·유리 위쪽 너머 복도(①은 위 왼쪽~가운데, ②는 위 오른쪽) · sfx: 왼쪽 서가 사이 어두운 틈(x 0–18%, y 38–60%), 선임 얼굴과 겹치지 않게. / F-49②(새 링의 시작), F-50①(서가 어둠의 소리). 컵을 내려놓는 귀퉁이 = P54의 링 자리.
+- scene_id: S4 / location: LOC_EAVES_STALL
+- beat: B5 · tension 7 · ⟨웃음⟩⟨복선⟩⟨이중의미⟩ (회차 최대 웃음 쌍 P33–34)
+- size: medium (aspect 3:4)
+- camera: FRONT, eye level, medium two-shot.
+- composition: Danbi screen-RIGHT, standing in the eave's shade, snapping her taped pink umbrella open; the cloud (now L1, pale silver, faint drizzle) pressed flat between the canopy top and the eave underside at the top-right. Along the bottom edge, bright sun on the pavement outside the eave — the umbrella is clearly NOT for the sun. The taped third rib sags toward the camera. Taeo screen-LEFT, kneeling, eyes still on the tape.
+- subject: Danbi Day-1 (hair damp, dripping); Taeo O1; cloud L1 under the eave.
+- emotion: Danbi: D2 overeager 'yes yes yes!'. Taeo: T1/T2 flat — at most one eyebrow raised a hair (T4); no smirk.
+- motion/direction: her line, then his quote answers from the left without him looking up.
+- dialogue_ref: 단비 "네네네! 물받이요!" / 태오 "'해 가리는 거예요.' 아까 그러셨죠."
+- art_space: upper-left half of the image (x ~0-52 %, top ~34 %): the dark storage interior and eave underside on the arch side; the cloud stays in the top-right corner
+- fx/note: The only quote-tease of EP1 (the quote = panel_008 bubble ②). The shade-vs-sun boundary must read clearly. Rail's yellow umbrella out of frame (syrup jars on the cart).
 
 ### panel_035
-- scene_id: S06b / location: LOC_L1_DUTYROOM · VIEW_SIDE
-- beat: B25 ⑤ 함께 읊기 · 목표 응시 · 긴장 6 · gap_after 0
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium two-shot (VIEW_SIDE)
-- composition: [COMP-READ] 화면 오른쪽 앞(x 52–100%, 머리 y 32–50%) 당직석에 앉은 서하, 몸은 오른쪽 유리 쪽, 고개는 왼쪽 선임 쪽으로 돌려 얼굴 3/4(RIGHT 눈 밑 점이 보인다). 화면 왼쪽 중경(x 0–42%, 머리 y 40–55%) 서가 앞 접이식 의자에 거꾸로 앉은 선임, 팔뚝을 등받이에 얹고 서하를 보며 외워 읊는다(빈손, 돋보기는 목줄에 걸린 채 손대지 않음). 가운데 안쪽 배경: 책상 왼쪽 끝 낮은 칸막이와 작은 수칙 종이(흰 4번 조각·짧은 빨간 테이프 두 줄), 그 뒤 벽에 닫힌 크림색 숙직실 문. 오른쪽 가장자리: 통유리 창구, 그 너머 어둑한 복도 깊은 곳(y 40–46%)의 작은 형광등. 책상 위 종이컵(위치는 props). 위 40%(y 0–40%)는 천장 배관·윗벽·서가 꼭대기 어둠.
-- characters: SEONIM(FULL + 거꾸로 앉기 + 외워 읊기 상태 토큰) — 표정 ④ `narrowed, suspicious eyes, head tilted, watching closely` · SEOHA(SHORT) — 담담하게 함께 읊는 입, 눈은 선임 너머 안쪽의 숙직실 문에 박혀 있다
-- props: PROP_RULESHEET_SMALL · PROP_PAPER_CUP(**펼친 수첩 오른쪽 아래 귀퉁이 위**) · PROP_NOTEBOOK_OPEN · 숙직실 문 닫힘 + `a thin line of light under the closed door`
-- lighting: LIGHT_L1 + LIGHT_LAMP + LIGHT_FLICKER(유리 너머 복도 끝 형광등 한 개만) · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (1): ① 선임·서하(함께) dialogue "1번. 22시부터 06시까지 창구를 찾은 민원인은 모두 접수한다." (꼬리 둘: ↙ 선임 · ↘ 서하 — letterer 판단)
-- repeat: COMP-READ 반복 · 원본 **panel_012** 첨부 · 바뀌는 것: 서하도 읊고 **눈은 숙직실 문** · 선임 ④ 실눈 · 종이컵은 펼친 수첩 위(P34 이후) · 숙직실 문틈 불빛
-- attach: _workspace/05_panels/ep01/panel_012.png, refs/SEOHA_expressions.png, refs/SEONIM_expressions.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 천장 배관·윗벽·서가 꼭대기 어둠. 복도 끝 떨리는 형광등(y 40–46%)은 그 아래에 남긴다. / 배치: 함께 읊는 말풍선 1개(긴 수칙 문구, w 60% 이상) — 위 25% 안쪽 가운데. / F-14②. 서하의 시선 방향(숙직실 문)이 읽혀야 한다.
+- scene_id: S4 / location: LOC_EAVES_STALL
+- beat: B5 · tension 7 · ⟨정적⟩
+- size: medium (aspect 3:4)
+- camera: FRONT, standing eye height looking down at about 30°, medium two-shot — the floor line is the subject.
+- composition: The white tape line runs straight from the shutter threshold down through the centre of the frame to the bottom edge, between their feet. Danbi screen-RIGHT under her open pink umbrella in the shade, mouth hanging open. Taeo screen-LEFT, kneeling, eyes on the tape. The flat cloud fading at its edges (L1) at the top-right.
+- subject: Danbi Day-1 (hair damp); Taeo O1; tape line.
+- emotion: Danbi speechless; Taeo unmoved.
+- motion/direction: the line pulls the eye straight down to the next panel.
+- dialogue_ref: 없음 (말문 막힘, 풍선 없음)
+- art_space: none
+- gap_after: L
+- fx/note: The line is both border and link. No bubble. Rail's yellow umbrella out of frame.
+
+--- SCENE BREAK --- (S4 → S5: late afternoon, long shadows)
 
 ### panel_036
-- scene_id: S06b / location: LOC_L1_DUTYROOM · VIEW_SIDE
-- beat: B25 ⑤ 같은 벨, 같은 첫 대사 · 긴장 7 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium two-shot (VIEW_SIDE)
-- composition: [COMP-BELL] COMP-READ와 같은 카메라·같은 배치. 화면 왼쪽 중경(x 0–42%) 접이식 의자에 거꾸로 앉은 선임. 화면 오른쪽 앞(x 52–100%) 당직석의 서하. 오른쪽 유리 너머 바깥 선반(x 72–92%, y 55–66%) 위 작은 놋쇠 돔 호출벨과 그것을 누른 역광의 손(디테일은 그림자). 가운데 안쪽 배경: 칸막이의 작은 수칙 종이, 닫힌 크림색 숙직실 문. 위 40%(y 0–40%)는 천장 배관·윗벽·서가 꼭대기 어둠. 벨 바로 위 유리(x 70–96%, y 42–54%)는 어둑한 복도.
-- characters: SEONIM(SHORT, 낭독하던 입 모양 그대로) · SEOHA(FULL) — 벨이 울리기도 전에 RIGHT 손을 투입구로 뻗어 서식을 받는다, 표정 ⑧에 가까운 침착 · JEONGMIN(벨을 누른 손 + 투입구로 서식을 미는 젖은 손 — expressions ⑤)
-- props: PROP_CALLBELL(`water drops beaded on its brass dome`) · PROP_FORM_DEATH(투입구에서 반쯤 나온 빈 서식) · PROP_RULESHEET_SMALL · PROP_PAPER_CUP(펼친 수첩 위) · 숙직실 문 닫힘 + 문틈 불빛
-- lighting: LIGHT_L1 + LIGHT_LAMP, 유리 너머 복도 역광 · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (2 + sfx): ① 선임 dialogue "3. 호출벨이—" (위 왼쪽, 꼬리 ↙ 선임) · sfx "띵" (벨) · ② 구정민 dialogue "늦은 시간에 죄송합니다." (위 오른쪽, 꼬리 ↘ 유리 너머 벨 쪽)
-- repeat: COMP-BELL 반복 · 원본 **panel_013** 첨부 · 바뀌는 것: **벨 위 물방울** · 서하가 고개를 돌리는 대신 투입구로 손을 뻗어 서식을 받는다 · 종이컵(수첩 위)·문틈 불빛은 P35와 같은 상태
-- attach: _workspace/05_panels/ep01/panel_013.png, refs/SEOHA_turnaround.png, refs/JEONGMIN_expressions.png
-- fx/note: bubble space: 위 40%(x 3–97%, y 2–40%) — 천장·윗벽·서가 꼭대기 어둠 · sfx: 벨 바로 위 유리의 어둑한 복도(x 70–96%, y 42–54%). / ECHO: P13 효과음·P14 ①과 같은 말. F-12.
+- scene_id: S5 / location: LOC_EAVES_STALL
+- beat: B6 숨긴 문제 · tension 6 · ⟨웃음⟩
+- size: medium (aspect 3:4), framed medium-wide
+- camera: SIDE-ALLEY, eye level, medium-wide — camera at the alley-side end; the stall (shutter UP) recedes on screen-RIGHT, the sunlit plaza on screen-LEFT.
+- composition: Foreground left, in low warm sun outside the eave: the folding table; Danbi wiping it, her other palm casually covering the taped rib of her folded pink umbrella leaning against the table. Bomi running in from the LEFT (plaza side) in her red hooded raincoat, the small inside-out clear plastic umbrella in her LEFT hand, pointing at the taped rib with her right index finger. Deep background right, small, under the eave: Taeo at the workbench. Long late-afternoon shadows stretch across the pavement.
+- subject: Bomi (KID_BOMI: black bowl-cut bob, blunt bangs, missing front tooth, red hooded raincoat, white rain boots); Danbi Day-1 (hair dry again, a little frizzy); Taeo O1 (background).
+- emotion: Bomi: curious wide-eyed, blurting. Danbi: D1 smile frozen in place.
+- motion/direction: Bomi runs left→right into the frame; her pointing finger leads to the hidden rib.
+- dialogue_ref: 보미 "언니! 언니 우산도 고장 났다!" "테이프도 감았어!"
+- art_space: upper-left third of the image (left ~47 % x top ~28 %): warm late-afternoon sky over the plaza toward the arch
+- fx/note: NO yellow anywhere in this frame (Bomi's red raincoat is here) — the yellow umbrella is out of frame; the far rail is hidden behind the eave post / Taeo's back.
 
 ### panel_037
-- scene_id: S06b / location: LOC_L1_DUTYROOM · 서가 방향(당직석 쪽에서)
-- beat: B25 ⑤ 같은 멈칫 + 의심 고정 · 긴장 7 · gap_after 40
-- size: large · aspect: **9:16**
-- camera: 눈높이 close-up(머리·어깨) — 당직석 쪽에서
-- composition: [COMP-PAUSE] 선임의 얼굴이 가운데 아래쪽(x 20–80%, y 38–78%), 어깨가 아래 가장자리. 뒤는 회색 철제 서가와 그 틈의 어둠(초점 밖). 위 28%(y 0–28%)는 서가 위쪽 어둠. 왼쪽 아래 가장자리(x 0–22%, y 60–100%)는 초점 밖 전경 자리로 비어 있다.
-- characters: SEONIM(FULL) — 표정 ② `pausing mid-sentence, his eyes sliding away, mouth stopped half-open` · SEOHA(전경 가장자리, 초점 밖) — 그 멈칫을 지켜보는 옆얼굴 가장자리와 머스터드 어깨
-- props: 목줄 돋보기(쓰지 않음)
-- lighting: LIGHT_L1(위에서 차가운 빛, 눈두덩 그림자) + 스탠드의 옅은 따뜻한 가장자리빛 한쪽 · 빨강 없음
-- dialogue_ref (2): ① 선임 dialogue "4번." (꼬리 ↓ 선임) ② 서하 thought "(저 사람… 알고 있어.)" (구름형, 꼬리 없음)
-- repeat: COMP-PAUSE 반복 · 원본 **panel_018** 첨부 · 바뀌는 것: 왼쪽 아래 가장자리 빈 전경 자리에 초점 밖 서하의 옆얼굴 가장자리·어깨(점이 보이면 RIGHT 눈 밑)
-- attach: _workspace/05_panels/ep01/panel_018.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 28%(x 3–97%, y 2–28%) — 서가 위쪽 어둠. / 배치: ①은 짧게 위 오른쪽, ②는 위 왼쪽. / F-06③: 미스디렉션 고정(선임).
+- scene_id: S5 / location: LOC_EAVES_STALL
+- beat: B6 · tension 6 · ⟨웃음⟩
+- size: large (aspect 9:16)
+- camera: SIDE-ALLEY, low (waist height), vertical; Danbi framed from the knees up so the cloud, the gap and her umbrella all fit.
+- composition: Danbi centre-right in the open sun just outside the eave. Top-right, partly cropped by the right edge: a small light-grey cloud (L2) a clear metre above her, thin straight rain column. She has hurriedly opened the pink umbrella but the canopy SAGS at the taped third rib (facing the camera) and rain leaks off the sag onto her shoulder. Left side: warm sunlit plaza and sky; dry pavement with long shadows; puddle only at her boots. The eave edge in the upper-left background.
+- subject: Danbi Day-1, one shoulder soaked by the leak; cloud L2. (Bomi just out of frame left.)
+- emotion: Danbi: D2 rambling excuse, her smile trembling at the mouth corners.
+- motion/direction: eye from the cloud down the column to the sag and the leak, then down-left to the bubbles.
+- dialogue_ref: 단비 "이건… 일부러 감은 거야!" "요즘 이게 유행이거든…"
+- art_space: lower-left third of the image (x ~0-45 %, y ~65-90 %): dry sunlit pavement and long shadows beside Danbi, outside the rain column - never in the upper-right with the cloud
+- fx/note: Rain only in the column; dry everywhere else. No yellow in frame.
 
 ### panel_038
-- scene_id: S06b / location: LOC_L1_DUTYROOM · VIEW_B
-- beat: B26 ⑤ 콜드오픈 도달 · 첫 "아니요" · 긴장 7 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이(eye-level), over-the-shoulder medium — 앉은 서하 뒤에서 유리 창구 쪽으로
-- composition: [COMP-COLD-1] 앞쪽 아래 오른쪽(x 55–100%, y 55–100%)에 서하의 뒷머리와 오른쪽 어깨(낮은 포니테일·네이비 머리끈, 오른뺨 가장자리만). 화면 왼쪽 가장자리(x 0–18%, y 42–68%) 낮은 회색 칸막이에 작은 수칙 종이: 흰 4번 조각 + 짧은 빨간 테이프 두 줄, 오른쪽 위 귀퉁이에 색 점만 한 바랜 스티커. 가운데(x 35–65%, 머리 y 30–42%) 두꺼운 통유리 너머 복도 역광 속 마른 남자의 상반신 실루엣, 가슴에 납작한 파일. 유리의 얼굴 높이에 둥근 말구멍, 카운터 높이에 투입구. 책상 상판은 아래 가장자리에 스탠드의 따뜻한 빛 번짐만(다른 책상 소품은 프레임 밖). 위 22%는 유리 위쪽 너머 어둑한 복도 천장.
-- characters: SEOHA(뒷모습 상태 토큰 + SHORT, 얼굴 안 보임) · JEONGMIN(역광 실루엣 상태 토큰 — 젖음은 그림자에 묻힘)
-- props: PROP_RULESHEET_SMALL (빈 모눈, 글씨 없음) · 유리 바깥 선반의 PROP_CALLBELL(작게)
-- lighting: LIGHT_L1 + LIGHT_LAMP, 유리 너머 복도 역광 · 빨강 = 수칙 종이의 테이프 두 줄뿐
-- dialogue_ref (1): ① 서하 dialogue "수칙 4번은 지키지 않겠습니다." (낮고 평평, 꼬리 ↘ 그녀의 뒷머리)
-- repeat: COMP-COLD-1 반복 · 원본 **panel_001** 첨부 · 바뀌는 것: **없음**(같은 순간 — 새로 그리되 같게)
-- attach: _workspace/05_panels/ep01/panel_001.png, refs/SEOHA_turnaround.png, refs/JEONGMIN_turnaround.png
-- fx/note: bubble space: 위 22% 가운데~왼쪽(x 5–70%, y 2–22%) — 유리 위쪽 너머 어둑한 복도 천장. 실루엣 머리(y 30% 아래)와 칸막이 종이에 걸리지 않게. / E6 회수(P1과 KM 동일). 인생 첫 "아니요" — 멈칫(P37)의 틈을 자르고 들어간다.
+- scene_id: S5 / location: LOC_EAVES_STALL
+- beat: B6 · tension 7 · ⟨설렘⟩⟨복선⟩⟨들킬뻔⟩ F7 (공식 '들킬 뻔')
+- size: large (aspect 9:16)
+- camera: low angle at Bomi's eye height (about 1 m), FRONT orientation (arch side = screen-left), medium-wide, vertical; from behind-right of Bomi.
+- composition: Lower-RIGHT foreground: Bomi in three-quarter back view, red hood, chin JUST starting to tilt up — her eyes rising toward the cloud. Mid-ground right: Danbi under the sagging pink umbrella, which only half covers the cloud: the cloud (L3, slate blue-grey, heavy column, splash crowns on the canopy, water streaming off its edge) peeks out past the sag at the top-right. LEFT edge, mid-height: Taeo standing at the arch-side edge of the frame (cropped at the shoulder), head bowed, eyes on Bomi's inside-out clear umbrella held low in her LEFT hand (screen-left side), lips just parted as he calls her. Lower-left: dry sunlit pavement with long shadows.
+- subject: Bomi; Danbi Day-1 (hair and shoulders wet); Taeo O1; cloud L3.
+- emotion: Bomi: curious, about to look up. Danbi: panicky frozen smile. Taeo: T3 deadpan, eyes DOWN on the child's umbrella — on first read, a rival poaching a customer.
+- motion/direction: Bomi's gaze rises up-right toward the cloud; Taeo's call pulls it back down-left — the panel's tension is that diagonal.
+- dialogue_ref: 태오 "보미. 우산."
+- art_space: lower-left third of the image (x ~0-40 %, y ~64-80 %): dry sunlit pavement beside Taeo's legs, far from the cloud at the top-right
+- gap_after: M
+- fx/note: NO yellow in frame (Bomi's red is here; the yellow umbrella stays off-frame). Taeo never looks up. Cloud never reads as a thought bubble.
 
 ### panel_039
-- scene_id: S06b / location: LOC_L1_DUTYROOM · 서가 방향(당직석 쪽에서 본 뒷벽)
-- beat: B26 ⑤ **미니 클리프(61%)** · 긴장 8 · gap_after 480
-- size: small · aspect: **1:1**
-- camera: 눈높이에서 약간 낮게, medium close-up — 당직석 쪽에서 선임을 정면 3/4로
-- composition: [COMP-COLD-2] 선임이 거꾸로 돌려 앉은 회색 접이식 의자에서 상체를 앞으로 확 내민다. 얼굴은 가운데~오른쪽(x 40–85%, y 35–78%), 큰 두 손이 의자 등받이를 움켜쥔다(아래 가장자리). 목의 검은 줄 돋보기가 가슴께에 매달려 흔들린다. 뒤는 회색 철제 서가와 그 사이의 어두운 틈. 위 왼쪽 1/4(x 0–48%, y 0–32%)은 서가 사이 어둠.
-- characters: SEONIM(FULL + 거꾸로 앉기 상태 토큰, 종이컵 없이 두 손으로 등받이) — 표정 ③ `eyes suddenly wide open, leaning his whole body forward in alarm`
-- props: PROP_FOLDING_CHAIR
-- lighting: LIGHT_L1(위에서 차가운 형광, 눈썹·턱 아래 짧은 그림자), 스탠드 빛은 닿지 않음
-- dialogue_ref (1): ① 선임 dialogue "너 미쳤어?" (꼬리 ↘ 그의 입)
-- repeat: COMP-COLD-2 반복 · 원본 **panel_002** 첨부 · 바뀌는 것: **없음**(같은 순간)
-- attach: _workspace/05_panels/ep01/panel_002.png, refs/SEONIM_turnaround.png, refs/SEONIM_expressions.png
-- fx/note: bubble space: 위 왼쪽 1/4(x 3–48%, y 3–32%) — 서가 사이 어둠. / E6 회수(P2와 KM 동일). 뒤 480px = 미니 클리프 정지점.
+- scene_id: S5 / location: LOC_EAVES_STALL
+- beat: B6 · tension 7 · ⟨설렘⟩⟨복선⟩ 시선 컷 (정보 격차 시작)
+- size: medium close (aspect 3:4)
+- camera: close-up over-the-shoulder from behind Danbi's right shoulder at Taeo (echo of panels 007 / 012), at the eave edge.
+- composition: Right foreground: Danbi's wet shoulder and the back of her head; the sagging pink canopy edge with its taped rib dipping into the lower-right foreground. Centre-left: Taeo's face, eyes resting only on that taped rib (down-right) — not up. Background, soft: Bomi running off toward the rail (a small red figure) — the stretch of rail she runs to carries no yellow umbrella. Cloud out of frame; only a few thinning drops at the right edge (L2 fading). Her shoulder visibly loosening.
+- subject: Taeo O1; Danbi (wet, back view); Bomi (background).
+- emotion: Taeo: T3. Danbi: relief in the shoulder line.
+- motion/direction: his eye-line runs down-right to the rib — the reader sees exactly where he looks.
+- dialogue_ref: 없음 (무대사 · 시선 컷)
+- art_space: none
+- gap_after: M
+- fx/note: Information gap begins: the reader watches his eyes. Yellow umbrella out of frame (never near Bomi's red).
 
---- SCENE BREAK --- (S06b → S07 · 장소 동일 L1 · 블록 ⑥ 첫 반격, P40 = P3과 같은 순간)
+--- SCENE BREAK --- (S5 → S6: dusk, shutter DOWN, cart inside)
 
 ### panel_040
-- scene_id: S07 / location: LOC_L1_DUTYROOM · VIEW_B
-- beat: B27 ⑥ 그녀를 죽인 질문 · 긴장 8 · gap_after 40
-- size: large · aspect: **9:16**
-- camera: 앉은 눈높이보다 조금 높게, wide — 서하 뒤에서 창구 전체를
-- composition: [COMP-COLD-3] 아래 30%(y 70–100%) 앞쪽에 당직석에 앉은 서하의 뒷모습(뒷머리·어깨·초록 회전의자 등받이, 가운데에서 약간 오른쪽). 가운데(y 30–68%) 두꺼운 통유리 너머, 복도 역광 속 마른 남자 실루엣이 유리의 말구멍 쪽으로 천천히 상체를 숙인다(얼굴은 그림자). 화면 왼쪽 가장자리 구석(x 0–15%, y 50–65%) 칸막이의 작은 수칙 종이, 흰 4번 조각과 짧은 빨간 테이프 두 줄. 스탠드의 따뜻한 빛은 왼쪽 아래 그녀의 어깨에만. 위 18%(y 0–18%)는 유리 위쪽 너머 어둑한 복도 천장.
-- characters: SEOHA(뒷모습 상태 토큰) · JEONGMIN(역광 실루엣 상태 토큰, 숙이는 자세)
-- props: PROP_RULESHEET_SMALL · PROP_CALLBELL(작게)
-- lighting: LIGHT_L1 + LIGHT_LAMP, 유리 너머 복도 역광 · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (1): ① 구정민 dialogue "담당자분 계십니까? 직인이 필요합니다." (꼬리 ↓ 유리 너머 실루엣)
-- repeat: COMP-COLD-3 반복 · 원본 **panel_003** 첨부 · 바뀌는 것: **없음**(같은 순간. Flow가 실루엣 얼굴을 조금 더 보여 주면 ACCEPT — style-bible §5-3)
-- attach: _workspace/05_panels/ep01/panel_003.png, refs/SEOHA_turnaround.png, refs/JEONGMIN_turnaround.png
-- fx/note: bubble space: 위 18%(x 5–95%, y 2–18%) — 유리 위쪽 너머 어둑한 복도 천장. / E5 회수(P22와 KM 동일).
+- scene_id: S6 / location: LOC_EAVES_STALL
+- beat: B6 · tension 6 · ⟨정적⟩
+- size: medium (aspect 3:4)
+- camera: FRONT, eye level, medium (Danbi waist-up centre-right, Taeo seated in the left part of the frame).
+- composition: Shutter DOWN (the cart is inside). Danbi centre-right, on tiptoe, reaching up to hang her folded pink umbrella by its white crook on the centre brass hook (about 2.2 m). Low apricot dusk light rakes in from the RIGHT (alley side), rim-lighting her from behind-right and laying long shadows to the left; the workbench bulb has just come on at the LEFT. Taeo seated at the workbench, left; their eyes meet across the axis for one beat — she looks away first, his eyes drop to the rib. Damp concrete reflecting the apricot sky; tape line on the floor.
+- subject: Danbi Day-1 (hair dried, a little frizzy); Taeo O1.
+- emotion: Danbi: averted eyes, lips pressed (light D5). Taeo: T3, eyes dropping to the rib.
+- motion/direction: her reach goes up to the hook; the look crosses left and breaks.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: The cart is INSIDE the shutter from here on — no cart in panels 040–048. Table and stools put away. No ribbon on her umbrella.
 
 ### panel_041
-- scene_id: S07 / location: LOC_L1_DUTYROOM · VIEW_A
-- beat: B27 ⑥ 사실 기록으로 답하기 · 긴장 8 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium — 복도 쪽에서 통유리 너머의 서하
-- composition: 화면 가운데 왼쪽(x 15–60%, 머리 y 30–46%) 유리 너머 서하가 결연하게 정면을 본다. 그 아래(x 18–78%, y 48–84%) 그녀가 펼쳐 **유리에 바짝 댄 파란 명부**: 빈 칸 표가 이쪽을 향한다, 그녀의 오른손 검지가 빈 칸 하나를 짚는다(크게). 위 왼쪽(x 5–45%, y 2–10%) 그녀 머리 위 형광등 관이 **흔들림 없이** 켜져 있다. 아래 오른쪽 가장자리(x 80–100%, y 58–100%) 초점 밖 구정민의 젖은 어깨와 옆머리. 아래 가장자리에 말구멍·투입구. 오른쪽(그녀의 LEFT) 칸막이·스탠드. 위 오른쪽(x 48–96%, y 3–38%)은 유리 너머 방 안쪽 서가의 어둑함.
-- characters: SEOHA(FULL) — 표정 ④ `resolute, level eyebrows, lips pressed firmly together, a steady straight gaze` · JEONGMIN(SHORT, 전경 가장자리 초점 밖)
-- props: **PROP_ROSTER**(펼침 `open to a page of blank grid table cells, no writing`, 크게) · PROP_RULESHEET_SMALL
-- lighting: LIGHT_L1 + LIGHT_LAMP + **LIGHT_STEADY**(안도 신호 — 떨림 없음) · 빨강 = 테이프(작게)뿐
-- dialogue_ref (2): ① 서하 dialogue "담당자는 당직 명부에 계신 분입니다." ② 서하 dialogue "…노미란 팀장님." (둘 다 꼬리 ↙ 서하)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/JEONGMIN_turnaround.png
-- fx/note: bubble space: 위 오른쪽(x 48–96%, y 3–38%) — 유리 너머 방 안쪽 서가 어둠, 두 말풍선을 위아래로. 머리 위 형광등(위 왼쪽)과 명부를 가리지 않는다. / E3 회수 · E9 원본 · F-52①. 명부 칸은 빈칸(이름 글씨 없음 — 이름은 말풍선으로만).
+- scene_id: S6 / location: LOC_EAVES_STALL
+- beat: B6 · tension 6 · ⟨웃음⟩⟨복선⟩ 구도 A ① 부러진 상태
+- size: large (aspect 9:16)
+- camera: COMP_A — FRONT, chest height, dead centre on the vertical axis, normal lens; the frame starts a little higher than the shutter box (a calm band of eave edge and plain shutter-box housing across the top ~14 %) and runs down to the floor at the eave edge. **IDENTICAL frame in panel_041 and panel_048** (same size, same camera, same crop, same composition text).
+- composition: COMP_A frame (identical in panel_041 and panel_048): the top ~14 % is a calm, plain band — the dark-green eave edge and the plain shutter-box housing, nothing on it; the old brass S-hook hangs at the top centre just below that band, under the shutter box. Below, the shutter is DOWN, its blank faded-mint face filling the frame; Danbi's pink umbrella hangs from the hook by its white crook handle, tip down, the problem rib facing the camera at mid-height; NO ribbon. The upper-left quarter on the arch side, just under the band (x ~6–32 %, y ~15–26 %), is plain blank shutter face. Single keyhole at the shutter's bottom centre directly below the umbrella; the white tape line runs from it toward the camera to the bottom edge. LEFT edge: the corner of the dark wooden workbench, the bulb above it at the very left edge (partly cropped). RIGHT edge: the tin downpipe. NO cart. Damp concrete floor. The umbrella's state and the light are given under subject.
+- subject: the umbrella only; no people (both speak from off-screen). Umbrella state: folded loosely, the taped bent rib bulging toward the camera at mid-height, canopy sagging at that rib (PROP_DANBI_UMBRELLA_BROKEN). Light: dusk — soft apricot light from the right, the workbench bulb just switched on at the left edge, damp concrete reflecting the apricot sky.
+- emotion: lonely and funny (her denial drifting in from off-screen).
+- motion/direction: eye from the hook down the umbrella to the keyhole and along the tape line.
+- dialogue_ref: 단비(화면 밖) "말리려고 걸어 두는 거예요! 맡기는 거 아니에요!" / 태오(화면 밖) "네."
+- art_space: two empty areas: a calm band across the top ~14 % of the image, centre-right (x ~36-80 %), on the plain shutter-box housing and eave edge above the hook; and the upper-left quarter on the arch side just below it (x ~6-32 %, y ~15-26 %) on the blank shutter face - the hook, the crook handle, the hanging umbrella and the bent rib stay clear
+- gap_after: M
+- fx/note: COMP_A is the episode's signature frame; panel_048 must match it exactly — same camera, composition and art_space text; only the umbrella state and the light (under subject) change. The frame starts a little higher than the shutter box so Danbi's two-line bubble can cross the centre in the top band, above the hook. Right edge = tin downpipe, NOT the cart (cart inside). No keys on the hook.
+
+--- SCENE BREAK --- (S6 → S7: night, after an off-screen evening shower)
 
 ### panel_042
-- scene_id: S07 / location: LOC_L1_DUTYROOM · VIEW_C 축(숙직실 문 + 창구 왼쪽 모서리)
-- beat: B28 ⑥ 빈 유리 · 노크 · 긴장 8 · gap_after 120
-- size: large · aspect: **9:16**
-- camera: 서 있는 눈높이 medium wide — 서가 쪽에서 왼쪽 벽 방향으로 비스듬히
-- composition: 화면 왼쪽 절반(x 0–50%, y 22–95%) 옆벽의 닫힌 크림색 숙직실 문(간유리 창, 놋쇠 손잡이, 문 아래 틈의 가는 불빛). 화면 오른쪽 절반(x 52–100%, y 25–75%) 통유리 창구 끝부분: 유리 앞은 비었다 — 바깥 선반에 흘린 물과 투입구 아래 고인 물만, 그 너머 빈 복도. 사람 없음. 오른쪽 아래 가장자리에 당직석 스탠드의 따뜻한 빛 번짐만. 위 20%는 천장.
-- characters: 없음(노크하는 존재는 보여 주지 않는다)
-- props: 숙직실 문(`a thin line of light under the closed door`) · 바깥 선반의 고인 물(웅덩이 4단계 `only the puddle remains in front of the empty glass`) · PROP_CALLBELL
-- lighting: LIGHT_L1 + LIGHT_LAMP · 빨강 없음
-- dialogue_ref (sfx): sfx "똑. 똑. 똑." (숙직실 문)
-- attach: refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: sfx — 숙직실 문 오른쪽 문틀 곁 민무늬 벽(x 30–55%, y 30–48%), 문 위쪽 간유리 창은 피한다. / 노크하는 손·형체 금지(R6). 유리를 넘는 그림 없음.
+- scene_id: S7 / location: LOC_EAVES_STALL
+- beat: B7 조용한 수선 · tension 6 · ⟨설렘⟩ (무대사 7컷, 손만)
+- size: wide strip (aspect 16:9)
+- camera: FRONT, eye level, wide; the whole stall front at night.
+- composition: Deep navy-blue darkness. LEFT third: the workbench under one bare bulb making a single warm amber circle. Centre: the hook with the pink umbrella on the edge of that circle, half lit and half in shadow. One hand — rolled denim cuff catching the light, brass watch on the LEFT wrist — rises out of the dark on the left into the light toward the umbrella's white crook handle; his body is lost in darkness. RIGHT: the dark alley-side half, tin downpipe, the hydrangea alley mouth in night blue. Floor: wet concrete after a passing evening shower (no rain falling), reflecting the bulb; the tape line glints.
+- subject: Taeo's hand only; the broken umbrella on the hook.
+- emotion: hush; private care.
+- motion/direction: the hand rises left→right into the light.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: Shutter down, NO cart. The rail is lost in darkness — no yellow visible yet. No rain falling.
 
 ### panel_043
-- scene_id: S07 / location: LOC_L1_DUTYROOM · VIEW_NAPDOOR(열림)
-- beat: B29 ⑥ 해방형 유머 · 긴장 7 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 눈높이 medium — 문 정면, 문틀이 프레임 안 프레임
-- composition: 화면 가운데(x 25–75%, 머리 y 28–42%) 활짝 열린 숙직실 문틀 안에서 튀어나온 노미란, 회색 담요를 어깨에 움켜쥐고. 문 앞(아래쪽 바닥)은 비어 있다. 그녀 뒤 문틀 너머: 창 없는 좁은 숙직실, 낮은 나무 평상 모서리와 회색 담요, 작은 전기난로의 주황 불빛(아래쪽, 작게). 위 24%는 문틀 위 회백 윗벽.
-- characters: MIRAN(FULL 의상 B) — 표정 ④ `shocked, glasses askew, eyes wide, mouth open`
-- props: VIEW_NAPDOOR 열림 문장 · 난로빛(주황, 빨강으로 번지지 않게)
-- lighting: 당직실 LIGHT_L1 + 문틀 너머 주황 난로빛 · 빨강 없음
-- dialogue_ref (1): ① 노미란 dialogue "뭐, 뭐예요 이게?!" (꼬리 ↓ 노미란)
-- attach: refs/MIRAN_outfitB.png, refs/MIRAN_expressions.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 24%(x 5–95%, y 2–24%) — 문틀 위 민무늬 윗벽. / 코트 → 담요: 같은 어깨 실루엣의 몰락. 금테 하프림(뿔테 금지).
+- scene_id: S7 / location: LOC_EAVES_STALL
+- beat: B7 · tension 6 · ⟨설렘⟩
+- size: insert (aspect 1:1)
+- camera: insert, oblique three-quarter high angle over the worktop (not straight down), close; bulb light from the upper-left.
+- composition: The pink canopy bunched on the dark wooden worktop. His LEFT hand (brass watch, rolled denim cuff) holds the bent third rib steady; his RIGHT hand slowly peels the lumpy grey cloth tape off it in a loose spiral strip. The edge of the dark navy apron at the lower-left corner. Deep navy shadow at the frame edges.
+- subject: Taeo's hands (hand token: long fingers, short clean nails, light calluses); the taped bent rib.
+- emotion: patient, unhurried.
+- motion/direction: the tape unwinds in a curl toward the bottom-right.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: Close-up 1 of 5 (take the tape off) — matches HANDS_FIX_SEQUENCE. No yellow in this panel.
 
 ### panel_044
-- scene_id: S07 / location: LOC_L1_DUTYROOM · VIEW_C
-- beat: B30 ⑥ 요구가 담당자에게 닿는다 · 긴장 8 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 서 있는 눈높이 medium wide — 방 안쪽에서 창구 벽 방향
-- composition: 위~가운데 유리 너머(x 40–75%, 머리 y 26–40%) 다시 유리 앞에 선 구정민이 허리를 숙여 노미란에게 정중히 인사한다, 머리에서 물이 떨어진다. 화면 왼쪽(x 5–40%, 머리 y 34–48%) 책상 왼쪽 끝 쪽에 선 노미란(담요), 귀찮은 얼굴로 책상 위 작은 나무 직인 상자에 손을 뻗는다. 화면 오른쪽(x 65–100%) 회전의자에서 몸을 돌려 지켜보는 서하. 책상 위 연회청 빈 서식. 위 22%는 유리 위쪽 너머 복도 천장.
-- characters: JEONGMIN(FULL) — 표정 ③ `bowing politely from the waist, water dripping from his hair` · MIRAN(SHORT 의상 B) — 표정 ② `irritated, rolling her eyes, one corner of her mouth twisted` · SEOHA(SHORT)
-- props: PROP_SEAL(직인 상자·인주 케이스) · PROP_FORM_DEATH(책상 위, 빈 칸) · 웅덩이(바깥, 보이지 않아도 됨)
-- lighting: LIGHT_L1 + LIGHT_LAMP · 빨강 = 인주·칸막이 테이프(작게)뿐
-- dialogue_ref (1): ① 구정민 dialogue "담당자분이시군요. 직인 부탁드립니다." (꼬리 ↓ 유리 너머 구정민)
-- attach: refs/JEONGMIN_turnaround.png, refs/MIRAN_outfitB.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 22%(x 25–97%, y 2–22%) — 숙인 구정민 머리 위의 유리 너머 복도 천장. / 구정민은 유리 밖에만 있다(R6, 유리를 넘는 그림 금지).
+- scene_id: S7 / location: LOC_EAVES_STALL
+- beat: B7 · tension 6 · ⟨설렘⟩⟨복선⟩ (휜 살 → EP2·7·11)
+- size: insert (aspect 1:1)
+- camera: insert, low side angle at drawer height.
+- composition: The workbench drawer pulled open — old wood, empty except for a folded soft cloth. His right hand gently laying the bent silver rib (scraps of grey tape still on it) down inside, as if putting it to bed. Lower-left foreground: an empty dented tin trash bin, its open mouth dark — right beside, NOT used. Warm bulb light from above; the rest navy dark.
+- subject: Taeo's hand; PROP_BENT_RIB; drawer; empty bin.
+- emotion: a small decision — kept, not thrown away.
+- motion/direction: the hand lowers the rib into the drawer (away from the bin).
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: Close-up 2 of 5 (the drawer). Both the empty bin and the drawer must read in one image. No papers in the drawer.
 
 ### panel_045
-- scene_id: S07 / location: LOC_L1_DUTYROOM · 책상 클로즈업(세로)
-- beat: B30 ⑥ 직인 카운트다운 + 판돈 공개 · 긴장 8 · gap_after 120
-- size: large · aspect: **9:16**
-- camera: 약간 high-angle close-up — 책상 위 서식과 멈춘 직인
-- composition: 가운데(x 30–70%, y 26–50%) 노미란의 RIGHT 손이 쥔 원통형 나무 직인, 끝에 붉은 인주가 묻은 채 서식 위 허공에 멈춰 있다(아이보리 실크 소매는 걷어 올림). 아래(x 10–95%, y 50–100%) 책상 위 연회청 빈 서식이 크게, 오른쪽 아래의 빈 직인 원이 직인 바로 밑. 그녀의 LEFT 손(가는 금색 팔찌시계)이 서식 가장자리를 누른다. 위 20%(y 0–20%)는 초점 밖 어둑한 방.
-- characters: MIRAN(손만 — 의상 B 소매, 직인 상태 토큰)
-- props: **PROP_FORM_DEATH**(빈 칸·빈 직인 원, 크게) · PROP_SEAL(`its end wet with red ink`)
-- lighting: LIGHT_L1 + LIGHT_LAMP(서식에 따뜻한 원) · 빨강 = 직인 끝 인주(와 인주 케이스)뿐
-- dialogue_ref (1): ① 선임(목소리) dialogue "찍으면… 그 칸, 찍은 사람이 채운대." (꼬리 → 왼쪽 프레임 가장자리 = 화면 밖 선임)
-- attach: refs/MIRAN_outfitB.png, refs/LOC_L1_DESK_plate.png
-- fx/note: bubble space: 위 20%(x 4–96%, y 2–20%) — 초점 밖 어둑한 방. / F-55①: 직인 = 물리적 카운트다운. 서식에 글씨 금지, 직인 자국은 아직 없다.
+- scene_id: S7 / location: LOC_EAVES_STALL
+- beat: B7 · tension 6 · ⟨설렘⟩
+- size: insert (aspect 1:1)
+- camera: insert, eye-level macro, side angle along the umbrella shaft.
+- composition: His fingers fitting a new, straight, shiny silver rib into the umbrella's joint (the notch where the stretcher meets the rib), the pink canopy fabric soft behind. Upper edge, soft focus: the khaki-olive tool roll with spare silver ribs and pliers (the yellow spool's pocket cropped out of frame).
+- subject: Taeo's hands; new silver rib; tool roll.
+- emotion: precise, quiet craft.
+- motion/direction: the rib slides into the joint from the right.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: Close-up 3 of 5 (the new rib). Keep yellow OUT of this panel so the yellow lands in panel_046.
 
 ### panel_046
-- scene_id: S07 / location: LOC_L1_DUTYROOM · 손 클로즈업
-- beat: B31 ⑥ 전환점: 절차로 멈춘다 · 긴장 8 · gap_after 40
-- size: small(insert) · aspect: **1:1**
-- camera: 눈높이 close-up — 손목과 직인
-- composition: 가운데(x 15–90%, y 32–78%) 왼쪽에서 들어온 서하의 손(머스터드 카디건 소매가 반쯤 덮음)이 직인을 쥔 노미란의 RIGHT 손목(걷어 올린 아이보리 실크 소매)을 잡는다. 직인은 서식에서 한 뼘 위. 아래(y 78–100%) 연회청 빈 서식의 일부. 위 28%(y 0–28%)는 초점 밖 어둑한 방.
-- characters: SEOHA(손 클로즈업 상태 토큰) · MIRAN(손목만, 의상 B)
-- props: PROP_SEAL(끝에 붉은 인주) · PROP_FORM_DEATH(일부, 빈 면)
-- lighting: LIGHT_L1 + LIGHT_LAMP · 빨강 = 직인 끝 인주뿐
-- dialogue_ref (1): ① 서하 dialogue "서류 보완 요청드리겠습니다." (꼬리 → 왼쪽 가장자리 = 그녀 쪽)
-- attach: refs/SEOHA_turnaround.png, refs/MIRAN_outfitB.png
-- fx/note: bubble space: 위 28%(x 4–96%, y 2–28%) — 초점 밖 어둑한 방. / 첫 반격. 반지 없음(두 손 모두).
+- scene_id: S7 / location: LOC_EAVES_STALL
+- beat: B7 · tension 6 · ⟨설렘⟩⟨복선⟩ 노란 실(서명)
+- size: insert (aspect 1:1)
+- camera: insert, macro close, slight high angle, shallow focus.
+- composition: Centre: the new rib's joint, his fingers winding bright sunflower-yellow thread around it — 8 to 10 tight, neat, side-by-side turns forming a band about 2 cm wide; the thread runs off to a yellow spool resting on the worktop at the right edge. Pink canopy fabric and the silver rib around it; deep navy background; warm bulb light — the thread is still the purest yellow in the frame.
+- subject: Taeo's fingers; PROP_YELLOW_THREAD.
+- emotion: careful, almost tender, all in the hands.
+- motion/direction: the winding turns read left→right across the joint.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: Close-up 4 of 5 (8–10 turns of yellow thread). No red or orange anywhere; the watch, if visible, is dull brownish brass. The band must be big and readable (it has to survive at medium size later).
 
 ### panel_047
-- scene_id: S07 / location: LOC_L1_DUTYROOM · 투샷(서가 쪽 배경)
-- beat: B32 ⑥ 절차가 자백을 요구한다 · 긴장 7 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 눈높이 medium two-shot — 가슴 위
-- composition: 화면 왼쪽(x 3–48%, 머리 y 44–58%) 서하, 여전히 노미란의 손목을 잡고 차분히 길게 말한다. 화면 오른쪽(x 50–97%, 머리 y 38–52%) 더 큰 노미란(담요), 손목을 잡힌 채 떨리는 억지 미소. 뒤는 초점 밖 서가와 그 틈의 어둠. 위 36%는 서가 위쪽 어둠.
-- characters: SEOHA(SHORT) — 표정 ④(절차 모드, 침착) · MIRAN(FULL 의상 B) — 표정 ⑥ `a trembling forced smile, struggling to stay composed`
-- props: PROP_SEAL(노미란 손)
-- lighting: LIGHT_L1 + LIGHT_LAMP(서하 쪽 따뜻) · 빨강 = 직인 인주뿐
-- dialogue_ref (2): ① 서하 dialogue "보완 요청엔 담당자 서명이나 위임 기록이 필요합니다." (위 왼쪽, 꼬리 ↙ 서하) ② 노미란 dialogue "그, 그럼… 서하 씨가 처리하시면…" (위 오른쪽, 꼬리 ↘ 노미란)
-- attach: refs/SEOHA_turnaround.png, refs/MIRAN_outfitB.png, refs/MIRAN_expressions.png
-- fx/note: bubble space: 위 36%(x 3–97%, y 2–36%) — 서가 위쪽 어둠, 읽는 순서 왼쪽(서하) → 오른쪽(노미란). 노미란이 더 커서 머리가 높으니 ②는 오른쪽 위 모서리 쪽으로 붙인다. / 법칙② 위임 기록.
+- scene_id: S7 / location: LOC_EAVES_STALL
+- beat: B7 · tension 6 · ⟨설렘⟩ (이 비트의 유일한 '소리')
+- size: small (aspect 1:1)
+- camera: close-up, eye level, split focus: sharp foreground, soft background.
+- composition: Upper-left foreground, sharp: the dark-green eave edge with a single clear water drop just falling off into the navy darkness outside the bulb's circle — colourless, one cool glint, NOT gold. Lower-right background, soft focus inside the warm circle: his thumb pressing a small bright-yellow cap onto the tip of the repaired rib.
+- subject: eave drip; Taeo's thumb; yellow tip cap.
+- emotion: stillness, a single 'tick' of sound drawn in the image.
+- motion/direction: the drop falls straight down; the eye goes from the drop to the thumb.
+- dialogue_ref: 없음 (무대사 · 효과음 글자 없음)
+- art_space: none
+- gap_after: M
+- fx/note: Close-up 5 of 5 (eave drip + tip cap). The drop is water from the evening shower, not gold (gold only in panel_062). No SFX lettering.
 
 ### panel_048
-- scene_id: S07 / location: LOC_L1_DUTYROOM · 당직석(창구 쪽에서 방 안으로)
-- beat: B32 ⑥ 자백 · 긴장 7 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 약간 high-angle medium — 책상 너머 창구 쪽에서
-- composition: 가운데(x 15–85%, 머리 y 40–55%) 당직석 책상 위로 몸을 숙인 노미란(담요): **RIGHT 손바닥을 책상 유리 상판에 납작하게 짚고** 검은 일지에 쓴다 — 펜은 그녀의 LEFT 손(금색 팔찌시계), 손과 펜이 쓰는 자리를 가린다. 아래(y 62–95%) 펼친 일지의 빈 줄. 오른쪽 가장자리(x 85–100%) 칸막이가 초점 밖. 뒤는 서가의 어둠. 위 38%는 서가 꼭대기 어둠과 천장.
-- characters: MIRAN(FULL 의상 B + 자백 상태 토큰 원문) — 표정 ⑤ `humiliated, eyes averted, biting her lower lip` (서하는 화면 밖에서 지켜본다)
-- props: **PROP_DUTYLOG**(펼침 `open to blank ruled lines` — 글씨가 보이지 않는 각도, 크게) · 펜(무지)
-- lighting: LIGHT_L1 + LIGHT_LAMP(일지 위 따뜻한 원) · 빨강 = 칸막이 테이프(초점 밖, 작게)뿐
-- dialogue_ref (2): ① 노미란(쓰며 소리 내어) dialogue "…야간 당직 업무를… 신규 강서하에게…" ② 노미란 dialogue "…무단으로…" (둘 다 꼬리 ↓ 노미란, 쓰는 손의 리듬대로)
-- attach: refs/MIRAN_outfitB.png, refs/MIRAN_expressions.png, refs/LOC_L1_DESK_plate.png
-- fx/note: bubble space: 위 38%(x 3–97%, y 2–38%) — 서가 꼭대기 어둠·천장, ①은 왼쪽 위, ②는 오른쪽 조금 아래. / F-22①·F-23①(의미 봉인, EP19 리플레이 원본): 손 배치는 character-sheets 상태 토큰 그대로 — RIGHT 손바닥이 상판을 짚으니 펜은 LEFT 손이 된다. 강조하지 말고 그대로 그린다. 수칙 종이를 보거나 만지지 않는다.
+- scene_id: S7 / location: LOC_EAVES_STALL
+- beat: B7 · tension 6 · ⟨설렘⟩⟨복선⟩ 구도 A ② 고친 상태
+- size: large (aspect 9:16)
+- camera: COMP_A — FRONT, chest height, dead centre on the vertical axis, normal lens; the frame starts a little higher than the shutter box (a calm band of eave edge and plain shutter-box housing across the top ~14 %) and runs down to the floor at the eave edge. **IDENTICAL frame in panel_041 and panel_048** (same size, same camera, same crop, same composition text).
+- composition: COMP_A frame (identical in panel_041 and panel_048): the top ~14 % is a calm, plain band — the dark-green eave edge and the plain shutter-box housing, nothing on it; the old brass S-hook hangs at the top centre just below that band, under the shutter box. Below, the shutter is DOWN, its blank faded-mint face filling the frame; Danbi's pink umbrella hangs from the hook by its white crook handle, tip down, the problem rib facing the camera at mid-height; NO ribbon. The upper-left quarter on the arch side, just under the band (x ~6–32 %, y ~15–26 %), is plain blank shutter face. Single keyhole at the shutter's bottom centre directly below the umbrella; the white tape line runs from it toward the camera to the bottom edge. LEFT edge: the corner of the dark wooden workbench, the bulb above it at the very left edge (partly cropped). RIGHT edge: the tin downpipe. NO cart. Damp concrete floor. The umbrella's state and the light are given under subject.
+- subject: the repaired umbrella only; no people. Umbrella state: neatly furled and hanging at the same angle, the straight repaired rib with its thick yellow-thread band facing the camera at mid-height, small yellow cap at that rib tip (PROP_DANBI_UMBRELLA_FIXED). Light: night — the single bare bulb makes one warm amber circle over the workbench at the left, the hook on the edge of the light, half lit and half in shadow, everything else deep navy (the top band stays plain dark); wet concrete reflecting the bulb.
+- emotion: quiet answer to panel_041.
+- motion/direction: same eye path as panel_041 (hook → umbrella → keyhole → line) so the change is felt.
+- dialogue_ref: 없음 (무대사)
+- art_space: two empty areas: a calm band across the top ~14 % of the image, centre-right (x ~36-80 %), on the plain shutter-box housing and eave edge above the hook; and the upper-left quarter on the arch side just below it (x ~6-32 %, y ~15-26 %) on the blank shutter face - the hook, the crook handle, the hanging umbrella and the bent rib stay clear
+- gap_after: L
+- fx/note: Only the umbrella state and the light differ from panel_041 (same camera, composition and art_space text). No bubbles here, but the same two empty areas are kept so the frame matches panel_041. Right edge = tin downpipe, no cart. The yellow band must be readable at this size. No ribbon, no keys on the hook.
+
+<!-- SECTION 3 DONE: P32 – P48 -->
+
+--- SCENE BREAK --- (S7 → S8: Day 2 morning, shutter DOWN all scene)
 
 ### panel_049
-- scene_id: S07 / location: LOC_L1_DUTYROOM · VIEW_C 축(창구 벽을 등진 서하)
-- beat: B33 ⑥ **인용 대사 · 사이다 정점** · 긴장 7 · gap_after 240
-- size: medium · aspect: **3:4**
-- camera: 눈높이 frontal medium — 방 안쪽에서 창구 벽 방향
-- composition: 가운데 왼쪽(x 15–60%, 머리 y 36–50%) 통유리를 등지고 선 서하가 화면 정면(= 노미란 자리)을 똑바로 본다, 스탠드 빛이 얼굴 한쪽에. 그녀 뒤 유리 너머 오른쪽(x 66–84%, y 40–60%) 작게, 흰 보완 요청서(붉은 원 하나)를 가슴에 안은 구정민이 고개를 숙이고 복도 끝 어둠으로 돌아간다. 칸막이는 프레임 밖. 위 35%는 유리 위쪽 너머 어둑한 복도 천장.
-- characters: SEOHA(FULL) — 표정 ④ · JEONGMIN(돌아감 상태 토큰, 작게)
-- props: **PROP_NOTICE**(`a plain white sheet with one red circular seal mark and no writing`)
-- lighting: LIGHT_L1 + LIGHT_LAMP(얼굴에 따뜻한 빛) · 빨강 = 보완 요청서의 붉은 원뿐
-- dialogue_ref (2): ① 서하 dialogue "떠넘기신 건 돌려드리는 겁니다." ② 서하 dialogue "원래 주인한테." (한 박자 뒤, 짧게 — 둘 다 꼬리 ↓ 서하)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/JEONGMIN_turnaround.png
-- fx/note: bubble space: 위 35%(x 3–62%, y 2–35%) — 유리 위쪽 너머 복도 천장(①은 w 60% 이상 필요해 위 왼쪽에 넓게, ②는 그 아래 짧게). 작은 구정민(x 66–84%, y 40–60%)은 덮지 않는다. / E12 원본, F-12(다시 올 빚).
-
---- SCENE BREAK --- (S07 → S08 · 장소 동일 L1 · 블록 ⑦ 반전 2, 유머·떨림 없음)
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B8 발견 · tension 7 · ⟨웃음⟩
+- size: medium (aspect 3:4), framed medium-wide
+- camera: FRONT, eye level, medium-wide.
+- composition: Pearly blue-grey morning, soft long shadows falling to the right (light from the arch side); the concrete under the eave drying in pale patches; tape line on the floor; shutter still DOWN. The axis is framed just left of centre: the hook and the repaired pink umbrella, neatly furled and narrow, hang within x ~46–51 %, as in panel_048 (yellow band and cap small but visible at mid-height). The upper third to the right of it (x ~51–86 %, top ~36 %) is plain blank shutter. Taeo already at the workbench on the LEFT, seated, working on a customer's umbrella with BLACK thread. Danbi hurrying in from the RIGHT, mid-stride, one hand raised no higher than her chin, blurting before she has caught her breath — her head and hand stay below that clear upper-right area.
+- subject: Danbi **Day-2 outfit** (pink round-collar short-sleeve blouse, cream wide-leg trousers; same pale pink rain boots, top bun with mint scrunchie, red strawberry clip above LEFT ear), dry. Taeo O1 — the same denim shirt and navy apron as yesterday.
+- emotion: Danbi: D2 flustered rush. Taeo: T2, eyes on his work.
+- motion/direction: she enters right→left toward the hook; his stillness at the left.
+- dialogue_ref: 단비 "어제 그 우산… 맡긴 거 아니에요!" "말리려고 건 거예요!"
+- art_space: upper-right third of the image (x ~51-86 %, top ~36 %): the blank mint shutter face right of the hook - the hook and the hanging umbrella stay clear (keep the umbrella narrow, left of x ~51 %)
+- fx/note: Outfit change = 'next day' without any text. Cart inside (shutter down all morning). She does not look closely at the umbrella yet. Black thread on the customer's umbrella (yellow thread is only hers).
 
 ### panel_050
-- scene_id: S08 / location: LOC_L1_DUTYROOM · VIEW_C
-- beat: B34 ⑦ 밸브 + 의문 + 선임 퇴장 · 긴장 6 · gap_after 120
-- size: medium · aspect: **3:4**
-- camera: 서 있는 눈높이 wide — 방 안쪽(서가 쪽)에서 창구 벽 방향
-- composition: 왼쪽 앞(x 0–28%, y 55–100%) **빈 회색 접이식 의자**(거꾸로 놓임). 가운데(x 30–65%, y 45–90%) 당직석에 다시 앉아 숨을 내쉬는 서하의 뒷모습 3/4, 스탠드의 노란 빛 원 안에 펼친 수첩(오른쪽 페이지 오른쪽 아래의 새 커피 링, 작게), 빈 종이컵은 책상 모서리로 밀려 있다. 화면 오른쪽(x 68–96%, 머리 y 38–50%) 흰 전기 포트를 들고 일어나 출입문으로 가는 선임, 반쯤 돌아본 얼굴. 왼쪽 벽 닫힌 숙직실 문(문틈 불빛 없음). 위 36%는 천장·윗벽·유리 위쪽 너머 복도.
-- characters: SEONIM(FULL + 퇴장 상태 토큰) — 표정 ①(무덤덤, 농담 아님) · SEOHA(SHORT, 뒷모습 3/4) — 대답하지 못하는 정지
-- props: PROP_FOLDING_CHAIR(빈) · PROP_KETTLE · PROP_NOTEBOOK_OPEN · PROP_RING_NEW · PROP_PAPER_CUP(빈, 모서리)
-- lighting: LIGHT_REVEAL(떨림 없음, 스탠드 원) · 빨강 = 칸막이 테이프(작게)뿐
-- dialogue_ref (2): ① 선임 dialogue "첫날인데 수칙 순서를 어떻게 알아?" ② 선임 dialogue "물 받아 올게. 앉아 있어." (둘 다 꼬리 ↘ 선임)
-- attach: refs/SEONIM_turnaround.png, refs/SEOHA_turnaround.png, refs/LOC_L1_DUTYROOM_plate.png
-- fx/note: bubble space: 위 36%(x 3–97%, y 2–36%) — 천장·윗벽·유리 위쪽 너머 복도(선임 머리 y 38% 아래). / F-14③ · **F-07②**(빈 접이식 의자가 근경에 또렷이) · 선임 부재(⑧ 미스디렉션 준비).
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B8 · tension 7 · ⟨웃음⟩⟨이중의미⟩
+- size: medium (aspect 3:4)
+- camera: SIDE-ARCH, at the eye level of seated Taeo (lowish), medium two-shot — camera at the arch-side end looking along the shutter toward the alley; shutter receding on screen-LEFT, morning plaza on screen-RIGHT.
+- composition: Foreground left-centre: Taeo at the workbench in three-quarter profile, eyes down on the black-thread repair in his hands. Mid-ground centre: Danbi at the centre hook, reaching up and lifting her pink umbrella off it by the white crook. Upper-left: the blank shutter face receding into depth. Soft morning light from behind the camera.
+- subject: Taeo O1; Danbi Day-2 (dry); the repaired umbrella.
+- emotion: Taeo: T2 literal, deadpan. Danbi: caught mid-reach, D4 trailing off.
+- motion/direction: his two flat facts answer her without him looking up.
+- dialogue_ref: 태오 "말랐습니다." "세 번째 살. 갈았습니다."
+- art_space: upper-left third of the image (x ~0-42 %, top ~28 %): the receding blank shutter face above Taeo's head - the hook and Danbi's umbrella (mid-ground) stay clear
+- fx/note: He never looks up from his work. No second quote-tease here.
 
 ### panel_051
-- scene_id: S08 / location: LOC_L1_DUTYROOM · 칸막이(서하 오른쪽 어깨 너머)
-- beat: B35 ⑦ 시선이 바랜 스티커로 · 긴장 7 · gap_after 120
-- size: large · aspect: **9:16**
-- camera: 앉은 눈높이 over-the-shoulder medium — 그녀의 왼쪽 눈높이 칸막이를 향해
-- composition: 위~가운데(x 12–82%, y 8–62%) 칸막이에 붙은 수칙 종이, 약간 비스듬히, 또렷하게: 빈 모눈, 흰 4번 조각과 빨간 테이프 두 줄, **오른쪽 위 귀퉁이의 바랜 스티커가 컷의 주인공**(x 60–76%, y 12–22%, 초점이 가장 선명). 아래 오른쪽(x 52–100%, y 62–100%) 초점 밖 서하의 뒷머리·오른뺨 가장자리, 시선은 종이로. 종이 뒤는 차분한 푸른 그림자.
-- characters: SEOHA(뒷모습 상태 토큰, 초점 밖)
-- props: **PROP_RULESHEET**(글씨 없음) · PROP_STICKER_FADED · PROP_RING_FADED
-- lighting: LIGHT_REVEAL(스탠드 원이 종이와 그녀만) · 빨강 = 테이프 두 줄뿐
-- dialogue_ref: 없음(무대사)
-- attach: refs/PROP_PAGES_pair.png, refs/PROP_STICKERS_pair.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: silent. / F-04③ 시작. 스티커 그림 = PROP_STICKERS_pair 오른쪽(바랜 것), 큰 귀는 화면 오른쪽.
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B8 · tension 7 · ⟨설렘⟩⟨복선⟩ F9 (구름보다 손이 먼저)
+- size: medium close (aspect 3:4)
+- camera: close-up on Danbi, eye level, shallow focus.
+- composition: Danbi centre-right, chest-up, hugging the folded repaired umbrella to her chest (the yellow band hidden in her arms), cheeks and ear tips flushing pink, eyes darting. LEFT edge background, soft but readable: Taeo's right hand (rolled denim cuff) already closing around the natural-wood crook handle of the furled yellow umbrella on the rail. Headroom: her top bun stays below the top fifth, which is soft shadowed eave underside / shutter from x ~16 % to ~86 %. No cloud in frame.
+- subject: Danbi Day-2 (dry); Taeo's hand; yellow umbrella handle.
+- emotion: Danbi: D5 flush sliding into D3 tangled self-correction.
+- motion/direction: eye from her flushed face to his hand at the left edge — the hand moves before the cloud exists.
+- dialogue_ref: 단비 "가, 갈았…? 저는… 그러니까…" "아니, 그게 아니라…"
+- art_space: upper fifth of the image, centre-to-right (x ~16-86 %): the soft, shadowed eave underside / shutter - clear of Taeo's hand and the yellow handle at the left edge
+- gap_after: M
+- fx/note: F9 — his hand goes to the yellow umbrella BEFORE any cloud appears (cloud L2 forms off-frame). Only her small strawberry clip may be near the yellow handle (allowed exception); nothing else red.
 
 ### panel_052
-- scene_id: S08 / location: LOC_L1_DUTYROOM · 수첩 클로즈업
-- beat: B36 ⑦ 새 스티커 · 떨리는 손 · 공개 1컷 전 · 긴장 8 · gap_after **480**
-- size: large · aspect: **9:16**
-- camera: close-up, 눈높이보다 약간 위에서 내려다봄
-- composition: [COMP-STICKER] 서하의 LEFT 손이 네이비 리넨 수첩의 오른쪽 가장자리를 잡고 세로로 든다. 표지 오른쪽 위 귀퉁이의 새 달냥이 스티커(지름 약 폭의 28%)가 화면 가운데(x 40–70%, y 44–60%), 그 위를 LEFT 엄지가 쓰다듬는다. 머스터드 카디건 소매가 손등을 반쯤 덮는다. 수첩 표지가 가운데~아래(y 38–100%)를 채우고 흰 실 제본이 왼쪽에. 위 30%(y 0–30%)는 초점 밖 배경.
-- characters: SEOHA(손 클로즈업 상태 토큰 — LEFT 손, 떨린다)
-- props: PROP_NOTEBOOK(표지, 글씨·로고 없음) · **PROP_STICKER_NEW**(고양이 자신의 LEFT 귀 = 화면 오른쪽 귀가 크다, 황금빛 주황 — 빨강 아님)
-- lighting: LIGHT_REVEAL — 배경은 스탠드의 따뜻한 빛이 번진 초점 밖 당직실과 차분한 푸른 그림자, 스티커는 화면에서 가장 채도 높은 색 (**P5와 다른 유일한 줄**: 장소가 L1)
-- dialogue_ref (1): ① 지호(기억) memory "떼지 마. 세상에 하나뿐이야." (흐린 파란 테, 꼬리 없음 또는 위쪽)
-- repeat: COMP-STICKER 반복 · 원본 **panel_005** 첨부 · 바뀌는 것: 장소 L2 → L1(배경: 어두운 콘크리트 → 스탠드의 따뜻한 흐림), **손이 떨린다**(엄지가 스티커 위에서 멈칫, 표지 가장자리가 살짝 흔들려 흐림 — 만화 기호 없이)
-- attach: _workspace/05_panels/ep01/panel_005.png, refs/PROP_STICKERS_pair.png
-- fx/note: bubble space: 위 30%(x 4–96%, y 2–30%) — 초점 밖 배경. 스티커(y 44–60%)는 절대 덮지 않는다. / E2 회수(P5 ②와 KM 동일), F-47②. 뒤 480px = 공개 1컷 전 정지.
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B8 · tension 8 · ⟨정적⟩
+- size: full-bleed (aspect 9:16)
+- camera: low angle (knee height), full figure, vertical, three-quarter from the plaza side.
+- composition: Danbi centre-right, having stepped back out from under the eave into the morning sun. Top-right: a light-grey cloud (L2) a clear metre above her open umbrella. She has reflexively opened the pink umbrella and the canopy is a perfect, taut dome — for the first time it blocks every drop: the rain column lands on the dome, small splashes, water dripping off the rim all round, a puddle only at her boots, the pavement dry elsewhere; the small yellow cap on one rib tip at the rim faces the camera. Background LEFT, at the eave edge: Taeo standing with the furled yellow umbrella in his right hand, lowering its tip to the ground — he doesn't need it; his eyes level on her canopy's ribs. Shutter down behind.
+- subject: Danbi Day-2, completely DRY under the canopy; Taeo O1; cloud L2.
+- emotion: Danbi: blank, stunned (start of D10), a tiny voice. Taeo: T3, eyes on the ribs, level — not up.
+- motion/direction: eye from the cloud down onto the taut dome, to her stunned face, back to his lowering umbrella tip.
+- dialogue_ref: 단비 "…어?"
+- art_space: lower-left of the image (x ~10-40 %, y ~74-88 %): dry sunlit pavement in the foreground, far from the cloud at the top-right
+- fx/note: Big panel. She stays dry (the repair works). No gold. The cloud is real and grey, one only, straight column.
 
 ### panel_053
-- scene_id: S08 / location: LOC_L1_DUTYROOM · 익스트림 클로즈업 2분할
-- beat: B37 ⑦ **반전 2 시각 공개(정점)** ⟨반전⟩ · 긴장 **9** · gap_after 120
-- size: full-bleed · aspect: **9:16**
-- camera: extreme close-up 두 개를 위아래로 — 같은 크기·같은 각도(정면)
-- composition: 한 장 안에 두 칸, 가운데 가는 검은 가로 띠(y 47–53%)로 나눈다. 위 칸: 네이비 리넨 위의 **새 스티커**, 선명·광택. 아래 칸: 누렇게 바랜 모눈 종이 위의 **바랜 스티커**, 연크림·볏짚·잿빛 민트, 누런 테두리, 들뜬 가장자리. 두 스티커의 중심 = x 58%, 지름 = 폭의 약 55%, 위 중심 y 24% / 아래 중심 y 76%. **같은 그림, 같은 큰 귀**(고양이 자신의 LEFT 귀 = 화면 오른쪽). 스티커 왼쪽(x 0–30%)은 두 칸 모두 민무늬 리넨/빈 모눈 여백.
-- characters: 없음
-- props: PROP_STICKER_NEW · PROP_STICKER_FADED · PROP_NOTEBOOK(리넨 표지) · PROP_RULESHEET(모눈 일부, 빈 면)
-- lighting: LIGHT_REVEAL — 두 칸 같은 따뜻한 스탠드 빛 · 빨강 없음
-- dialogue_ref (1): ① 서하(작게) dialogue "세상에 하나뿐인데… 두 개야." (아주 작은 말풍선, 경계 띠 위)
-- repeat: — (P5·P19/P51에 그려진 두 스티커를 첨부해 같은 그림을 맞춘다)
-- attach: refs/PROP_STICKERS_pair.png, _workspace/05_panels/ep01/panel_005.png, _workspace/05_panels/ep01/panel_019.png
-- fx/note: bubble space: 가운데 경계 띠 왼쪽(x 4–40%, y 44–56%) — 검은 띠와 그 위아래 민무늬 여백, 어느 스티커에도 걸리지 않게. / style-bible §4-2 예외 컷(칸 나눔 허용) — Avoid 줄에서 `panel borders`만 뺀다. **대안:** Flow가 둘을 섞거나 그림이 다르면 1:1 한 컷으로 — 그녀가 수첩 표지를 칸막이의 수칙 종이 옆에 실제로 나란히 댄다(같은 크기·같은 각도, 같은 큰 귀). 큰 귀 쪽이 다르면 REGEN(반전 2의 생명).
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B8 · tension 8 · ⟨설렘⟩⟨복선⟩
+- size: insert (aspect 1:1)
+- camera: insert, from below inside the canopy looking up along the repaired rib (her view); not a top-down.
+- composition: The taut pink canopy glowing with morning daylight fills the frame; the straight new rib crosses diagonally; at its joint, the thick band of bright yellow thread; at the canopy edge, the small yellow cap on the rib tip. Through the translucent pink fabric, soft round shadows of raindrops tapping (L2).
+- subject: inside of PROP_DANBI_UMBRELLA_FIXED; cloud L2 (seen only as drop shadows through the fabric).
+- emotion: discovery.
+- motion/direction: eye follows the rib from the joint (centre) out to the cap at the edge.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: The glow is pink daylight, NOT gold. Thread and cap are the only yellow.
 
 ### panel_054
-- scene_id: S08 / location: LOC_L1_DUTYROOM · 칸막이 클로즈업
-- beat: B38 ⑦ 사물 증거 사슬 ⟨반전⟩ · 긴장 8 · gap_after 40
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 close-up — 칸막이 정면
-- composition: 가운데(y 24–86%) 두 종이가 나란히: 왼쪽(x 4–50%) 칸막이의 수칙 종이(바랜 크림, 뜯긴 들쭉날쭉한 왼쪽 가장자리, 흰 4번 조각·빨간 테이프, 오른쪽 아래 바랜 커피 반원), 오른쪽(x 50–96%) 서하의 떨리는 손이 그 옆에 댄 펼친 수첩 페이지(새 크림 모눈, 제본 쪽 흰 실, 오른쪽 아래 새 커피 링 — 같은 귀퉁이). 같은 모눈선·같은 칸 크기. 아래 왼쪽(x 4–35%, y 86–100%) 책상 위 테이프 디스펜서에서 한 뼘 당겨 나온 누런 투명 테이프(종이 귀퉁이의 테이프와 같은 것). 위 22%(y 0–22%)는 칸막이 너머 초점 밖 어둠.
-- characters: SEOHA(손 클로즈업 상태 토큰 — 손이 떨린다)
-- props: **PROP_RULESHEET** · **PROP_NOTEBOOK_OPEN** · PROP_RING_NEW · PROP_RING_FADED · PROP_DISPENSER(`a hand-length strip of the yellowed clear tape pulled out from the dispenser`) — 전부 글씨 없음, 크게
-- lighting: LIGHT_REVEAL · 빨강 = 테이프 두 줄뿐 · 커피 링은 갈색
-- dialogue_ref (1): ① 서하 thought "(이 책상만… 안 돌아가.)" (구름형, 꼬리 없음)
-- attach: refs/PROP_PAGES_pair.png, refs/SEOHA_turnaround.png, refs/LOC_L1_DESK_plate.png
-- fx/note: bubble space: 위 22%(x 4–96%, y 2–22%) — 칸막이 너머 초점 밖 어둠. 종이 윗선(y 24%) 위에서 끝낸다. / F-49③ · F-16③. 뜯긴 제본 가장자리와 같은 귀퉁이의 두 링이 분명해야 한다(script-editor 주의).
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B8 · tension 8 · ⟨정적⟩ R3 씨앗 · 회차 최대 정적
+- size: large (aspect 3:4) — the biggest face of the episode
+- camera: tight medium close-up, slightly low, front three-quarter.
+- composition: Danbi's face large in the centre; both hands gripping the white crook handle hard in the lower third; the canopy's inner rim across the top, splash crowns along its outer edge and water pouring off the rim in a sheet at both sides (the rain one step heavier, L2→L3). Background soft: sunlit blank shutter.
+- subject: Danbi Day-2 (dry under the canopy); cloud L2→L3 (above, off-frame; shown by the splash and runoff).
+- emotion: delayed reaction — cheeks flushed, lips pressed together after opening and closing on a swallowed word, eyes glistening (D10 + D5); no smile.
+- motion/direction: hold — nothing moves but the water.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: XL
+- fx/note: R3 seed — the swallowed word makes the rain heavier. The XL gap after this panel is the longest pause in the episode.
 
 ### panel_055
-- scene_id: S08 / location: LOC_L1_DUTYROOM · 서하 클로즈업 + 기억 비네트
-- beat: B39 ⑦ **반전 2 대사 공개(정점)** ⟨반전⟩ · 긴장 **9** · gap_after 120
-- size: full-bleed(large) · aspect: **9:16**
-- camera: 눈높이 close-up — 스탠드 빛 속 그녀의 얼굴(아래 절반)
-- composition: 아래 절반(x 8–92%, y 50–100%) 스탠드의 따뜻한 원 속 서하의 얼굴 클로즈업. **위 왼쪽 기억 비네트**(x 4–64%, y 3–33%): 회백 테두리 + 얇은 그림자, 채도 약 40% 낮춘 바랜 그림 — panel_021과 같은 각도의 선임: 접이식 의자에 거꾸로 앉아 두 손에 종이컵, 컵 속을 내려다봄, 비네트의 위 1/3은 그 컷처럼 서가 꼭대기 어둠. 비네트 오른쪽(x 64–97%, y 3–33%)과 비네트 아래 띠(x 4–97%, y 34–49%)는 차분한 푸른 어둠.
-- characters: SEOHA(FULL) — 깨닫기 직전의 정지 `eyes wide and unfocused, lips slightly parted, color drained from her face, perfectly still` (손으로 입을 가리는 ⑥은 P56) · SEONIM(비네트 안, 바랜 색)
-- props: 비네트 안 PROP_PAPER_CUP · PROP_FOLDING_CHAIR
-- lighting: LIGHT_REVEAL(얼굴만 따뜻, 나머지 푸른 그림자) · 비네트는 바랜 차가운 색 · 빨강 없음
-- dialogue_ref (2): ① 선임(기억) memory "그 수칙, 이 일 제일 오래 한 사람이 쓴 거래." (비네트 위 1/3에서 오른쪽 바깥 어둠까지, 흐린 파란 테) ② 서하 dialogue "이 일 제일 오래 한 사람… 나였어." (비네트 아래 띠, 천천히 — 꼬리 ↓ 그녀)
-- repeat: 기억 비네트 — 원본 **panel_021** 첨부(§D)
-- attach: _workspace/05_panels/ep01/panel_021.png, refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png
-- fx/note: bubble space: ① 비네트 위 1/3 + 그 오른쪽 어둠(x 4–97%, y 3–16%) — 비네트 속 서가 꼭대기 어둠과 그 옆의 푸른 어둠(① 말풍선은 w 60% 이상 필요) · ② 비네트 아래 띠(x 15–97%, y 35–49%) — 차분한 푸른 어둠, 그녀 이마(y 50%) 위에서 끝낸다. / **인셋 처리:** Flow가 한 장으로 그리는 액자형 기억 비네트(§D). panel_021을 첨부하고 "the small framed memory picture in the upper-left shows the same moment as the attached earlier panel, faded". 안 되면 위쪽을 조용한 배경으로 비운 버전으로 받고 합성 여부는 리더가 정한다. Avoid 줄에서 `panel borders`만 뺀다. / E1 회수(인셋 = P21과 KM 동일).
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B9 묻힌 한마디 · tension 7 · ⟨웃음⟩⟨장사⟩
+- size: medium (aspect 3:4)
+- camera: FRONT, eye level, medium two-shot framed from the knees up with the eave line at the very top edge, both just outside the eave.
+- composition: Taeo screen-LEFT in sunlight, one step outside her column, the furled yellow umbrella in his right hand with its tip down on the pavement, eyes on the third rib of her umbrella (level); his head sits below the top third. Danbi screen-RIGHT under the open pink umbrella, rain drumming hard (L3: heavy column, splash crowns, water streaming off the rim), the cloud cropped at the top-RIGHT corner, puddle at her boots; she rattles on with one free hand gesturing. Behind them: the blank lowered shutter, the eave line at the top edge. Plain areas: the shutter face above Taeo's head (x ~0–44 %, top ~34 %), and a patch at mid-height in the gap between them just left of the rain column (x ~28–58 %, y ~44–60 %) for the rain sound.
+- subject: Danbi Day-2 (dry under the canopy, boots in the puddle); Taeo O1 (dry); cloud L3.
+- emotion: Danbi: D2 excuse avalanche. Taeo: T1, eyes on the rib.
+- motion/direction: noise and words pour from the right; he stands still on the left.
+- dialogue_ref: [효과음] 후두두두둑 (그녀의 빗소리, 크게) · 단비 "이거 처마 물이에요!" "수선비는 내일 꼭 드릴게요!"
+- art_space: upper-left of the image (x ~0-44 %, top ~34 %): the blank shutter face above Taeo's head and below the eave line; plus a patch at mid-height in the gap between the two figures, just left of the rain column (x ~28-58 %, y ~44-60 %) for the rain sound - never on the cloud or a face
+- fx/note: Keep the cloud cropped at the corner so the bubbles sit as far from it as possible. Her promise 'tomorrow' sets up EP2. No gold.
 
 ### panel_056
-- scene_id: S08 / location: LOC_L1_DUTYROOM · 익스트림 클로즈업
-- beat: B40 ⑦ 경악 침묵 · 긴장 9 · gap_after **720**
-- size: small · aspect: **1:1**
-- camera: 눈높이 extreme close-up — 눈과 입을 가린 손
-- composition: 위 절반(y 12–50%)에 흔들리는 두 눈(RIGHT 눈 밑 점 = 화면 왼쪽), 아래 절반(y 50–100%) 입을 누르는 손(카디건 소매가 반쯤 덮음). 프레임을 꽉 채운다.
-- characters: SEOHA(FULL) — 표정 ⑥ `trembling pupils, one hand pressed over her mouth, chilled realization`
-- props: 없음
-- lighting: LIGHT_REVEAL(얼굴에 스탠드의 따뜻한 빛, 가장자리는 푸른 그림자) · 빨강 없음
-- dialogue_ref: 없음(무대사)
-- attach: refs/SEOHA_expressions.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: silent. / 뒤 720px = 반전 침묵(G5). 스크린톤·만화 기호 금지.
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B9 · tension 8 · ⟨설렘⟩⟨복선⟩⟨이중의미⟩⟨반전⟩(묻힌 단서) F10
+- size: medium close (aspect 3:4)
+- camera: medium close-up on Taeo, eye level, three-quarter, from just beside her umbrella.
+- composition: Taeo framed chest-up with headroom, his head a little right of centre (about x 45–75 %), his screen-left shoulder running out toward the left edge; eyes level-to-down on the yellow-thread joint of her canopy's third rib — not her face, not the sky. Above that shoulder, the upper-left area (x ~0–44 %, top fifth) is plain blank shutter face. Right foreground, soft: the edge of the pink canopy with the yellow band visible on its rib, her rain streaming off the rim in a curtain at the right edge. He stands in sunlight; behind him the blank shutter.
+- subject: Taeo O1; edge of the fixed umbrella; cloud L3 (off-frame; only the runoff).
+- emotion: Taeo: T7 — a soft look, eyes softened, mouth still flat (a sentence with no numbers in it).
+- motion/direction: his eye-line goes right to the yellow band.
+- dialogue_ref: 태오 "이제 웬만한 비엔 안 뒤집혀요."
+- art_space: upper-left of the image (x ~0-44 %, top ~20 %): the blank shutter face above Taeo's shoulder - well away from the rain curtain at the right
+- fx/note: The buried line: the reader reads it, she can't hear it (no SFX in this panel; keep the small bubble fully legible). Mirrors panel_007's 'wind' line.
 
 ### panel_057
-- scene_id: S08 / location: LOC_L1_DUTYROOM · 칸막이 클로즈업
-- beat: B41 ⑦ 동기 암시 + 질문 이월 · 긴장 9 · gap_after 240
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 close-up — 칸막이 정면에서 약간 오른쪽
-- composition: 가운데 왼쪽(x 6–62%, y 24–96%) 수칙 종이: 빈 모눈 7칸 자리, 서하의 RIGHT 검지 끝이 위에서 1번·2번 자리를 차례로 짚고 내려와 흰 4번 조각 위에서 멈춘다(지금 멈춘 자리 = 4번 조각). 오른쪽(x 62–96%, y 30–92%) 그녀의 LEFT 손이 종이 옆에 댄 수첩 페이지 — 나란히 놓고 보면 4번 조각만 다른 종이(새하얀 사무용지 vs 크림 모눈). 위 22%(y 0–22%)는 칸막이 너머 초점 밖 어둠.
-- characters: SEOHA(손 클로즈업 상태 토큰)
-- props: **PROP_RULESHEET**(빈 모눈) · **PROP_NOTEBOOK_OPEN** · PROP_TAPE_LIFT는 선택(그리지 않아도 된다 — 첫 강조는 P58)
-- lighting: LIGHT_REVEAL · 빨강 = 테이프 두 줄뿐
-- dialogue_ref (2): ① 서하 thought "(살리려고… 남긴 거야. 나한테.)" (구름형, 위 왼쪽) ② 서하(속삭임) dialogue "그러면… 4번은?" (아주 작은 말풍선, 위 오른쪽)
-- attach: refs/PROP_PAGES_pair.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: 위 22%(x 4–96%, y 2–22%) — 칸막이 너머 초점 밖 어둠, ①은 왼쪽 넓게, ②는 오른쪽 작게. 종이 오른쪽 위의 바랜 스티커(y 26–34%)는 덮지 않는다. / 동기(공정성④), 4번은 질문으로만.
-
---- SCENE BREAK --- (S08 → S09 · 장소 동일 L1 · 블록 ⑧ 클리프, 감속 4단 · 유리 반사 금지)
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B9 · tension 8 · ⟨정적⟩
+- size: medium (aspect 3:4)
+- camera: eye level, medium, FRONT orientation, slightly from Taeo's side.
+- composition: Danbi on the right ~60% of the frame, leaning her head out past the canopy's LEFT rim — toward him (off-frame left), not up — and instantly drenched: hair flattening, water running down her face, the canopy tilting. The cloud (L3) cropped at the top-RIGHT corner; its column covers the right ~60% only. The left ~35% is dry, sunlit blank shutter.
+- subject: Danbi Day-2, drenched from this panel on (hair wet and flattened, strands on her cheeks, blouse shoulders darkened); cloud L3.
+- emotion: Danbi: D6 startled, big round eyes.
+- motion/direction: she leans left toward him; eye follows her lean to the small bubble.
+- dialogue_ref: 단비 "…네?"
+- art_space: left edge of the image at mid-to-lower height (x ~0-30 %, y ~55-70 %): dry sunlit blank shutter face below Danbi's leaning head, outside the rain column and more than a cloud-width from the cloud
+- fx/note: She looks at HIM, never up. The column must not reach the left third.
 
 ### panel_058
-- scene_id: S09 / location: LOC_L1_DUTYROOM · 4번 조각 익스트림 클로즈업
-- beat: B42 ⑧ 마지막 정적 · 긴장 8 · gap_after 120
-- size: large(세로로 긴 좁은 컷) · aspect: **9:16**
-- camera: extreme close-up — 4번 조각의 오른쪽 끝을 정면에서
-- composition: 새하얀 4번 조각이 가로 띠로 화면을 가로지른다(y 45–58%, 양옆 가장자리에서 잘림): 자로 자른 곧은 가장자리, 위·아래 가장자리를 따라 광택 있는 빨간 비닐테이프 두 줄 — 화면의 유일한 빨강. **아래 줄 테이프의 오른쪽 끝이 살짝 들려 말려 있다**(x 70–85%, 가는 그림자). 위아래(y 0–45%, 58–100%)는 누렇게 바랜 빈 모눈 종이의 넓은 여백.
-- characters: 없음
-- props: **PROP_RULE4_PATCH** + **PROP_TAPE_LIFT**(F-51①) · PROP_RULESHEET(모눈 여백, 글씨 없음)
-- lighting: LIGHT_REVEAL(고요한 따뜻한 빛) · 빨강 = 테이프 두 줄뿐
-- dialogue_ref: 없음(무대사)
-- attach: refs/PROP_PAGES_pair.png
-- fx/note: bubble space: silent. / 빈 모눈 여백에 가짜 글씨·번호가 생기면 REGEN.
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B9 · tension 8 · ⟨정적⟩⟨이중의미⟩
+- size: medium close (aspect 3:4)
+- camera: close-up on Taeo, eye level, three-quarter.
+- composition: Taeo's face centre-left; his eyes already back down on the third-rib joint (out of frame, lower right); mouth just closing. A soft blur of her rain curtain at the far right edge. Blank sunlit shutter behind.
+- subject: Taeo O1.
+- emotion: T8 — mouth closing, eyes turned away/down; closing the topic, not denying it.
+- motion/direction: eye-line down-right, ending the exchange.
+- dialogue_ref: 태오 "…아뇨."
+- art_space: upper-left fifth of the image (x ~0-35 %, top ~18 %): the blank shutter face - away from the rain at the right
+- gap_after: M
+- fx/note: No upward glance.
 
 ### panel_059
-- scene_id: S09 / location: LOC_L1_DUTYROOM · 눈 띠
-- beat: B43 ⑧ 소리 기척 · 긴장 9 · gap_after 240
-- size: insert(band) · aspect: **16:9**
-- camera: 눈높이 extreme close-up — 눈 띠
-- composition: 화면 왼쪽~가운데 2/3(x 4–66%, y 15–85%) 스탠드 빛 속 그녀의 두 눈과 콧등, 얼굴 3/4로 화면 왼쪽(수칙 종이 쪽)을 향하고, 눈동자만 뒤쪽을 의식해 굳는다. 화면 오른쪽 1/3(x 68–98%)은 그녀 머리 뒤 초점 밖 어두운 방.
-- characters: SEOHA(FULL) — 굳은 눈 `eyes wide and frozen, listening, not turning yet` (점이 보이면 RIGHT 눈 밑)
-- props: 없음
-- lighting: LIGHT_REVEAL(얼굴에 따뜻한 빛, 뒤는 푸른 어둠) · 빨강 없음
-- dialogue_ref (sfx): sfx "찌이익—" (등 뒤에서 테이프를 롤에서 뜯는 소리 — 화면 뒤쪽 가장자리)
-- attach: refs/SEOHA_expressions.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: sfx — 오른쪽 1/3(x 68–98%, y 15–85%), 그녀 머리 뒤 어둠(= 화면 뒤쪽 가장자리). / Flow에 16:9가 없으면 1:1로(style-bible §4-1), 그때도 sfx는 오른쪽 1/3.
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B10 엔딩 훅 · tension 8 · ⟨정적⟩
+- size: medium (aspect 3:4), framed medium-wide
+- camera: FRONT, eye level (a touch low), medium-wide two-shot — NO sky in frame.
+- composition: Both just outside the eave, side by side, one step apart: Taeo screen-LEFT, Danbi screen-RIGHT under the pink umbrella. The sun has just come out from behind a big white cloud BEHIND the camera (out of frame): fresh crisp white-gold light floods the shutter face and the pavement, crisp new shadows; the last of the big cloud's soft shadow is leaving the frame at the left edge. Her own small cloud above her canopy is thinning (L3→L2), cropped at the top-right. The end of the white tape line at the eave edge points into the empty step between them. Danbi looks up at the inside of her umbrella; Taeo looks DOWN at the tip of his furled yellow umbrella.
+- subject: Danbi Day-2 (hair wet and flattened from panel_057); Taeo O1; cloud L3→L2.
+- emotion: stillness. Danbi: soft daze (D10). Taeo: T1, eyes down.
+- motion/direction: the empty step between them is the centre of the panel.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: L
+- fx/note: Taeo must NOT look up or toward the sky (his first upward look is panel_061). No sky, sun or big cloud drawn in this frame, so nothing invites an upward glance. No gold.
 
 ### panel_060
-- scene_id: S09 / location: LOC_L1_DUTYROOM · 칸막이(서하 왼쪽 어깨 곁)
-- beat: B44 ⑧ 그림자 · 긴장 9 · gap_after 240
-- size: large · aspect: **9:16**
-- camera: 앉은 눈높이 medium — 칸막이의 수칙 종이 쪽
-- composition: 가운데(x 15–85%, y 22–68%) 칸막이의 수칙 종이가 스탠드의 따뜻한 원 안에 있다. 위 오른쪽에서 **두 번째 그림자**가 종이 위로 겹쳐 들어와 따뜻한 원을 반쯤 깬다 — 부드럽고 형체 없는 어둠(머리·손·얼굴 윤곽 없음). 아래 왼쪽 가장자리(x 0–30%, y 72–100%) 서하의 어깨 가장자리(머스터드). 유리는 프레임 밖.
-- characters: SEOHA(어깨 가장자리만) · HAND-CLIFF(P60 그림자만 상태 토큰 — 형체 없음)
-- props: PROP_RULESHEET(빈 모눈)
-- lighting: **LIGHT_CLIFF** · 빨강 = 테이프 두 줄뿐
-- dialogue_ref: 없음(무대사)
-- attach: refs/PROP_PAGES_pair.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: silent. / 그림자에 형체가 생기면 REGEN. 유리에 사람이 비치면 REGEN.
+- scene_id: S8 / location: LOC_EAVES_STALL
+- beat: B10 · tension 8 · ⟨정적⟩ (당황 신호, 독자만 안다)
+- size: insert (aspect 1:1)
+- camera: insert, low angle from just below his wrist, looking up past the watch to his lowered eyes; shallow focus.
+- composition: Lower two-thirds, sharp: his LEFT wrist and the round brass watch — cream dial, plain bar markers, no numbers, brown leather strap, rolled denim cuff, morning sun on the dial. Upper edge, soft: his downcast eyes and brow, looking at the watch.
+- subject: Taeo's left wrist and watch (T5).
+- emotion: T5 — deadpan, glancing at the watch; he does not read the time.
+- motion/direction: his look goes down to the watch and stays.
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: L
+- fx/note: No numbers on the dial. His fluster signal, readable only by the reader. Cloud L2 off-frame.
+
+--- SCENE BREAK --- (S8 LOC_EAVES_STALL → S9 LOC_PLAZA, same morning, sun out)
 
 ### panel_061
-- scene_id: S09 / location: LOC_L1_DUTYROOM · 어깨 너머(뒤 위에서)
-- beat: B45 ⑧ 손 공개(일부) · 긴장 **10** · gap_after 480
-- size: large · aspect: **9:16**
-- camera: 약간 high-angle over-the-shoulder — 앉은 서하의 뒤 위에서 책상과 칸막이를 내려다봄
-- composition: 가운데 왼쪽~아래(x 10–60%, y 50–100%) 서하의 뒷머리(낮은 포니테일·네이비 머리끈)와 어깨. 위 오른쪽 가장자리에서 **슬림한 창백한 RIGHT 손**이 들어와(팔은 아래팔에서 프레임에 잘림) 그녀의 RIGHT 어깨 위로 내려온다(x 50–92%, y 8–50%): 검지의 가는 은반지, 골이 보이는 차콜 니트 소맷부리 + 흰 셔츠 커프스, 손바닥만 한 광택 빨간 비닐테이프 롤. 그 너머 책상과 왼쪽 칸막이의 수칙 종이(초점 밖). 유리는 프레임 밖.
-- characters: HAND-CLIFF(FULL + P61 들어옴 상태 토큰) · SEOHA(뒷모습 상태 토큰)
-- props: **PROP_TAPE_ROLL_RED** · PROP_RULESHEET_SMALL(초점 밖)
-- lighting: LIGHT_CLIFF · 빨강 = 테이프 롤과 수칙 종이 테이프뿐
-- dialogue_ref: 없음(무대사)
-- attach: refs/HANDCLIFF_ref.png, refs/SEOHA_turnaround.png
-- fx/note: bubble space: silent. / F-17①·F-18①: 소매가 슬레이트블루가 아니다(선임 아님) — 차콜 니트 + 흰 커프스가 또렷해야 한다. 손가락 다섯, RIGHT 손, 반지는 검지 하나. 얼굴·몸·머리카락 금지.
+- scene_id: S9 / location: LOC_PLAZA
+- beat: B10 · tension 9 · ⟨설렘⟩⟨반전⟩ — **반전 착지 (P01·P05 회수)**
+- size: full-bleed (aspect 9:16)
+- camera: HIGH — the SAME camera position and the same 45° oblique angle as panel_001 (second-floor height across the plaza), with a longer lens / tighter crop on the right-hand part of the panel_001 frame so faces read. Oblique, NOT straight down.
+- composition: Dry, sunlit pale-grey pavers fill the frame. Top-right corner: the corner of the dark-green eave and the edge of the lowered mint shutter — the stall, as at panel_001's right edge. Centre-right: Danbi under her pink umbrella, seen from above at 45° (the canopy's top, a small yellow cap visible at one rib tip on the rim), her face hidden by the canopy; she is looking up at its inside. One small pale-silver cloud (L1, faint drizzle, thin straight column) floats a clear metre above her canopy — the ONLY cloud in the frame — casting one small round soft shadow on the pavers; a small wet circle at her feet. Centre-left, one step away, in full sunlight in the open plaza: Taeo holding the furled yellow umbrella tip-down in his right hand, chin raised, face turned straight UP to that cloud. His eye-line is a clear, unobstructed diagonal from his eyes to the cloud. Morning sun from the left; crisp shadows to the right. **IN frame:** pavers, the eave corner/shutter edge (top-right), the two of them, her one cloud and its shadow. **OUT of frame:** the sky, the sun, the big white cloud of panel_059, any other cloud, birds, the arch, the awning and the plane tree; no passers-by (or only far and blurred, never looking up); no hand shading his eyes; nothing (eave, roof, sun) between his eyes and the cloud.
+- subject: Taeo O1; Danbi Day-2 (hair wet, hidden under the canopy); cloud L1.
+- emotion: Taeo: T9 — calm, chin raised, looking straight up at the sky above her: no surprise, quietly confirming what he already knew. Danbi: unaware — her canopy blocks her view of him.
+- motion/direction: the eye goes from his upturned face straight up the diagonal to the cloud — the reverse of panel_001 (yellow dot → upward look).
+- dialogue_ref: 없음 (무대사)
+- art_space: none
+- gap_after: M
+- fx/note: THE reversal: Taeo's first and only upward look in EP1. Must not read as weather-watching. No gold here. Same camera as panel_001 so the bookend reads in pictures.
 
 ### panel_062
-- scene_id: S09 / location: LOC_L1_DUTYROOM · 옆얼굴 클로즈(VIEW_SIDE 축)
-- beat: B46 ⑧ 대사 분절 ① · 긴장 10 · gap_after 240
-- size: medium · aspect: **3:4**
-- camera: 앉은 눈높이 medium close-up — 그녀의 오른쪽 옆에서
-- composition: 가운데(x 20–80%, y 30–80%) 굳은 서하의 RIGHT 옆얼굴(화면 오른쪽을 향함, RIGHT 눈 밑 점이 보임). 위 왼쪽 가장자리에서 내려온 손이 그녀의 RIGHT 어깨 곁 근경에 머문다(x 0–35%, y 22–62%, 아래팔에서 잘림, 은반지·차콜 니트 소맷부리). 그녀 얼굴 앞(화면 오른쪽)은 초점 밖 어둠에서 프레임이 끝난다 — 유리는 프레임 밖. 위 오른쪽(x 40–97%, y 2–22%)은 초점 밖 어두운 방.
-- characters: SEOHA(FULL) — 표정 ② `frozen in fear, eyes wide, lips pressed shut, face rigid` · HAND-CLIFF(SHORT + P62 곁에 상태 토큰)
-- props: PROP_TAPE_ROLL_RED(손 안, 일부)
-- lighting: LIGHT_CLIFF · 빨강 = 테이프 롤뿐
-- dialogue_ref (1): ① 목소리(뒤) dialogue "그 수칙," (꼬리 ↑ 위쪽 프레임 밖)
-- attach: refs/SEOHA_turnaround.png, refs/SEOHA_expressions.png, refs/HANDCLIFF_ref.png
-- fx/note: bubble space: 위 오른쪽(x 40–97%, y 2–22%) — 초점 밖 어두운 방, 손이 들어오는 위 왼쪽은 피한다. / E7 회수(P21 첫 구절과 KM 동일, 다른 목소리).
+- scene_id: S9 / location: LOC_PLAZA
+- beat: B10 · tension 9 · ⟨설렘⟩⟨복선⟩ R2 씨앗 (EP1 유일한 금빛)
+- size: insert (aspect 1:1)
+- camera: insert, from below inside the canopy, close.
+- composition: Inside the pink canopy, daylight glowing through the fabric; the repaired rib with its thick yellow-thread band crosses the frame; Danbi's RIGHT thumb rests on the yellow band (short unpainted nail, thin mint hair tie on her right wrist at the edge). Upper-right, on the pink canopy's hem and well away from the yellow band and the yellow cap: ONE single raindrop hangs and catches the sunlight — a warm white-gold highlight with no glow, no halo, no sparkle effect, reading at first glance as a sun glint. Bottom sixth: plain soft-focus pink canopy fabric, nothing in it.
+- subject: Danbi's right thumb (hand token); the fixed umbrella's inside; the drop. Cloud L1 outside (faint drizzle shadows at most).
+- emotion: quiet, private; she looks at the thread (her eyes out of frame), not at the drop.
+- motion/direction: eye from the thumb on the yellow band up-right to the single drop, then down to the caption.
+- dialogue_ref: 없음 (무대사) · 끝 캡션 「— 2화에 계속 —」(KM 캡션, 뷰어가 씀)
+- art_space: bottom sixth of the image, full width: plain soft-focus pink canopy fabric (caption strip) - nothing important there
+- fx/note: The ONLY gold in EP1 (R2 seed): one drop, NOT on the yellow thread, not magical. Last panel of the episode.
 
-### panel_063
-- scene_id: S09 / location: LOC_L1_DUTYROOM · 4번 조각 클로즈업
-- beat: B46 ⑧ 대사 분절 ② ⟨이중의미⟩ · 긴장 10 · gap_after **720**
-- size: small · aspect: **1:1**
-- camera: 눈높이 close-up — 칸막이의 4번 조각
-- composition: 아래 가운데(y 52–72%) 새하얀 4번 조각과 빨간 테이프 두 줄이 화면을 가로지르고, 아래 줄 테이프 오른쪽 끝이 살짝 들려 있다. 위 오른쪽에서 들어온 손(아래팔에서 잘림)의 반지 낀 검지가 조각 바로 위에서 멈춘다 — 닿지 않는다(x 45–75%, y 20–50%), 손바닥에 빨간 롤 일부. 위 왼쪽 1/4(x 3–45%, y 3–30%)은 초점 밖 빈 모눈 종이 윗부분.
-- characters: HAND-CLIFF(FULL + P63 멈춘 검지 상태 토큰)
-- props: **PROP_RULE4_PATCH** + **PROP_TAPE_LIFT** · PROP_TAPE_ROLL_RED(일부) · PROP_RULESHEET(빈 모눈)
-- lighting: LIGHT_CLIFF · 빨강 = 테이프 두 줄 + 롤뿐
-- dialogue_ref (1): ① 목소리(뒤) dialogue "아직 안 바꿨네?" (꼬리 ↑ 위쪽 프레임 밖)
-- attach: refs/HANDCLIFF_ref.png, refs/PROP_PAGES_pair.png
-- fx/note: bubble space: 위 왼쪽 1/4(x 3–45%, y 3–30%) — 초점 밖 빈 모눈 여백(글씨 없음). 검지와 조각 사이 틈은 덮지 않는다. / F-24①. 뒤 720px.
-
-### panel_064
-- scene_id: S09 / location: LOC_L1_DUTYROOM · VIEW_SIDE 축(세로, 유리는 프레임 밖)
-- beat: B47 ⑧ **최종 컷: 정체 공개 1컷 전** · 긴장 **10** · gap_after **1200**
-- size: full-bleed · aspect: **9:16**
-- camera: 앉은 눈높이 medium — 그녀의 오른쪽 뒤편(손 주인이 선 자리 근처)에서
-- composition: 위 절반(x 15–85%, y 8–50%) 고개를 이쪽(그녀의 RIGHT 어깨 너머)으로 돌리기 시작한 서하, 크게 뜬 눈, 얼굴 3/4(RIGHT 눈 밑 점). 아래(y 54–86%) 책상 위 그녀의 닫힌 수첩(표지 오른쪽 위 새 스티커가 보임) 옆에 놓인 빨간 비닐테이프 롤. 손은 오른쪽 가장자리로 빠져나가는 중(x 86–100%, y 56–72%, 손가락 끝만). 손 주인의 얼굴·몸은 프레임 밖. 유리는 프레임 밖. 아래 8%(y 92–100%)는 책상 앞 가장자리의 어두운 그림자.
-- characters: SEOHA(FULL) — 크게 뜬 눈 `eyes wide, beginning to turn her head toward the viewer` · HAND-CLIFF(P64 빠져나감 상태 토큰)
-- props: PROP_NOTEBOOK(닫힘) + **PROP_STICKER_NEW** · **PROP_TAPE_ROLL_RED**
-- lighting: LIGHT_CLIFF(깨진 스탠드 원) · 빨강 = 테이프 롤뿐 — 화면에서 가장 강한 색
-- dialogue_ref (caption): 캡션 narration "— 2화에 계속 —" (패널 맨 아래)
-- attach: refs/SEOHA_turnaround.png, refs/HANDCLIFF_ref.png, refs/PROP_STICKERS_pair.png
-- fx/note: bubble space: 캡션 — 아래 8% 띠(x 0–100%, y 92–100%), 어두운 책상 그림자(style-bible §8 캡션 문장). / 가리는 것 = 얼굴 하나(C1). 유리 반사 금지(수칙 3 몫). 뒤 1200px = 회차 끝.
+<!-- SECTION 4 DONE: P49 – P62 -->
 
 ---
 
-## F. 첨부 사용 요약 (사용자가 Flow에서 붙일 것)
+## 5. 연속성 체크리스트 (continuity checklist)
 
-| 카드 | 패널 |
-|---|---|
-| SEOHA_turnaround | 1·3·4·5·6·7·8·9·10·11·12·13·15·17·20·21·22·23·25·28·29·30·31·34·36·37·38·40·41·44·46·47·49·50·51·54·55·56·57·59·60·61·62·64 |
-| SEOHA_expressions | 6·7·15·20·25·28·29·30·31·32·33·35·41·49·55·56·59·62 |
-| MIRAN_turnaround | 8·9·10·32·33 |
-| MIRAN_outfitB | 43·44·45·46·47·48 |
-| MIRAN_expressions | 43·47·48 |
-| SEONIM_turnaround | 2·11·12·13·17·18·20·21·22·34·39·50 |
-| SEONIM_expressions | 2·18·21·35·39 |
-| JEONGMIN_turnaround | 1·3·14·15·16·17·22·23·24·38·40·41·44·49 |
-| JEONGMIN_expressions | 24·36 |
-| HANDCLIFF_ref | 61·62·63·64 |
-| PROP_STICKERS_pair | 5·19·51·52·53·64 |
-| PROP_PAGES_pair | 19·23·34·51·54·57·58·60·63 |
-| LOC_L1_DUTYROOM_plate | 1·3·8·10·11·12·14·16·27·42·43·50 |
-| LOC_L1_DESK_plate | 9·27·45·48·54 |
-| LOC_L2_CORRIDOR_plate | 7·29·31 |
-| LOC_L2_STAIRWELL_plate | 4·6 |
-| 원본 패널 PNG | P13←012 · P24←009 · P28←007 · P32←008 · P33←009 · P35←012 · P36←013 · P37←018 · P38←001 · P39←002 · P40←003 · P52←005 · P53←005·019 · P55←021 |
-
-- P26은 첨부 없음. 모든 패널 3장 이내.
-
-## G. 자가 점검
-
-- [x] 패널 64 = 대본 P01–P64, panel_001–panel_064 연속 3자리, 순서 동일
-- [x] 모든 패널에 scene_id / location(LOC_* + VIEW), size · aspect, camera, composition, characters + 표정, props, lighting/빨강, dialogue_ref, attach, fx/note
-- [x] 같은 scene_id = 같은 장소(장소가 바뀌는 S02·S05·S06은 a/b로 나눔), 장소 전환마다 SCENE BREAK
-- [x] 대사·효과음·캡션이 있는 55컷 모두 `bubble space:` 기재, 무대사 9컷(P3·18·26·27·51·56·58·60·61)은 `silent`(P3·P18은 반복 짝을 위해 빈자리를 남김). 말풍선 수 = 대본(패널당 대사 ≤2 + 효과음)
-- [x] 글이 적힐 물건은 전부 빈 면, 주인공 컷(P9·15·19·33·41·45·48·51·54·57·58)은 크게. 휴대폰 화면이 보이는 컷(P29)은 빈 검은 화면
-- [x] COMP 10쌍: 짝의 camera·composition·bubble space가 글자까지 같고, 원본 표시 + 원본 PNG 첨부, 바뀌는 것은 `repeat:` 줄에만
-- [x] 인셋 P24·P55 = Flow가 한 장에 그리는 기억 비네트(원본 PNG 첨부), 대안 경로 명시
-- [x] 반전 컷(P28·P53·P55) 단독 대형 + 앞뒤 큰 gap(P27 720 · P52 480 · P56 720), 클리프 감속(P58–64)
-- [x] 빨강 세 범주 외 0, 좌우 표식(점 RIGHT 눈 밑 · 흉터 LEFT 눈썹 · 시계 LEFT 손목 · 손 RIGHT/검지 반지) 명시
-- [x] 첨부 패널당 3장 이내
-
-## H. 하류·상류 전달 (팀 메시징 대체)
-
-| 대상 | 내용 |
-|---|---|
-| **letterer** | `bubble space:`를 `art_space`(한국어 그대로 가능)로, 말풍선 위치를 `place`로 옮긴다. `gap_after`는 각 패널 beat 줄의 값(= 대본·tension-curve §9-2와 같다). 긴 말풍선(w 60% 이상): P9 ① · P12 ① · P21 · P35 · P49 ① · P55 ① — 해당 컷의 빈자리를 그 폭으로 잡아 두었다. 기억 말풍선 P24 ②·P55 ①은 비네트 안 위쪽(§D). 화면 밖 목소리 꼬리: P5(위 오른쪽), P9 ①(오른쪽), P19·P45(왼쪽 가장자리), P33 ①(오른쪽), P46(왼쪽), P62·P63(위쪽 밖). P32 ②는 ① 끝에 겹치게, P53은 경계 띠 위 아주 작게. P64 캡션은 아래 8% 띠 |
-| **prompt-smith** | style-bible §5-1 조립 순서대로 옮긴다. VIEW_SIDE 영문은 §A-1. 반복 컷은 원본 프롬프트를 그대로 붙이고 `repeat:`의 "바뀌는 것"만 고친다(원본 PNG를 attach 첫 자리에). P24·P53·P55는 Avoid 줄에서 `panel borders`만 뺀다. 빨강이 있는 컷은 "the only red in the image is …"를 한 번 적는다(각 패널 lighting 줄). 첨부는 각 패널 `attach:` 그대로(3장 이내) |
-| **art-director** | ① **VIEW_SIDE**(§A-1)를 style-bible §6-3에 VIEW로 추가해 달라(§6-2 방향과 일치 확인 부탁). ② P14 VIEW를 §6-1의 VIEW_A에서 "VIEW_B 축(방 안에서 유리 너머)"으로 바꿨다 — 역광 실루엣 상태 토큰이 "behind the glass"라 방 안 시점에서만 성립. VIEW_A는 P15·P16·P17·P41에 썼다. ③ 인셋(§4-2 규칙 5·§11 열린 항목)을 리더 지시대로 **Flow 비네트**로 정했다 — §4-2 규칙 1의 예외가 P24·P53·P55로 늘었다. ④ 비율: P55 3:4 → 9:16, P59 16:9 채택 |
-| **tension-engineer / 리더** | tension-curve §9-3의 리플레이 짝 "P21 ↔ P54"는 비트시트 R9 이전 번호다(현재 P21 → P55 비네트). §9-2 gap 값은 바꾸지 않았다 |
-| **리더(Flow 핸드오프)** | 원본 패널(P1·2·3·5·7·8·9·12·13·18·19·21)을 반복·비네트 컷보다 먼저 만들게 안내한다(번호 순서대로면 자연히 지켜진다). P24·P55 비네트가 두 번 시도에도 안 되면 대안(빈자리 + 합성)은 사용자 결정 사항이다 |
-
-## I. 변경 이력
-
-| 버전 | 날짜 | 내용 |
+**의상**
+| who | panels | outfit |
 |---|---|---|
-| v1 | 2026-11-17 | 최초 작성: 64패널, 비율 3:4×30 · 9:16×20 · 1:1×13 · 16:9×1, COMP 10쌍 + 기억 비네트 2, VIEW_SIDE 신규, bubble space 55컷 |
+| Danbi | P01–P41 (when in frame; P05 head only, P11·P22 hand only, P17 voice only, P41 voice only) | **Day-1:** mint denim pinafore dress, cream T-shirt, pale pink rain boots, top bun + mint scrunchie, red strawberry clip above LEFT ear; thin mint hair tie on RIGHT wrist in hand shots |
+| Danbi | P49–P62 (P53 inside canopy only, P60 absent, P62 thumb only) | **Day-2:** pink round-collar short-sleeve blouse, cream wide-leg trousers; same boots, hair, clip, scrunchie, hair tie |
+| Taeo | every panel he appears in, both days | O1: rolled-sleeve faded denim shirt, dark navy work apron, charcoal trousers, black rain boots, brass watch LEFT wrist, wooden pencil behind RIGHT ear |
+| Okja | P24–P27 | brick-red quilted vest, cream blouse, grey trousers, key ring RIGHT hip; glasses on her head (on her nose ONLY in P25) |
+| Mansik | P33 | grey T-shirt, olive rubber apron, white towel, skewer RIGHT hand; eyes on his pot |
+| Bomi | P36, P38, P39 (bg); P37 just off-frame | red hooded raincoat, white boots, clear umbrella LEFT hand |
+
+**젖음**
+| who | panels | state |
+|---|---|---|
+| Danbi | P01–P03 | dry under her umbrella (rain starts hitting her in P03) |
+| Danbi | P04–P14 | wet L3: hair darkened and flattened, fringe stuck, bun drooping, shoulders dark (stays after the cloud goes) |
+| Danbi | P15–P31 | damp, drying: fringe damp, hair and shoulders damp |
+| Danbi | P32–P35 | wet again under the eave cloud (hair dripping in P33) |
+| Danbi | P36 | dry again (late afternoon, a little frizzy) |
+| Danbi | P37–P39 | P37 one shoulder soaked by the sag leak; P38–P39 hair and shoulders wet |
+| Danbi | P40 | dried, a little frizzy |
+| Danbi | P49–P56 | dry — from P52 the fixed canopy blocks every drop; only her boots stand in the puddle |
+| Danbi | P57–P62 | drenched in P57 (head out of the canopy); hair wet and flattened through P62 |
+| Taeo | P06–P14 | outer (right, screen-left) shoulder darkened by runoff; dry from P16 on |
+| floor | S1 · S3 · S9 | dry pavers/concrete; wet circle + puddle only under Danbi when her cloud is up |
+| floor | S4–S5 | dry; her puddle only under her (P32–P35, P37–P38) |
+| floor | S6 · S7 | S6 damp (dusk); S7 wet after the off-screen evening shower, reflecting the bulb |
+| floor | S8 | P49–P51 drying in pale patches under the eave; P52–P60 dry outside the eave except her puddle |
+
+**셔터 · 테이프 선 · 카트 · 고리**
+| item | panels |
+|---|---|
+| shutter | DOWN P16–P28 · UP P29–P39 · DOWN P40–P62 (S1 wides P01·P03·P14 also show it DOWN) |
+| tape line | NONE P16–P28 (P28 = tape roll only) · present from **P29** whenever the stall floor is in frame (P29–P35, P40–P42, P48–P50, P59) |
+| cart | P15 in the alley · alley-side half P16–P39 · INSIDE the shutter P40–P62 (never in frame; COMP_A right edge = tin downpipe) |
+| table + 2 stools | outside the eave P16–P39 (P36 in use) · put away from P40 |
+| centre hook | empty P16–P39 · broken pink umbrella P40–P42 · fixed umbrella P48–P50 (lifted off in P50) · never any keys on it |
+| hook position in frame | FRONT stall frames: small at the very top edge (top ~6 %) or just out of frame — P16, P19, P20, P21, P24, P29, P31; P27 small at the very top centre (top ~60 % clear below it); P28 just out of frame above (top ~57 % clear) · COMP_A P41 = P48: just below a calm top band (~14 %) · P49: hook and furled umbrella within x ~46–51 % · P18: just out of frame right |
+| frayed canvas flap | never in EP1 |
+
+**열쇠 · 실 · 노랑**
+| item | panels |
+|---|---|
+| keys | P21 taken out · P22 at the keyhole · P23 held up · P25 on two palms · then pocketed; identical shape, rings differ only |
+| yellow spool | P17 pushed into the tool-roll pocket · P46 on the worktop (thread being wound) |
+| yellow thread band + cap | P46 band wound · P47 cap pressed on · P48 hung (band + cap) · P49 hung (small) · P51 hidden in her arms · P52 cap at the rim · P53 band + cap inside · P56 band at the canopy edge · P61 cap seen from above · P62 band under her thumb |
+| yellow umbrella | open P01–P13 (dot P01–P02, edge P03, over her P05–P13) · furled + shaken P14 · hangs on the rail from P16 (visible only at the far left in P16, P18, P19, P29; cropped elsewhere) · must be OUT of frame P21–P27 and P32–P39 (red in frame) · lost in darkness P42 · handle in his right hand P51 · furled in his right hand, tip down P52, P55, P59, P61 |
+| no red/orange next to yellow | checked panels: P16, P17, P21–P27, P32–P33, P36–P39, P46, P51 (strawberry clip only) |
+| gold | ONLY P62 (one drop) — explicitly none in P05, P06, P10, P13, P47, P52–P61 |
+| Taeo looks up | ONLY P61 |
+
+**구름 단계 (panel → level)**
+
+| P01 L2 | P02 L2 | P03 L3 | P04 L3 | P05 L2 (on the yellow) | P06 L2 | P07 L2 off-frame | P08 L2 off-frame |
+|---|---|---|---|---|---|---|---|
+| **P09 L3** off-frame | **P10 L3** | **P11 L3** off-frame | **P12 L3→L2** off-frame | **P13 L1** fading | **P14 none** | **P15–P31 none** | **P32 none→L2** (eave) |
+| **P33 L2** (eave) | **P34 L1** (eave) | **P35 L1** fading | **P36 none** | **P37 L2** | **P38 L3** | **P39 L2** fading, off-frame | **P40–P50 none** |
+| **P51 L2** forming off-frame | **P52 L2** | **P53 L2** (through fabric) | **P54 L2→L3** | **P55 L3** | **P56 L3** runoff only | **P57 L3** | **P58 L3** off-frame |
+| **P59 L3→L2** | **P60 L2** off-frame | **P61 L1** | **P62 L1** outside | | | | |
+
+## 6. 패널 크기 → 화면비 집계
+
+| aspect | size label | count | panels |
+|---|---|---|---|
+| 9:16 | full-bleed | 3 | P06, P52, P61 |
+| 9:16 | large | 6 | P02, P05, P37, P38, P41, P48 |
+| 3:4 | large | 1 | P54 |
+| 3:4 | medium / medium close | 29 | P07–P10, P12–P14, P18, P20, P21, P23, P25, P26, P30–P32, P34–P36, P39, P40, P49–P51, P55–P59 |
+| 4:3 | medium-wide | 7 | P16, P19, P24, P27, P28, P29, P33 |
+| 16:9 | wide strip | 4 | P01, P03, P15, P42 |
+| 1:1 | small | 2 | P04, P47 |
+| 1:1 | insert | 10 | P11, P17, P22, P43, P44, P45, P46, P53, P60, P62 |
+| | **total** | **62** | 9:16 = 9 · 3:4 = 30 · 4:3 = 7 · 16:9 = 4 · 1:1 = 12 |
+
+- gap_after: M = 25 panels · L = P06, P35, P48, P59, P60 · XL = P54 · S (omitted) = the rest · P62 = end.
+- SCENE BREAK 8 · scenes S1–S9 · silent panels 22 (art_space: none, except P03 SFX patch, P48 = the same two empty areas as P41, and P62 caption strip) · dialogue panels 40.
+- art_space: every panel's line equals the `art_space` line in `ep01_lettering.md` (synced after the letterer's §2 requests: P15, P16, P19, P24, P27, P28, P29, P41, P48, P49, P56).

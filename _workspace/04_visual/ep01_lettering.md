@@ -1,881 +1,823 @@
-# EP01 레터링 명세 「수칙 4번」 — letterer (크메르어판)
+# EP01 레터링 스펙 — 「맑은 날의 우산」 EP1 「맑은 날의 비」 · letterer
 
-- 작성: letterer · 기준일 2026-11-17 · v1
-- 입력: `03_episode/ep01_script_final.md`(KM 문구의 유일한 원천) · `04_visual/ep01_shotlist.md` v1(`bubble space` → `art_space`·`place`) · `03_episode/ep01_beatsheet.md` · `02_story/tension-curve.md` §9-2(`gap_after`) · `02_story/glossary_km.md`
-- 다음 독자: **prompt-smith**(`art_space`를 Flow 프롬프트의 빈 영역 문장으로) → episode-compositor(`km_tool.py build` + 배치 점검) → quality-reviewer
-- 이미지에는 글자가 없다. 이 문서의 말풍선·효과음·캡션은 전부 뷰어가 그린다(`km_tool.py build`).
+- 작성: letterer · 2026-11-19 · Flow-by-hand + Khmer edition · v1
+- 입력: `03_episode/ep01_script_final.md`(최종본 · `KM:` 줄이 크메르어 원본), `04_visual/ep01_shotlist.md`(패널별 구도 · art_space · gap), `04_visual/style-bible.md` §8, `03_episode/ep01_beatsheet.md` §6, `02_story/glossary_km.md`, 뷰어 `.claude/skills/webtoon-khmer-edition/assets/viewer-km.html`(말풍선 CSS).
+- **이미지에는 글자가 없다.** 뷰어(`km_tool.py build`)가 이 파일대로 말풍선을 그리고 크메르어를 쓴다. prompt-smith는 각 패널의 `art_space`(영어 한 줄)를 그대로 프롬프트에 넣는다: `Keep <art_space> as calm, empty background with no important details (a speech bubble will be added there later).` panel-validator는 C3(b)에서 그 자리가 실제로 비었는지 본다.
+- 패널 **62** = `panel_001`–`panel_062` (대본 P01–P62, 번호·순서 같음). 말풍선 66 + 끝 캡션 1 (panel_062) · 효과음 2 (panel_003, panel_055) · 무대사 22 = 글자 없는 패널 20 (`silent: true`, `art_space: none` — panel_048만 panel_041과 같은 빈자리를 둔다) + 효과음만 있는 panel_003 + 끝 캡션만 있는 panel_062.
+- `text_km`은 손으로 치지 않았다. 스크립트가 대본의 `KM:` · `KM 효과음:` · `KM 캡션:` 줄을 읽어 글자 하나 바꾸지 않고 옮겼다. 대본의 따옴표 하나 = 말풍선 하나(대본이 둘로 나눈 줄은 여기서도 `bubble_1`·`bubble_2`). `text_ko`는 참고용이고 뷰어에 나오지 않는다. 화자 이름은 대본의 한국어 이름.
 
-## 읽는 법
+## 0. 읽는 법 · 규칙
 
-- `art_space` = 그 컷의 그림이 비워 둘 조용한 배경(영문, prompt-smith가 그대로 옮긴다). 무대사 컷은 `none`(P3·P18은 반복 짝 때문에 빈 띠 유지).
-- `place`: `x`/`y` = 말풍선 중심, `w` = 최대 폭(패널 대비 %). 꼬리 `↙ ↓ ↘`(아래) · `↖ ↑ ↗`(위). 괄호 = 꼬리가 가리키는 화자.
-- `text_km` = 대본 `KM:` 큰따옴표 안을 글자 그대로 복사(손으로 다시 치지 않았다). `text_ko`는 참고용.
-- `type`: dialogue · thought(점선, 생각 점) · shout · memory(푸른 번짐 테두리: 기억 말풍선) · narration(마감 캡션).
-- 효과음 `size` = 글자 크기(패널 폭 대비 %), `rot` = 기울기(도).
+| 항목 | 규칙 |
+|---|---|
+| `place` | `x NN% · y NN% · w NN% · tail ↙` — x, y = 말풍선 **중심**, w = 최대 폭. 모두 그 패널 폭(x, w)·높이(y)의 %. |
+| **x + w ≤ 100** | 뷰어는 말풍선을 `left: x%`에 놓고 가운데 정렬하므로 폭이 최대 (100 − x)%로 잘린다. 오른쪽에 둘수록 좁아진다: 중심 x 60 → 최대 40 %, 70 → 30 %, 80 → 20 %. 그래서 오른쪽 화자의 말풍선은 중심을 55–70 %에 두고 폭을 맞췄다(일부는 화면 가운데를 넘는다 — §2 요청 참고). 모든 말풍선 x + w ≤ 100, w ≤ 85. |
+| 줄 수 | 크메르어 **≤ 2줄** (Battambang, 패널 폭 360 · 430 · 720 px에서 실측, §1). 짧은 대사는 한 줄. w는 줄바꿈이 띄어쓰기나 낱말 경계에 오도록 골랐다(글로서리에서 띄어 쓴 이름 — 소단비 · 태오 씨 · 문태오 — 은 뷰어가 한 줄로 묶는다). |
+| 크기 | 뷰어 글자 = 패널 폭의 3.4 %, 줄 높이 1.7, 안쪽 여백 0.7em/1.2em. 말풍선 높이(꼬리 제외) ≈ 1줄 11–12 % · 2줄 17–18 % · 3줄 23–24 % **패널 폭** → 패널 높이로는 3:4 에서 1줄 9 % · 2줄 13.5 %, 4:3 에서 1줄 16 % · 2줄 24 %, 1:1 에서 1줄 12 % · 2줄 18 %, 9:16 에서 1줄 7 % · 2줄 10 %, 16:9 에서 1줄 22 % · 2줄 32 %. 꼬리는 약 0.8em(패널 폭의 ~2.8 %) 더 나온다. |
+| `tail` | `↙ ↓ ↘` = 말풍선 아래 꼬리(왼쪽 · 가운데 · 오른쪽) — 화자가 말풍선 아래에 있을 때. `↖ ↑ ↗` = 위 꼬리 — 화자가 말풍선 위에 있을 때. 화면 밖 화자는 그 가장자리 쪽: panel_017 단비 ↘(오른쪽 = 골목 쪽), panel_041 단비 ↘ · 태오 ↙, panel_038 태오 ↖(왼쪽 가장자리). 나레이션(panel_062)은 꼬리 없음. |
+| `art_space` | 영어 한 줄 = 그 이미지에서 **비워 둘 자리**. 이 파일의 말풍선은 모두 그 안에 있다(얼굴 · 손 · 손잡이 · 노란 우산/실 · 열쇠 · 고리 · 구름 · 빗줄기 기둥 위 없음, 구름에서 구름 폭 하나 이상). 샷리스트 문장을 옮기되, 뷰어 때문에 넓혀야 한 곳은 넓힌 자리를 적었다(§2). 무대사 패널은 `none`. |
+| `gap_after` | 패널 뒤 간격, 뷰어 px. **S = 40 · M = 120 · L = 480 · XL = 900.** 대본 ⟨gap⟩ 그대로: L = 006 · 035 · 048 · 059 · 060 · XL = 054 · M = 001 · 004 · 011 · 014 · 015 · 016 · 018 · 019 · 020 · 023 · 028 · 038 · 039 · 040 · 041 · 042–047 · 051 · 053 · 058 · 061 · 나머지 S (062는 마지막 패널, 40). |
+| `sfx` | `x NN% · y NN% · size N% · rot N` — x, y = 중심, size = 글자 크기(패널 폭의 %), rot = 도(+ = 시계 방향). 뷰어가 Koulen 굵은 흰 글자 + 검은 외곽선으로 쓴다(한 줄, 줄바꿈 없음). |
+| `read_order` | 패널 안 읽는 순서. 위 → 아래, 같은 높이면 왼쪽 → 오른쪽. |
+| 반복 쌍 | panel_012 ↔ panel_031 (같은 문장 F03): 같은 w 42 · 같은 y 11 · 같은 한 줄 모양 · 둘 다 맨 위 띠. 화자가 바뀌어 좌우만 거울(태오 왼쪽 → 단비 오른쪽) — 단비의 흉내를 태오 머리 위에 두면 태오가 또 말한 것으로 읽힌다. panel_041 ↔ panel_048: 같은 COMP_A 프레임이라 art_space 문장도 같다(048은 말풍선 없음). |
 
-## 배치 규칙 (이 회차에서 지킨 것)
+## 1. 가장 긴 말풍선 · 실측
 
-1. **뷰어 폭 제약: `x + w ≤ 100`.** 뷰어 말풍선은 `left: x%`에 놓인 뒤 가운데 정렬되는데, 브라우저가 그 폭을 `100 − x`(%)로 자른다(실측: x 70·w 50 → 실제 폭 30). 그래서 오른쪽 말풍선일수록 좁아진다. 모든 말풍선을 `x + w ≤ 100`으로 잡았다. **배치 점검 때 x를 오른쪽으로 옮기면 w도 같이 줄여야 한다**(아니면 줄 수가 늘어난다).
-2. 줄 수 실측(뷰어와 같은 CSS, Battambang): 모든 말풍선 2줄 이하. 폭 360·400·430·720px에서 확인. 오프라인 대체 글꼴(Khmer UI)에서만 3줄이 되는 긴 줄: P9 ① · P12 ① · P17 · P22 ① · P24 ① · P35 · P41 ① · P44 · P49 ① — 빈자리 폭의 한계라 수용(온라인 Battambang에서는 모두 2줄 이하).
-3. 반복 짝(같은 구도)은 같은 말을 같은 자리에: P1=P38 · P2=P39 · P8 ①=P32 ① · P12 ①=P35 · P5 ②=P52 · 효과음 P7=P28 · P13=P36. P3(→P40)·P18(→P37)은 무대사지만 짝의 말풍선 띠를 비워 둔다.
-4. 한 컷 말풍선 1–2개(효과음 별도). 같은 화자의 연속 말풍선은 위→아래로 이어 읽힌다(앞 말풍선의 꼬리가 다음 말풍선 쪽을 향해도 같은 화자다).
-5. 효과음 나눔: P25 «ភ្លឹប…» / «ភ្លឹប—» 두 번 깜빡임, P42 «ក្ដុក!» 세 번(노크 리듬, 대각선으로 내려감). 뷰어 효과음은 줄바꿈이 없어 좁은 자리에 한 줄로 안 들어가므로 나눴다. km_tool은 이어 붙여 대조한다.
+측정: 스크래치 HTML에 뷰어의 `.bubble` CSS를 그대로 쓰고, 실제 크메르어를 실제 x · w로 패널 폭 360 · 430 · 720 px에 그려 줄 수를 셌다(Chrome, Battambang = Google Fonts / 폴백 = Windows `Khmer UI`). em = 한 줄로 늘어놓은 길이(글자 크기 기준).
 
-## 샷리스트 빈자리와 달라진 곳
+| 패널 · 풍선 | 화자 | 한 줄 길이 em (Battambang / 폴백) | w | 줄 (Battambang 360·430·720 / 폴백) | Battambang 줄바꿈 (360 px) |
+|---|---|---|---|---|---|
+| panel_028 ① | 단비 | 20.8 / 24.6 | 56 % | 2·2·2 / 2 | អ៊ីចឹង… ភ្លៀងមក លោកលក់ដាច់។ ⏎ មេឃស្រឡះ ខ្ញុំលក់ដាច់។ |
+| panel_027 ② | 옥자 | 19.8 / 24.8 | 58 % | 2·2·2 / 2 | អ្នកណាបង់ថ្លៃជួលរដូវក្ដៅ ម្ដងពីរខែបាន ⏎ អ្នកនោះបាននៅ។ |
+| panel_034 ② | 태오 | 19.0 / 22.2 | 51 % | 2·2·2 / 2 | «វាសម្រាប់បាំងថ្ងៃ។» កញ្ញានិយាយ ⏎ អ៊ីចឹង អម្បាញ់មិញ។ |
+| panel_028 ② | 태오 | 18.5 / 22.5 | 58 % | 2·2·2 / 2 | រដូវភ្លៀង មានតែប្រាំមួយសប្ដាហ៍។ ⏎ បន្ទាប់មក រដូវក្ដៅ។ |
+| panel_020 ① | 단비 | 18.2 / 21.6 | 58 % | 2·2·2 / 2 | ខ្ញុំឈ្មោះ សូ ដាន់ប៊ី! ទឹកកកឈូសស្ត្របឺរី ⏎ ឆ្ងាញ់ជាងគេ! |
+| panel_032 ② | 단비 | 16.9 / 20.7 | 48 % | 2·2·2 / 2 | អូយ… របស់ថោកៗទេ… អត់… ⏎ មិនមែនអ៊ីចឹងទេ… |
+| panel_030 ① | 태오 | 16.8 / 20.4 | 48 % | 2·2·2 / 2 | ទទឹងបីម៉ែត្រហុកសិប។ ម្ខាង ⏎ មួយម៉ែត្រប៉ែតសិប។ |
+| panel_026 ① | 옥자 | 15.3 / 19.5 | 46 % | 2·2·2 / 2 | អ៊ំប្រាប់ក្មួយតេអូ ឲ្យបើកបន្តដូច ⏎ លោកតាមូន… |
+| panel_027 ① | 옥자 | 15.2 / 18.4 | 40 % | 2·2·2 / 3 | រហូតដល់ចប់រដូវភ្លៀង ⏎ ចែកគ្នាពាក់កណ្ដាល។ |
 
-- **panel_024:** 구정민 ①(w 48 이상 필요)이 위 오른쪽(x 52–97)에 2줄로 안 들어가고, 기억 말풍선을 비네트 위 1/3에 두면 기억이 질문보다 먼저 읽힌다. → ①은 위쪽 가로로 넓게(비네트의 빈 윗부분과 살짝 겹침), ② 기억 말풍선은 샷리스트의 **대안 자리(비네트 바로 아래, x 4–36, y 36–50)**, 꼬리는 위로 비네트 속 손을 향한다.
-- **panel_041:** 위 오른쪽(x 48–96)만으로는 ①이 3줄이 된다. → 빈자리를 형광등 아래·그녀 머리 위로 x 37까지 넓혔다(y 10–26). 형광등(위 왼쪽, y 2–10)과 명부는 그대로 비켜 간다.
-- **panel_023:** 위 오른쪽 1/4(x 50–97)에서는 «ខ្ញុំជាអ្នកទទួលបន្ទុក។»가 한 줄로 안 들어간다. → 빈자리를 x 44까지 넓혔다(그의 머리는 y 30 아래라 그대로).
-- **panel_053:** 경계 띠 왼쪽(x 4–40)에서는 말풍선이 3줄이 된다. → x 46까지 넓혔다(두 스티커는 y 40 위와 y 60 아래라 걸리지 않는다).
-- P17·P29·P62처럼 오른쪽 좁은 빈자리는 위 1번 제약 때문에 말풍선 중심을 빈자리 가운데보다 왼쪽에 두었다(빈자리 안에서 끝난다).
+- 대본 편집 노트가 꼽은 세 말풍선(panel_020 단비, panel_027 ② 옥자, panel_028 태오)과 실측으로 더 긴 panel_028 ① 단비에 56–58 %를 줬다. x + w ≤ 100 때문에 이 폭이면 중심이 42–44 % 이하라, 오른쪽 화자라도 말풍선이 화면 가운데에 걸친다(panel_020: 13–71 %, panel_028 ①: 16–72 %).
+- panel_027 ②(고정 문구 F06)와 panel_028 ①은 w 56–58 %에서만 Battambang 줄바꿈이 띄어쓰기에 떨어진다(위 표). 더 좁히면 F06의 「두 달 치를 한 번에」나 「맑은 하늘」이 낱말 가운데서 갈리므로 폭을 줄이지 않는다.
 
----
+## 2. 샷리스트 요청 (panel-director → prompt-smith)
+
+뷰어 규칙(x + w ≤ 100, 오른쪽일수록 좁아짐)과 ≤ 2줄 때문에 샷리스트의 빈자리 안에 둘 수 없던 곳. **이 파일의 `art_space`는 이미 요청한 자리로 적었다** — prompt-smith는 이 파일 문장을 쓰면 되고, panel-director는 샷리스트를 이에 맞춰 고쳐 주면 된다. 얼굴·핵심 소품을 덮는 대신 이렇게 요청한다.
+
+1. P15 (16:9): widen the empty area from the upper-right third to the right half, top two-thirds (x ~42-88 %, y 0-70 %). The viewer cannot put a two-line bubble inside the right third (a bubble centred at x can be at most 100-x % wide), and two stacked bubbles need ~65 % of a 16:9 height.
+2. P16 (4:3): the two Danbi bubbles must sit side by side across the centre (x ~15-83 %), so the hook has to be at the very top edge (top ~6 %) or out of frame, and the upper third from x ~14 % to ~84 % must be clear. Right of a centred hook the viewer allows only ~30 % width (3+ lines).
+3. P19 (4:3): Danbi's bubble (38 % wide, x 43-81 %) crosses the centre, so the hook must be at the very top edge (top ~6 %) or out of frame.
+4. P24 (4:3): Danbi's bubble (44 % wide, x 34-78 %) crosses the centre, so the hook must be at the very top edge (top ~6 %) or out of frame.
+5. P27 (4:3): the verdict is two long bubbles (40 % and 58 % wide, both two lines; the 58 % one must cross the centre). They cannot sit side by side in the top third, so they stack: keep the top ~60 % clear (wider shot with headroom, figures in the lower part, hook small at the very top centre). Better alternative: make P27 3:4, then the original top-third works (positions for 3:4: b1 x 21 y 10 w 40, b2 x 42 y 28.5 w 58 - top ~37 %).
+6. P28 (4:3): both lines are long (56 % and 58 % wide, two lines each), so they cannot sit side by side; stacked they need the top ~57 % clear (camera higher, looking down more at the floor and the tape roll, the hook just out of frame above). Better alternative: make P28 3:4 (positions for 3:4: b1 x 44 y 9 w 56, b2 x 30 y 25.5 w 58 - top third).
+7. P29 (4:3): two Danbi bubbles (30 % and 36 % wide) do not fit stacked in the right half; they sit side by side across the centre (x ~14-82 %), so the hook must be at the very top edge and the upper third clear from x ~13 % to ~84 %.
+8. P41 / P48 (COMP_A, 9:16): Danbi's 2-line bubble (40 % wide) cannot sit right of the centred umbrella (the viewer allows ~27 % there = 3-4 lines). Start the COMP_A frame a little higher so the top ~14 % is a calm band (plain shutter-box housing / eave edge) with the hook just below it; her bubble crosses the centre in that band, above the hook. Taeo's one-word reply stays in the upper-left quarter. Same framing for P48 (identical frame, no bubbles).
+9. P48 (COMP_A): the shot list says art_space none; because P41 and P48 are the identical frame, P48 keeps the same empty areas as P41 (top band above the hook + upper-left quarter), with no bubbles.
+10. P49 (3:4): Danbi's two bubbles start at x ~52 % (right of the hook, the viewer allows no wider there), so the neatly furled umbrella must hang within x ~46-51 % and the upper third right of it must be clear (x ~51-86 %, top ~36 %).
+11. P56: 'w <= 35 %' gives three lines of Khmer (measured); the bubble is 41 % wide (two lines), so the empty area above his shoulder must be ~44 % wide (x 0-44 %, top fifth). Still small, still upper-left, no SFX nearby.
+
+- 공통 메모(4:3 FRONT 투샷 · panel_016 · 019 · 024 · 027 · 028 · 029): 가운데 고리 오른쪽에는 2줄 말풍선이 들어가지 못한다(최대 ~30 %). 그래서 고리는 맨 위 가장자리(위 ~6 %) 또는 프레임 밖, 말풍선 띠는 그 아래로 정했다. panel_020 · 021 · 031(3:4)도 같은 이유로 고리를 맨 위 가장자리에 둔다(샷리스트 panel_020과 같다).
+
+## 3. 폴백 글꼴에서만 3줄이 되는 말풍선
+
+Google Fonts(Battambang)를 못 받는 오프라인 독자는 기기 글꼴(Windows `Khmer UI` 등)로 본다. 이 글꼴은 15–25 % 넓어서 아래 말풍선은 3줄이 된다(Battambang에서는 모두 2줄 이하). 자리는 3줄 높이까지 비도록 y를 잡았다. 폭을 넓히면 Battambang 줄바꿈이 낱말 가운데로 가거나 자리를 벗어나서 그대로 둔다.
+
+1. panel_009 ① (단비, w 38 %): ថ្ងៃក្ដៅខ្លាំងណាស់… ⏎ ពេទ្យស្បែក ⏎ គាត់ថា…
+2. panel_015 ① (단비, w 33 %): ស្ត្របឺរីអើយ ថ្ងៃ ⏎ នេះថ្ងៃដំបូង ⏎ ហើយ…
+3. panel_016 ① (단비, w 32 %): ហាងដំបូង ⏎ របស់ខ្ញុំ នៅ ⏎ មាត់ផ្សារនេះ!
+4. panel_016 ② (단비, w 36 %): មុនរដូវក្ដៅ ⏎ មកដល់… ដោយ ⏎ កម្លាំងខ្លួនឯង!
+5. panel_019 ① (단비, w 38 %): មនុស្សដើរកាត់ ⏎ ទីនេះ មួយថ្ងៃរាប់ ⏎ ពាន់នាក់!
+6. panel_019 ② (태오, w 35 %): មួយម៉ោង ⏎ កន្លងមក ដប់ ⏎ ប្រាំពីរនាក់។
+7. panel_021 ① (단비, w 41 %): អ៊ីចឹង លោក តេអូ ⏎ ខ្ញុំបើកទ្វាររមូរ ⏎ ហើយណា៎!
+8. panel_026 ② (옥자, w 34 %): ក្មួយដាន់ប៊ីដាក់ ⏎ ពាក្យ អ៊ំក៏ឲ្យ ⏎ កូនសោថ្មីទៅ!
+9. panel_027 ① (옥자, w 40 %): រហូតដល់ចប់រដូវ ⏎ ភ្លៀង ចែកគ្នា ⏎ ពាក់កណ្ដាល។
+10. panel_032 ① (태오, w 36 %): កាំបិតឈូស ⏎ ទឹកកក។ មុំត្រឹម ⏎ ត្រូវ។
+11. panel_041 ① (단비, w 40 %): ព្យួរឲ្យស្ងួតទេណា៎! ⏎ មិនមែនផ្ញើជួសជុល ⏎ ទេ!
+12. panel_049 ① (단비, w 32 %): ឆ័ត្រម្សិលមិញ… ⏎ មិនមែនផ្ញើ ⏎ ទេណា៎!
+
+## 4. 패널
 
 ### panel_001
-- art_space: top band, left and centre (x 5–70%, y 2–22%): the dim corridor ceiling seen above the glass; the silhouette's head (below y 30%) and the rule sheet stay out of it
-- gap_after: 40
-- bubble_1:
-  - speaker: 서하
-  - type: dialogue
-  - text_km: "ច្បាប់ទី៤ ខ្ញុំនឹងមិនគោរពទេ។"
-  - text_ko: "수칙 4번은 지키지 않겠습니다."
-  - place: x 37% · y 12% · w 52% · tail ↘ (서하의 뒷머리, 아래 오른쪽)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_002
-- art_space: upper-left quarter (x 3–48%, y 3–32%): the dark gap between the steel shelves
-- gap_after: 120
-- bubble_1:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ឯងឆ្កួតឬអី?"
-  - text_ko: "너 미쳤어?"
-  - place: x 24% · y 16% · w 34% · tail ↘ (선임의 입)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 40
 
 ### panel_003
-- art_space: top band (x 5–95%, y 2–18%): the dim corridor ceiling seen above the glass — no bubble in this panel, but kept empty because panel_040 repeats this exact frame with a bubble here
-- gap_after: 480
-- silent: true
-- note: 무대사. 위 띠는 panel_040(같은 구도, 말풍선 있음) 때문에 비워 둔다
+- art_space: a small clear patch of sunlit background to the right of the snapping rib, centre-right of the image (about x 72-96 %, y 8-50 %), outside the rain column and far from the yellow canopy at the left edge
+- gap_after: 40
+- sfx_1:
+  - text_km: "ក្រាក់!"
+  - text_ko: "뚝!"
+  - place: x 84% · y 28% · size 7% · rot -8
 
 ### panel_004
-- art_space: top 40% (x 3–97%, y 2–40%): the plain upper wall of the landing fading into the darkness above
-- gap_after: 40
-- bubble_1:
-  - speaker: 지호(전화)
-  - type: dialogue
-  - text_km: "បង! នៅហ្នឹងឃើញផ្កាយដែរអត់?"
-  - text_ko: "누나, 거기서도 별 보여?"
-  - place: x 34% · y 10% · w 58% · tail ↙ (귀에 댄 휴대폰, 화면 왼쪽)
-  - read_order: 1
-- bubble_2:
-  - speaker: 서하
-  - type: dialogue
-  - text_km: "បងនៅក្រោមដីណា៎។"
-  - text_ko: "지하야."
-  - place: x 58% · y 28% · w 40% · tail ↙ (서하의 입)
-  - read_order: 2
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_005
-- art_space: top 30% (x 4–96%, y 2–30%): soft out-of-focus dark background; the sticker (y 44–60%) stays clear
+- silent: true
+- art_space: none
 - gap_after: 40
-- bubble_1:
-  - speaker: 지호(전화)
-  - type: dialogue
-  - text_km: "ឆ្មាព្រះចន្ទ នៅបិទជាប់ដដែលអត់?"
-  - text_ko: "달냥이 아직 붙어 있지?"
-  - place: x 30% · y 9% · w 52% · tail ↗ (위 오른쪽 프레임 밖의 휴대폰)
-  - read_order: 1
-- bubble_2:
-  - speaker: 지호(전화)
-  - type: dialogue
-  - text_km: "កុំបកវាចេញណា៎! មានតែមួយគត់ក្នុងលោក។"
-  - text_ko: "떼지 마. 세상에 하나뿐이야."
-  - place: x 46% · y 21% · w 54% · tail ↗ (위 오른쪽 프레임 밖의 휴대폰)
-  - read_order: 2
 
 ### panel_006
-- art_space: top 40% (x 3–97%, y 2–40%): the plain upper wall of the landing and the darkness above it
-- gap_after: 120
-- bubble_1:
-  - speaker: 지호(전화)
-  - type: dialogue
-  - text_km: "ថ្ងៃសៅរ៍ ពិធីប្រគល់រង្វាន់ បងត្រូវមកឱ្យបាន! សន្យាណា៎!"
-  - text_ko: "토요일 시상식, 진짜 와야 돼. 약속!"
-  - place: x 35% · y 12% · w 64% · tail ↙ (휴대폰, 화면 왼쪽)
-  - read_order: 1
-- bubble_2:
-  - speaker: 서하
-  - type: dialogue
-  - text_km: "អើ សន្យា។"
-  - text_ko: "응, 약속."
-  - place: x 62% · y 30% · w 30% · tail ↙ (서하의 입)
-  - read_order: 2
+- silent: true
+- art_space: none
+- gap_after: 480
 
 ### panel_007
-- art_space: (1) upper left (x 3–38%, y 3–26%): plain wall and exposed pipes left of the clock — never over the clock face; (2) sound effect: the plain steel face of the fire door at the right edge, middle height (x 72–96%, y 34–50%)
-- gap_after: 240
-- bubble_1:
-  - speaker: 지호(전화)
-  - type: dialogue
-  - text_km: "ស៊ូៗ បង!"
-  - text_ko: "누나, 버텨!"
-  - place: x 20% · y 14% · w 32% · tail ↘ (귀에 댄 휴대폰)
-  - read_order: 1
-- sfx_1:
-  - text_km: "ផាំង!"
-  - text_ko: "쿵"
-  - place: x 84% · y 42% · size 9% · rot -6
-
-### panel_008
-- art_space: top 40% (x 3–97%, y 2–40%): ceiling pipes, upper wall and the dark corridor above the glass
+- art_space: upper-left corner of the image (left ~45 % x top ~22 %): clear blue sky beyond the canopy's left rim, above Taeo's head
 - gap_after: 40
 - bubble_1:
-  - speaker: 노미란
+  - speaker: 태오
   - type: dialogue
-  - text_km: "មន្ត្រី កាង សឺហា! យប់នេះ យើងដូរវេនគ្នាសិន មែនទេ?"
-  - text_ko: "강서하 주무관, 우리 오늘 당직 좀 바꿔 주자. 그치?"
-  - place: x 35% · y 11% · w 64% · tail ↙ (노미란)
+  - text_km: "សូមកុំបើកច្រាសខ្យល់។ វាក្រឡាប់។"
+  - text_ko: "바람 쪽으로 펴지 마세요. 뒤집힙니다."
+  - place: x 22% · y 10% · w 39% · tail ↘
+  - read_order: 1
+
+### panel_008
+- art_space: upper-left third of the image (left ~42 % x top ~30 %): clear blue sky beyond the canopy's left rim, above Danbi's waving hands
+- gap_after: 40
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "អូ៎! ឆ័ត្រនេះឬ?"
+  - text_ko: "아, 이 우산요?"
+  - place: x 20% · y 8% · w 34% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 노미란
+  - speaker: 단비
   - type: dialogue
-  - text_km: "លោកប្រធានការិយាល័យ ក៏ធ្លាប់ធ្វើអញ្ចឹងដែរ។"
-  - text_ko: "과장님도 다 그렇게 하셨어."
-  - place: x 50% · y 29% · w 50% · tail ↙ (노미란)
+  - text_km: "វាសម្រាប់បាំងថ្ងៃ។"
+  - text_ko: "해 가리는 거예요."
+  - place: x 25% · y 20% · w 38% · tail ↘
   - read_order: 2
 
 ### panel_009
-- art_space: top 38% (x 3–97%, y 2–38%): the glass window beyond the desk and the dark corridor behind it
+- art_space: upper-left third of the image (left ~44 % x top ~35 %): clear blue sky above the canopy's left rim - above the rim, the water stream and Taeo's face
 - gap_after: 40
 - bubble_1:
-  - speaker: 노미란
+  - speaker: 단비
   - type: dialogue
-  - text_km: "ក្នុងបញ្ជីវេន មានឈ្មោះបង។ ប្រាក់ឧបត្ថម្ភ ក៏ចេញឈ្មោះបងដែរ។ ដឹងហើយណា៎?"
-  - text_ko: "명부엔 내 이름 있어. 수당도 내 앞으로. 알지?"
-  - place: x 34% · y 14.5% · w 64% · tail ↗ (오른쪽 프레임 밖 노미란)
+  - text_km: "ថ្ងៃក្ដៅខ្លាំងណាស់… ពេទ្យស្បែកគាត់ថា…"
+  - text_ko: "요즘 햇볕이 엄청 세서… 피부과 선생님이 그러는데…"
+  - place: x 21% · y 9.5% · w 38% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 서하
+  - speaker: 단비
   - type: dialogue
-  - text_km: "…ចាស សុំទោស ខ្ញុំយល់ហើយ។"
-  - text_ko: "…아, 네. 죄송합니다, 알겠습니다."
-  - place: x 30% · y 31.5% · w 52% · tail ↙ (서하, 아래 왼쪽)
+  - text_km: "អត់… មិនមែនអ៊ីចឹងទេ…"
+  - text_ko: "아니, 그게 아니라…"
+  - place: x 22% · y 26.5% · w 41% · tail ↘
   - read_order: 2
 
 ### panel_010
-- art_space: top 38%, left and centre (x 3–80%, y 2–38%): the plain off-white wall above the nap-room door and the ceiling
-- gap_after: 120
+- art_space: upper-left corner of the image (left ~45 % x top ~22 %): clear sky beyond the canopy's left rim - away from the hands, the handle and the cloud at the top-right
+- gap_after: 40
 - bubble_1:
-  - speaker: 노미란
+  - speaker: 단비
   - type: dialogue
-  - text_km: "អ្នកថ្មី ទ្រាំមិនដល់បីថ្ងៃទេ។"
-  - text_ko: "신입은 사흘 못 버텨."
-  - place: x 30% · y 10% · w 48% · tail ↙ (노미란)
+  - text_km: "មិនអីទេ ខ្ញុំកាន់ខ្លួនឯង—"
+  - text_ko: "괜찮아요, 제가 들—"
+  - place: x 23% · y 10% · w 41% · tail ↘
   - read_order: 1
-- bubble_2:
-  - speaker: 노미란
-  - type: dialogue
-  - text_km: "អ្នកមុនក៏ឈប់ក្រោយបីថ្ងៃដែរ។"
-  - text_ko: "전임자도 사흘 만에 관뒀어."
-  - place: x 44% · y 25% · w 54% · tail ↙ (노미란)
-  - read_order: 2
 
 ### panel_011
-- art_space: top 38%, left and centre (x 3–80%, y 2–38%): the dark tops of the shelves and the ceiling
-- gap_after: 40
+- art_space: upper quarter of the image, left half: soft-focus empty background (dry plaza, a slice of sky) - nothing over the hands
+- gap_after: 120
 - bubble_1:
-  - speaker: 선임
+  - speaker: 태오
   - type: dialogue
-  - text_km: "កន្លែងហ្នឹង របស់ឯង។ ខ្ញុំមិនអង្គុយទេ។"
-  - text_ko: "거긴 네 자리야. 난 안 앉아."
-  - place: x 32% · y 10% · w 56% · tail ↙ (선임)
+  - text_km: "សូមកាន់ត្រង់ចុងដង។"
+  - text_ko: "손잡이 끝을 잡으세요."
+  - place: x 25% · y 11% · w 44% · tail ↘
   - read_order: 1
-- bubble_2:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ផឹកទៅ។ គេថា យប់នេះវែង។"
-  - text_ko: "마셔. 긴 밤이래."
-  - place: x 40% · y 27% · w 50% · tail ↙ (선임)
-  - read_order: 2
 
 ### panel_012
-- art_space: top 40% (x 3–97%, y 2–40%): ceiling pipes, upper wall and the dark shelf tops; the small flickering corridor light stays just below this band (y 40–46%)
-- gap_after: 0
-- bubble_1:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ទី១។ ពីម៉ោង១០យប់ ដល់ម៉ោង៦ព្រឹក ត្រូវទទួលពាក្យ ពីអ្នកដែលមកបញ្ជរគ្រប់រូប។"
-  - text_ko: "1번. 22시부터 06시까지 창구를 찾은 민원인은 모두 접수한다."
-  - place: x 38% · y 12% · w 62% · tail ↙ (선임)
-  - read_order: 1
-- bubble_2:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "មិនត្រូវបណ្ដេញទៅវិញឡើយ។"
-  - text_ko: "돌려보내지 않는다."
-  - place: x 28% · y 29% · w 48% · tail ↙ (선임)
-  - read_order: 2
-
-### panel_013
-- art_space: (1) top 40% (x 3–97%, y 2–40%): ceiling pipes, upper wall and the dark shelf tops; (2) sound effect: the dim corridor seen through the glass right above the bell (x 70–96%, y 42–54%)
-- gap_after: 120
-- bubble_1:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ទី២។ អ្នកប្រចាំការ មិនត្រូវប្រាប់ឈ្មោះខ្លួនឯងឡើយ។"
-  - text_ko: "2번. 당직자는 자기 이름을 말하지 않는다."
-  - place: x 34% · y 11% · w 56% · tail ↙ (선임)
-  - read_order: 1
-- bubble_2:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ទី៣។ ពេលកណ្ដឹងរោទ៍—"
-  - text_ko: "3. 호출벨이 울리면—"
-  - place: x 26% · y 28% · w 44% · tail ↙ (선임)
-  - read_order: 2
-- sfx_1:
-  - text_km: "ទីង!"
-  - text_ko: "띵!"
-  - place: x 83% · y 48% · size 8% · rot -8
-
-### panel_014
-- art_space: top 38% (x 3–97%, y 2–38%): the corridor ceiling seen above the glass, even and dim
+- art_space: upper-left fifth of the image (left ~45 % x top ~20 %): clear sky beyond the canopy's left rim, above Taeo's head
 - gap_after: 40
 - bubble_1:
-  - speaker: 구정민
+  - speaker: 태오
   - type: dialogue
-  - text_km: "សូមទោស ដែលមករំខានទាំងយប់ជ្រៅ។"
-  - text_ko: "늦은 시간에 죄송합니다."
-  - place: x 38% · y 10% · w 60% · tail ↘ (유리 너머 구정민)
+  - text_km: "ឆ្អឹងទីបី។ កោងហើយ។"
+  - text_ko: "세 번째 살. 휘었네요."
+  - place: x 22% · y 11% · w 42% · tail ↘
   - read_order: 1
-- bubble_2:
-  - speaker: 구정민
-  - type: dialogue
-  - text_km: "ខ្ញុំមកសុំលុបចោល ការចុះបញ្ជីមរណភាព។"
-  - text_ko: "사망신고를 취소하러 왔습니다."
-  - place: x 40% · y 27% · w 60% · tail ↓ (유리 너머 구정민)
-  - read_order: 2
 
-### panel_015
-- art_space: top 38%, centre and right (x 15–97%, y 2–38%): the dim shelves and ceiling of the room behind the glass; the man's dark shoulder at the left edge stays out of it
+### panel_013
+- art_space: upper-left corner of the image (left ~45 % x top ~22 %): clear sky beyond the canopy's left rim - away from the hands and the fading cloud at the top-right
+- gap_after: 40
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "អរគុណ អរគុណ លោកថៅកែ!"
+  - text_ko: "고마워요, 고마워요, 사장님!"
+  - place: x 20% · y 10% · w 34% · tail ↘
+  - read_order: 1
+
+### panel_014
+- art_space: upper-left fifth of the image (left ~45 % x top ~20 %): the flat blank mint shutter face and the shaded eave underside above Taeo's head
 - gap_after: 120
 - bubble_1:
-  - speaker: 서하
+  - speaker: 태오
   - type: dialogue
-  - text_km: "អ្នកដាក់ពាក្យ… និងអ្នកស្លាប់ គឺមនុស្សតែមួយ។"
-  - text_ko: "신청인이… 사망자 본인이시네요."
-  - place: x 44% · y 11% · w 54% · tail ↓ (서하)
+  - text_km: "មិនមែនថៅកែទេ។ ជាងជួសជុល។"
+  - text_ko: "사장 아닙니다. 수선공입니다."
+  - place: x 22% · y 10% · w 36% · tail ↓
+  - read_order: 1
+
+### panel_015
+- art_space: right half of the image from the top down to about two-thirds height (x ~42-88 %, y 0-70 %): clear sky above the stone wall's flat top and the plain upper wall face - no hydrangea heads or streetlamp there
+- gap_after: 120
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "ស្ត្របឺរីអើយ ថ្ងៃនេះថ្ងៃដំបូងហើយ…"
+  - text_ko: "딸기야, 오늘이 첫날이다…"
+  - place: x 60% · y 22% · w 33% · tail ↙
   - read_order: 1
 - bubble_2:
-  - speaker: 서하
+  - speaker: 단비
   - type: dialogue
-  - text_km: "…អញ្ចឹង បញ្ជាក់អត្តសញ្ញាណរួចរាល់ហើយ។"
-  - text_ko: "…본인 확인되셨네요."
-  - place: x 58% · y 28.5% · w 42% · tail ↓ (서하)
+  - text_km: "កុំញ័រណា៎…"
+  - text_ko: "떨지 마…"
+  - place: x 72% · y 55% · w 26% · tail ↙
   - read_order: 2
 
 ### panel_016
-- art_space: sound effect only: the blurred glass to the right of and above the bell (x 60–92%, y 12–28%)
-- gap_after: 240
-- sfx_1:
-  - text_km: "តក់!"
-  - text_ko: "똑"
-  - place: x 76% · y 20% · size 8% · rot -6
-
-### panel_017
-- art_space: top right (x 40–96%, y 2–22%): the dim ceiling of the room seen above the glass; the man's head on the left stays out of it
-- gap_after: 40
-- bubble_1:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ទី៤។ បើអ្នកដាក់ពាក្យសួររកអ្នកទទួលបន្ទុក…"
-  - text_ko: "4번. 민원인이 담당자를 찾으면…"
-  - place: x 60% · y 12% · w 40% · tail ↓ (유리 너머 선임)
-  - read_order: 1
-
-### panel_018
-- art_space: top 28% (x 3–97%, y 2–28%): the dark area above the shelves — no bubble in this panel, but kept empty because panel_037 repeats this exact frame with bubbles here
+- art_space: upper third of the image from x ~14 % to ~84 % (blank mint shutter face under the eave); the small hook sits at the very top edge above this band (or just out of frame); Taeo, the rail with the yellow umbrella at the far left and the opened parasol at the right stay outside it
 - gap_after: 120
-- silent: true
-- note: 무대사. 위 띠는 panel_037(같은 구도, 말풍선 있음) 때문에 비워 둔다
-
-### panel_019
-- art_space: top 22%, left and centre (x 3–68%, y 2–22%): out-of-focus glass and dark corridor above the paper; the faded sticker (x 72–86%) stays clear
-- gap_after: 40
 - bubble_1:
-  - speaker: 선임(목소리)
+  - speaker: 단비
   - type: dialogue
-  - text_km: "…ត្រូវឆ្លើយថា «ខ្ញុំជាអ្នកទទួលបន្ទុក»។"
-  - text_ko: "…'제가 담당자입니다'라고 답한다."
-  - place: x 32% · y 11% · w 56% · tail ↙ (왼쪽 프레임 밖 선임)
-  - read_order: 1
-
-### panel_020
-- art_space: top 38% (x 3–97%, y 2–38%): dark shelf tops on the left, the corridor above the glass on the right
-- gap_after: 40
-- bubble_1:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ច្បាប់ មានសម្រាប់គោរព មិនមែនសម្រាប់ជឿទេ។"
-  - text_ko: "수칙은 지키라고 있는 거지, 믿으라고 있는 게 아니야."
-  - place: x 26% · y 11% · w 46% · tail ↙ (선임, 왼쪽)
+  - text_km: "ហាងដំបូងរបស់ខ្ញុំ នៅមាត់ផ្សារនេះ!"
+  - text_ko: "이 시장 입구에, 내 첫 가게!"
+  - place: x 28.5% · y 16.5% · w 32% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 서하
+  - speaker: 단비
   - type: dialogue
-  - text_km: "លោកពូ ច្បាប់ទាំងនេះ… អ្នកណាជាអ្នកសរសេរ?"
-  - text_ko: "선배님, 이 수칙… 누가 쓴 거예요?"
-  - place: x 56% · y 27% · w 44% · tail ↘ (서하, 오른쪽)
+  - text_km: "មុនរដូវក្ដៅមកដល់… ដោយកម្លាំងខ្លួនឯង!"
+  - text_ko: "여름 오기 전에… 혼자 힘으로!"
+  - place: x 64% · y 20% · w 36% · tail ↘
+  - read_order: 2
+
+### panel_017
+- art_space: upper third of the image: plain dark-wood back edge of the workbench and the shadowed wall, soft - nothing over the yellow spool
+- gap_after: 40
+- bubble_1:
+  - speaker: 단비 (화면 밖)
+  - type: dialogue
+  - text_km: "វ៉ាវ… ឧបករណ៍ទាំងនេះ ចាស់ជាងខ្ញុំទៀត!"
+  - text_ko: "우와… 공구들이 저보다 나이 많겠어요!"
+  - place: x 57% · y 11% · w 43% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "របស់លោកតាខ្ញុំ។"
+  - text_ko: "할아버지 겁니다."
+  - place: x 18% · y 24% · w 35% · tail ↘
+  - read_order: 2
+
+### panel_018
+- art_space: upper third of the image, centre-right (x ~34-80 %): the blank mint shutter face above the workbench, right of the bulb - not on Taeo's face, not on the rail
+- gap_after: 120
+- bubble_1:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "កន្លែងនេះ លោកតាខ្ញុំអង្គុយសែសិបឆ្នាំ។"
+  - text_ko: "이 자리, 할아버지가 사십 년 앉으셨습니다."
+  - place: x 57% · y 9% · w 41% · tail ↙
+  - read_order: 1
+- bubble_2:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "រដូវភ្លៀងនេះ ខ្ញុំបើកជំនួស។"
+  - text_ko: "이번 장마는 제가 대신 엽니다."
+  - place: x 55% · y 25% · w 45% · tail ↙
+  - read_order: 2
+
+### panel_019
+- art_space: upper third of the image across the full width (blank mint shutter face); the small hook sits at the very top edge above this band (or just out of frame); Danbi's raised hands and both heads stay below it
+- gap_after: 120
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "មនុស្សដើរកាត់ទីនេះ មួយថ្ងៃរាប់ពាន់នាក់!"
+  - text_ko: "여기 하루에 몇천 명은 지나가요!"
+  - place: x 62% · y 18% · w 38% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "មួយម៉ោងកន្លងមក ដប់ប្រាំពីរនាក់។"
+  - text_ko: "지난 한 시간, 열일곱 명입니다."
+  - place: x 20% · y 21% · w 35% · tail ↙
+  - read_order: 2
+
+### panel_020
+- art_space: upper third of the image across the full width: blank mint shutter face below the small hook at the very top edge - no heads or hands in it
+- gap_after: 120
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "ខ្ញុំឈ្មោះ សូ ដាន់ប៊ី! ទឹកកកឈូសស្ត្របឺរី ឆ្ងាញ់ជាងគេ!"
+  - text_ko: "저는 소단비예요! 딸기 빙수, 이 동네 최고예요!"
+  - place: x 42% · y 13% · w 58% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "មូន តេអូ។"
+  - text_ko: "문태오입니다."
+  - place: x 14% · y 27% · w 26% · tail ↓
   - read_order: 2
 
 ### panel_021
-- art_space: top 25% (x 3–97%, y 2–25%): the dark tops of the shelves and the ceiling
-- gap_after: 120
-- bubble_1:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ច្បាប់នោះ… គេថា អ្នកដែលធ្វើការងារនេះយូរជាងគេ ជាអ្នកសរសេរ។"
-  - text_ko: "그 수칙, 이 일 제일 오래 한 사람이 쓴 거래."
-  - place: x 36% · y 12% · w 64% · tail ↙ (선임)
-  - read_order: 1
-
-### panel_022
-- art_space: top 38% (x 3–97%, y 2–38%): dark shelf tops on the left, the dim corridor above the glass on the right
+- art_space: upper third of the image across the full width: blank mint shutter face (the hook, if visible, small at the very top edge) - keys, hands and the keyhole stay below it
 - gap_after: 40
 - bubble_1:
-  - speaker: 구정민
+  - speaker: 단비
   - type: dialogue
-  - text_km: "តើអ្នកទទួលបន្ទុក មានវត្តមានទេ? ខ្ញុំត្រូវការត្រា។"
-  - text_ko: "담당자분 계십니까? 직인이 필요합니다."
-  - place: x 56% · y 11% · w 44% · tail ↘ (유리 너머 구정민, 오른쪽)
+  - text_km: "អ៊ីចឹង លោក តេអូ ខ្ញុំបើកទ្វាររមូរហើយណា៎!"
+  - text_ko: "그럼 태오 씨, 저 셔터 열게요!"
+  - place: x 59% · y 15% · w 41% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 서하(생각)
-  - type: thought
-  - text_km: "អាដែលបិទពីលើគេ… គឺជាការកែប្រែចុងក្រោយ។"
-  - text_ko: "(맨 위에 붙은 게… 최신 개정이니까.)"
-  - place: x 40% · y 27% · w 48% · 생각 점(꼬리 없음)
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "ខ្ញុំក៏បើកដែរ។"
+  - text_ko: "저도 엽니다."
+  - place: x 17% · y 22% · w 30% · tail ↓
+  - read_order: 2
+
+### panel_022
+- art_space: upper quarter of the image: plain blank mint shutter face - nothing over the keys, the keyhole or the fingers
+- gap_after: 40
+- bubble_1:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "…អូ។"
+  - text_ko: "…어."
+  - place: x 24% · y 12% · w 20% · tail ↙
+  - read_order: 1
+- bubble_2:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "ហ៎?!"
+  - text_ko: "어?!"
+  - place: x 74% · y 12% · w 20% · tail ↘
   - read_order: 2
 
 ### panel_023
-- art_space: upper right (x 44–97%, y 2–26%): the dim corridor above the man's head (his head starts at y 30%)
-- gap_after: 40
+- art_space: upper-right: the blank mint shutter face receding near the camera (x ~36-82 %, top ~20 %); upper-left, a little lower: the bright sky beyond the eave edge (x ~0-40 %, y ~15-30 %) - not on faces or keys
+- gap_after: 120
 - bubble_1:
-  - speaker: 서하
+  - speaker: 단비
   - type: dialogue
-  - text_km: "ខ្ញុំជាអ្នកទទួលបន្ទុក។"
-  - text_ko: "제가 담당자입니다."
-  - place: x 65% · y 12% · w 35% · tail ↙ (서하의 머리, 아래 왼쪽)
-  - read_order: 1
-
-### panel_024
-- art_space: (1) top right (x 52–97%, y 2–30%): the dim corridor above the man's head; (2) the top third of the framed memory picture is plain dark glass (y 4–15%) — the top bubble may overlap it; (3) just below the memory picture (x 4–36%, y 36–50%): plain dim corridor for the memory bubble
-- gap_after: 40
-- bubble_1:
-  - speaker: 구정민
-  - type: dialogue
-  - text_km: "អ្នកដែលគ្មានឈ្មោះក្នុងបញ្ជីវេន… ជាអ្នកទទួលបន្ទុកឬ?"
-  - text_ko: "명부에 없는 분이 담당자라고요?"
-  - place: x 50% · y 9.5% · w 50% · tail ↘ (구정민, 아래 오른쪽)
+  - text_km: "ម៉េចក៏កូនសោលោក ដូចរបស់ខ្ញុំបេះបិទ?"
+  - text_ko: "왜 태오 씨 열쇠가 제 거랑 똑같아요?"
+  - place: x 58% · y 10% · w 42% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 노미란(기억)
-  - type: memory
-  - text_km: "ក្នុងបញ្ជីវេន មានឈ្មោះបង។"
-  - text_ko: "명부엔 내 이름 있어."
-  - place: x 19% · y 43.5% · w 32% · tail ↗ (비네트 속 노미란의 손)
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "កូនសោលោកតាខ្ញុំ។"
+  - text_ko: "할아버지 열쇠입니다."
+  - place: x 20% · y 24% · w 40% · tail ↘
+  - read_order: 2
+
+### panel_024
+- art_space: upper third of the image across the full width (blank mint shutter face); the small hook sits at the very top edge above this band (or just out of frame); Okja's raised hands and all heads stay below it
+- gap_after: 40
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "លោកស្រីប្រធាន! តូបនេះរបស់ខ្ញុំមែនទេ?"
+  - text_ko: "회장님! 여기 제 칸 맞죠?"
+  - place: x 56% · y 18% · w 44% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 옥자
+  - type: dialogue
+  - text_km: "ក្មួយតេអូ?!"
+  - text_ko: "태오야?!"
+  - place: x 16% · y 24% · w 26% · tail ↙
   - read_order: 2
 
 ### panel_025
-- art_space: upper left (x 3–45%, y 3–28%): the darkening ceiling beside the light fixture
-- gap_after: 0
-- sfx_1:
-  - text_km: "ភ្លឹប…"
-  - text_ko: "치직— (1/2)"
-  - place: x 15% · y 11% · size 7% · rot -6
-- sfx_2:
-  - text_km: "ភ្លឹប—"
-  - text_ko: "치직— (2/2)"
-  - place: x 32% · y 23% · size 7% · rot -6
-
-### panel_026
-- art_space: none (silent — no bubble area needed)
-- gap_after: 240
-- silent: true
-
-### panel_027
-- art_space: none (silent — no bubble area needed)
-- gap_after: 720
-- silent: true
-
-### panel_028
-- art_space: (1) upper left (x 3–38%, y 3–26%): plain wall and exposed pipes left of the clock — never over the clock face; (2) sound effect: the plain steel face of the fire door at the right edge, middle height (x 72–96%, y 34–50%)
-- gap_after: 120
-- note: 효과음만. 위 왼쪽 빈자리는 panel_007과 같은 구도라 남긴다
-- sfx_1:
-  - text_km: "ផាំង!"
-  - text_ko: "쿵"
-  - place: x 84% · y 42% · size 9% · rot -6
-
-### panel_029
-- art_space: upper right (x 55–97%, y 3–45%): the plain pale-green wall above the phone
+- art_space: upper fifth of the image, full width: the blank shutter face above Okja's perm - off her face and the keys
 - gap_after: 40
 - bubble_1:
-  - speaker: 지호(기억)
-  - type: memory
-  - text_km: "ស៊ូៗ បង!"
-  - text_ko: "누나, 버텨!"
-  - place: x 74% · y 22% · w 26% · tail ↓ (휴대폰)
+  - speaker: 옥자
+  - type: dialogue
+  - text_km: "ស្លាប់ហើយ… កូនសោពិតទាំងពីរ!"
+  - text_ko: "아이고… 둘 다 진짜네!"
+  - place: x 50% · y 9% · w 39% · tail ↓
   - read_order: 1
 
-### panel_030
-- art_space: upper-left quarter (x 3–48%, y 3–30%): blurred wall and pipes
-- gap_after: 480
+### panel_026
+- art_space: upper third of the image across the full width: blank shutter face above Okja - clear of her raised hand and face
+- gap_after: 40
 - bubble_1:
-  - speaker: 서하
+  - speaker: 옥자
   - type: dialogue
-  - text_km: "…យើង… សន្យាអីគ្នាទៅ?"
-  - text_ko: "…우리, 무슨 약속 했더라?"
-  - place: x 26% · y 15% · w 46% · tail ↘ (서하의 입)
+  - text_km: "អ៊ំប្រាប់ក្មួយតេអូ ឲ្យបើកបន្តដូចលោកតាមូន…"
+  - text_ko: "태오한텐 문 영감님처럼 계속 열라고 해 놓고…"
+  - place: x 24% · y 9% · w 46% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 옥자
+  - type: dialogue
+  - text_km: "ក្មួយដាន់ប៊ីដាក់ពាក្យ អ៊ំក៏ឲ្យកូនសោថ្មីទៅ!"
+  - text_ko: "단비 씨가 신청을 하니까 새 열쇠를 줬지 뭐야!"
+  - place: x 66% · y 20% · w 34% · tail ↙
+  - read_order: 2
+
+### panel_027
+- art_space: top ~60 % of the image across the full width: blank shutter face and eave underside, with only the small hook at the very top centre; Okja's raised hand-blade (frozen at chest height) and all three heads stay below it
+- gap_after: 40
+- bubble_1:
+  - speaker: 옥자
+  - type: dialogue
+  - text_km: "រហូតដល់ចប់រដូវភ្លៀង ចែកគ្នាពាក់កណ្ដាល។"
+  - text_ko: "장마 끝날 때까지 반반."
+  - place: x 21% · y 16% · w 40% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 옥자
+  - type: dialogue
+  - text_km: "អ្នកណាបង់ថ្លៃជួលរដូវក្ដៅ ម្ដងពីរខែបាន អ្នកនោះបាននៅ។"
+  - text_ko: "여름 두 달 치를 한 번에 낼 수 있는 사람이 남는다."
+  - place: x 42% · y 47.5% · w 58% · tail ↓
+  - read_order: 2
+
+### panel_028
+- art_space: top ~57 % of the image across the full width: blank shutter face (the shutter box and the hook just out of frame above) - both heads, the bare floor and the tape roll stay below it
+- gap_after: 120
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "អ៊ីចឹង… ភ្លៀងមក លោកលក់ដាច់។ មេឃស្រឡះ ខ្ញុំលក់ដាច់។"
+  - text_ko: "그러니까… 비 오면 태오 씨가 잘 팔고, 해 나면 제가 잘 팔고."
+  - place: x 44% · y 13% · w 56% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "រដូវភ្លៀង មានតែប្រាំមួយសប្ដាហ៍។ បន្ទាប់មក រដូវក្ដៅ។"
+  - text_ko: "장마는 6주뿐입니다. 그다음은 여름입니다."
+  - place: x 30% · y 41.5% · w 58% · tail ↙
+  - read_order: 2
+
+### panel_029
+- art_space: upper third of the image from x ~13 % to ~84 %, just under the rolled shutter box: the dark open storage interior and the eave underside; the small hook under the box stays at the very top edge above this band
+- gap_after: 40
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "សុំមួយចំអាមទៀតណា៎!"
+  - text_ko: "한 뼘만 더요!"
+  - place: x 29% · y 16% · w 30% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "កង់រទេះខ្ញុំ វាលៀនចេញបន្តិច…"
+  - text_ko: "카트 바퀴가 좀 튀어나와서요…"
+  - place: x 64% · y 21% · w 36% · tail ↘
+  - read_order: 2
+
+### panel_030
+- art_space: upper fifth of the image (x ~14-66 %): the dark, flat storage interior and eave underside above Taeo's head
+- gap_after: 40
+- bubble_1:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "ទទឹងបីម៉ែត្រហុកសិប។ ម្ខាង មួយម៉ែត្រប៉ែតសិប។"
+  - text_ko: "폭 3미터 60. 한쪽에 1미터 80입니다."
+  - place: x 40% · y 9% · w 48% · tail ↓
   - read_order: 1
 
 ### panel_031
-- art_space: top 24% (x 4–96%, y 2–24%): the dim ceiling (the light fixtures sit below this band)
-- gap_after: 120
+- art_space: upper third of the image across the full width: the dark storage interior and eave underside (the hook, if in frame, small at the very top edge) - not on faces
+- gap_after: 40
 - bubble_1:
-  - speaker: 서하(생각)
-  - type: thought
-  - text_km: "ទី១។ មិនយំឡើយ។ ទី២។ អានរហូតដល់បន្ទាត់ចុងក្រោយ។"
-  - text_ko: "(하나. 울지 않는다. 둘. 마지막 줄까지 읽는다.)"
-  - place: x 36% · y 11% · w 56% · 생각 점(꼬리 없음)
-  - read_order: 1
-
-### panel_032
-- art_space: top 40% (x 3–97%, y 2–40%): ceiling pipes, upper wall and the dark corridor above the glass
-- gap_after: 0
-- bubble_1:
-  - speaker: 노미란
+  - speaker: 단비
   - type: dialogue
-  - text_km: "មន្ត្រី កាង សឺហា! យប់នេះ យើងដូរវេនគ្នាសិន មែនទេ?"
-  - text_ko: "강서하 주무관, 우리 오늘 당직 좀 바꿔 주자. 그치?"
-  - place: x 35% · y 11% · w 64% · tail ↙ (노미란)
+  - text_km: "ឆ្អឹងទីបី។ កោងហើយ។"
+  - text_ko: "세 번째 살. 휘었네요."
+  - place: x 58% · y 11% · w 42% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 서하(작게, 동시에)
+  - speaker: 태오
   - type: dialogue
-  - text_km: "មែនទេ?"
-  - text_ko: "그치?"
-  - place: x 68% · y 21% · w 24% · tail ↘ (서하, 오른쪽 — ① 끝에 겹침)
+  - text_km: "ទីបី រាប់ពីឆ្វេង។"
+  - text_ko: "왼쪽에서 세 번째입니다."
+  - place: x 19% · y 22% · w 34% · tail ↓
+  - read_order: 2
+
+### panel_032
+- art_space: upper-left half of the image (x ~0-50 %, top ~35 %): the dark storage interior and eave underside, at least one cloud-width from the flat cloud in the top-right corner
+- gap_after: 40
+- bubble_1:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "កាំបិតឈូសទឹកកក។ មុំត្រឹមត្រូវ។"
+  - text_ko: "빙삭기 날. 각이 정확합니다."
+  - place: x 20% · y 10% · w 36% · tail ↓
+  - read_order: 1
+- bubble_2:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "អូយ… របស់ថោកៗទេ… អត់… មិនមែនអ៊ីចឹងទេ…"
+  - text_ko: "아유… 싼 거예요… 아니, 그게 아니라…"
+  - place: x 25% · y 28% · w 48% · tail ↘
   - read_order: 2
 
 ### panel_033
-- art_space: top 38% (x 3–97%, y 2–38%): the glass window beyond the desk and the dark corridor behind it
-- gap_after: 0
-- bubble_1:
-  - speaker: 노미란
-  - type: dialogue
-  - text_km: "អ្នកថ្មី—"
-  - text_ko: "신입은 사흘—"
-  - place: x 26% · y 12% · w 26% · tail ↗ (오른쪽 프레임 밖 노미란)
-  - read_order: 1
-- bubble_2:
-  - speaker: 서하(무표정)
-  - type: dialogue
-  - text_km: "…ទ្រាំមិនដល់បីថ្ងៃទេ។"
-  - text_ko: "…못 버티죠."
-  - place: x 40% · y 28% · w 44% · tail ↙ (서하, 아래 왼쪽)
-  - read_order: 2
-
-### panel_034
-- art_space: (1) top 38%, centre and right (x 20–97%, y 2–38%): ceiling, dark shelf tops and the corridor above the glass; (2) sound effect: the dark gap between the shelves at the left edge (x 0–18%, y 38–60%), away from his face
+- art_space: the clear sky band over the plaza, centre-right (x ~44-76 %), above Mansik and just below the eave edge - on the opposite side from the cloud at the upper-left, not in the plane tree
 - gap_after: 40
 - bubble_1:
-  - speaker: 선임
+  - speaker: 만식
   - type: dialogue
-  - text_km: "ផឹកទៅ។ គេថា យប់នេះវែង។"
-  - text_ko: "마셔. 긴 밤이래."
-  - place: x 44% · y 10% · w 50% · tail ↙ (선임)
+  - text_km: "ចង្អូរលេចហើយ!"
+  - text_ko: "물받이 새네!"
+  - place: x 60% · y 28% · w 36% · tail ↙
   - read_order: 1
-- sfx_1:
-  - text_km: "ក្រុបក្រាប…"
-  - text_ko: "부스럭"
-  - place: x 10% · y 49% · size 4% · rot -12
-- bubble_2:
-  - speaker: 선임(돌아보지 않고)
+
+### panel_034
+- art_space: upper-left half of the image (x ~0-52 %, top ~34 %): the dark storage interior and eave underside on the arch side; the cloud stays in the top-right corner
+- gap_after: 40
+- bubble_1:
+  - speaker: 단비
   - type: dialogue
-  - text_km: "…គេថា កណ្ដុរ។"
-  - text_ko: "…쥐래."
-  - place: x 40% · y 27% · w 34% · tail ↙ (선임)
+  - text_km: "ចាស ចាស ចាស! ចង្អូរលេច!"
+  - text_ko: "네네네! 물받이요!"
+  - place: x 20% · y 9% · w 35% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "«វាសម្រាប់បាំងថ្ងៃ។» កញ្ញានិយាយអ៊ីចឹង អម្បាញ់មិញ។"
+  - text_ko: "'해 가리는 거예요.' 아까 그러셨죠."
+  - place: x 26.5% · y 25% · w 51% · tail ↙
   - read_order: 2
 
 ### panel_035
-- art_space: top 40% (x 3–97%, y 2–40%): ceiling pipes, upper wall and the dark shelf tops; the small flickering corridor light stays just below this band (y 40–46%)
-- gap_after: 0
-- bubble_1:
-  - speaker: 선임·서하(함께)
-  - type: dialogue
-  - text_km: "ទី១។ ពីម៉ោង១០យប់ ដល់ម៉ោង៦ព្រឹក ត្រូវទទួលពាក្យ ពីអ្នកដែលមកបញ្ជរគ្រប់រូប។"
-  - text_ko: "1번. 22시부터 06시까지 창구를 찾은 민원인은 모두 접수한다."
-  - place: x 38% · y 12% · w 62% · tail ↓ (두 화자 사이 — 선임과 서하가 함께)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 480
 
 ### panel_036
-- art_space: (1) top 40% (x 3–97%, y 2–40%): ceiling pipes, upper wall and the dark shelf tops; (2) sound effect: the dim corridor seen through the glass right above the bell (x 70–96%, y 42–54%)
+- art_space: upper-left third of the image (left ~47 % x top ~28 %): warm late-afternoon sky over the plaza toward the arch
 - gap_after: 40
 - bubble_1:
-  - speaker: 선임
+  - speaker: 보미
   - type: dialogue
-  - text_km: "ទី៣។ ពេលកណ្ដឹង—"
-  - text_ko: "3. 호출벨이—"
-  - place: x 22% · y 11% · w 40% · tail ↙ (선임)
+  - text_km: "បងស្រី! ឆ័ត្របងក៏ខូចដែរ!"
+  - text_ko: "언니! 언니 우산도 고장 났다!"
+  - place: x 24% · y 8% · w 44% · tail ↓
   - read_order: 1
 - bubble_2:
-  - speaker: 구정민
+  - speaker: 보미
   - type: dialogue
-  - text_km: "សូមទោស ដែលមករំខានទាំងយប់ជ្រៅ។"
-  - text_ko: "늦은 시간에 죄송합니다."
-  - place: x 62% · y 20% · w 38% · tail ↘ (유리 너머 벨 쪽 구정민)
+  - text_km: "រុំស្កុតទៀត!"
+  - text_ko: "테이프도 감았어!"
+  - place: x 18% · y 22% · w 28% · tail ↓
   - read_order: 2
-- sfx_1:
-  - text_km: "ទីង!"
-  - text_ko: "띵"
-  - place: x 83% · y 48% · size 8% · rot -8
 
 ### panel_037
-- art_space: top 28% (x 3–97%, y 2–28%): the dark area above the shelves
+- art_space: lower-left third of the image (x ~0-45 %, y ~65-90 %): dry sunlit pavement and long shadows beside Danbi, outside the rain column - never in the upper-right with the cloud
 - gap_after: 40
 - bubble_1:
-  - speaker: 선임
+  - speaker: 단비
   - type: dialogue
-  - text_km: "ទី៤។"
-  - text_ko: "4번."
-  - place: x 66% · y 8% · w 22% · tail ↙ (선임)
+  - text_km: "នេះ… ចេតនារុំទេ!"
+  - text_ko: "이건… 일부러 감은 거야!"
+  - place: x 22% · y 72% · w 38% · tail ↗
   - read_order: 1
 - bubble_2:
-  - speaker: 서하(생각)
-  - type: thought
-  - text_km: "គាត់… ដឹងរឿងនេះ។"
-  - text_ko: "(저 사람… 알고 있어.)"
-  - place: x 26% · y 20% · w 40% · 생각 점(꼬리 없음)
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "ម៉ូដសម័យនេះទេតើ…"
+  - text_ko: "요즘 이게 유행이거든…"
+  - place: x 24% · y 82% · w 44% · tail ↗
   - read_order: 2
 
 ### panel_038
-- art_space: top band, left and centre (x 5–70%, y 2–22%): the dim corridor ceiling seen above the glass; the silhouette's head (below y 30%) and the rule sheet stay out of it
+- art_space: lower-left third of the image (x ~0-40 %, y ~64-80 %): dry sunlit pavement beside Taeo's legs, far from the cloud at the top-right
 - gap_after: 120
 - bubble_1:
-  - speaker: 서하
+  - speaker: 태오
   - type: dialogue
-  - text_km: "ច្បាប់ទី៤ ខ្ញុំនឹងមិនគោរពទេ។"
-  - text_ko: "수칙 4번은 지키지 않겠습니다."
-  - place: x 37% · y 12% · w 52% · tail ↘ (서하의 뒷머리, 아래 오른쪽)
+  - text_km: "បូមី។ ឆ័ត្រ។"
+  - text_ko: "보미. 우산."
+  - place: x 22% · y 72% · w 30% · tail ↖
   - read_order: 1
 
 ### panel_039
-- art_space: upper-left quarter (x 3–48%, y 3–32%): the dark gap between the steel shelves
-- gap_after: 480
-- bubble_1:
-  - speaker: 선임
-  - type: dialogue
-  - text_km: "ឯងឆ្កួតឬអី?"
-  - text_ko: "너 미쳤어?"
-  - place: x 24% · y 16% · w 34% · tail ↘ (선임의 입)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_040
-- art_space: top 18% (x 5–95%, y 2–18%): the dim corridor ceiling seen above the glass
-- gap_after: 40
-- bubble_1:
-  - speaker: 구정민
-  - type: dialogue
-  - text_km: "តើអ្នកទទួលបន្ទុក មានវត្តមានទេ? ខ្ញុំត្រូវការត្រា។"
-  - text_ko: "담당자분 계십니까? 직인이 필요합니다."
-  - place: x 50% · y 10% · w 50% · tail ↓ (유리 너머 실루엣)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_041
-- art_space: upper right: x 46–96% from y 3% down to y 38%, widened left to x 37% between y 10% and y 26% (below the steady ceiling light, above her head): the dim shelves of the room behind the glass; the steady ceiling light (top left, y 2–10%) and the roster stay clear
+- art_space: two empty areas: a calm band across the top ~14 % of the image, centre-right (x ~36-80 %), on the plain shutter-box housing and eave edge above the hook; and the upper-left quarter on the arch side just below it (x ~6-32 %, y ~15-26 %) on the blank shutter face - the hook, the crook handle, the hanging umbrella and the bent rib stay clear
 - gap_after: 120
 - bubble_1:
-  - speaker: 서하
+  - speaker: 단비 (화면 밖)
   - type: dialogue
-  - text_km: "អ្នកទទួលបន្ទុក គឺអ្នកដែលមានឈ្មោះក្នុងបញ្ជីវេន។"
-  - text_ko: "담당자는 당직 명부에 계신 분입니다."
-  - place: x 58.5% · y 17% · w 41.5% · tail ↙ (서하)
+  - text_km: "ព្យួរឲ្យស្ងួតទេណា៎! មិនមែនផ្ញើជួសជុលទេ!"
+  - text_ko: "말리려고 걸어 두는 거예요! 맡기는 거 아니에요!"
+  - place: x 58% · y 7% · w 40% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 서하
+  - speaker: 태오 (화면 밖)
   - type: dialogue
-  - text_km: "…ប្រធានក្រុម ណូ មីរ៉ាន។"
-  - text_ko: "…노미란 팀장님."
-  - place: x 70.5% · y 31% · w 29.5% · tail ↙ (서하)
+  - text_km: "បាទ។"
+  - text_ko: "네."
+  - place: x 20% · y 20% · w 22% · tail ↙
   - read_order: 2
 
 ### panel_042
-- art_space: sound effect only: the plain wall beside the right frame of the nap-room door (x 30–55%, y 30–48%), away from the door's frosted window
+- silent: true
+- art_space: none
 - gap_after: 120
-- sfx_1:
-  - text_km: "ក្ដុក!"
-  - text_ko: "똑. 똑. 똑. (1/3)"
-  - place: x 37% · y 33% · size 6% · rot -6
-- sfx_2:
-  - text_km: "ក្ដុក!"
-  - text_ko: "똑. 똑. 똑. (2/3)"
-  - place: x 42% · y 39% · size 6% · rot -6
-- sfx_3:
-  - text_km: "ក្ដុក!"
-  - text_ko: "똑. 똑. 똑. (3/3)"
-  - place: x 47% · y 45% · size 6% · rot -6
 
 ### panel_043
-- art_space: top 24% (x 5–95%, y 2–24%): the plain off-white wall above the door frame
-- gap_after: 40
-- bubble_1:
-  - speaker: 노미란
-  - type: shout
-  - text_km: "អ… អីគេនេះ?!"
-  - text_ko: "뭐, 뭐예요 이게?!"
-  - place: x 50% · y 12% · w 44% · tail ↓ (노미란)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_044
-- art_space: top 22%, centre and right (x 25–97%, y 2–22%): the corridor ceiling seen above the glass, over the bowing man's head
-- gap_after: 40
-- bubble_1:
-  - speaker: 구정민
-  - type: dialogue
-  - text_km: "បាទ លោកស្រីទេតើ ជាអ្នកទទួលបន្ទុក។ សូមបោះត្រាឱ្យផង។"
-  - text_ko: "담당자분이시군요. 직인 부탁드립니다."
-  - place: x 51% · y 11% · w 49% · tail ↓ (유리 너머 구정민)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_045
-- art_space: top 20% (x 4–96%, y 2–20%): the out-of-focus dim room
+- silent: true
+- art_space: none
 - gap_after: 120
-- bubble_1:
-  - speaker: 선임(목소리)
-  - type: dialogue
-  - text_km: "បើបោះត្រា… គេថា អ្នកបោះត្រា ចូលប្រអប់នោះជំនួស។"
-  - text_ko: "찍으면… 그 칸, 찍은 사람이 채운대."
-  - place: x 34% · y 9% · w 56% · tail ↙ (왼쪽 프레임 밖 선임)
-  - read_order: 1
 
 ### panel_046
-- art_space: top 28% (x 4–96%, y 2–28%): the out-of-focus dim room
-- gap_after: 40
-- bubble_1:
-  - speaker: 서하
-  - type: dialogue
-  - text_km: "ខ្ញុំសូមស្នើឱ្យបំពេញឯកសារបន្ថែម។"
-  - text_ko: "서류 보완 요청드리겠습니다."
-  - place: x 34% · y 13% · w 56% · tail ↙ (왼쪽 가장자리 — 서하)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_047
-- art_space: top 36% (x 3–97%, y 2–36%): the dark area above the shelves
-- gap_after: 40
-- bubble_1:
-  - speaker: 서하
-  - type: dialogue
-  - text_km: "ការស្នើនេះ ត្រូវការហត្ថលេខាអ្នកទទួលបន្ទុក ឬកំណត់ត្រាផ្ទេរសិទ្ធិ។"
-  - text_ko: "보완 요청엔 담당자 서명이나 위임 기록이 필요합니다."
-  - place: x 33% · y 10% · w 58% · tail ↙ (서하, 왼쪽)
-  - read_order: 1
-- bubble_2:
-  - speaker: 노미란
-  - type: dialogue
-  - text_km: "ចុះ… ចុះបើកញ្ញា សឺហា… ចាត់ការជំនួសខ្ញុំ…"
-  - text_ko: "그, 그럼… 서하 씨가 처리하시면…"
-  - place: x 56% · y 27% · w 44% · tail ↘ (노미란, 오른쪽)
-  - read_order: 2
+- silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_048
-- art_space: top 38% (x 3–97%, y 2–38%): dark shelf tops and the ceiling
-- gap_after: 40
-- bubble_1:
-  - speaker: 노미란(쓰며 소리 내어)
-  - type: dialogue
-  - text_km: "…ខ្ញុំបានផ្ទេរការងារវេនយប់… ឱ្យមន្ត្រីថ្មី កាង សឺហា…"
-  - text_ko: "…야간 당직 업무를… 신규 강서하에게…"
-  - place: x 33% · y 11% · w 56% · tail ↙ (노미란)
-  - read_order: 1
-- bubble_2:
-  - speaker: 노미란(쓰며 소리 내어)
-  - type: dialogue
-  - text_km: "…ដោយគ្មានការអនុញ្ញាត…"
-  - text_ko: "…무단으로…"
-  - place: x 52% · y 28% · w 48% · tail ↓ (노미란)
-  - read_order: 2
+- silent: true
+- art_space: two empty areas: a calm band across the top ~14 % of the image, centre-right (x ~36-80 %), on the plain shutter-box housing and eave edge above the hook; and the upper-left quarter on the arch side just below it (x ~6-32 %, y ~15-26 %) on the blank shutter face - the hook, the crook handle, the hanging umbrella and the bent rib stay clear
+- gap_after: 480
 
 ### panel_049
-- art_space: top 35%, left and centre (x 3–62%, y 2–35%): the dim corridor ceiling seen above the glass; the small figure of the man (x 66–84%, y 40–60%) stays clear
-- gap_after: 240
+- art_space: upper-right third of the image (x ~51-86 %, top ~36 %): the blank mint shutter face right of the hook - the hook and the hanging umbrella stay clear (keep the umbrella narrow, left of x ~51 %)
+- gap_after: 40
 - bubble_1:
-  - speaker: 서하
+  - speaker: 단비
   - type: dialogue
-  - text_km: "បន្ទុកដែលប្រធានក្រុមទម្លាក់មក… ខ្ញុំគ្រាន់តែប្រគល់ជូនវិញ។"
-  - text_ko: "떠넘기신 건 돌려드리는 겁니다."
-  - place: x 33% · y 11% · w 58% · tail ↓ (서하)
+  - text_km: "ឆ័ត្រម្សិលមិញ… មិនមែនផ្ញើទេណា៎!"
+  - text_ko: "어제 그 우산… 맡긴 거 아니에요!"
+  - place: x 68% · y 10% · w 32% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 서하
+  - speaker: 단비
   - type: dialogue
-  - text_km: "ជូនម្ចាស់ដើម។"
-  - text_ko: "원래 주인한테."
-  - place: x 36% · y 28% · w 32% · tail ↓ (서하)
+  - text_km: "ព្យួរឲ្យស្ងួតប៉ុណ្ណោះ!"
+  - text_ko: "말리려고 건 거예요!"
+  - place: x 70% · y 28% · w 30% · tail ↘
   - read_order: 2
 
 ### panel_050
-- art_space: top 36% (x 3–97%, y 2–36%): ceiling, upper wall and the corridor above the glass; his head stays below y 38%
-- gap_after: 120
+- art_space: upper-left third of the image (x ~0-42 %, top ~28 %): the receding blank shutter face above Taeo's head - the hook and Danbi's umbrella (mid-ground) stay clear
+- gap_after: 40
 - bubble_1:
-  - speaker: 선임
+  - speaker: 태오
   - type: dialogue
-  - text_km: "ថ្ងៃដំបូងសោះ ម៉េចក៏ចាំលំដាប់ច្បាប់បាន?"
-  - text_ko: "첫날인데 수칙 순서를 어떻게 알아?"
-  - place: x 42% · y 10% · w 50% · tail ↘ (선임, 오른쪽)
+  - text_km: "ស្ងួតហើយ។"
+  - text_ko: "말랐습니다."
+  - place: x 16% · y 8% · w 28% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 선임
+  - speaker: 태오
   - type: dialogue
-  - text_km: "ខ្ញុំទៅយកទឹកសិន។ អង្គុយនៅហ្នឹង។"
-  - text_ko: "물 받아 올게. 앉아 있어."
-  - place: x 62% · y 27% · w 38% · tail ↘ (선임, 오른쪽)
+  - text_km: "ឆ្អឹងទីបី។ ប្ដូរហើយ។"
+  - text_ko: "세 번째 살. 갈았습니다."
+  - place: x 21% · y 20% · w 38% · tail ↘
   - read_order: 2
 
 ### panel_051
-- art_space: none (silent — no bubble area needed)
+- art_space: upper fifth of the image, centre-to-right (x ~16-86 %): the soft, shadowed eave underside / shutter - clear of Taeo's hand and the yellow handle at the left edge
 - gap_after: 120
-- silent: true
+- bubble_1:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "ប្ដូរ… ប្ដូរហើយ? ខ្ញុំ… គឺថា…"
+  - text_ko: "가, 갈았…? 저는… 그러니까…"
+  - place: x 34% · y 10% · w 32% · tail ↘
+  - read_order: 1
+- bubble_2:
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "អត់… មិនមែនអ៊ីចឹងទេ…"
+  - text_ko: "아니, 그게 아니라…"
+  - place: x 68% · y 10% · w 32% · tail ↙
+  - read_order: 2
 
 ### panel_052
-- art_space: top 30% (x 4–96%, y 2–30%): soft out-of-focus warm background; the sticker (y 44–60%) stays clear
-- gap_after: 480
+- art_space: lower-left of the image (x ~10-40 %, y ~74-88 %): dry sunlit pavement in the foreground, far from the cloud at the top-right
+- gap_after: 40
 - bubble_1:
-  - speaker: 지호(기억)
-  - type: memory
-  - text_km: "កុំបកវាចេញណា៎! មានតែមួយគត់ក្នុងលោក។"
-  - text_ko: "떼지 마. 세상에 하나뿐이야."
-  - place: x 46% · y 21% · w 54% · tail none (기억 — panel_005 둘째 말풍선과 같은 자리)
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "…ហ៎?"
+  - text_ko: "…어?"
+  - place: x 24% · y 80% · w 20% · tail ↗
   - read_order: 1
 
 ### panel_053
-- art_space: the left part of the thin black middle band and the plain margins just above and below it (x 4–46%, y 44–56%), clear of both stickers (they sit above y 40% and below y 60%)
+- silent: true
+- art_space: none
 - gap_after: 120
-- bubble_1:
-  - speaker: 서하(작게)
-  - type: dialogue
-  - text_km: "មានតែមួយគត់ក្នុងលោក… តែវាមានពីរ។"
-  - text_ko: "세상에 하나뿐인데… 두 개야."
-  - place: x 23% · y 50% · w 42% · tail ↙ (프레임 밖 서하)
-  - read_order: 1
 
 ### panel_054
-- art_space: top 22% (x 4–96%, y 2–22%): out-of-focus darkness beyond the partition; the papers start below y 24%
-- gap_after: 40
-- bubble_1:
-  - speaker: 서하(생각)
-  - type: thought
-  - text_km: "មានតែតុនេះ… ដែលមិនវិលទៅក្រោយ។"
-  - text_ko: "(이 책상만… 안 돌아가.)"
-  - place: x 38% · y 11% · w 60% · 생각 점(꼬리 없음)
-  - read_order: 1
+- silent: true
+- art_space: none
+- gap_after: 900
 
 ### panel_055
-- art_space: (1) the top third of the framed memory picture plus the calm blue darkness to its right (x 4–97%, y 3–16%); (2) the calm blue dark band below the memory picture (x 15–97%, y 35–49%), ending above her forehead (y 50%)
-- gap_after: 120
+- art_space: upper-left of the image (x ~0-44 %, top ~34 %): the blank shutter face above Taeo's head and below the eave line; plus a patch at mid-height in the gap between the two figures, just left of the rain column (x ~28-58 %, y ~44-60 %) for the rain sound - never on the cloud or a face
+- gap_after: 40
 - bubble_1:
-  - speaker: 선임(기억)
-  - type: memory
-  - text_km: "ច្បាប់នោះ… គេថា អ្នកដែលធ្វើការងារនេះយូរជាងគេ ជាអ្នកសរសេរ។"
-  - text_ko: "그 수칙, 이 일 제일 오래 한 사람이 쓴 거래."
-  - place: x 36% · y 9.5% · w 64% · tail ↙ (비네트 속 선임)
+  - speaker: 단비
+  - type: dialogue
+  - text_km: "ទឹកស្រក់ពីចុងដំបូលទេ!"
+  - text_ko: "이거 처마 물이에요!"
+  - place: x 22% · y 9% · w 40% · tail ↘
   - read_order: 1
 - bubble_2:
-  - speaker: 서하
+  - speaker: 단비
   - type: dialogue
-  - text_km: "អ្នកដែលធ្វើការងារនេះយូរជាងគេ… គឺខ្ញុំទេតើ។"
-  - text_ko: "이 일 제일 오래 한 사람… 나였어."
-  - place: x 54% · y 41% · w 46% · tail ↓ (서하의 얼굴)
+  - text_km: "ថ្លៃជួសជុល ស្អែកខ្ញុំសងជាមិនខាន!"
+  - text_ko: "수선비는 내일 꼭 드릴게요!"
+  - place: x 24% · y 25% · w 37% · tail ↘
   - read_order: 2
+- sfx_1:
+  - text_km: "ព្រួស ព្រួស ព្រួស!"
+  - text_ko: "후두두두둑"
+  - place: x 43% · y 52% · size 4.8% · rot 25
 
 ### panel_056
-- art_space: none (silent — no bubble area needed)
-- gap_after: 720
-- silent: true
+- art_space: upper-left of the image (x ~0-44 %, top ~20 %): the blank shutter face above Taeo's shoulder - well away from the rain curtain at the right
+- gap_after: 40
+- bubble_1:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "ឥឡូវ បើភ្លៀងធម្មតា វាលែងក្រឡាប់ហើយ។"
+  - text_ko: "이제 웬만한 비엔 안 뒤집혀요."
+  - place: x 22% · y 9% · w 41% · tail ↘
+  - read_order: 1
 
 ### panel_057
-- art_space: top 22% (x 4–96%, y 2–22%): out-of-focus darkness beyond the partition; the faded sticker (y 26–34%) stays clear
-- gap_after: 240
+- art_space: left edge of the image at mid-to-lower height (x ~0-30 %, y ~55-70 %): dry sunlit blank shutter face below Danbi's leaning head, outside the rain column and more than a cloud-width from the cloud
+- gap_after: 40
 - bubble_1:
-  - speaker: 서하(생각)
-  - type: thought
-  - text_km: "ទុកឱ្យខ្ញុំ… ដើម្បីឱ្យខ្ញុំរស់។"
-  - text_ko: "(살리려고… 남긴 거야. 나한테.)"
-  - place: x 25% · y 11% · w 46% · 생각 점(꼬리 없음)
-  - read_order: 1
-- bubble_2:
-  - speaker: 서하(속삭임)
+  - speaker: 단비
   - type: dialogue
-  - text_km: "ចុះ… ច្បាប់ទី៤វិញ?"
-  - text_ko: "그러면… 4번은?"
-  - place: x 66% · y 15% · w 34% · tail ↙ (서하의 손, 아래)
-  - read_order: 2
+  - text_km: "…ចាស?"
+  - text_ko: "…네?"
+  - place: x 14% · y 62% · w 24% · tail ↗
+  - read_order: 1
 
 ### panel_058
-- art_space: none (silent — no bubble area needed)
+- art_space: upper-left fifth of the image (x ~0-35 %, top ~18 %): the blank shutter face - away from the rain at the right
 - gap_after: 120
-- silent: true
+- bubble_1:
+  - speaker: 태오
+  - type: dialogue
+  - text_km: "…អត់ទេ។"
+  - text_ko: "…아뇨."
+  - place: x 16% · y 9% · w 26% · tail ↘
+  - read_order: 1
 
 ### panel_059
-- art_space: sound effect only: the right third (x 68–98%, y 15–85%), the out-of-focus dark room behind her head
-- gap_after: 240
-- sfx_1:
-  - text_km: "ព្រែត—"
-  - text_ko: "찌이익—"
-  - place: x 83% · y 48% · size 9% · rot -12
+- silent: true
+- art_space: none
+- gap_after: 480
 
 ### panel_060
-- art_space: none (silent — no bubble area needed)
-- gap_after: 240
 - silent: true
+- art_space: none
+- gap_after: 480
 
 ### panel_061
-- art_space: none (silent — no bubble area needed)
-- gap_after: 480
 - silent: true
+- art_space: none
+- gap_after: 120
 
 ### panel_062
-- art_space: upper right (x 40–97%, y 2–22%): the out-of-focus dark room; the hand enters at the upper left, away from this area
-- gap_after: 240
-- bubble_1:
-  - speaker: 목소리(뒤)
-  - type: dialogue
-  - text_km: "ច្បាប់នោះ…"
-  - text_ko: "그 수칙,"
-  - place: x 62% · y 11% · w 30% · tail ↖ (위쪽 프레임 밖 — 뒤의 목소리)
-  - read_order: 1
-
-### panel_063
-- art_space: upper-left quarter (x 3–45%, y 3–30%): the out-of-focus top of the blank grid paper; the gap between the fingertip and the strip stays clear
-- gap_after: 720
-- bubble_1:
-  - speaker: 목소리(뒤)
-  - type: dialogue
-  - text_km: "នៅមិនទាន់ប្ដូរទៀតទេ?"
-  - text_ko: "아직 안 바꿨네?"
-  - place: x 25% · y 17% · w 44% · tail ↗ (위 오른쪽 프레임 밖 — 뒤의 목소리)
-  - read_order: 1
-
-### panel_064
-- art_space: caption: the bottom 8% band (x 0–100%, y 92–100%), the dark shadow of the desk's front edge
-- gap_after: 1200
-- note: 대사 없음 — 마감 캡션만 패널 맨 아래
+- art_space: bottom sixth of the image, full width: plain soft-focus pink canopy fabric (caption strip) - nothing important there
+- gap_after: 40
 - bubble_1:
   - speaker: 캡션
   - type: narration
-  - text_km: "— នៅមានតក្នុងភាគទី ២ —"
+  - text_km: "— នៅមានតក្នុងភាគទី២ —"
   - text_ko: "— 2화에 계속 —"
-  - place: x 50% · y 95.3% · w 50% · tail none (마감 캡션 박스)
+  - place: x 48% · y 92% · w 52%
   - read_order: 1
