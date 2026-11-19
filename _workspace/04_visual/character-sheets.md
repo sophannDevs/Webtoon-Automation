@@ -430,3 +430,235 @@ ref-sheet-artist는 아래 카드마다 `refs/ref_prompts.md`에 블록 하나�
 | v1 | 2026-11-17 | characters §8 v1 토큰을 그대로 옮김(FULL). SHORT · 상태 토큰 · 표정 영문 추가(채령 8 · 왕자 6 · 민 6(모두 같은 미소의 변주) · 백 6 · 홍 2). 소품 토큰 · 상태 타임라인. 레퍼런스 카드 16장 사양(필수 13: 인물 9 + 소품 4, 권장 장소 플레이트 3) |
 
 - 새 인물은 이 문서에 섹션만 추가하고 글로벌 규약(style-bible)은 유지한다. 외형 토큰(§1–§5 FULL)은 characters §8 [고정]과 같아야 한다.
+
+---
+
+## 11. 원 의관 — WON (EP03 추가 · 2026-11-19)
+
+- 작성: art-director · 기준일 **2026-11-19** · EP03 준비(Flow-by-hand + Khmer edition) · **이 절만 덧붙였다. §0~§10(EP01 v1)은 한 글자도 바꾸지 않았다.**
+- 입력: `02_story/characters.md` **§11**(§11-9 외형 토큰 v1 · §11-10 소품 · 엑스트라 · §11-11 구별 점검 · §11-4 연출 규칙), `03_episode/ep03_beatsheet.md`(§0-1 · §0-4 · §4 · §5 · §7), `03_episode/ep03_script_final.md`(원 의관 등장 패널 · 지문)
+- 패널 번호는 **비트시트 · 대본 최종본 기준 추정**이다. panel-director가 EP03 샷리스트에서 확정한다.
+- 공통 규칙은 §0 그대로: 좌우 = **인물 자신의 좌우**, FULL = 그 컷의 주인공, SHORT = 나머지, 토큰 이름은 프롬프트에 쓰지 않는다.
+
+### 11-0. EP03 캐스트 요약 (이 회차에 등장하는 사람만)
+
+| ID | 이름 (KM, glossary) | 주색 | 식별 표식 · 고정 소품 (좌우) | EP03 등장 패널 (추정) | 레퍼런스 |
+|---|---|---|---|---|---|
+| **WON** | 원 의관 (វ៉ុន · 부를 때 លោកគ្រូពេទ្យ) | **회녹** `#687A62` | 짧고 단정한 검은 턱수염 + 콧수염(이름 있는 인물 중 유일) · 검은 사모(뒤쪽 짧고 둥근 날개 2개) · 닫힌 밤색 약상자 = **LEFT 손** | P06 · P07 · P09 · P10 · P12(뒷모습/가장자리, 얼굴 밖) · P14(가장자리, 목소리) · P25(가장자리, 얼굴 반 이하) · P28(가장자리) · P35 · P42(뒷모습) | **turnaround만** (§11-7) |
+| EXTRA-MED | 내의원 약동 (이름 없음, 대사 없음) | 회녹 (같은 색) | 날개 없는 검은 천 모자 · 수염 없음 · 약상자 없음 | P06(뒤, 쟁반) · P07(문밖으로 물러남) · P42(문밖, 빈 쟁반을 받음) | 없음 (토큰만) |
+| (기존) CHAERYEONG · PRINCE · MIN · BAEK | §1–§4 그대로 | | **EP03 상태 변화 1건:** 채령 노리개가 허리에 없다(§11-6) | | 기존 시트 재사용 |
+
+- 홍 숙수 EP03 미등장. 나인 엑스트라(P38–P39)는 §6 토큰(회청 · 얼굴 숙임).
+
+---
+
+### 11-1. identity · 레퍼런스
+
+- identity_tag: `WON` · 41세 남 · 172cm · 내의원 의관(왕자의 탕약 · 보약 · 진맥 담당)
+- 레퍼런스: `refs/WON_turnaround.png` (EP03 패널 전 확정 필수 · characters §11-12)
+- **가면 규칙 [고정, characters §11-4]:** 외형에 의심의 표지 0개. 독자가 그림만 보고 "좋은 어른"으로 읽어야 한다. 의심은 이야기에서만 온다.
+
+**FULL (characters §11-9 영문 한 줄 토큰 원문 그대로):**
+```
+Physician Won, a 41-year-old East Asian royal palace physician in a fictional historical Korean-style court; slender, long-limbed 172 cm build with narrow shoulders, leaning slightly forward toward whoever he is talking to; black hair in a neat topknot under a black official samo hat with a rounded crown and two short rounded wings at the back; large round warm dark-brown eyes with double eyelids, soft gently arched eyebrows, a long oval face with a high forehead; a short neat black beard closely covering the chin and a short trimmed mustache, scholarly and gentle; clear light neutral skin with faint smile lines at the eyes; an ankle-length round-collared official robe (danryeong style) in a dull muted gray-green (sage-gray, like dried sage leaves) with wide plain sleeves, no pattern, no badge, no cuff band, a white inner collar showing at the neck, a thin dark-brown sash, black shoes; he always carries a closed dark chestnut-brown wooden medicine box with a plain cotton strap handle and no metal fittings in his LEFT hand or sets it down beside him; plain hands, no rings; default expression a warm, kind smile with lips slightly parted, eyes wide and soft, eyebrows lifted with gentle concern; bright, friendly and trustworthy, NOT sinister, NOT narrow-eyed, NOT smirking; no other jewelry; no text, no letters, no writing anywhere
+```
+
+**SHORT** (characters §11-9에 SHORT 원문이 없어 FULL에서 줄였다. 새 사실 없음 · 단어는 FULL과 같다):
+```
+Physician Won (slender, long-limbed 41-year-old palace physician, black official samo hat with two short rounded wings at the back, a short neat black beard and short trimmed mustache, large round warm dark-brown eyes, a warm kind smile, an ankle-length plain round-collared robe in dull muted gray-green (sage-gray, like dried sage leaves) with no cuff band, a thin dark-brown sash, a closed dark chestnut-brown wooden medicine box in his LEFT hand, plain hands, no rings)
+```
+
+**KO 한 줄 토큰 (검수 대조용, characters §11-9 원문):** `원 의관/41세 남/172cm 가늘고 긴 몸, 좁은 어깨, 상체를 살짝 숙인 자세/검은 상투+검은 사모(둥근 모정, 뒤쪽 짧고 둥근 날개 2개)/둥글고 큰 쌍꺼풀의 따뜻한 짙은 갈색 눈, 부드럽게 휜 눈썹, 갸름한 긴 얼굴/짧고 단정한 검은 턱수염+짧은 콧수염/맑고 밝은 뉴트럴 피부, 눈가 옅은 웃음 주름/회녹색 단령형 관복(무늬 없음, 소매 끝 띠 없음)+흰 속깃+가는 짙은 갈색 띠+검은 신/왼손에 짙은 밤색 나무 약상자(닫힘, 금속 없음)/입술을 살짝 연 따뜻한 미소/글자 없음(no text)`
+
+**불변 (일관성 핵심):** 가늘고 긴 몸 · 좁은 어깨 · 살짝 숙인 상체 / **검은 사모**(둥근 모정 + 뒤쪽 **짧고 둥근** 날개 2개) / **짧고 단정한 검은 턱수염 + 짧은 콧수염** / 크고 둥근 쌍꺼풀의 따뜻한 짙은 갈색 눈 + 부드럽게 휜 눈썹 / **회녹 단령**(무늬 · 흉배 · 소매 끝 띠 없음) + 흰 속깃 + 가는 짙은 갈색 띠 + 검은 신 / **LEFT 손 닫힌 밤색 약상자**. 몸에 금속 0.
+
+---
+
+### 11-2. 표정 (가변 · EP03에 필요한 것만)
+
+EP03의 그의 얼굴은 **모두 같은 따뜻한 미소의 변주**다(가면의 완성 = 엎어도 웃음). 화난 얼굴 · 굳은 얼굴 · 의미심장한 정지 · 정면 극단 클로즈업은 EP03에 없다(beatsheet §0-4 · §7).
+
+| # | 상황 (패널) | 영문 | 거리 |
+|---|---|---|---|
+| ① | 디폴트 · 들어서며 인사 · 탕약을 내려놓음 (P06 · P07) | `a warm, kind smile with lips slightly parted, eyes wide and soft, eyebrows lifted with gentle concern` (FULL 디폴트 그대로) | 미디엄 풀샷 · 투샷 |
+| ② | 아이 눈높이로 무릎 굽힘 (P09) | `the same warm smile, eyes soft and level with the child's, kneeling down with his hands resting on his own knees` | 투샷 |
+| ③ | 꿀 약속 · 손가락 하나 (P10) | `a warm, playful smile, eyes curving gently, one finger raised as if making a promise to a child` | **3/4 측면 바스트 (EP03 그의 가장 큰 얼굴)** |
+| ④ | 고마운 듯 밝은 미소 (P28, 가장자리) | `a bright, grateful smile toward the kneeling maid` | 가장자리 · 작게 |
+| ⑤ | 화내지 않고 나지막이 웃으며 아이 손을 살핌 (P35) | `a soft, low laugh, gently concerned, looking down at the boy's hands without touching them` | 3/4 측면 미디엄 |
+| ⑥ | 정중히 묻는 옆선 (P12 · P25) | `politely asking, head turned slightly away, only the edge of his face or the back of his samo hat visible` | 뒷모습 · 가장자리(얼굴 반 이하) |
+
+- **상태 토큰** (얼굴이 작거나 없는 컷):
+
+| 상태 | 영문 | 패널 |
+|---|---|---|
+| 탕약을 넘겨받음 | `stepping in through the sliding door and taking the small wooden tray with the lidded tonic bowl into his own two hands from a junior attendant behind him; his closed medicine box has been set down on the floor at his LEFT side` | P06 |
+| 탕약을 상에 내려놓음 | `carefully setting the small wooden tray with the lidded tonic bowl down on the low lacquered table with both hands` | P07 |
+| 무릎 굽힘 (아이 눈높이) | `kneeling down to the little prince's eye level, his hands on his own knees, the wide gray-green sleeves resting on the floor` | P09 · P35 |
+| 가장자리 · 목소리 | `only the edge of a gray-green sleeve and the black samo wing at the side of the frame` | P14 · P25 · P28 |
+| 뒷모습 퇴장 | `seen from behind at the doorway, bowing slightly to the prince, the closed chestnut-brown medicine box in his LEFT hand (on the left side of the image when seen from behind), the two short rounded wings of his black samo hat` | P42 |
+
+- **연출 규칙 [고정, characters §11-4 · beatsheet §0-4]:** 밝은 빛 · 눈높이 · 아이와 같은 높이. **로우 앵글 · 얼굴 반 그늘 · 역광 실루엣 금지.** P09 "낮은 앵글"은 **무릎 꿇은 아이 눈높이의 카메라**라는 뜻이다(그를 올려다보는 앵글이 아님).
+  - **P06 역광 주의:** 그는 화면 오른쪽 벽의 문으로 들어온다. 문밖 빛이 그의 등 뒤에서 실루엣을 만들면 REGEN. 얼굴은 **화면 왼쪽 창호지의 아침빛**을 정면에 가깝게 받고, 문 쪽은 밝지 않게: `his face and robe lit softly from the rice-paper doors on the left; the doorway behind him is not glowing`.
+- **EP03에서 쓰지 않는 것:** 소매로 입가를 누르는 버릇(characters §11-7, 후보 · 그는 EP03에서 맛보지 않는다) · 약상자 여는 동작 · 수상한 시선 · 의관 리액션 클로즈업.
+
+**금지 · 드리프트:** 수염 없음 · 긴 수염 · 콧수염만(악당형) · 염소수염 / 사모 없음 · 갓 · 날개가 길고 가는 사모 / 관복에 무늬 · 흉배 · 소매 끝 띠 · 금속 장식 / 회녹이 연두 · 올리브 · 청록 · 민트 · 회청으로 / 가는 눈 · 비뚤어진 웃음 · 반그늘 얼굴 · 검은 장갑 · 반지 / 약상자가 열림 · RIGHT 손 · 금속 장식 · 붉은 옻칠 / 백 감찰보다 크거나 넓어 보임.
+
+---
+
+### 11-3. 소품 토큰 (원 의관 · EP03 탕약 · 천)
+
+> 모두 **무늬 · 글자 · 인장 · 종이 표지 없음.** 영문 그대로 쓴다.
+
+| 토큰 | 영문 | 쓰는 곳 · 상태 |
+|---|---|---|
+| `PROP_MEDBOX` (= characters PROP-MEDBOX) | `a closed dark chestnut-brown wooden medicine box with a plain cotton strap handle, no metal fittings, lid shut` | 원 의관 전신 · 미디엄 컷. **LEFT 손** 또는 내려 둘 때 **바닥, 그의 LEFT 곁**. 옻칠 상(`#6B2A1F`) 위에 올리지 않는다(색이 묻힘, 장판 위에 둔다). **EP40 전 열린 모습 · 내부 클로즈업 금지** |
+| `PROP_TONIC_SET` (닫힘) | `a small plain unlacquered pale wooden tray carrying one plain white porcelain lidded tonic bowl; the plain lid is tied down with a thin plain dull gray-green cotton cord in a simple knot on top; no seal, no paper tag, no pattern, no writing; a little steam escaping from under the lid` | P06–P14. 김 = 시계(P06–P14 짙게) |
+| `PROP_TONIC_OPEN` | `the white porcelain tonic bowl open on its small pale wooden tray, the lid set beside it, the thin gray-green cord lying untied in loose loops next to the lid; dark brown herbal decoction inside, no purple tint, no sheen` + 김 상태 | P15 · P21(김 가늘어짐) · **P22 인서트**(사람 · 손 없음, 풀린 매듭이 "봉해서 곧장 왔다"의 근거) · P24(한 가닥) · P28(거의 없음) |
+| `PROP_DECOCTION` | `dark brown herbal decoction, no purple tint, no sheen` | P15–P33 전부. 쏟아짐(P32) · 웅덩이(P33)도 **갈색뿐** |
+| `PROP_WIPECLOTH` (L1, 갈색) | `a large rectangular rough-woven unbleached off-white hemp wiping cloth, about the length of a forearm, coarse visible weave, no pattern, no embroidery, no writing` + P37 `soaked with dark brown decoction stains, brown only` | P36 · P37 · P38 · P39. **연보라 0** |
+| `PROP_LAUNDRY_LINE` | `a plain twisted rope tied between two of the courtyard-side pillars, with six to eight plain white and off-white cloths draped over it, no clothespins, no pattern, no writing` | P43 · P47–P55(흐림) · P56(그 천이 걸렸던 자리가 **비어 있음**: `one empty gap on the line, the rope sagging where a cloth used to hang`) |
+| `PROP_WIPECLOTH_LILAC` ● | `the same large rough-woven unbleached off-white hemp cloth, washed in lye: the brown stains are gone, and in its center remains one soft, faint whitish-lilac blot, soft-edged like a washed-out watermark` + 예약색 문장 `the only pale lilac in the image is that one blot in the center of one hemp cloth` | **P44 · P45 · P58만** (§11-5) |
+| `PROP_WIPECLOTH_FOLDED` | `the same rough off-white hemp cloth folded in his large hand with the plain folded side outward, no color visible on it` | P57 (색 읽히지 않음 = 연보라 0) |
+| `PROP_NORIGAE_WRAP` | `a small palm-sized bundle wrapped in smooth, fine, pure white cotton, tucked inside the front fold of her spring-green jacket on her LEFT chest; only a tiny pure white corner shows between the jacket's front edges` | P02(모서리 또렷이) · P01 · P60(오른손 아래, 모서리 안 보여도 됨). **순백 유지, 보라 기운 금지(EP30 회수 전까지)** |
+| `PROP_HONEY` (참고) | characters §11-10 원문 | **EP05용.** EP03에 그리지 않는다(꿀은 대사로만) |
+
+- **쟁반 연속성 [art-director 결정 · panel-director 확인]:** 비트시트 P06("약동의 쟁반에서 그릇을 넘겨받는다")과 P22("쟁반 위 열린 그릇") · P42("빈 쟁반은 약동이 받는다")를 한 줄로 잇기 위해, **탕약 그릇은 작은 나무 쟁반째 한 세트**로 다룬다: P06 약동이 받쳐 든 쟁반(그릇 포함)을 의관이 두 손으로 받는다 → P07 쟁반째 상에 → P22 쟁반 위 → P32 왕자가 그릇만 들고 엎음 → P42 문밖 약동이 빈 쟁반을 받는다. 쟁반은 **밝은 무칠 나무**라 짙은 옻칠 상과 구별된다.
+- **그릇 재질 [결정]:** 흰 사기 + 무지 뚜껑. 수라간의 놋그릇 · 왕자 국그릇(난초 봉오리 손잡이)과 한눈에 다르게(내의원 그릇). 기미 그릇(작은 흰 사기 접시)보다 크고 **뚜껑이 있다**.
+- **매듭 끈 색 [결정]:** 회녹 무명 끈 = "내의원에서 봉해 온 것"을 글자 없이 말한다. 회녹은 **기관의 색**(characters §11-9 · series-arc §8)이고 EP05 PROP-HONEY의 회녹 천과 같은 언어다. 의관 개인의 표지가 아니다. 끈은 가늘게(면적 작게).
+
+---
+
+### 11-4. 내의원 약동 — EXTRA-MED (이름 없음 · 레퍼런스 시트 없음)
+
+**토큰 (characters §11-10 원문):**
+```
+a junior palace medical attendant in the same dull muted gray-green (sage-gray) plain robe, simple black cloth cap (no hat wings), seen from behind or far away, face not detailed, carrying a small tray; no text
+```
+
+| 패널 | 상태 (덧붙임) |
+|---|---|
+| P06 | `standing just behind the physician in the doorway, holding out the small wooden tray with both hands, seen from behind or from the side, head bowed, face not visible` |
+| P07 | `stepping back out through the doorway to wait outside, seen from behind, small` |
+| P42 | `outside the doorway receiving an empty small wooden tray, small and out of focus, face not visible` |
+
+- 구별 [고정, characters §11-10]: **날개 없는 검은 천 모자 · 수염 없음 · 약상자 없음 · 얼굴 디테일 없음.** 원 의관보다 작고 늘 그의 뒤 · 문밖. 같은 컷에서 두 사람의 회녹은 같은 색이어도 된다(기관의 색) — 구별은 모자 · 수염 · 약상자 · 거리로 한다.
+- 원 의관 레퍼런스를 약동에게 쓰지 않는다. 약동이 사모 · 수염을 얻으면 REGEN.
+- §6의 "엑스트라는 이름 있는 인물의 색 금지"에서 **내의원 엑스트라만 예외**(characters §11-10 예외 규칙).
+
+---
+
+### 11-5. 색 구별 규칙 (EP03 · panel-validator 기준값)
+
+**인물 색 — 회녹은 다른 어떤 주색과도 한눈에 다른 계열이어야 한다:**
+
+| 비교 | hex | 구별 기준 | Flow가 흐를 때 |
+|---|---|---|---|
+| **원 회녹** vs **채령 연두** | `#687A62` vs `#9CC46A` | 회녹 = 채도 낮고 어둡고 탁한 마른 세이지 / 연두 = 밝고 노란 기 강한 고채도. 같은 컷(P06 가장자리 · P28)에서 둘이 "같은 초록 집안"으로 보이면 실패 | 관복이 연두 · 올리브로 밝아지면 `dull muted gray-green (sage-gray, like dried sage leaves)`를 앞으로 당긴다 |
+| **원 회녹** vs **예약색 연보라** | `#687A62` vs `#C9B6E4` | 색상 · 명도 모두 반대편. 그의 몸 · 소품 어디에도 보라 기운 0 | 그림자가 보라로 끼면 REGEN |
+| **원 회녹** vs **민 와인 자두** | `#687A62` vs `#5A1F35` | 녹 계열 vs 붉은 계열. P07 투샷에서 나란히 선다 | 자두가 보라로 가면 §3 규칙(REGEN) |
+| **원 회녹** vs **민 손수건 연청** | `#687A62` vs `#BFD8D2` | 손수건은 훨씬 밝은 청자빛, 회녹은 어둡고 파란 기 없음 | — |
+| **원 회녹** vs **엑스트라 회청** | `#687A62` vs `#7F8C99` | 회녹 = 노란 기 도는 **따뜻한** 회녹 / 회청 = 차가운 파란 회색 | L1 아침빛(연청 기운)에서 관복이 회청으로 식으면 `sage` · `warm` 쪽으로 당긴다 |
+| **원 회녹** vs **약재고 올리브** | `#687A62` vs `#8A8A5C` | EP03은 L3가 없다(참고만, characters §11-9) | — |
+| **약상자 밤색** vs **옻칠 상** | `#5B3A26` vs `#6B2A1F` | 가깝다 → 약상자는 상 위에 두지 않는다(§11-3) | — |
+
+- 금속 언어(§8-8 · characters §11-11): 그의 몸 · 약상자 · 탕약 그릇에 **금속 0**. EP03 화면의 놋쇠는 향로 · 은침 받침 · 왕자 그릇 쪽 기존 소품뿐.
+
+**연보랏빛 = 잿물로 빤 삼베 행주, 정확히 3패널 [고정 · beatsheet §0-4 · §6-5]:**
+
+| 패널 | 무엇 | 그리는 법 |
+|---|---|---|
+| **P44** | 빨랫줄의 행주 한 장, 한가운데 엷은 번짐 (채령 어깨 너머 POV) | 작지만 분명히. 다른 천 5~7장은 흰색 · 미색 그대로 |
+| **P45** | 같은 번짐 익스트림 클로즈업, 천 결이 보이게 | 갈색은 다 빠지고 연보라만, EP01 손수건 얼룩과 같은 결(물자국처럼 가장자리 흐림) |
+| **P58** | 백 감찰이 펼쳐 든 같은 천 | **P45와 번짐 크기 · 위치(한가운데) · 색 일치.** P58 카드에 P45 PNG 첨부 권장(style-bible §5-3 R-HAND와 같은 방식) |
+
+- 그 밖의 **57패널 연보라 0**: 탕약 · 쏟아진 탕약 · 웅덩이 · L1 행주(P36–P39, 갈색뿐) · P43(먼 거리, 미색) · P46(천 프레임 밖) · P47–P55(빨랫줄 흐림) · P56(천 없음) · P57(접힌 면) · 노리개 싸개 · 손수건(STAIN 0, 전 패널 CLEAN) · 의상 · 노을 · 그림자.
+- **저녁빛 속의 연보라:** L2 저녁(LIGHT_L2_EVENING)의 주황빛은 미색 삼베를 주황 크림으로, 연보라 번짐을 분홍 · 회색으로 바꾸기 쉽다. P44 · P45 · P58에는 예약색 문장 뒤에 `even in the orange evening light the blot still reads as a cool, very pale lilac, clearly different from the warm cream of the cloth, not pink, not gray`를 덧붙인다. 분홍 · 회색 · 진보라로 보이면 REGEN.
+- **해가 더 기운 P53–P60:** 새 조명 토큰을 만들지 않는다(같은 장소 · 같은 시간대, EP02 §D-6 "변주구" 방식). LIGHT_L2_EVENING 원문 뒤에 `— the sun now lower, the orange deepening toward warm red-orange, very long shadows across the veranda; still no pink or purple in the sky or shadows`를 덧붙인다(panel-director가 샷리스트에 변주구로 등록). 붉은 저녁이 보라 · 분홍으로 흐르면 REGEN(style-bible §2-3 "노을은 보라로 흐르면 안 된다").
+
+**흰 천 두 종류 — 절대 혼동 금지 [고정 · beatsheet §4 · §7]:**
+
+| | 노리개 싸개 (`PROP_NORIGAE_WRAP`) | 행주 (`PROP_WIPECLOTH`) |
+|---|---|---|
+| 색 | **순백** (`#FAFAF7` 근처) | **미색 · 생삼베색** (`#E3D9C2` 근처) |
+| 결 | 매끈하고 고운 무명 | 거칠고 굵은 삼베 결이 보인다 |
+| 크기 | 손바닥만 한 작은 꾸러미 | 팔뚝 길이의 큰 직사각형 (손수건보다 훨씬 큼) |
+| 자리 | 채령 저고리 앞섶 안, LEFT 가슴 (P01 · P02 · P60) | L1 상 가장자리 → 바구니 → 빨랫줄 → 감찰 손 |
+| 보라 | **0** (EP30 회수 전까지 순백) | P44 · P45 · P58에서만 한가운데 번짐 |
+
+- 민 상궁 손수건(접은 연청 무명, 손바닥만 함)은 세 번째 천이다. 흰색 · 미색으로 그리지 않는다(§3).
+
+---
+
+### 11-6. 좌우 · 상태 검수표 (panel-validator · EP03)
+
+좌우는 **인물 자신의 좌우**. 정면 그림에서는 화면 반대편, 뒷모습에서는 같은 편.
+
+| 인물 | 항목 | 맞는 쪽 · 상태 | 정면에서 보이는 자리 | 실패 = REGEN |
+|---|---|---|---|---|
+| WON | 약상자 | **LEFT 손**에 듦 / 내려 두면 바닥, 그의 **LEFT 곁** | 화면 오른쪽 | RIGHT 손 · 열림 · 금속 장식 · 상 위 |
+| WON | 탕약 세트 | P06 · P07은 **두 손**(약상자는 내려 둠) | — | 한 손으로 그릇 · 약상자를 든 채 쟁반 |
+| WON | 수염 | 짧은 턱수염 + 짧은 콧수염, 좌우 대칭 | — | 수염 없음 · 길다 · 콧수염만 · 염소수염 |
+| WON | 사모 날개 | 뒤쪽 **양옆** 짧고 둥근 날개 2개 | 정면에서 머리 뒤로 양쪽 끝이 살짝 보임 | 날개 없음 · 길고 가는 날개 · 갓 |
+| WON | 소매 · 손 | 양쪽 소매 끝 띠 없음, 양손 반지 · 흉터 · 얼룩 없음 | — | 소매 띠 · 반지 · 장갑 |
+| WON | 키 · 체형 | 백(183) > **원(172)** > 민(158) > 채령(155) > 왕자(120). 가늘고 좁은 어깨 | — | 백보다 크거나 넓음 |
+| EXTRA-MED | 구별 | 날개 없는 검은 천 모자 · 수염 없음 · 약상자 없음 · 얼굴 없음 | — | 사모 · 수염 · 약상자 · 얼굴 디테일 |
+| CHAERYEONG | **노리개 (EP03 상태)** | **허리에 없음.** 흰 천 꾸러미째 저고리 앞섶 안 **LEFT 가슴**, 긴장하면 **RIGHT 손**이 그 위에 얹힘(P01 · P02 · P60) | 꾸러미 = 화면 오른쪽 가슴 쪽, 얹은 손 = 화면 왼쪽 손 | 허리에 노리개 · 청록 옥이 보임 · 싸개가 미색 · 보라 |
+| MIN | 손수건 | **RIGHT 손**, 전 패널 CLEAN(STAIN 0) | 화면 왼쪽 | 얼룩이 보임 |
+| MIN | 흰 머리 | **LEFT 관자놀이** | 화면 오른쪽 | RIGHT |
+| BAEK | 흉터 · 환도 | 흉터 **RIGHT 턱선 아래** · 환도 **LEFT 허리** | 흉터 화면 왼쪽 · 환도 화면 오른쪽 | 뒤집힘 · 칼을 뽑음 |
+| BAEK | 천 (P57 · P58) | P57 접힌 면 바깥(색 없음) → P58 펼쳐 든 손 + 연보라 번짐 | — | P57에 연보라 보임 |
+
+- **원 의관 연출 검수:** 로우 앵글 · 얼굴 반 그늘 · 역광 실루엣 · 의미심장한 클로즈업 = REGEN(characters §11-4). P06 문빛 역광 주의(§11-2).
+- **실루엣 6명 검사 [characters §11-11]:** 땋은 머리 / 쌍상투 작은 몸 / 낮은 쪽머리 + 긴 당의 / 넓고 납작한 갓 챙 + 칼 / 넓은 체구 + 머릿수건 + 국자 / **둥근 사모 + 뒤쪽 작은 날개 2개 + 발목까지 오는 길고 가는 관복 + 손에 든 네모 상자**. 갓(넓은 원반)과 사모(둥근 모정 + 날개)가 그림자로도 달라야 한다.
+
+---
+
+### 11-7. 레퍼런스 시트 사양 (ref-sheet-artist · EP03 추가 카드 1장)
+
+**판단: `WON_turnaround` 1장만 만든다. `WON_expressions`는 EP03에 만들지 않는다.**
+- 이유: EP03에서 그의 얼굴은 모두 **같은 따뜻한 미소의 변주**(§11-2 ①–⑤)이고, 가장 큰 얼굴이 P10의 3/4 바스트다. 정면 극단 클로즈업은 금지(beatsheet §7). 서로 다른 표정의 얼굴 컷이 3개 이상 필요하지 않다. 대신 turnaround에 **얼굴 클로즈업 2칸**(정면 디폴트 · 3/4 꿀 약속 미소)을 넣어 P10 · P35를 덮는다.
+- `WON_expressions`는 표정 폭이 커지는 회차(EP25 "얼굴을 보고 멈춘다" 이전, 또는 EP09 · EP10 등장이 커질 때) art-director가 다시 판단한다.
+- 사용자 부담: EP03 새 카드 **1장**. 기존 16장 사양(§8)은 바뀌지 않는다(EP01 시트가 아직 없으면 그것이 먼저).
+
+| # | 카드 | 필수 | aspect | 레이아웃 (영문 핵심) | 반드시 보일 것 |
+|---|---|---|---|---|---|
+| 17 | `WON_turnaround` | 필수 (EP03 패널 전) | 16:9 | `four full-body standing views of the same slender middle-aged man side by side (front, three-quarter turned to his left, left profile, back), plus one full-body side view of him kneeling down on one knee as if to a small child's eye level, plus two head-and-shoulders close-ups: one front view with his default warm smile, one three-quarter view with a warm, playful smile; in every standing view he holds a closed dark chestnut-brown wooden medicine box in his LEFT hand` | 뒷모습 · 측면: 사모 뒤쪽 **짧고 둥근 날개 2개**. 클로즈업: 짧은 턱수염 + 콧수염, 크고 둥근 쌍꺼풀 눈. 정면: LEFT 손 약상자 = 화면 오른쪽(`which appears on the right side of the image in front views`), 왼쪽 측면에서 분명히. 관복 = 마른 세이지 회녹(연두 · 올리브 · 회청 아님), 무늬 · 흉배 · 소매 띠 · 금속 0. 반지 없음. 약상자 닫힘. **모든 그림이 다정한 얼굴** |
+
+- 프롬프트 = STYLE_REF(style-bible §1) + 위 레이아웃 + **FULL 토큰(§11-1)** + 반드시 보일 것 + 마지막 줄 `Avoid: any text, labels, speech bubbles, watermark.`
+- 배경 · 조명은 §8-1 공통 조건 그대로(민무늬 밝은 웜그레이, 고른 스튜디오 조명). **연보라 · 탕약 · 쟁반 · 약동은 카드에 넣지 않는다**(소품은 약상자만, 사람은 원 의관 한 명).
+- 출력: `_workspace/04_visual/refs/WON_turnaround.png` → `refs/ref_prompts.md`에 `### WON_turnaround` 블록 추가(기존 블록은 건드리지 않는다).
+- **색 대조 확인은 카드 밖에서 한다:** 렌더 후 art-director · ref-sheet-artist가 `WON_turnaround`를 `CHAERYEONG_turnaround`(연두) · `MIN_turnaround`(자두 · 연청 손수건) · `PROP_HANKY_pair`(연보라 얼룩 견본)와 **나란히 놓고** §11-5 표를 본다. 카드 안에 색 견본 칸 · 연보라를 넣지 않는다(§8-1 7: 레퍼런스에 예약색 없음).
+
+**첨부 규칙 (prompt-smith · 패널당 3장 이내):**
+
+| 레퍼런스 | EP03 패널 |
+|---|---|
+| `WON_turnaround` | P06 · P07 · P09 · P10 · P35 (P28 · P42는 크면). P12 · P14 · P25(가장자리 · 얼굴 밖)는 붙이지 않아도 된다 |
+| (붙이지 않음) | 약동(EXTRA-MED) 단독 · **EP12 소매 컷(PROP-SLEEVE-GG)에는 절대 붙이지 않는다**(characters §11-10) |
+| 원본 패널 PNG | **P58 ← P45**(번짐 일치) · P43 ← EP01 P05/P48 또는 EP02 P47(R 앵글, 기존 규칙) |
+
+**시트 확정 검수 (사용자 렌더 후):**
+- [ ] 한 카드 안의 모든 그림이 같은 사람(얼굴형 · 수염 · 사모 · 체형)
+- [ ] 약상자 LEFT 손, 닫힘, 금속 없음
+- [ ] 사모 날개 짧고 둥근 2개(갓 · 긴 날개 아님)
+- [ ] 관복 회녹 = 마른 세이지(§11-5 표의 다섯 비교 통과), 무늬 · 흉배 · 소매 띠 없음
+- [ ] 다정한 얼굴만(가는 눈 · 비웃음 · 반그늘 없음)
+- [ ] 실루엣 6명 검사 통과(§11-6), 키: 백 > 원 > 민
+- [ ] 글자 · 라벨 · 숫자 없음 → 통과하면 `refs/INDEX.md`에 추가(ref-sheet-artist)
+
+---
+
+### 11-8. 패널 검수표 추가 (§9에 더하는 행)
+
+| 인물 · 소품 | 반드시 맞아야 하는 것 | 실패 예 |
+|---|---|---|
+| WON | 검은 사모(짧고 둥근 날개 2개) · 짧은 턱수염 + 콧수염 · 크고 둥근 쌍꺼풀 눈 · 회녹 단령(무늬 · 소매 띠 없음) · LEFT 손 닫힌 밤색 약상자 · 다정한 얼굴 · 밝은 눈높이 빛 | 수염 없음, 갓, 연두 · 회청 관복, 열린 약상자, 로우 앵글 · 반그늘 · 역광 |
+| EXTRA-MED | 회녹 옷 · 날개 없는 검은 천 모자 · 얼굴 없음 · 뒤/문밖 | 사모 · 수염 · 약상자, 얼굴 디테일 |
+| 탕약 | 흰 사기 뚜껑 그릇 + 밝은 나무 쟁반 + 가는 회녹 끈 매듭, 짙은 갈색 · 윤기 없음 | 놋그릇 · 난초 손잡이, 인장 · 종이 표지, 보라 기운 |
+| 천 | 싸개 = 작고 순백 · 매끈 / 행주 = 크고 미색 · 거침. 연보라 = 행주 한가운데 · P44 · P45 · P58만 | 싸개가 미색 · 보라, 행주가 순백, 예약 패널 밖 연보라 |
+
+### 11-9. 변경 이력 (이 절)
+
+| 버전 | 날짜 | 내용 |
+|---|---|---|
+| v1-EP03 | 2026-11-19 | 원 의관 WON 추가: FULL(characters §11-9 원문) · SHORT(FULL 압축) · 표정 6(같은 미소의 변주) · 상태 토큰 · 소품(PROP_MEDBOX · PROP_TONIC_SET/OPEN · PROP_DECOCTION · PROP_WIPECLOTH 4상태 · PROP_LAUNDRY_LINE · PROP_NORIGAE_WRAP) · EXTRA-MED · 색 구별 · 좌우 검수 · 레퍼런스 카드 1장(WON_turnaround, expressions 보류). §0–§10 무변경. style-bible 무변경(새 조명 토큰 없음, P53–P60은 LIGHT_L2_EVENING 변주구) |
