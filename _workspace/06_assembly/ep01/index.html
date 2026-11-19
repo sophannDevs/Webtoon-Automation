@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Webtoon</title>
+<!--
+  Khmer-edition vertical-scroll viewer. Built by km_tool.py from ep{NN}_lettering.md; do not edit the
+  data by hand (edit the lettering spec and rebuild). Panel images contain no text: this page draws the
+  speech bubbles and writes the Khmer. Fonts: Google Fonts when online, otherwise the reader's system
+  Khmer font (Khmer UI on Windows, Noto Sans Khmer on Android, Khmer Sangam MN on iOS/macOS).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Fasthand&family=Koulen&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --max-w: 720px;
+    --page-bg: #0e0e10;
+    --ink: #111;
+    --pen: #1e3caa;
+    --khmer: "Battambang", "Khmer UI", "Noto Sans Khmer", "Khmer Sangam MN", "Leelawadee UI", sans-serif;
+    --hand: "Fasthand", "Khmer UI", "Noto Sans Khmer", "Khmer Sangam MN", cursive;
+    --bold: "Koulen", "Khmer UI", "Noto Sans Khmer", "Khmer Sangam MN", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--page-bg); font-family: var(--khmer); -webkit-text-size-adjust: 100%; }
+  header.viewer-head {
+    position: sticky; top: 0; z-index: 50; background: rgba(14,14,16,.92); color: #f5f5f7;
+    text-align: center; padding: 10px 12px; font-size: 15px; backdrop-filter: blur(6px);
+  }
+  .strip { max-width: var(--max-w); margin: 0 auto; display: flex; flex-direction: column; }
+  .panel { position: relative; line-height: 0; background: #e9e9ee; container-type: inline-size; }
+  .panel img { width: 100%; height: auto; display: block; }
+  .panel .missing { line-height: 1.5; color: #b00020; background: #fff3f3; border: 2px dashed #b00020;
+    text-align: center; padding: 48px 12px; font: 14px system-ui, sans-serif; }
+  .gap { background: var(--page-bg); }
+
+  /* Speech bubbles: x/y = centre, w = max width, in % of the panel. Text scales with panel width. */
+  .bubble {
+    position: absolute; transform: translate(-50%, -50%); z-index: 5;
+    background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 999px;
+    padding: 0.7em 1.2em; text-align: center; font-family: var(--khmer);
+    font-size: 17px; font-size: 3.4cqw; line-height: 1.7; word-break: keep-all;
+  }
+  .bubble .tail {
+    position: absolute; width: 1.1em; height: 1.1em; background: #fff; margin-left: -0.55em;
+    border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+    bottom: -0.6em; transform: rotate(45deg);
+  }
+  .bubble .tail.up { bottom: auto; top: -0.6em; border: 0; border-left: 3px solid var(--ink); border-top: 3px solid var(--ink); }
+  .bubble.thought { border-style: dashed; border-radius: 40%; color: #333; }
+  .bubble.thought .dot { position: absolute; background: #fff; border: 3px solid var(--ink); border-radius: 50%; }
+  .bubble.shout { border-width: 4px; border-radius: 18%; font-family: var(--bold); font-size: 4cqw; transform: translate(-50%, -50%) rotate(-2deg); }
+  .bubble.memory { border-color: #4f78c4; box-shadow: 0 0 0.6em 0.15em rgba(120,170,255,.75); }
+  .bubble.memory .tail { border-color: #4f78c4; }
+  .bubble.narration { border-radius: 4px; background: rgba(20,20,24,.88); color: #f4f4f6; border-color: rgba(255,255,255,.25); }
+
+  /* Writing on objects (no bubble). */
+  .env { position: absolute; transform: translate(-50%, -50%) rotate(var(--rot, 0deg)); z-index: 4;
+    text-align: center; line-height: 1.6; white-space: nowrap; }
+  .env.hand { color: var(--pen); font-family: var(--hand); }
+  .env.sign { color: #d9f0ff; font-family: var(--bold); text-shadow: 0 0 .25em #6fb6ff, 0 0 .6em #3d8bff; }
+  .env.screen { color: #f4f4f6; font-family: var(--khmer); white-space: normal; }
+
+  /* Sound effects (only where the lettering spec letters them). */
+  .sfx { position: absolute; transform: translate(-50%, -50%) rotate(var(--rot, 0deg)); z-index: 6;
+    font-family: var(--bold); color: #fff; line-height: 1.4; white-space: nowrap;
+    -webkit-text-stroke: 0.06em #111; paint-order: stroke fill; text-shadow: 0.05em 0.05em 0 #111; }
+
+  footer { color: #9a9aa2; text-align: center; padding: 28px 12px 60px; font-size: 14px; }
+</style>
+</head>
+<body>
+<header class="viewer-head"><b id="m-title"></b> · <span id="m-ep"></span></header>
+<main class="strip" id="strip" aria-label="webtoon vertical viewer"></main>
+<footer id="foot"></footer>
+
+<script>
+const META = {
+ "title": "Webtoon",
+ "episode": "ភាគទី ១",
+ "footer": "",
+ "names": [
+  "ច្បាប់ទី៤ ជាការកុហក",
+  "កាង សឺហា",
+  "ណូ មីរ៉ាន",
+  "គូ ជុងមីន",
+  "កាង ជីហូ",
+  "ណាម ជែវូ",
+  "មន្ត្រី កាង សឺហា",
+  "កញ្ញា សឺហា",
+  "ប្រធានក្រុម ណូ មីរ៉ាន",
+  "អូន សឺហា"
+ ]
+};
+const PANELS = [
+ {
+  "src": "../../05_panels/ep01/panel_001.png",
+  "alt": "panel 001",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ច្បាប់ទី៤ ខ្ញុំនឹងមិនគោរពទេ។",
+    "x": 37.0,
+    "y": 12.0,
+    "w": 52.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_002.png",
+  "alt": "panel 002",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ឯងឆ្កួតឬអី?",
+    "x": 24.0,
+    "y": 16.0,
+    "w": 34.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_003.png",
+  "alt": "panel 003",
+  "gapAfter": 480,
+  "bubbles": [],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_004.png",
+  "alt": "panel 004",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "បង! នៅហ្នឹងឃើញផ្កាយដែរអត់?",
+    "x": 34.0,
+    "y": 10.0,
+    "w": 58.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "បងនៅក្រោមដីណា៎។",
+    "x": 58.0,
+    "y": 28.0,
+    "w": 40.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_005.png",
+  "alt": "panel 005",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ឆ្មាព្រះចន្ទ នៅបិទជាប់ដដែលអត់?",
+    "x": 30.0,
+    "y": 9.0,
+    "w": 52.0,
+    "tail": "up",
+    "tailX": 75
+   },
+   {
+    "type": "dialogue",
+    "text": "កុំបកវាចេញណា៎! មានតែមួយគត់ក្នុងលោក។",
+    "x": 46.0,
+    "y": 21.0,
+    "w": 54.0,
+    "tail": "up",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_006.png",
+  "alt": "panel 006",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ថ្ងៃសៅរ៍ ពិធីប្រគល់រង្វាន់ បងត្រូវមកឱ្យបាន! សន្យាណា៎!",
+    "x": 35.0,
+    "y": 12.0,
+    "w": 64.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "អើ សន្យា។",
+    "x": 62.0,
+    "y": 30.0,
+    "w": 30.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_007.png",
+  "alt": "panel 007",
+  "gapAfter": 240,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ស៊ូៗ បង!",
+    "x": 20.0,
+    "y": 14.0,
+    "w": 32.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": [
+   {
+    "text": "ផាំង!",
+    "x": 84.0,
+    "y": 42.0,
+    "size": 9.0,
+    "rot": -6.0
+   }
+  ]
+ },
+ {
+  "src": "../../05_panels/ep01/panel_008.png",
+  "alt": "panel 008",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "មន្ត្រី កាង សឺហា! យប់នេះ យើងដូរវេនគ្នាសិន មែនទេ?",
+    "x": 35.0,
+    "y": 11.0,
+    "w": 64.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "លោកប្រធានការិយាល័យ ក៏ធ្លាប់ធ្វើអញ្ចឹងដែរ។",
+    "x": 50.0,
+    "y": 29.0,
+    "w": 50.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_009.png",
+  "alt": "panel 009",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ក្នុងបញ្ជីវេន មានឈ្មោះបង។ ប្រាក់ឧបត្ថម្ភ ក៏ចេញឈ្មោះបងដែរ។ ដឹងហើយណា៎?",
+    "x": 34.0,
+    "y": 14.5,
+    "w": 64.0,
+    "tail": "up",
+    "tailX": 75
+   },
+   {
+    "type": "dialogue",
+    "text": "…ចាស សុំទោស ខ្ញុំយល់ហើយ។",
+    "x": 30.0,
+    "y": 31.5,
+    "w": 52.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_010.png",
+  "alt": "panel 010",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "អ្នកថ្មី ទ្រាំមិនដល់បីថ្ងៃទេ។",
+    "x": 30.0,
+    "y": 10.0,
+    "w": 48.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "អ្នកមុនក៏ឈប់ក្រោយបីថ្ងៃដែរ។",
+    "x": 44.0,
+    "y": 25.0,
+    "w": 54.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_011.png",
+  "alt": "panel 011",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "កន្លែងហ្នឹង របស់ឯង។ ខ្ញុំមិនអង្គុយទេ។",
+    "x": 32.0,
+    "y": 10.0,
+    "w": 56.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "ផឹកទៅ។ គេថា យប់នេះវែង។",
+    "x": 40.0,
+    "y": 27.0,
+    "w": 50.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_012.png",
+  "alt": "panel 012",
+  "gapAfter": 0,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ទី១។ ពីម៉ោង១០យប់ ដល់ម៉ោង៦ព្រឹក ត្រូវទទួលពាក្យ ពីអ្នកដែលមកបញ្ជរគ្រប់រូប។",
+    "x": 38.0,
+    "y": 12.0,
+    "w": 62.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "មិនត្រូវបណ្ដេញទៅវិញឡើយ។",
+    "x": 28.0,
+    "y": 29.0,
+    "w": 48.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_013.png",
+  "alt": "panel 013",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ទី២។ អ្នកប្រចាំការ មិនត្រូវប្រាប់ឈ្មោះខ្លួនឯងឡើយ។",
+    "x": 34.0,
+    "y": 11.0,
+    "w": 56.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "ទី៣។ ពេលកណ្ដឹងរោទ៍—",
+    "x": 26.0,
+    "y": 28.0,
+    "w": 44.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": [
+   {
+    "text": "ទីង!",
+    "x": 83.0,
+    "y": 48.0,
+    "size": 8.0,
+    "rot": -8.0
+   }
+  ]
+ },
+ {
+  "src": "../../05_panels/ep01/panel_014.png",
+  "alt": "panel 014",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "សូមទោស ដែលមករំខានទាំងយប់ជ្រៅ។",
+    "x": 38.0,
+    "y": 10.0,
+    "w": 60.0,
+    "tail": "down",
+    "tailX": 75
+   },
+   {
+    "type": "dialogue",
+    "text": "ខ្ញុំមកសុំលុបចោល ការចុះបញ្ជីមរណភាព។",
+    "x": 40.0,
+    "y": 27.0,
+    "w": 60.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_015.png",
+  "alt": "panel 015",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "អ្នកដាក់ពាក្យ… និងអ្នកស្លាប់ គឺមនុស្សតែមួយ។",
+    "x": 44.0,
+    "y": 11.0,
+    "w": 54.0,
+    "tail": "down",
+    "tailX": 50
+   },
+   {
+    "type": "dialogue",
+    "text": "…អញ្ចឹង បញ្ជាក់អត្តសញ្ញាណរួចរាល់ហើយ។",
+    "x": 58.0,
+    "y": 28.5,
+    "w": 42.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_016.png",
+  "alt": "panel 016",
+  "gapAfter": 240,
+  "bubbles": [],
+  "env": [],
+  "sfx": [
+   {
+    "text": "តក់!",
+    "x": 76.0,
+    "y": 20.0,
+    "size": 8.0,
+    "rot": -6.0
+   }
+  ]
+ },
+ {
+  "src": "../../05_panels/ep01/panel_017.png",
+  "alt": "panel 017",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ទី៤។ បើអ្នកដាក់ពាក្យសួររកអ្នកទទួលបន្ទុក…",
+    "x": 60.0,
+    "y": 12.0,
+    "w": 40.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_018.png",
+  "alt": "panel 018",
+  "gapAfter": 120,
+  "bubbles": [],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_019.png",
+  "alt": "panel 019",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "…ត្រូវឆ្លើយថា «ខ្ញុំជាអ្នកទទួលបន្ទុក»។",
+    "x": 32.0,
+    "y": 11.0,
+    "w": 56.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_024.png",
+  "alt": "panel 024",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "អ្នកដែលគ្មានឈ្មោះក្នុងបញ្ជីវេន… ជាអ្នកទទួលបន្ទុកឬ?",
+    "x": 50.0,
+    "y": 9.5,
+    "w": 50.0,
+    "tail": "down",
+    "tailX": 75
+   },
+   {
+    "type": "memory",
+    "text": "ក្នុងបញ្ជីវេន មានឈ្មោះបង។",
+    "x": 19.0,
+    "y": 43.5,
+    "w": 32.0,
+    "tail": "up",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_025.png",
+  "alt": "panel 025",
+  "gapAfter": 0,
+  "bubbles": [],
+  "env": [],
+  "sfx": [
+   {
+    "text": "ភ្លឹប…",
+    "x": 15.0,
+    "y": 11.0,
+    "size": 7.0,
+    "rot": -6.0
+   },
+   {
+    "text": "ភ្លឹប—",
+    "x": 32.0,
+    "y": 23.0,
+    "size": 7.0,
+    "rot": -6.0
+   }
+  ]
+ },
+ {
+  "src": "../../05_panels/ep01/panel_026.png",
+  "alt": "panel 026",
+  "gapAfter": 240,
+  "bubbles": [],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_027.png",
+  "alt": "panel 027",
+  "gapAfter": 720,
+  "bubbles": [],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_028.png",
+  "alt": "panel 028",
+  "gapAfter": 120,
+  "bubbles": [],
+  "env": [],
+  "sfx": [
+   {
+    "text": "ផាំង!",
+    "x": 84.0,
+    "y": 42.0,
+    "size": 9.0,
+    "rot": -6.0
+   }
+  ]
+ },
+ {
+  "src": "../../05_panels/ep01/panel_029.png",
+  "alt": "panel 029",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "memory",
+    "text": "ស៊ូៗ បង!",
+    "x": 74.0,
+    "y": 22.0,
+    "w": 26.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_030.png",
+  "alt": "panel 030",
+  "gapAfter": 480,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "…យើង… សន្យាអីគ្នាទៅ?",
+    "x": 26.0,
+    "y": 15.0,
+    "w": 46.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_031.png",
+  "alt": "panel 031",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "thought",
+    "text": "ទី១។ មិនយំឡើយ។ ទី២។ អានរហូតដល់បន្ទាត់ចុងក្រោយ។",
+    "x": 36.0,
+    "y": 11.0,
+    "w": 56.0
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_032.png",
+  "alt": "panel 032",
+  "gapAfter": 0,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "មន្ត្រី កាង សឺហា! យប់នេះ យើងដូរវេនគ្នាសិន មែនទេ?",
+    "x": 35.0,
+    "y": 11.0,
+    "w": 64.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "មែនទេ?",
+    "x": 68.0,
+    "y": 21.0,
+    "w": 24.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_033.png",
+  "alt": "panel 033",
+  "gapAfter": 0,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "អ្នកថ្មី—",
+    "x": 26.0,
+    "y": 12.0,
+    "w": 26.0,
+    "tail": "up",
+    "tailX": 75
+   },
+   {
+    "type": "dialogue",
+    "text": "…ទ្រាំមិនដល់បីថ្ងៃទេ។",
+    "x": 40.0,
+    "y": 28.0,
+    "w": 44.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_034.png",
+  "alt": "panel 034",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ផឹកទៅ។ គេថា យប់នេះវែង។",
+    "x": 44.0,
+    "y": 10.0,
+    "w": 50.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "…គេថា កណ្ដុរ។",
+    "x": 40.0,
+    "y": 27.0,
+    "w": 34.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": [
+   {
+    "text": "ក្រុបក្រាប…",
+    "x": 10.0,
+    "y": 49.0,
+    "size": 4.0,
+    "rot": -12.0
+   }
+  ]
+ },
+ {
+  "src": "../../05_panels/ep01/panel_036.png",
+  "alt": "panel 036",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ទី៣។ ពេលកណ្ដឹង—",
+    "x": 22.0,
+    "y": 11.0,
+    "w": 40.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "សូមទោស ដែលមករំខានទាំងយប់ជ្រៅ។",
+    "x": 62.0,
+    "y": 20.0,
+    "w": 38.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": [
+   {
+    "text": "ទីង!",
+    "x": 83.0,
+    "y": 48.0,
+    "size": 8.0,
+    "rot": -8.0
+   }
+  ]
+ },
+ {
+  "src": "../../05_panels/ep01/panel_038.png",
+  "alt": "panel 038",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ច្បាប់ទី៤ ខ្ញុំនឹងមិនគោរពទេ។",
+    "x": 37.0,
+    "y": 12.0,
+    "w": 52.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_039.png",
+  "alt": "panel 039",
+  "gapAfter": 480,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ឯងឆ្កួតឬអី?",
+    "x": 24.0,
+    "y": 16.0,
+    "w": 34.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_040.png",
+  "alt": "panel 040",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "តើអ្នកទទួលបន្ទុក មានវត្តមានទេ? ខ្ញុំត្រូវការត្រា។",
+    "x": 50.0,
+    "y": 10.0,
+    "w": 50.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_041.png",
+  "alt": "panel 041",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "អ្នកទទួលបន្ទុក គឺអ្នកដែលមានឈ្មោះក្នុងបញ្ជីវេន។",
+    "x": 58.5,
+    "y": 17.0,
+    "w": 41.5,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "…ប្រធានក្រុម ណូ មីរ៉ាន។",
+    "x": 70.5,
+    "y": 31.0,
+    "w": 29.5,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_044.png",
+  "alt": "panel 044",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "បាទ លោកស្រីទេតើ ជាអ្នកទទួលបន្ទុក។ សូមបោះត្រាឱ្យផង។",
+    "x": 51.0,
+    "y": 11.0,
+    "w": 49.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_045.png",
+  "alt": "panel 045",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "បើបោះត្រា… គេថា អ្នកបោះត្រា ចូលប្រអប់នោះជំនួស។",
+    "x": 34.0,
+    "y": 9.0,
+    "w": 56.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_046.png",
+  "alt": "panel 046",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ខ្ញុំសូមស្នើឱ្យបំពេញឯកសារបន្ថែម។",
+    "x": 34.0,
+    "y": 13.0,
+    "w": 56.0,
+    "tail": "down",
+    "tailX": 25
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_047.png",
+  "alt": "panel 047",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ការស្នើនេះ ត្រូវការហត្ថលេខាអ្នកទទួលបន្ទុក ឬកំណត់ត្រាផ្ទេរសិទ្ធិ។",
+    "x": 33.0,
+    "y": 10.0,
+    "w": 58.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "ចុះ… ចុះបើកញ្ញា សឺហា… ចាត់ការជំនួសខ្ញុំ…",
+    "x": 56.0,
+    "y": 27.0,
+    "w": 44.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_048.png",
+  "alt": "panel 048",
+  "gapAfter": 40,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "…ខ្ញុំបានផ្ទេរការងារវេនយប់… ឱ្យមន្ត្រីថ្មី កាង សឺហា…",
+    "x": 33.0,
+    "y": 11.0,
+    "w": 56.0,
+    "tail": "down",
+    "tailX": 25
+   },
+   {
+    "type": "dialogue",
+    "text": "…ដោយគ្មានការអនុញ្ញាត…",
+    "x": 52.0,
+    "y": 28.0,
+    "w": 48.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_049.png",
+  "alt": "panel 049",
+  "gapAfter": 240,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "បន្ទុកដែលប្រធានក្រុមទម្លាក់មក… ខ្ញុំគ្រាន់តែប្រគល់ជូនវិញ។",
+    "x": 33.0,
+    "y": 11.0,
+    "w": 58.0,
+    "tail": "down",
+    "tailX": 50
+   },
+   {
+    "type": "dialogue",
+    "text": "ជូនម្ចាស់ដើម។",
+    "x": 36.0,
+    "y": 28.0,
+    "w": 32.0,
+    "tail": "down",
+    "tailX": 50
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_050.png",
+  "alt": "panel 050",
+  "gapAfter": 120,
+  "bubbles": [
+   {
+    "type": "dialogue",
+    "text": "ថ្ងៃដំបូងសោះ ម៉េចក៏ចាំលំដាប់ច្បាប់បាន?",
+    "x": 42.0,
+    "y": 10.0,
+    "w": 50.0,
+    "tail": "down",
+    "tailX": 75
+   },
+   {
+    "type": "dialogue",
+    "text": "ខ្ញុំទៅយកទឹកសិន។ អង្គុយនៅហ្នឹង។",
+    "x": 62.0,
+    "y": 27.0,
+    "w": 38.0,
+    "tail": "down",
+    "tailX": 75
+   }
+  ],
+  "env": [],
+  "sfx": []
+ },
+ {
+  "src": "../../05_panels/ep01/panel_052.png",
+  "alt": "panel 052",
+  "gapAfter": 480,
+  "bubbles": [
+   {
+    "type": "memory",
+    "text": "កុំបកវាចេញណា៎! មានតែមួយគត់ក្នុងលោក។",
+    "x": 46.0,
+    "y": 21.0,
+    "w": 54.0
+   }
+  ],
+  "env": [],
+  "sfx": []
+ }
+];
+
+function keepNames(s) {
+  return (META.names || []).reduce((t, n) => t.split(n).join(n.replace(/ /g, " ")), s || "");
+}
+function el(tag, cls, txt) { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+function renderBubble(b) {
+  const node = el("div", "bubble " + (b.type || "dialogue"), keepNames(b.text));
+  node.style.left = b.x + "%"; node.style.top = b.y + "%"; node.style.maxWidth = b.w + "%";
+  if (b.type === "thought") {
+    [[0.9, 1.2, 0.5], [1.6, 0.4, 0.32]].forEach(([dy, dx, s]) => {
+      const dot = el("span", "dot");
+      dot.style.width = dot.style.height = s + "em"; dot.style.bottom = -dy + "em"; dot.style.left = (30 - dx * 4) + "%";
+      node.appendChild(dot);
+    });
+  } else if (b.tail && b.type !== "narration") {
+    const t = el("span", "tail" + (b.tail === "up" ? " up" : ""));
+    t.style.left = (b.tailX == null ? 50 : b.tailX) + "%";
+    node.appendChild(t);
+  }
+  return node;
+}
+function renderFree(v, cls) {
+  const node = el("div", cls, keepNames(v.text));
+  node.style.left = v.x + "%"; node.style.top = v.y + "%";
+  node.style.fontSize = v.size + "cqw"; node.style.setProperty("--rot", (v.rot || 0) + "deg");
+  if (v.w) node.style.maxWidth = v.w + "%";
+  return node;
+}
+
+(function init() {
+  document.title = META.title + " — " + META.episode;
+  document.getElementById("m-title").textContent = META.title;
+  document.getElementById("m-ep").textContent = META.episode;
+  const strip = document.getElementById("strip");
+  PANELS.forEach(p => {
+    const panel = el("div", "panel");
+    const img = new Image(); img.loading = "lazy"; img.decoding = "async"; img.alt = p.alt; img.src = p.src;
+    img.onerror = () => img.replaceWith(el("div", "missing", "⚠ " + p.src));
+    panel.appendChild(img);
+    (p.bubbles || []).forEach(b => panel.appendChild(renderBubble(b)));
+    (p.env || []).forEach(v => panel.appendChild(renderFree(v, "env " + (v.style || "hand"))));
+    (p.sfx || []).forEach(v => panel.appendChild(renderFree(v, "sfx")));
+    strip.appendChild(panel);
+    if (p.gapAfter) { const g = el("div", "gap"); g.style.height = p.gapAfter + "px"; strip.appendChild(g); }
+  });
+  document.getElementById("foot").textContent = META.footer || "";
+})();
+</script>
+</body>
+</html>

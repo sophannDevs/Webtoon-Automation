@@ -126,6 +126,15 @@ def resolve_attach(name, root):
     return cands[0], False
 
 
+def asset_key(path):
+    """Identity of an image for the extension. Panels keep their episode folder (ep01/panel_001.png) so that
+    EP01 and EP02 panels with the same file name are never mixed up; reference sheets stay a bare name."""
+    path = Path(path)
+    if path.parent.parent.name == "05_panels" and re.fullmatch(r"ep\d+", path.parent.name, re.I):
+        return "%s/%s" % (path.parent.name, path.name)
+    return path.name
+
+
 def guess_aspect(root):
     sb = root / "_workspace" / "04_visual" / "style-bible.md"
     if not sb.exists():
@@ -463,7 +472,7 @@ def render_card(it, out_dir, root, default_aspect):
     if state == "ok":
         chips.append('<span class="chip ok">Saved &#10003;</span>')
 
-    parts = ['<article class="card" data-key="%s">' % e(it["name"]),
+    parts = ['<article class="card" data-key="%s" data-asset="%s">' % (e(it["name"]), e(asset_key(it["target"]))),
              '<header><h3>%s</h3>%s<span class="spacer"></span>'
              '<label><input type="checkbox" class="donebox"> Done</label></header>' % (e(it["name"]), "".join(chips))]
     if it.get("redraw_reason"):
@@ -475,9 +484,9 @@ def render_card(it, out_dir, root, default_aspect):
         for a in it["attach_list"]:
             p, found = resolve_attach(a, root)
             if found:
-                links.append('<a href="%s" target="_blank">%s</a>' % (rel_url(p, out_dir), e(p.name)))
+                links.append('<a href="%s" target="_blank" data-ref="%s">%s</a>' % (rel_url(p, out_dir), e(asset_key(p)), e(asset_key(p))))
             else:
-                links.append('<span class="missing">%s (not made yet)</span>' % e(Path(a).name))
+                links.append('<span class="missing" data-ref="%s">%s (not made yet)</span>' % (e(asset_key(p)), e(asset_key(p))))
         parts.append('<div class="row"><span class="lbl">Attach in Flow</span>%s</div>' % ", ".join(links))
     parts.append('<div class="row"><span class="lbl">Prompt</span><button data-copy="pre">Copy prompt</button></div>'
                  '<pre>%s</pre>' % e(it["prompt"]))
