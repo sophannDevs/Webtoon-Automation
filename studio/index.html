@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+Khmer:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f1;--surface:#ffffff;--surface-2:#f0eee8;--surface-3:#e8e5dd;
+  --border:rgba(28,26,22,.10);--border-strong:rgba(28,26,22,.20);
+  --text:#1c1b19;--text-2:#5c5a55;--text-3:#8b8882;
+  --accent:#2d55c8;--accent-bg:#e7edfc;--on-accent:#ffffff;
+  --done:#2e7a3a;--done-bg:#e4f1e2;
+  --you:#985a00;--you-bg:#fbeed6;
+  --claude:#5446c0;--claude-bg:#ecebfc;
+  --danger:#b3261e;--danger-bg:#fbe8e6;
+  --radius:10px;--radius-lg:14px;
+  --font:"Inter","Noto Sans KR","Noto Sans Khmer","Malgun Gothic","Khmer UI",system-ui,sans-serif;
+  --font-km:"Noto Sans Khmer","Khmer UI","Leelawadee UI",sans-serif;
+  --mono:ui-monospace,"Cascadia Code",Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141413;--surface:#1c1c1a;--surface-2:#252523;--surface-3:#2f2f2c;
+  --border:rgba(255,255,255,.09);--border-strong:rgba(255,255,255,.18);
+  --text:#ecebe6;--text-2:#a9a7a0;--text-3:#7d7b75;
+  --accent:#8eaaf7;--accent-bg:#1f2b4d;--on-accent:#0f1730;
+  --done:#8ccf8f;--done-bg:#1d3320;--you:#f0b860;--you-bg:#3a2a10;
+  --claude:#b4abf7;--claude-bg:#2a2650;--danger:#f2958d;--danger-bg:#46201d;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141413;--surface:#1c1c1a;--surface-2:#252523;--surface-3:#2f2f2c;
+  --border:rgba(255,255,255,.09);--border-strong:rgba(255,255,255,.18);
+  --text:#ecebe6;--text-2:#a9a7a0;--text-3:#7d7b75;
+  --accent:#8eaaf7;--accent-bg:#1f2b4d;--on-accent:#0f1730;
+  --done:#8ccf8f;--done-bg:#1d3320;--you:#f0b860;--you-bg:#3a2a10;
+  --claude:#b4abf7;--claude-bg:#2a2650;--danger:#f2958d;--danger-bg:#46201d;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font:15px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.km{font-family:var(--font-km);line-height:1.9}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.muted{color:var(--text-2)}
+.small{font-size:13px}
+.tiny{font-size:12px}
+h1,h2,h3{line-height:1.3;margin:0}
+h1{font-size:26px;font-weight:600}
+h2{font-size:18px;font-weight:600}
+h3{font-size:15px;font-weight:600}
+
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--text)}
+.brand:hover{text-decoration:none}
+.logo{width:26px;height:26px;border-radius:7px;background:var(--text);color:var(--bg);display:grid;place-items:center;font-size:13px;font-weight:600}
+.nav{display:flex;gap:4px;margin-left:8px}
+.nav a{padding:6px 12px;border-radius:8px;color:var(--text-2);font-size:14px}
+.nav a:hover{background:var(--surface-2);text-decoration:none}
+.nav a.on{background:var(--surface);color:var(--text);box-shadow:0 0 0 1px var(--border)}
+.count{display:inline-block;min-width:20px;padding:0 6px;margin-left:4px;border-radius:10px;background:var(--you-bg);color:var(--you);font-size:12px;text-align:center}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.icon-btn{width:34px;height:34px;border-radius:8px;border:1px solid var(--border);background:var(--surface);display:grid;place-items:center}
+.icon-btn:hover{background:var(--surface-2)}
+.icon-btn svg{width:16px;height:16px}
+
+main{padding:28px 0 64px}
+.section{margin-top:32px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+
+.btn{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;white-space:nowrap}
+.btn:hover{background:var(--surface-2);text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn.sm{height:28px;padding:0 10px;font-size:13px}
+.btn svg{width:15px;height:15px}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg)}
+.pad{padding:18px 20px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.metric .label{font-size:12px;color:var(--text-2)}
+.metric .value{font-size:22px;font-weight:600;margin-top:2px}
+.metric .value small{font-size:13px;font-weight:400;color:var(--text-2)}
+
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--surface-2);color:var(--text-2);white-space:nowrap}
+.chip.done{background:var(--done-bg);color:var(--done)}
+.chip.you{background:var(--you-bg);color:var(--you)}
+.chip.claude{background:var(--claude-bg);color:var(--claude)}
+.chip.danger{background:var(--danger-bg);color:var(--danger)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+
+.next{display:flex;gap:16px;align-items:flex-start;padding:16px 18px;border-radius:var(--radius-lg);border:1px solid var(--border);background:var(--surface)}
+.next.you{border-color:color-mix(in srgb,var(--you) 45%,transparent);background:linear-gradient(0deg,var(--surface),var(--surface)),var(--you-bg)}
+.next .who{flex:none;width:36px;height:36px;border-radius:10px;display:grid;place-items:center}
+.next.you .who{background:var(--you-bg);color:var(--you)}
+.next.claude .who{background:var(--claude-bg);color:var(--claude)}
+.next .who svg{width:18px;height:18px}
+.next .body{flex:1;min-width:0}
+.next .eyebrow{font-size:12px;font-weight:500}
+.next.you .eyebrow{color:var(--you)}
+.next.claude .eyebrow{color:var(--claude)}
+.next .title{font-weight:500;margin:2px 0 4px}
+.next .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+
+/* story cards */
+.stories{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.story{display:flex;flex-direction:column;overflow:hidden;color:inherit}
+.story:hover{text-decoration:none;border-color:var(--border-strong)}
+.cover{height:128px;position:relative;overflow:hidden}
+.cover svg{position:absolute;inset:0;width:100%;height:100%}
+.story .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.story .t-ko{font-size:18px;font-weight:600}
+.story .t-km{font-size:14px;color:var(--text-2)}
+.story .tag{font-size:13px;color:var(--text-2)}
+.prog{display:flex;flex-direction:column;gap:6px}
+.prog-row{display:grid;grid-template-columns:62px 1fr auto;align-items:center;gap:10px;font-size:12px;color:var(--text-2)}
+.bar{display:flex;gap:3px}
+.bar i{flex:1;height:6px;border-radius:3px;background:var(--surface-3)}
+.bar i.done{background:var(--done)}
+.bar i.you{background:var(--you)}
+.bar i.claude{background:var(--claude)}
+.story .foot{margin-top:auto;padding-top:10px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--text-3)}
+.story .nextline{font-size:13px;display:flex;gap:6px;align-items:flex-start}
+.story .nextline b{font-weight:500}
+.new-story{display:grid;place-items:center;text-align:center;min-height:300px;border-style:dashed;background:transparent;color:var(--text-2);padding:24px}
+.new-story:hover{background:var(--surface);color:var(--text)}
+.new-story .plus{width:44px;height:44px;border-radius:12px;border:1px dashed var(--border-strong);display:grid;place-items:center;margin:0 auto 10px;font-size:22px}
+
+/* inbox */
+.list{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 18px;border-top:1px solid var(--border)}
+.row:first-child{border-top:none}
+.row .dot{width:32px;height:32px;border-radius:9px;display:grid;place-items:center}
+.row .dot.you{background:var(--you-bg);color:var(--you)}
+.row .dot.claude{background:var(--claude-bg);color:var(--claude)}
+.row .dot svg{width:16px;height:16px}
+.row .what{min-width:0}
+.row .what .t{font-weight:500}
+
+/* story page */
+.crumbs{font-size:13px;color:var(--text-2);display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.crumbs a{color:var(--text-2)}
+.hero{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:start}
+.hero .cover{height:auto;aspect-ratio:3/4;border-radius:var(--radius-lg)}
+.hero .t-km{font-size:16px;color:var(--text-2);margin-top:4px}
+.hero .tagline{font-size:15px;margin-top:10px}
+.logline{margin-top:12px;padding:12px 14px;border-left:3px solid var(--border-strong);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;font-size:14px;color:var(--text-2)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px 18px;margin-top:16px;font-size:13px}
+.meta dt{color:var(--text-3);font-size:12px}
+.meta dd{margin:0}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px}
+.step{position:relative;padding:12px 12px 12px 14px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;gap:4px;min-height:96px}
+.step .n{font-size:12px;color:var(--text-3)}
+.step .label{font-weight:500;font-size:14px;line-height:1.35}
+.step .info{font-size:12px;color:var(--text-2);line-height:1.45}
+.step .state{margin-top:auto}
+.step.done{background:color-mix(in srgb,var(--done-bg) 45%,var(--surface))}
+.step.current.you{border-color:var(--you);box-shadow:0 0 0 1px var(--you) inset}
+.step.current.claude{border-color:var(--claude);box-shadow:0 0 0 1px var(--claude) inset}
+.step.todo{opacity:.72}
+
+.eps{display:flex;flex-direction:column;gap:10px}
+.ep{display:grid;grid-template-columns:64px minmax(0,1fr) 300px auto;gap:18px;align-items:center;padding:14px 18px;color:inherit}
+.ep:hover{border-color:var(--border-strong);text-decoration:none}
+.ep .num{font-size:12px;color:var(--text-3)}
+.ep .num b{display:block;font-size:22px;color:var(--text);font-weight:600;line-height:1.1}
+.ep .twist{font-size:13px;color:var(--text-2);margin-top:2px}
+.ep .stats{font-size:12px;color:var(--text-2);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+.season{display:grid;grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:5px}
+.season span{height:30px;border-radius:7px;display:grid;place-items:center;font-size:12px;background:var(--surface-2);color:var(--text-3)}
+.season span.made{background:var(--you-bg);color:var(--you);font-weight:500}
+.season span.released{background:var(--done-bg);color:var(--done)}
+
+.cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.person{display:flex;gap:12px;padding:14px;align-items:flex-start}
+.avatar{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:600;font-size:14px}
+.person .name{font-weight:500}
+.person .km{font-size:13px;color:var(--text-2);line-height:1.6}
+.person .role{font-size:12px;color:var(--text-2);margin-top:4px;line-height:1.45}
+
+/* flow cards */
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;border:1px solid var(--border);border-radius:9px;background:var(--surface);padding:2px}
+.seg button{border:0;background:transparent;padding:4px 10px;border-radius:7px;font-size:13px;color:var(--text-2)}
+.seg button.on{background:var(--surface-2);color:var(--text);box-shadow:0 0 0 1px var(--border)}
+.search{height:32px;border-radius:8px;border:1px solid var(--border);background:var(--surface);padding:0 10px;min-width:200px;font-size:13px}
+.flowgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.fcard{text-align:left;padding:10px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;gap:8px}
+.fcard:hover{border-color:var(--border-strong)}
+.thumbbox{position:relative;height:120px;padding:8px;display:grid;place-items:center;background:var(--surface-2);border-radius:8px;overflow:hidden;color:var(--text-3)}
+.thumbbox svg{width:100%;height:100%;display:block}
+.thumbbox .ar{position:absolute;inset:0;display:grid;place-items:center;font-size:12px}
+.thumbbox img{max-width:100%;max-height:100%;border-radius:5px;display:block}
+.fcard .nm{font-family:var(--mono);font-size:12.5px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fcard .sub{display:flex;gap:6px;flex-wrap:wrap}
+.notes{margin:0;padding-left:18px;font-size:13px;color:var(--text-2)}
+.notes li{margin:4px 0}
+.notes code,.mono{font-family:var(--mono);font-size:12px;background:var(--surface-2);padding:1px 5px;border-radius:5px}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(10,10,10,.45);z-index:50;display:flex;align-items:flex-start;justify-content:center;padding:48px 16px;overflow-y:auto}
+.overlay[hidden]{display:none}
+.modal{width:min(820px,100%);background:var(--surface);border-radius:16px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:18px 20px;border-bottom:1px solid var(--border)}
+.modal-body{padding:18px 20px;display:grid;grid-template-columns:220px 1fr;gap:20px}
+.prompt{white-space:pre-wrap;font-size:13.5px;line-height:1.65;background:var(--surface-2);border-radius:var(--radius);padding:12px 14px;max-height:340px;overflow:auto}
+.drop{border:1.5px dashed var(--border-strong);border-radius:var(--radius);display:grid;place-items:center;text-align:center;padding:14px;color:var(--text-2);font-size:13px;cursor:pointer;background:var(--surface-2);overflow:hidden}
+.drop.over{border-color:var(--accent);color:var(--accent)}
+.drop img{max-width:100%;border-radius:6px}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.field label{font-size:13px;font-weight:500}
+.field input,.field select,.field textarea{border:1px solid var(--border-strong);border-radius:8px;background:var(--surface);padding:8px 10px;font-size:14px}
+.field textarea{min-height:76px;resize:vertical}
+.field .err{font-size:12px;color:var(--danger)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:60;transition:all .2s;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.banner{font-size:12.5px;color:var(--text-2);background:var(--surface-2);border-radius:var(--radius);padding:8px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .ep{grid-template-columns:52px minmax(0,1fr);gap:10px 14px}
+  .ep .ep-bar,.ep .ep-go{grid-column:1/-1}
+  .hero{grid-template-columns:1fr}
+  .hero .cover{aspect-ratio:16/7}
+  .modal-body{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .nav a{padding:6px 8px}
+  .nav .hide-sm{display:none}
+  .stories{grid-template-columns:1fr}
+  .row{grid-template-columns:auto 1fr}
+  .row .go{grid-column:2}
+  .form-grid{grid-template-columns:1fr}
+  .search{min-width:0;flex:1}
+  h1{font-size:22px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#/"><span class="logo">S</span><span>Story Studio</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#/" data-nav="home">Stories</a>
+      <a href="#/inbox" data-nav="inbox">Waiting<span class="hide-sm"> for you</span><span class="count" id="inbox-count"></span></a>
+    </nav>
+    <div class="top-right">
+      <button class="icon-btn" id="theme-btn" aria-label="Switch light or dark theme" title="Theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="app" tabindex="-1"></main>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" id="modal"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+"use strict";
+var D = window.STUDIO_DATA;
+var app = document.getElementById("app");
+if (!D || !D.stories) {
+  app.innerHTML = '<div class="card pad"><h2>No story data</h2><p class="muted">Run <span class="mono">python -I studio/export_data.py</span> from the project root, then reload this page.</p></div>';
+  return;
+}
+
+/* ------------------------------------------------------------ helpers */
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function plural(n, one, many) { return n + " " + (n === 1 ? one : (many || one + "s")); }
+function find(slug) { return D.stories.filter(function (s) { return s.slug === slug; })[0]; }
+function findEp(s, ep) { return s.episodes.filter(function (e) { return e.ep === ep; })[0]; }
+var ICON = {
+  user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+  bot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 17h6"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>',
+  copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',
+  ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
+  upload: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg>',
+  play: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+  x: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+};
+var FLOW_URL = "https://labs.google/flow";
+var PALETTE = {
+  rule4: {a: "#2f4a3f", b: "#5f7d6c", c: "#d9e6dc", d: "#c8352b", av: ["#dfeae2", "#2f4a3f"]},
+  poison: {a: "#3b2236", b: "#7a2f3b", c: "#f1e6d4", d: "#9fb9a8", av: ["#f4e3e6", "#7a2f3b"]},
+  umbrella: {a: "#9fc3e3", b: "#6d79c9", c: "#ffffff", d: "#f2c230", av: ["#fbf0cc", "#7a5a00"]}
+};
+
+/* Covers are simple shapes in each story's colours (no text, like the panels). */
+function cover(s) {
+  var p = PALETTE[s.palette] || PALETTE.rule4;
+  if (s.palette === "poison") {
+    return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
+      '<rect width="400" height="300" fill="' + p.a + '"/>' +
+      '<circle cx="320" cy="60" r="90" fill="' + p.b + '" opacity=".55"/>' +
+      '<path d="M0 230 Q200 180 400 230 V300 H0Z" fill="' + p.b + '" opacity=".6"/>' +
+      '<ellipse cx="200" cy="178" rx="96" ry="22" fill="' + p.c + '" opacity=".95"/>' +
+      '<path d="M104 178 Q200 262 296 178Z" fill="' + p.c + '"/>' +
+      '<ellipse cx="200" cy="178" rx="84" ry="15" fill="' + p.d + '" opacity=".8"/>' +
+      '<line x1="250" y1="88" x2="214" y2="174" stroke="#d8dde3" stroke-width="5" stroke-linecap="round"/>' +
+      '<circle cx="250" cy="88" r="6" fill="#d8dde3"/></svg>';
+  }
+  if (s.palette === "umbrella") {
+    var drops = "";
+    for (var i = 0; i < 9; i++) drops += '<line x1="' + (188 + i * 8) + '" y1="' + (114 + (i % 3) * 5) + '" x2="' + (184 + i * 8) + '" y2="' + (128 + (i % 3) * 5) + '" stroke="#6b7fa6" stroke-width="2.5" stroke-linecap="round"/>';
+    return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
+      '<rect width="400" height="300" fill="' + p.a + '"/>' +
+      '<circle cx="318" cy="112" r="24" fill="#fff6d8"/>' +
+      '<g fill="' + p.b + '" opacity=".85"><circle cx="70" cy="214" r="24"/><circle cx="96" cy="200" r="20"/><circle cx="330" cy="216" r="24"/><circle cx="306" cy="204" r="18"/></g>' +
+      '<g fill="#8d97a8"><ellipse cx="222" cy="102" rx="40" ry="14"/><circle cx="204" cy="96" r="14"/><circle cx="232" cy="90" r="17"/></g>' + drops +
+      '<path d="M134 202 A70 70 0 0 1 274 202 Z" fill="' + p.d + '"/>' +
+      '<path d="M134 202 Q151.5 192 169 202 Q186.5 192 204 202 Q221.5 192 239 202 Q256.5 192 274 202" fill="' + p.d + '" stroke="#d9a514" stroke-width="2"/>' +
+      '<line x1="204" y1="202" x2="204" y2="246" stroke="#5b4a2e" stroke-width="5" stroke-linecap="round"/>' +
+      '<path d="M204 246 q0 12 -11 12" fill="none" stroke="#5b4a2e" stroke-width="5" stroke-linecap="round"/></svg>';
+  }
+  return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' +
+    '<rect width="400" height="300" fill="' + p.a + '"/>' +
+    '<rect x="40" y="90" width="150" height="9" rx="4.5" fill="' + p.c + '" opacity=".9"/>' +
+    '<rect x="230" y="90" width="130" height="9" rx="4.5" fill="' + p.c + '" opacity=".35"/>' +
+    '<path d="M40 99 L190 99 L250 300 H0Z" fill="' + p.c + '" opacity=".06"/>' +
+    '<rect x="150" y="118" width="100" height="182" rx="4" fill="' + p.b + '"/>' +
+    '<rect x="160" y="128" width="80" height="172" rx="3" fill="none" stroke="' + p.a + '" stroke-width="3" opacity=".6"/>' +
+    '<circle cx="232" cy="210" r="5" fill="' + p.c + '"/>' +
+    '<rect x="122" y="166" width="156" height="16" fill="' + p.d + '" transform="rotate(-14 200 174)"/></svg>';
+}
+
+/* ------------------------------------------------------------ pipeline */
+var STORY_STAGES = [
+  {n: 1, label: "New story form", who: "you", info: "Brief and locked decisions", done: function (f) { return f.brief; }},
+  {n: 2, label: "Research", who: "claude", info: "5 research files", done: function (f) { return f.research >= 5; }, meta: function (f) { return f.research + " / 5 files"; }},
+  {n: 3, label: "Pick a package", who: "you", info: "Chosen idea locked in the brief", done: function (f) { return f.concept; }},
+  {n: 4, label: "Story bible", who: "claude", info: "Concept, world, cast, season map, twists, glossary", done: function (f) { return f.concept && f.world && f.characters && f.arc && f.glossary; }},
+  {n: 5, label: "Approve story bible", who: "you", info: "Approve or send notes", done: function (f) { return f.style; }},
+  {n: 6, label: "Art setup", who: "claude", info: "Style bible, character sheets, sheet prompts", done: function (f) { return f.style && f.ref_prompts; }},
+  {n: 7, label: "Sheets in Flow", who: "you", info: "Reference sheet images", done: function (f, s) { return s.sheets.length > 0 && f.sheet_images >= s.sheets.length; }, meta: function (f, s) { return f.sheet_images + " / " + s.sheets.length + " made"; }}
+];
+var EP_STAGES = [
+  {n: 8, label: "Episode script", who: "claude", info: "Beat sheet, script, final with Khmer", done: function (e) { return e.files.beatsheet && e.files.script && e.files.script_final; }},
+  {n: 9, label: "Approve script", who: "you", info: "Korean and Khmer side by side", done: function (e) { return e.files.shotlist; }},
+  {n: 10, label: "Visual prep", who: "claude", info: "Shot list, Khmer bubbles, Flow prompts, handoff", done: function (e) { return e.files.shotlist && e.files.lettering && e.km_check.ok && e.files.prompts && e.files.handoff; }},
+  {n: 11, label: "Panels in Flow", who: "you", info: "Upload each panel image", done: function (e) { return e.panels > 0 && e.images >= e.panels; }, meta: function (e) { return e.images + " / " + e.panels + " made"; }},
+  {n: 12, label: "Validate", who: "claude", info: "Check images, redraw list", done: function (e) { return e.files.validation && e.flow.state === "VALIDATED"; }},
+  {n: 13, label: "Assemble and QA", who: "claude", info: "Khmer viewer, QA, continuity", done: function (e) { return e.files.viewer && e.files.qa; }},
+  {n: 14, label: "Approve release", who: "you", info: "Preview and approve", done: function (e) { return e.files.release; }},
+  {n: 15, label: "Push", who: "you", info: "Only when you click", done: function () { return false; }}
+];
+function stageStates(stages, isDone) {
+  var current = -1;
+  return stages.map(function (st, i) {
+    var d = isDone(st);
+    var state = d ? "done" : (current === -1 ? (current = i, "current") : "todo");
+    return {st: st, state: state};
+  });
+}
+function storyStages(s) { return stageStates(STORY_STAGES, function (st) { return st.done(s.story_files, s); }); }
+function epStages(e) { return stageStates(EP_STAGES, function (st) { return st.done(e); }); }
+function sheetsDone(s) { return s.sheets.length > 0 && s.story_files.sheet_images >= s.sheets.length; }
+
+/* The one next action for a story: the first unfinished stage, story first, then episodes in order. */
+function nextAction(s) {
+  var ss = storyStages(s), cur = ss.filter(function (x) { return x.state === "current"; })[0];
+  if (cur) {
+    var st = cur.st;
+    if (st.n === 7) {
+      var first = s.sheets.filter(function (c) { return !c.has_image; })[0];
+      return {who: "you", title: "Make the " + plural(s.sheets.length - s.story_files.sheet_images, "reference sheet") + " in Flow",
+        detail: "Sheets come before any panel, because every panel attaches them." + (first ? " Start with card " + first.name + "." : ""),
+        href: "#/s/" + s.slug + "/sheets", cta: "Open sheets", stage: st};
+    }
+    return {who: st.who, title: st.label, detail: st.info, href: "#/s/" + s.slug, cta: "Open story", stage: st};
+  }
+  for (var i = 0; i < s.episodes.length; i++) {
+    var e = s.episodes[i], es = epStages(e).filter(function (x) { return x.state === "current"; })[0];
+    if (!es) continue;
+    var t = es.st.n === 11 ? "Make EP" + e.ep + "'s " + (e.panels - e.images) + " panels in Flow" : "EP" + e.ep + ": " + es.st.label;
+    return {who: es.st.who, title: t, detail: es.st.info, href: "#/s/" + s.slug + "/ep/" + e.ep, cta: "Open EP" + e.ep, stage: es.st, ep: e};
+  }
+  return {who: "claude", title: "Plan the next episode", detail: "All made episodes are released.", href: "#/s/" + s.slug, cta: "Open story"};
+}
+
+/* Everything waiting on the user across all stories, in the order to do it. */
+function inboxItems() {
+  var items = [];
+  D.stories.forEach(function (s) {
+    if (!sheetsDone(s) && s.sheets.length) {
+      items.push({s: s, who: "you", title: "Make " + plural(s.sheets.length - s.story_files.sheet_images, "reference sheet"),
+        detail: "Needed before any panel of this story.", href: "#/s/" + s.slug + "/sheets", first: true});
+    }
+    s.episodes.forEach(function (e, idx) {
+      var cur = epStages(e).filter(function (x) { return x.state === "current"; })[0];
+      if (!cur || cur.st.who !== "you") return;
+      var blockedBy = !sheetsDone(s) ? "the sheets" : (idx > 0 && s.episodes[idx - 1].images < s.episodes[idx - 1].panels ? "EP" + s.episodes[idx - 1].ep + "'s panels" : "");
+      items.push({s: s, who: "you", ep: e,
+        title: cur.st.n === 11 ? "Make EP" + e.ep + "'s " + plural(e.panels - e.images, "panel") : "EP" + e.ep + ": " + cur.st.label,
+        detail: blockedBy ? "After " + blockedBy + (cur.st.n === 11 ? " (this episode's prompts attach them)." : ".") : cur.st.info,
+        href: "#/s/" + s.slug + "/ep/" + e.ep, blocked: !!blockedBy});
+    });
+  });
+  return items;
+}
+
+/* ------------------------------------------------------------ small views */
+function whoChip(who, state) {
+  if (state === "done") return '<span class="chip done">' + ICON.check.replace("<svg", '<svg width="12" height="12"') + ' Done</span>';
+  if (state === "todo") return '<span class="chip">Later</span>';
+  return who === "you" ? '<span class="chip you">Your turn</span>' : '<span class="chip claude">Claude\'s turn</span>';
+}
+function stepCard(x, ctx) {
+  var st = x.st, meta = st.meta ? st.meta(ctx.a, ctx.b) : "";
+  var cls = "step " + x.state + (x.state === "current" ? " " + st.who : "");
+  var action = "";
+  if (x.state === "current") {
+    action = st.who === "claude"
+      ? '<button class="btn sm" data-run="' + esc(st.label) + '">' + ICON.play + ' Run</button>'
+      : (ctx.href ? '<a class="btn sm" href="' + ctx.href + '">Open</a>' : "");
+  }
+  return '<div class="' + cls + '"><span class="n">' + st.n + ' · ' + (st.who === "you" ? "You" : "Claude") + '</span>' +
+    '<span class="label">' + esc(st.label) + '</span><span class="info">' + esc(meta || st.info) + '</span>' +
+    '<span class="state" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">' + whoChip(st.who, x.state) + action + '</span></div>';
+}
+function bar(states) {
+  return '<div class="bar">' + states.map(function (x) {
+    return '<i class="' + (x.state === "done" ? "done" : x.state === "current" ? x.st.who : "") + '" title="' + esc(x.st.label) + '"></i>';
+  }).join("") + '</div>';
+}
+function nextCard(n, extra) {
+  return '<div class="next ' + n.who + '"><div class="who">' + (n.who === "you" ? ICON.user : ICON.bot) + '</div>' +
+    '<div class="body"><div class="eyebrow">Next · ' + (n.who === "you" ? "your turn" : "Claude's turn") + '</div>' +
+    '<div class="title">' + esc(n.title) + '</div><div class="small muted">' + esc(n.detail) + '</div>' +
+    '<div class="actions">' + (extra || "") + '</div></div></div>';
+}
+function initials(name) { return (name || "?").replace(/[()\s]/g, "").slice(0, 1); }
+function aspectWH(c) {
+  var m = /(\d+(?:\.\d+)?)\s*[:x×]\s*(\d+(?:\.\d+)?)/.exec(c.aspect || "");
+  return m ? [Number(m[1]), Number(m[2])] : [3, 4];
+}
+function totals() {
+  var t = {episodes: 0, panels: 0, sheets: 0, images: 0, bubbles: 0};
+  D.stories.forEach(function (s) {
+    t.sheets += s.sheets.length; t.images += s.story_files.sheet_images;
+    s.episodes.forEach(function (e) { t.episodes++; t.panels += e.panels; t.images += e.images; t.bubbles += e.bubbles; });
+  });
+  return t;
+}
+var previews = {}; /* local image previews for this visit only */
+
+/* ------------------------------------------------------------ pages */
+function pageHome() {
+  var t = totals(), inbox = inboxItems();
+  var h = '<div class="section-head" style="margin-top:0"><div><h1>Your stories</h1><p class="muted small" style="margin:4px 0 0">Every story in this repo, read from its git branch. Exported ' + esc(D.generated) + '.</p></div>' +
+    '<button class="btn primary" data-new-story>+ New story</button></div>';
+  h += '<div class="metrics">' +
+    metric("Stories", D.stories.length) +
+    metric("Episodes written", t.episodes) +
+    metric("Panels planned", t.panels) +
+    metric("Khmer bubbles", t.bubbles) +
+    metric("Flow images made", t.images + ' <small>/ ' + (t.panels + t.sheets) + '</small>') + '</div>';
+
+  h += '<div class="section"><div class="section-head"><h2>Waiting for you</h2><a class="small" href="#/inbox">See all ' + inbox.length + '</a></div>';
+  h += '<div class="card list">' + D.stories.map(function (s) {
+    var n = nextAction(s);
+    return '<div class="row"><span class="dot ' + n.who + '">' + (n.who === "you" ? ICON.user : ICON.bot) + '</span>' +
+      '<div class="what"><div class="t">' + esc(n.title) + '</div><div class="small muted">' + esc(s.title_ko) + ' · ' + esc(n.detail) + '</div></div>' +
+      '<a class="btn sm go" href="' + n.href + '">' + esc(n.cta) + '</a></div>';
+  }).join("") + '</div></div>';
+
+  h += '<div class="section"><div class="section-head"><h2>Stories</h2></div><div class="stories">';
+  h += D.stories.map(storyCard).join("");
+  h += '<button class="card new-story" data-new-story><div><div class="plus">+</div><div style="font-weight:500;color:var(--text)">Start a new story</div><div class="small">Fill in the brief. Research runs next.</div></div></button>';
+  h += '</div></div>';
+  return h;
+}
+function metric(label, value) { return '<div class="metric"><div class="label">' + label + '</div><div class="value">' + value + '</div></div>'; }
+function storyCard(s) {
+  var n = nextAction(s);
+  var rows = '<div class="prog-row"><span>Setup</span>' + bar(storyStages(s)) + '<span>' + storyStages(s).filter(function (x) { return x.state === "done"; }).length + '/' + STORY_STAGES.length + '</span></div>';
+  rows += s.episodes.map(function (e) {
+    var st = epStages(e);
+    return '<div class="prog-row"><span>EP' + e.ep + '</span>' + bar(st) + '<span>' + st.filter(function (x) { return x.state === "done"; }).length + '/' + EP_STAGES.length + '</span></div>';
+  }).join("");
+  return '<a class="card story" href="#/s/' + s.slug + '"><div class="cover">' + cover(s) + '</div><div class="body">' +
+    '<div><div class="t-ko">' + esc(s.title_ko) + '</div><div class="t-km km">' + esc(s.title_km) + '</div></div>' +
+    '<div class="tag">' + esc(s.tagline) + '</div>' +
+    '<div class="chips"><span class="chip">' + esc(s.genre.split(" · ")[0]) + '</span><span class="chip">' + esc(s.rating) + '</span><span class="chip">' + s.episodes.length + ' / ' + s.season + ' episodes</span></div>' +
+    '<div class="prog">' + rows + '</div>' +
+    '<div class="nextline"><span class="chip ' + n.who + '">' + (n.who === "you" ? "You" : "Claude") + '</span><span><b>' + esc(n.title) + '</b></span></div>' +
+    '<div class="foot"><span class="mono" style="background:none;padding:0">' + esc(s.branch) + '</span><span>Updated ' + esc(s.last_commit.date) + '</span></div>' +
+    '</div></a>';
+}
+
+function pageInbox() {
+  var items = inboxItems();
+  var h = '<h1>Waiting for you</h1><p class="muted small" style="margin:4px 0 20px">Everything across all stories that needs you, in the order to do it. Claude\'s steps are all done until these images exist.</p>';
+  if (!items.length) return h + '<div class="card pad">Nothing waits on you right now.</div>';
+  var startShown = {};
+  h += '<div class="card list">' + items.map(function (it) {
+    var start = !it.blocked && !startShown[it.s.slug];
+    if (start) startShown[it.s.slug] = true;
+    return '<div class="row"><span class="dot you">' + ICON.user + '</span><div class="what">' +
+      '<div class="t">' + esc(it.title) + (start ? ' <span class="chip you" style="margin-left:4px">Start here</span>' : it.blocked ? ' <span class="chip" style="margin-left:4px">Waiting</span>' : "") + '</div>' +
+      '<div class="small muted">' + esc(it.s.title_ko) + (it.ep ? " · EP" + it.ep.ep + " 「" + esc(it.ep.ko) + "」" : "") + ' · ' + esc(it.detail) + '</div></div>' +
+      '<a class="btn sm go" href="' + it.href + '">Open</a></div>';
+  }).join("") + '</div>';
+  return h;
+}
+
+function pageStory(s) {
+  var n = nextAction(s);
+  var h = '<div class="crumbs"><a href="#/">Stories</a><span>/</span><span>' + esc(s.title_ko) + '</span></div>';
+  h += '<div class="hero"><div class="cover">' + cover(s) + '</div><div>' +
+    '<h1>' + esc(s.title_ko) + '</h1><div class="t-km km">' + esc(s.title_km) + '</div>' +
+    '<div class="tagline">' + esc(s.tagline) + '</div>' +
+    '<div class="logline">' + esc(s.logline) + '</div>' +
+    '<dl class="meta">' + dl("Genre", s.genre) + dl("Tone", s.tone) + dl("Rating", s.rating) +
+    dl("Season", s.episodes.length + " of " + s.season + " episodes written") + dl("Started", s.created) +
+    dl("Branch", '<span class="mono">' + esc(s.branch) + '</span>', true) + dl("Last commit", s.last_commit.date + " · " + s.last_commit.message) +
+    (s.also ? dl("Note", s.also) : "") + '</dl></div></div>';
+
+  h += '<div class="section">' + nextCard(n, '<a class="btn primary" href="' + n.href + '">' + esc(n.cta) + '</a>' +
+    (n.who === "you" ? '<a class="btn" href="' + FLOW_URL + '" target="_blank" rel="noopener">' + ICON.ext + ' Open Flow</a>' : "")) + '</div>';
+
+  h += '<div class="section"><div class="section-head"><h2>Story setup</h2><span class="small muted">Once per story</span></div><div class="steps">' +
+    storyStages(s).map(function (x) { return stepCard(x, {a: s.story_files, b: s, href: x.st.n === 7 ? "#/s/" + s.slug + "/sheets" : ""}); }).join("") + '</div></div>';
+
+  h += '<div class="section"><div class="section-head"><h2>Episodes</h2><button class="btn sm" data-run="Write the next episode (EP' + pad2(s.episodes.length + 1) + ')">+ New episode</button></div><div class="eps">' +
+    s.episodes.map(function (e) {
+      var st = epStages(e), cur = st.filter(function (x) { return x.state === "current"; })[0];
+      return '<a class="card ep" href="#/s/' + s.slug + '/ep/' + e.ep + '"><div class="num">EP<b>' + e.ep + '</b></div>' +
+        '<div><div style="font-weight:500">「' + esc(e.ko) + '」' + (e.km ? ' <span class="km muted small">' + esc(e.km) + '</span>' : "") + '</div>' +
+        '<div class="twist">' + esc(e.twist) + '</div>' +
+        '<div class="stats"><span>' + e.panels + ' panels</span><span>' + e.bubbles + ' Khmer bubbles</span><span>Khmer check ' + (e.km_check.ok ? "pass" : "fail") + '</span><span>' + e.images + '/' + e.panels + ' images</span></div></div>' +
+        '<div class="ep-bar">' + bar(st) + '<div class="tiny muted" style="margin-top:6px">' + (cur ? "Now: " + esc(cur.st.label) : "Released") + '</div></div>' +
+        '<span class="ep-go btn sm">Open ' + ICON.arrow + '</span></a>';
+    }).join("") + '</div></div>';
+
+  var seasonCells = "";
+  for (var i = 1; i <= s.season; i++) {
+    var ep = findEp(s, pad2(i));
+    seasonCells += '<span class="' + (ep ? (ep.files.release ? "released" : "made") : "") + '" title="EP' + pad2(i) + (ep ? " 「" + esc(ep.ko) + "」" : " (not written yet)") + '">' + i + '</span>';
+  }
+  h += '<div class="section"><div class="section-head"><h2>Season map</h2><span class="small muted">' + s.episodes.length + ' written · ' + (s.season - s.episodes.length) + ' to go</span></div><div class="season">' + seasonCells + '</div></div>';
+
+  var av = (PALETTE[s.palette] || PALETTE.rule4).av;
+  h += '<div class="section"><div class="section-head"><h2>Cast</h2><span class="small muted">Names as readers see them in Khmer</span></div><div class="cast">' +
+    s.cast.map(function (c) {
+      return '<div class="card person"><span class="avatar" style="background:' + av[0] + ';color:' + av[1] + '">' + esc(initials(c.ko)) + '</span>' +
+        '<div><div class="name">' + esc(c.ko) + '</div><div class="km">' + esc(c.km) + '</div><div class="role">' + esc(c.role) + '</div></div></div>';
+    }).join("") + '</div></div>';
+  return h;
+}
+function dl(k, v, raw) { return '<div><dt>' + k + '</dt><dd>' + (raw ? v : esc(v)) + '</dd></div>'; }
+function pad2(n) { return (n < 10 ? "0" : "") + n; }
+
+var gridState = {filter: "all", q: ""};
+function flowSection(cardsList, ctx) {
+  var long = cardsList.filter(function (c) { return c.words > 260; }).length;
+  var h = '<div class="toolbar"><div class="seg" role="group" aria-label="Filter cards">' +
+    segBtn("all", "All " + cardsList.length) + segBtn("missing", "Missing " + cardsList.filter(function (c) { return !c.has_image && !previews[ctx + c.name]; }).length) +
+    (long ? segBtn("long", "Long prompts " + long) : "") + '</div>' +
+    '<input class="search" type="search" placeholder="Search panel_023 or LOC_" aria-label="Search cards" data-search value="' + esc(gridState.q) + '"></div>';
+  h += '<div class="flowgrid" data-grid="' + esc(ctx) + '"></div>';
+  return h;
+}
+function segBtn(k, label) { return '<button data-filter="' + k + '" class="' + (gridState.filter === k ? "on" : "") + '">' + label + '</button>'; }
+function fillGrid(grid, cardsList, ctx) {
+  var q = gridState.q.trim().toLowerCase();
+  var shown = cardsList.filter(function (c) {
+    if (gridState.filter === "missing" && (c.has_image || previews[ctx + c.name])) return false;
+    if (gridState.filter === "long" && c.words <= 260) return false;
+    if (q && (c.name + " " + c.scene).toLowerCase().indexOf(q) === -1) return false;
+    return true;
+  });
+  grid.innerHTML = shown.length ? shown.map(function (c, i) {
+    var wh = aspectWH(c), vw = wh[0] * 100, vh = wh[1] * 100;
+    var pv = previews[ctx + c.name];
+    var status = c.has_image ? '<span class="chip done">Made</span>' : pv ? '<span class="chip claude">Preview</span>' : '<span class="chip you">Missing</span>';
+    var box = pv ? '<img alt="" src="' + pv + '">' :
+      '<svg viewBox="0 0 ' + vw + ' ' + vh + '" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><rect x="1" y="1" width="' + (vw - 2) + '" height="' + (vh - 2) + '" rx="' + Math.round(Math.min(vw, vh) * 0.04) + '" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/></svg>' +
+      '<span class="ar">' + esc(c.aspect || "") + '</span>';
+    return '<button class="fcard" data-card="' + esc(c.name) + '"><div class="thumbbox">' + box + '</div>' +
+      '<div class="nm" title="' + esc(c.name) + '">' + esc(c.name) + '</div>' +
+      '<div class="sub">' + status + '<span class="chip' + (c.words > 260 ? " danger" : "") + '">' + c.words + ' words</span>' +
+      (c.attach.length ? '<span class="chip">' + c.attach.length + ' attach</span>' : "") + '</div></button>';
+  }).join("") : '<p class="muted small">No cards match.</p>';
+}
+
+function pageSheets(s) {
+  var h = '<div class="crumbs"><a href="#/">Stories</a><span>/</span><a href="#/s/' + s.slug + '">' + esc(s.title_ko) + '</a><span>/</span><span>Reference sheets</span></div>';
+  h += '<div class="section-head" style="margin-top:0"><div><h1>Reference sheets</h1><p class="muted small" style="margin:4px 0 0">' + esc(s.title_ko) + ' · make these in card order; later cards attach earlier ones.</p></div>' +
+    '<a class="btn" href="' + FLOW_URL + '" target="_blank" rel="noopener">' + ICON.ext + ' Open Flow</a></div>';
+  h += '<div class="metrics" style="margin-bottom:20px">' + metric("Sheets", s.sheets.length) + metric("Made", s.story_files.sheet_images + ' <small>/ ' + s.sheets.length + '</small>') +
+    metric("Checked", s.story_files.sheets_checked ? "Yes" : "Not yet") + '</div>';
+  h += flowSection(s.sheets, s.slug + ":sheets:");
+  return h;
+}
+
+function pageEpisode(s, e) {
+  var st = epStages(e), n = nextAction(s);
+  var h = '<div class="crumbs"><a href="#/">Stories</a><span>/</span><a href="#/s/' + s.slug + '">' + esc(s.title_ko) + '</a><span>/</span><span>EP' + e.ep + '</span></div>';
+  h += '<div class="section-head" style="margin-top:0"><div><div class="small muted">EP' + e.ep + ' · ' + esc(s.title_ko) + '</div><h1>「' + esc(e.ko) + '」</h1>' +
+    (e.km ? '<div class="km muted">' + esc(e.km) + '</div>' : "") + '</div>' +
+    '<div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="' + FLOW_URL + '" target="_blank" rel="noopener">' + ICON.ext + ' Open Flow</a>' +
+    '<button class="btn primary" data-ready="' + e.ep + '">Images are ready</button></div></div>';
+  h += '<div class="logline" style="margin-top:0"><b style="color:var(--text);font-weight:500">This episode\'s twist</b><br>' + esc(e.twist) + '</div>';
+
+  var blocked = !sheetsDone(s);
+  var epNext = st.filter(function (x) { return x.state === "current"; })[0];
+  if (epNext) {
+    var title = epNext.st.n === 11 ? (blocked ? "First make the story's reference sheets, then these " + e.panels + " panels" : "Make the " + (e.panels - e.images) + " panels in Flow") : epNext.st.label;
+    var detail = epNext.st.n === 11 ? "Copy each card's prompt into Flow, attach the listed images, then drop the result on its card." : epNext.st.info;
+    h += '<div class="section">' + nextCard({who: epNext.st.who, title: title, detail: detail},
+      (blocked ? '<a class="btn primary" href="#/s/' + s.slug + '/sheets">Open sheets (' + s.story_files.sheet_images + '/' + s.sheets.length + ')</a>' : "") +
+      (e.cards[0] ? '<button class="btn" data-card="' + esc(e.cards[0].name) + '">' + ICON.copy + ' First card</button>' : "")) + '</div>';
+  }
+
+  h += '<div class="section"><div class="steps">' + st.map(function (x) { return stepCard(x, {a: e, href: ""}); }).join("") + '</div></div>';
+
+  h += '<div class="section"><div class="metrics">' +
+    metric("Panels", e.panels) + metric("Khmer bubbles", e.bubbles) +
+    metric("Khmer check", e.km_check.ok ? '<span style="color:var(--done)">Pass</span>' : '<span style="color:var(--danger)">Fail</span>') +
+    metric("Prompt length", e.words_avg + ' <small>avg · ' + e.words_max + ' max</small>') +
+    metric("Images made", e.images + ' <small>/ ' + e.panels + '</small>') + '</div>' +
+    '<p class="tiny muted" style="margin:8px 0 0">' + esc(e.km_check.summary) + '</p></div>';
+
+  if (e.flow.notes.length) {
+    h += '<div class="section"><div class="section-head"><h2>Notes for this round</h2><span class="chip">' + esc(e.flow.state || "No status") + ' · round ' + e.flow.round + '</span></div>' +
+      '<div class="card pad"><ul class="notes">' + e.flow.notes.map(function (t) { return '<li>' + md(t) + '</li>'; }).join("") + '</ul></div></div>';
+  }
+  h += '<div class="section"><div class="section-head"><h2>Flow cards</h2><span class="small muted">Click a card to copy its prompt or add the image</span></div>' + flowSection(e.cards, s.slug + ":" + e.ep + ":") + '</div>';
+  return h;
+}
+function md(t) { return esc(t).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>"); }
+
+/* ------------------------------------------------------------ card detail */
+var overlay = document.getElementById("overlay"), modal = document.getElementById("modal"), lastFocus = null;
+function openModal(html) {
+  lastFocus = document.activeElement;
+  modal.innerHTML = html;
+  overlay.hidden = false;
+  document.body.style.overflow = "hidden";
+  var f = modal.querySelector("[autofocus]") || modal.querySelector("input, button");
+  if (f) f.focus();
+}
+function closeModal() {
+  overlay.hidden = true;
+  document.body.style.overflow = "";
+  if (lastFocus) lastFocus.focus();
+}
+function openCard(c, ctx) {
+  var pv = previews[ctx + c.name];
+  openModal('<div class="modal-head"><div><div class="small muted">' + (c.kind === "ref" ? "Reference sheet" : "Panel") + (c.scene ? " · " + esc(c.scene) : "") + '</div>' +
+    '<h2 id="modal-title" class="mono" style="background:none;padding:0;font-size:17px">' + esc(c.name) + '</h2></div>' +
+    '<button class="icon-btn" data-close aria-label="Close">' + ICON.x + '</button></div>' +
+    '<div class="modal-body"><div>' +
+    '<label class="drop" data-drop tabindex="0">' + (pv || c.has_image ? (pv ? '<img alt="Preview of ' + esc(c.name) + '" src="' + pv + '">' : "Image saved") :
+      '<span>' + ICON.upload.replace("<svg", '<svg width="22" height="22"') + '<br>Drop the Flow image here<br><span class="tiny">or click to choose</span></span>') +
+    '<input type="file" accept="image/*" hidden data-file></label>' +
+    '<dl class="meta" style="grid-template-columns:1fr;margin-top:14px">' + dl("Aspect ratio", c.aspect || "From the style bible") + dl("Prompt length", c.words + " words" + (c.words > 260 ? " (long: Flow may ignore the end)" : "")) +
+    dl("Attach in Flow", c.attach.length ? c.attach.map(function (a) { return '<span class="mono" style="display:inline-block;margin:2px 0">' + esc(a.replace(/^refs\//, "")) + '</span>'; }).join(" ") : "Nothing", true) + '</dl></div>' +
+    '<div><div class="section-head" style="margin-bottom:8px"><h3>Prompt</h3><div style="display:flex;gap:8px"><button class="btn sm primary" data-copy autofocus>' + ICON.copy + ' Copy prompt</button>' +
+    '<a class="btn sm" href="' + FLOW_URL + '" target="_blank" rel="noopener">' + ICON.ext + ' Flow</a></div></div>' +
+    '<div class="prompt">' + esc(c.prompt) + '</div>' +
+    (c.redraw ? '<p class="small" style="color:var(--you)"><b>Redraw reason:</b> ' + esc(c.redraw) + '</p>' : "") +
+    '<p class="tiny muted">Images must contain no text: the Khmer bubbles are drawn later by the viewer.</p></div></div>');
+  modal.querySelector("[data-copy]").onclick = function () { copy(c.prompt); };
+  var drop = modal.querySelector("[data-drop]"), input = modal.querySelector("[data-file]");
+  function take(file) {
+    if (!file || !/^image\//.test(file.type)) { toast("Choose an image file (PNG, JPG or WebP)."); return; }
+    previews[ctx + c.name] = URL.createObjectURL(file);
+    toast("Preview only. The real Studio saves it as " + c.name + ".png.");
+    openCard(c, ctx);
+    route();
+  }
+  input.onchange = function () { take(input.files[0]); };
+  drop.addEventListener("keydown", function (ev) { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); input.click(); } });
+  drop.addEventListener("dragover", function (ev) { ev.preventDefault(); drop.classList.add("over"); });
+  drop.addEventListener("dragleave", function () { drop.classList.remove("over"); });
+  drop.addEventListener("drop", function (ev) { ev.preventDefault(); drop.classList.remove("over"); take(ev.dataTransfer.files[0]); });
+}
+function copy(text) {
+  function fallback() {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    toast(ok ? "Prompt copied" : "Couldn't copy. Select the text and copy it.");
+  }
+  if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { toast("Prompt copied"); }, fallback);
+  else fallback();
+}
+
+/* ------------------------------------------------------------ new story form */
+function openNewStory() {
+  openModal('<div class="modal-head"><div><div class="small muted">Stage 1 of the process</div><h2 id="modal-title">New story</h2></div>' +
+    '<button class="icon-btn" data-close aria-label="Close">' + ICON.x + '</button></div>' +
+    '<form class="pad" id="ns-form" novalidate>' +
+    '<div class="form-grid">' +
+    field("ns-title", "Working title (optional)", '<input id="ns-title" placeholder="처마 밑 반반">') +
+    field("ns-genre", "Genre and tone", '<input id="ns-genre" placeholder="Slow-burn romantic comedy, warm and playful" required>', true) +
+    field("ns-rating", "Rating", '<select id="ns-rating"><option>12+</option><option selected>15+</option><option>18+</option></select>') +
+    field("ns-season", "Episodes in season 1", '<input id="ns-season" type="number" min="1" max="100" step="1" value="12">') +
+    '</div>' +
+    field("ns-ep1", "What episode 1 must do", '<textarea id="ns-ep1" placeholder="Open with a memorable first meeting. Give each lead a goal that clashes. End on a hook, no confession yet."></textarea>') +
+    field("ns-km", "Khmer dialogue notes", '<textarea id="ns-km" placeholder="Short, natural lines that fit the bubbles. Leads speak differently."></textarea>') +
+    '<div class="banner" style="margin-bottom:14px">Fixed for every story: readers see only Khmer, images have no text, images are made by hand in Flow, 50+ panels per episode.</div>' +
+    '<div style="display:flex;gap:8px;justify-content:flex-end"><button type="button" class="btn" data-close>Cancel</button><button class="btn primary" type="submit">Create story and run research</button></div>' +
+    '</form>');
+  var form = document.getElementById("ns-form"), genre = document.getElementById("ns-genre");
+  genre.addEventListener("input", function () { setErr("ns-genre", ""); });
+  form.onsubmit = function (ev) {
+    ev.preventDefault();
+    if (!genre.value.trim()) { setErr("ns-genre", "Enter a genre and tone first."); genre.focus(); return; }
+    closeModal();
+    toast("Static preview: the real Studio would create the branch and folder, write the brief, and start research.");
+  };
+}
+function field(id, label, control, req) {
+  return '<div class="field"><label for="' + id + '">' + label + (req ? ' <span style="color:var(--danger)">*</span>' : "") + '</label>' + control + '<span class="err" id="' + id + '-err"></span></div>';
+}
+function setErr(id, msg) { var el = document.getElementById(id + "-err"); if (el) el.textContent = msg; }
+
+/* ------------------------------------------------------------ router */
+var toastTimer;
+function toast(msg) {
+  var t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.classList.remove("show"); }, 3200);
+}
+var currentCards = null, currentCtx = "";
+function route() {
+  var parts = (location.hash.replace(/^#\/?/, "") || "").split("/").filter(Boolean);
+  var html, title = "Story Studio", nav = "home";
+  currentCards = null;
+  if (parts[0] === "inbox") { html = pageInbox(); nav = "inbox"; title = "Waiting for you · Story Studio"; }
+  else if (parts[0] === "s" && find(parts[1])) {
+    var s = find(parts[1]);
+    if (parts[2] === "sheets") { html = pageSheets(s); currentCards = s.sheets; currentCtx = s.slug + ":sheets:"; title = "Sheets · " + s.title_ko; }
+    else if (parts[2] === "ep" && findEp(s, parts[3])) {
+      var e = findEp(s, parts[3]);
+      html = pageEpisode(s, e); currentCards = e.cards; currentCtx = s.slug + ":" + e.ep + ":"; title = "EP" + e.ep + " · " + s.title_ko;
+    } else { html = pageStory(s); title = s.title_ko + " · Story Studio"; }
+  } else html = pageHome();
+  app.innerHTML = html;
+  document.title = title;
+  document.querySelectorAll("[data-nav]").forEach(function (a) { a.classList.toggle("on", a.getAttribute("data-nav") === nav); });
+  var grid = app.querySelector("[data-grid]");
+  if (grid && currentCards) fillGrid(grid, currentCards, currentCtx);
+}
+var lastHash = location.hash;
+window.addEventListener("hashchange", function () {
+  if (location.hash.split("/").slice(0, 4).join("/") !== lastHash.split("/").slice(0, 4).join("/")) gridState = {filter: "all", q: ""};
+  lastHash = location.hash;
+  route(); window.scrollTo(0, 0);
+});
+
+document.addEventListener("click", function (ev) {
+  var t = ev.target.closest("[data-close],[data-card],[data-filter],[data-run],[data-ready],[data-new-story]");
+  if (!t) { if (ev.target === overlay) closeModal(); return; }
+  if (t.hasAttribute("data-close")) return closeModal();
+  if (t.hasAttribute("data-new-story")) return openNewStory();
+  if (t.hasAttribute("data-run")) return toast("Static preview: in the real Studio, \"" + t.getAttribute("data-run") + "\" starts a Claude run for this story.");
+  if (t.hasAttribute("data-ready")) return toast("Static preview: this unlocks once every card has an image, then starts validation.");
+  if (t.hasAttribute("data-filter")) {
+    gridState.filter = t.getAttribute("data-filter");
+    t.parentNode.querySelectorAll("button").forEach(function (b) { b.classList.toggle("on", b === t); });
+    var g = app.querySelector("[data-grid]"); if (g && currentCards) fillGrid(g, currentCards, currentCtx);
+    return;
+  }
+  if (t.hasAttribute("data-card") && currentCards) {
+    var c = currentCards.filter(function (x) { return x.name === t.getAttribute("data-card"); })[0];
+    if (c) openCard(c, currentCtx);
+  }
+});
+document.addEventListener("input", function (ev) {
+  if (!ev.target.hasAttribute("data-search")) return;
+  gridState.q = ev.target.value;
+  var g = app.querySelector("[data-grid]"); if (g && currentCards) fillGrid(g, currentCards, currentCtx);
+});
+document.addEventListener("keydown", function (ev) { if (ev.key === "Escape" && !overlay.hidden) closeModal(); });
+
+/* theme: remembered per browser when storage is available */
+var root = document.documentElement;
+try { var saved = localStorage.getItem("studio-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+document.getElementById("theme-btn").onclick = function () {
+  var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  var next = dark ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  try { localStorage.setItem("studio-theme", next); } catch (e) {}
+};
+
+var ic = inboxItems().length;
+document.getElementById("inbox-count").textContent = ic ? ic : "";
+route();
+})();
+</script>
+</body>
+</html>
