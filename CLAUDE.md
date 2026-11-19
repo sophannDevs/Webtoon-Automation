@@ -1,5 +1,16 @@
 # Project notes: webtoon harness, Khmer edition, Flow-by-hand mode
 
+## Where things live
+
+- `stories/<slug>/` holds every story (`rule4`, `poison`, `umbrella`), each with its own
+  `00_input` … `06_assembly`. Never work in these folders directly.
+- `_workspace` is a link (not in git) to the story you are working on. The agents, `km_tool.py` and
+  `flow_tool.py` only read `_workspace/`. Point it at a story with `./switch_story.sh <slug>`;
+  run it with no argument to list stories and see which one is active.
+- `studio/` is Story Studio (`python -I studio/export_data.py` refreshes `studio/data.js`).
+  `flow-extension/` is the Chrome extension. `.claude/` holds the shared agents and skills.
+- A new story goes in `stories/<slug>/`; then switch to it.
+
 ## Khmer edition (readers are Cambodian)
 
 - **Scope: exactly two changes.** (1) Speech bubbles display Khmer text. (2) The script adds Khmer text.

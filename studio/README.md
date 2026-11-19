@@ -15,7 +15,7 @@ but its buttons don't run anything yet.
 
 ## Refresh the data
 
-`data.js` is generated. Each story lives in its own workspace folder on `main`; the export copies each folder
+`data.js` is generated. Each story lives in its own folder under `stories/` on `main`; the export copies each folder
 into a temporary `_workspace/`, runs `km_tool.py check` and the Flow prompt parser, and
 writes the result. Nothing in the repo changes except `studio/data.js`.
 
@@ -28,9 +28,9 @@ written there; panel counts, Khmer checks, Flow cards and step states are read f
 
 | Story | Branch |
 |---|---|
-| 「수칙 4번은 거짓말입니다」 | `_workspace_rule4/` |
-| 「독은 제가 먼저 먹겠습니다」 | `_workspace_poison/` |
-| 「맑은 날의 우산」 | `_workspace/` (active) |
+| 「수칙 4번은 거짓말입니다」 | `stories/rule4/` |
+| 「독은 제가 먼저 먹겠습니다」 | `stories/poison/` |
+| 「맑은 날의 우산」 | `stories/umbrella/` |
 
 ## What the preview shows
 
