@@ -31,9 +31,9 @@ STORIES = [
     {
         "slug": "rule4",
         "refs": ["HEAD"],
-        "folder": "_workspace_rule4",
+        "folder": "stories/rule4",
         "branch": "main",
-        "also": "Folder _workspace_rule4/",
+        "also": "Folder stories/rule4/",
         "title_ko": "수칙 4번은 거짓말입니다",
         "title_km": "ច្បាប់ទី៤ ជាការកុហក",
         "tagline": "괴이 민원은 22시에 접수합니다",
@@ -60,9 +60,9 @@ STORIES = [
     {
         "slug": "poison",
         "refs": ["HEAD"],
-        "folder": "_workspace_poison",
+        "folder": "stories/poison",
         "branch": "main",
-        "also": "Folder _workspace_poison/",
+        "also": "Folder stories/poison/",
         "title_ko": "독은 제가 먼저 먹겠습니다",
         "title_km": "ថ្នាំពុល ខ្ញុំសូមភ្លក់មុន",
         "tagline": "은침은 속여도, 제 혀는 못 속입니다.",
@@ -89,9 +89,9 @@ STORIES = [
     {
         "slug": "umbrella",
         "refs": ["HEAD"],
-        "folder": "_workspace",
+        "folder": "stories/umbrella",
         "branch": "main",
-        "also": "Folder _workspace/ (active). Working title 「처마 밑 반반」",
+        "also": "Folder stories/umbrella/. Working title 「처마 밑 반반」",
         "title_ko": "맑은 날의 우산",
         "title_km": "ឆ័ត្រនៅថ្ងៃមេឃស្រឡះ",
         "tagline": "맑은 날, 그녀 머리 위에만 비가 내린다.",
@@ -135,6 +135,10 @@ def extract(ref, dest, folder="_workspace"):
         tar.extractall(dest, filter="data")
     if folder != "_workspace":
         (Path(dest) / folder).rename(Path(dest) / "_workspace")
+        # drop the now-empty parent (e.g. stories/)
+        parent = Path(dest) / Path(folder).parent
+        if parent != Path(dest) and not any(parent.iterdir()):
+            parent.rmdir()
 
 
 def load_flow_tool():

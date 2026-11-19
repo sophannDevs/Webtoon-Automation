@@ -3,3 +3,8 @@ __pycache__/
 .claude/settings.local.json
 .DS_Store
 Thumbs.db
+
+# Story link (local choice) and extension build output
+/_workspace
+node_modules/
+test-results/
