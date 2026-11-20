@@ -252,3 +252,89 @@ Rows below are new for EP02 「Full」 / «ពេញ». Nothing above was change
 | "I'll find out." | EP02 P53; EP04 | ខ្ញុំនឹងដឹង។ |
 | "I saw your thumb. / On the Brick." | EP02 P60; EP04 | ខ្ញុំឃើញមេដៃអ្នក។ / លើដុំឥដ្ឋ។ |
 | "It's Pa's." | EP02 P4 | របស់ប៉ា។ |
+
+---
+
+## EP03 additions (dialogue-writer, 2026-11-20)
+
+Rows below are new for EP03 「Two Minutes」 / «ពីរនាទី». Nothing above was changed. Spellings marked **(check)** need a native speaker.
+
+### EP03-1. Episode
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| EP03 title "Two Minutes" | ពីរនាទី | Visal's ask at P41 ("Coach. Two minutes."). |
+| Episode label | ភាគទី ៣ | Ending caption of EP03: — នៅមានតក្នុងភាគទី ៤ — |
+
+### EP03-2. Characters and address
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| Heng Pich (Grade 10 teammate, new) | ហេង ពេជ្រ | Speaker label ពេជ្រ. **(check)** non-famous. |
+| Dara → Pich | អាពេជ្រ / ឆ្កួតអើយ | Rough-fond: "អាឆ្កួតអើយ។" (P10). |
+| Pich → Dara | បង / បងដារា | Younger teammate to older: បងដារា (full), បង (short). Never ឯង. |
+| Dara → Pich (affection, rough) | អាឆ្កួតអើយ | Used once, EP03 P10. |
+| Kolab | (no line in EP03) | Silence is the beat; her next line is EP04 "It's dead, Na." |
+| Playback speaker label | (ចាក់ពីទូរស័ព្ទ) | After the name, before ៖. Same label for earbud and device playback: ដារា (ចាក់ពីទូរស័ព្ទ)៖. |
+| Visal → Coach | លោកគ្រូ | "លោកគ្រូ។ ពីរនាទី។" (P41); one calm word, no បាទ when asking. |
+
+### EP03-3. Places, props, terms
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| equipment room (LOC_EQUIPMENT_ROOM) | បន្ទប់ឧបករណ៍កីឡា | A latch, no key, no clink. Spoken by the Coach (P22, P43, P45). |
+| Coach's office | ការិយាល័យ | "ចូលការិយាល័យខ្ញុំ។" (P62). Not បន្ទប់នាយករង. |
+| the last match | ប្រកួតចុងក្រោយ | P18, P43. |
+| the captain's list | បញ្ជី | "ឈ្មោះប្រធានក្រុម ចុះក្នុងបញ្ជី" (P18); same list as EP02 បញ្ជីទៅខេត្ត. |
+| "Don't give me a reason." | កុំឲ្យខ្ញុំមានមូលហេតុ។ | P21. **(check)** |
+| "Here. Where I stand." | នៅទីនេះ។ កន្លែងខ្ញុំឈរ។ | P22. |
+| "every time" | រាល់ដង | P22. |
+| "Listen." (Visal) | ស្តាប់។ | P48. One word. |
+| "Playing costs nothing." | ការចាក់ មិនចំណាយអ្វីទេ។ | P31. Playback ≠ recording. **(check)** ចំណាយ is "spend". |
+| "Not the crowd. One." | មិនមែនហ្វូងមនុស្សទេ។ មួយនាក់។ | P32. |
+| clip twenty-three | ឃ្លីបទីម្ភៃបី។ | P30. ទី = ordinal so it is not "23 clips". **(check)** |
+| "Relax. Even upstairs just walks past." | ធូរចិត្តទៅ។ សូម្បីតែនៅជាន់លើ ក៏គេគ្រាន់តែដើរកាត់ដែរ។ | P52. Ungendered គេ; no បាទ/ចាស, no title. Pays EP12, EP16, EP19. **(check)** |
+| upstairs (floor above door level) | ជាន់លើ | NOT the Deputy's room (that is downstairs, បន្ទប់នាយករង). |
+| "Who is upstairs?" | អ្នកណានៅជាន់លើ? | P55. **(check)** |
+| "And you held the camera." | ហើយឯងជាអ្នកថត។ | P57. Echoes the nickname អ្នកថត: from insult to accountability. Visal: បាទ។ **(check)** |
+| "Who else has heard this?" | អ្នកណាទៀតបានស្តាប់? | P58. Visal: លោកគ្រូ។ ("You, Coach."). |
+| "Out." (Coach) | ចេញទៅ។ | P58. |
+| "Sum Dara. My office." | ស៊ុម ដារា។ ចូលការិយាល័យខ្ញុំ។ | P62. Full name, no title, no volume. |
+| "Brother Dara! Same tape as yours!" | បងដារា! ខ្ញុំបិទកាសែតដូចបងដែរ! | Pich P9. កាសែត = sports tape. |
+| "Idiot. Go. Practice at three." | អាឆ្កួតអើយ។ ទៅ។ ហាត់ម៉ោងបី។ | Dara P10. |
+| "Noon." (loose spoken time) | ពេលថ្ងៃត្រង់ | Rachana P5. |
+| "Make Dara look good, Cameraman." | ធ្វើឲ្យដារាមើលទៅល្អ អ្នកថត។ | Rachana P37. |
+| "Get my good side!" | ថតមុខខាងល្អរបស់ខ្ញុំផង! | Theara P36. |
+| "Trials. Start." | ជ្រើសរើសក្រុម។ ចាប់ផ្ដើម។ | Coach P34. |
+
+### EP03-4. Counts and spoken numbers
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| "Thirty-six days." | សាមសិបប្រាំមួយថ្ងៃ។ | P1. Pattern: Day 5 = 41 minus 5. Later: សាមសិប + number, then (EP05 on) ប្រាំពីរ etc. as the count falls. |
+| "Trials. Two days." | ជ្រើសរើសក្រុម។ ពីរថ្ងៃទៀត។ | P17. Same pattern as EP02 ប្រាំថ្ងៃទៀត. |
+| "Two minutes." | ពីរនាទី។ | P41, P43, P47 ("ពីរនាទីរបស់ឯង។"). |
+| "Forty." (count after the clip is spent) | សែសិប។ | P63. 41 → 40. EP04 says សែសិប។, EP05 សាមសិបប្រាំបួន។ |
+| "Twenty-three" (clip number) | ម្ភៃបី | Only inside ឃ្លីបទីម្ភៃបី។. |
+| "Three" (o'clock) | ម៉ោងបី | Dara P10, practice time. |
+
+### EP03-5. Sound words
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| the Brick's refusal tone | ប៊ីប ប៊ីប | EP03 P13 only. Same glyph and tiny size as EP02. Not in the night or the equipment room (he plays, he does not record). |
+| group laughter | ហាហាហា! | P13 (loud, off-panel) and P51 (tiny, inside the recording). |
+| crowd roar / cheering | ហ៊ោ! / ហ៊ោហ៊ា! | P35 and P44. The letterer's own word; never ហាហាហា!, which is mocking laughter. |
+| whistle (P16, P34) | (unlettered) | Left out so it cannot look like ប៊ីប. |
+
+### EP03-6. Lines that must stay letter-identical (FP5), new in EP03
+
+| Line (EN) | 패널 | 크메르어 (exact) |
+|---|---|---|
+| "Trials. N days." pattern | EP02 P32; EP03 P17 | ជ្រើសរើសក្រុម។ …ថ្ងៃទៀត។ |
+| "Yes, Coach." (Visal, calm) | EP02 P42; EP03 P23 | បាទ លោកគ្រូ។ |
+| "Forty-one. Not one." | EP02 P30; EP03 P33 | សែសិបមួយ។ មិនលុបសូម្បីតែមួយទេ។ |
+| "Sum Dara. My office." | EP03 P62; EP04 | ស៊ុម ដារា។ ចូលការិយាល័យខ្ញុំ។ |
+| "Relax. Even upstairs just walks past." | EP03 P52; EP12, EP16, EP19 | ធូរចិត្តទៅ។ សូម្បីតែនៅជាន់លើ ក៏គេគ្រាន់តែដើរកាត់ដែរ។ |
+| "And you held the camera." | EP03 P57; later callback | ហើយឯងជាអ្នកថត។ |
+| "Playing costs nothing." | EP03 P31 | ការចាក់ មិនចំណាយអ្វីទេ។ |

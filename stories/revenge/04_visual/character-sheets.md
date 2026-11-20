@@ -427,3 +427,12 @@ In every prompt that attaches a sheet, write "matching the attached reference im
 - A new character gets a token block and a sheet spec here; the global rules stay.
 - The identifying mark and its **side** are the first thing the validator checks on a REGEN.
 - Change log: v1 (2026-11-20) first version.
+
+## EP03 additions (Heng Pich)
+
+### Heng Pich (PICH), Grade 10 teammate who idolises Dara · priority 22 (turnaround only)
+- **identity_tag:** PICH · accent: **messy white athletic tape on index, middle and ring fingers of the LEFT hand (the viewer's right when facing us)**, a copy of Dara's (Dara: right index+middle, neat) · palette: white #F2F0EA, charcoal grey #3D4148, sky-blue towel #8FB4D9.
+- **Paste block:** `Pich, a 15-year-old Cambodian high-school boy, clearly younger and smaller than the older boys, short and slight at 160 cm with narrow shoulders, light tan brown skin, short black hair with a long fringe falling over the forehead, a round face with bright wide dark brown eyes and thin eyebrows, an oversized plain white PE T-shirt a size too big, charcoal-grey sports shorts, white sneakers, a pale sky-blue cotton towel over his right shoulder (the viewer's left when facing us), messy uneven white athletic tape on the index, middle and ring fingers of his LEFT hand (the viewer's right when facing us), no tape on the right hand`
+- **Expression default:** proud eager grin (gap-toothed in action panels); falls into confusion at EP03 P64.
+- **Separation:** shortest and slightest of the squad; white-and-grey kit with a sky-blue towel so he is never read as teal squad or navy Coach. Tape is left hand, three fingers, uneven, so it reads as imitation of Dara, not a shared accent. No olive, no pearl-pink.
+- **Note:** the beatsheet's teal PE tee and navy shorts are replaced here by white tee and charcoal shorts to avoid teal+navy confusion; art-director to confirm.
