@@ -72,3 +72,7 @@ Resolving the flags in `02_story/twist-plan.md` (twist-master). Every later agen
 4. Rany (P5): Visal answers "Yes, Mae." Her "Don't make trouble with rich people" waits for EP09.
 5. Coach scene: squad briefing at the court, Day 3, 10:20; no younger teammate (EP03).
 6. New locations/props: LOC_MOTO_TAXI_STAND (ចំណតម៉ូតូឌុប), PROP_SCHOOL_CAMERA (charcoal, blank body, no logo), PROP_RICE_COOKER. Coach Tola needs a reference sheet now; Rany gets a sheet decision from art-director.
+
+## EP02 shotlist decisions (2026-11-20, leader; accepted as proposed in ep02_shotlist.md)
+- Brick orientation: face-up P19-P23, back-up (olive) from P24, P30 = his hand presses it level. P01 charging with the cooker also plugged in (two outlets); P02 Rany pulls the cooker plug. P11 phone drawn edge-on (rule 1).
+- Dusk P44-P45 light code: "L6b" = L6 amber fading to blue. Tola vs squad teal: repeat the separation (long navy pants, red lanyard, crew cut). LOC_STAIR is not used in EP02. Rany's sheet (RANY_turnaround) must exist before panels with her face (P03 etc.) attach it.
