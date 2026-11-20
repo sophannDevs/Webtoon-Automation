@@ -166,3 +166,89 @@ Column 3 holds the Khmer so the viewer can still wrap these lines.
 | P9 "the last one" | twist-plan §3-5 | អាមុន → ម្នាក់មុន (full line: យ៉ាងហោចណាស់ អាមួយនេះមិនយំដូចម្នាក់មុនទេ។) | អា marks a male/contemptuous referent; ម្នាក់មុន keeps "the last one" ungendered so Sophy is not given away (EP06, EP24). |
 | P17 "it's finished" | beatsheet P17 | ចប់ហើយ kept, inside ចុះហត្ថលេខាទៅ ក្មួយ។ អ៊ីចឹងចប់ហើយ។ | Root ចប់ shared with clip 9's ធ្វើឲ្យចប់. |
 | calm-water proverb | characters §8-7 | ទឹកស្ងប់ ត្រីកុះករ → not used | Could not confirm it is a real Khmer proverb; replaced by his ចប់ហើយ signature. (check) before any later use. |
+
+---
+
+## EP02 additions (dialogue-writer, 2026-11-20)
+
+Rows below are new for EP02 「Full」 / «ពេញ». Nothing above was changed. Spellings marked **(check)** need a native speaker.
+
+### EP02-1. Episode
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| EP02 title "Full" | ពេញ | Also Visal's one-word line at P27. |
+| Episode label | ភាគទី ២ | Ending caption of EP02: — នៅមានតក្នុងភាគទី ៣ — |
+
+### EP02-2. Places, props, terms
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| moto-taxi stand (LOC_MOTO_TAXI_STAND) | ចំណតម៉ូតូឌុប | Pa drove a moto-taxi. Image-only in EP02 (no line names it). |
+| volleyball court | ទីលានបាល់ទះ | LOC_COURT; spoken rarely. |
+| camera (the school camera) | កាមេរ៉ា | PROP_SCHOOL_CAMERA; Coach: "កាន់កាមេរ៉ាបាននឹង?". Not ដុំឥដ្ឋ and not ទូរស័ព្ទ. |
+| film / shoot (verb) | ថត | Same verb as the nickname អ្នកថត and "Rolling." ថត។ (deliberate echo). |
+| video | វីដេអូ | Coach P36. |
+| rice cooker (PROP_RICE_COOKER) | ឆ្នាំងបាយអគ្គិសនី | Not spoken in EP02: Rany says ដាំបាយ ("cook the rice"). Use this form if a later line names it. **(check)** |
+| charge (a phone) | សាកថ្ម | Theara P7/P25; Visal P26 "សាកពេញហើយ។" |
+| dead phone (Rany) | ទូរស័ព្ទងាប់ | Rany P3. Kolab's EP04 cover "It's dead, Na." should use ងាប់. **(check)** |
+| "Full." (storage full) | ពេញ | One word, whisper. Season term (EP06, EP10, EP14, EP20-21). **(check)** |
+| "Charged." | សាកពេញហើយ។ | P26. |
+| "One in. One out." (storage rule D10) | ចូលមួយ។ ចេញមួយ។ | P29; pays EP10, EP20. |
+| trials (squad selection) | ជ្រើសរើសក្រុម | Coach P32. |
+| provincial list | បញ្ជីទៅខេត្ត | Coach P32. |
+| captain | ប្រធានក្រុម | Coach's rule. |
+| "I count." | ខ្ញុំរាប់។ | P52. Double meaning: count numbers / I matter. |
+| "Thirty-nine days." | សាមសិបប្រាំបួនថ្ងៃ។ | P1. Later counts: សាមសិប… + number. |
+| "five days" | ប្រាំថ្ងៃទៀត | "five more days"; pattern for any countdown. |
+
+### EP02-3. Spoken times
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| 11:09 | ម៉ោងដប់មួយ ប្រាំបួននាទី | Minutes under ten take នាទី so that "ដប់មួយប្រាំបួន" is not read as one number. **(check)** |
+| 13:55 | ម៉ោងមួយ ហាសិបប្រាំ | Unchanged from §5; EP02 P18 adds a second sentence ឯងកុំមកយឺត។. |
+| 10:52 | ម៉ោងដប់ ហាសិបពីរ | Unchanged from §5; Rachana says it at P50. |
+
+### EP02-4. Terms of address (EP02)
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| Visal / Dara / students → Coach Tola | លោកគ្រូ | Speaker label លោកគ្រូតុលា. |
+| Dara → Coach (stiff, swallowed) | បាទលោកគ្រូ! | No space, as §6. Visal says it in full register: បាទ លោកគ្រូ។ (with a space, a calm tone). |
+| Coach → one student | ឯង | "ឯង។ កាន់ឲ្យនឹង។" Barked, no name, no បាទ. |
+| Coach → the squad | (no pronoun) | Commands and numbers only. |
+| Rany → Visal | កូន | Rany calls herself ម៉ែ. Speaker label ម៉ែ. |
+| Visal → Rany | ម៉ែ | "…បាទ ម៉ែ។" polite yes, plain register. |
+| Pa → Visal | កូន | Pa calls himself ប៉ា. Speaker label ប៉ា (voice memo only). |
+| Rachana → Kolab | កុលាប | By name, an order: "កុលាប! តោះ!" (not ណា). |
+| Kolab → Visal | វិសាល / អ្នក | First time anyone in the circle uses his name (P56); "ខ្ញុំឃើញមេដៃអ្នក។". |
+| Kolab → Rachana | ណា… | Opens every Kolab line to Rachana (P59 "ណា… ចាំមួយនាទី។"). |
+| Theara → the stands | បងប្អូនអើយ | Commentator voice, "folks!". |
+
+### EP02-5. Sound words
+
+| 한국어 / English | 크메르어 | 메모 |
+|---|---|---|
+| the Brick's refusal tone (flat double tone) | ប៊ីប ប៊ីប | **New season word.** Tiny, flat, identical glyph and size everywhere: P11, P21, P23, P43 (EP02), EP10, EP14, EP20. Never គ្រីង or ក្រិក. |
+| moto engine idling | ដឺរ ដឺរ | **New season word.** Small, soft, same glyph and size at P45 and P48; under Pa's voice memo later (EP20, EP21, EP24). |
+| chair scrape (inside a recording) | ក្រេស! | EP02 P46 only. Tiny, from the recording. **(check)** Must not look like ក្រិក (beads). |
+| group laughter | ហាហាហា! | Reuse of §7 (EP02 P7, P11, P39). |
+
+### EP02-6. Lines that must stay letter-identical (FP5), new in EP02
+
+| Line (EN) | 패널 | 크메르어 (exact) |
+|---|---|---|
+| "Charge the Brick, Cameraman!" | EP02 P7, P25 (echo); EP10 | សាកថ្មដុំឥដ្ឋទៅ អ្នកថត! |
+| "Hurry up, Cameraman." | EP02 P10; EP03 clip 23 | លឿនឡើង អ្នកថត។ |
+| "Door's covered." (repeat) | EP01 P8; EP02 P9; EP03 clip 23 | ទ្វារ អញយាមហើយ។ |
+| "A captain is clean, or he is nothing." | EP02 P33; EP03 | ប្រធានក្រុមត្រូវស្អាតស្អំ។ បើមិនអ៊ីចឹង គឺគ្មានអ្វីទេ។ |
+| "Yes, Coach!" (Dara, stiff) | EP02 P34; EP03 | បាទលោកគ្រូ! |
+| "Page twelve. OK? OK." | EP02 P46; EP24 file B line 1 | ទំព័រដប់ពីរ។ អូខេ? អូខេ។ |
+| Pa's one line (two bubbles) | EP02 P48; EP20, EP21, EP24 | កូន ប្រាប់ម៉ែថា ប៉ាមកយឺត។ / …អត់ទេ។ ចាំប៉ាប្រាប់ម៉ែខ្លួនឯង។ |
+| "Mae. I'll tell you myself." (rhymes with Pa) | EP24 | ម៉ែ។ ខ្ញុំប្រាប់ម៉ែខ្លួនឯង។ (keep ប្រាប់ម៉ែខ្លួនឯង) |
+| "Ten fifty-two." | EP02 P50 (= EP01 P29 time) | ម៉ោងដប់ ហាសិបពីរ។ |
+| "Nobody remembers a minute." | EP02 P51 | គ្មានអ្នកណាចាំមួយនាទីទេ។ (keeps គ្មានអ្នកណា of EP01 P52) |
+| "I'll find out." | EP02 P53; EP04 | ខ្ញុំនឹងដឹង។ |
+| "I saw your thumb. / On the Brick." | EP02 P60; EP04 | ខ្ញុំឃើញមេដៃអ្នក។ / លើដុំឥដ្ឋ។ |
+| "It's Pa's." | EP02 P4 | របស់ប៉ា។ |
