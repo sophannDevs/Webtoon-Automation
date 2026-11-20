@@ -86,3 +86,10 @@ Resolving the flags in `02_story/twist-plan.md` (twist-master). Every later agen
 - Follow series-arc.md row EP03, twist-plan.md EP03, tension-curve.md EP03 row. 50+ panels (target ~60), one twist; EP02 ended on a threat, so EP03 ends on a WIN. EP03 = point of no return: Visal plays a clip to the Coach; Dara is punished across EP03-04.
 - Canon: EP01/EP02 final scripts and lettering; letter-identical lines stay as-is; new sound words ប៊ីប ប៊ីប and ដឺរ ដឺរ; 41 clips (card full in EP02: check how EP03 records clip 23 per series-arc without breaking the count rules).
 - Apply the same conventions as EP02 decisions (spoken times, text-free images, 15+, act never through the lens).
+
+## EP03 leader decisions (2026-11-20, from ep03_beatsheet.md flags; all accepted)
+1. Playback is not recording: card stays at 43 files, nothing recorded or deleted; "Playing costs nothing." / "Forty-one. Not one." Count 41->40 at P63 (when the Coach names Dara; the clip stays on the card). Tracker note for series-arc: a clip is spent when its target is named/hears it.
+2. New location LOC_EQUIPMENT_ROOM (បន្ទប់ឧបករណ៍កីឡា): latch, no key, no clink. Trials Day 8, 09:40; night charge shown Day 7.
+3. The Coach never mocks the Brick in EP03. "Who is upstairs?" gets Visal's silence, not a lie. Visal's "Forty." is whispered from the far edge; last panel is Dara's face.
+4. Clip 23 content/order as the beatsheet says; last line ungendered. No គ្រីង/ទុង!/ក្រិក/តុក តុក in EP03; ប៊ីប ប៊ីប only at P13.
+5. New character Heng Pich (ហេង ពេជ្រ), Grade 10, calls Dara បង; white tape on three fingers of the LEFT hand (Dara's is right index+middle). Needs a reference sheet card (art-director/ref-sheet-artist) before P9.
