@@ -64,3 +64,11 @@ Resolving the flags in `02_story/twist-plan.md` (twist-master). Every later agen
 - Reuse (read, do not redo): `02_story/*`, `04_visual/style-bible.md`, `character-sheets.md`, `refs/` (EP02 adds only what is new, e.g. Coach Mao Tola who first appears EP02-03).
 - Follow series-arc.md row EP02, twist-plan.md EP02, tension-curve.md EP02. 50+ panels (target ~60), one twist, strict win/threat ending alternation (EP01 ended on a win, so EP02 ends on a threat).
 - Continuity: EP01 final script/lettering are canon (clip 41 recorded, Mealea asks Visal to film the ceremony in forty days, the lines letter-identical in EP01 stay as-is).
+
+## EP02 leader decisions (2026-11-20, from ep02_beatsheet.md flags; all accepted)
+1. Day count: Visal says "Thirty-nine days." on Day 2.
+2. New season sound words: the Brick's refusal tone (ប៊ីប ប៊ីប, flat double tone, identical wherever repeated) and the moto engine idle (ដឺរ ដឺរ). Add to glossary_km.md.
+3. TP-A lesson recording P46-47: he plays the head of file B, "Page twelve. OK? OK." (letter-identical to the EP24 plan); card still holds 41 clips + Pa + file B.
+4. Rany (P5): Visal answers "Yes, Mae." Her "Don't make trouble with rich people" waits for EP09.
+5. Coach scene: squad briefing at the court, Day 3, 10:20; no younger teammate (EP03).
+6. New locations/props: LOC_MOTO_TAXI_STAND (ចំណតម៉ូតូឌុប), PROP_SCHOOL_CAMERA (charcoal, blank body, no logo), PROP_RICE_COOKER. Coach Tola needs a reference sheet now; Rany gets a sheet decision from art-director.
