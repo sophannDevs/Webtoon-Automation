@@ -93,3 +93,4 @@ Resolving the flags in `02_story/twist-plan.md` (twist-master). Every later agen
 3. The Coach never mocks the Brick in EP03. "Who is upstairs?" gets Visal's silence, not a lie. Visal's "Forty." is whispered from the far edge; last panel is Dara's face.
 4. Clip 23 content/order as the beatsheet says; last line ungendered. No គ្រីង/ទុង!/ក្រិក/តុក តុក in EP03; ប៊ីប ប៊ីប only at P13.
 5. New character Heng Pich (ហេង ពេជ្រ), Grade 10, calls Dara បង; white tape on three fingers of the LEFT hand (Dara's is right index+middle). Needs a reference sheet card (art-director/ref-sheet-artist) before P9.
+- (leader, EP03) Pich's outfit: white oversized PE tee + charcoal shorts + sky-blue towel on the right shoulder (not the squad's teal/navy), per `character-sheets.md` "EP03 additions". If ep03_shotlist.md says teal for Pich, follow the character sheet.
