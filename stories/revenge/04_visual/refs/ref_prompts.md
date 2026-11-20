@@ -134,3 +134,17 @@ Author: ref-sheet-artist, 2026-11-20. Flow-by-hand: nothing is rendered here. As
 - aspect: 16:9
 - attach: none
 - order: Priority 19 (turnaround only)
+
+### MAO_TOLA_turnaround
+- prompt: "Character design reference sheet on a plain light-grey seamless background, even soft flat studio lighting with no coloured light and no cast shadows: the same character shown four times in one row, full body, relaxed neutral standing pose with the arms slightly away from the body: front view, three-quarter view turned to the viewer's left, side view facing the viewer's right, back view; identical proportions, face, hair and outfit in every view, neutral calm expression. Tola, a 38-year-old Cambodian PE teacher and volleyball coach, 175 cm, fit and lean-muscled, deep tanned skin, black crew cut, sharp dark eyes with sun lines, wearing a teal track jacket over a plain white T-shirt, navy track pants and sneakers, a silver whistle on a red lanyard (muted coral-red, #B23A3A) hanging at his chest, a blank clipboard with an empty page held in one hand. The whistle on the red lanyard must be clearly visible in the front and three-quarter views, and the lanyard visible at the back of the neck from behind. The crew cut is short and even, no spikes and no buzzed sides, a plain track jacket with no lettering and no logos. No pink and no olive anywhere. Clean realistic Korean-webtoon school-drama illustration, crisp fine ink lineart, soft cel shading. no text, no letters, no numbers, no logos, nothing written anywhere. Avoid: any text, labels, speech bubbles, watermark."
+- output: _workspace/04_visual/refs/MAO_TOLA_turnaround.png
+- aspect: 16:9
+- attach: none
+- order: Priority 20 (turnaround only; Coach, first appears EP02)
+
+### RANY_turnaround
+- prompt: "Character design reference sheet on a plain light-grey seamless background, even soft flat studio lighting with no coloured light and no cast shadows: the same character shown four times in one row, full body, relaxed neutral standing pose with the arms slightly away from the body: front view, three-quarter view turned to the viewer's left, side view facing the viewer's right, back view; identical proportions, face, hair and outfit in every view, neutral calm expression. Rany, a 46-year-old Cambodian market vegetable seller, small and strong, about 150 cm, deep weathered brown skin, black hair with grey streaks in a low knot, a faded blue-check cotton blouse, a dark long wrap skirt, plastic sandals, a soft cotton scarf on her head, a tired warm worried face. The blouse check is blue and white, never olive and never pink, and the check is a plain pattern, not writing. The grey streaks in the low knot must be visible from the side and back views. Clean realistic Korean-webtoon school-drama illustration, crisp fine ink lineart, soft cel shading. no text, no letters, no numbers, no logos, nothing written anywhere. Avoid: any text, labels, speech bubbles, watermark."
+- output: _workspace/04_visual/refs/RANY_turnaround.png
+- aspect: 16:9
+- attach: none
+- order: Priority 21 (turnaround only; Visal's mother, three face panels in EP02)
