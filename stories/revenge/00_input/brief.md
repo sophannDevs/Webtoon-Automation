@@ -55,3 +55,12 @@ Resolving the flags in `02_story/twist-plan.md` (twist-master). Every later agen
 4. Small additions accepted: Visal recorded lessons in Grade 10 semester 1 (why the phone was recording); Chanthy's bead cord has a sound.
 5. Sound words fixed for the season: fob គ្រីង, bell ទុង!, Chanthy's beads ក្រិក and pen តុក តុក, Bopha's bangle ឃ្លាំង.
 6. All Khmer in planning files is a proposal; dialogue-writer fixes final spellings in `glossary_km.md`.
+
+---
+
+# EP02 (2026-11-20) — Phase 0 case 2 (new episode)
+
+- User: EP01 images are NOT made yet (still WAITING_FOR_IMAGES). Create EP02's planning, script, shot list, lettering and prompts now; do not touch EP01 files.
+- Reuse (read, do not redo): `02_story/*`, `04_visual/style-bible.md`, `character-sheets.md`, `refs/` (EP02 adds only what is new, e.g. Coach Mao Tola who first appears EP02-03).
+- Follow series-arc.md row EP02, twist-plan.md EP02, tension-curve.md EP02. 50+ panels (target ~60), one twist, strict win/threat ending alternation (EP01 ended on a win, so EP02 ends on a threat).
+- Continuity: EP01 final script/lettering are canon (clip 41 recorded, Mealea asks Visal to film the ceremony in forty days, the lines letter-identical in EP01 stay as-is).
