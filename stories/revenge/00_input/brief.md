@@ -34,3 +34,12 @@
   (school life, uniforms, family pressure). Names and terms come from `02_story/glossary_km.md`. Setting and
   names are chosen by worldbuilder and character-designer, not copied from other stories.
 - Avoid real-person or real-school references. No revenge by violence against the body as the main payoff.
+
+---
+
+# LOCKED DECISION (user, 2026-11-20, after Phase 2 research)
+
+- **Twist package A, 「The Cameraman」 is ADOPTED** (see `_workspace/01_research/trend-brief.md`, package A). Do not re-open it.
+  The bullies force the hero to film their "jokes" and delete the clips, but an old phone everyone mocks was recording all along.
+- Every Phase 3+ agent follows trend-brief decisions plus this one. Evidence is carried by speech (playback bubbles with a
+  distinct "device" tail) and faces, never by text in images. 15+, no bodily-violence payoff.
