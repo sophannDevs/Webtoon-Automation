@@ -76,3 +76,13 @@ Resolving the flags in `02_story/twist-plan.md` (twist-master). Every later agen
 ## EP02 shotlist decisions (2026-11-20, leader; accepted as proposed in ep02_shotlist.md)
 - Brick orientation: face-up P19-P23, back-up (olive) from P24, P30 = his hand presses it level. P01 charging with the cooker also plugged in (two outlets); P02 Rany pulls the cooker plug. P11 phone drawn edge-on (rule 1).
 - Dusk P44-P45 light code: "L6b" = L6 amber fading to blue. Tola vs squad teal: repeat the separation (long navy pants, red lanyard, crew cut). LOC_STAIR is not used in EP02. Rany's sheet (RANY_turnaround) must exist before panels with her face (P03 etc.) attach it.
+
+---
+
+# EP03 (2026-11-20) — Phase 0 case 2 (new episode)
+
+- EP01 and EP02 images are NOT made yet. Create EP03 planning, script, shot list, lettering and prompts; do not touch EP01/EP02 files.
+- Reuse `02_story/*`, `04_visual/style-bible.md`, `character-sheets.md`, `refs/` (21 cards; add only what is new, e.g. a younger teammate planted for EP03 in series-arc).
+- Follow series-arc.md row EP03, twist-plan.md EP03, tension-curve.md EP03 row. 50+ panels (target ~60), one twist; EP02 ended on a threat, so EP03 ends on a WIN. EP03 = point of no return: Visal plays a clip to the Coach; Dara is punished across EP03-04.
+- Canon: EP01/EP02 final scripts and lettering; letter-identical lines stay as-is; new sound words ប៊ីប ប៊ីប and ដឺរ ដឺរ; 41 clips (card full in EP02: check how EP03 records clip 23 per series-arc without breaking the count rules).
+- Apply the same conventions as EP02 decisions (spoken times, text-free images, 15+, act never through the lens).
