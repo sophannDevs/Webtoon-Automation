@@ -22,6 +22,11 @@ description: "웹툰 제작 에이전트 팀(27명)을 조율하는 메인 오�
 > Follow `webtoon-khmer-edition` throughout:
 > - **Phase 3:** the script gets a `KM:` line for every dialogue line, plus the glossary
 >   `02_story/glossary_km.md`.
+> - **Phase 3, last step: native Khmer review.** `native-khmer-agent-reviewer` reviews every KM line of
+>   `ep{NN}_script_final.md` in place and writes `03_episode/ep{NN}_km_review.md` (an AI review, READY or
+>   NEEDS REVIEW). NEEDS REVIEW = stop before Phase 4 and ask the user its open questions.
+> - **Phase 4 gate:** `km_review.py gate --episode NN` must pass (review READY, script unchanged since)
+>   before Phase 4 starts; panel-director runs it again before reading the script for the shot list.
 > - **Phase 4:** images are text-free. The letterer writes Khmer bubble positions (`km_tool.py check`
 >   must pass), prompt-smith writes text-free prompts, and panel-validator checks the images are
 >   text-free.
@@ -32,7 +37,8 @@ description: "웹툰 제작 에이전트 팀(27명)을 조율하는 메인 오�
 >
 > **Scope: only these two things change** (Khmer text in the speech bubbles, and Khmer text added to the
 > script). Everything else in this workflow stays exactly as written: the phases, teams, research, story
-> rules, 50+ panels, reference sheets, 6-axis check, Flow handoff, QA and release.
+> rules, 50+ panels, reference sheets, 6-axis check, Flow handoff, QA and release. The native Khmer review
+> belongs to the second change (the Khmer in the script); its reviewer is the one agent added to the 27.
 
 ## 에이전트 구성 (27명, 4팀)
 
@@ -52,6 +58,7 @@ description: "웹툰 제작 에이전트 팀(27명)을 조율하는 메인 오�
 | | episode-outliner | 회차 비트시트(50+ 패널) | webtoon-scenario | 03_episode/ep{NN}_beatsheet.md |
 | | dialogue-writer | 대사 위주 대본 | webtoon-scenario | 03_episode/ep{NN}_script.md |
 | | script-editor | 교정·반전 명료성 | webtoon-scenario | 03_episode/ep{NN}_script_final.md |
+| | native-khmer-agent-reviewer | (Khmer edition) 크메르어 원어민 검수 · READY/NEEDS REVIEW | webtoon-khmer-edition | 03_episode/ep{NN}_km_review.md (script_final의 KM 줄은 그 자리에서 교정) |
 | **비주얼팀** | art-director | 스타일 바이블·일관성 토큰·장소 토큰·말풍선 규약 | webtoon-panel-breakdown | 04_visual/style-bible.md, character-sheets.md |
 | | ref-sheet-artist | 캐릭터 다각도/표정 레퍼런스 시트(패널 전 선행) | webtoon-panel-render | 04_visual/refs/*.png, refs/INDEX.md |
 | | panel-director | 50+ 패널 샷리스트(scene_id/location) | webtoon-panel-breakdown | 04_visual/ep{NN}_shotlist.md |
@@ -77,6 +84,10 @@ description: "웹툰 제작 에이전트 팀(27명)을 조율하는 메인 오�
 3. `_workspace/` 존재 + "이 회차의 OO만 다시" 요청 → **부분 재실행**. 해당 단계 팀만 재구성하여 호출하고, 그 산출물만 덮어쓴다. 하위 단계(예: 대본 수정 시 샷리스트→렌더→조립)는 영향받는 만큼만 재실행.
 4. `_workspace/` 존재 + 새 기획 입력 → **새 기획 실행**. 기존 `_workspace/`를 `_workspace_{YYYYMMDD_HHMMSS}/`로 이동 후 Phase 1.
 5. **(Flow mode)** `_workspace/04_visual/ep{NN}_flow_status.md` says `WAITING_FOR_IMAGES` or `WAITING_FOR_REDRAW`, and the user says the images are ready / import the inbox / redraws are ready → **Flow resume**: follow "Resuming" in `webtoon-flow-handoff`, then continue Phase 4 validation and Phase 5. If the user asks for something else while waiting, remind them which images are still pending.
+6. **(Khmer edition)** `_workspace/03_episode/ep{NN}_km_review.md` says `NEEDS REVIEW` and the user answers
+   its questions → **Khmer review resume**: if an answer changes the Korean or the line structure,
+   script-editor makes that change first; then re-run native-khmer-agent-reviewer with the answers
+   (Phase 3 step 6). Continue to Phase 4 only when it is READY.
 
 부분/새회차 재실행 시 이전 산출물 경로를 팀원 프롬프트에 포함해 "Read 후 개선점만 반영"을 지시한다.
 
@@ -100,16 +111,29 @@ description: "웹툰 제작 에이전트 팀(27명)을 조율하는 메인 오�
 
 **실행 모드:** 에이전트 팀 (파이프라인 + 팬아웃)
 
-1. `TeamCreate(team_name: "webtoon-story", members: [concept-architect, worldbuilder, character-designer, series-plotter, twist-master, tension-engineer, episode-outliner, dialogue-writer, script-editor])`.
-2. 작업 의존성: concept → world → characters(순차 조율) → series-arc → {twist-plan, tension-curve}(상호 조율) → beatsheet → script → script_final.
+1. `TeamCreate(team_name: "webtoon-story", members: [concept-architect, worldbuilder, character-designer, series-plotter, twist-master, tension-engineer, episode-outliner, dialogue-writer, script-editor, native-khmer-agent-reviewer])`. (Khmer edition: the last member.)
+2. 작업 의존성: concept → world → characters(순차 조율) → series-arc → {twist-plan, tension-curve}(상호 조율) → beatsheet → script → script_final → (Khmer edition) km_review.
 3. **매 회차 반전 보장**: twist-master가 twist-plan에 회차별 반전을 명시하고, script-editor가 script_final에서 반전이 명료하게 전달되는지 검수.
 4. **50+ 패널 분량 확보**: episode-outliner가 비트를 충분히 쪼개 50패널 이상 분량을 만든다.
-5. 산출물: `02_story/*`, `03_episode/ep{NN}_script_final.md`.
-6. `TeamDelete`로 정리.
+5. 산출물: `02_story/*`, `03_episode/ep{NN}_script_final.md`, (Khmer edition) `03_episode/ep{NN}_km_review.md`.
+6. **(Khmer edition) Native Khmer review.** When script-editor has finished `ep{NN}_script_final.md`,
+   native-khmer-agent-reviewer runs one review round (`km_review.py start` → edits only the Khmer of
+   `ep{NN}_script_final.md`, in place → report → `km_review.py finalize`). The reviewed script stays at the
+   same path, so every later step reads the reviewed text.
+   - **READY** (finalize exit 0) → Phase 4.
+   - **NEEDS REVIEW** (finalize exit 1) → **stop here and wait for the user.** Show the user every open
+     question from `ep{NN}_km_review.md` (the quoted line and the question). Do not start Phase 4. When the
+     user answers, follow Phase 0 case 6.
+7. `TeamDelete`로 정리. (NEEDS REVIEW로 멈춘 경우에도 산출물은 `_workspace/`에 남는다.)
 
 ### Phase 4: 비주얼 프로덕션 (비주얼팀)
 
 **실행 모드:** 에이전트 팀 (감독자 + 생성-검증 루프). **codex 동시 세션 ≤ 5 엄수.**
+
+> **Khmer edition: gate first.** Before step 1, the leader runs
+> `python -I .claude/skills/webtoon-khmer-edition/scripts/km_review.py gate --episode NN`. Not OK → do not
+> start Phase 4; go back to Phase 3 step 6. panel-director runs the same gate before it reads
+> `ep{NN}_script_final.md` in step 4.
 
 > **Flow-by-hand mode:** run steps 1–5 with the team `[art-director, ref-sheet-artist, panel-director,
 > letterer, prompt-smith]`. ref-sheet-artist writes `refs/ref_prompts.md` instead of rendering, and
@@ -151,6 +175,7 @@ description: "웹툰 제작 에이전트 팀(27명)을 조율하는 메인 오�
 trend-brief.md
    └→ concept → world → characters → series-arc → {twist-plan, tension-curve}
                                                        └→ beatsheet → script → script_final
+script_final ⇄ native Khmer review (Khmer edition: KM lines fixed in place → km_review.md READY) → gate OK
 script_final + characters
    └→ style-bible(+장소토큰 LOC_*, 말풍선 규약)/character-sheets
         └→ refs/*.png (레퍼런스 시트, 패널 전 선행)
@@ -179,6 +204,8 @@ panel_*.png(말풍선 포함) → index.html(오버레이 없음) → qa_report 
 | 무한 재작업 | 패널당 재생성 최대 3회, 단계별 재작업 루프 최대 2회. 초과 시 현 상태로 진행하고 한계를 보고 |
 | (Flow mode) 이미지 누락/이름 틀림/JPG 저장 | `flow_tool.py status --fix`로 변환, 누락 목록을 사용자에게 알리고 대기. 없는 이미지를 만들어 넣지 않는다 |
 | (Flow mode) 사용자가 "그냥 진행"/"accept as is" | 남은 REGEN을 ACCEPT-FLAG로 처리하고 Phase 5로 |
+| (Khmer edition) 크메르어 검수 NEEDS REVIEW | 멈추고 open question을 그대로 사용자에게 보여 준다. 답을 받으면 Phase 0 case 6. 질문이 남아 있는 동안 샷리스트를 만들지 않는다 |
+| (Khmer edition) `km_review.py gate` BLOCKED | 리뷰가 없음/NEEDS REVIEW/리뷰 뒤 script_final 변경 중 하나. native-khmer-agent-reviewer를 새 라운드로 다시 실행한다 |
 
 ## 테스트 시나리오
 
@@ -202,5 +229,6 @@ panel_*.png(말풍선 포함) → index.html(오버레이 없음) → qa_report 
 
 - "다음 화" → Phase 0 case 2(새 회차). 세계관/스타일/연속성 재사용, 03_episode 이후만 신규.
 - "반전 더 강하게" → 시나리오팀 부분 재실행(twist-master, script-editor) → 영향 하위 단계 재실행.
+- (Khmer edition) "크메르어 다시 봐"/"fix the Khmer" 또는 script_final 수정 → native-khmer-agent-reviewer 새 라운드 → READY 후 영향받는 하위 단계(레터링 `text_km` 등)만 재실행.
 - "패널 N번 다시" → 비주얼팀 부분 재실행(prompt-smith 보강 + 해당 panel-artist 재렌더 + panel-validator 재검증) → 재조립.
 - 같은 유형 피드백 2회+ 반복 시 해당 스킬/에이전트 정의 개선을 제안(하네스 진화). 변경은 CLAUDE.md 변경 이력에 기록.

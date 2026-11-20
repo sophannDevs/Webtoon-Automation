@@ -32,6 +32,7 @@ Web data gathering for this team routes through the **scrapling** skill — see
 | `episode-outliner` | Episode beat sheet (50+ panels) | webtoon-scenario | `03_episode/ep{NN}_beatsheet.md` |
 | `dialogue-writer` | Dialogue-driven script | webtoon-scenario | `03_episode/ep{NN}_script.md` |
 | `script-editor` | Edit pass, twist clarity | webtoon-scenario | `03_episode/ep{NN}_script_final.md` |
+| `native-khmer-agent-reviewer` | (Khmer edition) Native Khmer review of every KM line, in place; READY / NEEDS REVIEW gate before the shot list | webtoon-khmer-edition | `03_episode/ep{NN}_km_review.md` |
 
 Guarantee a twist every episode and a 50+ panel beat sheet.
 

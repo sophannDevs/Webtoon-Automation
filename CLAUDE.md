@@ -21,6 +21,12 @@
 - Readers see **only Khmer**. Follow the `webtoon-khmer-edition` skill in every phase.
 - **Script:** a `KM:` line in natural Khmer under every dialogue line. Names and terms come from
   `_workspace/02_story/glossary_km.md`.
+- **Native Khmer review:** the last step of Phase 3. `native-khmer-agent-reviewer` reviews every `KM:` line
+  of `ep{NN}_script_final.md` in place and writes `03_episode/ep{NN}_km_review.md` (an AI review: READY or
+  NEEDS REVIEW). The shot list starts only when
+  `python -I .claude/skills/webtoon-khmer-edition/scripts/km_review.py gate --episode NN` passes.
+  NEEDS REVIEW means stop and ask the user its open questions. This is the one agent added to the 27
+  (added at the user's request, 2026-11-20).
 - **Images:** **no text at all** (no speech bubbles, letters or writing). Each panel keeps the empty area
   named in the lettering spec's `art_space`, and signs, receipts, notes and screens are drawn blank.
 - **Viewer:** draws every speech bubble with the Khmer inside. Build it only with

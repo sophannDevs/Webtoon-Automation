@@ -74,6 +74,42 @@ KM: សឺយូន៖ "អ្នកលក់… ហាន សឺយូន?"
   in the Khmer as well and lists them in the editor's notes.
 - Panel headings stay `### P01 · …` (km_tool maps P44 ↔ panel_044).
 
+## 1b. Native Khmer review (native-khmer-agent-reviewer)
+
+The last step of Phase 3. After script-editor finishes `ep{NN}_script_final.md`, the Native Khmer Agent
+Reviewer checks every KM line as a native Cambodian dialogue editor would (meaning and intent, spoken
+Khmer that fits a bubble, forms of address, glossary spellings, each character's voice) and corrects the
+Khmer **in place**, so the shot list, the lettering, `km_tool.py check` and QA all read the reviewed
+text. It changes only Khmer: never the Korean, speaker labels, panel order or formatting (the way the
+placement pass changes only `place`). It adds a missing KM line when the source is clear and asks the
+author when it is not.
+
+```bash
+python -I .claude/skills/webtoon-khmer-edition/scripts/km_review.py start    --episode NN
+python -I .claude/skills/webtoon-khmer-edition/scripts/km_review.py check    --episode NN
+python -I .claude/skills/webtoon-khmer-edition/scripts/km_review.py finalize --episode NN
+python -I .claude/skills/webtoon-khmer-edition/scripts/km_review.py gate     --episode NN
+```
+
+| Command | What it does |
+|---|---|
+| `start` | Begins a review round: saves the pre-review copy, creates or reopens the report, writes the context packet, prints the line-pairing check. |
+| `check` | Line pairing only: every dialogue line, caption and `[효과음]` has exactly one KM line directly under it; no orphan KM lines; no Korean letters in Khmer. |
+| `finalize` | Compares the script with the pre-review copy (only KM text may change, or one KM line be added under a line that had none), checks every change is in the report and every pairing problem left has an open question, then writes Status and the script's SHA-256 into the report. Exit 0 = READY, 1 = NEEDS REVIEW, 2 = fix and re-run. |
+| `gate` | Run before the shot list. Exit 0 only if the review is READY and `ep{NN}_script_final.md` is byte for byte the reviewed version. |
+
+Files, all in `03_episode/`:
+- `ep{NN}_km_review.md`: the report, marked as an AI review. Status (READY / NEEDS REVIEW), a Changes table
+  (ref · original KM · revised KM · reason in English), Open questions (the quoted line and the question
+  the author must answer), Resolved questions, and the tool's checks.
+- `ep{NN}_script_final_pre_km_review.md`: the script as the reviewer found it (audit copy, never an input).
+- `ep{NN}_km_review_context.md`: the reviewer's context packet: files to read, speaker labels, approved
+  wording from earlier episodes, lines repeated from earlier episodes.
+
+**READY** → Phase 4 may start. **NEEDS REVIEW** → the workflow stops before the shot list; the leader
+shows the user each open question, and the reviewer runs again with the answers. If the script changes
+after a READY review, the gate stays closed until the reviewer runs again.
+
 ## 2. Glossary — `_workspace/02_story/glossary_km.md` (series asset)
 
 Created with episode 1 (dialogue-writer), checked by script-editor, kept by continuity-manager, reused
