@@ -49,8 +49,9 @@ All commands run from the project root.
 2. Read the context packet and the files it lists. Before judging any line, work out each relationship in
    the episode: who is older, who is the boss, who is family, how close they are, and where a tone or
    relationship changes on purpose.
-3. Go through the script panel by panel and apply the review rules. Edit `ep{NN}_script_final.md`
-   directly, and only its Khmer.
+3. Go through the script scene by scene. Read each exchange whole first, review its KM lines (rules 1–4
+   and 6–8), then read the scene's Khmer through once as a conversation (rule 5). Edit
+   `ep{NN}_script_final.md` directly, and only its Khmer.
 4. Fill in the report (format below).
 5. `python -I .claude/skills/webtoon-khmer-edition/scripts/km_review.py finalize --episode NN`
    Exit 0 = READY, 1 = NEEDS REVIEW, 2 = it found a problem in your edits or the report: fix it and run
@@ -58,16 +59,18 @@ All commands run from the project root.
 6. Report to the leader (Team communication).
 
 ## Review rules
-1. **Meaning, emotion, intent.** Compare each KM line with its Korean source. Keep what it means and how
-   it feels: a joke stays funny, hesitation stays hesitant (…, —, a repeated syllable), a threat stays a
-   threat, politeness stays polite, and a deliberately ambiguous line stays ambiguous. Lines tagged
-   ⟨이중의미⟩, ⟨반전⟩ or ⟨ECHO⟩ must keep both readings, or the echo, in Khmer: check twist-plan for what
-   they have to do.
-2. **Spoken Khmer.** Read each line aloud as dialogue. Prefer what a Cambodian reader can imagine this
-   character saying, not written or translated Khmer. Keep it short enough for one speech bubble (about
-   two lines; one `KM:` line is one bubble) without dropping information. Use spoken particles where they
-   fit the voice (ណា៎, ហ្នឹង, អត់, ទេ, ចុះ, ហើយ …).
-3. **Forms of address.** Check every term of address and pronoun against the relationship and the scene:
+Review each KM line as spoken Cambodian Khmer for a webtoon.
+
+1. **Read the whole exchange first.** Before judging any line, read the exchange it belongs to: the
+   panels before and after it, with their stage directions. Identify who is speaking, who is listening,
+   their relationship, and what the speaker is trying to do in this moment (ask, tease, hide something,
+   threaten, apologise, push someone away).
+2. **Hear the character.** Imagine the character saying the line aloud. Choose wording that fits their
+   age, personality and relationship: a teenager teasing a friend, a child talking to their mother and a
+   stranger asking for help should each have a distinct voice. Prefer what a Cambodian reader can
+   imagine this character saying, not written or translated Khmer. Use the speaker/voice table and
+   characters.md so each character keeps the same voice across the episode.
+3. **Forms of address and particles.** Choose forms of address from the scene and the character notes:
    - បង: an older sibling or older person; a woman to her partner; an older sibling calls themself បង.
    - ប្អូន: a younger sibling or younger person (address or third person). អូន: close address to a younger
      sibling or younger person, or a man to his female partner; the younger one may call themself អូន.
@@ -76,19 +79,33 @@ All commands run from the project root.
      non-kin (យាយ, តា, ពូ, មីង, ក្មួយ, ចៅ).
    - Direction matters: a younger person never calls an older one អូន or ប្អូន.
    - Polite particles must match the speaker: ចាស for a woman, បាទ for a man.
-   - Khmer often drops the pronoun. Do not add one where the line sounds more natural without it.
-   - Some shifts are deliberate (a character dropping from បង to ខ្ញុំ when frightened, a cold អ្នក to push
-     someone away). If the script's notes, the glossary or the scene show a shift is intended, keep it.
-4. **Consistency.** Names, titles, places and recurring terms are spelled exactly as in the glossary.
+   - Omit "I" or "you" when the meaning is clear and the line flows better. Do not add a pronoun the line
+     does not need.
+   - Use particles such as ណា (ណា៎), ផង or ហ្នឹង only where they fit the tone, never to make a line sound
+     casual for its own sake.
+4. **Preserve the intent.** Compare each KM line with its Korean source so nothing it means or does is
+   lost. Keep a joke funny, a threat threatening and a hesitant answer hesitant (…, —, a repeated
+   syllable). Keep deliberate formality when it reveals distance, respect or a change in the
+   relationship (a character dropping from បង to ខ្ញុំ when frightened, a cold អ្នក to push someone away):
+   if the script's notes, the glossary or the scene show a shift is intended, keep it. A deliberately
+   ambiguous line stays ambiguous. Lines tagged ⟨이중의미⟩, ⟨반전⟩ or ⟨ECHO⟩ must keep both readings, or the
+   echo, in Khmer: check twist-plan for what they have to do.
+5. **Read the conversation through.** After reviewing a scene line by line, read its Khmer lines together
+   once, as a conversation, without the Korean. Check that each reply sounds like a response to the line
+   before it: it answers what was asked, and picks up or pushes against its tone. Keep each bubble easy
+   to say in one breath when the scene allows (about two lines; one `KM:` line is one bubble), without
+   dropping information.
+6. **Keep lines that already work.** If a line is correct and natural, leave it exactly as written, even
+   if you would have worded it differently. Edit only the KM text. Preserve the original dialogue and the
+   speaker labels: never change the Korean, the Korean speaker labels, stage directions, metadata lines,
+   headings, tags, panel order, blank lines or the prefixes `KM:`, `KM 효과음:`, `KM 캡션:`. In a KM
+   speaker label (`ជីហូ (តាមទូរស័ព្ទ)៖`) change only a misspelled name, or a tag that contradicts the
+   Korean (the Korean says 생각 but the tag is missing). If the context is genuinely ambiguous and the
+   choice would change the meaning, do not pick one: flag the line as an open question.
+7. **Consistency.** Names, titles, places and recurring terms are spelled exactly as in the glossary.
    Repeated lines and echoes keep their approved Khmer byte for byte unless the script says otherwise; if
-   one instance must change, change every instance in this episode and record each one, or ask. Each
-   character keeps a distinct voice (the speaker/voice table and characters.md).
-5. **Keep good lines.** If a line is correct and natural, leave it exactly as written, even if you would
-   have worded it differently. Edit only Khmer that needs correction. Never change the Korean, the Korean
-   speaker labels, stage directions, metadata lines, headings, tags, panel order, blank lines or the
-   prefixes `KM:`, `KM 효과음:`, `KM 캡션:`. In a KM speaker label (`ជីហូ (តាមទូរស័ព្ទ)៖`) change only a
-   misspelled name, or a tag that contradicts the Korean (the Korean says 생각 but the tag is missing).
-6. **One KM line per line.** Every dialogue line (`화자: "…"`), caption and `[효과음]` line needs exactly
+   one instance must change, change every instance in this episode and record each one, or ask.
+8. **One KM line per line.** Every dialogue line (`화자: "…"`), caption and `[효과음]` line needs exactly
    one KM line directly under it (`KM:`, `KM 캡션:`, `KM 효과음:`); writing on an object is
    `「…」 KM: …` on one line. If a KM line is missing and the source is clear, add it directly under the
    source line in the script's format: `KM: <Khmer speaker>៖ "<Khmer>"`, with as many quoted bubbles as
@@ -103,8 +120,9 @@ An open question stops the pipeline until the author answers, so ask only what t
 - the line pairing is uncertain, or a source line is missing, unclear or holds a placeholder;
 - the speaker or the listener is unknown and the form of address depends on who it is;
 - a name or recurring term is not in the glossary (do not invent a spelling that will recur);
-- a twist or double meaning cannot survive in Khmer and the author must choose which reading to keep.
-Word choice, register and naturalness are yours: fix them and give the reason.
+- a twist or double meaning cannot survive in Khmer and the author must choose which reading to keep;
+- the context is genuinely ambiguous and the wording you choose would change the meaning (rule 6).
+Word choice, register, voice and naturalness are yours: fix them and give the reason.
 
 ## Report: `03_episode/ep{NN}_km_review.md`
 `start` writes the skeleton. Keep its headings, the AI-review line and the tool-managed block at the top.

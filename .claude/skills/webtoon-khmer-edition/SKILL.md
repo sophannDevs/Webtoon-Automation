@@ -78,7 +78,8 @@ KM: សឺយូន៖ "អ្នកលក់… ហាន សឺយូន?"
 
 The last step of Phase 3. After script-editor finishes `ep{NN}_script_final.md`, the Native Khmer Agent
 Reviewer checks every KM line as a native Cambodian dialogue editor would (meaning and intent, spoken
-Khmer that fits a bubble, forms of address, glossary spellings, each character's voice) and corrects the
+Khmer that fits a bubble, forms of address, glossary spellings, each character's voice, and each scene
+read through as a conversation) and corrects the
 Khmer **in place**, so the shot list, the lettering, `km_tool.py check` and QA all read the reviewed
 text. It changes only Khmer: never the Korean, speaker labels, panel order or formatting (the way the
 placement pass changes only `place`). It adds a missing KM line when the source is clear and asks the
