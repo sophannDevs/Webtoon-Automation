@@ -43,3 +43,15 @@
   The bullies force the hero to film their "jokes" and delete the clips, but an old phone everyone mocks was recording all along.
 - Every Phase 3+ agent follows trend-brief decisions plus this one. Evidence is carried by speech (playback bubbles with a
   distinct "device" tail) and faces, never by text in images. 15+, no bodily-violence payoff.
+
+---
+
+# LEADER DECISIONS (2026-11-20, after Phase 3 planning files)
+
+Resolving the flags in `02_story/twist-plan.md` (twist-master). Every later agent follows these.
+1. **"11:52" -> "10:52"** (morning lessons end at 11:00 per world.md). Already patched in series-arc.md and tension-curve.md.
+2. **EP01 is one day.** P34 is "13:50" (not "Noon again"); the P59 sting happens the same evening at the moto shed.
+3. **Kolab says "Na, let's go…" at P50**, so her voice is on clip 41.
+4. Small additions accepted: Visal recorded lessons in Grade 10 semester 1 (why the phone was recording); Chanthy's bead cord has a sound.
+5. Sound words fixed for the season: fob គ្រីង, bell ទុង!, Chanthy's beads ក្រិក and pen តុក តុក, Bopha's bangle ឃ្លាំង.
+6. All Khmer in planning files is a proposal; dialogue-writer fixes final spellings in `glossary_km.md`.

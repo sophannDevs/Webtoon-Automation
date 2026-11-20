@@ -58,7 +58,7 @@ spoken constraint · **Cliff (left open)** = the question the last panel refuses
 
 | EP | Open | Mid (local peak) | Valve | Peak slot · level | End | Gap | Timer / constraint | Cliff (left open) |
 |---|---|---|---|---|---|---|---|---|
-| 01 | 6-8 (cold open, Day 40) | 8: "11:52. I was here." (~48%) | B6, 16:30 empty 11C | 85-95% · 10 | **9 · W** | Surprise | 13:55 bell; "Forty days" | What will he play in that hall? (reader has seen the hall) |
+| 01 | 6-8 (cold open, Day 40) | 8: "10:52. I was here." (~48%) | B6, 16:30 empty 11C | 85-95% · 10 | **9 · W** | Surprise | 13:55 bell; "Forty days" | What will he play in that hall? (reader has seen the hall) |
 | 02 | 6 | 7: Coach's rule "A captain is clean" | Night, Pa's memo (one line) | 90-100% · 9 | **9 · T** | Suspense | "Full." (no recording possible) | What will Kolab do with "I saw your thumb"? |
 | 03 | 6 | 7: trials, captaincy talk; "will Kolab tell?" | Equipment room, before play | 80-95% · 9.5 | **9 · W** | Suspense | Two minutes alone with the Coach | What does the Coach do to Dara? |
 | 04 | 6 (aftermath) | 7.5: "Why is that thing always face-down?" | Kolab: "It's dead, Na." | 70-85% · 9 | **9 · T** | Surprise | Pockets checked; new phone | Kolab is now his watcher: will she sell him? |
@@ -189,12 +189,12 @@ share the same average, and no stretch longer than 4 panels stays at one level.
 | 26 | B4 | 6 | | Chanthy collects the handout fee; Visal stands, cannot pay (brief, no lingering). | 0 |
 | 27 | B4 | 6 | | Chanthy, glancing at the desk: "Is that even a phone?" (**mock 2**, careless adult). | 0 |
 | 28 | B4 | 7 | | Theara's lie: Visal skipped class before lunch. Chanthy: "Visal?" A mark is now at stake. | 0 |
-| 29 | B4 | **8** | | **Micro-win.** Visal, flat: "11:52. I was here." (exact time = disguised plant: he knows when things happened.) | 120 |
+| 29 | B4 | **8** | | **Micro-win.** Visal, flat: "10:52. I was here." (exact time = disguised plant: he knows when things happened.) | 120 |
 | 30 | B4 | 7 | | Theara's laugh dies; his mouth opens, nothing comes (first small face-fall). | 0 |
 | 31 | B4 | 6 | | Chanthy: "OK? OK. Sit." The room moves on (release). | 0 |
 | 32 | B4 | 6 | | Kolab hesitates; a classmate looks down (witness seed). | 0 |
 | 33 | B4 | 7 | B | Rachana, low, smiling at the Brick: "a phone from nobody" (**mock 3**). The win has a price. | 80 |
-| 34 | B5 | 7 | B | Noon again, louvres shut. Rachana (retaliation for P29): "You like exact times?" *(suggest)* | 0 |
+| 34 | B5 | 7 | B | 13:50, louvres shut. Rachana (retaliation for P29): "You like exact times?" *(suggest)* | 0 |
 | 35 | B5 | 8 | B | Visal's hands on Dara's phone; the act stays off-frame; only the watchers' faces. | 0 |
 | 36 | B5 | 8 | B S | **Silent.** Sophy at her desk looks away (plant). | 0 |
 | 37 | B5 | 8 | B | Theara's line, Dara's grin, Kolab's flinch (one reaction panel, no injury). | 0 |
@@ -228,7 +228,7 @@ share the same average, and no stretch longer than 4 panels stays at one level.
 |---|---|
 | Panels | 60 (floor 55, ceiling 70) |
 | Bullying share (B flag) | B2 P6-16 (11) + B4 P24, P33 (2) + B5 P34-38, P40 (6) = **19 / 60 = 32%**. Even counting the P26 fee scene it is 20 / 60 = 33%. P27 (Chanthy's careless line), P39 (bell) and P41 (empty doorway) are not bullying by the circle. |
-| Small win before the midpoint | P29 "11:52. I was here." (panel 29 of 60, 48%), landing face P30. |
+| Small win before the midpoint | P29 "10:52. I was here." (panel 29 of 60, 48%), landing face P30. |
 | Twist in the 85-95% slot | P55 (91.7%), peak 10 at P57-58 (95-97%). |
 | Last beat 9-10 | P60 = 9 (series-arc §7 peak 9 for EP01). |
 | Rising overall | Beat averages 6.3 (promise) · 5.9 · 6.0 · 6.3 · 7.6 · 6.3 (valve) · 8.6. |
