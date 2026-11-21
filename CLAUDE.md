@@ -18,6 +18,11 @@
   its rules, the 27 agents and phases, characters, setting, art, reference sheets, 50+ panels, the image
   check, the Flow handoff, QA and release. "Readers are Cambodian" affects only the language of the
   text, not the story, setting or art.
+- **Korean style stays; only the bubble text is Khmer (user rule, 2026-11-21).** Every new story is
+  created the original Korean webtoon way: Korean-style characters (names, looks, clothes), setting,
+  school/work/city life, genre, tropes, art and tone, exactly as the upstream Korean agents design them.
+  **Do not Cambodianize** the story (no Khmer names, Cambodian places, culture or look for characters).
+  Khmer appears only in the speech-bubble text (the `KM:` lines and the viewer bubbles).
 - Readers see **only Khmer**. Follow the `webtoon-khmer-edition` skill in every phase.
 - **Script:** a `KM:` line in natural Khmer under every dialogue line. Names and terms come from
   `_workspace/02_story/glossary_km.md`.
