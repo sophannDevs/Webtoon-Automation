@@ -168,21 +168,21 @@
 
 ### panel_012
 - aspect: 4:3
-- art_space: Keep the top third of the frame across its width (plain cream wall and the upper blinds) as calm, empty background — the teacher's bubble upper-left, Haram's longer bubble upper-right.
+- art_space: Keep the top two-fifths of the frame across its width (plain cream wall and the upper blinds) as calm, empty background — the teacher's bubble upper-left, Haram's longer bubble upper-right.
 - gap_after: 30
 - bubble_1:
   - speaker: 담임
   - type: dialogue
   - text_km: "មានសង្សារ មិនមែនជាការល្មើសវិន័យសាលាទេ ឆែ ហារ៉ាម។"
   - text_ko: "연애는 교칙 위반 아니다, 채하람."
-  - place: x 23% · y 17% · w 44% · tail ↙ (담임(왼쪽 책상) — 3줄)
+  - place: x 23% · y 17% · w 44% · tail ↙ (담임(왼쪽 책상) — 3줄, 위 2/5 안(약 2~32%))
   - read_order: 1
 - bubble_2:
   - speaker: 하람
   - type: dialogue
   - text_km: "មិនមែនជាការល្មើសទេ តែជារឿងដែលត្រូវប្រឹក្សា។ ព្រោះជាការចេញក្រៅយប់ជ្រៅ ដោយគ្មានអាណាព្យាបាល។"
   - text_ko: "위반이 아니라 상담 사안입니다. 보호자 없는 심야 외출이니까요."
-  - place: x 72% · y 20% · w 54% · tail ↘ (하람(오른쪽, 서 있음) — 긴 줄 3~4줄, 위 약 40% 필요: 배치 확인)
+  - place: x 72% · y 20% · w 54% · tail ↘ (하람(오른쪽, 서 있음) — 긴 줄 3~4줄, 위 2/5 안(4줄이어도 약 1~39%))
   - read_order: 2
 
 ### panel_013
@@ -929,7 +929,7 @@
 - 짝 패널은 같은 자리 감각으로: P02 ↔ P54 "내일 봐"(화자 위 1줄), P08 ↔ P56 복도 위 1/4, P09 ↔ P57 문틈 위 두 풍선 계단식, P32 ↔ P34 도하 머리 위 가운데.
 
 ### 남은 확인 (배치 확인 단계, episode-compositor)
-- **P12 (4:3, 2풍선 나란히)**: 담임 48자는 w44에서 3줄, 하람 89자는 w54에서 3줄(띄어쓰기에서만 끊기면 4줄). 위 1/3 안에 다 들어가지 않고 오른쪽 위 약 40%가 필요하다. 하람(오른쪽, 서 있음) 머리가 그보다 낮게 그려졌는지 확인하고, 얼굴에 걸리면 하람 풍선을 x/y만 조정한다(문구는 바꾸지 않음, 풍선 3개 금지라 나누지 않음). 그림을 만들기 전에 panel-director/prompt-smith가 P12 art_space를 "top 40% on the right"로 넓히는 것을 권한다.
+- **P12 (4:3, 2풍선 나란히)**: 샷리스트 art_space를 "top two-fifths"로 넓혀(코디네이터, 2026-11-22) 위 2/5 안에 맞췄다. 담임 48자 w44 3줄(y 약 2~32%), 하람 89자 w54 3줄(띄어쓰기에서만 끊기면 4줄, y 약 1~39%). 하람 머리가 위 2/5보다 낮게 그려졌는지만 확인한다.
 - **P39 b1** 담임 45자(w50, 왼쪽 절반): `គ្រូពន្យារការទាក់ទងអាណាព្យាបាលសិន។`가 띄어쓰기 없는 긴 한 덩어리라 브라우저가 단어 사이에서 끊어 주면 2줄, 아니면 3줄. 3줄이면 y 17 → 19로 내린다(왼쪽 블라인드는 70%까지 비어 있음).
 - **P51 생각 2**: 오른쪽 위 1/3 아래로 약 7% 내려온다(y 25~41%). 오른쪽 담배 진열대 윗부분이 비어 있는지 확인. 효과음 "ពីប!"(x 36% · y 20%)은 스캐너 빨간 불 옆으로 x/y만 옮긴다.
 - **P52 효과음** "ឌីងដុង"은 왼쪽 위 모서리(x 10%) — 도하 턱·안경 아랫테가 위쪽 가장자리에 오므로 겹치면 아래로 조금 옮긴다.
