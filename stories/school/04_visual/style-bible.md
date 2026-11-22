@@ -1,6 +1,6 @@
 # 스타일 바이블: 『유통기한 연애』 (KM «ស្នេហាមានថ្ងៃផុតកំណត់») · 시리즈 자산
 
-- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (2026-11-22, ep02 추가) · Flow-by-hand mode + Khmer edition
+- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (2026-11-22, ep02 추가) · v1.2 (2026-11-22, ep03 추가) · Flow-by-hand mode + Khmer edition
 - 입력: `02_story/world.md`(§6 LOC 19개, §7 시각 톤·글자 없는 대체표·달력), `02_story/characters.md`(§4 외형 토큰, §5 소품, §6 시트 우선순위), `02_story/concept.md`(§6 톤, §10~11), `03_episode/ep01_beatsheet.md`(장소·구도·D-6 제작 메모), `01_research/trend-brief.md`
 - 스킬: `webtoon-panel-breakdown` 작업 B(B-1~B-7) · `webtoon-khmer-edition` · `webtoon-flow-handoff`
 - 우선순위: brief > concept > world/characters > **이 문서** > 샷리스트 > 프롬프트. 인물·소품 토큰과 레퍼런스 시트 사양은 `character-sheets.md`.
@@ -90,6 +90,7 @@
 | **M_HOME_NIGHT** [ep02] | 반지하 방의 밤 | `dark room at night, one thin beam of orange streetlight falling through the high narrow window, everything else in soft deep navy shadow with just enough dim light to read faces and hands, low contrast` | 남흑·가로등 주황 한 줄 | ep02 E02S04 (P11) |
 | **M_SCHOOL_NIGHT_IN** [ep02] | 야자 끝 학교 안 (교실·복도) | `night, flat neutral white fluorescent ceiling light indoors, cream walls and navy uniforms, black windows reflecting the room, quiet and tired` | 형광 흰·크림·남색·남흑 | ep02 E02S14~S15 (P47~50) |
 | **M_BUS_NIGHT** [ep02] | 밤 버스 안 | `cool blue-white bus interior light, dark night outside the window with orange streetlights and bright plain windows smearing past, faint condensation on the glass` | 청백·청회색·남흑·가로등 주황 | ep02 E02S17 (P53) |
+| **M_COUNSEL** [ep03] | 상담실 낮 (닫힌 방의 압박) | `soft pale grey daylight filtered through half-lowered white blinds, thin parallel stripes of light and shadow across the table, the hands and the faces, muted cream, grey and light-wood tones with navy uniforms, still air, quiet and pressured` | 회백·크림·밝은 나무·남색 | ep03 E03S09 (P28~41) |
 
 - **M_LANDING은 점심시간이다.** 창밖에 노을 하늘을 그리지 않는다. 먼지 낀 창이 걸러 준 살구빛 역광이라는 "느낌"만.
 - **P5 인서트는 회상이 아니다**(어젯밤 계산대). M_NIGHT로 그리고 M_FLASH를 쓰지 않는다.
@@ -98,6 +99,9 @@
   - **예약색 유지(§3-3):** 네 무드 모두 선명한 조끼 초록을 쓰지 않는다. M_SCHOOL_NIGHT_IN 안의 선명한 초록은 P47 가방 지퍼 틈 조끼 끝뿐이고, 형광등이어도 초록·청록 기운을 넣지 않는다. M_BUS_NIGHT는 실내 컷이라 버스 외관의 녹색이 보이지 않게 하고, 실내는 청회색 좌석, 창밖 간판·창은 무지.
   - M_ALLEY_NIGHT: 가로등은 정확히 세 개(LOC_UPHILL_ALLEY), 골목에 인물 없음(P10, W3). M_HOME_NIGHT: 주황은 창으로 드는 빛 한 줄뿐.
   - **M_SCHOOL_NIGHT vs M_SCHOOL_NIGHT_IN:** 창 너머 가로등 길이 보이는 컷(ep01 P48, ep02 P51~52)은 M_SCHOOL_NIGHT, 실내만 보이는 컷(ep02 P47~50)은 M_SCHOOL_NIGHT_IN.
+- **ep03 무드 [AD, 2026-11-22]:** 새 무드는 **M_COUNSEL 하나**(LOC_COUNSEL_ROOM 전용, E03S09 P28~41). 따뜻한 학교 낮(M_DAY) 한가운데의 차갑게 가라앉은 닫힌 방이다. 금빛 햇살·먼지 입자·은행잎을 넣지 않고, 블라인드가 거른 회백색 빛과 줄무늬 그림자만 쓴다. 줄무늬는 P34(도하 정면 클로즈업)에서 가장 또렷하게, 얼굴을 가리지 않는 선에서.
+  - **예약색 유지(§3-3):** M_COUNSEL에 선명한 조끼 초록 없음(화분 잎은 탁하고 어두운 녹색 #3E5A4C 계열). 진홍은 P29·P41 유리문 너머 흐린 완장 덩어리뿐(§3-3-4: 같은 컷에 다른 진홍 물체 없음). 휴지 상자·양식은 무지 흰색, 담임 텀블러는 은색.
+  - **나머지 ep03 씬은 기존 무드 그대로:** E03S01·S14(P1~3, P51~54) M_NIGHT / E03S02(P4~7, 01:20 반지하 방) M_HOME_NIGHT(P4 엄마 오른손목 파스가 읽히게) / E03S03·S04·S16·S17(07:55 교무실 앞 복도·교무실, P8~14, P56~60) M_DAY(아침 낮은 빛) / E03S05·S06(조회·쉬는 시간 교실, P15~21) M_DAY / E03S07(계단참, P22~26) M_LANDING(점심 직전, 노을 없음) / E03S08·S10(점심 순찰 복도, P27, P42~44) M_DAY / E03S11(학생부실 앞 오후, P45~46) M_DAY / E03S12(P47) M_SCHOOL_NIGHT / E03S13(창고, P48~50) M_NIGHT(ep01 P49 전례) / E03S15(P55) M_ALLEY_NIGHT(가로등 세 개, 골목에 인물 없음).
 
 ### 3-3. 예약색 규칙 [고정]
 
@@ -161,6 +165,7 @@
 | **계단참** | 잠긴 회색 철제 옥상 문 = 화면 위쪽, 내려가는 계단 = 화면 아래쪽. 위에 선 사람 = 정보를 쥔 사람(P22 도하). P24에서 서윤이 한 칸 올라서며 눈높이가 같아진다 |
 | **교실** | 큰 창 = 교실 왼쪽(칠판을 바라볼 때). 창가 자리 도하. 뒤쪽 하이 와이드(P4)에서는 창이 화면 왼쪽, 칠판이 정면 위 |
 | **은행나무 길 (P48)** | 2층 복도 창에서 내려다보는 하이 앵글, 전경 위쪽에 도하 실루엣(창틀), 아래 길에 뛰어 내려가는 서윤 |
+| **상담실 [ep03]** | 유리문 벽 ↔ 맞은편 블라인드 창 벽. 담임 = 창 쪽(블라인드 등짐), 서윤·도하 = 문 쪽(문 등짐). 창 쪽 마스터 앵글에서 **도하 화면 왼쪽, 서윤 화면 오른쪽**, 유리문은 두 사람 뒤. 상세는 §7-2 LOC_COUNSEL_ROOM |
 
 ### 5-4. 키 관계 (투샷 스케일)
 
@@ -264,6 +269,21 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 - token: `small school snack shop window with a queue of students, shelves of plain-wrapped bread and milk in colour-coded packs, no labels or prices`
 - P30: 창구 안쪽에서 본 미디엄. 기한 짧은 빵 = 무지 투명 비닐 포장 빵.
 
+**LOC_COUNSEL_ROOM** [ep03 신규, 20번째] — 상담실 (교무실 복도 쪽 작은 방, E03S09 P28~41, 무드 M_COUNSEL)
+- token: `small quiet Korean high-school counselling room off the staff-room corridor, a round light-wood table in the middle with four plain chairs, a box of plain white tissues and a stack of blank white forms on the table, a small potted plant in the corner, plain cream walls with nothing on them, one window with white blinds half lowered, a wall clock with tick marks and no numerals above the door, a frosted-glass door with no sign or lettering on the glass, anyone in the corridor behind it shows only as a soft blurred faceless silhouette`
+- 이 문장은 다른 LOC처럼 **단어 그대로** 쓴다(줄이거나 바꾸지 않는다). 담임 자리 앞 양식은 무지, 펜만 움직인다(P39). 휴대폰은 뒷면(P36).
+- **유리문 실루엣 보조구 (P29·P41에서만, 토큰 뒤에 붙인다):**
+  - P29: `behind the frosted glass, small and out of focus, the blurred faceless silhouette of a girl in a navy blazer with a smear of crimson at her left upper arm, stopped mid-step`
+  - P41: `behind the frosted glass, small and out of focus, the same blurred faceless silhouette with a smear of crimson at the upper arm, quietly moving away`
+  - 실루엣에는 얼굴·안경 반사·머리 모양 디테일·글자가 없다. 진홍 덩어리(완장)가 "하람일지도"를 읽히게 하는 유일한 단서다. 다른 패널(P28, P30~40)에서는 유리문을 비워 둔다(흐린 복도 빛만).
+- **방향 규약 (고정):**
+  1. 방 배치: 불투명 유리문이 있는 벽과 블라인드 창이 있는 벽이 **서로 마주 본다.** 원탁은 가운데. 시계는 문 위. 화분은 창 쪽 구석.
+  2. 자리: 담임 = **창 쪽 의자**(블라인드를 등지고 문을 마주 봄). 서윤·도하 = **문 쪽 의자 두 개**(문을 등지고 창을 마주 봄). 네 번째 의자는 담임 옆에 비어 있다. 그래서 블라인드 줄무늬 빛은 서윤·도하의 얼굴에 떨어지고(P34), 담임은 약한 역광.
+  3. **마스터 앵글 = 창 쪽(담임 어깨 너머)에서 문을 향해:** 도하 화면 왼쪽, 서윤 화면 오른쪽, 유리문은 두 사람 뒤 가운데~약간 왼쪽, 문 위 시계. P28(담임 시점, 문가에 선 두 사람), P29·P41(유리문 실루엣 컷)은 모두 이 방향이다. 비트시트 P41 "두 사람 뒤에서 본 와이드, 유리문 쪽으로 깊이"는 문이 두 사람 등 뒤에 있으므로 **담임 쪽 넓은 앵글에서 두 사람을 중경, 유리문을 깊은 배경**으로 푼다(panel-director 참고).
+  4. 역샷(문 쪽에서 창을 향해, 담임 정면 컷 P30·P35·P36·P39·P40): 배경은 블라인드 창, 180도 규칙을 지켜 **도하 = 화면 오른쪽, 서윤 = 화면 왼쪽**으로 뒤집힌다(전경 어깨로 나올 때). 이 방향에서는 유리문이 보이지 않는다.
+  5. art_space(§10): 마스터 앵글은 유리문 위 크림 벽·시계 주변, 역샷은 블라인드 창 윗부분이 빈자리. 시계 위에 말풍선을 겹치는 것은 괜찮지만 유리문 실루엣 위에는 두지 않는다(P29·P41).
+- 비트시트 머리말은 "three chairs"였으나 art-director 결정으로 **네 개**(담임 + 두 학생 + 빈 의자 하나). 빈 의자가 "한서윤만 불렀는데"(P28)의 자리 배치를 자연스럽게 만든다.
+
 ### 7-3. 이동
 
 **LOC_BUS_NIGHT** — 밤 버스 안 (ep01 미사용)
@@ -305,6 +325,8 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 ### 7-5. LOC 색인 (19개)
 
 LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLWAY · LOC_STAIR_LANDING · LOC_STUDENT_OFFICE · LOC_TEACHERS_OFFICE · LOC_SNACK_BAR · LOC_CLASSROOM @NIGHT · LOC_BUS_NIGHT · LOC_ACADEMY_STREET · LOC_CVS · LOC_CVS_FRONT · LOC_CVS_STOCKROOM · LOC_CROSSROADS · LOC_UPHILL_ALLEY · LOC_HOME · LOC_OLD_SUPER @PAST. 새 장소가 필요하면 panel-director와 조율해 여기 추가한다(world §6 우선).
+
+- **[ep03] + LOC_COUNSEL_ROOM** (20번째, §7-2, world §6에도 한 줄 추가). ep03 사용 LOC: CVS(+ 창 너머 CROSSROADS), HOME, HALLWAY, TEACHERS_OFFICE, CLASSROOM, STAIR_LANDING, COUNSEL_ROOM, STUDENT_OFFICE, GINKGO_ROAD @NIGHT, CVS_STOCKROOM, UPHILL_ALLEY.
 
 ---
 
@@ -453,3 +475,4 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 |---|---|---|
 | v1 | 2026-11-21 | 최초 작성(ep01). world §6 LOC 19개 원문 고정, 무드 팔레트 7종(M_DAY·M_DAY_OUT·M_LANDING·M_SCHOOL_NIGHT·M_NIGHT·M_BLANK·M_FLASH), Khmer edition 말풍선·art_space 규약, upstream in-image 베이크 규칙 교체 명시 |
 | v1.1 | 2026-11-22 | ep02 추가만(기존 문구 유지): §3-2 무드 4종 확정(M_ALLEY_NIGHT·M_HOME_NIGHT·M_SCHOOL_NIGHT_IN·M_BUS_NIGHT) + 예약색 메모, §7 LOC_CVS 직원 문 보조구·LOC_HALLWAY @NIGHT 계단 머리 보조구, §12-6 ep01 첨부 의존 패널 생성 순서 |
+| v1.2 | 2026-11-22 | ep03 추가만(기존 문구 유지): §7-2 LOC_COUNSEL_ROOM 신규(20번째, 고정 EN 토큰: 원탁 + 의자 4개, 블라인드 반쯤 내린 창, 숫자 없는 시계, 무지 크림 벽, 얼굴 없는 흐린 실루엣만 비치는 불투명 유리문) + P29·P41 유리문 실루엣 보조구 + 방향 규약, §5-3 상담실 행, §7-5 ep03 사용 LOC 메모, §3-2 무드 M_COUNSEL 신규 + ep03 씬별 기존 무드 대응·예약색 메모 |

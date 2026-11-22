@@ -1,6 +1,6 @@
 # 캐릭터 시트: 『유통기한 연애』 · 일관성 토큰 + 레퍼런스 시트 사양 (시리즈 자산)
 
-- 작성: art-director · 2026-11-21 · v1 (ep01) · Flow-by-hand mode + Khmer edition
+- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (ep02) · v1.2 (2026-11-22, ep03 추가) · Flow-by-hand mode + Khmer edition
 - 입력: `02_story/characters.md` §4(외형 토큰 블록), §5(소품 토큰), §6(레퍼런스 시트 우선순위) · `02_story/world.md` §3-4(교복), §7 · `03_episode/ep01_beatsheet.md` D-6
 - 스킬: `webtoon-panel-breakdown` B-2·B-3·B-7 · `webtoon-flow-handoff`(카드 형식) · `webtoon-khmer-edition`(글자 없음)
 - 함께 읽기: `style-bible.md`(STYLE_CORE/STYLE_REF, 무드 빛, LOC, 조립 순서)
@@ -118,6 +118,7 @@
 - **표정 슬롯 [AD]:** 근무 중 정중 `formal, polite, cool neutral face` (P20, P31) · 서늘한 폭로 `cool sidelong look, voice-low expression, lips close to the other girl's ear` (P32~33) · 균열 `flustered, pushing her glasses up, mouth open mid-protest` (P44) · 굴욕을 삼킴 `jaw tight, eyes lowered, adjusting her armband` (P46)
 - **식별 표식:** ① 왼팔 진홍 무지 완장 ② 얇은 은테 사각 안경 ③ 오른쪽 귀 뒤 검정 실핀
 - **금지:** 둥근 안경, 완장 오른팔, 긴 머리, 악역식 비웃음(그녀는 규칙의 집행자).
+- **[ep03] 유리문 실루엣 (P29·P41):** 하람은 얼굴 없이 상담실 불투명 유리문 너머 흐린 실루엣으로만 나온다. CORE 토큰도 시트 첨부도 쓰지 않고 style-bible §7-2 LOC_COUNSEL_ROOM의 실루엣 보조구만 쓴다(진홍 완장 덩어리가 유일한 단서, 얼굴·안경·글자 없음). CORE 변경 없음.
 - **레퍼런스(예정):** `refs/HARAM_turnaround.png` · `HARAM_expressions.png`
 
 ---
@@ -232,6 +233,7 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | 6 | **MISUK_turnaround** [ep02] | 16:9 | §11 원문 토큰. 위 줄 전신 4뷰(정면·3/4·측면·후면), 아래 줄 3/4 바스트 3칸(무뚝뚝 / 조용한 걱정 / 드문 웃음). 01시 근무복: 연보라 플리스 + 서윤과 같은 초록 무지 조끼(명찰·글자 없음), 베이지 팔토시, 회색 슬리퍼. 모든 뷰에서 머리 위 돋보기안경, 금 귀걸이. 한 장에 턴어라운드와 표정(별도 `_expressions` 없음). 카드 = `refs/ref_prompts.md` "MISUK_turnaround" | **보류 해제(ep02).** 사장님 얼굴 첫 등장 = ep02 P9, **P9 생성 전 필수**. ep02에서 도하와 같은 프레임에 그리지 않는다(첫 대면 ep05) |
 
 - **카드 합계(ep01): 12장** — SEOYUN 3 · DOHA 3 · HARAM 2 · RYU 1 · CLASSMATES 1 · LEADS_lineup 1 · PROPS 1. **ep02: +1장(MISUK_turnaround) = 13장.**
+- **[ep03] 새 카드 없음 (13장 유지).** ep03 캐스트 = 서윤, 도하(낮 교복 + 밤 후드·안경), 하람, 건우, 담임, 예린, 태민, 사장님(P48~50, MISUK_turnaround 이미 있음), 엄마(P4 잠든 뒷모습·오른손목 파스만, 얼굴 없음 → §12 HYEWON 토큰만, ep02 P11과 같은 처리). 새 인물 없음, 새 토큰 없음. 학 모양 제보 쪽지(P46·P58)는 기존 하람 소품 토큰(두 특징 없음), 상담 양식·휴지·엄마 쪽지는 style-bible §9-2 무지 문구로 충분.
 - characters §6의 "각 시트 = 4뷰 + 표정 3종"을 지키되, 1·2순위는 낮/밤 변형이 커서 `_night` 카드를 따로 둔다(flow-handoff 기본 2장 + 1장). 4·5순위는 턴어라운드와 표정을 한 카드에 합쳐 사용자 작업량을 줄인다.
 - **시트 불필요(토큰만):** GEONU, JACKET_MAN, SNACK_CLERK, (ep01) MISUK. HYEWON·SEOYUN_8·DOHA_8은 등장 회차에 시트.
 - **검수(ref-sheet-artist → art-director):** 이미지가 들어오면 ① 한 시트 안에서 같은 사람인가 ② 식별 표식·좌우가 맞나 ③ 글자·라벨이 없나 ④ SEOYUN_turnaround와 SEOYUN_night, DOHA_turnaround와 DOHA_night가 같은 얼굴인가 ⑤ PROPS의 학 두 특징이 판별되나. 통과하면 `refs/INDEX.md`에 확정 경로를 적고, 이 파일 각 인물의 "레퍼런스" 줄을 "(확정)"으로 바꾼다.
@@ -250,6 +252,8 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | 담임 | RYU_sheet, SEOYUN_turnaround |
 | 사장님 MISUK 패널 [ep02 P9~] | MISUK_turnaround (+ 서윤이 함께면 SEOYUN_night). 도하는 같은 프레임에 없다 |
 | 엄마 HYEWON 등만 [ep02 P11] | 엄마 시트 없음: §12 HYEWON 토큰만 프롬프트에(얼굴 없음, **오른손목 흰 사각 파스가 읽히게**). 첨부는 서윤 쪽 시트만 |
+| 엄마 잠든 뒷모습 [ep03 P4] | 위 ep02 P11과 같음(§12 HYEWON 토큰만, 얼굴 없음, 오른손목 파스). 첨부 SEOYUN_night 또는 SEOYUN_turnaround(01:20 귀가 복장에 맞춰) |
+| 상담실 담임 + 서윤 + 도하 [ep03 P28~41] | LEADS_lineup, RYU_sheet (+ 표정 컷이면 해당 인물 `_expressions`로 하나 교체). 하람 실루엣(P29·P41)은 첨부 없음, 문구만 |
 
 - **ep01 패널 첨부 의존 [ep02]:** ep02 P1, P2, P8, P38, P51, P56, P61은 `attach:`에 ep01 패널(P59, P60, P1, P22, P48, P53, P60)이 있어 **그 ep01 이미지가 생긴 뒤에만** 만들 수 있다(style-bible §12-6).
 
@@ -261,4 +265,5 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 |---|---|---|
 | v1 | 2026-11-21 | 최초 작성(ep01). characters §4 EN 토큰 12종을 CORE/OUTFIT로 분리(단어 그대로), §5 소품 토큰 8종, §6 우선순위 → 카드 12장. [AD] 결정: 도하 백팩 왼쪽 어깨·낮 안경 없음 명시, 서윤 OUTFIT_SCHOOL 신발·백팩 EN화, SNACK_CLERK 엑스트라 토큰, LEADS_lineup·SEOYUN_night·DOHA_night 카드 추가, MISUK 시트 ep01 보류 |
 | v1.1 | 2026-11-22 | ep02 추가만(토큰 변경 없음): §1 SHOES_OUTDOOR에 교문 장면(P16~P33) 하람·건우 실외화 확인, §R-2 MISUK_turnaround 카드(보류 해제, P9 전 필수, 도하와 같은 프레임 금지), §R-3 사장님·엄마 첨부 행 + ep01 첨부 의존 패널 메모, §0-1·§11 MISUK 상태 표기 |
+| v1.2 | 2026-11-22 | ep03 추가만(토큰 변경 없음): ep03 캐스트 확인 결과 새 인물·새 토큰·새 레퍼런스 카드 없음(13장 유지, §R-2 메모). §4 HARAM에 상담실 유리문 실루엣(P29·P41) 처리 메모, §R-3 엄마 잠든 뒷모습(P4)·상담실 3인(P28~41) 첨부 행 |
 
