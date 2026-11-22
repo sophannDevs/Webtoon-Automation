@@ -302,21 +302,21 @@
 
 ### panel_020
 - aspect: 4:3
-- art_space: Keep the upper-left half of the frame as a vertical strip (plain cream upper wall and soft window light above Yerin) as calm, empty background for two stacked bubbles.
+- art_space: Keep the upper-left three-fifths of the frame as a vertical strip (plain cream upper wall and soft window light above Yerin) as calm, empty background for two stacked bubbles.
 - gap_after: 160
 - bubble_1:
   - speaker: 예린
   - type: dialogue
   - text_km: "ហ៎? ឯងយកទាំងកាបូបចូលបន្ទប់ទឹកទៀត?"
   - text_ko: "어? 화장실에 가방까지 들고 갔어?"
-  - place: x 28% · y 14% · w 54% · tail ↙ (예린(왼쪽, 들어옴) — 2줄, 띄어쓰기 없는 긴 덩어리 때문에 폭 54(왼쪽 띠보다 오른쪽으로 약 5%))
+  - place: x 30% · y 14% · w 54% · tail ↙ (예린(왼쪽, 들어옴) — 2줄, 왼쪽 3/5 띠 안)
   - read_order: 1
 - bubble_2:
   - speaker: 서윤
   - type: dialogue
   - text_km: "…អឺ។"
   - text_ko: "…응."
-  - place: x 40% · y 36% · w 16% · tail ↘ (서윤(문 쪽, 오른쪽))
+  - place: x 44% · y 36% · w 16% · tail ↘ (서윤(문 쪽, 오른쪽))
   - read_order: 2
 
 ### panel_021
@@ -481,7 +481,7 @@
 
 ### panel_031
 - aspect: 3:4
-- art_space: Keep the top-left third of the frame (plain cream ceiling and wall beside Haram's face) as calm, empty background for one bubble, and a small patch near the open zip edge for the zip sound effect.
+- art_space: Keep the top-left half of the frame (plain cream ceiling and wall beside Haram's face; Haram's face stays on the right) as calm, empty background for one bubble, and a small patch near the open zip edge for the zip sound effect.
 - gap_after: 30
 - sfx_1:
   - type: sfx
@@ -493,7 +493,7 @@
   - type: dialogue
   - text_km: "សូមបង្ហាញឲ្យឃើញដល់បាតកាបូប។"
   - text_ko: "바닥까지 보여 주세요."
-  - place: x 29% · y 8% · w 54% · tail ↘ (하람(오른쪽 위 얼굴) — 1줄, 띄어쓰기 없는 한 덩어리)
+  - place: x 28% · y 8% · w 54% · tail ↘ (하람(오른쪽 위 얼굴) — 1줄, 띄어쓰기 없는 한 덩어리라 최소 폭 54, 왼쪽 절반 경계를 약 4% 넘음)
   - read_order: 1
 
 ### panel_032
@@ -825,21 +825,21 @@
 
 ### panel_054
 - aspect: 4:3
-- art_space: Keep the upper-right half of the frame as a vertical strip (plain cream wall and curtain top above Seoyun) as calm, empty background for two stacked bubbles.
+- art_space: Keep the top third of the frame across its whole width (plain cream wall and curtain top above Seoyun and above Taemin's raised arms) as calm, empty background for two stacked bubbles.
 - gap_after: 160
 - bubble_1:
   - speaker: 태민
   - type: dialogue
   - text_km: "ប៉ែក ដូហា? ខ្ញុំឃើញទៅខាងការិយាល័យកិច្ចការសិស្ស។"
   - text_ko: "백도하? 학생부실 쪽 가던데."
-  - place: x 69% · y 14% · w 60% · tail ↙ (태민(가운데)을 향해 — 2줄, 띄어쓰기 없는 긴 덩어리 때문에 폭 60(오른쪽 띠보다 왼쪽으로 약 11%))
+  - place: x 50% · y 9% · w 76% · tail ↓ (태민(가운데, 올린 팔 위) — 1줄, 위 1/3 가로로 넓게)
   - read_order: 1
 - bubble_2:
   - speaker: 태민
   - type: dialogue
   - text_km: "ទៅសារភាពខ្លួនឬអី?"
   - text_ko: "자수하러 가나?"
-  - place: x 74% · y 37% · w 34% · tail ↙ (태민)
+  - place: x 66% · y 25% · w 34% · tail ↓ (태민 — 서윤(오른쪽) 쪽 위 벽)
   - read_order: 2
 
 ### panel_055
@@ -929,14 +929,14 @@
 - `gap_after`(샷리스트 §4 그대로): 0 마지막(P60) · 30 촘촘 · 80 보통 · 160 비트 끊기(P04, P14, P18, P20, P32, P33, P37, P40, P43, P51, P54, P59) · 320 시간 점프(P12 금→월, P44 쉬는 시간→점심, P53 5교시→16:35).
 - 짝 패널은 같은 자리 감각으로: P05 ↔ P09 ↔ P38 계단참 측면(왼쪽 위 벽), P19 ↔ P20 화장실 문(P20만 풍선, 왼쪽 띠), P45 ↔ P49 하람 머리 위 계단식 두 풍선, P51 ↔ P58 "그럼 내가 끝낼게" 같은 글자.
 
-### art_space가 빠듯한 곳 (샷리스트는 바꾸지 않음 — 코디네이터 판단 필요)
-- **P54 b1 (4:3, 오른쪽 절반 세로 띠)**: 태민 `ប៉ែក ដូហា? ខ្ញុំឃើញទៅខាងការិយាល័យកិច្ចការសិស្ស។`의 뒤 절반이 띄어쓰기 없는 한 덩어리(폭 14.7em)라, 브라우저가 단어 사이에서 끊지 않으면 풍선 폭이 최소 60% 필요하다. 그래서 w 60(x 39~99, y 약 2~26%)으로 두었고, **오른쪽 절반 띠보다 왼쪽으로 약 11% 나온다**(기지개 켜는 태민의 올린 팔이 그 높이에 오면 겹침). 해결안: (a) 샷리스트 art_space를 "the top third across the frame, above Taemin's raised arms"로 넓히거나, (b) script-editor/리뷰어가 KM 줄 덩어리 사이에 띄어쓰기를 넣으면(예: ទៅខាង ការិយាល័យ…) w 50 안에 2~3줄로 들어간다.
-- **P20 b1 (4:3, 왼쪽 절반 세로 띠)**: 예린 `ហ៎? ឯងយកទាំងកាបូបចូលបន្ទប់ទឹកទៀត?`의 뒤 덩어리(13.0em) 때문에 w 54(x 1~55, y 약 3~26%). **왼쪽 절반 띠보다 오른쪽으로 약 5% 나온다.** 문 위쪽 벽이라 위험은 작지만 서윤 머리가 그 높이면 x만 왼쪽으로 붙인다.
-- **P31 b1 (3:4, 위 왼쪽 1/3)**: 하람 `សូមបង្ហាញឲ្យឃើញដល់បាតកាបូប។`이 띄어쓰기 없는 한 줄(12.6em) → w 54(x 3~55, y 약 4~12%). "top-left third"를 폭 절반으로 보고 맞췄다. 하람 얼굴(오른쪽 위)이 가로 55%보다 왼쪽까지 오면 겹친다.
+### art_space 수정 반영 (코디네이터, 2026-11-22 — 샷리스트 문장 그대로 옮김)
+- **P20**: art_space "upper-left three-fifths". 예린 풍선 w 54(x 약 3~57, y 약 3~26%), 서윤 "…អឺ។" x 44 · y 36. 둘 다 왼쪽 3/5 띠 안.
+- **P31**: art_space "top-left half, Haram's face stays on the right". 하람 풍선 w 54(띄어쓰기 없는 12.6em 한 덩어리가 넘치지 않는 최소 폭, x 28 → 상자 x 약 2~54, y 약 4~12%). **왼쪽 절반 경계를 약 4% 넘는다** — 하람 얼굴이 가로 55%보다 왼쪽으로 오지 않으면 문제없다. 완전히 절반 안에 넣으려면 KM 줄에 띄어쓰기가 필요하다(예: សូមបង្ហាញ ឲ្យឃើញដល់បាតកាបូប។ — 리뷰어 몫).
+- **P54**: art_space "top third across its whole width, above Taemin's raised arms". 태민 b1을 1줄로 넓게(x 50 · y 9 · w 76 → x 약 12~88, y 약 1~17%), b2 x 66 · y 25(y 약 17~33%). 둘 다 위 1/3 안, 꼬리 ↓ 태민(가운데).
 
 ### 남은 확인 (배치 확인 단계, episode-compositor)
 - **P31 효과음** "ស្រឺត…"는 열린 지퍼 가장자리 옆 작은 빈자리(x 18% · y 46%)로 짐작해 두었다. 그림에서 지퍼 끝이 어디 오는지 보고 x/y만 옮긴다.
 - **P22 효과음** "ក្រិង… ក្រិង…"은 칠판 위 벽 스피커 쪽(왼쪽 위, x 22% · y 7%)으로 두었다. 스피커가 다른 쪽에 그려지면 왼쪽 띠 안에서 옮긴다.
-- **4:3 세로 띠 패널(P09, P13, P15, P20, P21, P22, P25, P35, P51, P54)**: 두 번째 풍선이 패널 높이의 약 38~51%까지 내려온다(P22 b2가 가장 낮음, 약 35~51%). 그 높이에 인물 머리가 그려졌으면 y만 올리거나 x를 띠 바깥쪽으로 민다.
+- **4:3 세로 띠 패널(P09, P13, P15, P20, P21, P22, P25, P35, P51)**: 두 번째 풍선이 패널 높이의 약 38~51%까지 내려온다(P22 b2가 가장 낮음, 약 35~51%). 그 높이에 인물 머리가 그려졌으면 y만 올리거나 x를 띠 바깥쪽으로 민다.
 - **P23**: 담임 줄이 길어(75자) 위 1/3을 가로로 넓게(x 8~84%, 2줄) 쓰고, 하람 풍선은 그 아래 오른쪽(x 40~96%, y 약 19~32%)에 계단식으로 두었다. 샷리스트 "teacher's on the left, Haram's on the right"는 꼬리 방향(↙/↘)과 좌우 무게로 지켰다.
 - **P35 외침 2개**: 오른쪽 띠 안에 계단식(예린 위, 태민 아래). 예린·태민이 그림에서 왼쪽에 있으면 꼬리는 그대로(↙) 두면 된다.
