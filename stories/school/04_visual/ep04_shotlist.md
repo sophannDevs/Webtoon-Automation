@@ -543,7 +543,7 @@
 - motion/direction: 예린(왼쪽) → 홀쭉한 가방 → 서윤
 - dialogue_ref: 예린 "어? 화장실에 가방까지 들고 갔어?" (bubble 1, tail → Yerin) · 서윤 "…응." (bubble 2, tail → Seoyun)
 - bubbles: 2
-- art_space: Keep the upper-left half of the frame as a vertical strip (plain cream upper wall and soft window light above Yerin) as calm, empty background for two stacked bubbles.
+- art_space: Keep the upper-left three-fifths of the frame as a vertical strip (plain cream upper wall and soft window light above Yerin) as calm, empty background for two stacked bubbles.
 - split: no
 - gap_after: 160
 - fx/note: **첨부 P19(필수)** + SEOYUN_turnaround + CLASSMATES_sheet (SEOYUN_night 금지). **P19와 다른 것은 가방 부피·방향·예린뿐.** 앞판 "살짝" 팽팽 — 초록 0, 가슴 강조 금지(실루엣만 약간 두툼). 휴대폰 뒷면.
@@ -733,7 +733,7 @@
 - motion/direction: 하람(위) → 가방 안(아래)
 - dialogue_ref: 효과음 [지이익] (sfx 1, by the zip) · 하람 "바닥까지 보여 주세요." (bubble 1, tail → Haram)
 - bubbles: 1 + sfx 1
-- art_space: Keep the top-left third of the frame (plain cream ceiling and wall beside Haram's face) as calm, empty background for one bubble, and a small patch near the open zip edge for the zip sound effect.
+- art_space: Keep the top-left half of the frame (plain cream ceiling and wall beside Haram's face; Haram's face stays on the right) as calm, empty background for one bubble, and a small patch near the open zip edge for the zip sound effect.
 - split: no
 - gap_after: 30
 - fx/note: 권장 첨부 P29 + HARAM_turnaround + SEOYUN_turnaround. 가방 안 **초록 없음**. 하람 손 = 클립보드. P33의 책상 배치 기준(P33은 이 이미지를 첨부하지 않고 문구로 맞춘다).
@@ -1135,7 +1135,7 @@
 - motion/direction: 빈 자리(왼쪽) → 태민 → 서윤
 - dialogue_ref: 태민 "백도하? 학생부실 쪽 가던데." (bubble 1) · 태민 "자수하러 가나?" (bubble 2)
 - bubbles: 2
-- art_space: Keep the upper-right half of the frame as a vertical strip (plain cream wall and curtain top above Seoyun) as calm, empty background for two stacked bubbles.
+- art_space: Keep the top third of the frame across its whole width (plain cream wall and curtain top above Seoyun and above Taemin's raised arms) as calm, empty background for two stacked bubbles.
 - split: no
 - gap_after: 160
 - fx/note: **첨부 P52(필수, 같은 두 책상, 비었음)** + CLASSMATES_sheet + SEOYUN_turnaround. 빈 고리 = 백팩 없음.
