@@ -1,6 +1,6 @@
 # 스타일 바이블: 『유통기한 연애』 (KM «ស្នេហាមានថ្ងៃផុតកំណត់») · 시리즈 자산
 
-- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (2026-11-22, ep02 추가) · v1.2 (2026-11-22, ep03 추가) · Flow-by-hand mode + Khmer edition
+- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (2026-11-22, ep02 추가) · v1.2 (2026-11-22, ep03 추가) · v1.3 (2026-11-22, ep04 추가) · Flow-by-hand mode + Khmer edition
 - 입력: `02_story/world.md`(§6 LOC 19개, §7 시각 톤·글자 없는 대체표·달력), `02_story/characters.md`(§4 외형 토큰, §5 소품, §6 시트 우선순위), `02_story/concept.md`(§6 톤, §10~11), `03_episode/ep01_beatsheet.md`(장소·구도·D-6 제작 메모), `01_research/trend-brief.md`
 - 스킬: `webtoon-panel-breakdown` 작업 B(B-1~B-7) · `webtoon-khmer-edition` · `webtoon-flow-handoff`
 - 우선순위: brief > concept > world/characters > **이 문서** > 샷리스트 > 프롬프트. 인물·소품 토큰과 레퍼런스 시트 사양은 `character-sheets.md`.
@@ -91,6 +91,7 @@
 | **M_SCHOOL_NIGHT_IN** [ep02] | 야자 끝 학교 안 (교실·복도) | `night, flat neutral white fluorescent ceiling light indoors, cream walls and navy uniforms, black windows reflecting the room, quiet and tired` | 형광 흰·크림·남색·남흑 | ep02 E02S14~S15 (P47~50) |
 | **M_BUS_NIGHT** [ep02] | 밤 버스 안 | `cool blue-white bus interior light, dark night outside the window with orange streetlights and bright plain windows smearing past, faint condensation on the glass` | 청백·청회색·남흑·가로등 주황 | ep02 E02S17 (P53) |
 | **M_COUNSEL** [ep03] | 상담실 낮 (닫힌 방의 압박) | `soft pale grey daylight filtered through half-lowered white blinds, thin parallel stripes of light and shadow across the table, the hands and the faces, muted cream, grey and light-wood tones with navy uniforms, still air, quiet and pressured` | 회백·크림·밝은 나무·남색 | ep03 E03S09 (P28~41) |
+| **M_HOME_MORNING** [ep04] | 반지하 방의 이른 아침 | `early morning, pale cool daylight falling through the high narrow street-level window in one soft slanted beam, the rest of the small room in soft grey-blue shade, quiet and chilly, enough light to read faces, hands and the colours of the laundry` | 회청·창빛 흰·크림 (+ 조끼 초록은 조끼 자체에만) | ep04 E04S04 (P13~14) |
 
 - **M_LANDING은 점심시간이다.** 창밖에 노을 하늘을 그리지 않는다. 먼지 낀 창이 걸러 준 살구빛 역광이라는 "느낌"만.
 - **P5 인서트는 회상이 아니다**(어젯밤 계산대). M_NIGHT로 그리고 M_FLASH를 쓰지 않는다.
@@ -102,6 +103,12 @@
 - **ep03 무드 [AD, 2026-11-22]:** 새 무드는 **M_COUNSEL 하나**(LOC_COUNSEL_ROOM 전용, E03S09 P28~41). 따뜻한 학교 낮(M_DAY) 한가운데의 차갑게 가라앉은 닫힌 방이다. 금빛 햇살·먼지 입자·은행잎을 넣지 않고, 블라인드가 거른 회백색 빛과 줄무늬 그림자만 쓴다. 줄무늬는 P34(도하 정면 클로즈업)에서 가장 또렷하게, 얼굴을 가리지 않는 선에서.
   - **예약색 유지(§3-3):** M_COUNSEL에 선명한 조끼 초록 없음(화분 잎은 탁하고 어두운 녹색 #3E5A4C 계열). 진홍은 P29·P41 유리문 너머 흐린 완장 덩어리뿐(§3-3-4: 같은 컷에 다른 진홍 물체 없음). 휴지 상자·양식은 무지 흰색, 담임 텀블러는 은색.
   - **나머지 ep03 씬은 기존 무드 그대로:** E03S01·S14(P1~3, P51~54) M_NIGHT / E03S02(P4~7, 01:20 반지하 방) M_HOME_NIGHT(P4 엄마 오른손목 파스가 읽히게) / E03S03·S04·S16·S17(07:55 교무실 앞 복도·교무실, P8~14, P56~60) M_DAY(아침 낮은 빛) / E03S05·S06(조회·쉬는 시간 교실, P15~21) M_DAY / E03S07(계단참, P22~26) M_LANDING(점심 직전, 노을 없음) / E03S08·S10(점심 순찰 복도, P27, P42~44) M_DAY / E03S11(학생부실 앞 오후, P45~46) M_DAY / E03S12(P47) M_SCHOOL_NIGHT / E03S13(창고, P48~50) M_NIGHT(ep01 P49 전례) / E03S15(P55) M_ALLEY_NIGHT(가로등 세 개, 골목에 인물 없음).
+- **ep04 무드 [AD, 2026-11-22]:** ep04는 밤 장면·편의점 장면이 없는 낮 회차다. 학교 장면은 모두 **기존 M_DAY / M_DAY_OUT / M_LANDING**으로 충분하다(새 학교 무드 없음). **빈틈은 하나:** E04S04(월 06:40 반지하 방, P13~14)는 기존 LOC_HOME 무드가 M_HOME_NIGHT(밤, 가로등 한 줄)뿐이라 아침 빛이 없다 → **M_HOME_MORNING 하나만 추가**했다(위 표). 엄마는 이미 나가고 없다(개어 둔 이불, 식탁 위 무지 흰 파스 상자). 이 방의 선명한 초록은 건조대의 조끼(P13)와 가방 지퍼 틈의 조끼 끝(P14)뿐(§3-3-1 예외 = 조끼 자체).
+  - **씬별 무드:** E04S01·S02(금 07:58 교무실·문 앞 복도, P1~4) M_DAY(아침 낮은 빛, ep03 S03·S04와 같은 처리) / E04S03(금 12:35 계단참, P5~12) M_LANDING(점심, 노을 없음) / E04S04(P13~14) **M_HOME_MORNING** / E04S05(07:45 학교 앞 정류장 → 은행나무 오르막, P15~18) M_DAY_OUT / E04S06(08:15 화장실 문 앞 복도, P19~20) M_DAY / E04S07(08:35~1교시 교실, P21~37) M_DAY / E04S08(1교시 뒤 쉬는 시간 계단참, P38~44) M_LANDING(오전이지만 같은 먼지 낀 창 역광, 노을 없음) / E04S09(12:40 점심 순찰 복도, P45~51) M_DAY / E04S10(5교시 교실, P52~53) M_DAY / E04S11·S12·S13(16:35~16:38 교실·빈 복도·학생부실 앞, P54~60) M_DAY에 늦은 오후 빛(ep01 P38~47 처리: 빛이 낮고 그림자가 길다, P60 늦은 오후 역광).
+  - **계절 추가구 (ep04 낮·바깥 장면, 무드 문구 뒤에 붙인다):** `early November, the yellow ginkgo leaves beginning to fall`. M_DAY·M_DAY_OUT 문구의 `late-October`는 고정 문구라 그대로 두고(ep03과 같은 문장), 이 추가구가 계절을 맞춘다(M_LANDING이 토큰의 `late-afternoon light`보다 우선하는 것과 같은 방식). 은행잎은 아직 노랑이 많고 떨어지기 시작(P18·P55 창밖, 비트시트 B 헤더).
+  - **P21 '따뜻한 교실' 빛 메모 (M_DAY 안에서, 새 무드 아님):** M_DAY 문구 뒤에 `sun-warmed classroom, bright low morning sunlight pooling across the desks and the backs of the chairs, a cosy warm haze in the air`를 붙인다. 독자가 "다들 블레이저를 벗을 만큼 따뜻하다"를 빛으로 느껴야 서윤 혼자 블레이저를 입은 모습(반전 A 시각 단서 TA-V2)이 이상해 보인다. 의자 등받이에 걸린 남색 블레이저 줄, 흰 셔츠 차림 학생들, 엑스트라 몇 명의 남색 니트 조끼(character-sheets §1 [ep04])는 구도·인물 문구로 쓴다. 같은 scene_id(E04S07)의 다른 패널(P22~37)에는 이 추가구를 붙이지 않아도 되지만, 빛 방향(왼쪽 큰 창)과 온도는 P21과 같게 유지한다.
+  - **예약색 유지(§3-3):** ① 선명한 조끼 초록은 P13(건조대 조끼)·P14(가방 속, 지퍼 틈 한 줄)·**P33(블레이저 밑단 아래 허리선 한 줄)**뿐. P15~32, P34~60에는 없다. 엑스트라 니트 조끼는 남색. ② 진홍은 하람·건우의 완장과 하람 손목의 진홍 끈뿐. ③ 주황 띠·빨간 의자·유리병 노출 없음(편의점 장면 없음).
+  - **의상 = 장소 규칙(§6-2-5)의 ep04 변형:** 학교 장면이어도 서윤은 P20부터 SEOYUN_VEST_UNDER_BLAZER, 도하는 P34~38 DOHA_SHIRTSLEEVES(character-sheets §2·§3). 같은 scene_id E04S07 안에서 도하 의상이 P34에서 바뀌는 것은 스토리상 변화라 REGEN 대상이 아니다.
 
 ### 3-3. 예약색 규칙 [고정]
 
@@ -253,6 +260,10 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 - token: `long school corridor, windows on one side over the ginkgo avenue, classroom sliding doors with small glass panes on the other, pale green lower wall and cream upper wall, terrazzo floor, blank notice board`
 - **@NIGHT 변형 (P48 전경):** `at night, fluorescent lights on, the windows black and reflecting the corridor`
 - **@NIGHT 계단 머리 보조구 [ep02, P48~50]:** @NIGHT 변형 뒤에 붙인다: `at the head of the stairwell, the first concrete steps going down`
+- **무지 화장실 문 보조구 [ep04, P19~20]:** 토큰 뒤에 붙인다: `a plain solid pale-grey door set in the corridor wall, different from the sliding classroom doors, with no sign, no pictogram, no plate and no window`
+  - 프롬프트에 "restroom/toilet" 같은 낱말을 쓰지 않는다(Flow가 남녀 픽토그램이나 글자를 그려 넣기 쉽다). 화장실이라는 것은 대사(P20)와 행동(가방째 들어감 → 홀쭉해져 나옴)으로만 읽힌다. **내부는 그리지 않는다.**
+  - P19 ↔ P20은 같은 구도(복도 측면 미디엄, 같은 문, 같은 창빛). P20 생성 때 P19 이미지를 첨부해 구도를 맞춘다(§12 매치 컷과 같은 방식). 다른 점은 서윤의 가방 부피(불룩 → 홀쭉)와 블레이저 앞판(평소 → 살짝 팽팽), P20의 예린뿐.
+  - 문에 표지판·픽토그램·명판·글자가 생기면 REGEN(§11-1).
 
 **LOC_STAIR_LANDING** — 옥상 앞 계단참
 - token: `top stair landing below a locked grey steel rooftop door, two old desks and chairs stacked against the wall, dusty window with late-afternoon light, worn concrete steps, quiet and hidden`
@@ -327,6 +338,7 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLWAY · LOC_STAIR_LANDING · LOC_STUDENT_OFFICE · LOC_TEACHERS_OFFICE · LOC_SNACK_BAR · LOC_CLASSROOM @NIGHT · LOC_BUS_NIGHT · LOC_ACADEMY_STREET · LOC_CVS · LOC_CVS_FRONT · LOC_CVS_STOCKROOM · LOC_CROSSROADS · LOC_UPHILL_ALLEY · LOC_HOME · LOC_OLD_SUPER @PAST. 새 장소가 필요하면 panel-director와 조율해 여기 추가한다(world §6 우선).
 
 - **[ep03] + LOC_COUNSEL_ROOM** (20번째, §7-2, world §6에도 한 줄 추가). ep03 사용 LOC: CVS(+ 창 너머 CROSSROADS), HOME, HALLWAY, TEACHERS_OFFICE, CLASSROOM, STAIR_LANDING, COUNSEL_ROOM, STUDENT_OFFICE, GINKGO_ROAD @NIGHT, CVS_STOCKROOM, UPHILL_ALLEY.
+- **[ep04] 새 LOC 없음 (20개 유지).** ep04 사용 LOC: TEACHERS_OFFICE(P1·P2·P4, ep03 P57과 같은 문틈 프레임), HALLWAY(교무실 문 앞 P3, 화장실 문 앞 P19~20 + 무지 화장실 문 보조구, 점심 순찰 P45~51, 빈 복도·모퉁이 P55~56), STAIR_LANDING, HOME, BUS_STOP_SCHOOL, GINKGO_ROAD(P18 원경, 낮), CLASSROOM, STUDENT_OFFICE(P56 원경, P57~60, 제보함 = character-sheets §P TIPBOX). 편의점 계열 LOC 없음.
 
 ---
 
@@ -343,6 +355,10 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 | 계약서 | 4등분으로 접힌 무지 흰 종이 한 장(P25~27). 공책에서 찢은 것이라 한쪽 가장자리가 뜯겨 있다 |
 | 삼각김밥 | 투명 비닐, 주황 띠, 인쇄 없음 |
 | 휴대폰 | 뒷면(예린 연보라 케이스) 또는 흐린 흰 빛만 나는 화면 |
+| 도하의 평평한 쪽지 [ep04] | 무지 흰 종이를 평평하게 네 번 접은 손바닥 반만 한 사각(DOHA_NOTE_FLAT). **학 모양 금지**. P53·P56·P57 |
+| 서윤 노트·뜯긴 페이지 [ep04] | 무지 연회색 표지, 줄 없는 흰 페이지, 뜯긴 자국(SEOYUN_TORN_PAGE). P53 글씨는 도하의 오므린 왼손 밑에 숨는다 |
+| 제보함 [ep04] | LOC_STUDENT_OFFICE의 잠긴 작은 나무 상자, 투입구, 무지(TIPBOX). P56·P57 |
+| 조끼 위치 [ep04] | P13 건조대 → P14~19 가방 바닥 → P20~60 블레이저 안(초록은 P33 허리선 한 줄만) |
 
 ---
 
@@ -449,6 +465,12 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 | 교복이 일본식 세일러복·학란 | REGEN(남색 블레이저 + 넥타이 + 체크 치마) |
 | 편의점이 일본식 콘비니 간판 | REGEN(무지 초록 간판) |
 | 학에 두 특징 없음(P14, P56, P57) | REGEN |
+| [ep04] 도하의 쪽지가 학·종이접기 모양(P53, P57) | REGEN(평평한 사각만) |
+| [ep04] 서윤 초록 조끼가 P33 밖에서 보임 / 블레이저 V자 앞섶·소매·풀린 단추 틈으로 초록 | REGEN |
+| [ep04] P33 초록이 한 줄이 아니라 조끼 전체·지퍼·주머니까지 보임 | REGEN(허리선 밑단 한 줄만) |
+| [ep04] 엑스트라 니트 조끼가 초록 | REGEN(남색) |
+| [ep04] 화장실 문에 픽토그램·표지판·글자 | REGEN |
+| [ep04] 도하 셔츠 차림(P34~38)에 블레이저를 입고 있음 / 서윤 어깨에 블레이저 없음(P34~37) | REGEN |
 
 ---
 
@@ -476,3 +498,4 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 | v1 | 2026-11-21 | 최초 작성(ep01). world §6 LOC 19개 원문 고정, 무드 팔레트 7종(M_DAY·M_DAY_OUT·M_LANDING·M_SCHOOL_NIGHT·M_NIGHT·M_BLANK·M_FLASH), Khmer edition 말풍선·art_space 규약, upstream in-image 베이크 규칙 교체 명시 |
 | v1.1 | 2026-11-22 | ep02 추가만(기존 문구 유지): §3-2 무드 4종 확정(M_ALLEY_NIGHT·M_HOME_NIGHT·M_SCHOOL_NIGHT_IN·M_BUS_NIGHT) + 예약색 메모, §7 LOC_CVS 직원 문 보조구·LOC_HALLWAY @NIGHT 계단 머리 보조구, §12-6 ep01 첨부 의존 패널 생성 순서 |
 | v1.2 | 2026-11-22 | ep03 추가만(기존 문구 유지): §7-2 LOC_COUNSEL_ROOM 신규(20번째, 고정 EN 토큰: 원탁 + 의자 4개, 블라인드 반쯤 내린 창, 숫자 없는 시계, 무지 크림 벽, 얼굴 없는 흐린 실루엣만 비치는 불투명 유리문) + P29·P41 유리문 실루엣 보조구 + 방향 규약, §5-3 상담실 행, §7-5 ep03 사용 LOC 메모, §3-2 무드 M_COUNSEL 신규 + ep03 씬별 기존 무드 대응·예약색 메모 |
+| v1.3 | 2026-11-22 | ep04 추가만(기존 문구 유지): §3-2 무드 M_HOME_MORNING 신규(유일한 빈틈: 반지하 방의 아침, P13~14) + ep04 씬별 기존 무드 대응, 계절 추가구(`early November…`), P21 '따뜻한 교실' 빛 메모(M_DAY 안, 새 무드 아님), 예약색·의상 변형 메모, §7-2 LOC_HALLWAY 무지 화장실 문 보조구(표지·픽토그램 없음, P19↔P20 같은 구도), §7-5 ep04 사용 LOC(새 LOC 없음), §8 소품 4행(평평한 쪽지·노트·제보함·조끼 위치), §11-1 ep04 드리프트 6행 |
