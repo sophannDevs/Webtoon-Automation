@@ -25,7 +25,7 @@
 | HARAM | 채하람 | P20~21, P31~34, P38~46 | 있음 (3순위) |
 | RYU | 류진혁 (담임) | P9~10 | 있음 (4순위) |
 | YERIN / TAEMIN | 나예린 / 구태민 | P4, P6, P18, P28~29, P47 | 한 장 (5순위) |
-| MISUK | 오미숙 (사장님) | 목소리만 (P7) | **보류** (6순위, 얼굴 등장 회차에 제작) |
+| MISUK | 오미숙 (사장님) | 목소리만 (P7) | 6순위. ep01 보류 → **ep02 제작: MISUK_turnaround** (§R-2) |
 | GEONU | 임건우 | P38, P40, P46 | 토큰만 |
 | JACKET_MAN | 남색 점퍼 남자 | P8 원경 | 토큰만 |
 | SNACK_CLERK | 매점 직원 (엑스트라) | P30 | 토큰만 [AD] |
@@ -41,6 +41,7 @@
 - **UNIFORM_BOY:** UNIFORM_BASE + `dark charcoal trousers`
 - **SHOES_INDOOR:** `white slipper-type indoor shoes with a green rubber band (2nd year)` — 학교 건물 안
 - **SHOES_OUTDOOR [AD]:** `white socks and black loafers` (여학생, characters §4-1/4-3 복장) / 남학생은 `black sneakers` — 건물 밖(P48)·편의점
+  - **[ep02 확인, AD]** 교문·은행나무 오르막 장면 P16~P33(E02S06~S08, 건물 밖)에서는 **하람과 건우도 실외화**를 신는다: 하람 `white socks and black loafers`, 건우 `black sneakers`. 하람 OUTFIT_SCHOOL의 SHOES_INDOOR는 건물 안 장면(교실·복도·계단참·매점·학생부실, 예: ep02 P46)에만 쓴다. 같은 교문의 서윤(흰 양말·검정 로퍼)·도하(검정 운동화)도 P12~P33 실외화.
 - **ARMBAND:** `plain crimson armband on the left upper arm (no letters)` — 선도부(하람·건우)
 - 화풍 전제: 한국 웹툰 원작 스타일, 현실 비율 고교생(7.5~8등신), 동아시아인 얼굴.
 - 체크 치마의 짙은 녹색은 탁한 녹색이다. 조끼 초록(#2F8F5B)과 섞이지 않게 `muted dark green`으로 유지.
@@ -163,6 +164,7 @@
 
 - `Oh Misuk, 54-year-old Korean woman convenience-store owner, short tight dark brown permed curls with grey roots, reading glasses pushed up on her head, small droopy brown eyes with deep smile lines, 158 cm sturdy round build, sun-tanned warm skin with faint freckles, lavender fleece zip jacket under a plain green staff vest with no logo, beige arm sleeves, black fleece trousers, grey slippers, small round gold stud earrings, gruff worried expression`
 - ep01은 목소리만(P7 통화). **얼굴을 그리지 않는다.** 얼굴이 처음 나오는 회차에 `MISUK_sheet` 제작.
+- **[ep02] 보류 해제:** 얼굴 첫 등장 = ep02 P9. 시트 카드 이름은 **`MISUK_turnaround`**(`refs/MISUK_turnaround.png`, §R-2). ep02에서 도하와 같은 프레임에 그리지 않는다.
 
 ## 12. 시리즈 대기 토큰 (ep01 미등장, 원문 고정)
 
@@ -227,9 +229,9 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | 5 | **CLASSMATES_sheet** | 16:9 | 예린·태민 각자 전신 정면 + 3/4, 바스트 2칸씩(예린: 들뜬 웃음 / 놀람 입 막기, 태민: 크게 벌린 웃음 / 책상 치며 항의). 예린 휴대폰은 뒷면(연보라 케이스) | 교실 대소동 코미디 |
 | — | **LEADS_lineup** [AD] | 16:9 | 서윤(OUTFIT_SCHOOL)과 도하(OUTFIT_SCHOOL) 나란히 정면 전신, **서윤 정수리 = 도하 턱 높이**, 둘 다 무표정 | 투샷 패널의 단일 첨부용(첨부 3장 한도) |
 | — | **PROPS_sheet** (characters §6 권장) | 16:9 | 흰 배경 위 정물 배열: ① 레진 학 키링(정면·측면, 누런 아이보리 학, 갈고리 머리 + 접은 꼬리, 은색 고리·볼체인) ② 서윤의 영수증 학 두 각도(측면에서 갈고리 머리, 뒤에서 접은 꼬리) + 껌 포장지 학 하나 ③ 초록 무지 조끼(펼친 상태, 지퍼, 가슴 주머니 볼펜) ④ 학이 약 2/3 찬 뚜껑 없는 유리병 ⑤ 주황 띠 참치마요 삼각김밥 ⑥ 흰 사각 파스 | C2 회수(P56~57)의 성패 = 접는 방식 일치 |
-| 6 | MISUK_sheet | — | **ep01 보류.** 비트시트 D-6: 사장님은 ep01 목소리만. 얼굴 등장 회차에 제작 | — |
+| 6 | **MISUK_turnaround** [ep02] | 16:9 | §11 원문 토큰. 위 줄 전신 4뷰(정면·3/4·측면·후면), 아래 줄 3/4 바스트 3칸(무뚝뚝 / 조용한 걱정 / 드문 웃음). 01시 근무복: 연보라 플리스 + 서윤과 같은 초록 무지 조끼(명찰·글자 없음), 베이지 팔토시, 회색 슬리퍼. 모든 뷰에서 머리 위 돋보기안경, 금 귀걸이. 한 장에 턴어라운드와 표정(별도 `_expressions` 없음). 카드 = `refs/ref_prompts.md` "MISUK_turnaround" | **보류 해제(ep02).** 사장님 얼굴 첫 등장 = ep02 P9, **P9 생성 전 필수**. ep02에서 도하와 같은 프레임에 그리지 않는다(첫 대면 ep05) |
 
-- **카드 합계(ep01): 12장** — SEOYUN 3 · DOHA 3 · HARAM 2 · RYU 1 · CLASSMATES 1 · LEADS_lineup 1 · PROPS 1.
+- **카드 합계(ep01): 12장** — SEOYUN 3 · DOHA 3 · HARAM 2 · RYU 1 · CLASSMATES 1 · LEADS_lineup 1 · PROPS 1. **ep02: +1장(MISUK_turnaround) = 13장.**
 - characters §6의 "각 시트 = 4뷰 + 표정 3종"을 지키되, 1·2순위는 낮/밤 변형이 커서 `_night` 카드를 따로 둔다(flow-handoff 기본 2장 + 1장). 4·5순위는 턴어라운드와 표정을 한 카드에 합쳐 사용자 작업량을 줄인다.
 - **시트 불필요(토큰만):** GEONU, JACKET_MAN, SNACK_CLERK, (ep01) MISUK. HYEWON·SEOYUN_8·DOHA_8은 등장 회차에 시트.
 - **검수(ref-sheet-artist → art-director):** 이미지가 들어오면 ① 한 시트 안에서 같은 사람인가 ② 식별 표식·좌우가 맞나 ③ 글자·라벨이 없나 ④ SEOYUN_turnaround와 SEOYUN_night, DOHA_turnaround와 DOHA_night가 같은 얼굴인가 ⑤ PROPS의 학 두 특징이 판별되나. 통과하면 `refs/INDEX.md`에 확정 경로를 적고, 이 파일 각 인물의 "레퍼런스" 줄을 "(확정)"으로 바꾼다.
@@ -246,6 +248,10 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | 학·키링 ECU (P14, P56, P57) | PROPS_sheet (+ 매치 컷 원본 패널) |
 | 교실 그룹 | LEADS_lineup, CLASSMATES_sheet (+ HARAM_turnaround) |
 | 담임 | RYU_sheet, SEOYUN_turnaround |
+| 사장님 MISUK 패널 [ep02 P9~] | MISUK_turnaround (+ 서윤이 함께면 SEOYUN_night). 도하는 같은 프레임에 없다 |
+| 엄마 HYEWON 등만 [ep02 P11] | 엄마 시트 없음: §12 HYEWON 토큰만 프롬프트에(얼굴 없음, **오른손목 흰 사각 파스가 읽히게**). 첨부는 서윤 쪽 시트만 |
+
+- **ep01 패널 첨부 의존 [ep02]:** ep02 P1, P2, P8, P38, P51, P56, P61은 `attach:`에 ep01 패널(P59, P60, P1, P22, P48, P53, P60)이 있어 **그 ep01 이미지가 생긴 뒤에만** 만들 수 있다(style-bible §12-6).
 
 ---
 
@@ -254,3 +260,5 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | 버전 | 날짜 | 내용 |
 |---|---|---|
 | v1 | 2026-11-21 | 최초 작성(ep01). characters §4 EN 토큰 12종을 CORE/OUTFIT로 분리(단어 그대로), §5 소품 토큰 8종, §6 우선순위 → 카드 12장. [AD] 결정: 도하 백팩 왼쪽 어깨·낮 안경 없음 명시, 서윤 OUTFIT_SCHOOL 신발·백팩 EN화, SNACK_CLERK 엑스트라 토큰, LEADS_lineup·SEOYUN_night·DOHA_night 카드 추가, MISUK 시트 ep01 보류 |
+| v1.1 | 2026-11-22 | ep02 추가만(토큰 변경 없음): §1 SHOES_OUTDOOR에 교문 장면(P16~P33) 하람·건우 실외화 확인, §R-2 MISUK_turnaround 카드(보류 해제, P9 전 필수, 도하와 같은 프레임 금지), §R-3 사장님·엄마 첨부 행 + ep01 첨부 의존 패널 메모, §0-1·§11 MISUK 상태 표기 |
+

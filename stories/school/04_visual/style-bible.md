@@ -1,6 +1,6 @@
 # 스타일 바이블: 『유통기한 연애』 (KM «ស្នេហាមានថ្ងៃផុតកំណត់») · 시리즈 자산
 
-- 작성: art-director · 2026-11-21 · v1 (ep01) · Flow-by-hand mode + Khmer edition
+- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (2026-11-22, ep02 추가) · Flow-by-hand mode + Khmer edition
 - 입력: `02_story/world.md`(§6 LOC 19개, §7 시각 톤·글자 없는 대체표·달력), `02_story/characters.md`(§4 외형 토큰, §5 소품, §6 시트 우선순위), `02_story/concept.md`(§6 톤, §10~11), `03_episode/ep01_beatsheet.md`(장소·구도·D-6 제작 메모), `01_research/trend-brief.md`
 - 스킬: `webtoon-panel-breakdown` 작업 B(B-1~B-7) · `webtoon-khmer-edition` · `webtoon-flow-handoff`
 - 우선순위: brief > concept > world/characters > **이 문서** > 샷리스트 > 프롬프트. 인물·소품 토큰과 레퍼런스 시트 사양은 `character-sheets.md`.
@@ -86,10 +86,18 @@
 | **M_NIGHT** | **차가운 초록·흰빛 편의점 밤** | `flat cold white fluorescent light, green-and-white store interior, cyan glow from the drink fridges, deep navy-black night outside the glass, a few orange streetlights` | 형광 흰·조끼 초록·청록·남흑 | S01, S13, S14, S16 (P1~3, P5 인서트, P49~53, P55~60) |
 | **M_BLANK** | 여백 스크롤 | `almost empty deep navy-black night, a faint distant orange streetlight glow at the very bottom` | 남흑 | S15 (P54) |
 | **M_FLASH** | **호박색 눈 회상 (9년 전 겨울)** | `warm amber incandescent glow, snow falling softly, faded film grain, soft dark vignette at the edges, gently desaturated warm colours` | 백열 노랑·눈 흰·빨간 의자·귤 | ep01 미사용(ep02 이후 회상) |
+| **M_ALLEY_NIGHT** [ep02] | 자정 넘은 귀갓길 골목 | `after midnight, sparse pools of orange streetlamp light on cold concrete, deep navy-black shadows between the lamps, quiet and empty` | 남흑·가로등 주황·콘크리트 회색 | ep02 E02S03 (P10) |
+| **M_HOME_NIGHT** [ep02] | 반지하 방의 밤 | `dark room at night, one thin beam of orange streetlight falling through the high narrow window, everything else in soft deep navy shadow with just enough dim light to read faces and hands, low contrast` | 남흑·가로등 주황 한 줄 | ep02 E02S04 (P11) |
+| **M_SCHOOL_NIGHT_IN** [ep02] | 야자 끝 학교 안 (교실·복도) | `night, flat neutral white fluorescent ceiling light indoors, cream walls and navy uniforms, black windows reflecting the room, quiet and tired` | 형광 흰·크림·남색·남흑 | ep02 E02S14~S15 (P47~50) |
+| **M_BUS_NIGHT** [ep02] | 밤 버스 안 | `cool blue-white bus interior light, dark night outside the window with orange streetlights and bright plain windows smearing past, faint condensation on the glass` | 청백·청회색·남흑·가로등 주황 | ep02 E02S17 (P53) |
 
 - **M_LANDING은 점심시간이다.** 창밖에 노을 하늘을 그리지 않는다. 먼지 낀 창이 걸러 준 살구빛 역광이라는 "느낌"만.
 - **P5 인서트는 회상이 아니다**(어젯밤 계산대). M_NIGHT로 그리고 M_FLASH를 쓰지 않는다.
 - 채도: 낮은 따뜻하고 중간 채도, 밤은 저채도에 초록·청록만 살짝 높게, 회상은 채도를 한 단계 낮추고 노랑을 올린다.
+- **ep02 무드 4종 확정 [AD, 2026-11-22]** (panel-director 초안 기준). M_ALLEY_NIGHT·M_BUS_NIGHT는 초안 그대로 확정. M_HOME_NIGHT는 `with just enough dim light to read faces and hands`를 더했다(P11 엄마 오른손목 파스가 읽혀야 함). M_SCHOOL_NIGHT_IN은 `neutral`과 `cream walls and navy uniforms`를 더했다(학교의 밤은 중성 흰빛 + 크림이고, 편의점의 차가운 초록·흰빛과 구별해야 함).
+  - **예약색 유지(§3-3):** 네 무드 모두 선명한 조끼 초록을 쓰지 않는다. M_SCHOOL_NIGHT_IN 안의 선명한 초록은 P47 가방 지퍼 틈 조끼 끝뿐이고, 형광등이어도 초록·청록 기운을 넣지 않는다. M_BUS_NIGHT는 실내 컷이라 버스 외관의 녹색이 보이지 않게 하고, 실내는 청회색 좌석, 창밖 간판·창은 무지.
+  - M_ALLEY_NIGHT: 가로등은 정확히 세 개(LOC_UPHILL_ALLEY), 골목에 인물 없음(P10, W3). M_HOME_NIGHT: 주황은 창으로 드는 빛 한 줄뿐.
+  - **M_SCHOOL_NIGHT vs M_SCHOOL_NIGHT_IN:** 창 너머 가로등 길이 보이는 컷(ep01 P48, ep02 P51~52)은 M_SCHOOL_NIGHT, 실내만 보이는 컷(ep02 P47~50)은 M_SCHOOL_NIGHT_IN.
 
 ### 3-3. 예약색 규칙 [고정]
 
@@ -239,6 +247,7 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 **LOC_HALLWAY** — 2층 복도
 - token: `long school corridor, windows on one side over the ginkgo avenue, classroom sliding doors with small glass panes on the other, pale green lower wall and cream upper wall, terrazzo floor, blank notice board`
 - **@NIGHT 변형 (P48 전경):** `at night, fluorescent lights on, the windows black and reflecting the corridor`
+- **@NIGHT 계단 머리 보조구 [ep02, P48~50]:** @NIGHT 변형 뒤에 붙인다: `at the head of the stairwell, the first concrete steps going down`
 
 **LOC_STAIR_LANDING** — 옥상 앞 계단참
 - token: `top stair landing below a locked grey steel rooftop door, two old desks and chairs stacked against the wall, dusty window with late-afternoon light, worn concrete steps, quiet and hidden`
@@ -268,6 +277,7 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 **LOC_CVS** — 편의점 내부 (토큰 자체가 밤. 비트시트의 `LOC_CVS @NIGHT` = 이 토큰)
 - token: `small Korean 24-hour convenience store at night, bright cool white light, green-and-white interior, aisle shelves of colour-blocked plain packages, cold drink fridges, a counter on the right with receipt printer, a small glass jar of white paper cranes at the counter's left end, a small green wire basket at the right end, a grey bin under the counter, narrow window bar with three stools facing the street`
 - 계산대 소품 보조구(필요할 때): `card terminal with a blank screen, cigarette shelf behind the counter as plain colour blocks`. 벽시계 = `wall clock with tick marks and no numerals`(P51 12시, P52 12시 40분 근처).
+- 직원 문 보조구 [ep02, P6·P7, 필요할 때]: `a plain grey staff door behind the counter, with no sign, leading to the back stockroom`
 - 방향은 §5-3. 계산대 위에 문제집이 보이면 `open workbook with blank pages`.
 
 **LOC_CVS_FRONT** — 편의점 앞 (ep01 미사용)
@@ -427,6 +437,7 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 3. 얼굴이 흔들리면: 같은 프롬프트로 2~3장 더 → 가장 시트와 닮은 것 → 그래도 안 되면 그 인물 `_turnaround` 한 장만 첨부하고 다시.
 4. 매치 컷(P58 ← P2, P57 ← P56)은 앞 컷 이미지를 함께 첨부한다.
 5. 이미지 안에 글자가 조금이라도 생기면 쓰지 말고 다시 만든다(뷰어가 글자를 쓴다).
+6. **ep02 생성 순서 [ep02]:** ep02 P1, P2, P8, P38, P51, P56, P61은 `attach:`에 ep01 패널이 있다(P1 ← ep01 P59, P2 ← ep01 P60, P8 ← ep01 P1, P38 ← ep01 P22, P51 ← ep01 P48, P56 ← ep02 P8 + ep01 P53, P61 ← ep01 P60). 그래서 **해당 ep01 이미지가 생긴 뒤에만** 만들 수 있다. ep01이 아직 이미지 대기 중이면 이 7장은 미뤄 두고 나머지부터 만든다. ep02 안에서는 P8 → P56, P16 → P30, P5 → P55 순서. P9는 `MISUK_turnaround` 시트가 확정된 뒤.
 
 ---
 
@@ -441,3 +452,4 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 | 버전 | 날짜 | 내용 |
 |---|---|---|
 | v1 | 2026-11-21 | 최초 작성(ep01). world §6 LOC 19개 원문 고정, 무드 팔레트 7종(M_DAY·M_DAY_OUT·M_LANDING·M_SCHOOL_NIGHT·M_NIGHT·M_BLANK·M_FLASH), Khmer edition 말풍선·art_space 규약, upstream in-image 베이크 규칙 교체 명시 |
+| v1.1 | 2026-11-22 | ep02 추가만(기존 문구 유지): §3-2 무드 4종 확정(M_ALLEY_NIGHT·M_HOME_NIGHT·M_SCHOOL_NIGHT_IN·M_BUS_NIGHT) + 예약색 메모, §7 LOC_CVS 직원 문 보조구·LOC_HALLWAY @NIGHT 계단 머리 보조구, §12-6 ep01 첨부 의존 패널 생성 순서 |
