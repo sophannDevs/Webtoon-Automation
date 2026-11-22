@@ -372,7 +372,7 @@ style-bible §6-2-3: 첨부 3장 이하(인물 시트 1~2장 + 앞 패널 1장).
 - motion/direction: 왼쪽 ↔ 오른쪽 대치
 - dialogue_ref: 담임 "연애는 교칙 위반 아니다, 채하람." (bubble 1, upper-left) · 하람 "위반이 아니라 상담 사안입니다. 보호자 없는 심야 외출이니까요." (bubble 2, upper-right; KM 김)
 - bubbles: 2
-- art_space: Keep the top third of the frame across its width (plain cream wall and the upper blinds) as calm, empty background — the teacher's bubble upper-left, Haram's longer bubble upper-right.
+- art_space: Keep the top two-fifths of the frame across its width (plain cream wall and the upper blinds) as calm, empty background — the teacher's bubble upper-left, Haram's longer bubble upper-right.
 - split: no
 - gap_after: 30
 - fx/note: 권장 첨부 P9(같은 책상). 첨부: RYU_sheet, HARAM_turnaround.
