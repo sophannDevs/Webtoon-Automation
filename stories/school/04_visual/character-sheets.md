@@ -1,6 +1,6 @@
 # 캐릭터 시트: 『유통기한 연애』 · 일관성 토큰 + 레퍼런스 시트 사양 (시리즈 자산)
 
-- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (ep02) · v1.2 (2026-11-22, ep03 추가) · v1.3 (2026-11-22, ep04 추가) · Flow-by-hand mode + Khmer edition
+- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (ep02) · v1.2 (2026-11-22, ep03 추가) · v1.3 (2026-11-22, ep04 추가) · v1.4 (2026-11-23, ep05 추가) · Flow-by-hand mode + Khmer edition
 - 입력: `02_story/characters.md` §4(외형 토큰 블록), §5(소품 토큰), §6(레퍼런스 시트 우선순위) · `02_story/world.md` §3-4(교복), §7 · `03_episode/ep01_beatsheet.md` D-6
 - 스킬: `webtoon-panel-breakdown` B-2·B-3·B-7 · `webtoon-flow-handoff`(카드 형식) · `webtoon-khmer-edition`(글자 없음)
 - 함께 읽기: `style-bible.md`(STYLE_CORE/STYLE_REF, 무드 빛, LOC, 조립 순서)
@@ -31,6 +31,8 @@
 | SNACK_CLERK | 매점 직원 (엑스트라) | P30 | 토큰만 [AD] |
 | HYEWON | 정혜원 (엄마) | 미등장 | 등장 회차에 시트 |
 | SEOYUN_8 / DOHA_8 | 8세 서윤 / 8세 도하 | 미등장(회상) | 등장 회차에 시트 |
+
+- **[ep05] SEOYUN_8 / DOHA_8 첫 등장:** ep05 회상 P53~P61(9년 전 겨울 밤, 첫눈). 시트 = **SEOYUN_8_sheet / DOHA_8_sheet**(§R-2), 토큰 = §12-1. **MISUK**은 ep05 P41~P47에서 처음 도하와 같은 프레임(P43부터 허용, §11 [ep05]).
 
 ---
 
@@ -68,6 +70,12 @@
   - **P33 포즈 추가구 (반전 A):** `both arms raised high above her head, holding her open, empty black backpack upside down and shaking it out; the raised arms lift the buttoned blazer hem, revealing one single thin horizontal strip of vivid medium green (#2F8F5B) staff-vest hem at her waistline, between the blazer hem and the waistband of the check skirt; the blazer sleeves slide down her forearms` — 초록 띠는 작고 선명하게, 화면 중앙. 조끼의 지퍼·주머니·나머지 부분은 보이지 않는다(밑단 한 줄만). 팔을 들어 소매가 내려가므로 왼손목 안쪽 파스가 보여도 된다(보이면 왼손목). 하람·담임의 시선은 위로 들린 가방에.
   - **P34~P37 덧입기:** 위 토큰 + `a second, larger navy school blazer (Doha's, open, no badge text) draped loosely over her shoulders on top of her own buttoned blazer`. 도하 블레이저가 어깨와 허리선을 덮는다. P38에서 뭉쳐 돌려준다.
   - **첨부:** SEOYUN_turnaround(§R-3). **SEOYUN_night는 이 변형에 절대 첨부하지 않는다**(밤 시트의 겉에 입은 조끼·걷은 소매가 그대로 옮겨 온다).
+- **[ep05] 서윤 의상 흐름 [AD] (비트시트 D-6, 대본 P36·P47):**
+  - 낮 P1~P35: OUTFIT_SCHOOL(블레이저 단추 다 잠금). 조끼는 가방 속, 초록 노출 없음.
+  - 밤 편의점 P36~P46(+ 창고 문가 P41~42): **OUTFIT_STORE 그대로**(블레이저 벗음, 초록 조끼, 소매 걷음). 비트시트·대본의 "블레이저 위 초록 조끼"는 [AD 판단] "블레이저 대신 겉에 초록 조끼"로 읽는다: ep01~03 모든 편의점 패널과 SEOYUN_night 시트가 블레이저를 벗은 모습이고, 조끼를 블레이저 위에 겹쳐 입으면 같은 근무복이 회차마다 달라진다. panel-director에게 이 해석을 통지한다.
+  - **SEOYUN_OFF_SHIFT (P47~P65, 조끼 벗음):** OUTFIT_SCHOOL 그대로(블레이저 다시 입고 단추 잠금, 넥타이 맴, 흰 양말·검정 로퍼, 낡은 검정 백팩) + `the green staff vest taken off and rolled away inside her bag, no green visible anywhere on her`. ep02 P10·ep03 P55 귀갓길(블레이저 다시 입음)과 같은 처리. **SEOYUN_night를 첨부하지 않는다**(조끼가 다시 생긴다).
+  - **손에 든 것 (P50~P65):** P50 도하에게서 레진 키링을 받음 → P51 펼친 손바닥 위 키링 + 다른 손 손끝의 은백색 껌 종이 학(§P KEYRING_IN_PALM) → P62~P65 키링을 손가락으로 감싸 쥠(회차 안에서 돌려주지 않는다). 키링을 쥔 손에 파스(왼손목)는 블레이저 소매 밑으로 살짝만.
+  - **P52 눈 ECU:** 표정 = `frozen in shock, eyes wide, breath held`(얼어붙음 슬롯). 회상 진입 색 전환은 style-bible §3-2 [ep05] M_FLASH 규칙.
 - **시그니처 소품 (보일 때만):** `small white folded paper crane in her fingers` · 남색 천 필통 `navy fabric pencil case` [AD] · 가방 지퍼 틈 `the tip of a rolled green vest peeking through the half-open zipper at the bottom of her bag`
 - **표정 디폴트:** `composed tight-lipped expression`
 - **표정 슬롯 [AD, 시트의 3종 + ep01 필요분]:**
@@ -107,6 +115,13 @@
   - 블레이저가 없어 **왼쪽 목 귀 아래 점**이 평소보다 잘 보인다. 식별 표식으로 적극 쓴다.
   - 교실(P34~37)에서 백팩은 몸에 없다. 책상 옆 고리에 걸려 있고 키링은 왼쪽 끈, 통로 쪽(ep01 P42~43 규칙). P38 계단참에도 백팩 없음(쉬는 시간). P44에서 엄지가 키링에 닿는 컷은 샷리스트에서 백팩 위치를 정한다(메고 있으면 왼쪽 어깨).
   - 낮이므로 **안경 없음**. 셔츠 차림이 태민(소매 걷음·셔츠 빠짐·넥타이 느슨, 정수리 뻗친 머리)과 헷갈리지 않게 도하는 소매를 걷지 않고 셔츠를 바지에 넣는다.
+- **[ep05] 도하 밤 변형 [AD] (비트시트 E-3·D-6, 대본 P37·P38·P50·P64):** 낮 P1~P35 = OUTFIT_SCHOOL(블레이저 열고, 키링 왼끈). 밤 P37~P65 = OUTFIT_NIGHT 위에 아래 변형만 얹는다. CORE 변경 없음.
+  - **DOHA_NIGHT_FOGGED (P37, 입장 직후, 후드 쓴 채):** OUTFIT_NIGHT + `stepping in from the cold, both lenses of his thin round black-framed glasses fogged over white, his eyes not visible through the fog, the hood still up` — 렌즈의 하얀 김이 화면의 주인공. 후드 그늘이 렌즈를 가리지 않게(김 서린 두 원이 또렷이 읽히게). **P56 매치 컷의 원본:** 정면 앵글, 렌즈 반사 위치를 P56과 같게(P56 생성 때 이 P37 이미지를 첨부).
+  - **P38 (후드 내리고 닦기):** `hood pushed back, messy black hair, the thin round black-framed glasses taken off and held in one hand, wiping the lenses with the charcoal hoodie sleeve pulled down over his other hand so only the fingertips show` — 소매로 덮인 손 = 8세 패딩 소매의 메아리(P58·P60 매치). 안경을 벗은 얼굴은 서윤 OTS 너머 반쯤만.
+  - **P39~P49:** 후드 내림, 밤 안경(김 없음, 맑은 렌즈) = DOHA_night 시트의 "후드 벗은 상태". 키링은 아직 왼끈 D링.
+  - **DOHA_EMPTY_DRING (P50~P65):** P50 키링을 D링에서 풀어 서윤 손바닥에 올린다 → 이후 `the D-ring on the left strap of his black backpack now empty, no keyring`(§P). P63~P65에서 백팩 끈이 보이면 빈 D링. 키링이 다시 끈에 있으면 REGEN.
+  - **P64 안경 밀어 올림:** `pushing his thin round black-framed glasses up the bridge of his nose with one finger`(렌즈 맑음, 김 없음). P65 = 고백의 정면 슬롯(`steady serious gaze straight into her eyes, lips slightly parted`) + 밤 안경, ep01 P60 구도 짝.
+  - 사장님과 같은 프레임: **P43부터 허용**(ep02~04 금지 해제). P43~P47 도하는 후드 내림 + 맑은 밤 안경.
 - **시그니처 소품:** 레진 학 키링(§P) · `one plain black wireless earbud in one ear` · 매점 빵 `soft bread in a plain clear plastic wrap with no print`
 - **표정 디폴트:** `flat calm expression`
 - **표정 슬롯 [AD]:**
@@ -136,6 +151,7 @@
 - **식별 표식:** ① 왼팔 진홍 무지 완장 ② 얇은 은테 사각 안경 ③ 오른쪽 귀 뒤 검정 실핀
 - **금지:** 둥근 안경, 완장 오른팔, 긴 머리, 악역식 비웃음(그녀는 규칙의 집행자).
 - **[ep03] 유리문 실루엣 (P29·P41):** 하람은 얼굴 없이 상담실 불투명 유리문 너머 흐린 실루엣으로만 나온다. CORE 토큰도 시트 첨부도 쓰지 않고 style-bible §7-2 LOC_COUNSEL_ROOM의 실루엣 보조구만 쓴다(진홍 완장 덩어리가 유일한 단서, 얼굴·안경·글자 없음). CORE 변경 없음.
+- **[ep05] 놋쇠 열쇠 (P10·P13) [AD]:** 손목의 `small brass key on a crimson cord`가 소품으로 화면 전경에 나온다(§P HARAM_BRASS_KEY). P10 걸을 때 흔들리는 전경, P13 제보함 자물쇠에 꽂은 손 전경. 낭독 자세(P17~P19): 펼친 DOHA_NOTE_FLAT을 눈높이에 들되 **종이 뒷면 또는 기울인 면만** 카메라 쪽, 안쪽 글씨 영역은 보이지 않음. P22 기억 인셋 = 하람의 학 모양 첫 제보 쪽지(§4 소품, 두 특징 없음)를 회색조로. CORE 변경 없음.
 - **레퍼런스(예정):** `refs/HARAM_turnaround.png` · `HARAM_expressions.png`
 
 ---
@@ -183,6 +199,10 @@
 - `Oh Misuk, 54-year-old Korean woman convenience-store owner, short tight dark brown permed curls with grey roots, reading glasses pushed up on her head, small droopy brown eyes with deep smile lines, 158 cm sturdy round build, sun-tanned warm skin with faint freckles, lavender fleece zip jacket under a plain green staff vest with no logo, beige arm sleeves, black fleece trousers, grey slippers, small round gold stud earrings, gruff worried expression`
 - ep01은 목소리만(P7 통화). **얼굴을 그리지 않는다.** 얼굴이 처음 나오는 회차에 `MISUK_sheet` 제작.
 - **[ep02] 보류 해제:** 얼굴 첫 등장 = ep02 P9. 시트 카드 이름은 **`MISUK_turnaround`**(`refs/MISUK_turnaround.png`, §R-2). ep02에서 도하와 같은 프레임에 그리지 않는다.
+- **[ep05] 사장님 장면 (P41~P47) [AD]:** 토큰(위 원문) 그대로, 01시 근무복(연보라 플리스 + 초록 무지 조끼 + 베이지 팔토시 + 머리 위 돋보기). 시트 = MISUK_turnaround. **도하와 같은 프레임은 P43부터 허용**(첫 대면).
+  - **MISUK_AT_MONITOR (P41~P42, 창고):** `standing with her arms folded in front of the stockroom monitor showing grey blurred shapes only, seen from behind at a slight three-quarter angle, tired heavy shoulders, reading glasses pushed up on her head` — P41 문가 서윤 시점, 등 미디엄, 모니터 전경. P42 `her side profile lit grey by the monitor, not turning around, mouth flat`. 모니터에는 형체만(사람·얼굴·숫자·타임스탬프 없음).
+  - **MISUK_COUNTER_LOOK (P43~P46, 계산대):** P43 표정 `a long still look, her small droopy eyes narrowing very slightly, mouth flat, no surprise` — 놀람이 아니라 "확인". 과장 금지(눈을 크게 뜨거나 입을 벌리지 않는다). P44 `gruff blunt expression, mouth flat`(MISUK_turnaround 1번), P45 서윤 쪽으로 고개를 돌린 무뚝뚝한 얼굴, P46 주황 띠 삼각김밥을 서윤 손에 쥐여 주는 손(베이지 팔토시) + 무표정.
+  - **MISUK_BEHIND_GLASS (P47, 편의점 앞에서 본 유리 너머):** `in the middle distance behind the glass front, standing at the counter with one hand resting on the counter edge, her gaze following the boy's back` — 얼굴은 읽히되 작게(중경). 유리에 글자·포스터·스티커 없음(style-bible §7-4 LOC_CVS_FRONT [ep05]).
 
 ## 12. 시리즈 대기 토큰 (ep01 미등장, 원문 고정)
 
@@ -190,6 +210,56 @@
 - **SEOYUN_8 (회상):** `Han Seoyun at 8 years old, small Korean girl, black hair in two low pigtails with red knit hair ties, bright sharp dark-brown almond eyes (no dark circles), round cheeks pink from the cold, red knit sweater under a cream padded vest, folding a tiny paper crane from a white receipt at a shop counter, bossy confident little smile`
 - **DOHA_8 (회상):** `Doha at 8 years old, chubby quiet Korean boy, black bowl-cut hair, round thick black-framed glasses fogged at the edges, red cold cheeks, oversized faded sky-blue puffer jacket with sleeves covering his hands, sitting alone on a red plastic stool outside a small grocery shop at night in the snow, shy downcast eyes`
 - 회상 패널은 style-bible M_FLASH + LOC_OLD_SUPER @PAST.
+
+## 12-1. [ep05] 회상 2인 — SEOYUN_8 · DOHA_8 (9년 전 겨울 밤, 첫눈 · ep05 P53~P61 첫 등장)
+
+- **원문:** characters §4-11·§4-12 EN token을 **단어 그대로** CORE / OUTFIT / 동작·포즈 / 표정으로만 나눴다(차례로 이어 붙이면 원문과 같다). art-director 추가는 **[AD]**.
+- **둘 다 8세 아이:** 현실적인 아이 비율(약 5등신), 키 약 125cm로 비슷, 도하가 더 통통하다. 프롬프트에 `an 8-year-old child, not a teenager`를 붙인다(STYLE_CORE의 "teenagers" 때문에 Flow가 나이를 올리기 쉽다).
+- **한국 원작 그대로:** 9년 전 서울 변두리 동네 슈퍼의 한국 아이들. 캄보디아식 변형 없음.
+- **성인 시트 금지:** 회상 패널에는 SEOYUN_8_sheet / DOHA_8_sheet만 첨부한다. SEOYUN_turnaround·_night·_expressions, DOHA_*, LEADS_lineup은 붙이지 않는다(§R-3).
+- **눈(雪):** 실외 컷에만. 실내(P54)는 눈 없음. 현재(11월, P48~P52 앞부분·P62~P65)에는 눈이 없다.
+
+### 12-1-a. 8세 한서윤 — identity_tag: SEOYUN_8
+
+- **CORE (불변):**
+  `Han Seoyun at 8 years old, small Korean girl, black hair in two low pigtails with red knit hair ties, bright sharp dark-brown almond eyes (no dark circles), round cheeks pink from the cold`
+- **OUTFIT_WINTER:**
+  `red knit sweater under a cream padded vest` + [AD, 하의·신발 추정] `dark grey cotton trousers, small white sneakers`
+- **동작 원문 (P54 실내 카운터):** `folding a tiny paper crane from a white receipt at a shop counter`
+- **실외 추가구 [AD] (P53 실루엣·P55·P57~P59):** `a few snowflakes caught in her hair and on the shoulders of her cream padded vest`
+- **표정 디폴트:** `bossy confident little smile`
+- **표정 슬롯 [AD]:**
+  | 슬롯 | EN | 쓰는 곳 |
+  |---|---|---|
+  | 디폴트 | `bossy confident little smile` | P54, P55 |
+  | 명령 | `firm bossy little frown, chin up, as if giving an order like a grown-up` | P57, P58(턱을 든 옆얼굴) |
+  | 가르침 | `focused teacher-like little face, lips pressed, eyes on her own folding fingers` | P59 |
+- **학:** §P 서윤의 종이학 토큰 그대로, 재료 = 흰 감열지 영수증, **깨끗한 흰색 #F4F4F0**(9년 뒤 키링 속 학은 누런 아이보리). 두 특징(갈고리 머리 + 한 번 접어 내린 꼬리 끝) 판별: P59(무릎 위), P60(손 ECU).
+- **손:** 작은 맨손(장갑 없음), 손목에 **파스 없음**. P60 `a small bare child's hand`.
+- **식별 표식:** ① 빨간 털실 머리끈으로 낮게 묶은 양 갈래 ② 다크서클 없음 · 손목 파스 없음(17세와 구별) ③ 17세와 같은 또렷한 아몬드 눈매·일자 눈썹(같은 사람으로 읽히는 유일한 연결).
+- **색:** 머리끈·니트의 빨강 = 빨간 의자와 같은 계열(#C8463C, 기억의 빨강). 선도부 진홍(#B0213A)과 섞지 않는다. 초록 옷 금지(초록 = 현재의 비밀).
+- **금지:** 다크서클, 왼손목 파스, 낮은 포니테일·시스루 앞머리(17세 표식), 교복, 화장, 안경, 10대 비율.
+- **등장:** P53(유리문 안 카운터 실루엣, 형체만), P54(실내 미디엄, 옆얼굴~3/4), P55(문 앞 눈 속 전신 측면, 주황 띠 삼각김밥), P57(바스트, 살짝 로우, 3/4), P58(측면 투샷), P59(빨간 의자 옆 쪼그려 앉은 전신 측면), P60(손만 ECU).
+- **레퍼런스:** `refs/SEOYUN_8_sheet.png`(§R-2, 대기)
+
+### 12-1-b. 8세 도하 (그 아이) — identity_tag: DOHA_8
+
+- **CORE (불변):**
+  `Doha at 8 years old, chubby quiet Korean boy, black bowl-cut hair, round thick black-framed glasses fogged at the edges, red cold cheeks`
+  - 원문은 성 없이 "Doha"다(그 무렵 이름은 김도하, characters §3-6). **프롬프트에 "Baek"을 쓰지 않는다.**
+- **OUTFIT_WINTER:**
+  `oversized faded sky-blue puffer jacket with sleeves covering his hands` + [AD, 추정] `the puffer's hood down on his back, dark navy trousers, small black winter boots`
+- **포즈 원문 (의자 컷 P53·P55·P59·P61):** `sitting alone on a red plastic stool outside a small grocery shop at night in the snow` (P58은 의자에 앉은 채 두 손을 내민다)
+- **실외 추가구 [AD]:** `snow collecting on the hood on his back and on his shoulders`
+- **표정 디폴트:** `shy downcast eyes`
+- **눈을 또렷하게 그리지 않는다 [AD, 비트시트 D-6 "서윤 기억의 빈칸"]:** 모든 패널에 `his eyes hidden behind the fogged lenses and his lowered lashes, never clearly drawn`. 얼굴형·볼·바가지 머리·안경테는 또렷하게.
+  - **P56 (얼굴 정면 ECU, 매치 컷):** `round thick black-framed glasses completely fogged over white, no eyes visible behind the lenses, a warm yellow bulb reflection on each lens` — ep05 P37(DOHA_NIGHT_FOGGED)과 같은 정면 앵글·같은 반사 위치.
+  - **P61 (화이트아웃):** `two small warm yellow bulb reflections on his white-fogged lenses`, 두 손에 흰 영수증 학.
+- **손 (항상 소매 속):** `both hands hidden inside the long puffy sleeves` · P58 `holding the triangle rice ball in both sleeve-covered hands` · P60 `one small palm turned up, the puffy faded sky-blue sleeve cuff covering his fingers and half of the palm`.
+- **식별 표식:** ① 하얗게 김 서린 두꺼운 동그란 검정 안경(17세의 얇은 밤 안경의 원형) ② 손을 덮은 빛바랜 하늘색 큰 패딩 소매 ③ 선명한 빨간 플라스틱 의자(§P RED_STOOL_PAST) ④ 검정 바가지 머리, 통통한 볼.
+- **넣지 않는 것 [AD]:** 17세 도하 표식(눈썹 덮는 긴 흐트러진 머리, 왼쪽 목 점 → 패딩 깃에 가려 보이지 않게, 레진 키링, 마른 긴 체형). 웃음. 또렷한 눈동자.
+- **등장:** P53(길 건너 와이드 원경, 의자 위 작은 하늘색 형체), P54(유리문 너머 흐린 하늘색 실루엣), P55(고개 드는 미디엄 측면), P56(정면 ECU), P57(프레임 가장자리, 받는 쪽), P58(측면 투샷), P59(의자에 앉은 전신 측면, 시선은 서윤 손), P60(소매 덮인 손바닥만), P61(정면 미디엄 → 화이트아웃).
+- **레퍼런스:** `refs/DOHA_8_sheet.png`(§R-2, 대기)
 
 ---
 
@@ -208,6 +278,11 @@
 | **DOHA_NOTE_FLAT** [ep04, AD] 도하의 평평한 쪽지 | `a small plain white paper note folded flat in four into a small square about half the size of a palm, crisp straight creases, one slightly ragged edge from a torn notebook page, blank on every visible side, not a crane and not folded into any shape` | ep04 P53(접는 손), P56(원경 손안, 작게), P57(제보함 투입구에 반쯤 들어감). **학 모양 금지, 접힌 머리·꼬리·날개 없음**(ep05 하람 "이건 아니네요" 회수의 대비). 하람의 학 모양 제보 쪽지(두 특징 없음)·서윤의 학(두 특징)과 같은 컷에서 섞이지 않게. 계약서(한 장 전체를 4등분, 서윤 필통 속)와 같은 패널에 두지 않는다. 글씨·자국 보이지 않음 |
 | **SEOYUN_TORN_PAGE** [ep04, AD] 서윤 노트 + 뜯긴 페이지 | 노트: `Seoyun's plain notebook with a plain pale grey cover with no print and unlined blank white pages, one page torn out leaving a narrow ragged stub along the binding` / 뜯긴 페이지: `a single torn-out unlined blank white notebook page with one ragged edge` | ep04 P52(도하가 뜯어 감, 뜯기는 순간), P53(도하가 쓴다: **왼손을 종이 위에 오므려 덮어 글씨를 가리고**, 오른손의 펜 끝만 보인다 → `his cupped left hand covering the page so nothing written can be seen, only the pen tip showing`). 펼친 페이지·노트 표지 모두 무지, 줄 없음. 손 밖으로 나온 부분에 글씨·선·낙서가 보이면 REGEN. 이 종이가 접혀 DOHA_NOTE_FLAT가 된다(같은 흰색, 뜯긴 가장자리) |
 | **TIPBOX** [ep04, AD] 제보함 | `the locked small wooden tip box with a slot mounted on the wall` (style-bible §7-2 LOC_STUDENT_OFFICE 토큰의 같은 구) + `plain wood, a small lock, no sign, label, number or writing anywhere on it` | 기존 별도 소품 토큰은 없었다(ep02·ep03은 LOC 토큰 구로만 그림) → 같은 구를 그대로 소품 토큰으로 승격. 학생부실 불투명 유리문 옆 벽. ep04 P56(원경), P57(투입구 ECU). 열쇠는 하람 손목의 놋쇠 열쇠(이 회차엔 안 씀) |
+| **HARAM_BRASS_KEY** [ep05, AD] 하람의 놋쇠 열쇠 (제보함 열쇠) | `small brass key on a crimson cord` (§5 원문 = 위 "제보함 열쇠") + `plain brass with no engraving, number or tag` · 동작구 P10 `the small brass key on a crimson cord around her wrist swinging as she walks` · P13 `the small brass key turned in the tip box's small lock, its crimson cord still looped around her wrist` | 하람 손목만(진홍 끈 = 진홍 예약색, 하람 몫). TIPBOX의 작은 자물쇠에 맞는 열쇠. P10 전경 흔들림, P13 열쇠 꽂힌 손 전경. 열쇠고리·태그·글자 없음 |
+| **KEYRING_IN_PALM** [ep05, AD] 서윤 손바닥 위 키링 | `the clear rounded-rectangle resin block keyring about 4 cm tall with fine scratches and slightly cloudy edges, a faded yellowed ivory paper crane sealed inside (head tip folded into a small hook, tail tip folded down), unclipped from the backpack, its small silver ring and short silver ball chain lying loose, resting on her open palm` | P50(건네는 순간), **P51 ECU**(위에서, 가로등 주황빛, 다른 손 손끝의 은백색 껌 종이 학과 **같은 각도·같은 크기**, 두 학 모두 두 특징 판별), P62~P65(손가락으로 감싸 쥠). **P60과 매치 컷**(같은 위에서 본 각도) |
+| **DOHA_EMPTY_DRING** [ep05, AD] 빈 D링 | `the D-ring on the left strap of his black backpack now empty, no keyring` | P50 하단부터 회차 끝(P63~P65 끈이 보이면). 키링이 끈에 남아 있으면 REGEN |
+| **PAST_CRANE_HANDOVER** [ep05, AD] 9년 전 건네는 학 | 서윤의 종이학 토큰(위) + `folded from bright white blank thermal receipt paper, set down by a small bare child's hand onto a small palm half-covered by a puffy faded sky-blue sleeve cuff` | P60 손 ECU. **P51과 같은 위에서 본 각도·같은 크기**(현재 누런 아이보리 ↔ 그때 깨끗한 흰색). 두 특징 판별 |
+| **RED_STOOL_PAST** [ep05, AD] 9년 전 빨간 의자 | `a small plain vivid red plastic stool with no print` (#C8463C, 선명) | 회상 P53·P55·P58·P59·P61. 현재(P48)는 LOC_CROSSROADS 토큰의 `faded red plastic stool`(빛바램, 녹슨 셔터 앞). 같은 위치감(style-bible §7-4 [ep05]) |
 
 - **flat 표기:** Flow 프롬프트에 HEX(#2F8F5B)는 그대로 둬도 되지만 `vivid medium green`을 함께 쓴다[AD].
 
@@ -251,10 +326,13 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | — | **LEADS_lineup** [AD] | 16:9 | 서윤(OUTFIT_SCHOOL)과 도하(OUTFIT_SCHOOL) 나란히 정면 전신, **서윤 정수리 = 도하 턱 높이**, 둘 다 무표정 | 투샷 패널의 단일 첨부용(첨부 3장 한도) |
 | — | **PROPS_sheet** (characters §6 권장) | 16:9 | 흰 배경 위 정물 배열: ① 레진 학 키링(정면·측면, 누런 아이보리 학, 갈고리 머리 + 접은 꼬리, 은색 고리·볼체인) ② 서윤의 영수증 학 두 각도(측면에서 갈고리 머리, 뒤에서 접은 꼬리) + 껌 포장지 학 하나 ③ 초록 무지 조끼(펼친 상태, 지퍼, 가슴 주머니 볼펜) ④ 학이 약 2/3 찬 뚜껑 없는 유리병 ⑤ 주황 띠 참치마요 삼각김밥 ⑥ 흰 사각 파스 | C2 회수(P56~57)의 성패 = 접는 방식 일치 |
 | 6 | **MISUK_turnaround** [ep02] | 16:9 | §11 원문 토큰. 위 줄 전신 4뷰(정면·3/4·측면·후면), 아래 줄 3/4 바스트 3칸(무뚝뚝 / 조용한 걱정 / 드문 웃음). 01시 근무복: 연보라 플리스 + 서윤과 같은 초록 무지 조끼(명찰·글자 없음), 베이지 팔토시, 회색 슬리퍼. 모든 뷰에서 머리 위 돋보기안경, 금 귀걸이. 한 장에 턴어라운드와 표정(별도 `_expressions` 없음). 카드 = `refs/ref_prompts.md` "MISUK_turnaround" | **보류 해제(ep02).** 사장님 얼굴 첫 등장 = ep02 P9, **P9 생성 전 필수**. ep02에서 도하와 같은 프레임에 그리지 않는다(첫 대면 ep05) |
+| 7 | **SEOYUN_8_sheet** [ep05] | 16:9 | §12-1-a 토큰. 전신 3뷰(정면·3/4·측면, 서 있음, 눈 없음 = 실내 조건) + 전신 측면 1칸 **쪼그려 앉아 무릎 위에서 영수증 학을 접는 모습**(이 칸만 실외: 머리·조끼 어깨에 눈송이 몇 개, 배경은 그래도 무지 웜그레이) + **손 클로즈업** 1칸(작은 맨손 두 개, 흰 영수증 학, 갈고리 머리 + 접은 꼬리 판별). 표정: 정면·측면 똑 부러진 미소 / 3/4 단호한 "명령" 얼굴 / 쪼그린 칸 가르치는 얼굴. 다크서클·손목 파스·포니테일·교복 없음. attach **SEOYUN_turnaround**(눈매·눈썹만 이어받게, 나이·머리·옷은 따르지 않도록 프롬프트에 명시) | 회상 P53~P60 7컷. **P53 생성 전 필수.** 반전 B(그 아이 = 도하, 학을 접은 사람 = 서윤)가 서려면 8세 서윤이 17세 서윤과 같은 사람으로 읽혀야 한다 |
+| 7 | **DOHA_8_sheet** [ep05] | 16:9 | §12-1-b 토큰. 위 줄: 전신 정면(**두 렌즈가 하얗게 김 서림, 눈 안 보임**) / 3/4 / 측면(렌즈 가장자리 김 + 내리깐 속눈썹, 눈 안 보임) + **빨간 플라스틱 의자에 앉은 전신** 1칸(후드·어깨에 눈). 아래 줄: **소매에 덮인 두 손** 클로즈업 / **위로 편 손바닥** 클로즈업(소매 끝이 손가락과 손바닥 반을 덮음). attach **없음** | 회상 P53~P61 8컷. **P53 생성 전 필수.** [AD 결정] 비트시트 E-2의 "김 없는 정면 버전"은 만들지 않는다: 시트에 또렷한 눈이 있으면 Flow가 패널에도 눈을 그린다(D-6 위반). DOHA_turnaround를 붙이지 않는 이유: 9년 뒤의 마르고 긴 체형·흐트러진 머리·키링이 끌려온다. 닮음은 얼굴이 아니라 동그란 안경·소매로 회수한다 |
 
 - **카드 합계(ep01): 12장** — SEOYUN 3 · DOHA 3 · HARAM 2 · RYU 1 · CLASSMATES 1 · LEADS_lineup 1 · PROPS 1. **ep02: +1장(MISUK_turnaround) = 13장.**
 - **[ep03] 새 카드 없음 (13장 유지).** ep03 캐스트 = 서윤, 도하(낮 교복 + 밤 후드·안경), 하람, 건우, 담임, 예린, 태민, 사장님(P48~50, MISUK_turnaround 이미 있음), 엄마(P4 잠든 뒷모습·오른손목 파스만, 얼굴 없음 → §12 HYEWON 토큰만, ep02 P11과 같은 처리). 새 인물 없음, 새 토큰 없음. 학 모양 제보 쪽지(P46·P58)는 기존 하람 소품 토큰(두 특징 없음), 상담 양식·휴지·엄마 쪽지는 style-bible §9-2 무지 문구로 충분.
 - **[ep04] 새 카드 없음 (13장 유지).** ep04 캐스트 확인: 서윤(낮 교복 / 조끼를 블레이저 안에 입은 변형 / 도하 블레이저를 어깨에 덮은 상태 → 모두 SEOYUN_turnaround로 충분, 밤 조끼 장면 없음), 도하(낮 교복 / 셔츠 차림 → DOHA_turnaround로 충분, 후드·안경 장면 없음), 하람(클립보드·완장 → HARAM_turnaround·HARAM_expressions), 담임 류진혁(RYU_sheet), 예린·태민(CLASSMATES_sheet), 건우(토큰만, §8), 남색 점퍼 남자 P16(시트 없음, §9 토큰만), 1반 엑스트라(1번 학생 포함, 교복 토큰 + 11월 남색 니트 조끼 일부, §1). 사장님·엄마 얼굴 없음(엄마는 P13 파스 상자 소품만), 학생부장은 대사로만. 새 인물 없음. 새 소품 3종(DOHA_NOTE_FLAT·SEOYUN_TORN_PAGE·TIPBOX)은 모두 무지 종이·나무 상자라 텍스트 토큰으로 충분하고 PROPS_sheet를 다시 만들 필요 없다. 의상 변형 2종(SEOYUN_VEST_UNDER_BLAZER·DOHA_SHIRTSLEEVES)도 기존 턴어라운드의 얼굴·체형을 그대로 쓰고 옷만 문구로 바꾸므로 별도 시트 불필요.
+- **[ep05] +2장 (SEOYUN_8_sheet · DOHA_8_sheet) = 카드 합계 15장.** ep05 캐스트 확인: 회상 전용 2인(8세 서윤·8세 도하)이 처음 얼굴·전신으로 나온다(P53~P61) → 시트 2장 신규(위 표). 그 밖에는 기존 시트로 충분: 서윤(낮 교복 / 밤 OUTFIT_STORE P36~46 / 조끼 벗은 귀갓길 P47~65 = SEOYUN_turnaround·SEOYUN_night·SEOYUN_expressions), 도하(낮 교복 / 밤 후드·김 서린 안경·후드 내림·빈 D링 = DOHA_turnaround·DOHA_night, 변형은 §3 [ep05] 문구), 하람(놋쇠 열쇠 = HARAM_turnaround에 이미 있음), 사장님(MISUK_turnaround, ep02 제작분, 모니터·계산대·유리 너머 변형은 §11 [ep05] 문구), 예린·태민(CLASSMATES_sheet), 건우(토큰만). 엄마(9년 전)는 **목소리만**(P53 프레임 밖) → 시트·토큰 불필요. 새 소품(§P HARAM_BRASS_KEY·KEYRING_IN_PALM·DOHA_EMPTY_DRING·PAST_CRANE_HANDOVER·RED_STOOL_PAST)은 텍스트 토큰 + PROPS_sheet로 충분.
 - characters §6의 "각 시트 = 4뷰 + 표정 3종"을 지키되, 1·2순위는 낮/밤 변형이 커서 `_night` 카드를 따로 둔다(flow-handoff 기본 2장 + 1장). 4·5순위는 턴어라운드와 표정을 한 카드에 합쳐 사용자 작업량을 줄인다.
 - **시트 불필요(토큰만):** GEONU, JACKET_MAN, SNACK_CLERK, (ep01) MISUK. HYEWON·SEOYUN_8·DOHA_8은 등장 회차에 시트.
 - **검수(ref-sheet-artist → art-director):** 이미지가 들어오면 ① 한 시트 안에서 같은 사람인가 ② 식별 표식·좌우가 맞나 ③ 글자·라벨이 없나 ④ SEOYUN_turnaround와 SEOYUN_night, DOHA_turnaround와 DOHA_night가 같은 얼굴인가 ⑤ PROPS의 학 두 특징이 판별되나. 통과하면 `refs/INDEX.md`에 확정 경로를 적고, 이 파일 각 인물의 "레퍼런스" 줄을 "(확정)"으로 바꾼다.
@@ -280,6 +358,15 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | 하람 클립보드 [ep04 P2, P22~23, P25~27, P29, P31~32, P37, P45~49] | **HARAM_turnaround** (+ 담임과 함께면 RYU_sheet, 교실 그룹이면 CLASSMATES_sheet 또는 LEADS_lineup, 표정 컷이면 HARAM_expressions). 클립보드는 `black clipboard with blank paper`, 완장 왼팔. 건우(P22, P45~48)는 시트 없이 §8 토큰만 |
 | 남색 점퍼 남자 [ep04 P16] | 시트 없음: §9 JACKET_MAN 토큰만 + 서윤 뒷모습이 전경이면 SEOYUN_turnaround. ep01 P8 이미지가 생긴 뒤라면 같은 자리·같은 점퍼 매치용으로 함께 첨부 권장(아직 대기 중이면 생략, 문구로). 얼굴은 반쯤 그늘, P18에는 그리지 않는다 |
 | 쪽지·제보함 [ep04 P52~53, P56~57] | 인물 시트(DOHA_turnaround, P53 서윤 전경이면 SEOYUN_turnaround). PROPS_sheet는 P57(하단 레진 학 키링)에만 허용하되 프롬프트에 DOHA_NOTE_FLAT "not a crane"을 반드시 쓴다(PROPS의 학이 쪽지를 학으로 끌고 가면 PROPS를 빼고 다시) |
+| **회상 8세 서윤 단독** [ep05 P54, P57] | **SEOYUN_8_sheet** (+ P54 유리문 너머 하늘색 실루엣·P57 프레임 가장자리 도하가 보이면 DOHA_8_sheet). **회상 패널 전체(P53~P61)에 성인 시트(SEOYUN_turnaround·_night·_expressions, DOHA_*, LEADS_lineup)를 첨부하지 않는다** — 붙이면 Flow가 10대 얼굴·포니테일·교복·다크서클을 옮겨 온다 |
+| **회상 8세 도하 단독** [ep05 P56, P61] | **DOHA_8_sheet** + 매치 컷 원본 **ep05 P37 이미지**(P56: 같은 정면, 같은 렌즈 반사 위치). P61은 DOHA_8_sheet (+ P56 이미지) |
+| **회상 두 아이** [ep05 P53, P55, P58, P59] | **SEOYUN_8_sheet, DOHA_8_sheet** (+ P59는 P55 이미지가 있으면 같은 의자·문 위치 매치용). P53 와이드는 8세 서윤이 실루엣뿐이라 DOHA_8_sheet 하나로도 된다 |
+| **회상 손바닥 ECU** [ep05 P60] | **ep05 P51 이미지**(같은 위에서 본 각도, 매치 컷) + SEOYUN_8_sheet(손 칸) + DOHA_8_sheet(손바닥 칸). 3장 한도 |
+| **회상 진입·복귀 컷** [ep05 P52 서윤 눈 ECU, P62 서윤 손·얼굴] | 현재 서윤(조끼 벗음) = **SEOYUN_turnaround** 또는 SEOYUN_expressions(얼어붙음 칸). 회상 시트·SEOYUN_night 첨부 금지. 색 전환은 style-bible §3-2 [ep05] |
+| **하람 놋쇠 열쇠** [ep05 P10, P13] | **HARAM_turnaround**(손목 진홍 끈 놋쇠 열쇠가 시트에 있음). P10 + SEOYUN_turnaround(후경 문가). P13 + DOHA_turnaround(블레이저, 키링 왼끈). 건우는 §8 토큰만. 열쇠는 §P HARAM_BRASS_KEY 문구를 매번 쓴다 |
+| **사장님 장면** [ep05 P41~P47] | **MISUK_turnaround** 항상. P41~P42 창고 + SEOYUN_night(문가 서윤, OUTFIT_STORE). P43~P44 + DOHA_night(후드 벗은 바스트 칸 기준). P45 MISUK_turnaround, DOHA_night, SEOYUN_night. P46 MISUK_turnaround, SEOYUN_night. **P47 MISUK_turnaround, SEOYUN_turnaround(조끼 벗음 → SEOYUN_night 금지), DOHA_night.** 같은 프레임의 사장님·도하는 P43부터만 |
+| **도하 김 서린 밤 안경** [ep05 P37, P38] | **DOHA_night** (+ P38 서윤 OTS 전경이면 SEOYUN_night). P37은 후드 쓴 채 렌즈만 하얗게(§3 [ep05] DOHA_NIGHT_FOGGED) |
+| **사거리 키링** [ep05 P48~P51, P62~P65] | P48~P50: LEADS_lineup은 쓰지 않는다(낮 교복 + 끈의 키링) → **SEOYUN_turnaround, DOHA_night** (+ P50·P51 PROPS_sheet). P51 = SEOYUN_expressions(손 칸) + PROPS_sheet. P63~P65 = DOHA_night (+ SEOYUN_turnaround): DOHA_night 시트에는 끈에 키링이 있으므로 프롬프트에 DOHA_EMPTY_DRING을 꼭 쓰고, 키링이 끈에 그려지면 REGEN(또는 끈이 프레임 밖인 구도로) |
 
 - **ep01 패널 첨부 의존 [ep02]:** ep02 P1, P2, P8, P38, P51, P56, P61은 `attach:`에 ep01 패널(P59, P60, P1, P22, P48, P53, P60)이 있어 **그 ep01 이미지가 생긴 뒤에만** 만들 수 있다(style-bible §12-6).
 
@@ -293,4 +380,5 @@ ref-sheet-artist는 아래 카드를 `_workspace/04_visual/refs/ref_prompts.md`�
 | v1.1 | 2026-11-22 | ep02 추가만(토큰 변경 없음): §1 SHOES_OUTDOOR에 교문 장면(P16~P33) 하람·건우 실외화 확인, §R-2 MISUK_turnaround 카드(보류 해제, P9 전 필수, 도하와 같은 프레임 금지), §R-3 사장님·엄마 첨부 행 + ep01 첨부 의존 패널 메모, §0-1·§11 MISUK 상태 표기 |
 | v1.2 | 2026-11-22 | ep03 추가만(토큰 변경 없음): ep03 캐스트 확인 결과 새 인물·새 토큰·새 레퍼런스 카드 없음(13장 유지, §R-2 메모). §4 HARAM에 상담실 유리문 실루엣(P29·P41) 처리 메모, §R-3 엄마 잠든 뒷모습(P4)·상담실 3인(P28~41) 첨부 행 |
 | v1.3 | 2026-11-22 | ep04 추가만(기존 토큰·문구 변경 없음): §1 11월 엑스트라 남색 니트 조끼 메모, §2 SEOYUN_VEST_UNDER_BLAZER 변형(초록은 P33 허리선 한 줄만, P33 가방 머리 위 포즈 추가구, P34~37 도하 블레이저 덧입기, P15~19 불룩한 가방) + 금지 항목 예외 메모, §3 DOHA_SHIRTSLEEVES 변형(P34~38), §P 소품 DOHA_NOTE_FLAT·SEOYUN_TORN_PAGE·TIPBOX(기존 LOC 구 승격) 전부 무지, §R-2 ep04 캐스트 확인 = 새 카드 없음(13장 유지), §R-3 ep04 첨부 행 5개(조끼 변형 = SEOYUN_turnaround, SEOYUN_night 금지 / 셔츠 = DOHA_turnaround / 하람 클립보드 = HARAM_turnaround / 점퍼 남자 / 쪽지·제보함) |
+| v1.4 | 2026-11-23 | ep05 추가만(기존 토큰·문구 변경 없음): §0-1 SEOYUN_8/DOHA_8·MISUK ep05 메모, §12-1 회상 2인 토큰 신규(characters §4-11·§4-12 원문을 CORE/OUTFIT/동작·포즈/표정으로 단어 그대로 분리 + [AD] 하의·신발 추정, 실외 눈 추가구, 표정 슬롯, 8세 도하 눈 숨김 규칙·P56 김 서린 렌즈·P61 반사 둘, 소매 덮인 손, "Baek" 금지), §2 서윤 ep05 의상 흐름(P36~46 OUTFIT_STORE 유지 [AD 해석], P47~65 SEOYUN_OFF_SHIFT 조끼 벗음 = OUTFIT_SCHOOL, 손의 키링), §3 도하 밤 변형(P37 DOHA_NIGHT_FOGGED, P38 소매로 렌즈 닦기, P50~ 빈 D링, P64 안경 밀어 올림), §4 하람 놋쇠 열쇠·낭독 자세, §11 사장님 모니터 앞(P41~42)·계산대 확인 시선(P43~46)·유리 너머 중경(P47), §P 소품 5행(HARAM_BRASS_KEY·KEYRING_IN_PALM·DOHA_EMPTY_DRING·PAST_CRANE_HANDOVER·RED_STOOL_PAST), §R-2 카드 2장 신규(SEOYUN_8_sheet·DOHA_8_sheet) → **합계 15장**, §R-3 ep05 첨부 행 9개(회상은 8세 시트만, 성인 시트 금지 / 놋쇠 열쇠 / 사장님 장면 / 김 서린 안경 / 사거리 키링) |
 

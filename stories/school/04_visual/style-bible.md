@@ -1,6 +1,6 @@
 # 스타일 바이블: 『유통기한 연애』 (KM «ស្នេហាមានថ្ងៃផុតកំណត់») · 시리즈 자산
 
-- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (2026-11-22, ep02 추가) · v1.2 (2026-11-22, ep03 추가) · v1.3 (2026-11-22, ep04 추가) · Flow-by-hand mode + Khmer edition
+- 작성: art-director · 2026-11-21 · v1 (ep01) · v1.1 (2026-11-22, ep02 추가) · v1.2 (2026-11-22, ep03 추가) · v1.3 (2026-11-22, ep04 추가) · v1.4 (2026-11-23, ep05 추가) · Flow-by-hand mode + Khmer edition
 - 입력: `02_story/world.md`(§6 LOC 19개, §7 시각 톤·글자 없는 대체표·달력), `02_story/characters.md`(§4 외형 토큰, §5 소품, §6 시트 우선순위), `02_story/concept.md`(§6 톤, §10~11), `03_episode/ep01_beatsheet.md`(장소·구도·D-6 제작 메모), `01_research/trend-brief.md`
 - 스킬: `webtoon-panel-breakdown` 작업 B(B-1~B-7) · `webtoon-khmer-edition` · `webtoon-flow-handoff`
 - 우선순위: brief > concept > world/characters > **이 문서** > 샷리스트 > 프롬프트. 인물·소품 토큰과 레퍼런스 시트 사양은 `character-sheets.md`.
@@ -109,6 +109,21 @@
   - **P21 '따뜻한 교실' 빛 메모 (M_DAY 안에서, 새 무드 아님):** M_DAY 문구 뒤에 `sun-warmed classroom, bright low morning sunlight pooling across the desks and the backs of the chairs, a cosy warm haze in the air`를 붙인다. 독자가 "다들 블레이저를 벗을 만큼 따뜻하다"를 빛으로 느껴야 서윤 혼자 블레이저를 입은 모습(반전 A 시각 단서 TA-V2)이 이상해 보인다. 의자 등받이에 걸린 남색 블레이저 줄, 흰 셔츠 차림 학생들, 엑스트라 몇 명의 남색 니트 조끼(character-sheets §1 [ep04])는 구도·인물 문구로 쓴다. 같은 scene_id(E04S07)의 다른 패널(P22~37)에는 이 추가구를 붙이지 않아도 되지만, 빛 방향(왼쪽 큰 창)과 온도는 P21과 같게 유지한다.
   - **예약색 유지(§3-3):** ① 선명한 조끼 초록은 P13(건조대 조끼)·P14(가방 속, 지퍼 틈 한 줄)·**P33(블레이저 밑단 아래 허리선 한 줄)**뿐. P15~32, P34~60에는 없다. 엑스트라 니트 조끼는 남색. ② 진홍은 하람·건우의 완장과 하람 손목의 진홍 끈뿐. ③ 주황 띠·빨간 의자·유리병 노출 없음(편의점 장면 없음).
   - **의상 = 장소 규칙(§6-2-5)의 ep04 변형:** 학교 장면이어도 서윤은 P20부터 SEOYUN_VEST_UNDER_BLAZER, 도하는 P34~38 DOHA_SHIRTSLEEVES(character-sheets §2·§3). 같은 scene_id E04S07 안에서 도하 의상이 P34에서 바뀌는 것은 스토리상 변화라 REGEN 대상이 아니다.
+- **ep05 무드 [AD, 2026-11-23]:** 새 무드 없음. **M_FLASH를 처음 쓴다**(회상 P53~P61) + 회상 진입·종료·복귀 전환 컷 3개(P52·P61·P62).
+  - **씬별 무드:** E05S01(월 16:38 학생부실 앞, P1~3) M_DAY에 늘 오후 늦은 역광(ep04 P54~60 처리) / E05S02(화 07:50 은행나무 오르막, P4) M_DAY_OUT + 계절 추가구 `early November, the yellow ginkgo leaves beginning to fall` / E05S03·S05(교실, P5~9, P11) M_DAY / E05S04·S06(복도·모퉁이, P10, P12, P16, P20, P25~26) M_DAY / E05S07(12:45 학생부실 앞, P13~24) M_DAY / E05S08(12:55 계단참, P27~35) M_LANDING(점심, 노을 없음) / E05S09(00:20~00:58 편의점, P36~40, P43~46) M_NIGHT / E05S10(창고, P41~42) M_NIGHT(천장 형광 하나 + 모니터의 회색 빛, §4 창고 행) / E05S11(01:00 편의점 앞, P47) M_NIGHT(아래 §7-4 LOC_CVS_FRONT [ep05]) / E05S12·S16(01:05~01:10 솔내동 사거리, P48~51, P62~65) **M_ALLEY_NIGHT 빛 문구**(가로등 주황 웅덩이 + 남흑 그림자; "가로등 정확히 세 개" 규칙은 LOC_UPHILL_ALLEY 전용이라 여기에는 적용하지 않는다) / E05S13~S15(9년 전, P53~61) **M_FLASH**.
+  - **현재에는 눈·입김 없음.** 11월 첫째 주 밤은 쌀쌀할 뿐이다. 김 서림은 도하의 밤 안경 렌즈(P37)뿐. 눈은 회상(P53~61)과 P52의 눈송이 **한 개**(기억 진입 표식)만.
+- **M_FLASH 사용 규칙 [ep05, AD] (회상 P53~P61):**
+  1. **빛 문구 그대로:** M_FLASH 문구(위 표)를 모든 회상 패널에 그대로 쓰고 뒤에 `soft blurred edges like a faded memory`를 붙인다(가장자리가 부드럽게 흐려지는 호박색 눈). 채도는 현재보다 한 단계 낮고 노랑이 올라간다. 필름 입자는 약하게.
+  2. **회상의 색:** 백열 노랑 #FFCF7A · 눈 흰 #F7F3EA · **선명한 빨간 의자 #C8463C**(현재 P48은 빛바램) · 귤 #F29B38 · 8세 서윤의 빨간 머리끈·니트(같은 빨강 계열) · 8세 도하의 빛바랜 하늘색 패딩(회상 안 유일한 찬색, 부드럽게) · 주황 띠 삼각김밥(현재와 같은 주황 띠, §3-3-2). **선명한 조끼 초록 없음**(초록 = 현재의 비밀), 진홍 없음.
+  3. **눈:** 실외 컷은 `snow falling softly`, 인물 머리·어깨·패딩 후드에 쌓인 눈. 실내(P54)는 눈 없이 김 서린 유리문 너머로만 흐린 눈.
+  4. **그 아이의 눈:** 회상 내내 8세 도하의 눈동자를 또렷하게 그리지 않는다(character-sheets §12-1-b). 렌즈의 김과 백열등 반사로 가린다.
+  5. **글자 없음:** 슈퍼 간판은 `blank yellow signboard with no letters, no logo and no numbers`(토큰의 blank yellow signboard를 강화), 유리문에 스티커·가격표·영업시간 글자 없음 `the fogged glass door with no stickers or writing`, 귤 상자는 `plain cardboard tangerine boxes with no print or logo`(실제 귤 상자는 인쇄가 많아 Flow가 글자를 넣기 쉽다), 카운터의 영수증 롤 `blank white thermal receipt paper`, 과자 포장 `plain-wrapped`, 삼각김밥 `plain orange band, no print`. 마지막 줄은 늘 §9-1-4 Avoid 줄.
+  6. **말풍선 자리(art_space):** 회상 대사는 뷰어 `memory` 풍선(§10-1). 빈자리는 위쪽의 **눈 내리는 어두운 밤하늘**(실외) 또는 **카운터 뒤 흐린 선반 윗부분**(실내 P54). 노란 간판 위에 두지 않는다(간판을 비워 둔 것이 말풍선용으로 보이지 않게).
+  7. **첨부:** 8세 시트만(character-sheets §R-3 [ep05]). 성인 시트 금지.
+- **회상 전환 컷 3개 [ep05, AD]:** 셋 다 **한 장의 이미지, 분할 없음, 글자 없음.**
+  - **P52 (주황 → 호박 디졸브, 진입, 1:1 또는 3:4):** 현재 서윤 눈 ECU. `extreme close-up of her eye, the small orange streetlight reflected in her pupil blooming into a warm amber incandescent glow, the colours shifting from cold navy-black and streetlight orange at the bottom of the frame to warm amber at the top, one single snowflake drifting down from the top edge of the frame, soft blurred edges`. 빛 문구는 M_FLASH를 쓰지 않고 이 문장이 대신한다(두 무드가 한 장에 섞이는 컷). 눈송이는 정확히 하나, 현재 배경에는 눈 없음.
+  - **P61 (화이트아웃, 종료, 9:16 세로로 긴 여백 컷):** M_FLASH 문구 + `the snow thickening and the whole frame fading to soft warm white from the edges inward, the outer third of the frame almost pure warm white, the small boy in the centre still clearly readable`. 아이를 지우지 않는다(완전한 흰 이미지는 손상 이미지로 오인된다). 무대사 컷이라 art_space 없음, 흰 여백에 글자처럼 보이는 무늬 없음.
+  - **P62 (호박 → 주황 복귀, 현재):** M_ALLEY_NIGHT 빛 문구 + `the soft warm white haze at the top edge of the frame clearing into orange streetlight, a faint trace of amber lingering only along the top edge, the cold navy night returning, no snow`. 서윤 손이 키링을 감싸 쥠(character-sheets §P KEYRING_IN_PALM). 말풍선 자리는 위쪽 흐린 띠.
 
 ### 3-3. 예약색 규칙 [고정]
 
@@ -313,6 +328,7 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 
 **LOC_CVS_FRONT** — 편의점 앞 (ep01 미사용)
 - token: `corner convenience store seen from the street at night, glowing glass front, blank green signboard, two plastic outdoor tables with green chairs, bus stop directly in front, old crossroads with low buildings, orange streetlights`
+- **[ep05] 첫 사용 메모 (P47 한 컷, E05S11, 01:00, M_NIGHT) [AD]:** 토큰 문장은 그대로. 바깥 거리에서 유리 정면을 보는 와이드(9:16 또는 4:3). 유리 안 = LOC_CVS와 같은 가게: **계산대가 유리 안쪽 화면 오른쪽**, 유리병이 계산대 왼쪽 끝(§5-3 편의점 방향과 같은 배치를 밖에서 본다). 사장님은 계산대 뒤 중경(character-sheets §11 MISUK_BEHIND_GLASS), 전경에 문을 나서는 서윤(조끼 벗음, 블레이저)과 문을 잡아 주는 도하(후드 내림, 밤 안경, 키링은 아직 왼끈). 빛: 유리 안은 차가운 형광 흰빛, 바깥 보도는 가로등 주황 + 남흑. **글자 없음:** `blank green signboard with no logo`, 유리창에 포스터·스티커·가격 글자·영업시간 없음 `the glass front with no posters, stickers or writing`, 정류장 광고판 `blank white ad panel`, 버스가 보이면 §9-2 버스 문구. 플라스틱 테이블의 초록 의자는 편의점 쪽 초록(예약색 규칙상 허용, 편의점 세계). 눈·입김 없음.
 
 **LOC_CVS_STOCKROOM** — 편의점 창고
 - token: `cramped back stockroom, stacked cardboard boxes with no print, mop and bucket, a small mirror, a monitor showing grey blurred CCTV shapes, a green staff vest on a hook`
@@ -332,6 +348,13 @@ ep01 사용 LOC 12개: CVS, CROSSROADS, CLASSROOM, BUS_STOP_SCHOOL, TEACHERS_OFF
 
 **LOC_OLD_SUPER @PAST** — 9년 전 동네 슈퍼 (회상 전용, M_FLASH)
 - token: `tiny neighbourhood grocery shop on a snowy winter night nine years ago, warm yellow bulb light, fogged glass door, blank yellow signboard, a red plastic stool outside the door, stacked tangerine boxes, snow falling, warm grain`
+- **[ep05] 첫 사용 메모 (P53~P61, E05S13~S15, M_FLASH 전용) [AD]:** 토큰 문장은 **단어 그대로**, 뒤에 §3-2 [ep05] M_FLASH 규칙 5의 무지 문구(간판·유리문·귤 상자)를 붙인다. 회상에만 쓰고 현재 컷에 섞지 않는다(현재의 같은 자리 = LOC_CROSSROADS의 녹슨 셔터 빈 점포).
+  - **외관 배치 고정 (길 건너에서 볼 때):** 김 서린 유리문이 가운데, **빨간 플라스틱 의자는 문 바로 왼쪽**(화면 왼쪽), 쌓인 귤 상자는 문 오른쪽, 문 위에 빈 노란 간판, 문 안쪽 카운터에서 노란 백열등이 새어 나온다. 현재 P48의 빛바랜 빨간 의자도 셔터 앞 같은 위치감(셔터 왼쪽)으로 둔다.
+  - P53 = 길 건너 와이드(눈 내리는 사거리, 의자 위 작은 하늘색 형체, 유리문 안 카운터에 작은 여자아이 실루엣). P55·P57~P61 = 문 앞(의자·문·귤 상자 사이), 카메라 높이는 아이 눈높이에 가깝게.
+- **@PAST 실내 각도 보조구 [ep05, P54] (새 토큰 아님, 같은 장소의 다른 각도):** 토큰 문장 뒤에 붙인다:
+  `inside the same tiny neighbourhood grocery shop nine years ago at night, a low wooden counter with a blank receipt roll and a small low stool behind it, shelves of plain-wrapped snacks with no labels, stacked plain tangerine boxes with no print, warm yellow bulb light, the fogged glass door showing a blurred small figure in a sky-blue puffer on a red stool outside in the snow`
+  - 비트시트 E-1 제안 문장에 무지 표기(`blank`, `with no labels`, `plain … with no print`)만 더했다. 토큰의 외관 구(`a red plastic stool outside the door`, `snow falling`)는 유리문 너머로만 보인다. 실내에는 눈이 없다.
+  - 구도: 카운터 안 미디엄(전경 영수증 롤, 낮은 의자의 8세 서윤 옆얼굴~3/4, 후경 김 서린 유리문). 유리문 너머 하늘색 실루엣은 흐리게 작게(얼굴 없음). 말풍선 자리 = 위쪽 선반 윗부분·천장의 백열등 주변.
 
 ### 7-5. LOC 색인 (19개)
 
@@ -339,6 +362,7 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 
 - **[ep03] + LOC_COUNSEL_ROOM** (20번째, §7-2, world §6에도 한 줄 추가). ep03 사용 LOC: CVS(+ 창 너머 CROSSROADS), HOME, HALLWAY, TEACHERS_OFFICE, CLASSROOM, STAIR_LANDING, COUNSEL_ROOM, STUDENT_OFFICE, GINKGO_ROAD @NIGHT, CVS_STOCKROOM, UPHILL_ALLEY.
 - **[ep04] 새 LOC 없음 (20개 유지).** ep04 사용 LOC: TEACHERS_OFFICE(P1·P2·P4, ep03 P57과 같은 문틈 프레임), HALLWAY(교무실 문 앞 P3, 화장실 문 앞 P19~20 + 무지 화장실 문 보조구, 점심 순찰 P45~51, 빈 복도·모퉁이 P55~56), STAIR_LANDING, HOME, BUS_STOP_SCHOOL, GINKGO_ROAD(P18 원경, 낮), CLASSROOM, STUDENT_OFFICE(P56 원경, P57~60, 제보함 = character-sheets §P TIPBOX). 편의점 계열 LOC 없음.
+- **[ep05] 새 LOC 없음 (20개 유지), 첫 사용 2개 + 실내 각도 보조구 1개.** ep05 사용 LOC: STUDENT_OFFICE(P1~3, P13~24, 제보함 + 하람 놋쇠 열쇠), HALLWAY(P10, 모퉁이 P12·P16·P20·P25~26 = ep04 P56과 같은 모퉁이), GINKGO_ROAD(P4, 낮, 떨어지기 시작), CLASSROOM(P5~9, P11), STAIR_LANDING(P27~35), CVS(P36~40, P43~46), CVS_STOCKROOM(P41~42, 서윤·사장님 둘 다 조끼를 입고 있으므로 고리는 `an empty hook`으로 바꿔 쓴다(ep01 P49 전례); 모니터는 §9-2 CCTV 문구), **CVS_FRONT(P47, 첫 사용)**, CROSSROADS @NIGHT(P48~52, P62~65, 원경 빛바랜 빨간 의자), **OLD_SUPER @PAST(P53~61, 첫 사용, P54는 실내 각도 보조구)**. 9년 전 실내는 새 토큰이 아니라 `LOC_OLD_SUPER @PAST` + 실내 각도 보조구로 표기한다(샷리스트 location 칸도 `LOC_OLD_SUPER @PAST`).
 
 ---
 
@@ -471,6 +495,14 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 | [ep04] 엑스트라 니트 조끼가 초록 | REGEN(남색) |
 | [ep04] 화장실 문에 픽토그램·표지판·글자 | REGEN |
 | [ep04] 도하 셔츠 차림(P34~38)에 블레이저를 입고 있음 / 서윤 어깨에 블레이저 없음(P34~37) | REGEN |
+| [ep05] 8세 서윤에게 다크서클·손목 파스·포니테일·교복 / 10대처럼 보임 | REGEN(SEOYUN_8_sheet만 첨부, `an 8-year-old child, not a teenager`) |
+| [ep05] 8세 도하의 눈동자가 또렷하게 보임 / 마른 체형·긴 머리·키링 | REGEN(김 서린 렌즈·내리깐 속눈썹) |
+| [ep05] 회상의 슈퍼 간판·귤 상자·유리문에 글자·로고 | REGEN(§3-2 [ep05] M_FLASH 규칙 5 문구) |
+| [ep05] 현재 장면(P48~51, P62~65)에 눈·입김 / P52 눈송이가 여러 개 | REGEN |
+| [ep05] P50 이후 도하 백팩 왼끈에 키링이 남아 있음 | REGEN(빈 D링) |
+| [ep05] P47 이후 서윤에게 초록 조끼 | REGEN(조끼 벗음, 블레이저) |
+| [ep05] P43 사장님이 놀란 얼굴(눈 크게·입 벌림) / P43 이전 사장님과 도하가 같은 프레임 | REGEN |
+| [ep05] P61 화이트아웃이 완전한 흰 이미지(아이 안 보임) | REGEN(가운데 아이는 읽히게) |
 
 ---
 
@@ -482,6 +514,7 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 4. 매치 컷(P58 ← P2, P57 ← P56)은 앞 컷 이미지를 함께 첨부한다.
 5. 이미지 안에 글자가 조금이라도 생기면 쓰지 말고 다시 만든다(뷰어가 글자를 쓴다).
 6. **ep02 생성 순서 [ep02]:** ep02 P1, P2, P8, P38, P51, P56, P61은 `attach:`에 ep01 패널이 있다(P1 ← ep01 P59, P2 ← ep01 P60, P8 ← ep01 P1, P38 ← ep01 P22, P51 ← ep01 P48, P56 ← ep02 P8 + ep01 P53, P61 ← ep01 P60). 그래서 **해당 ep01 이미지가 생긴 뒤에만** 만들 수 있다. ep01이 아직 이미지 대기 중이면 이 7장은 미뤄 두고 나머지부터 만든다. ep02 안에서는 P8 → P56, P16 → P30, P5 → P55 순서. P9는 `MISUK_turnaround` 시트가 확정된 뒤.
+7. **ep05 생성 순서 [ep05]:** 회상 패널(P53~P61)은 새 시트 **SEOYUN_8_sheet · DOHA_8_sheet**가 생긴 뒤에만(카드 15장 중 14·15번). 사장님 패널(P41~P47)은 `MISUK_turnaround` 뒤. ep05 안의 매치 컷 순서: **P37 → P56**(김 서린 렌즈, 같은 정면), **P51 → P60**(손바닥 위 학, 같은 위에서 본 각도), P55 → P59(같은 의자·문 위치), P56 → P61. P52·P61·P62 전환 컷은 §3-2 [ep05] 문장 그대로.
 
 ---
 
@@ -499,3 +532,4 @@ LOC_GATE · LOC_GINKGO_ROAD · LOC_BUS_STOP_SCHOOL · LOC_CLASSROOM · LOC_HALLW
 | v1.1 | 2026-11-22 | ep02 추가만(기존 문구 유지): §3-2 무드 4종 확정(M_ALLEY_NIGHT·M_HOME_NIGHT·M_SCHOOL_NIGHT_IN·M_BUS_NIGHT) + 예약색 메모, §7 LOC_CVS 직원 문 보조구·LOC_HALLWAY @NIGHT 계단 머리 보조구, §12-6 ep01 첨부 의존 패널 생성 순서 |
 | v1.2 | 2026-11-22 | ep03 추가만(기존 문구 유지): §7-2 LOC_COUNSEL_ROOM 신규(20번째, 고정 EN 토큰: 원탁 + 의자 4개, 블라인드 반쯤 내린 창, 숫자 없는 시계, 무지 크림 벽, 얼굴 없는 흐린 실루엣만 비치는 불투명 유리문) + P29·P41 유리문 실루엣 보조구 + 방향 규약, §5-3 상담실 행, §7-5 ep03 사용 LOC 메모, §3-2 무드 M_COUNSEL 신규 + ep03 씬별 기존 무드 대응·예약색 메모 |
 | v1.3 | 2026-11-22 | ep04 추가만(기존 문구 유지): §3-2 무드 M_HOME_MORNING 신규(유일한 빈틈: 반지하 방의 아침, P13~14) + ep04 씬별 기존 무드 대응, 계절 추가구(`early November…`), P21 '따뜻한 교실' 빛 메모(M_DAY 안, 새 무드 아님), 예약색·의상 변형 메모, §7-2 LOC_HALLWAY 무지 화장실 문 보조구(표지·픽토그램 없음, P19↔P20 같은 구도), §7-5 ep04 사용 LOC(새 LOC 없음), §8 소품 4행(평평한 쪽지·노트·제보함·조끼 위치), §11-1 ep04 드리프트 6행 |
+| v1.4 | 2026-11-23 | ep05 추가만(기존 문구 유지, 새 무드·새 LOC 없음): §3-2 ep05 씬별 무드(사거리 = M_ALLEY_NIGHT 빛 문구, 현재엔 눈·입김 없음), **M_FLASH 첫 사용 규칙 7항**(빛 문구 + `soft blurred edges like a faded memory`, 회상 색·예약색, 실외만 눈, 8세 도하 눈 숨김, 무지 간판·유리문·귤 상자·영수증, memory 풍선 자리, 8세 시트만 첨부) + **전환 컷 3개**(P52 주황→호박 디졸브·눈송이 하나, P61 화이트아웃·아이는 읽히게, P62 호박→주황 복귀), §7-4 LOC_CVS_FRONT 첫 사용 메모(P47), LOC_OLD_SUPER @PAST 첫 사용 메모(외관 배치 고정: 의자 문 왼쪽·귤 상자 오른쪽) + **실내 각도 보조구(P54, 새 토큰 아님)**, §7-5 ep05 사용 LOC(창고 고리 비움), §11-1 ep05 드리프트 8행, §12-7 ep05 생성 순서(8세 시트 → 회상, 매치 컷 P37→P56·P51→P60) |
