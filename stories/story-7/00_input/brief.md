@@ -200,3 +200,18 @@ V. **Approved for later (no EP1 hints):** the five customs (blood-price claim, h
 W. **Series secrets locked as twist-plan** (why he came: 3 layers revealed at EP5, EP9, EP20; her father: the uncle's jailer killed
    the 4th hostage six weeks earlier; the father tried 돌아오는 심장 for a friend already dead; the uncle's physician did not revive
    him). None of this is said or hinted in EP1 dialogue beyond the locked plants.
+
+## LEADER RULINGS before EP02 (2026-11-24) — binding for all later agents
+X. **Crown maxim H1 ("왕관은 숨과 함께 넘어간다") pays off at EP37–38, not EP20** (ruling U chose option B): the king-killer
+   custom voids the uncle's crown there. series-plotter/twist-master update their files when they next touch them; not EP2.
+Y. **Heir after the uncle is struck out: the monarch names one before the court** (worldbuilder's suggestion). When and whom is a
+   later-act decision; nothing in EP2.
+Z. **EP2 assets:** new location tokens LOC_THRONE (throne hall) and LOC_CELLS (lower corridor and cells) from world.md §15. The
+   physician and the jailer stay unnamed in EP2. Treaty article 3 ("볼모의 처우는 맡은 군주의 궁정이 정한다") is spoken only.
+   EP2 = 50–60 panels; EP1's 12 reference sheets are reused.
+AA. **EP20 option-B twist/cliffhanger** in series-arc §5 stands as the working plan; twist-master confirms it before EP20 (not EP2).
+    A treaty-amendment custom (incl. whether the elders' council must agree) goes into world.md before EP20.
+AB. **Day count:** at the EP2 throne-hall meeting (day 1) her father has been dead **열흘** (10 days). Use 열흘 or no number;
+    never "아흐레". The physician's line follows world.md: "잠든 채 심장이 멎었습니다".
+AC. **EP2 must show** Tora's midnight-report order in passing (it was not shown in EP1), the dead crossbowman = the P55 face, the
+    physician = the P52/P56 physician, the jailer only in the background, and series-arc's updated EP2 row as the spine.

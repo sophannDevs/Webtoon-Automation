@@ -3,6 +3,7 @@
 - 작성: art-director · 2026-11-24 · 첫 작성 (Phase 4, Flow-by-hand mode, Khmer edition)
 - 입력: `02_story/characters.md` §9(외형 토큰 블록 [고정]) · §10, `02_story/world.md` §9, `02_story/twist-plan.md` EP1 §2-6, `03_episode/ep01_script_final.md`(읽기만), `00_input/brief.md`(ruling M 등)
 - 짝 문서: `04_visual/style-bible.md` (STYLE_CORE, NEGATIVE, REF_STYLE, REF_NEGATIVE, 장소·빛·그림자 문자열)
+- **EP02 추가 (2026-11-24):** §10에 HOSTAGE 왼팔 W4, EP2 이름 없는 역할(의원 · 죽은 석궁수 · 간수 · 영주/표결 · 선왕 회상), EP2 소품(구리빛 비늘 · 볼모 처소의 표식 없는 문 · 감방 문 · 손등잔 · 자루), 새 레퍼런스 카드 판정(없음). §0–§9(EP1 내용)는 바꾸지 않았다.
 - 원칙: 외형은 characters.md §9 그대로다. 여기서는 세 길이(FULL / PANEL / MIN)로 정리하고, 표정 코드와 레퍼런스 카드 사양을 더했다. 바꾼 낱말은 §9에 기록.
 - **Flow 프롬프트에 인물 이름 금지** (ruling M). 영어 문자열은 역할 이름으로 시작한다: **QUEEN**(리네) · **HOSTAGE**(헤론) · **CHANCELLOR**(바실) · **ENVOY**(우르) · **CAPTAIN**(토라). 카드 파일 이름(LINE_, HERON_, BASIL_, UR_, THORA_)은 파일·문서에서만.
 
@@ -453,3 +454,66 @@ CAPTAIN: strong bareheaded woman of 41, short dark hair with a white streak at t
 | §9-2 Avoid 추가 줄 | §2-9의 문장형 + P46·P61 판(`on any person`) | 그림자의 관뿔 문장과 충돌 방지 (style-bible §14-2) |
 | §9-3 outfit "no chain of office" | "no gold" | 프롬프트에 chain 낱말을 남기지 않는다(world §9-3의 취지) |
 | §9-1~§9-5 외형 | 그대로 | — |
+
+---
+
+## 10. EP02 추가 토큰 [EP2부터 시리즈 자산]
+
+- 근거: brief ruling M · Z · AB · AC, `03_episode/ep02_beatsheet.md` §1-3 · P37–P47 · P43, `ep02_script_final.md`(읽기만), characters.md §9-6 · §10. 이름 있는 다섯 명의 토큰(§1–§5)은 **그대로** 쓴다(EP1과 같은 옷 한 벌, 상중 10일째).
+- Flow 프롬프트에 이름 금지(ruling M). 의원과 간수는 EP2에서 이름 없음(ruling Z).
+
+### 10-1. HOSTAGE 왼팔 상태 추가 (W3 → W4)
+
+| 코드 | 패널 | EN |
+|---|---|---|
+| `W3` | **EP2 P01–P11** (제0일 한밤, EP1 P58–P64 그대로) | §2-6 그대로 |
+| `W4` | **EP2 P13–P55** (제1일) | `both coat sleeves down to the wrist; the edge of a clean white linen wrap just visible above his LEFT wrist under the sleeve` |
+- P27(그녀의 시선이 가는 컷)과 P10 · P39(의원의 눈)에서는 왼쪽 손목 위 흰 천 끝이 **보이게.** 오른쪽 손목에 천이 보이면 재생성(좌우 반전).
+- EP2에서도 **주먹 없음**: P04 · P10 · P35 모두 편 손(§2-5).
+
+### 10-2. EP2 이름 없는 역할 (카드 없음)
+
+| ID | EN (프롬프트용) | 나오는 곳 | 메모 |
+|---|---|---|---|
+| PHYSICIAN | `the court physician, a thin man in his 60s, bald on top with a white fringe, short white beard, white mourning robe under a plain grey sleeveless over-robe, a leather satchel` | P39, P42, P45, P47(배경) | §7 문자열 그대로(EP1 P52 · P56의 같은 사람, ruling AC). EP2에는 리넨 두루마리를 빼고 **두 손을 모은 자세 / 가방 끈을 쥔 손**. 첨부: EP1 P52 또는 P56 확정 이미지 1장 |
+| CROSSBOWMAN_DEAD | `a dead man in his 30s lying still on his back on a low stone bench as if asleep, eyes closed, hollow cheeks, cropped black hair, a crooked nose, close-fitting dark grey clothes with the hood down; no wound, no blood, no bruises; his hands open and empty; only his hair is wet, plastered to his forehead and temples, one drop of water at the edge of the bench` | P40, P41(머리 일부), P44(전경 흐림) | EP1 §7 ASSASSIN_1 벗겨진 얼굴 그대로(ruling AC). 첨부: **EP1 P55 확정 이미지**(얼굴 앵커). 끔찍하지 않게, 피부색은 그냥 창백한 정도 |
+| JAILER | `a stocky middle-aged jailer in a plain undyed brown wool tunic and a wide leather belt, close-cropped grey hair, heavy shoulders, his face half in shadow, standing in the background beside a stool and a lamp` | P37, P45(복도 끝 실루엣) | **배경에만** [잠금, ruling AC]. 초점·클로즈업 없음. 짧은 회색 머리 + 무거운 어깨 + 갈색 민 튜닉이 이후 회차(B8 · EP7–8) 앵커가 된다. P45는 `a small dark silhouette of a stocky man beside a lamp at the far end of the passage` |
+| LORDS | `two lines of court lords in long white mourning robes standing between the columns facing the center aisle, small bronze brooches shaped as a half-hidden sun, a curved horn, or two parallel canyon lines, faces simple and softly out of focus` | P13, P17, P21, P23, P26 | §7 COURTIERS의 영주판. 금 장신구 없음. 얼굴은 기준 없음(군중 규칙) |
+| LORDS_VOTE | `several lords raising an open right hand palm forward at shoulder height, others hesitating with their hands still lowered` | P21, P23 | 표결 = **편 오른손**뿐. 주먹(용족 충성)과 헷갈리지 않게 "open … palm forward". 용지·나무패·기록 없음 |
+| LORD_HORN | §7 문자열 그대로 | P17 (웃음을 참는 거구의 영주) | EP1 B5와 같은 사람 |
+| GUARDS | §7 GUARDS · ARCHERS 그대로 | P12(등 돌린 근위 둘), P37 · P48 배경 | — |
+| LATE_KING_MEMORY | `close-up of a still older man's RIGHT hand resting on a white linen pillow, fair ruddy skin with faint age lines, broad square fingers, a heavy gold ring with a flat round deep-red carnelian on his RIGHT index finger; beside it his wet grey hair, a few faded dark mahogany-auburn strands, plastered to the white pillow; his face out of frame` | **P43만**(회상 클로즈업) | 가족 닮음: 숙부와 같은 **흰 붉은기 피부 · 넓은 손**, 머리는 그녀 · 숙부와 같은 **마호가니가 바랜 회색**(50대 중반 [권장]). **얼굴 · 방은 그리지 않는다.** 빛 `LIGHT_MEMORY_DAWN`(style-bible §15-4) |
+| QUEEN_HAND_MEMORY | `a young woman's slender RIGHT hand reaching in from the frame edge, short clean unpainted nails, no ring on any finger, fingertips touching the wet grey hair` | P43 | 같은 날 새벽의 그녀. **반지는 아직 아버지 손에** → 그녀 손은 맨손. 소매는 프레임 밖. P41(지금의 손, 반지)과 **같은 각도 · 같은 손 모양** 짝 컷(style-bible §5-4 매치 컷: P41을 첫 첨부) |
+
+- 금지 낱말(§2-9)은 이 역할들에도 적용(특히 JAILER · CROSSBOWMAN_DEAD 문장에 chain · prisoner · captive 없음).
+- 사슬 · 족쇄 · 창살이 Flow에 의해 생기면 그 패널의 재생성 프롬프트에만 장면 부정어를 더한다(style-bible §1).
+
+### 10-3. EP2 소품 (프롬프트 문장)
+
+| 토큰 | EN | 나오는 곳 |
+|---|---|---|
+| PROP_SCALE | `one single loose scale the size of the center of a palm, shield-shaped with one rounded end and one sharp point, slightly curved like a large reptile scale, matte reddish-copper colour with only its edge faintly brighter, smooth and completely plain, not glowing` | **P09** (토라의 편 오른 손바닥 위). 이후 다시 나오지 않는다(시신의 주먹은 비어 있다) |
+| PROP_HOSTAGE_DOOR | `one old plain heavy dark oak door among the row, its wood darker and worn smooth at hand height, no bolt on its outer side, completely unmarked` | **P38** (그의 걸음이 늦어지는 문). 문 · 문틀 · 벽 어디에도 표식 · 긁힘 · 새김 없음 |
+| PROP_CELL_DOOR | `a heavy dark oak door with a thick plain iron bolt on its outer side and a palm-sized sliding wooden shutter at eye level, plain unmarked wood and iron` | P39, P45, P47 |
+| PROP_HAND_LAMP | `a small open clay oil lamp with a loop handle and a single small flame` | P06–P11(토라), P37–P47(그녀) |
+| PROP_SACK | `a plain undyed hemp sack with no marks` | P12 (토라가 갈고리를 넣는다) |
+| PROP_HOOK | §8 그대로. P12: `a grappling hook of dull twisted copper being unhooked from the south end of the parapet, its rope coiled, no marks` | P12 |
+| PROP_SCRAPES | `bright fresh scrape marks on the pale stone at the south end of the parapet, no rope, no hook` | P36 |
+| PROP_REGENT_STAFF | §8 그대로 | **EP2 P13–P25** (숙부의 손: P13 세워 듦, P18 두 손에 가로로) |
+- 구리빛은 비늘과 갈고리에만. 비늘을 금 · 놋쇠 · 녹색 동록으로 그리면 재생성. 비늘에 무늬 · 새김 · 글자처럼 보이는 결이 생기면 재생성.
+
+### 10-4. 새 레퍼런스 카드 판정: **없음**
+
+- EP1 카드 12장(§6-0 #1–#12)으로 EP2를 만든다(ruling Z). 새 이름 있는 인물 없음, 옷 변화 없음.
+- 이름 없는 역할은 EP1과 같은 방식: 토큰 + **패널 앵커**. 의원 = EP1 P52/P56 확정 이미지, 죽은 석궁수 = EP1 P55 확정 이미지, 간수 = 배경뿐이라 앵커 불필요(EP2 P37을 이후 회차 앵커로 보관).
+- 새 장소 둘은 카드 대신 **장면 앵커 패널**: `LOC_THRONE` = P13, `LOC_CELLS` = P37(회랑) · P40(감방 안), 안뜰 = P48(style-bible §15).
+- 비늘(P09)과 표식 없는 문(P38)은 각 한 컷뿐이라 카드가 필요 없다.
+- 선택(시간이 있을 때만, 필수 아님): `LOC_THRONE` 빈 홀 카드(16:9, 사람 없음, `LIGHT_THRONE_MORNING`). 옥좌 홀이 EP3 · EP7–9에 다시 나오므로 이득이 있지만, P13이 잘 나오면 P13으로 대신한다.
+
+---
+
+## EP02 추가 (2026-11-24)
+
+- 추가: §10 (HOSTAGE W4 · EP2 이름 없는 역할 9줄: PHYSICIAN · CROSSBOWMAN_DEAD · JAILER · LORDS · LORDS_VOTE · LORD_HORN · GUARDS · LATE_KING_MEMORY · QUEEN_HAND_MEMORY · EP2 소품 8줄 · 새 카드 판정), 머리말에 한 줄.
+- 결정: 새 레퍼런스 카드 **없음**. P43 반지는 선왕 손에만, 젊은 그녀의 손은 맨손(비트시트 [권장]을 채택).
+- §0–§9(EP1 내용)는 바꾸지 않았다.

@@ -40,3 +40,12 @@ Request: new fantasy romance webtoon, Episode 1, 18+ (user's answers, 2026-11-24
   (+ glossary_km) → script_final → native Khmer review (READY, `km_review.py gate --episode 01`).
 - Phase 4 (Flow mode): style-bible, character-sheets, refs/ref_prompts, shotlist, lettering
   (`km_tool.py check`), prompts, handoff page → STOP and wait for the user's Flow images.
+
+## EP02 (2026-11-24)
+- Before EP2: world.md §13–§15 (customs, 돌아오는 심장, LOC_THRONE/LOC_CELLS), series-arc corrections (EP16 no kiss, EP20 option B).
+  Rulings X–AC appended to the brief.
+- Phase 3: `ep02_beatsheet.md` (55), `ep02_script.md`, `ep02_script_final.md` (55 panels, 50 bubbles, 1 sfx), glossary updated.
+  Khmer review READY round 1 (`km_review.py gate --episode 02` exit 0). EP2 title KM យប់នេះ ត្រឹមនេះសិន.
+- Phase 4: style-bible §15 / character-sheets §10 additions (no new reference sheet), `ep02_shotlist.md` (55), `ep02_lettering.md`
+  (km_tool check exit 0), `ep02_prompts.md` (55, ≤249 words), `ep02_flow_handoff.html`, `ep02_flow_status.md` = WAITING_FOR_IMAGES.
+- STATE NOW: EP01 and EP02 both wait for the user's Flow images. EP02 work is not committed yet.

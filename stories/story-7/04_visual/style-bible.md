@@ -2,6 +2,7 @@
 
 - 작성: art-director · 2026-11-24 · 첫 작성 (Phase 4, Flow-by-hand mode, Khmer edition)
 - **기본 화면비 (default aspect): 9:16** (세로 스크롤 기본값. 패널별 크기는 §5-1 표를 따른다)
+- **EP02 추가 (2026-11-24):** §15에 `LOC_THRONE` · `LOC_CELLS` · `LOC_ROOMS` 변형(복도 쪽 문간, 안뜰) · EP2 빛 7개 · EP2 그림자 카드 규칙. §0–§14(EP1 내용)는 바꾸지 않았다.
 - 입력: `00_input/brief.md`(LOCKED 1–11, LEADER RULINGS A–W), `02_story/characters.md` §9–§10, `02_story/world.md` §1-3·§2-2·§8·§9, `02_story/concept.md`, `02_story/twist-plan.md` EP1 §2-5·§2-6, `02_story/tension-curve.md` §2, `03_episode/ep01_script_final.md`(읽기만), `01_research/trend-brief.md` §0-4·§4-3·§6-3
 - 짝 문서: `04_visual/character-sheets.md`(인물 토큰 · 표정 · 레퍼런스 카드 사양)
 - 쓰는 사람: ref-sheet-artist, panel-director, letterer, prompt-smith, panel-validator, quality-reviewer
@@ -464,3 +465,106 @@ an ink-black ribbon of shadow lifting off the white stone at the kneeling man's 
 | 7 | 날개 그림자에 용의 몸·눈·연기가 붙음 | §8-5 장면 부정어, 그림자 카드 첨부, 표면이 주인공인 구도 |
 | 8 | "crown" 낱말 | P46 그림자 문장(`crown-like ring of horns`)에만. QUEEN의 관은 `circlet` |
 | 9 | T-c | **발동하지 않는다**(§8-6). P4·P46 3회 실패 시 대안 구도, 그래도 실패하면 리더에게 보고 |
+
+---
+
+## 15. EP02 추가 자산 (장소 · 빛 · 그림자) [EP2부터 시리즈 자산]
+
+- 근거: world.md §15-1 · §15-2(장소 사실), brief ruling M · Z · AC, `03_episode/ep02_beatsheet.md` §1-2 · §1-5 · §1-6, `ep02_script_final.md`(읽기만).
+- §1 STYLE_CORE · NEGATIVE, §6 빈 자리 문장, §9 그림자 없는 남자, §12 금지, §13 Flow 실무는 **그대로** 쓴다. 아래는 EP2가 새로 필요한 문자열뿐이다.
+- world §15 토큰에서 바꾼 것: ① `dragon wings` → `membranous wings`(EP1 LOC_GATE와 같은 말. "dragon"은 용의 몸을 부른다) ② 영주의 줄은 장소 문자열에서 빼서 역할 토큰(character-sheets §10-2 `LORDS`)으로 ③ 감방 계열 낱말 없이 "small rock-cut rooms"로(characters 금지 낱말) ④ "물그릇 없음"을 부정문으로 쓰지 않고 "nothing else in the room"으로(§1 원칙).
+
+### 15-1. `LOC_THRONE` — 옥좌 홀 (EP2 B3 P13–P26 · EP3 · EP7–9 재사용)
+
+- **FULL:**
+```
+a tall rectangular throne hall carved deep into pale limestone rock; smooth whitewashed walls rising to a plain barrel vault with one round light well cut through it high above; at the far end a white stone throne carved from the living rock on a dais of seven broad white steps, behind it a large carved relief of a sun disc between two outspread membranous wings; a lower plain stone seat beside the third step; rows of carved round columns down both long sides; tall crimson banners with plain white sun discs between the columns; unlit iron fire baskets on tripods beside the dais; no letters, no numbers
+```
+- **SHORT (옥좌):** `on a white stone throne at the top of broad white steps, a carved relief of a sun disc between two outspread membranous wings on the whitewashed wall behind, no letters`
+- **SHORT (재상의 자리):** `beside a lower plain stone seat on the third of seven broad white steps below a white stone throne, crimson banners with plain white sun discs behind, no letters`
+- **SHORT (통로 · 영주의 줄):** `in the center aisle of a rock-cut throne hall, carved round columns and crimson banners with plain white sun discs on both sides, a shaft of daylight falling onto the pale floor, no letters`
+- **SHORT (계단 아래 · 볼모의 자리):** `at the foot of broad white throne steps beside a carved round column in a whitewashed rock-cut hall, the pale floor bright with daylight, no letters`
+- 빛: `LIGHT_THRONE_MORNING`(§15-4). 화로는 **꺼져 있다**(EP2–EP3 낮 회의).
+- 고정 소품: 채광 우물, 일곱 단 계단과 옥좌, 해·날개 부조, 재상의 돌 의자, 섭정의 지팡이(P13–P25 숙부 손, `PROP_REGENT_STAFF`), 진홍 깃발, 꺼진 쇠 화로.
+- 표결: **편 오른손을 드는 그림**뿐(character-sheets §10-2 `LORDS_VOTE`). 용지·두루마리·기록 없음. 조약 3조는 말로만(world §15-3).
+- 무대 축: 옥좌가 화면 위(먼 쪽), 홀 입구가 카메라 쪽. 숙부의 돌 의자는 **옥좌를 바라볼 때 왼쪽**, 볼모가 선 기둥은 **오른쪽**에 고정(P13에서 정한 대로 끝까지. 뒤집히면 재생성).
+- 앵커: **P13을 먼저 확정**하고 P14–P26의 와이드 · 중간 컷에 장소 앵커로 붙인다.
+
+### 15-2. `LOC_CELLS` — 아래 회랑과 감방 (EP2 B6 P37–P47 · EP7–8 재사용)
+
+- **FULL:**
+```
+a long low barrel-vaulted passage cut into raw pale rock deep under a cliff castle, no windows; a narrow dry stone drain channel down the middle of the worn floor; small open oil lamps in wall niches above head height, warm pools of light and cool deep darkness between them; along one side plain heavy dark oak doors to small rock-cut rooms; at the foot of a steep stone stair a plain wooden stool, a lamp and an iron key ring hanging on a peg; cool, still, bone-dry air; only wooden doors and stone walls; no letters, no numbers
+```
+- **SHORT (돌계단 발치):** `at the foot of a steep stone stair in a low rock-cut barrel-vaulted passage, a plain wooden stool, a lamp and an iron key ring on a peg, niche lamps fading into darkness, no letters`
+- **SHORT (입구 쪽 처소, P38):** `a row of plain heavy dark oak doors in round-arched rock-cut doorways along a low lamplit passage, no bolts on their outer side, completely unmarked`
+- **SHORT (안쪽 끝 감방 문, P39 · P47):** `at the far end of a low rock-cut passage, a heavy dark oak door with a thick plain iron bolt on its outer side and a palm-sized sliding wooden shutter at eye level, plain unmarked wood and iron`
+- **SHORT (감방 안, P40–P46):** `inside a small bare rock-cut room, rough pale stone walls, a low stone bench, a dusty bone-dry stone floor with scattered dry straw, nothing else in the room, the heavy oak door open behind`
+- 빛: `LIGHT_CELLS`(§15-4). 햇빛 없음.
+- **금지 낱말 [잠금]:** cage, chain, shackle, bars, prison, prisoner, captive, cell을 **부정문으로도** 쓰지 않는다. 있는 것만 적는다("wooden doors and stone walls").
+- 앵커: **P37을 먼저 확정**, 감방 안 컷(P40–P46)은 **P40을 앵커**로.
+
+### 15-3. `LOC_ROOMS` 변형 (EP2만 새로 쓰는 쪽. 같은 방, 같은 토큰 계열)
+
+- **연결문 (B1 P01–P05):** EP1 §7-3 FULL · SHORT(연결문) · SHORT(그의 방) 그대로. 자물쇠는 **그의 쪽**, 그녀 쪽엔 떼어 낸 자국(P02에 보인다). 침대는 프레임 밖.
+- **SHORT (그녀의 방, P05):** `in a larger rock-cut chamber with whitewashed walls and crimson wall hangings, a single oil lamp in a wall niche beside a closed heavy dark oak door with no lock on this side, only a pale unweathered patch of wood and four filled holes, no letters`
+- **DOORWAY (복도 쪽 문간, B2 P06–P11):**
+```
+the queen's chamber door, a heavy dark oak door in a round-arched frame, open onto a short dark rock-cut passage with whitewashed walls; a few steps along the same passage another plain dark oak door to the smaller next chamber, with no lock or bolt on its outer side; warm lamplight spilling out of the open chamber onto the passage floor, the rest in darkness; no letters, no numbers
+```
+- **COURTYARD (안뜰, B7 P48–P55):**
+```
+a small square inner courtyard cut down into pale rock and open to the sky; whitewashed walls rising high on all sides with deep window embrasures; on one side two windows with open wooden shutters, on the opposite wall one window with its wooden shutters closed; a dry carved stone basin at the center, one old gnarled olive tree; a low round-arched arcade at the foot of one wall leading to guest quarters; a round-arched entrance passage at one corner; no letters, no numbers
+```
+- **SHORT (안뜰):** `in a small square rock-cut courtyard open to the sky, an old gnarled olive tree and a dry stone basin, whitewashed walls rising behind, no letters`
+- 닫힌 덧창 하나(봉한 선왕의 방)는 **안쪽을 보여 주지 않는다**(LOC_KINGROOM은 EP11 몫). P52의 초점 원경도 덧창 바깥면까지.
+- 앵커: P01(연결문 한밤, EP1 P58을 함께 첨부 가능), P06(문간), P48(안뜰).
+
+### 15-4. EP2 빛 레시피 (장소 토큰 뒤에 붙인다. 한 장면 안에서 바꾸지 않는다)
+
+| 토큰 | EN (프롬프트용) | 쓰는 곳 |
+|---|---|---|
+| LIGHT_LAMP | §4 그대로 (EP1 B9) | B1 P01–P05 (제0일 한밤) |
+| LIGHT_DOORWAY_MIDNIGHT | `midnight: a small hand-held open oil lamp and the amber glow from the open chamber doorway are the only light, warm low light from below on faces, the passage beyond in deep brown-black darkness` | B2 P06–P11 |
+| LIGHT_TORCH | §4 그대로 (그믐밤, 달 없음) | B2 P12 테라스 |
+| LIGHT_THRONE_MORNING | `mid-morning: one clean shaft of white daylight falls from a round light well high in the vault, slanting onto the pale floor of the center aisle in a bright oval pool, the rest of the hall lit softly by light bouncing off the whitewashed walls, cool pale blue-violet shade, the iron fire baskets unlit` | B3 P13–P26 (회의, 제1일 오전) |
+| LIGHT_CORRIDOR_NOON | `near noon: the sun high overhead, only short bright patches of white light between the columns, short crisp blue-violet shadows close to the column bases, the inner wall in soft even shade` | B4 P27–P33 |
+| LIGHT_TERRACE_NOON | `harsh white noon sun high in a cloudless pale hard-blue sky, the white stone terrace glaring, light bouncing up from the stone, the dry rust-and-cream canyon below sharp and bright, a thin silver thread of water far below` | B5 P34–P36 |
+| LIGHT_CELLS | `no daylight: small open oil lamps in niches above head height make warm amber pools with cool deep darkness between them; a hand-held open oil lamp adds low warm side light on faces and stone` | B6 P37–P42, P44–P47 |
+| LIGHT_MEMORY_DAWN | `cold pale blue dawn light, desaturated colours, highlights slightly faded and a soft white vignette at the edges, like a memory` | B6 P43 (회상) |
+| LIGHT_COURT_DUSK | `dusk: the square of sky above the courtyard fading from orange to deep blue, the courtyard floor already in cool even shade, a last warm orange glow touching only the tops of the upper walls and shutters, soft faint shadows` | B7 P48–P53, P55 |
+| LIGHT_COURT_SKY | `the square opening of a rock-cut courtyard seen from below, framing an empty deep-blue dusk sky with one first faint star, nothing in the sky` | B7 P54 |
+
+- 시간 경과는 빛으로만(캡션 없음): 등잔 → 손등잔 → 채광 우물 → 짧은 정오 빛 → 등잔 → 노을.
+- EP1 `LIGHT_NOON`은 "short shadows pooled directly under every figure"를 담고 있어서 HOSTAGE가 혼자 나오는 B5에는 쓰지 않는다 → `LIGHT_TERRACE_NOON`. EP2 새 빛 문장은 모두 **"모든 인물 발밑의 그림자"를 말하지 않는다**. 그녀·다른 사람의 그림자는 패널 동작 문장에서 따로 적는다(§9 구도 규칙).
+- P43: **방 · 벽 · 덧창 · 수반을 그리지 않는다**(베개 · 젖은 머리 · 손만). EP1 P49 회상과 같은 문법(바랜 하이라이트 + 흰 비네트), 색만 차고 푸르다.
+
+### 15-5. EP2 그림자 규칙 (§8 · §9 그대로 + 카드 선택)
+
+| 장면 | 날개 그림자 꼴 | 첨부 카드 | 주의 |
+|---|---|---|---|
+| B1 P01 · P05 (등잔, 그녀 쪽) | 옆모습 일부, 그녀 뒤 벽 · 천장 | `WINGED_SHADOW_side` | 머리는 천장 쪽 잘림 |
+| B2 P06–P11 (손등잔, 낮은 빛) | 벽의 옆모습이 될 수 있다 | `WINGED_SHADOW_side` | **머리는 프레임 밖이나 어둠 속** |
+| B3 P13 · P26 (채광 우물, 위 빛) | **위에서 본 날개**(넓은 두 날개, 작은 머리)가 옥좌 계단과 그 앞 바닥에 | `WINGED_SHADOW_top` | 옆모습 금지. 하인·영주는 빛 웅덩이 쪽으로 비켜 선다 |
+| B4 (정오 회랑) | 그녀 발밑에 짧게 고인 웅덩이 | 없음 | 머리는 기둥 그림자 속 |
+| B6 P37 · P44 (손등잔 옆빛) | 궁륭에 번지는 날개 일부 | `WINGED_SHADOW_side` | 머리는 궁륭 어둠 속 |
+| B7 P55 | 그늘 속에 녹아 보이지 않는다 | 없음 | — |
+
+- **`WINGED_SHADOW_crown`은 EP2 어느 패널에도 첨부하지 않는다** [잠금, world §15-1 · §15-2]. 관뿔 옆모습은 EP3(장군의 무릎) 전까지 궁정 장면에 보이지 않는다.
+- HOSTAGE의 그림자 없음 증거 컷: P13 · P26(빛 웅덩이 속, 뒤 바닥 밝음), P34(정오 테라스, 어려우면 발밑을 프레임 밖으로), P37(등불 앞). 나머지는 §9 구도(발밑 프레임 밖, 어둠, 다른 사람 그림자에 겹침)로 피한다.
+- T-c는 EP2에서도 **발동하지 않는다.**
+
+### 15-6. EP2 연속성 · 금지 (추가분만)
+- 다섯 명 모두 **EP1과 같은 옷 한 벌**(상중 10일째). HOSTAGE 왼팔은 P01–P11 W3, P13–P55 **W4**(character-sheets §10-1).
+- 진홍은 깃발 · 망토 · 반지 돌에만. 구리빛은 **비늘과 (EP1) 갈고리에만**.
+- 시신은 끔찍하게 그리지 않는다: 상처 · 피 · 멍 · 창백한 부패색 없음. "잠든 사람처럼 보이다가 젖은 머리가 눈에 걸리는" 그림.
+- 회상 P43은 얼굴을 보이지 않는다. 선왕의 얼굴이 나오면 재생성. P43의 반지는 **선왕의 손에만**(젊은 그녀의 손은 맨손, character-sheets §10-2). 반지가 두 개 보이면 재생성.
+- 간수는 **배경에만**(얼굴 반쯤 어둠). 초점이 가거나 얼굴이 또렷하면 재생성.
+
+---
+
+## EP02 추가 (2026-11-24)
+
+- 추가: §15 (`LOC_THRONE` FULL + SHORT 4 · `LOC_CELLS` FULL + SHORT 4 · `LOC_ROOMS` 변형 그녀의 방 / DOORWAY / COURTYARD · EP2 빛 8개(새 7 + 하늘 컷) · EP2 그림자 카드 표 · 추가 연속성 규칙), 머리말에 한 줄.
+- world §15 토큰에서 바꾼 낱말 4가지는 §15 머리말에 기록(`dragon` 삭제, 영주는 역할 토큰으로, 감방 낱말 회피, 부정문 대신 "nothing else in the room").
+- §0–§14(EP1 내용)와 STYLE_CORE · NEGATIVE · REF_* 블록은 바꾸지 않았다. 새 레퍼런스 카드 없음(character-sheets §10-4).
