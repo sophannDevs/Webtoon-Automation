@@ -197,3 +197,50 @@ GF. Total reference cards = 15 (13 + SUPPLIER_turnaround + SUPPLIER_expressions)
 
 ## EP03 leader rulings after ep03_shotlist.md (2026-11-25)
 GG. FL1–FL10 accepted. P60 streetlamp OFF (no warm light on the uncle at 060–061). Scene ids with a/b/F suffixes; render 041 first as the composition reference for 060. Kitchen staging (bedroom door left wall behind the head seat, kitchen doorway right wall at Sae-rom's end) is canon from EP03 unless it contradicts EP01/EP02 shot lists — prompt-smith checks and follows the earlier shot lists if they differ.
+
+---
+
+# EP04 (2026-11-25) — Phase 0 case 2 (new episode)
+
+- User asked to continue with EP04. EP01–EP03 images are NOT made yet (all WAITING_FOR_IMAGES). Create EP04's beat sheet,
+  Khmer script, native Khmer review, shot list, lettering, Flow prompts and handoff page. **Do not touch EP01–EP03 files.**
+- Episode: EP04 (NN = 04) 「꼬맹이」 — 19th 21:00 → 20th night. A payoff ("사이다") episode, intensity 8, after the EP02–03
+  고구마 pair.
+- Reuse (read, do not redo): `02_story/*`, `style-bible.md` (incl. §10–§11), `character-sheets.md` (incl. §7–§12),
+  `refs/ref_prompts.md` (15 cards). EP04 adds only what is new (append "EP04 additions"; never rewrite earlier sections).
+- Follow series-arc.md EP04 and twist-plan.md §4 EP04 exactly, and EP03 ruling GE/F12: the 19th 21:00 back-room scene opens with
+  the uncle as the one who has been waiting (he saw her with the supplier). He does not deny: 「그래, 끝났지. 그쪽 빚은.」
+  「내가 빚에 넣는다고 했니? 보태자고 했지.」 (the EP01 T1 verb ជួយបន្ថែម/보태다 was the trap) 「궁금하면 네 아버지한테 물어봐라.」
+  Small win/사이다: Ha-rin lays this month's envelope down as U-jin's bracelet redemption — 「이걸로 우진이 팔찌 찾아갈게요.」 —
+  a customer is in the front shop so the uncle smiles and returns the REAL bracelet (one cold-face panel). Real vs copy
+  side-by-side comparison panel (raised gold band + white cloud streak vs flat painted line), 「이 테, 원래 누가 고친 거야?」 /
+  「할머니가… 삼촌 가게에서. 아주 옛날에.」 (W6). Warmth: U-jin's gruff 「…밥 좀 먹고 다녀, 짜증 나게.」 + Sae-rom vs the uncle's
+  tangerines (eerie warmth). 20th evening the uncle visits with a bag of tangerines (Dad present → Ha-rin can't speak); at the
+  table he calls Sae-rom **꼬맹이 = អាតូច** — a calculated counter-move, not a slip; nobody at home calls her that; Sae-rom's spoon
+  stops (mirror of Dad's spoon). After he leaves, at the entrance, Sae-rom without jokes for the first time: paid today 16:20,
+  for 8 months, the first to notice (saw her sister come in by the back door at dawn).
+- Cliffhanger type E (just before opening): 「언니. 아빠 것도 있어.」 Sae-rom points to the old shoe box on the TOP shelf of the
+  entrance shoe cabinet; cut the instant Ha-rin's hand touches the lid. One piece of info: "Dad pays too." Do NOT open it.
+- Khmer: **អាតូច is used for the first time here, only by the uncle** (never in family lines). Keep twist-plan §6 rules:
+  no វា/ក៏…ដែរ slip sense, ជួយ/បន្ថែម for 보태다 (echo EP01 P37 exactly), "and" = និង, "who" = នរណា (អ្នកណា is Ha-rin's EP01
+  P54 word), "그쪽" = ខាងនោះ (nameless), លក់/បញ្ចាំ distinct (the bracelet was pawned: បញ្ចាំ), no amounts/currency,
+  never the father's secret content. Reuse EP01–EP03 exact Khmer for repeated lines and sound words.
+- Bracelet rules: the real bracelet (raised gold band + one white cloud streak) and the copy (flat painted gold line, no streak)
+  may appear side by side for the first time; decide (twist-master note) where the copy goes afterwards (U-jin's desk drawer).
+- Locations: reuse LOC_* tokens (LOC_UNCLE_SHOP, LOC_UNCLE_BACKROOM, LOC_HOME_TABLE, LOC_HOME_ENTRANCE etc.); new only if essential.
+- 50+ panels (target ~60), one main twist (Sae-rom knew first), one small win, one warmth beat.
+
+## EP04 leader rulings after ep04_beatsheet.md (2026-11-25)
+HA. F1: ruling GE stands — CUT optional P27 (banknote triangle fold stays for EP05). EP04 = 61 panels; renumber consecutively (P01–P61) in the script and everything downstream.
+HB. F2–F12 accepted (incl. new tracker items L44 꼬맹이-as-signal → EP09, L45 shoe box). Box shown only from outside, never opened. P46/P52 mirror pair (same camera). Uncle's cold face in exactly one panel (the redemption scene); the 꼬맹이 look is calm/calculated, not cold.
+HC. Khmer: Q3 — បំណុល may appear only inside the uncle's negated question 「빚에 넣는다고 했니?」 (e.g. ដាក់ចូលបំណុល); never សងបំណុល in the T1 echo. Q5 grandmother in the W6 line must not read as the stairs យាយ (dialogue-writer picks a clear form, e.g. ជីដូន). Q6 customer label ភ្ញៀវ, never ថៅកែ/ពូ to the uncle. Q8 Sae-rom saw her sister at dawn "the day she left for the school retreat" (수련회 가던 날). Q9 Sae-rom quotes the uncle without 꼬맹이/អាតូច — អាតូច appears exactly once in EP04 (P51-equivalent, the uncle).
+HD. New art needs approved (no new location): front-shop interior layout + L-SHOP-NIGHT-INSIDE; L-ENTRANCE-EVENING with door open; muted tangerine bag + one peeled tangerine; low round stool; shoe cabinet upper shelf behind a plain hinged door + old faded grey-brown shoe box (lid closed); Sae-rom's big grey cat plush (zip on the back); faceless customer (woman, 50s, charcoal coat, no card); fuller envelope; first SEOKGU_OUT; U-jin wears the REAL bracelet from the landing scene onward.
+
+## EP04 leader rulings after ep04_script.md (2026-11-25)
+HE. EP04 Khmer title = ឈ្មោះហៅក្រៅ (no អាតូច in the title). Writer flags 2–6 accepted: P10 ចំណែកខាងនោះ (no បំណុល); P15 thought uses ជួយបន្ថែម; P14 second memory bubble (EP01 T1 line) may be dropped by the letterer if crowded; customer never addresses the uncle; Mi-ja says បងសុកគូ at P43.
+
+## EP04 leader rulings after art-director's EP04 additions (2026-11-25) — AH1–AH13 accepted
+HF. Art sections use beatsheet numbers (bs) plus script numbers (sc); downstream (shot list, lettering, prompts) uses SCRIPT numbers P01–P61. Flashback P14 uncle = SEOKGU_OUT with thermos (EP01 canon). Coat folded on his knees (stool has no back). Shoe cabinet on the right-hand wall seen from inside facing the door — check EP01–EP03 entrance panels against this when their images are validated. Banknotes in EP04 have flat corners (triangle fold = EP05). Never attach SEOKGU expression cuts ③④⑤ to the calculated-calm panels. No new reference cards (15).
+
+## EP04 leader rulings after ep04_shotlist.md (2026-11-25)
+HG. Shot-list flags FL1–FL11 accepted (streetlamp off at 003; coat folded on knees; 053 the uncle standing to leave behind U-jin's chair; stool at the inner corner between Mi-ja and Sae-rom; S7 camera directions with the shoe cabinet's side; backpack back on from 026). Render 045 first as the reference for 051.

@@ -537,3 +537,190 @@ H HARIN_COMMUTE 백팩 없음 · SP SUPPLIER_OUT.
 | AG11 | SUPPLIER_YOUNG 카드 없음 | 2컷·회상 처리라 문장 차이로 충분. P46에 SUPPLIER_turnaround 첨부 시 흰머리가 옮겨질 수 있음 → 검수 기준: 모자 아래 머리가 회색이면 OK, 흰색이어도 회상 처리로 구분 불가하면 재그림 불필요 |
 | AG12 | P61 표정 | SEOKGU_expressions 컷 ①만. ③④⑤(굳는 미소·차가운 얼굴)가 섞이면 재그림 — "아무것도 바뀌지 않은 미소"가 클리프행어의 전부 |
 | AG13 | 신규 카드 2장(SUPPLIER) → 총 15장 | ref-sheet-artist가 `ref_prompts.md`에 append. EP01 카드 13장은 손대지 않는다 |
+
+---
+---
+
+# EP04 additions (2026-11-25) — 「꼬맹이」
+
+- 작성: art-director · Phase 4 · 입력 `ep04_beatsheet.md`(§0-1·§2·§5 N1–N12·§7 F5·F6·F9·F10·F13), brief 판정 HA–HD, `characters.md` §2-5·§5-5·§9. 짝: `style-bible.md` "EP04 additions"(§12).
+- **위 EP01(§0–§6)·EP02(§7–§8)·EP03(§9–§13) 섹션은 바꾸지 않았다.** 기존 APPEARANCE 문장·의상 영문 문장·WRIST RULE은 글자 그대로 재사용한다.
+- 신규: **얼굴 없는 단역 CUSTOMER 1명(카드 없음)** · **우진 WRIST RULE EP04판(진품)** · 새롬의 **큰 회색 고양이 인형** 문장. **신규 의상 토큰 없음** — `SEOKGU_OUT`은 EP01 §1-6에 이미 있다(EP01 P33–39 계단에서 사용; 비트시트의 "첫 사용"은 "집 방문으로는 첫 사용"으로 읽는다).
+- **패널 번호 [판정 HA]:** `bs P##` = 비트시트 번호. 대본·샷리스트(sc) = bs P01–P26 그대로, **bs P28–P62는 1을 뺀다**(bs P27 지폐 삼각 접기 컷은 잘렸다). 아래 표는 두 번호를 함께 적는다.
+
+## 14. 신규 단역 — CUSTOMER · 앞가게 손님 (이름 없음, 얼굴 없음, 카드 없음)
+
+| tag | 이름 | 크메르어 화자 표기 | 나이 | 키 | 실루엣 한 줄 | 식별 표식 |
+|---|---|---|---|---|---|---|
+| CUSTOMER | 손님 (이름 없음) | ភ្ញៀវ (판정 HC Q6) | 50대 여 | 158 | 보통 체형, 무릎까지 오는 차콜 코트의 등 | 차콜 울 코트 + 팔에 건 작은 무지 핸드백 / 턱선 길이 짙은 갈색 웨이브 단발 |
+
+**APPEARANCE (불변 · 모든 손님 패널에 그대로):**
+```
+a Korean woman in her fifties seen only from behind or from a back three-quarter angle, her face never visible (turned away from the camera, hidden by her own hair or cut off by the frame edge), chin-length dark brown hair with a soft loose wave, an average build, about 158 cm, wearing a plain knee-length charcoal-grey wool coat with no logo, dark grey trousers and low black shoes, a small plain dark brown handbag hooked over her forearm, no visible jewellery.
+```
+- **얼굴 금지 [고정, F6]:** 등 · 뒷 4분의 3 · 프레임 밖까지만. bs P28(sc P27) "고개만 돌아감" = **뒷머리 + 귀 + 볼 윤곽선 끝**까지, 눈·코·입 금지. 대사 컷(bs P29·P32 = sc P28·P31)도 얼굴 없이 — 말풍선 꼬리는 뒷머리 쪽(letterer).
+- **색 구분:** 차콜 `#4A4B50` — 미자 카멜·할머니 자주·커튼 자주·하린 네이비와 겹치지 않는다. 녹색·빨강 없음. 핸드백·코트에 로고·버클 글자 없음.
+- 자리: 왼쪽 진열장 앞(style-bible §12-1). 반지 트레이를 들여다봄(bs P25) → 하린과 삼촌을 번갈아 봄(bs P29) → 웃으며 끄덕임(bs P32, 배경).
+- 레퍼런스 카드 없음(EP02 사장 원경 문법). prompt-smith는 이 문장만 쓴다.
+
+## 14-2. UJIN · WRIST RULE — EP04판 (진품이 손목으로 돌아온다, N10)
+
+EP01 §1-2 WRIST RULE은 그대로 두고, EP04에는 아래 세 줄을 쓴다. **팔찌는 여전히 APPEARANCE에 넣지 않는다**(A2 — 패널 add-on). `UJIN_turnaround`는 팔찌 없는 카드 그대로.
+
+| 상황 | 붙일 문장 (그대로) | bs 패널 (sc) |
+|---|---|---|
+| 팔찌 숨김 | `his left wrist is hidden inside his sleeve, no bracelet visible` (EP01 문장) | bs P34·P35 (sc P33·P34) · bs P40 (sc P39, 원경) |
+| **복제품 보임** (마지막) | EP01 문장: `on his left wrist a deep green jade bangle about 1.2 cm wide with one diagonal crack covered by a flat painted gold line, uniform green with no white streak` + `his puffer and hoodie sleeves pushed up` | **bs P36 (sc P35) 비교 컷** — style-bible §12-6 · bs P37 (sc P36)은 프레임 밖 권장(보이면 같은 복제품 문장) |
+| **진품 착용** (bs P38부터) | `on his left wrist a deep green jade bangle about 1.2 cm wide, sitting a little loose on his bony wrist just below his sleeve cuff, its one diagonal crack wrapped by a thin raised gold repair band that catches the light, and a single thin white cloud-like streak inside the jade` | bs P38 (sc P37) · bs P39 (sc P38, 소매로 덮는 중 — 소맷부리 아래 반쯤) · S6 bs P42·P49·P54 (sc P41·P48·P53) |
+
+**손목 위의 진품 — 어떻게 보이나 [고정]**
+- 우진의 손목은 길고 뼈가 드러난다 → 팔찌가 **조금 헐렁하다.** 팔을 내리면 손목뼈 아래 손등 쪽으로 미끄러지고, 팔을 들면 소맷부리 바로 아래 손목뼈에 걸린다.
+- 금 간 자리(금색 수리 테)는 **손목 바깥쪽 위**(손등 쪽)에 오는 경우가 많다 — 카메라 쪽으로 테가 보이게 돌려 두면 진품임이 읽힌다. 흰 구름 무늬는 옥 안쪽의 가는 흰 줄 하나.
+- **S4 (UJIN_OUT):** 검은 숏패딩 소매 끝 + 차콜 후드 소맷부리 아래. bs P38 = 손 클로즈업, 테와 흰 무늬 둘 다 또렷. bs P39 = 고개를 돌리며 왼손목을 소매 안으로 끌어내리는 손짓(감추는 게 아니라 **지키는** 손) — 소맷부리 끝에 초록과 금빛이 반쯤.
+- **S6 (UJIN_HOME):** 차콜 후드 소매가 손목을 반쯤 덮는다 → 소매 끝에 **작은 초록 반달 + 금빛 점** 정도. bs P42·P49(귤로 뻗는 손)·P54(삼촌 시선이 스침)에서만 의도적으로 보인다. 흰 무늬는 아주 작아도 되지만 **복제품 문장(납작한 칠 선·무늬 없음)을 쓰면 재그림.**
+- **bs P38 이후 복제품은 화면에 없다.** bs P38에서 패딩 주머니로 들어가는 순간만(주머니 입구에 초록 끝이 잠깐, 디테일 없음). 행방 = 우진 책상 서랍(대사로만, F13).
+- 오른손 마디 반창고(살색 1개)는 EP04 내내 그대로(bs P34·P38).
+
+## 14-3. HARIN 메모 (EP04)
+
+- 의상은 기존 코드만: `HARIN_COMMUTE`(S1–S4, S7) · `HARIN_HOME`(S6).
+- **백팩 규칙 [고정]:** S1 bs P01–P03 = 백팩 **없음**(EP03 S4–S6 그대로) → bs P04 메고 내려옴(한 손이 **백팩 앞주머니**를 누름) → bs P05–P10 멤(P07 어깨끈을 쥔 손) → bs P11 앉으며 벗어 **방석 옆 바닥**, 앞주머니가 하린 쪽(P20 지퍼를 여는 손) → bs P25부터 다시 양어깨에 메고 앞가게로 → S4 멤 → S7 멤(출근 직전).
+- **화상 자국(오른쪽 팔뚝 안쪽)** 이 의도적으로 보이는 컷: bs P33(sc P32, 손바닥 위 남색 천, 손목 안쪽 → 팔뚝) · bs P62(sc P61, 상자 뚜껑에 닿는 손, 회색 후드 소맷부리 끝).
+- bs P43(sc P42): 숟가락 휜 끝은 밥그릇 안(W5).
+- 표정: bs P02 결심(턱에 힘, 눈물 없음) · bs P08 흔들리지 않는 눈 · bs P15 숨 멈춤 · bs P28(sc P27) 지친 눈 + 단단한 입매(사이다) · bs P40(sc P39) **한쪽 입꼬리** · bs P59(sc P58) 입매가 처음 풀림, 눈물 없음.
+
+## 14-4. SEOKGU 메모 — 얼굴 4단계 · SEOKGU_OUT · 식탁의 코트
+
+- **얼굴:** style-bible §12-8 FACE-1…4를 따른다(차가움 = bs P30(sc P29) 한 컷뿐, 꼬맹이 bs P51·P54 = FACE-2 계산된 침착, 차갑지 않음).
+- **의상 시계:** S1–S3 `SEOKGU_SHOP`(돋보기 목에 검은 끈, 금붙이 없음) → S6 `SEOKGU_OUT`(§1-6 문장 **그대로**: 진갈색 3단추 울 코트 + 베이지 조끼 + 흰 셔츠 + 무지 taupe 울 목도리). 보온병 대신 **귤 봉지**: `carrying a plain semi-transparent white plastic bag of muted tangerines`(style-bible §12-4).
+- **bs P45(sc P44) 현관:** 코트·목도리 차림, 한 손에 귤 봉지, 다른 손으로 갈색 가죽 구두를 벗는 중.
+- **bs P47–P54 식탁 [고정, 플래그 AH6]:** 코트는 벗어 **접어서 무릎 위**(낮은 둥근 의자에 등받이 없음), **목도리는 맨 채**, 베이지 꽈배기 조끼 + 흰 셔츠(소매는 걷지 않음 — 가게 차림과 구분). 돋보기는 목에.
+- **bs P14 회상 (EP01 P37 원본) [플래그 AH4]:** EP01 정본 = 계단 밤 → `SEOKGU_OUT` + `carrying a silver stainless thermos`. 비트시트의 "SEOKGU_SHOP" 표기 대신 이것을 쓴다(EP01 P37 프롬프트 재사용 + 세피아).
+- HAND ID: 두툼하고 깨끗한 손, 반지·시계 없음 — bs P13(장부 톡) · P19(찻잔 밀기) · P21(봉투 무게) · P31(손등이 하린 손가락을 덮음, EP01 P50 구도) · P50(귤을 까는 손).
+
+## 14-5. SAEROM 소품 — 큰 회색 고양이 인형 (봉투 은닉처 첫 노출, N7)
+
+- `a large soft grey cat plush toy, big enough to cover a fourteen-year-old girl's chest when she hugs it, a simple round head with small rounded triangle ears and two small black embroidered eyes, a short stubby tail, the same simple design as her small grey cat keyring, a plain grey zip running down the middle of its back, no tag, no label, no writing`
+- 색: 무지 중간 회색 `#9A9A9E`(새롬 코랄 후드와 대비). 무늬·리본·글자·상표 태그 없음. 키링(SAEROM_SCHOOL)과 **같은 디자인의 큰 것** — 원경 P41의 "회색 점"과 이어진다.
+- **지퍼:** 등 가운데 세로. bs P55(sc P54) = 새롬이 두 팔로 앞쪽을 안음(지퍼는 등 쪽, 닫힘, 보이지 않아도 됨) → **bs P56(sc P55)** = 지퍼가 열려 그 안에서 **납작한 빈 봉투**가 반쯤:
+  `the zip on the cat plush's back is open and a flat, empty kraft envelope` + PROP_ENVELOPE 공통 + FLAT `is half pulled out of it` → bs P57–P61 다시 품에 꼭(지퍼 쪽은 몸 쪽).
+- 새롬의 손: 작고 손톱이 짧다, 연코랄 후드 소매.
+
+## 14-6. EP04 의상 · 등장 · 패널별 표 (bs P01–P62 / sc P01–P61)
+
+약어: H = HARIN · U = UJIN · I = INHO · M = MIJA · S = SAEROM · SK = SEOKGU · CU = CUSTOMER · YAI = 계단 할머니. 의상 코드는 §1·§2·§14의 영문 문장 그대로. "(손)" = 손·소매만.
+우진 손목: §14-2. 삼촌 얼굴: style-bible §12-8 (F1–F4).
+
+### S1 · 19일 ~17:20 → ~20:55 · LOC_ALLEY_STAIRS 맨 아래 층계참 / 아래 LOC_UNCLE_SHOP 문간
+| bs (sc) | 인물 · 의상 | 추가 |
+|---|---|---|
+| P01 | SK SEOKGU_SHOP (문간, F1) · H HARIN_COMMUTE 백팩 없음 (전경 어깨·뒤통수) | EP03 P61 각도 한 걸음 넓게 · 손바닥을 들어 보임 · 얼굴에 주황 없음 |
+| P02 | H (정면 클로즈업) | 노을 반쪽, 결심 |
+| P03 | SK (작게, 등) · H (작게) | 유리문 닫힘, 종 흔들림 |
+| P04 | H HARIN_COMMUTE **+ 검은 백팩** | 밤 · 앞주머니를 누르는 손 |
+
+### S2 · 19일 ~21:00–21:08 · LOC_UNCLE_SHOP(빈 앞가게) → LOC_UNCLE_BACKROOM
+H HARIN_COMMUTE + 백팩(§14-3 백팩 규칙) · SK SEOKGU_SHOP(돋보기 목에).
+| bs (sc) | 인물 | 추가 |
+|---|---|---|
+| P05 | H (등, 백팩) · SK 화면 밖 | 빈 앞가게(style-bible §12-1) |
+| P06 | SK (F1, 손바닥이 덮인 장부 위) · H (전경 실루엣 일부) | 찻잔 둘 김 · 서랍장·봉투 다발·금고 |
+| P07–P08 | H (서서, 어깨끈 쥠 / 정면 클로즈업) | |
+| P09–P10 | SK (F1, 찻잔 / P10 눈썹 아주 조금) | |
+| P11 | H (방석에 주저앉음, 백팩 내려놓음) · SK (초점 밖) | |
+| P12–P13 | SK (F1, 앞으로 기울임 / 장부를 톡) | |
+| P14 | **회상** SK SEOKGU_OUT + 보온병 (손) · H HARIN_COMMUTE + 백팩 (얼굴 반) | FLASHBACK-INSERT 세피아 · EP01 P37 구도 (AH4) |
+| P15–P16 | H · SK (P16 투샷, 미동 없음) | |
+| P17 | SK (**F3 느린 굳음 — 얇은 미소**, 벽에 기댐, 돋보기 흔들림) | |
+| P18 | H (두 주먹 + 옆얼굴) | |
+| P19 | SK (손, F1) · H (손) | 찻잔을 밀어 줌, 하린 손은 가지 않음 |
+| P20 | H (손) | 백팩 앞주머니 → **FULL+ 봉투**(style-bible §12-7) |
+| P21 | SK (손 + F1) | 봉투 무게, 뜯지 않음 |
+| P22 | SK · H (전경) | 서랍 끝까지 닫음 |
+| P23 | H (서랍 앞 한쪽 무릎) | 커튼 틈 너머 삼촌 둥근 등 작게 |
+| P24 | H (손) | 열린 서랍: **진품**(EP01 P48 각도) + FULL+ 봉투 → 봉투만 집음 |
+
+### S3 · 19일 ~21:08–21:15 · LOC_UNCLE_SHOP 안쪽 · L-SHOP-NIGHT-INSIDE · 사이다
+H HARIN_COMMUTE + 백팩(다시 멤) · SK SEOKGU_SHOP · CU (§14). 자리: style-bible §12-1.
+| bs (sc) | 인물 | 추가 |
+|---|---|---|
+| P25 (P25) | SK (F1, 반지 트레이) · CU (등) | 뒤 커튼 살짝 흔들림 · 뒷면 액자 |
+| P26 (P26) | H (계산대 오른쪽 끝) · SK (F1, 눈만 빠름) · CU (일부) | 유리 위에서 고무줄을 벗김 |
+| ~~P27~~ | — | **잘림(판정 HA)** |
+| P28 (P27) | H (정면 미디엄 클로즈업) · SK (어깨) · CU (뒷머리·귀만) | 지폐 유리 위, **모서리 평평**(삼각 접힘 금지) |
+| P29 (P28) | SK (F1, 더 크게 웃음, 손바닥 비빔) · CU (등·손) · H (전경 어깨) | |
+| P30 (P29) | SK **F4 차가움 — 회차 유일** | 커튼 틈, 오른쪽 어깨 너머, 얼굴 반쪽 초록빛 · 손님에겐 등 |
+| P31 (P30) | SK (손, F1) · H (손) | 남색 천 꾸러미(천 끝 초록) · 덮는 손(EP01 P50 구도) · 다른 손이 지폐를 쓸어 모음 |
+| P32 (P31) | H (전경, 유리문 미는 등) · SK (F1, 손 흔듦) · CU (배경, 끄덕임) | 종 흔들림 |
+
+### S4 · 19일 ~21:15–21:25 · LOC_ALLEY_STAIRS 맨 아래 층계참 · L-NIGHT-STAIRS · 온기
+H HARIN_COMMUTE + 백팩 · U **UJIN_OUT 백팩 없음**, 후드 내림(bs P39에서 씀).
+| bs (sc) | 인물 | 추가 |
+|---|---|---|
+| P33 (P32) | H (손) | 남색 천 위 **진품** ECU, 가로등 빛에 테 반짝 · 화상 자국 |
+| P34 (P33) | U (일어섬, 입김, 손을 주머니에서 뺌) · H | 우진 팔찌 숨김 · 오른손 반창고 |
+| P35 (P34) | H · U | 팔찌 숨김 |
+| P36 (P35) | U (왼손목, 소매 걷음) · H (손바닥) | **비교 컷** — 왼쪽 복제품 / 오른쪽 진품 (style-bible §12-6) |
+| P37 (P36) | H · U | 엄지가 진품 테를 쓸음 · 우진 손목은 프레임 밖 권장 · 아래 흰 가게 작게 |
+| P38 (P37) | U (손) | 복제품 → 패딩 주머니, **진품 착용**(§14-2) · 반창고 |
+| P39 (P38) | U (옆얼굴, 후드 씀, 귀 끝 빨갛게) | 진품을 소매로 덮는 손짓(반쯤 보임) |
+| P40 (P39) | H (계단 내려감, 한쪽 입꼬리) · U (층계참, 후드) · SK (유리 안 작게, 1/12 이하, 얼굴 판별 불가) | 우진 손목 안 보임 |
+
+### S5 · 20일 ~16:20 · LOC_ALLEY_STAIRS 하이앵글 · L-AFTERNOON-STAIRS
+| bs (sc) | 인물 | 추가 |
+|---|---|---|
+| P41 (P40) | S SAEROM_SCHOOL (원경 뒷모습 **1/10 이하**, 얼굴 없음, 남색 백팩 + 회색 점 키링) · YAI (§2-2, 중간 층계참 평상, 작게, 고개를 그쪽으로) | EP01 P41 구도 · 하린 없음 · 할머니 귤은 그녀 것(귤 봉지와 무관, 작은 점) |
+
+### S6 · 20일 ~18:40–19:30 · LOC_HOME_TABLE (+ bs P45 LOC_HOME_ENTRANCE) · L-DINNER
+H HARIN_HOME · U UJIN_HOME (+ 의자 등받이에 검은 숏패딩) · I INHO_HOME · M MIJA_HOME (머스터드 앞치마) · S SAEROM_HOME · SK SEOKGU_OUT (§14-4). 삼촌 = 새롬 옆 **우진 쪽 모서리 낮은 둥근 의자**(style-bible §12-5).
+| bs (sc) | 인물 | 추가 |
+|---|---|---|
+| P42 (P41) | 전원 (I·M·H·U·S) | 미자 흰 띠 작게 · **우진 소매 끝 진품**(작게) · 쌀통 닫힘 |
+| P43 (P42) | H · I (초점 밖 전경) | 숟가락 휜 끝 밥그릇 안 |
+| P44 (P43) | M (반쯤 일어섬, 가면 웃음) · S · H (입 닫은 옆얼굴) | 삼촌 화면 밖 |
+| P45 (P44) | SK SEOKGU_OUT (코트·목도리, 귤 봉지, 구두 벗는 중, F1) · H (전경 어깨) | **L-ENTRANCE-EVENING-OPEN** · 신발장 닫힘(오른쪽 벽) · 아버지 검은 구두 있음 |
+| P46 (P45) | I (손, 진갈색 니트 소매) | **거울 쌍 A** — 곧은 숟가락 내려놓음(style-bible §12-9) |
+| P47 (P46) | SK (코트 벗어 무릎 위, 목도리 맨 채, F1) · M (밥주걱) · S (다리 흔듦) · U | 낮은 둥근 의자 · 귤 봉지 가운데, 귤 두세 개 구름 |
+| P48 (P47) | SK (F1) · I (가운데, 시선이 하린 쪽으로) · H (밥그릇으로 눈) | 삼촌 → 아버지 → 하린 3단 |
+| P49 (P48) | S · U (귤로 뻗는 손) · SK (가운데, 큰 웃음, F1) · M (반달 눈) | **우진 진품** 소매 끝 · EP01 P16 구도 |
+| P50 (P49) | SK (손 + F1, 귤 까는 중) · S (손 뻗음) · H (배경, 웃지 않음) | 한 줄 껍질(style-bible §12-4) |
+| P51 (P50) | SK (**F2 계산된 침착**) · S (전경 옆얼굴) | 깐 귤을 새롬 밥그릇 옆에 |
+| P52 (P51) | S (손, 연코랄 소매) | **거울 쌍 B** — 숟가락 공중에서 멈춤, 밥알 하나 |
+| P53 (P52) | H (전경 눈·옆얼굴) · S (초점, 웃지 않음, 노란 별 핀 오른쪽) | 새롬 `serious, not smiling, eyes steady, looking down at the tangerine` |
+| P54 (P53) | SK (**F2**, 시선이 하린 → 아버지 어깨 두드림) · I (고개만 끄덕, 눈은 밥그릇) · H (초점 밖 전경) · U (배경) | **우진 진품** 소매 끝을 시선이 스침 |
+
+### S7 · 20일 ~21:20 · LOC_HOME_ENTRANCE 안쪽 · L-ENTRANCE-EVENING (문 닫힘, style-bible §12-2 S7 메모)
+H HARIN_COMMUTE + 검은 백팩 (턱에 앉아 낡은 흰 운동화 끈을 묶음) · S SAEROM_HOME (fuzzy socks) + 큰 회색 고양이 인형(§14-5). 아버지 = 안방(문 아래 불빛 한 줄) · 미자 = 화면 밖 부엌. 신발장 위 반쯤 빈 귤 봉지 · 바닥 아버지 검은 구두 있음, 삼촌 구두 없음.
+| bs (sc) | 인물 | 추가 |
+|---|---|---|
+| P55 (P54) | H (턱, 끈 묶음) · S (복도, 인형을 안고 내려다봄) | 신발장 닫힘 · 귤 봉지 · 안방 불빛 |
+| P56 (P55) | S (손) · H (초점 밖) | **인형 등 지퍼 열림 + 납작한 빈 봉투 반쯤** |
+| P57 (P56) | H (끈 묶다 굳은 손 → 돌아봄) · S (웃지 않음) | |
+| P58 (P57) | S (정면 클로즈업) | 장난기 0 · 노란 별 핀 · 주근깨 · 큰 눈 |
+| P59 (P58) | S (전경, 인형에 얼굴 반) · H (초점, 입매 풀림, 눈물 없음) | |
+| P60 (P59) | H (턱에서 내려와 무릎 꿇음, 손이 새롬 머리 위 핀 옆) · S (고개 저음, 인형 꽉) | |
+| P61 (P60) | S (손가락으로 가리킴, 위쪽 여닫이문을 연 손) · H (어깨) | **신발장 위쪽 칸 열림 → 구두 상자 + 아버지 겨울 구두**(style-bible §12-3) · 뚜껑 덮임 |
+| P62 (P61) | H (손 ECU) | 손가락 끝 세 개가 **닫힌 뚜껑 가장자리**에 막 닿음 · 화상 자국 끝 · 무대사 · 마지막 컷 |
+
+**EP04에 나오지 않는 것:** HARIN_FACTORY · HARIN_TEEN · INHO_GUARD · MIJA_OUT · SUPPLIER(전부) · TAK · PROP_PHONE · PROP_BREAD_BAG · PROP_DAD_BOWL · 하린의 휜 숟가락 끝 · 지폐 삼각 접힘 · 구두 상자 안쪽.
+
+## 14-7. EP04 레퍼런스 카드 판정 · 첨부
+
+- **신규 카드 없음.** 총 15장 그대로(EP01 13 + SUPPLIER 2). 손님 = 얼굴 없음 · 고양이 인형·구두 상자·귤 봉지·낮은 의자 = 단순 무지 물건 → 문장만.
+- 첨부 권장(prompt-smith, bs 번호 → sc는 −1 규칙):
+  - 팔찌 컷 bs P24·P31·P33·P36·P38 = `PROPS_keyprops`(③진품 ④복제품). bs P36은 ③④가 나란한 카드 그대로가 비교 컷의 기준. + 우진이 나오면 `UJIN_turnaround`(팔찌 없는 카드 — 팔찌는 문장으로).
+  - 봉투 컷 bs P20–P22·P24·P56 = `PROPS_keyprops`(②찬 봉투 / ①빈 봉투). FULL+는 카드보다 **더 두껍게** 문장으로.
+  - 삼촌 얼굴 컷 = `SEOKGU_turnaround` + `SEOKGU_expressions` — 단 **FACE-2·FACE-3 컷(bs P17·P51·P54)에는 expressions ③④⑤가 섞이지 않게 문장으로 "①과 같은 웃음 주름 유지"를 명시**, **bs P30만 ⑤**. S6는 SEOKGU_OUT 차림을 문장으로(카드는 SHOP 차림).
+  - 새롬 bs P53·P58 = `SAEROM_expressions` + 문장 `serious, not smiling, eyes steady`(카드 ⑤ "진지하게 한 번 보는 얼굴"이 가장 가깝다).
+  - bs P14 = EP01 P37 프롬프트 재사용 + 세피아 · bs P46 = EP01 P23 프롬프트 재사용 · bs P52 = P46과 같은 카메라.
+  - 원경·작은 인물(bs P03·P40의 삼촌, bs P41의 새롬·할머니)과 손님에는 카드를 붙이지 않는다.
+
+## 14-8. 플래그 (EP04 · art-director)
+
+| # | 내용 | 제안 |
+|---|---|---|
+| AH9 | `SEOKGU_OUT` 신규 아님(EP01 §1-6) | 문장 그대로 재사용. 비트시트 "첫 사용" = "집 방문 첫 사용" |
+| AH10 | 우진 팔찌 — bs P38 이후 진품만 | 진품 문장 사용, 복제품 문장이 나오면 재그림. 작은 컷에서 흰 무늬가 안 보여도 테가 도드라지면 PASS(검수 기준) |
+| AH11 | 손님 얼굴 | 귀·볼 윤곽 끝까지. 눈·코·입이 보이면 재그림 |
+| AH12 | 백팩 규칙(S2–S3) | bs P11 내려놓음 → bs P25 다시 멤. panel-director가 다르게 정하면 이 표를 따라 고친다 |
+| AH13 | 새롬 S7 인형 지퍼 | bs P56에서만 열림 노출. 다른 컷은 지퍼 쪽이 몸 쪽 |
