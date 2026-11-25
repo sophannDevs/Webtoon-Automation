@@ -523,3 +523,142 @@ TASK_HAND: her face closed and flat, jaw set, no flush, eyes lowered to the knot
 | 8 | **작은 단서의 증발.** P19 맨 뒤 하녀의 잿빛 손끝(작게), P34 점, P38 점(강조 금지)은 Flow에서 사라지기 쉽다 | P34는 손끝 클로즈업(M)으로 크게, 점은 손끝 바닥의 약 1/3. P19·P38은 작아도 **보이기는** 해야 한다(validator 검사 항목) |
 | 9 | **청회색 보정과 잿빛 구분.** P40–P50에서 피부 전체가 잿빛처럼 보일 수 있다 | 피부에 따뜻한 하이라이트 한 점(`LIGHT_NOWAY` 문장에 포함), 흔적은 무광 회색 그대로 |
 | 10 | **진홍 누출.** 작업대 카드나 서재 카드에 진홍이 크게 들어가면 다른 패널로 번진다 | 장소 카드에는 진홍 실패만, 커프 띠는 넣지 않는다. 서재 카드의 유리 종 장갑은 멀리 작게(character-sheets §5) |
+
+---
+
+## EP02 additions (2026-11-25)
+
+- 작성: art-director · 2026-11-25 · EP02 「원하는 손만」 추가분. **위의 EP1 토큰·문장은 한 글자도 바꾸지 않았다.** EP2는 그대로 다시 쓰고(재사용), 여기에는 새로 필요한 것만 더한다.
+- 입력: `00_input/brief.md` EP02 잠금 1–8 · RULINGS EA–EG(및 A–J), `03_episode/ep02_beatsheet.md` §1 · §1-3 손 상태 · §5 · §6(V1–V3, P1, P2, L1, X1), `02_story/characters.md` §5-2 · §6-2 · §6-4, `02_story/world.md` R5 · §2-2, `04_visual/refs/ref_prompts.md`.
+- 짝 문서: `character-sheets.md`의 "EP02 additions (2026-11-25)"(새 손 토큰 `HUGO_LEFT_BARE`, 하녀 얼굴 토큰, EP2 표정, 새 카드 사양).
+- 장소: **새 장소 0.** `LOC_BENCH`(§6-3) · `LOC_GREENHOUSE` 통로 · 흰 대리석 띠(§6-2) 토큰을 그대로 쓴다. 바뀌는 것은 빛 문장뿐.
+- 리더 플래그 AE1–AE10은 `character-sheets.md` EP02 §E2-7에 모아 두었다(아래 본문의 "AE#"는 그 번호).
+- 이미지 속 글자 0은 그대로다(계약서 백지, 종이 본은 분필 윤곽선만, 실에 눈금 없음, 상자·가죽 묶음에 낙인·라벨 없음). 패널 프롬프트의 마지막 문장은 §1 NEGATIVE 그대로.
+
+### E-1. EP2 빛 문장 (§4에 더함) [리더 L1 · ED]
+
+장소 토큰 바로 뒤에 넣는다. 같은 구간 안에서는 글자 하나 바꾸지 않는다.
+
+| 토큰 | 패널 | 문장 (Flow에 그대로) |
+|---|---|---|
+| `LIGHT_DEEP_NIGHT` (**EP1 문장 재사용, 변경 없음**) | P1–P8 | `Deep night: the single amber lamp plus soft silver-green moonlight from the dome above, warm and cool light meeting on the two figures.` |
+| `LIGHT_BENCH_DAY` (새) | P9–P32 | `Day: soft green-tinted daylight filtered through the emerald conservatory glass, calm and even, the brass lamp unlit, gentle shadows, warm natural skin tones.` |
+| `LIGHT_GH_AFTERNOON` (새) | P33–P40 | `Afternoon: slanting golden sunlight through the emerald glass in long diagonal shafts across the aisle, warm gold on the white roses and the pale limestone, the lamps unlit, soft green shade between the beams.` |
+| `LIGHT_BENCH_DUSK` (새) | **P41–P56, 글자 그대로** | `Dusk: the single brass oil lamp freshly lit, a warm amber pool on the bench and the two figures, the last deep blue of the evening sky in the glass walls behind them, the flame faintly reflected in the glass.` |
+
+- **P41–P56은 `LIGHT_BENCH_DUSK`를 한 글자도 바꾸지 않는다.** 반전(P45) 뒤에도 차가운 급전환 없음. `LIGHT_NOWAY`(청회색)는 EP1 P40–P50 전용이고 EP2에는 쓰지 않는다. P45·P47·P56에 "cold", "blue-grey", "drained" 같은 말을 더하지 않는다.
+- `LIGHT_BENCH_DAY`는 "어둠 없음": EP1 `LOC_BENCH` FULL/카드의 "everything beyond falls into blue-green darkness"는 밤 문장이다. **낮 패널(P9–P32)에는 `LOC_BENCH` PANEL 토큰(§6-3, 램프 문구 포함)만 쓰고 FULL 토큰은 쓰지 않는다.** PANEL 토큰 끝의 `one brass oil lamp with a glass chimney`는 그대로 두고 빛 문장의 `the brass lamp unlit`가 꺼진 램프를 정한다.
+- 해 질 녘 푸른빛은 "deep blue", 달빛은 "soft silver-green"(§4). 서리·청백색·입김 낱말 금지.
+- 시간 전환은 빛으로만: P8 → P9(깊은 밤 → 낮), P32 → P33(작업대 낮 → 통로 오후), P40 → P41(오후 → 해 질 녘).
+
+**장면 앵커 (§12-3-5에 더함):** `LOC_BENCH` 카드(카드 7)는 **밤빛**으로 그려진다. 낮·해 질 녘 패널에 붙이면 어둠이 따라올 수 있으니 기하(작업대·벽돌 벽·유리 모퉁이) 참고용으로만 붙이고, 각 구간의 첫 와이드 컷을 먼저 확정해 그 구간의 앵커로 쓴다: **P1**(깊은 밤, EP1 P51이 있으면 함께), **P9**(작업대 낮), **P33**(통로 오후, `LOC_GREENHOUSE` 카드가 있으면 함께), **P41**(작업대 해 질 녘).
+
+### E-2. EP2 색 대본 (§3-2에 더함)
+
+| 감정 | 색 | 패널 | 메모 |
+|---|---|---|---|
+| 대답 · 친밀 (콜드오픈) | 램프 호박 + 은녹색 달빛 | P1–P8 | EP1 P51–P62와 같은 보정. P3(무사한 닿음)은 P2보다 따뜻해지지 않는다(§3-2 "무사함은 색을 바꾸지 않는다") |
+| 일상 · 숨 고르기 | 에메랄드 유리로 걸러진 초록빛 낮 | P9–P32 | 이 회차의 기준선. 램프 없음 |
+| 저택의 변화 · 온기 한 박자 | 금빛 오후 햇살 | P33–P40 | 하인 제복의 병 초록과 금빛이 함께. P39가 회차에서 가장 밝은 컷 |
+| 진척 → 반전 → 시계 | 호박 램프 + 마지막 짙은 푸른빛 | P41–P56 | **반전 뒤 보정 변화 없음.** 가닥(P45)은 먹빛 무광, 빛나지 않는다 |
+| 그녀 공방의 서명 | 진홍 `CRIMSON_STITCH` | **P28 한 패널만** [X1] | 앞치마 주머니로 들어가는 진홍 띠. 그는 보지 않는다. **P28 밖 진홍 0**(작업대 두루마리의 진홍 실패도 EP2에서는 그리지 않는다 → E-4 `TOOL_ROLL_EP2`) |
+
+### E-3. 저주 토큰 추가
+
+| 토큰 | EN (프롬프트용) | 나오는 곳 | 검수 포인트 |
+|---|---|---|---|
+| `HUGO_LEFT_BARE` 그의 맨 왼손 | (전문은 character-sheets EP02 §E2-1) 패널용 짧은 판: `his bare LEFT hand with matte ink-black root-like veins under pale skin, visibly darker and denser than his right hand, fingertips nearly ink-black, one thick root running from the ring and little-finger knuckles diagonally to the thumb side of the wrist; the roots stay thick at the wrist and two or three of them cross it and disappear under the white shirt cuff; the cuff stays down, the forearm is never shown; never runes or tattoos, not glowing` | P11(드러나기 시작) · **P12–P21** · P22(다시 낌) | 기준 무늬 = 새 카드 `HUGO_left_hand` ①–③. 오른손 랜드마크(검지·중지 마디 → 새끼손가락 쪽 손목)가 왼손에 그려지면 재생성. 커프가 걷히거나 팔뚝이 보이면 재생성. **왼손 랜드마크 문구는 §7 `VEIN_LANDMARK` 칸에 EP1 때 적어 둔 왼손 문장 그대로다** |
+| `NECK_STRAND` 목의 가닥 | `on the LEFT side of his neck (image right when he faces us), in line below his left earlobe, just above the upper edge of the ivory cravat where his raised arm has shifted the collar point and cravat aside by about a finger-joint: one single hair-thin matte ink-black strand, faintly blue-black, creeping up from under the cravat edge like the fine tip of a root, slightly curved, forking once at its very tip, its tip about half a finger-joint above the cravat edge; flat under the skin, not raised, not glowing; clean pale skin above it, on his jaw and on the rest of his neck; never writing, runes, symbols or a pattern; the collar and cravat stay closed and in place` | **P45만** (보임). P43은 크라바트가 비켜나기만 하고 가닥은 안 보임. P46은 팔을 내려 다시 가려짐 | 기준 = 새 카드 `HUGO_left_hand` ④. **가닥 하나**(여러 가닥·그물·문양이면 재생성) · 목의 **왼쪽**(오른쪽이면 반전 이미지) · 깃 열림·단추 풀림·쇄골·가슴 맨살이 보이면 재생성 · 턱·얼굴·귀에 핏줄이 있으면 재생성 · 빛남·부풀어 오름 금지 |
+| `NECK_CLOSED` 닫힌 목 (기본값) | `his high shirt collar and ivory cravat fully closed up to the jaw, no veins visible on his neck` | P1–P44, P46–P56의 그의 얼굴·상반신 컷 전부 | EP1과 같다(§10 "깃은 언제나 턱까지"). P45 밖에서 목에 가닥이 보이면 재생성 |
+
+- **가닥의 높이는 시리즈 시계다** [W2, series-arc]. EP2의 기준 = "크라바트 가장자리 위 반 마디". EP8은 한 마디 위, EP11은 크라바트 위 두 마디(beatsheet G15). 그 높이를 바꾸는 것은 회차뿐이다. EP2 안에서는 P45 한 컷이라 변화 없음.
+- **세계 규칙과의 관계:** world R5의 "끝은 왼쪽 쇄골 아래, 심장에서 한 뼘"은 그대로다. 목의 가닥은 그 뿌리에서 목 옆으로 갈라져 올라온 **가는 곁가닥**이고, 시계의 본체(쇄골 아래 → 심장)는 옷 위 측정(P47 손 자리, P52–P56 실)이 보여 준다. 그림에서 쇄골 아래를 맨살로 보여 주지 않는다(리더 플래그 AE3).
+- 패널용 장면 부정어(NEGATIVE 앞 한 문장, P45 전용): `The collar stays closed: no open collar, no unbuttoned shirt, no bare collarbone or chest, only one strand on the neck.`
+
+### E-4. EP2 새 소품 (§7에 더함) [리더 P1 · EC, 모두 무텍스트]
+
+| 토큰 | EN (프롬프트용) | 나오는 곳 | 검수 포인트 |
+|---|---|---|---|
+| `CONTRACT_EP2` 밀랍 셋 계약서 | P5: `the folded blank sheet of pale parchment from the night before, softly creased in quarters, with two wax seals side by side, amber-brown thimble-pitted wax on the left and black rose-stamped wax on its right, nothing written on it` / **P6 이후:** `a blank sheet of pale parchment, softly creased in quarters, with three wax seals in a row: amber-brown thimble-pitted wax, black rose-stamped wax, and right beside the rose a second, fresh, still-glossy amber-brown thimble-pitted seal; nothing written on it` | P5 (밀랍 둘) · **P6**(두 번째 골무 자국을 누르는 순간) · P7–P8 | 조항 문구·서명·숫자 0. 밀랍 자국에 글자·문양 없음(골무 자국 = 둥근 오톨도톨한 점들). 장미 자국은 하나 |
+| `WAX_STICK` 밀랍 막대 | `a stick of amber-brown sealing wax softened over the lamp's glass chimney, a drop falling onto the parchment` | P6 | 불꽃은 램프 안에만. 연기 없음 |
+| `FAILED_GLOVE_BOX` 실패한 장갑 상자 | `an old plain wooden box with its lid open, no brand, label or markings, holding about ten pairs of black kid gloves piled in layers; each pair slightly different in leather grain, cut and cuff shape, as if made by different glovers in different towns, some nearly new and some worn; every glove's fingertips charred matte black-grey and split like dry bark; no smoke, no embers, no stitched signatures, no labels` | P23–P27 (P27 뚜껑 닫음) | 켤레마다 조금씩 달라야 한다(같은 장갑 열 켤레면 "여러 고장"이 사라짐). 낙인·라벨·서명 스티치·진홍 0 |
+| `REPAIRED_GLOVE` 서투르게 기운 장갑 | `one black kid glove from the box whose split index fingertip has been clumsily darned with black thread: uneven, crooked stitches pulled too tight, the leather puckered around them` | P24 (그녀 손), P25 전경 | 서투름이 보여야 한다(고른 땀이면 재생성). 실은 검정. 진홍 0 |
+| `CRIMSON_CUFF_BAND` 진홍 띠 (EP1 띠, 숨기는 컷) | `a flat narrow cuff band of black kid leather with a continuous border of deep crimson silk cross-stitch, one finger-joint wide, reading as a decorative band, not separate crosses, not letters` | **P28만** (그녀 손 → 앞치마 주머니) | EP1 P29의 그 띠. **EP2 진홍 유일 패널.** 그의 시선 안에 두지 않는다 |
+| `BLACK_STITCH_BAND` 검은 십자땀 커프 띠 | `a flat narrow cuff band of matte black kid leather with a continuous border of black silk cross-stitch with a faint silk sheen, one finger-joint wide, the same shape and width as a decorative cuff band, reading as a band, not separate crosses, not letters` | P29(놓기 시작), P30(완성 직전), P32(들고 일어섬), **P41**(작업대 위 완성품), **P49**(그녀가 집어 듦) | 모양·폭은 `CRIMSON_STITCH`와 같고 **실 색만 검정**. 무광 검은 가죽 위 **은은한 광택의 검은 비단실**이라야 땀이 읽힌다(검정 위 검정이 사라지면 재생성, 리더 플래그 AE2). 진홍 한 땀도 없음 |
+| `LOOPED_END` 고리로 감는 끝 | `she finishes the thread by winding its tail into one small neat loop around itself, pinching it with her thumb, index and middle finger` | P30 | 그림의 주인공은 **세 손가락 집기**(EP1 P9 · P36–37과 같은 손 모양). 고리가 작게 나오거나 안 보여도 통과(대사가 싣는다) |
+| `TOOL_ROLL_EP2` 연장 두루마리 (EP2판) | 말림: EP1 문자열 그대로 `a rolled canvas tool roll tied with a leather strap` / 펼침: `an unrolled canvas tool roll with glover's needles, an awl, small shears, chalk, a lump of beeswax and a spool of black silk thread` | P1–P5(말려 묶인 채 작업대 위 → P5 풀림), P9–P32 펼침, P41–P56 작업대 위 | **EP1 펼침 문자열의 "crimson silk thread"를 "black silk thread"로 바꾼 EP2 전용판**(EP1 문자열은 그대로 둠). EP2는 P28 밖 진홍 0이라서(리더 플래그 AE6) |
+| `LEATHER_BUNDLE` 검은 키드 가죽 묶음 | `a folded bundle of supple new black kid leather skins tied with a plain undyed string, no stamps, labels or marks` | P34–P35(하녀가 두 팔뚝에 얹어 받침), P38–P39(페트라가 안음), P40(그가 받음), P41(작업대 위) | 가죽에 낙인·도장·글자 없음. 하녀는 손가락으로 쥐지 않고 **팔뚝으로 받친다** |
+| `HAND_PATTERN` 갈색 종이 손 본 | 그리는 중(P19): `a sheet of plain brown paper on the bench, his bare left hand lying flat on it palm down, a chalk line being traced around his fingers` / 완성(P41): `a sheet of plain brown paper with only a chalk outline of a left hand, no measurements, marks, numbers or writing` | P19, P41 | 윤곽선 하나만. 치수선·숫자·표시·글씨 같은 낙서면 재생성 |
+| `KNOT_THREAD` 매듭 실 (EP1 문자열 재사용) | `undyed linen thread with small evenly spaced knots, no scale marks, no numbers` + 상황 문장: P16 `one length of the thread unwound from her LEFT wrist and laid loosely along his fingers, not tied, not pinned` / P43 `one length of the thread held along his raised coat sleeve from the shoulder seam to his glove cuff, over the cloth` / **P51** `the whole knotted thread unwound from her LEFT wrist for the first time, hanging long between her two hands` / **P52–P56** `the thread laid over his coat from just below his left collarbone, where his hand had rested, slanting down and inward to the left side of his chest at heart height, about a hand-span long` | P3(손목에 감긴 채), P16, P41–P43, P51–P56 | 눈금·숫자·줄자 모양 금지. P51 전에는 늘 그녀의 **왼손목**. P52–P56 측정은 **모두 코트 위**(맨살 0) |
+| `THIMBLE` (EP1 재사용) | EP1 문자열 그대로. P6만 `the brass thimble on her RIGHT middle finger, its cord hanging from her hand` | P6(중지), P8(다시 목에 거는 손) | — |
+
+- **좌우 표지 (§7 끝 · §8-4에 더함):** P51 뒤로는 매듭 실이 그녀 손에 들려 있어 "왼손목 실" 표지가 사라지고, P23 이후 그는 양손 장갑이다. 그 구간의 표지는 ① 그의 **오른쪽** 눈썹 위 머리 한 가닥 ② 그녀 왼쪽 허리의 황갈색 작업 장갑 ③ P45의 가닥은 그의 목 **왼쪽**. 셋이 어긋나면 반전 이미지.
+
+### E-5. EP2 손 상태표 (§8-1에 더함) [beatsheet §1-3 그대로, EN 코드 추가]
+
+| 패널 | 휴고 | 페트라 장갑 | 페트라 오른손 검지 |
+|---|---|---|---|
+| P1 | `H_STD` (엄지가 그녀 손목 맥박에서 미끄러져 떨어짐, 손가락이 열린 채) | `P_ONE` | `MARK_FRESH` |
+| P2–P4 | `H_STD` (맨 오른손 손바닥 위, 가만히. P3–P4 그녀 검지 끝이 안쪽 손목 맥박 자리) | `P_ONE` | `MARK_FRESH` (P3: 그 검지 끝만 맥박 위, 다른 손가락은 공중에 느슨히) |
+| P5–P8 | `H_STD` | `P_ONE` (P6 오른손 중지에 골무) | `MARK_FRESH` |
+| P9–P10 | `H_GLOVED_BOTH` (오른손은 새 장갑) | `P_BARE` | `MARK_FRESH` |
+| P11 | `H_REMOVING_LEFT` | `P_BARE` | `MARK_FRESH` |
+| P12–P21 | `H_LEFT_BARE` (P19 장갑 낀 오른손이 왼손목 커프를 끌어내림 · P20–P21 맨 왼손이 그녀 검지 한 마디 앞에서 멈춤) | `P_BARE` | `MARK_FRESH` (P16 치수 중 검지는 살짝 들림 · P21 손 안으로 오므려 감춤) |
+| P22 | `H_REGLOVING_LEFT` | `P_BARE` | `MARK_FRESH` |
+| P23–P50 | `H_GLOVED_BOTH` (P32 왼손이 크라바트 가장자리 왼쪽 목 옆을 누름 · P43–P45 왼팔을 어깨높이로 듦 · P47 왼손이 왼쪽 쇄골 아래 가슴, 코트 위) | `P_BARE` | `MARK_FRESH` |
+| P51–P56 | `H_GLOVED_BOTH` (P51 왼손이 가슴 근처에 반쯤 → P52부터 양손 몸 옆) | `P_THREAD_OFF` | `MARK_FRESH` (P53·P56 엄지와 그 검지로 매듭을 집음) |
+
+**EN 코드 (EP1 코드 `H_STD` · `H_GLOVED_BOTH` · `P_ONE` · `P_BARE` · `MARK_FRESH`는 §8-1 그대로 재사용)**
+```
+H_REMOVING_LEFT: his gloved RIGHT hand pinching the fingertips of the black glove on his LEFT hand one by one, slowly drawing it off, the dark-veined fingertips of his left hand starting to show
+H_LEFT_BARE: his LEFT hand bare, matte ink-black root-like veins darker and denser than on his right hand, roots staying thick across the wrist and disappearing under the white shirt cuff, the cuff down; his RIGHT hand in a plain black kid glove
+H_REGLOVING_LEFT: his gloved RIGHT hand drawing the plain black kid glove back onto his bare LEFT hand, tugging the cuff up over the wrist
+P_THREAD_OFF: her hands bare, the knotted linen thread fully unwound from her LEFT wrist and held in her hands, her left wrist now bare; rough tan work gloves still tucked at her LEFT hip
+```
+- `MARK_FRESH`는 EP2 내내 **EP1 P46이 끝난 길이 그대로**(자라지도 옅어지지도 않는다). 다른 손가락은 늘 깨끗.
+- **맨살 접촉은 두 번뿐**이고 둘 다 `WANT_HAND`(§8-2): P3–P4(그녀 검지 끝 → 그의 맨 오른손목) · P15–P19(그녀의 오른손 전체 → 그의 맨 왼손). EP2에는 `TASK_HAND` 그림이 **없다.**
+- **P3 고정 문장** (검지 하나지만 원하는 손): `only the pad of her RIGHT index fingertip resting on the clean pulse spot of his bare right inner wrist, her other fingers curled loosely in the air, not touching his cuff, no clamp-like grip; her face lifted to his, open, lips slightly parted, a faint flush at the tips of her ears; the knotted thread still wound round her LEFT wrist above her glove`. 그녀가 손끝을 내려다보거나 엄지가 커프를 누르면 재생성(beatsheet §5 #5).
+- 옷 위 접촉(P41–P56)은 판정 밖. 그녀 얼굴은 닫힌 일의 얼굴이 아니라 **집중한 장인의 얼굴**(character-sheets EP02 `PE_CRAFT_FOCUS`).
+
+### E-6. 매치 컷 (§5-5에 더함) [리더 W1 · EF]
+
+EP01 이미지는 아직 없다(WAITING_FOR_IMAGES). 그래서 **EP2 프롬프트는 글만으로 서야 한다.** 핸드오프 노트: "EP01 해당 패널이 있으면 첫 첨부로 붙인다".
+
+| 앞 컷 → 뒤 컷 | 같게 할 것 | 다르게 할 것 |
+|---|---|---|
+| **EP1 P31 → EP2 P47** ★ | 그의 상반신 미디엄, 깃 닫힘, 장갑 낀 왼손이 왼쪽 쇄골 아래 가슴(코트 위)에 얹힌 자리·각도·손 모양 | 빛(`LIGHT_BENCH_LAMP` → `LIGHT_BENCH_DUSK`), 그의 오른손(맨손 → 장갑), 시선(손 → 그녀 얼굴), 화면 아래 그녀의 손(매듭 실을 쥠) |
+| EP1 P15 → EP2 P11 | 장갑 낀 손이 다른 손 장갑의 손끝을 하나씩 집어 벗기는 동작, 손 높이 | 좌우(오른손 벗기 → 왼손 벗기), 빛(해 질 녘 → 낮) |
+| EP1 P45 / P49 → EP2 P3 | 그녀 오른쪽 어깨 뒤 약간 위 3/4, 그녀 검지 끝이 그의 맨 오른손목 안쪽 맥박 자리 | 장소·빛(서재 청회색 → 작업대 깊은 밤), 얼굴은 `WANT_HAND`, 다른 손가락은 공중(커프 위 아님), 실은 그녀 왼손목에 감김 |
+| EP1 P9 → EP2 P30 | 스티치 손 익스트림 클로즈업 프레이밍, 세 손가락 집기 | 실 색(진홍 → 검정), 가로 띠(ST) |
+| EP1 P28 → EP2 P6 | 양피지 위 인장 클로즈업 높이 | 밀랍 둘 → 셋 |
+| EP2 P12 → P19 | 맨 왼손 핏줄 무늬(같은 손, 같은 랜드마크) | 손등 → 종이 위 손바닥 아래, 커프를 끌어내리는 오른손 |
+| EP2 P30 → P49 | 띠 인서트의 높이 | 진행 중 → 완성된 띠를 쥔 손 |
+
+### E-7. 옷 (다음 날) [결정]
+
+- **두 사람 모두 EP1과 보이는 옷이 같다** (series-arc 표 E, beatsheet §1-3 끝 줄). 휴고는 같은 옛 본으로 지은 같은 옷을 여러 벌 갖고 있고(characters §6-2), 페트라는 작업복 한 벌이다. 그래서 P9 이후 "다음 날"이어도 의상 변주는 **없다.** 시간은 빛이, 날이 바뀐 것은 장갑 상태(그의 양손 장갑 · 그녀의 양손 맨손)가 말한다.
+- 휴고: 미드나이트 블루 프록코트, 높이 세운 깃, 청동색 조끼, **턱까지 오는 셔츠 깃과 높이 감은 상아색 크라바트**는 P1–P56 전부 그대로(`NECK_CLOSED`). 크라바트가 비켜나는 것은 왼팔을 든 **P43–P45뿐**이고, 그때도 깃은 열리지 않으며 크라바트는 제자리에서 손가락 한 마디쯤 밀릴 뿐이다. 매는 법·높이·색을 바꾸지 않는다(가닥의 높이를 재는 기준선이 크라바트 가장자리라서, 크라바트가 회차마다 달라지면 시계가 깨진다).
+- 페트라: EP1 옷 한 벌 그대로. P1–P8은 EP1 끝과 같은 순간이라 왼손 장갑(`P_ONE`), 벗은 오른손 장갑은 작업대 위. P9부터 양손 맨손, 작업 장갑은 다시 왼쪽 허리 앞치마 끈. 골무는 P6만 오른손 중지.
+- 하녀·집사·하인들: EP1 토큰 그대로(character-sheets §3-2 · §3-4). 하인들의 표정만 바뀐다(character-sheets EP02 §E2-3).
+
+### E-8. EP2 금지 · 주의 (§10 · §11에 더함)
+
+- 깃 열기, 셔츠 단추 풀기, 쇄골·가슴 맨살, 가슴 맨살 측정 0. 옷 위 측정뿐.
+- 통증 연출 0: 그가 가슴을 움켜쥐거나 얼굴을 찡그리는 그림 금지(P47은 "얹을 뿐"). 그녀도 흔적 손끝을 아파하는 얼굴 금지.
+- 키스·키스 암시 구도(입술 근접) 0. P52–P56 최근접은 그녀의 눈높이 = 그의 턱·크라바트, 측정의 그림이다.
+- 그가 그녀의 맨살에 닿는 그림 0(P20–P21은 한 마디 앞에서 멈춤). 그가 그녀 손을 가슴으로 이끄는 그림 금지.
+- 무사한 닿음(P3, P15–P19)에 빛·온기·꽃·색 번짐 0.
+- 하녀를 원망·공포·"원하지 않아서" 다친 사람으로 그리지 않는다. 걱정과 공손, 백작을 감싸는 다급함.
+- 진홍은 P28 한 패널. 그 밖에 진홍 실패·띠·스티치 0.
+- 하인들은 흰 대리석 띠를 넘지 않는다. 재의 길에 새 재·꽃잎·연기 없음.
+
+### E-9. EP2 충돌 · 리스크 기록
+
+| # | 내용 | 처리 |
+|---|---|---|
+| E1 | **검정 위 검정.** 검은 키드 띠에 검은 실 십자땀은 Flow에서 사라지기 쉽다 | 실에 "faint silk sheen", 가죽은 "matte". 그래도 안 보이면 P30은 세 손가락 집기로 통과(beatsheet P30), P41·P49는 띠의 땀이 "질감으로라도" 보여야 한다 |
+| E2 | **`LOC_BENCH` 카드가 밤빛.** 낮·해 질 녘 패널이 어두워질 수 있다 | E-1 장면 앵커(P9, P41)를 먼저 확정해 붙인다 |
+| E3 | **가닥 위치 vs world "끝은 쇄골 아래".** | 가닥 = 쇄골 아래 뿌리에서 목 옆으로 오른 곁가닥(E-3). 세계 규칙 바뀜 없음 |
+| E4 | **진홍 실패.** EP1 두루마리 문자열에 진홍 실패가 들어 있다 | EP2 전용 `TOOL_ROLL_EP2`(검은 실패). EP1 문자열은 그대로 |
+| E5 | **P3 손 모양이 EP1 일의 손과 같다** (검지 하나) | E-5 P3 고정 문장. 얼굴·시선·다른 손가락·실이 원하는 손을 싣는다 |
+| E6 | **양손 장갑 구간의 좌우 표지 부족** (P23–P56) | 머리 한 가닥 + 그녀 왼쪽 허리 장갑 + P45 목 왼쪽(E-4 끝) |

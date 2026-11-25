@@ -83,3 +83,72 @@ G. **Touch-judgment principle (W3), adopted as the working principle, to be veri
 H. **Process gate (new agent):** after script-editor writes `03_episode/ep01_script_final.md`, run `native-khmer-agent-reviewer` BEFORE panel-director writes the shot list. It corrects only the Khmer in script_final and writes `ep01_km_review.md` (READY or NEEDS REVIEW). The shot list does not start until that review has run. Re-run it whenever script_final changes.
 J. **twist-plan adopted** (`02_story/twist-plan.md`). It confirms the EP1 twist reads from the P45↔P49 picture contrast plus ONE thought line (no need for reserve (b)) **only if its 8 staging conditions are met** (§ EP1 in twist-plan; panel-director and prompt-smith must apply them: P49 copies P45's camera, same fingertip on the same wrist-pulse spot, four clean fingers, thread dropped; P44–45 is a closed TASK face, not hot anger; the Khmer thought line keeps "I" and uses the same "want" verb as P62). Ruling G is superseded by twist-plan §5 (it adds clauses 3 and 4 and the corrections C0–C6). **Cliffhanger wording fix (C1):** the B9 line "화났을 때는… 물었군." is REPLACED by "같은 손인데… 아까는 물었고." (he says only what he saw, no cause); P60, P61, P62 stay at three short lines. Where twist-plan and series-arc differ, twist-plan wins until series-arc is updated (series-arc edits for C2–C4 and C6 are still to be made; they do not affect EP1). Safe wording direction for the mother in EP7: "I held the glove, not his hand."
 I. **From tension-curve (`02_story/tension-curve.md`), adopted for EP1:** the curve 6-5-7-6-7-7-9-9-10 with panel-level detail; B5 = 10 panels; 42 dialogue panels (densest in B4–B5); the five big gaps grow longer (320, 360, 400, 440, 600 px); the mother flashback insert moves to **P37** (away from the P34 clue); the gloves normally last "a few weeks" (몇 주), planted in EP1 or EP2 dialogue so the P1 failed glove reads as a short cycle. Series-level ending-spread proposals (e.g. EP5 ending on Petra's measuring line instead of Hugo's confession, EP3 ending raised to 9.5) are NOT decided yet: decide before EP5 is written, using twist-plan.md.
+
+---
+
+# EP02 (2026-11-25) — Phase 0 case 2 (new episode)
+
+- User: "switch to gloves and start EP02". EP01 images are NOT made yet (`ep01_flow_status.md` = WAITING_FOR_IMAGES).
+  Create EP02's beat sheet, Khmer script, native Khmer review, shot list, lettering, Flow prompts and handoff page now,
+  then STOP and wait for the user's Flow images. **Do not touch EP01 files.**
+- Episode: EP02 (NN = 02) 「원하는 손만」. Checkout branch is `story-8` (gloves history came from `story-4`); the leader does
+  not commit or push without the user.
+- Reuse (read, do not redo): `02_story/*`, `04_visual/style-bible.md`, `character-sheets.md`, `refs/ref_prompts.md`.
+  EP02 adds only what is new. EP01 `ep01_script_final.md` and `ep01_lettering.md` are canon; repeated lines are letter-identical.
+- Sources, in order of authority: this brief → `twist-plan.md` (§1 W3 grammar, §4 EP2, §8-2, §8-3 fixed Khmer words, §6-6 maid)
+  → `series-arc.md` §2 EP2 + §6 notes → `tension-curve.md` EP2 notes → `characters.md` / `world.md`.
+
+## EP02 locked points (leader)
+1. **Panels:** target 56 (allowed 52–62, never below 50). One main twist + one small twist + cliffhanger.
+2. **Cold open P1–8 [series-arc 잠금]:** continues straight from EP1 P62 (night, LOC_BENCH). Her answer is an ACTION: the marked right
+   index fingertip held up before his eyes, then laid by her own choice on his bare RIGHT wrist pulse (same spot as EP1 P45/P49), drawn in
+   the "wanting hand" grammar (looks at his face, lingers). Unharmed. Only AFTER that: his clause as a QUESTION, the blank contract,
+   a second thimble-wax seal beside his black-rose seal, "조항. 수정." / "떠날지는, 내가 정해요." / last resistance → "그것도 내가 정해요."
+   Tension starts at 8 and steps down to 7 (tension-curve).
+3. **Rise:** next day. LEFT-hand measuring: he removes his LEFT glove for the first time; left-hand veins darker than the right and
+   disappearing deeper into the sleeve (clue 3, ≥ 25 panels before the twist). "되겠소?" becomes the consent ritual: "돼요." and exactly
+   ONE refusal "아직." (he withdraws silently). One fixed Khmer form for this ritual. Failed-glove box: other towns' gloves, clumsy repair
+   stitches → "누가 기웠어요? 엉망." / "…배운 대로 해 본 거요." **Plant the normal glove cycle here** (e.g. "얼마나 버텼어요?" / "…몇 주씩은.").
+   Black thread cuff band (the crimson band goes into her apron pocket): "검은 실이군." / "검은 장갑엔, 검정." / "끝을… 고리로 감는군." / "버릇."
+   Collar-guarding hand around the arm-length approach (clue 4). Maid encounter on the white marble strip (maid's first lines,
+   twist-plan §6-6: "백작님 탓 아니에요. 장갑이… 터진 거예요."; she sees Petra's grey fingertip; no blame on the maid). Petra walks the ash path again;
+   servants now turn their heads instead of holding their breath.
+4. **Twist ~P41–50:** dusk, LOC_BENCH. Arm raised for the arm length → hair-thin ink strand on the LEFT side of the neck just above the cravat edge.
+   No collar opening, ever. "어디까지예요?" → gloved LEFT hand placed under the left collarbone in the SAME composition as EP1 P31 (match cut) → "…여기까지요."
+5. **Cliffhanger ~P51–56:** she unties the knotted thread from her left wrist and lays it OVER HIS CLOTHES from where his hand was to the heart,
+   counting knots with her fingers (no scale marks, no numbers). Last panel: two fingers pinching the thread + his face. **"…한 뼘."**
+   Speaker of the last line = Petra (twist-plan §4-13 distribution).
+6. **Bans:** no collar opening, no bare-skin measuring of the chest, no pain staging, no "wanting heals him", she never says "원해요",
+   he never commands her (servants only, ≤ 2 per episode), no kiss, no misunderstanding ending, no text in any image (contract blank, thread without marks).
+7. **Khmer fixed points (twist-plan §8-3, glossary_km.md):** 원하다 / 손 / 그것 / 내가 정해요 (EP1 form) / 배운 대로 (must match EP11 later) /
+   뼘·매듭 unit (pick ONE traditional length word, e.g. ចំអាម [draft], record in glossary) / "되겠소?" ritual form / "터지다" (EP2 maid → EP12).
+8. **Locations:** LOC_BENCH, LOC_GREENHOUSE (aisle + white marble strip). New locations 0. Cast: Petra, Hugo, maid (first lines), steward (0–1 line), servants (silent).
+   Visual adds for art-director: Hugo LEFT bare hand vein pattern (reference card if `refs/ref_prompts.md` has no left-hand card),
+   neck strand at the cravat edge, black-thread cuff band, failed-glove box, maid face card only if her face is shown at reading size.
+
+## EP02 leader rulings after ep02_beatsheet.md (2026-11-25) — flags accepted
+EA. 56 panels, 6 beats, 4 tall panels (P3, P39, P45, P56) accepted (T1). Big gaps after P3/P21/P44/P47/P55.
+EB. V1 new card `HUGO_left_hand` (bare left hand, darker/denser veins going under the cuff, own landmark root, forearm never shown).
+    V2 neck strand: a 4th panel on the V1 card + a `NECK_STRAND` token in the style bible. V3 `MAID_ref` card from the existing maid spec.
+    art-director writes these tokens; ref-sheet-artist adds the cards to `refs/ref_prompts.md` (existing cards unchanged).
+EC. P1 new props (failed-glove box, black cross-stitch cuff band, black kid leather bundle, brown-paper chalk hand pattern, second thimble seal) — all text-free. P2: Petra kept the EP1 contract in her tool roll — accepted.
+ED. L1 three light sentences LIGHT_BENCH_DAY, LIGHT_GH_AFTERNOON, LIGHT_BENCH_DUSK (the dusk one word-for-word identical P41–P56).
+EE. C1 steward silent (0 lines). C2 no commands to servants. D2 "아직." refuses his first request to touch HER marked fingertip; EP6 stays the first time he touches her. D1 added lines accepted; script-editor may cut P48's second bubble if the Khmer explains too much.
+EF. W1 cross-episode match cuts (EP1 P31→EP2 P47, EP1 P15→P11, EP1 P45/P49→P3): since EP01 images do not exist yet, prompts must stand on their own wording; the handoff notes say "if the EP01 panel exists, attach it as a reference".
+EG. K1 glossary terms (뼘 unit, 매듭, ritual form, 배운 대로, 터지다, 버릇, 고리, 얼마) are fixed by dialogue-writer in glossary_km.md.
+
+## EP02 leader rulings after art-director's EP02 additions (2026-11-25) — AE1–AE10 accepted
+EH. AE1 no outfit change; cravat/collar same and closed. AE2 black-on-black stitches may read as texture only; P30 passes on the three-finger pinch; P41/P49 must show the stitches at least as texture.
+    AE3 neck strand = fine side branch of the collarbone root; the clock is shown only by measuring over the coat; continuity-manager records the strand tip (half a finger-joint above the cravat edge) as the EP8/EP11 baseline.
+    AE4 maid face anchors accepted. AE5 MAID_ref uses the EP2 layout (no tray); if attached to EP1 P3 the prompt says her fingertips are still clean.
+    AE6 TOOL_ROLL_EP2 has a black spool (crimson only at P28). AE7 seal order thimble → black rose → new thimble seal beside the rose (follow the EP1 P28 image if it differs later).
+    AE8 LOC_BENCH card attached for geometry only in day/dusk panels. AE9 cards 13 HUGO_left_hand and 12' MAID_ref required, 14 EP2_props added too; EP2 panels do not start before card 13. AE10 left-hand landmark = EP1 VEIN_LANDMARK.
+
+## EP02 leader rulings after ep02_script.md (2026-11-25)
+EI. F1 EP2 Khmer title «មានតែដៃដែលចង់» kept (EP1 already revealed the "want" rule; the title echoes it, Petra still never says it). F2 P41 "소매. 길이." accepted (keeps ដៃ = hand only).
+    F3 script-editor decides P48's second bubble. F4 "손가락 넷" settled in its own episode later. ចំអាម = the series clock unit (native reviewer checks spelling K2).
+
+## EP02 leader rulings after ep02_shotlist.md (2026-11-25)
+EJ. FL1: the leader's "every image 9:16" in the shot-list brief was wrong for this story. Follow style-bible §5-1 per-size ratios as in EP01 (XL 9:16, L 3:4 or 1:1, M 1:1, ST 16:9).
+    FL2–FL14 accepted. FL5: once EP01 images exist, redo P03, P11, P47 with the EP01 panel attached — note this in ep02_flow_status.md.
+    Letterer places every bubble INSIDE the shot list's art_space (art_space is not moved), so prompt-smith can work from the shot list in parallel.
