@@ -33,3 +33,12 @@ Request: new drama webtoon, Episode 1, 15+, drama type decided by research (user
 - Beatsheet (61), script, script_final, native Khmer review READY round 1 (gate OK), art additions (SUPPLIER token + 2 ref cards = 15 total, LOC_FLASH_OLDSHOP, FLASHBACK-PAST), shot list, lettering (69 bubbles, km_tool check OK), prompts (61), handoff page 04_visual/ep03_flow_handoff.html. Status WAITING_FOR_IMAGES.
 - Draw panel_041 before panel_060 (same camera). Validation: check 014/021/022/026 for props leaking from PROPS_keyprops; kitchen door side vs EP01 P014 (camera direction may explain it).
 - Fixed (2026-11-25): "and" spelling នឹង → និង in EP01 P37 and EP02 P26 (Khmer review round 2 READY for both; lettering, shot lists, glossary, twist-plan, concept, characters, beatsheet updated). The old spelling stays only in history files and in the editor notes at the end of ep01_script_final.md (editing them would change the reviewed script's hash and close the gate).
+
+# EP04 (2026-11-25) — moved to its own worktree
+- The main checkout's `_workspace` was switched to `gloves` by another session mid-EP04. Story-8 now works in the git worktree
+  `.claude/worktrees/story-8` (branch `story-8-ep04`, from story-8 a7451e9) with its own `_workspace` junction → stories/story-8.
+  Never re-point the main checkout's `_workspace` from here.
+- Beatsheet done (62 → 61 panels after cutting P27, ruling HA). Next: script + art additions.
+- EP04 done in the worktree: script_final, native Khmer review READY round 1 (gate OK), art additions §12/§14, shot list (61), lettering (74 bubbles, km_tool check OK), prompts (61), handoff page 04_visual/ep04_flow_handoff.html. Status WAITING_FOR_IMAGES.
+- Draw panel_045 before panel_051 (same camera). P57 long bubble may need a split in the placement pass.
+- Note: in this worktree git (core.autocrlf=true) checked out ep01/ep03 script_final with CRLF, which broke the Khmer review hash gate; converted back to LF (no content diff). Re-check gates after any fresh checkout.
