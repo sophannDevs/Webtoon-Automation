@@ -6,10 +6,10 @@
 
 <!-- km_review.py: the lines below are written by the tool. Do not edit them by hand. -->
 - Status: READY
-- Round: 1
-- Started: 2026-11-25 09:59
-- Finalized: 2026-11-25 10:01
-- Script SHA-256: 601b334466ba460767ebd84814f2f68c91ac9b4fce6dee046093f10a15811434
+- Round: 2
+- Started: 2026-11-25 13:07
+- Finalized: 2026-11-25 13:07
+- Script SHA-256: f9a32479a6cbc7e02fdea4db9940d4506467c1e575dfd204b1d87840dd382f20
 <!-- /km_review.py -->
 
 - Script (reviewed in place): `_workspace/03_episode/ep01_script_final.md`
@@ -19,6 +19,8 @@
 ## Summary
 
 The Khmer already reads as natural family speech with distinct voices (terse father, chatty mother with ណា៎, blunt U-jin with ខ្ញុំ, playful Sae-rom with អូន, warm-then-cold uncle with ក្មួយ/ពូ), so only 7 lines were touched: a lost "요즘", a stiff fronted clause, a redundant intensifier, a repeated សិន, a "you go" that should be "let's go", a flat self-reproach, and one stray cut-off dash. Every binding clue word is intact and verified in place: វា + ក៏…ដែរ + ទាន់ថ្ងៃ + ហើយ + the dash only at P52; ប្អូនឯង at P36; ជួយបន្ថែម and ដឹងតែឯងនឹងពូ at P37 (no សងបំណុល); ចប់ at P24; លក់ at P20; អ្នកណា at P54; ក្មេង at P56; ក្មួយ at P38 → ខ្ញុំ at P45; រឿងនោះ at P22; ស្រោមសំបុត្រ at P50; ពូ with no self-reference in the P34 thought; no អាតូច; no amounts or currency. No glossary gaps found.
+
+Round 2 (narrow spelling fix, not a full re-review): P37's T1 line used នឹង ("will") for the conjunction "and"; corrected to និង, so the clue phrase is now ដឹងតែឯងនិងពូ. All other នឹង in the script were checked: only P38 ក្មួយនឹងប្រយ័ត្ន uses it, meaning "will", and it is unchanged (the rest are ហ្នឹង). Note for script-editor / continuity-manager: the script's own Korean notes (P37 clue list and the clue-chain notes) and any twist-plan or continuity record quoting `ដឹងតែឯងនឹងពូ` should be updated to `ដឹងតែឯងនិងពូ`; the reviewer does not edit those.
 
 ## Changes
 
@@ -33,6 +35,7 @@ Pass A (spoken Khmer) finds the problem; Pass B (meaning) checks the new line ag
 | P35 · 하린 | ហារីន៖ "…អ៊ូជីន ឬម៉ែ ពិតជាមិនដឹងមែនទេ ពូ?" | ហារីន៖ "…អ៊ូជីន ឬម៉ែ មិនដឹងមែនទេ ពូ?" | ពិតជា + មែន doubles the "really", stiff in speech. | Still asks for confirmation that U-jin or mom truly don't know (E01-Q); negation and address unchanged; no self-reference added. |
 | P42 · 석구 | សុកគូ៖ "មកហើយ ក្មួយ។ ចូលខាងក្រោយទៅ។" | សុកគូ៖ "មកហើយ ក្មួយ។ តោះ ចូលទៅខាងក្រោយ។" | ចូលខាងក្រោយទៅ is an order for her to go alone; 뒤로 가자 is a warm "let's go". | Restores "let's" (he goes with her); same destination, same greeting. |
 | P43 · 석구 | សុកគូ៖ "អង្គុយសិន ក្មួយ។ ផឹកតែមួយពែងសិនទៅ។" | សុកគូ៖ "អង្គុយចុះ ក្មួយ។ ផឹកតែមួយពែងសិនទៅ។" | សិន repeated in two short sentences. | Still "sit, have a cup of tea first"; the "first" stays on the tea, as in 차부터. |
+| P37 · 석구 (2) | សុកគូ៖ "រឿងនេះ ដឹងតែឯងនឹងពូទេ ណា៎។" | សុកគូ៖ "រឿងនេះ ដឹងតែឯងនិងពូទេ ណា៎។" | Round 2: misspelling; the conjunction "and" is និង, while នឹង means "will". | Same T1 clue line: still "only you and I know this"; only the one letter of the conjunction changed, every other byte identical. |
 
 ## Decisions
 
@@ -43,6 +46,7 @@ Uncertainty resolved automatically (what was unclear, what was chosen, why).
 - **P13 អ្នកណា.** Ha-rin's own "កុំឲ្យអ្នកណាដឹង" also uses អ្នកណា. Kept: it is her word, and the echo with her P54 "អ្នកណា?" only helps; the P54 requirement is met.
 - **P33 name + ក្មួយ in one line.** Slightly redundant but typical of a warm elder; kept as his established voice.
 - **P56 "ភ្ញៀវទេ។"** Considered "និយាយពីភ្ញៀវទេ" for 손님 얘기다; the shorter deflection is more natural for a man covering a slip. Kept.
+- **Round 2, P37 និង vs នឹង.** Unclear whether the uncle's ឯងនឹងពូ could be read as "with"; in this line it joins two people as the only knowers ("너랑 나만"), which is the conjunction និង. Fixed. P38 ក្មួយនឹងប្រយ័ត្ន is the future marker ("will be careful") and stays.
 
 ## Kept after the meaning check
 
@@ -56,6 +60,7 @@ Smoother rewrites that Pass B rejected because they changed the meaning.
 
 - `_workspace/03_episode/ep01_script_final.md`
 - `_workspace/03_episode/ep01_km_review_context.md` (glossary rows, character excerpts, relationship notes)
+- Round 2: `_workspace/03_episode/ep01_script_final.md` (every line containing នឹង), the leader's round-2 request
 - Binding constraints from the leader's brief (rulings of `00_input/brief.md`, `twist-plan.md` §6 as relayed)
 
 <!-- km_review.py checks -->
@@ -63,8 +68,8 @@ Smoother rewrites that Pass B rejected because they changed the meaning.
 
 Mechanical checks only; the dialogue judgement above is the AI reviewer's.
 
-- Finalized 2026-11-25 10:01, round 1: **READY**
-- This round: 7 KM line(s) edited, 0 KM line(s) added
+- Finalized 2026-11-25 13:07, round 2: **READY**
+- This round: 1 KM line(s) edited, 0 KM line(s) added
 - Source dialogue, speaker labels, stage directions, panel order and formatting unchanged (compared with the pre-review copy): yes
 - Every change is in the Changes table with a Pass A problem and a Pass B meaning check: yes
 - Exactly one KM line under every line that needs one: yes

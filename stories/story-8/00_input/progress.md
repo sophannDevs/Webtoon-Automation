@@ -28,3 +28,8 @@ Request: new drama webtoon, Episode 1, 15+, drama type decided by research (user
 # EP02 (2026-11-25)
 - Beatsheet (62), script, script_final, native Khmer review READY round 1 (gate OK), art additions (LOC_HOME_YARD etc.), shot list, lettering (69 bubbles, km_tool check OK), prompts (62), handoff page 04_visual/ep02_flow_handoff.html. Status WAITING_FOR_IMAGES.
 - Placement pass later: tails at 048/050/053 assume glass screen-left; check 004, 005, 026 sides.
+
+# EP03 (2026-11-25)
+- Beatsheet (61), script, script_final, native Khmer review READY round 1 (gate OK), art additions (SUPPLIER token + 2 ref cards = 15 total, LOC_FLASH_OLDSHOP, FLASHBACK-PAST), shot list, lettering (69 bubbles, km_tool check OK), prompts (61), handoff page 04_visual/ep03_flow_handoff.html. Status WAITING_FOR_IMAGES.
+- Draw panel_041 before panel_060 (same camera). Validation: check 014/021/022/026 for props leaking from PROPS_keyprops; kitchen door side vs EP01 P014 (camera direction may explain it).
+- Fixed (2026-11-25): "and" spelling នឹង → និង in EP01 P37 and EP02 P26 (Khmer review round 2 READY for both; lettering, shot lists, glossary, twist-plan, concept, characters, beatsheet updated). The old spelling stays only in history files and in the editor notes at the end of ep01_script_final.md (editing them would change the reviewed script's hash and close the gate).

@@ -378,3 +378,131 @@ The small front yard of an old two-storey Korean house of red brick patched with
 | AE5 | 비트시트 S2 머리말 "팔찌 P16–P18" ↔ 체크리스트 "P17만" | **P17만 보임**으로 고정. P18 팔찌는 화면 밖, P19 소매를 끌어내림 = 숨김 |
 | AE6 | P08 우진 "후드를 쓴 채" | P08만 후드 씀, P09부터 벗음(앉으며 젖힘) — 씬 안에서 다시 쓰지 않는다 |
 | AE7 | P30 비트시트 "코믹 속도선" | §1·§8-3 만화 효과 금지와 충돌 → 속도선 없이 의자 기울기·약한 움직임 흐림으로 |
+
+---
+---
+
+# EP03 additions (2026-11-25) — 「3년 전에 끝난 일」
+
+- 작성: art-director · Phase 4 · 입력 `00_input/brief.md` EP03 절 + 판정 GA–GE, `03_episode/ep03_beatsheet.md` §0-1·§2·§6(F2–F10), `02_story/world.md` §2(주방용품 도매 가게), `characters.md` §2.
+- **위 EP01 섹션(§1–§9)과 EP02 섹션(§10)은 바꾸지 않았다.** EP03은 아래 항목만 더한다. GLOBAL STYLE TOKEN · 조립 순서 · 9:16 · 무글자 · Avoid 줄 · 채도 규칙은 그대로.
+- 토큰 이름(`LOC_*`, `L-*`, `PROP_*`, `FLASHBACK-*`)은 여전히 프롬프트에 쓰지 않는다 — 영문 문장을 풀어 붙인다.
+- 장소는 기존 6곳 + LOC_HOME_YARD 그대로. **신규는 회상 전용 배경 1곳(LOC_FLASH_OLDSHOP)뿐**이다(판정 GD). 현재 시점의 새 장소는 없다.
+
+## 11. EP03 장소·조명 지도
+
+| scene | 패널 | LOC | 조명 코드 | 비고 |
+|---|---|---|---|---|
+| S1 18일 ~21:20 | P01–02 | LOC_HOME_ENTRANCE (기존, 안쪽) | L-ENTRANCE-EVENING (기존 EP02) + §11-2 메모 | 문이 **밖에서 열림** — 문틀 안 미자, 등 뒤 가로등 |
+| S1 | P03–04 | LOC_HOME_YARD (기존 EP02) | L-YARD-NIGHT (기존 EP02) + §11-2 메모 | P04 = EP02 P62의 좌우·구도 거울 |
+| S2 18일 ~21:25 | P05 | LOC_ALLEY_STAIRS (기존) | L-NIGHT-STAIRS (기존) | 평상 비어 있음 |
+| S2 18일 ~21:30 | P06 | LOC_UNCLE_SHOP 바깥 (기존) | L-SHOP-NIGHT (기존) | P61과 같은 가게 정면·같은 미소 |
+| S3 19일 ~06:40 | P07–28 | LOC_HOME_TABLE (기존) | L-DAWN-KITCHEN (기존) + §11-2 메모 | 쌀통 처음 열림(P21) |
+| S3 19일 ~07:00 | P29–37 | LOC_HOME_TABLE (기존) | **L-MORNING-KITCHEN** (신규) | 첫 햇살 한 줄 |
+| S4 19일 ~15:30 | P38–39 | LOC_ALLEY_STAIRS 맨 아래 층계참 (기존, §11-3 배치) | **L-AFTERNOON-STAIRS** (신규) | |
+| S4–S6 19일 ~17:00–17:20 | P40–45 · P48–61 | LOC_ALLEY_STAIRS 맨 아래 층계참 + 아래 LOC_UNCLE_SHOP 문간 | L-SUNSET (기존) + §11-2 메모 | P60 가로등 켜짐(선택) |
+| (6년 전 밤 — 회상) | P46–47 | **LOC_FLASH_OLDSHOP** (신규, 회상 전용) | **FLASHBACK-PAST** 처리(§11-4) | |
+
+## 11-1. 신규 회상 배경 — LOC_FLASH_OLDSHOP (6년 전 밤, 아버지의 주방용품 도매 가게, P46–47 전용)
+
+현재 시점 장소가 아니다. **회상 처리(§11-4)와 반드시 함께** 쓴다. 디테일은 적게, 고정 요소는 두 가지: **반쯤 내린 셔터 + 쌓인 냄비 더미**.
+```
+The narrow interior of a small kitchenware wholesale shop late at night six years ago: a grey corrugated steel roller shutter pulled half-way down across the shop front, the dark empty street just visible in the gap beneath it; along both sides of a cramped aisle, tall stacks of stainless steel cooking pots, nested bowls and bundles of plain stainless spoons, piled beside plain unmarked cardboard boxes; a single bare fluorescent tube on the ceiling; an upturned plastic crate on the bare cement floor; the back of the shop falls into darkness where two or three faceless adult figures stand blurred and indistinct; everything is completely blank, no shop sign, no labels, no price tags, no writing on any box.
+```
+- **배치 [고정]:** 셔터 = 프레임 한쪽 위(반쯤 내려 아래 틈으로 어두운 거리) · 냄비·그릇 더미 = 통로 양옆 · 엎은 플라스틱 상자(노인이 앉음) = 통로 가운데 · 안쪽 어둠 = 인영.
+- **안쪽 인영 [고정 — beatsheet F10-④, EP05 보호]:** 얼굴 없음, 흐린 어두운 형체만. **진갈색 니트·굳은살 손·반백 머리 등 아버지(INHO)를 식별할 특징 금지.** 프롬프트에 `their faces and clothing are lost in shadow and cannot be made out` 추가.
+- 냄비·숟가락은 **무지 스테인리스**(로고·각인 없음) — 집 식탁 숟가락(PROP_SPOONS)의 출처라는 정서만, 특정 숟가락을 클로즈업하지 않는다(휜 숟가락 금지).
+- 무글자: 간판·상자 인쇄·가격표·영수증·달력 없음. 셔터에도 글자·낙서 없음.
+- 재사용 예정: EP26(가안) — 그때도 이 문장 + 회상 처리 그대로.
+
+## 11-2. 신규·변주 조명 문장
+
+| 코드 | 언제 | 영문 조명 문장 (그대로) |
+|---|---|---|
+| L-ENTRANCE-EVENING 메모 (S1) | P01–02 | EP02 문장의 앞부분(전구 + 복도의 약한 번짐)만 쓰고, 문이 열렸으므로 간유리 실루엣 부분은 빼고 `+ the sliding frosted-glass door has just been slid open from outside; Mija stands in the open doorway, the yellow streetlamp in the alley directly behind her softly haloing her outline, her face lit warm from the entrance bulb inside`. 바닥: 아버지 검은 구두 있음(18일 휴무, AE4). |
+| L-YARD-NIGHT 메모 (S1) | P03–04 | EP02 문장 그대로. **P04만** `+ behind the glowing frosted-glass door stands Mija's dark, soft-edged silhouette, lit from behind by the bare bulb inside: short permed rounded hair, round shoulders, apron outline` — EP02 P60·P62 하린 실루엣 규칙(뒤 전구 → 진하고 또렷)과 같은 물리. 하린은 대문 앞 전경, 낮게. |
+| L-DAWN-KITCHEN 메모 (S3) | P07–28 | EP01 문장 그대로(펜던트 꺼짐, 레인지 위 형광등, 작은 간유리 창의 회청빛). 창은 **싱크대 위 뒷벽**(EP02 §10-2 S4 메모와 같은 창). P20만 `+ the frosted window is a shade brighter`(햇살 줄은 아직 없음 — P29부터). |
+| **L-MORNING-KITCHEN** | P29–37 | `early morning in the kitchen, the pendant lamp is off and the single fluorescent tube above the stove is still on, cool grey-blue room light, and now one thin ray of pale warm golden sunlight comes through the small frosted-glass window above the sink and falls diagonally across the wooden table in a narrow bright band, fine dust motes in the ray, the rest of the room still cool and quiet` |
+| **L-AFTERNOON-STAIRS** | P38–39 | `late-autumn afternoon on the hillside stairs, flat pale white daylight under a thin overcast sky, short soft faint shadows, the streetlamps are off, cool neutral colours, the small shop at the alley entrance below looks ordinary in daylight with its white interior light barely noticeable` |
+| L-SUNSET 메모 (S4–S6) | P40–45 · P48–61 | EP01 문장 **그대로** + EP02 P45 메모 `far below, the small corner shop already glows white in the cool shade`(= **가게 불 켜짐**, 문간은 흰빛). 하린이 앉은 층계참에는 낮은 주황 노을이 비스듬히, **아래 골목과 가게 문간은 이미 서늘한 그늘**(주황 없음). |
+| L-SUNSET P60 (선택) | P60 | `+ the streetlamp on the landing beside her has just flickered on, a faint new yellow glow against the fading orange sky` — 노을 끝 = 시간이 다 됐다. 켜면 P61 배경 위쪽에도 같은 약한 노란 기운(가로등 자체는 P61 프레임 밖). 안 켜도 무방(panel-director 결정). |
+| L-SUNSET P61 메모 | P61 | 삼촌 얼굴 = `his face in soft cool shade light, a rim of cold white light from the shop's work lamp behind him outlining his shoulders and hair, no orange sunset light on him`. 문간은 그늘 속이므로 주황을 얹지 않는다(P60과 같은 빛). |
+
+- 날짜 경과는 빛으로만(beatsheet §0-1): 밤 간유리 → 밤 계단·흰 가게 → 새벽 회청 부엌 → 첫 햇살(P29) → 흰 낮(P38) → 노을 주황 + 그늘 속 흰 가게(P40–).
+- P38 ↔ P40은 **같은 구도, 빛만 다름**(기다림의 길이) — 하린 자세·담·가게 각도를 같게 쓴다.
+
+## 11-3. LOC_ALLEY_STAIRS 맨 아래 층계참 배치 (S4–S6, 신규 LOC 아님)
+
+기존 LOC_ALLEY_STAIRS 문장을 그대로 쓰고, 아래 배치 문장을 덧붙인다.
+```
+The lowest landing of the stair alley, only a few steps above the alley entrance: a waist-high cement-and-brick wall on the shop side of the landing; looking down past the corner of that wall, the small corner shop's glass door faces up toward the stairs, while the shop's display window is hidden behind the wall; higher up the stairs, the middle landing with the old wooden platform bench.
+```
+- **시선 아이러니 [고정 — beatsheet S5 대화 자리]:** 진열창에서는 담에 가려 안 보이고, **유리문(문간)에서는 이 층계참이 곧장 올려다보인다.** P41·P60은 같은 축(하린 위치 → 가게 문간), P06·P61은 같은 가게 정면.
+- 대화 자리(P48–P57): 같은 계단 칸에 나란히 — 사장 왼쪽 / 하린 오른쪽(카메라가 계단 위쪽·옆일 때 기준). 가게는 프레임 아래쪽.
+- P49 유리 안 둥근 인영: 프레임 높이 **1/12 이하**, 얼굴 없음(EP01 P41·TW7 원경 문법).
+
+## 11-4. 처리 — FLASHBACK-PAST (P46–47, 6년 전 회상)
+
+EP02 P52의 FLASHBACK-INSERT(며칠 전 기억 = 따뜻한 세피아 흔적)와 **같은 문법**(채도 뺌 · 가장자리 어둠 · 테두리 쪽 흐림 · 글자/프레임선/캡션 없음)이되, **색의 흔적만 차갑게** 바꿔 "먼 과거"로 구분한다. 화풍(선·셰이딩·비율)은 현재와 똑같다.
+```
+a memory from years ago: the whole image is desaturated to near-greyscale with only a faint cold blue-grey trace of the single fluorescent light, a soft dark vignette closing in from all edges, slightly soft focus toward the borders, quiet and still; same art style as the present-day panels; no frame lines, no caption
+```
+- 회상 안에 채도 높은 점(빨간 고무줄·옥) 없음. 봉투 없음.
+- P46(미디엄 와이드)·P47(손 ECU) 두 컷 모두 같은 문장. 앞뒤 현재 컷(P45·P48)의 노을 주황과 대비되어 시간 점프가 읽힌다 — 이미지에 글자·연도 표시 없음(`env` 없음).
+- EP02 P52(세피아)와 **섞지 않는다**: 가까운 기억 = 따뜻한 세피아 / 먼 과거 = 차가운 청회색. 이후 회차 회상도 이 두 가지로만.
+
+## 11-5. 신규·변주 소품 (전부 무글자)
+
+### PROP_RICE_BIN — 열린 상태 (P21만)
+- EP02 §10-4 문장 그대로 + `the lid is swung fully open upward on its back hinge so its inner underside faces the camera; taped to the centre of the inner side of the lid with two short strips of clear tape is one flat empty envelope` + PROP_ENVELOPE 공통 문장 + 빈 것(FLAT) 문장 + `; inside the bin, plain white rice grains`.
+- 테이프 두 줄은 봉투 위·아래 가로로, 빨간 고무줄은 봉투 가운데 그대로(테이프가 고무줄을 덮지 않음). 쌀통 안에 계량컵·눈금·글자 없음.
+- **열린 모습은 P21 한 컷.** P07·P17·P31은 닫힘(`the lid is closed`) — P31은 미자의 손이 닫힌 뚜껑 위.
+
+### PROP_DAD_BOWL — 아버지 몫 밥상 (P07 · P26 · P28)
+- `at the head of the table, a stainless steel rice bowl covered with its own stainless steel lid, and laid straight across the top of the lid one plain stainless steel Korean spoon with a shallow round bowl and a long flat straight handle; the spoon is perfectly straight along its whole length, its handle tip fully visible and not bent`
+- **곧은 숟가락 [고정 — EP05 G 회수]:** 손잡이 끝까지 보이게, 휘지 않음. P28은 초점(하린 옆얼굴 전경 + 숟가락), P07·P26은 배경(흐려도 곧음).
+- 하린의 휜 숟가락은 EP03 어떤 컷에도 나오지 않는다(W5).
+
+### PROP_WATER_BOTTLE — 무지 물병 (P38 조끼 주머니 · P48–58)
+- `a small clear plastic water bottle with a plain muted pale-blue screw cap, no label, no printing, no markings`
+- 뚜껑 색은 탁한 연하늘(채도 규칙 — 빨강·초록 금지). P48 하린이 두 손으로 내밂(P46 유리컵과 **같은 몸짓**) → P49–58 사장 손에. P55 뚜껑을 돌림.
+
+### PROP_INDIGO_CLOTH — 빈 남빛 보자기 (P41 · P43 · P50 · P58)
+- `a faded indigo cotton wrapping cloth, empty and folded flat into a small square, soft and worn`
+- EP02 §10-5의 묶인 보자기(`a small faded indigo cloth bundle tied at the top`)가 **비어 접힌** 상태(팔고 난 뒤). 같은 남빛·같은 바램. 무늬·글자 없음.
+
+### PROP_GLASS — 무지 유리컵 (회상 P46–47)
+- `a plain clear drinking glass tumbler, more than half full of water, no pattern, no markings`
+- 회상 처리 안에서 거의 무채색. 소녀의 두 손이 감싸고, 노인의 크고 거친 두 손이 받는다(P47).
+
+### PROP_ENVELOPE ×2 · ×3 — 나란히 놓인 같은 봉투 (P22 · P26)
+- P22 두 개: `exactly two identical flat empty envelopes lying side by side on the wooden table` + PROP_ENVELOPE 공통 + FLAT.
+- **P26 세 개:** `exactly three identical flat empty envelopes lying in a neat straight row on the wooden table, evenly spaced and parallel, each with its single red rubber band around the middle at the same position` + PROP_ENVELOPE 공통 + FLAT.
+- **"exactly three"를 꼭 쓴다** — Flow는 봉투를 늘리기 쉽다(넷·다섯이 되면 콜드오픈 반전을 미리 말해 버림 → 재그림). 크기·색·접힘·고무줄 모두 동일, 한 개만 다르면 재그림.
+- P14(하린 하나)·P21(뚜껑 안쪽 하나)·P30(세 사람이 쓸어 담음)도 같은 봉투 문장.
+
+### 기타 무글자 물건
+- 쌀 씻는 냄비(P07·P10): `a plain stainless steel pot with water and rice` — 무지. 쌀뜨물 잔물결(P10 멎음).
+- 새롬 백팩 키링(P31): character-sheets SAEROM_SCHOOL 문장의 `a small grey cat plush keyring` — 글자·태그 없음.
+- 사장 금붙이: 화면에 나오지 않는다(이미 팔았다). 가게 안 진열장 금빛은 원경에서만.
+
+## 11-6. EP03 기존 소품 재사용 메모
+- PROP_RING_MARK: P10(손 ECU, 형광등 빛)·P13·P23·P29. 반지 금지.
+- PROP_PHONE: P01–02 미자 가슴에, 화면 몸 쪽. 화면빛 없음.
+- PROP_SHOP_BELL: P06(유리문 위)·P41·P42·P60(아직 흔들림). 소리는 뷰어 `sfx`.
+- PROP_PHOTO_FRAME: P61 배경 작업대 위, 뒷면만.
+- PROP_LEDGER: P06 작업대 위 덮인 채(배경).
+- PROP_BRACELET / _COPY: **EP03 노출 없음.** 우진 왼손목은 늘 소매 안.
+- PROP_BLACK_PUFFER: EP03 화면에 없음(아침 부엌 — 의자 등받이에 걸지 않는다).
+
+## 11-7. 플래그 (EP03 · art-director)
+
+| # | 내용 | 제안 |
+|---|---|---|
+| AG1 | SUPPLIER와 INHO가 둘 다 "마르고 구부정" | 구분 고정: 사장 = 60대 중반·흰머리·**늘 짙은 납작 모자**·그을린 피부·흰 수염 자국·회색 누빔 점퍼 / 인호 = 반백·넓은 M자 이마·짙은 검은 눈썹·진갈색 니트. 회상 P46 안쪽 인영엔 인호 특징 금지(§11-1) |
+| AG2 | 회상 처리 두 가지(세피아 vs 청회색) | 먼 과거(P46–47) = 청회색 FLASHBACK-PAST, 가까운 기억(EP02 P52) = 세피아 FLASHBACK-INSERT. 화풍·비네팅은 같음 |
+| AG3 | P04 미자 실루엣은 **집 안 전구가 뒤에서** 비춤 | EP02 P47–58(가로등이 뒤 → 흐림)과 반대 방향 → EP02 P60·P62 하린처럼 진하고 또렷. 검수에서 불일치로 보지 않는다 |
+| AG4 | P61 삼촌 얼굴에 노을 주황 금지 | 문간은 그늘 + 뒤에서 흰 작업등 림. 주황은 층계참(하린 쪽)에만 |
+| AG5 | P26 "봉투 셋" 개수 오류 위험 | prompt-smith: `exactly three` + PROPS_keyprops 첨부. 넷 이상이면 재그림 |
+| AG6 | P60 가로등 켜짐 | 선택. 켜면 P61 상단에 약한 노란 기운만, 가로등 자체는 프레임 밖 |
+| AG7 | PROPS_keyprops 갱신 안 함 | 쌀통 열림·물병·보자기·유리컵·아버지 그릇은 단순 물건 → 문장만. 신규 카드는 SUPPLIER 2장뿐(character-sheets §10) |

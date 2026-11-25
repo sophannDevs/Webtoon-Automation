@@ -499,7 +499,7 @@
 - bubble_2:
   - speaker: 석구
   - type: dialogue
-  - text_km: "រឿងនេះ ដឹងតែឯងនឹងពូទេ ណា៎។"
+  - text_km: "រឿងនេះ ដឹងតែឯងនិងពូទេ ណា៎។"
   - text_ko: "이건 너랑 나만 아는 거다."
   - place: x 42% · y 23% · w 50% · tail ↙
   - read_order: 2

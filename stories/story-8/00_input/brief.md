@@ -155,3 +155,45 @@ ED. AE1 the entrance door is already closed at P01 (U-jin closed it coming in). 
 ## EP02 leader rulings after ep02_shotlist.md (2026-11-25)
 EE. FL3 overrides ruling ED/AE1: the entrance door stays OPEN in panels 001–003 to match EP01 P57–60 canon (direct continuation); it is closed in S6 (from 046/047). Prompt-smith follows the shot list here.
 EF. FL2, FL4–FL9 accepted. Attach PROPS_keyprops to 017, 033, 052 and MIJA_expressions to 061. Copy bracelet visible only at 017 (pull-down at 019); AE3 fingertips-on-glass applies to 058/060/062.
+
+---
+
+# EP03 (2026-11-25) — Phase 0 case 2 (new episode)
+
+- User asked to continue with EP03. EP01 and EP02 images are NOT made yet (both WAITING_FOR_IMAGES). Create EP03's beat sheet,
+  Khmer script, native Khmer review, shot list, lettering, Flow prompts and handoff page. **Do not touch EP01/EP02 files.**
+- Episode: EP03 (NN = 03) 「3년 전에 끝난 일」 — the 19th; **last free episode, the series' biggest twist so far (intensity 10)**.
+- Reuse (read, do not redo): `02_story/*`, `style-bible.md` (incl. §10 EP02 additions), `character-sheets.md`, `refs/ref_prompts.md`.
+  EP03 adds only what is new (append "EP03 additions"; never rewrite earlier sections).
+- Follow series-arc.md EP03 and twist-plan.md §4 EP03 exactly: 19th morning kitchen (Mi-ja and Ha-rin stop pretending; the empty
+  envelope inside the rice-bin lid = third envelope; the three-person alliance, "Dad and Sae-rom must not know"; warmth beat
+  「밥 지을 때마다 심장이 철렁했다니까」 — they laugh together for the first time; small win = mother-daughter alliance);
+  Ha-rin breaks R1 on purpose ("I remember one person who knows their faces"); Mi-ja heard the pot-factory boss is selling gold at
+  the uncle's shop this week; 19th afternoon Ha-rin deliberately waits for him on the alley stairs; he recognises her warmly
+  (1–2 panel wordless flashback: 17-year-old Ha-rin gave him a glass of water the night the business collapsed);
+  the twist line 「그거? 다 끝났잖니. 3년 전에. 석구 씨가 마지막 걸 들고 왔었지.」 — **never the father's name** (protects EP05);
+  "brought the last of it" must not say whose money it was.
+- Cliffhanger type C (decisive line) → Ha-rin's face → at the bottom of the stairs, in the white-lit shop doorway, the uncle
+  standing looking this way, smile unchanged. One piece of info: "the debt is over — and the uncle saw."
+- 50+ panels (target ~60). Same Khmer clue rules (twist-plan §6, glossary): no វា/ក៏…ដែរ slip sense, no អាតូច (EP04),
+  លក់/បញ្ចាំ distinct, ចប់ (finished) for the twist line's "끝났잖니" and echoing EP01 P24 「…끝난 얘기다」, no amounts/currency
+  (durations like "3년 전" are fine), "그쪽" stays nameless.
+- **New minor character on screen with a face: the 냄비 공장 사장 (old kitchenware supplier).** He keeps the EP02 look (grey padded
+  jacket, dark flat cap, faded indigo cloth bundle). He needs: a name only if dialogue names him (Khmer-reading check, characters F2
+  rule; avoid names used in other stories), a character token (art-director), and one reference card `SUPPLIER_turnaround` +
+  `SUPPLIER_expressions` (ref-sheet-artist appends to ref_prompts.md). The 17-year-old Ha-rin flashback is described in words
+  (younger look, school-age clothes) with HARIN cards attached; no new card unless art-director insists.
+- Locations: reuse LOC_* tokens; new only if essential (flag it).
+
+## EP03 leader rulings after ep03_beatsheet.md (2026-11-25) — all flags accepted
+GA. 61 panels; keep optional P39 (cut first if room is needed). Start continues from EP02 P62 (F1). F2 outfits accepted.
+GB. The supplier is NOT named in dialogue: speaker 「사장님」 / Khmer label ថៅកែ. Address forms: he calls himself តា and Ha-rin ចៅ; she calls him ថៅកែ. He never uses ពូ or ក្មួយ (ពូ = the uncle's clue form). Backup name unused.
+GC. Twist line Khmer (Q4): use ចប់ហើយ, ideally echoing EP01 P24 `…រឿងហ្នឹង ចប់ហើយ។`; "3년" as words (បីឆ្នាំ); never ឈប់, the father's name, whose money, or the father as subject of សង. 「내 게 제일 마지막이었어」 = he was the last creditor paid (F11).
+GD. New art needs approved: SUPPLIER token (mid-60s, thin, stooped, large rough hands, no glasses; grey padded jacket, dark flat cap, indigo cloth bundle) + SUPPLIER_turnaround / SUPPLIER_expressions cards; HARIN_TEEN flashback outfit (no new card, no burn scar, plain grey school tracksuit jacket); LOC_FLASH_OLDSHOP (P46–47, flashback, half-down shutter, stacked pots, blank everything); light codes L-MORNING-KITCHEN, L-AFTERNOON-STAIRS; props: open rice bin with envelope taped inside the lid, father's covered bowl with a STRAIGHT spoon on the lid, label-less water bottle, empty folded indigo cloth, plain glass, three identical envelopes.
+GE. Q7: the banknote triangle fold (L16) moves to EP05. F12 noted for EP04 (the uncle opens as the one who has been waiting).
+
+## EP03 leader rulings after art-director's EP03 additions (2026-11-25) — AG1–AG13 accepted
+GF. Total reference cards = 15 (13 + SUPPLIER_turnaround + SUPPLIER_expressions). P46 attaches HARIN_turnaround with younger-look override wording; P47 (hands) attaches no Harin card (avoid the burn scar). Recent memory = warm sepia, far past = cold blue-grey. P26 shows exactly three envelopes. P61 uncle = warm smile only, no orange light. P60 streetlamp optional (panel-director decides).
+
+## EP03 leader rulings after ep03_shotlist.md (2026-11-25)
+GG. FL1–FL10 accepted. P60 streetlamp OFF (no warm light on the uncle at 060–061). Scene ids with a/b/F suffixes; render 041 first as the composition reference for 060. Kitchen staging (bedroom door left wall behind the head seat, kitchen doorway right wall at Sae-rom's end) is canon from EP03 unless it contradicts EP01/EP02 shot lists — prompt-smith checks and follows the earlier shot lists if they differ.

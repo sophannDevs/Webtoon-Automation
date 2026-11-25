@@ -424,7 +424,7 @@
 - bubble_1:
   - speaker: 우진
   - type: dialogue
-  - text_km: "ម៉ែ ប៉ា នឹងសែរ៉ូម… កុំឲ្យដឹងដាច់ខាត។"
+  - text_km: "ម៉ែ ប៉ា និងសែរ៉ូម… កុំឲ្យដឹងដាច់ខាត។"
   - text_ko: "엄마 아빠, 새롬이는. 절대 모르게."
   - place: x 54% · y 9% · w 44% · tail ↓
   - read_order: 1

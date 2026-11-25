@@ -1,6 +1,6 @@
 # EP02 Khmer review — context packet
 
-Written by `km_review.py start` at 2026-11-25 10:50. Rewritten at every start: do not edit.
+Written by `km_review.py start` at 2026-11-25 13:07. Rewritten at every start: do not edit.
 
 **Use only what the reader knows by the scene you are reviewing:** earlier episodes, earlier panels
 of this episode, and the scene itself. Never let a later panel, a later episode or a sealed fact
@@ -73,7 +73,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 맡긴 거야 (우진, 말장난 회수) | មិនបានលក់ទេ។ បញ្ចាំ។ | ⟨단서어⟩ EP02 추가. E02-B P16. `បញ្ចាំ` 은 우진의 팔찌에만, `លក់` 은 미자의 반지(P51)에 — 섞지 않는다 |
 | 더요? (미자) | ថែមទៀត? | ⟨단서어⟩ EP02 추가. E02-H. EP01 P44 삼촌 `ថែមបន្តិចទៀត` 의 메아리 |
 | 덜 드렸어 (하린) | ជូនពូតិចជាងមុន | EP02 추가. D10. `ជូន` = 삼촌을 높이는 "드리다" |
-- (1 row(s) held back: sealed or about a later episode)
+- (7 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -165,6 +165,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 덜 드렸어 (하린) | ជូនពូតិចជាងមុន | EP02 추가. D10. `ជូន` = 삼촌을 높이는 "드리다" |
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
 | 봉투 | ស្រោមសំបុត្រ | 무지 크라프트 봉투, 세 번 접힘, 빨간 고무줄 |
+- (6 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -253,7 +254,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 애들 (미자 → 석구, 자녀를 가리킬 때) | ក្មេងៗ | EP02 추가. P58 「애들은 몰라요」 |
 | 팔다 | លក់ | ⟨단서어⟩ E01-B 우진 「이거 절대 안 팔아」 = `នេះ ខ្ញុំមិនលក់ដាច់ខាត។` |
 | 누구요? | អ្នកណា | ⟨단서어⟩ EP01 P54 하린. 리더 판정 TW9 |
-- (3 row(s) held back: sealed or about a later episode)
+- (12 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -362,7 +363,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 모자라다 | ខ្វះ / មិនគ្រប់ | 하린 「…모자라」 = `មិនគ្រប់ទេ` |
 | 맡긴 거야 (우진, 말장난 회수) | មិនបានលក់ទេ។ បញ្ចាំ។ | ⟨단서어⟩ EP02 추가. E02-B P16. `បញ្ចាំ` 은 우진의 팔찌에만, `លក់` 은 미자의 반지(P51)에 — 섞지 않는다 |
 | 애기 / 애기 취급하다 | កូនង៉ា / ចាត់ទុកដូចកូនង៉ា | ⟨단서어⟩ EP02 추가. E02-D/L14 새롬. **`អាតូច` 과 다른 말** — `អាតូច` 은 EP04까지 쓰지 않는다 |
-- (2 row(s) held back: sealed or about a later episode)
+- (10 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -447,6 +448,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 덜 드렸어 (하린) | ជូនពូតិចជាងមុន | EP02 추가. D10. `ជូន` = 삼촌을 높이는 "드리다" |
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
+- (6 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -506,7 +508,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 반지 판 걸로 | លុយលក់ចិញ្ចៀន | ⟨단서어⟩ EP02 추가. E02-G ⟨반전⟩. 동사 `លក់` 유지 |
 | 아 맞다 (미자 화제 전환) | អេះ នឹកឃើញហើយ | EP02 추가. P36 |
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
-- (2 row(s) held back: sealed or about a later episode)
+- (9 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -537,7 +539,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
   - P27 · 미자: "아이고, 오늘 가게 앞을 지나는데—"
     KM: មីចា៖ "អូយ ថ្ងៃនេះម៉ែដើរកាត់មុខហាង—"
   - P27 · 미자: "삼촌이, 새롬이 요즘도 키 크냐고 물으시더라~"
-    KM: មីចា៖ "ពូសួរថា សែរ៉ូមនៅតែឡើងខ្ពស់ទៀតឬអត់~"
+    KM: មីចា៖ "ពូសួរថា សែរ៉ូមនៅតែខ្ពស់ឡើងទៀតឬអត់~"
   - P31 · 하린: "…까치발 내려."
     KM: ហារីន៖ "…ដាក់កែងជើងចុះ អូន។"
   - P33 · 미자: "거기 손대지 마!"
@@ -549,7 +551,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
   - P36 · 미자: "그 양반 많이 늙었더라—"
     KM: មីចា៖ "គាត់ចាស់ទៅច្រើនណាស់—"
   - P40 · 미자: "아이고 내 정신 좀 봐. 밥부터 먹어!"
-    KM: មីចា៖ "អូយ មើលម៉ែនេះ ភ្លេចខ្លួនទៀតហើយ។ ញ៉ាំបាយសិនមក!"
+    KM: មីចា៖ "អូយ មើលម៉ែនេះ ភ្លេចខ្លួនទៀតហើយ។ ញ៉ាំបាយសិនទៅ!"
 
 ## Scene 7 · S07 · P59–P62
 
@@ -593,7 +595,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 덜 드렸어 (하린) | ជូនពូតិចជាងមុន | EP02 추가. D10. `ជូន` = 삼촌을 높이는 "드리다" |
 | 아 맞다 (미자 화제 전환) | អេះ នឹកឃើញហើយ | EP02 추가. P36 |
 | 현관 | មាត់ទ្វារផ្ទះ | LOC_HOME_ENTRANCE |
-- (1 row(s) held back: sealed or about a later episode)
+- (7 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 

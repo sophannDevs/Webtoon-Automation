@@ -1,6 +1,6 @@
 # EP01 Khmer review — context packet
 
-Written by `km_review.py start` at 2026-11-25 09:59. Rewritten at every start: do not edit.
+Written by `km_review.py start` at 2026-11-25 13:07. Rewritten at every start: do not edit.
 
 **Use only what the reader knows by the scene you are reviewing:** earlier episodes, earlier panels
 of this episode, and the scene itself. Never let a later panel, a later episode or a sealed fact
@@ -55,6 +55,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
 | 봉투 | ស្រោមសំបុត្រ | 무지 크라프트 봉투, 세 번 접힘, 빨간 고무줄 |
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
+- (7 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -106,6 +107,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
 | 빵 | នំបុ័ង | 탁 반장의 남은 빵 |
 | 2주 전 | ពីរសប្តាហ៍មុន | EP01 P5 `env`, 에피소드의 유일한 시간 표지. lettering에 같은 문자열 |
+- (6 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -148,6 +150,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 금은방 (삼촌 가게) | ហាងមាស | LOC_UNCLE_SHOP |
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
+- (7 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -195,6 +198,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 봉투 | ស្រោមសំបុត្រ | 무지 크라프트 봉투, 세 번 접힘, 빨간 고무줄 |
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
 | 끼익 (방문) | គ្រឹត… | EP01 P14 |
+- (15 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -256,7 +260,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 끝난 얘기다 | ចប់ហើយ | ⟨단서어⟩ E01-F 아버지. "끝났다" = `ចប់`. `ឈប់`(그만해)으로 바꾸지 않는다 |
 | 팔다 | លក់ | ⟨단서어⟩ E01-B 우진 「이거 절대 안 팔아」 = `នេះ ខ្ញុំមិនលក់ដាច់ខាត។` |
 | 누구요? | អ្នកណា | ⟨단서어⟩ EP01 P54 하린. 리더 판정 TW9 |
-- (1 row(s) held back: sealed or about a later episode)
+- (21 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -328,7 +332,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 쉬는 날 | ថ្ងៃសម្រាក | E01-D. `ឈប់` 을 피해서 `ចប់`/`ឈប់` 단서와 섞이지 않게 한다 |
 | 모자라다 | ខ្វះ / មិនគ្រប់ | 하린 「…모자라」 = `មិនគ្រប់ទេ` |
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
-- (2 row(s) held back: sealed or about a later episode)
+- (14 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -370,6 +374,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 모자라다 | ខ្វះ / មិនគ្រប់ | 하린 「…모자라」 = `មិនគ្រប់ទេ` |
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
+- (7 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -421,7 +426,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 모자라다 | ខ្វះ / មិនគ្រប់ | 하린 「…모자라」 = `មិនគ្រប់ទេ` |
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
-- (1 row(s) held back: sealed or about a later episode)
+- (12 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -477,7 +482,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 세탁소 | ហាងបោកអ៊ុត | 하린의 오후 일(화면 밖) |
 | 동네 | ភូមិ | 「동네 애」 `ក្មេងក្នុងភូមិ` |
 | 봉투 | ស្រោមសំបុត្រ | 무지 크라프트 봉투, 세 번 접힘, 빨간 고무줄 |
-- (2 row(s) held back: sealed or about a later episode)
+- (16 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
@@ -488,11 +493,11 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
   - P34 · 하린 (생각): "…삼촌한테 말한 적 없는데."
     KM: ហារីន (គិត)៖ "…មិនដែលប្រាប់ពូផង។"
   - P35 · 석구: "1일에 모자랐던 거, 그쪽에서 급하대."
-    KM: សុកគូ៖ "ដែលខ្វះពីថ្ងៃទី១ ខាងនោះគេប្រញាប់ណា៎។"
+    KM: សុកគូ៖ "ដែលខ្វះពីថ្ងៃទី១ហ្នឹង ខាងនោះគេប្រញាប់ចង់បានណា៎។"
   - P35 · 석구: "삼촌이 할 얘기도 있고."
     KM: សុកគូ៖ "ពូមានរឿងចង់និយាយជាមួយឯងផង។"
   - P35 · 하린: "…우진이나 엄마는, 정말 모르죠?"
-    KM: ហារីន៖ "…អ៊ូជីន ឬម៉ែ ពិតជាមិនដឹងមែនទេ ពូ?"
+    KM: ហារីន៖ "…អ៊ូជីន ឬម៉ែ មិនដឹងមែនទេ ពូ?"
   - P36 · 석구: "네 동생이 어떻게 알아. 아무도 몰라."
     KM: សុកគូ៖ "ប្អូនឯងដឹងម៉េចកើត។ គ្មាននរណាដឹងទេ។"
   - P37 · 석구: "네 아버지 혼자 못 버티는 거, 우리 둘이 조용히 보태는 거…"
@@ -549,6 +554,7 @@ Not used for wording decisions: `twist-plan.md`, `series-arc.md`, the beat sheet
 | 숟가락 | ស្លាបព្រា | 하린 것은 손잡이 끝이 휘었다 |
 | 팔찌 | កងដៃ | 우진의 진초록 옥팔찌(금 간 자리 금색 수리) |
 | 과외 알바 | បង្រៀនគួរ | 우진의 핑계 |
+- (7 row(s) held back: sealed or about a later episode)
 
 ### Established dialogue (earlier episodes, scenes where they both speak)
 
