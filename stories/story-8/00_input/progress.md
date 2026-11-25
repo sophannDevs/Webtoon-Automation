@@ -24,3 +24,7 @@ Request: new drama webtoon, Episode 1, 15+, drama type decided by research (user
 ## Resume
 - Read 04_visual/ep01_flow_status.md, then follow "Resuming" in webtoon-flow-handoff (import → status --fix → validation → redraws).
 - Placement pass later: check P28 (may wrap to 3 lines) and nudge bubbles on P18, P27, P38, P39, P43–47.
+
+# EP02 (2026-11-25)
+- Beatsheet (62), script, script_final, native Khmer review READY round 1 (gate OK), art additions (LOC_HOME_YARD etc.), shot list, lettering (69 bubbles, km_tool check OK), prompts (62), handoff page 04_visual/ep02_flow_handoff.html. Status WAITING_FOR_IMAGES.
+- Placement pass later: tails at 048/050/053 assume glass screen-left; check 004, 005, 026 sides.

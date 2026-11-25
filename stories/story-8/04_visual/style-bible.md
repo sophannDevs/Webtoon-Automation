@@ -286,3 +286,95 @@ The side entrance of a mid-sized industrial bakery on a wide road: a grey metal 
 - **prompt-smith:** §1-2 조립 순서, §3 조명 문장, §6 LOC 문장, §6-B PROP 문장, §8-2 Avoid 줄. `aspect: 9:16`.
 - **ref-sheet-artist:** character-sheets §4 사양, `aspect: 16:9`.
 - **panel-validator:** C2 배경 연속성 = §6 고정 요소, C3 = 무글자 + art_space 비움, 소품 쌍(§5-5·5-6) 일치 확인.
+
+---
+---
+
+# EP02 additions (2026-11-25) — 「엄마는 웃고 있었다」
+
+- 작성: art-director · Phase 4 · 입력 `00_input/brief.md` EP02 절 + 판정 EA–EC, `03_episode/ep02_beatsheet.md` §0-1·§6(F2–F9), `ep02_script_final.md`(편집자 권고: 간유리 역광).
+- **위 EP01 섹션(§1–§9)은 바꾸지 않았다.** EP02는 아래 항목만 더한다. GLOBAL STYLE TOKEN · 조립 순서 · 9:16 · 무글자 · Avoid 줄 · 채도 규칙은 그대로 적용.
+- 토큰 이름(`LOC_*`, `L-*`, `PROP_*`)은 여전히 프롬프트에 쓰지 않는다 — 영문 문장을 풀어 붙인다.
+
+## 10. EP02 장소·조명 지도
+
+| scene | 패널 | LOC | 조명 코드 | 비고 |
+|---|---|---|---|---|
+| S1 15일 21:40 | P01–06 | LOC_HOME_ENTRANCE (기존) | L-ENTRANCE-NIGHT (기존) + §10-2 메모 | EP01 P57–60 직결 |
+| S2 16일 새벽 | P07–26 | LOC_ALLEY_STAIRS (기존) | **L-DAWN-STAIRS** (신규) → P26 **L-DAWN-STAIRS-LATE** | |
+| S3 17일 18:40 | P27–40 | LOC_HOME_TABLE (기존) | L-DINNER (기존) | 쌀통 추가(§10-4) |
+| S4 17일 ~19:30 | P41–43 | LOC_HOME_TABLE 싱크대 쪽 (기존) | L-DINNER (기존) + §10-2 메모 | 싱크대 위 작은 간유리 창 |
+| (P52 회상) | P52 | LOC_HOME_TABLE (P33 원본) | L-DINNER + **FLASHBACK-INSERT** 처리(§10-6) | |
+| S5 18일 노을 | P44–45 | LOC_ALLEY_STAIRS (기존) | L-SUNSET (기존, 그대로) + P45 메모 | 원경 단역(§10-5) |
+| S6 18일 21:15 | P46–58 | LOC_HOME_ENTRANCE (기존, 안쪽) | **L-ENTRANCE-EVENING** (신규) | 간유리 너머 미자 실루엣 |
+| S7 18일 ~21:20 | P59–62 | **LOC_HOME_YARD** (신규) | **L-YARD-NIGHT** (신규) | 간유리 안쪽 하린 실루엣 |
+
+## 10-1. 신규 장소 — LOC_HOME_YARD (현관의 바깥 역방향, P59–62)
+
+LOC_HOME_ENTRANCE와 **같은 집, 같은 문**을 바깥 마당에서 본다. 문틀·간유리 무늬·문 크기는 ENTRANCE 문장과 같아야 한다.
+```
+The small front yard of an old two-storey Korean house of red brick patched with grey cement, seen from the yard side: a narrow grey cement yard only two or three steps deep; on one side the house's sliding entrance door of textured frosted-glass panes in a worn wooden frame, glowing warm yellow from the single bare bulb inside; a few plain terracotta flowerpots along the base of the wall; a sagging laundry line overhead with one or two plain cloths; directly opposite the door, a low black iron gate, and just beyond the gate in the alley one tall yellow streetlamp; no house number, no nameplate, no writing anywhere.
+```
+- **배치 [고정]:** 간유리 문 ↔ 마당 2–3걸음 ↔ 낮은 철제 대문 ↔ 그 바로 너머 골목 가로등이 **한 줄로 마주 본다**. 이 배치가 S6 실루엣의 물리 근거다(가로등이 미자 뒤에서 간유리를 비춤 — 편집자 플래그). 대문을 문 옆쪽으로 옮기지 않는다.
+- 카메라별: P59 측면 와이드 = 대문(가로등)과 문이 프레임 양쪽, 미자는 그 사이 / P60 미자 어깨 너머 → 문 정면(카메라 등 뒤가 대문·가로등) / P61 미자 정면, 그녀 앞(카메라 쪽)이 노란 문 / P62 문 정면, 카메라는 대문 쪽에 등을 둔다.
+- 빨랫줄은 프레임 위 1/3 안에서 가늘게, 그 위 남색 하늘·담 위 어둠은 비워 둔다(무대사 컷이어도 구도 여백 유지). 화분은 아래쪽 벽 밑.
+- 집 바깥에는 **외등 없음** — 마당은 가로등과 문에서 새는 빛만으로 밝다.
+- 무글자: 문패·번지 판·우편함 글자·계량기 숫자 없음.
+
+## 10-2. 신규·변주 조명 문장
+
+| 코드 | 언제 | 영문 조명 문장 (그대로) |
+|---|---|---|
+| L-ENTRANCE-NIGHT 메모 (S1) | P01–06 | 기존 문장 그대로. P04만 `+ a single thin line of light leaks from under a bedroom door at the far end of the dark hallway`. 현관문 상태는 플래그 AE1. |
+| **L-DAWN-STAIRS** | P07–25 | `pre-dawn blue hour on the hillside stairs, cold blue light, a faint peach glow at the far horizon, the landing streetlamp still glowing yellow, visible breath vapour in the cold air, the empty wooden bench on the middle landing` — EP01 L-DAWN-OUT에서 공장 나트륨 등을 뺀 계단판. **P14부터** 가로등 부분을 `the landing streetlamp has just switched off`로 바꾼다(P14 이후 다시 켜지지 않음). |
+| **L-DAWN-STAIRS-LATE** | P26 | `early dawn, the sky brightening to pale blue with a wider peach glow along the horizon, streetlamps off, cool soft light, the small shop at the alley entrance far below still glowing white` |
+| L-DINNER 메모 (S4) | P41–43 | 기존 문장 그대로 + `the small frosted-glass window above the sink is dark navy with evening outside`. 싱크대는 뒷벽, 그 위 작은 간유리 창(P42 하린 시선). |
+| L-SUNSET 메모 (S5) | P44–45 | EP01 문장 **그대로**(18일 노을 = 15일과 같은 빛, 날짜 경과의 각운). P45만 `+ far below, the small corner shop already glows white in the cool shade`. |
+| **L-ENTRANCE-EVENING** | P46–58 | `night, the house lights are on: the single bare incandescent bulb above the entrance glows warm yellow on the inside and a dim warm spill of light comes from the hallway behind; the frosted-glass panes of the closed sliding door glow a dim yellow-grey from a streetlamp outside that stands directly behind the door in the alley, so a person standing in the yard appears on the glass only as a soft, blurred, dark navy silhouette with no features` |
+| **L-YARD-NIGHT** | P59–62 | `night in the small cement yard, deep navy sky, the yellow streetlamp beyond the low iron gate throws warm light over the gate and casts the gate bars' shadows across the cement, the frosted-glass entrance door glows warm yellow from the bare bulb inside and spills a soft yellow rectangle of light onto the yard floor, visible breath vapour in the cold air` |
+
+**실루엣 규칙 [고정 — 편집자 플래그 3]**
+- **미자 (P47–58, 안에서 본 간유리):** 빛 = 그녀 **뒤** 골목 가로등. 모양 = 짧은 파마의 둥근 머리, 둥근 어깨, 앞치마 윤곽, (통화 중) 귀에 댄 손. 문에서 한두 걸음 떨어진 P47–56은 **많이 흐리게**, 한 뼘 거리로 다가선 P57–58은 **조금 더 또렷하게**(간유리는 가까울수록 선명 — 검수에서 불일치로 보지 않는다). 얼굴·이목구비·휴대폰 화면빛 금지.
+  - 대비 확보: 집 안 빛은 "전구 + 복도의 약한 번짐"까지만. 안이 너무 밝으면 유리에 실루엣이 안 보인다 → 복도 불빛을 키우지 않는다. P51만 `a faint warm reflection of the entrance bulb on the inner surface of the glass` 추가(대본 지문).
+- **하린 (P60·P62, 마당에서 본 간유리):** 빛 = 그녀 **뒤** 집 안 맨 전구. 문 바로 뒤에 붙어 서 있으므로 미자보다 **진하고 또렷한** 어두운 실루엣: 낮은 포니테일, 백팩 어깨끈, 머리 뒤 전구의 노란 후광. 손바닥은 플래그 AE3대로.
+- 두 방향 모두 유리 무늬(오돌토돌한 간유리 질감)와 나무 문살 칸 수를 같게.
+
+## 10-3. 신규 소품 — PROP_PHONE (미자의 휴대폰)
+- `a plain dark charcoal smartphone with no logo, its screen always turned toward her body or pressed against her cheek, the screen never visible and giving off no glow`
+- P46 가슴 쪽으로 화면을 돌려 꼭 쥠 / P47–58 실루엣에서는 귀에 댄 손 모양만 / P59 내려서 가슴에 누름(화면은 몸 쪽). **어떤 컷에서도 화면·화면빛·알림 없음.**
+
+## 10-4. 신규 소품 — PROP_RICE_BIN (쌀통, EP03 은닉처)
+- `a plain faded-cream plastic rice bin standing on the floor beside the sink, about knee-to-thigh height, boxy with rounded corners, a flat lid hinged along its back edge so that it opens upward, a small moulded grip on the front edge of the lid, completely blank with no writing, no markings and no measuring scale`
+- 자리 [고정]: 싱크대 옆 바닥, 레인지 쪽 = 미자 자리 바로 뒤. P27(배경)·P32(화면 중심)·P33(미자 왼손이 뚜껑을 누름)·P52(회상).
+- **EP02에서는 절대 열린 모습을 그리지 않는다** — 뚜껑은 늘 닫혀 평평(프롬프트에 `the lid is closed`). P32 새롬 손은 앞쪽 손잡이에 닿기 직전까지. 경첩은 뒤쪽(EP03에서 위로 열려 뚜껑 안쪽이 보인다).
+- 색은 바랜 크림(냉장고 민트·벽 크림과 구분되게 약간 노르스름). 빨강·초록 금지.
+
+## 10-5. 원경 단역 — 냄비 공장 사장 (P45, 이름 없음, 얼굴 없음)
+- `far in the distance, one tiny stooped elderly man seen from behind, in a plain grey quilted padded jacket and a dark flat cap, holding a small faded indigo cloth bundle tied at the top, standing at the shop's glowing glass door; his face is not visible, he is no more than one tenth of the frame height`
+- **얼굴 금지 · 프레임 높이 1/10 이하**(EP01 P41 원경 문법과 같음). 하린은 다른 쪽(할머니)을 본다.
+- 레퍼런스 카드 없음(판정 EA). **EP03 연속성:** 얼굴로 나오면 같은 회색 누빔 점퍼 + 짙은 납작 모자 + 남빛 보자기로 이어 간다(그때 APPEARANCE 문장과 카드 필요 여부를 다시 정한다).
+
+## 10-6. 처리 — FLASHBACK-INSERT (P52 회상 인서트)
+- P33과 **같은 구도, 조금 더 가깝게**(미자의 왼손이 닫힌 쌀통 뚜껑을 누름, 약지 흰 띠). 패널 전체에 아래 문장을 붙인다:
+  `a brief memory insert: the whole image is desaturated to near-greyscale with only a faint warm sepia trace of the lamp light, a soft dark vignette closing in from the edges, slightly soft focus toward the borders, still and silent; no frame lines, no caption`
+- 회상 안에는 채도 높은 점(빨간 고무줄·옥)이 없다. 새롬의 손은 빼거나 흐린 가장자리에만. 뷰어 쪽 처리는 letterer 소관 — 이미지에는 글자 없음.
+
+## 10-7. EP02 기존 소품 재사용 메모
+- PROP_ENVELOPE (빈 것): P01–02·P04(형태만)·P06·P09·P24·P26 — 하린 것과 우진 것은 **완전히 같은** 봉투(P09 탑다운 두 개 나란히).
+- PROP_BRACELET_COPY: **P17에서만** 보임 — §5-5 "같은 각도·같은 크기" 문장 그대로(납작한 금색 칠 선, 흰 구름 무늬 없음). 흰 무늬가 그려지면 재그림(TW6).
+- PROP_RING_MARK: P27(작게)·P33·P43·P52. 반지 금지.
+- PROP_SPOONS: P28 하린 숟가락 끝은 밥그릇에 가림(휜 끝 노출 금지, W5). P37 아버지 = 곧은 숟가락, EP01 P23과 같은 구도.
+- PROP_BLACK_PUFFER: S1·S2 우진 착용, S3–S4 우진 의자 등받이.
+- 장바구니(P44): `a plain navy cloth shopping bag`(MIJA_OUT 문장의 그것) — 안의 물건은 무지 봉지·채소 정도, 상표 없음.
+
+## 10-8. 플래그 (EP02 · art-director)
+
+| # | 내용 | 제안 |
+|---|---|---|
+| AE1 | EP01 P57–60에서 현관문은 **열려** 있었는데 EP02 비트시트 S1은 "현관문은 닫힘" | panel-director가 정한다. 권장: P01에서 이미 닫힘(우진이 들어오며 닫음) — 간유리 밖 남색 + 가로등 번짐 |
+| AE2 | EP01 P57에서 하린 백팩은 **턱 위 옆에 내려놓음** | S1 하린 = COMMUTE, 백팩은 메지 않고 옆에 놓인 채(비트시트 "백팩 없음" = "착용 안 함"으로 해석). character-sheets §7 표 반영 |
+| AE3 | P58 손바닥이 **나무 문틀** 위에만 있으면 마당 쪽(P60·P62)에서 손 그림자가 안 보인다 | 권장: `her palm flat on the wooden frame with her fingertips spreading onto the edge of the frosted glass` — P58·P60·P62 공통 |
+| AE4 | 신발 연속성 | S1(15일, 아버지 근무) = 아버지 검은 구두 **없음**(EP01 P57과 같음). S6(18일, 아버지 휴무·집에 있음) = 굽 닳은 검은 구두 **있음**, 우진 흰 스니커즈 있음, 미자 슬리퍼는 신고 나감 |
+| AE5 | 비트시트 S2 머리말 "팔찌 P16–P18" ↔ 체크리스트 "P17만" | **P17만 보임**으로 고정. P18 팔찌는 화면 밖, P19 소매를 끌어내림 = 숨김 |
+| AE6 | P08 우진 "후드를 쓴 채" | P08만 후드 씀, P09부터 벗음(앉으며 젖힘) — 씬 안에서 다시 쓰지 않는다 |
+| AE7 | P30 비트시트 "코믹 속도선" | §1·§8-3 만화 효과 금지와 충돌 → 속도선 없이 의자 기울기·약한 움직임 흐림으로 |

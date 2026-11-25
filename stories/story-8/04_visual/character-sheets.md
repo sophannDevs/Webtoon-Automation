@@ -237,3 +237,108 @@ an elderly Korean woman in her 70s, short white tightly permed hair, small creas
 | A4 | `PROPS_keyprops` 선택 카드 | 리더 승인 시 Flow 카드 13장(인물 12 + 소품 1) |
 | A5 | 뒷방 서랍 위치를 "왼쪽 줄, 위에서 두 번째 칸"으로 고정(world "왼쪽 위에서 두 번째"의 해석) | panel-director·prompt-smith는 이 해석으로 통일 |
 | A6 | 레퍼런스 시트는 각 인물 EP01 주 의상 2종에 걸쳐 나눴다(하린 COMMUTE/HOME, 우진 OUT/HOME) | 한 시트에 의상 2개를 섞지 않고 두 의상 모두 시각 기준을 갖게 함 |
+
+---
+---
+
+# EP02 additions (2026-11-25) — 「엄마는 웃고 있었다」
+
+- 작성: art-director · Phase 4 · 입력 `ep02_beatsheet.md`(F6·F8·F9), `ep02_script_final.md`, brief 판정 EA–EC. 짝: `style-bible.md` "EP02 additions"(§10).
+- **위 EP01 섹션(§0–§6)은 바꾸지 않았다.** APPEARANCE 문장·의상 영문 문장·WRIST RULE은 글자 그대로 재사용한다.
+- **신규 의상 없음 · 신규 인물 토큰 없음**(냄비 공장 사장은 얼굴 없는 원경 — style-bible §10-5 문장만).
+
+## 7. EP02 의상 · 등장 · 패널별 표 (P01–P62)
+
+약어: H = HARIN · U = UJIN · I = INHO · M = MIJA · S = SAEROM. 의상 코드는 §1의 영문 문장을 그대로 쓴다. "(손)" = 손·소매만, "(실루엣)" = 간유리 실루엣.
+우진 손목: 별도 표기 없으면 WRIST RULE "팔찌 숨김"(`his left wrist is hidden inside his sleeve, no bracelet visible`).
+
+### S1 · 15일 21:40 · LOC_HOME_ENTRANCE (EP01 P57–60 직결)
+| P | 인물 · 의상 | 추가 |
+|---|---|---|
+| P01 | H HARIN_COMMUTE (턱에 앉음) · U UJIN_OUT (검은 백팩 멤) | 하린 백팩은 메지 않고 턱 위 옆에 놓임(AE2), 낡은 흰 운동화는 턱 아래 바닥 · 우진 오른손에 빈 봉투(반창고 보임), 팔찌 숨김 필수 |
+| P02 | U UJIN_OUT | 오른손이 봉투를 패딩 안주머니에 넣음, 팔찌 숨김 필수 |
+| P03 | U UJIN_OUT (등) · H HARIN_COMMUTE | 우진 흰 스니커즈는 벗어 시멘트 바닥에 |
+| P04 | H (손) HARIN_COMMUTE — 오른손이 조끼 주머니 속을 쥠 · U (등) UJIN_OUT · M 화면 밖 | 주머니 속 봉투는 형태만 |
+| P05 | U (등) UJIN_OUT · H (등) HARIN_COMMUTE | |
+| P06 | H (손) HARIN_COMMUTE — 회색 후드 소매 | 바닥: 하린 낡은 흰 운동화 + 우진 흰 스니커즈 나란히 · 빈 봉투 |
+
+### S2 · 16일 새벽 · LOC_ALLEY_STAIRS
+하린 HARIN_COMMUTE **백팩 없음** · 우진 UJIN_OUT **백팩 없음**, P08만 후드 씀(AE6).
+| P | 인물 | 추가 |
+|---|---|---|
+| P07 | H | 무릎 위 두 손에 빈 봉투 |
+| P08 | U (후드 씀, 두 손 패딩 주머니) · H | |
+| P09 | U (손) · H (손) | 탑다운: 같은 빈 봉투 두 개 · 프레임 끝에 하린 낡은 흰 운동화 + 우진 흰 스니커즈 앞코 |
+| P10–P14 | U · H (P11·P12 = U 단독, P13 = H 단독) | 팔찌 숨김 · 손가락 틈 연기(P12–14) |
+| P15 | H · U (전경 왼소매) | 우진이 왼손을 무릎 사이로 감춤 |
+| P16 | H · U | 우진 오른손 반창고 보임 |
+| P17 | U (왼손목·오른손) | **팔찌 보임 (복제품)** — 패딩 소매와 후드 소매를 걷어 올림, style-bible §5-5 각도·크기 + PROP_BRACELET_COPY 문장 · 이 회차 유일한 팔찌 노출 |
+| P18 | H | 팔찌는 화면 밖(AE5) |
+| P19 | U · H | 우진이 소매를 끌어내림 = 팔찌 숨김 |
+| P20–P25 | U · H (P21 = H 단독) | 팔찌 숨김 · P24 하린이 빈 봉투를 쥠 |
+| P26 | U · H (원경 실루엣) | 두 사람이 봉투를 주머니에 넣음 |
+
+### S3 · 17일 18:40 · LOC_HOME_TABLE · 전원 집옷
+H HARIN_HOME · U UJIN_HOME (+ 의자 등받이에 검은 숏패딩) · I INHO_HOME · M MIJA_HOME (머스터드 앞치마) · S SAEROM_HOME.
+| P | 인물 | 추가 |
+|---|---|---|
+| P27 | 전원 | 미자 왼손 약지 흰 띠 작게 · 쌀통 배경(닫힘) |
+| P28 | H (손, 오트밀 카디건 소매) · U (손, 차콜 후드 소매) + 두 눈 | 하린 숟가락 끝 밥그릇에 가림 |
+| P29 | S | 노란 별 머리핀(오른쪽 귀 위) |
+| P30 | U · S | S 철제 의자에서 일어나 까치발 |
+| P31 | 전원 | |
+| P32 | S · M (등) | 쌀통 화면 중심, 뚜껑 닫힘 |
+| P33 | M (손, 핑크베이지 카디건 소매) · S (손, 연코랄 후드 소매) | 왼손 약지 흰 띠, 펜던트 빛 정면 · 뚜껑 닫힌 채 누름 |
+| P34 | 전원 (M 뒷모습·옆얼굴 일부) | 미자 정면 무표정 금지(P61 전용) |
+| P35–P36 | M (+ S / 배경 I) | |
+| P37 | I (손, 진갈색 니트 소매) | 오른손 엄지 옆 굳은살, 곧은 숟가락 |
+| P38 | 전원 | EP01 P24와 같은 정면 와이드 |
+| P39 | H · U | |
+| P40 | I (일어서 나감, INHO_HOME 그대로) · M · S · H (전경) | 우진은 화면 밖이거나 배경 · INHO_GUARD 쓰지 않음(갈아입는 건 화면 밖) |
+
+### S4 · 17일 ~19:30 · LOC_HOME_TABLE 싱크대 쪽
+| P | 인물 | 추가 |
+|---|---|---|
+| P41 | H HARIN_HOME (카디건 소매 걷음) · U UJIN_HOME (**오른쪽 소매만** 걷음, 왼손목 소매 안) · 배경 M · S | 아버지 빈 자리 + 반쯤 남은 밥그릇 · 소매를 걷은 하린 오른팔 안쪽 화상 자국은 보여도 됨 |
+| P42 | H HARIN_HOME | 거품 묻은 손 |
+| P43 | M MIJA_HOME · S SAEROM_HOME (하린 어깨 너머) | 식탁 위 미자 왼손 흰 띠 |
+
+### S5 · 18일 노을 · LOC_ALLEY_STAIRS
+| P | 인물 | 추가 |
+|---|---|---|
+| P44 | H HARIN_COMMUTE **백팩 없음** + 남색 무지 천 장바구니(MIJA_OUT 문장의 `a plain navy cloth shopping bag`) · YAI 토큰(§2-2) | 할머니는 평상, 귤 |
+| P45 | H (전경 귀퉁이 작게, 같은 차림) · 원경 냄비 공장 사장(style-bible §10-5) | 얼굴 없음, 1/10 이하 |
+
+### S6 · 18일 21:15 · LOC_HOME_ENTRANCE 안쪽 · L-ENTRANCE-EVENING
+하린 HARIN_COMMUTE **+ 검은 백팩 멤**(출근 직전) · 미자 MIJA_HOME **앞치마 그대로 + 회색 슬리퍼** + PROP_PHONE.
+| P | 인물 | 추가 |
+|---|---|---|
+| P46 | H · M | 미자 밝은 웃음, 휴대폰 화면은 가슴 쪽 · 바닥에 아버지 검은 구두·우진 스니커즈(AE4) |
+| P47 | M (실루엣) · H (전경 등) | |
+| P48 | H · M (실루엣, 귀에 휴대폰) | |
+| P49 | H (손) | 회색 후드 소매 끝, 오른쪽 팔뚝 안쪽 화상 자국 |
+| P50–P51 | H · M (실루엣) / P51 = M 실루엣 단독 | |
+| P52 | M (손, 회상) | MIJA_HOME 카디건 소매 + 흰 띠 · style-bible §10-6 처리 |
+| P53 | H | 등 뒤 흐린 실루엣 |
+| P54 | H (손 + 입) | 백팩 어깨끈을 쥔 손 |
+| P55–P57 | H · M (실루엣; P57 한 뼘 거리, 더 또렷) / P56 = H 단독 | P55 한쪽 운동화 끈 풀림 |
+| P58 | H (손) · M (실루엣 뒷모습) | 손바닥 = AE3 |
+
+### S7 · 18일 ~21:20 · LOC_HOME_YARD · L-YARD-NIGHT
+| P | 인물 | 추가 |
+|---|---|---|
+| P59 | M MIJA_HOME (앞치마, 회색 슬리퍼) | 휴대폰을 가슴에 누름(화면 몸 쪽), 옆얼굴 반만, 입김 |
+| P60 | M (어깨·뒷머리) · H (실루엣) | 하린 실루엣 = 낮은 포니테일 + 백팩 어깨끈 + 손가락 그림자 |
+| P61 | M | MIJA_expressions "웃음이 멈춘 얼굴" — 반달 눈 없음, 눈물 없음 |
+| P62 | H (실루엣) | 문 앞 바닥에 미자 슬리퍼 그림자 끝만 |
+
+**EP02에 나오지 않는 것:** HARIN_FACTORY · INHO_GUARD · MIJA_OUT(인물 의상으로는 미사용, 장바구니만) · SAEROM_SCHOOL · SEOKGU 전부(목소리도 없음) · TAK.
+
+## 8. EP02 레퍼런스 카드 판정
+
+- **신규 카드 없음.** EP01 카드 12장 + `PROPS_keyprops`를 그대로 쓴다.
+  - 냄비 공장 사장 = 얼굴 없는 원경(P45) → 카드 불필요(판정 EA). EP03에서 얼굴이 나오면 그때 토큰·카드를 정한다.
+  - 쌀통·휴대폰·장바구니 = 단순한 무지 물건, 문장만으로 충분(PROPS_keyprops 갱신 불필요).
+  - 할머니(P44) = 배경, 대사 없음 → EP01 판정 그대로 카드 없음.
+- 첨부 권장(prompt-smith): 인물 얼굴 컷 = 그 인물의 `_turnaround` + `_expressions` · P17 = `UJIN_turnaround` + `PROPS_keyprops`(복제 팔찌) · P06·P09 = `PROPS_keyprops`(빈 봉투) · P33·P52 = `MIJA_turnaround`(왼손 흰 띠) · P61 = `MIJA_expressions`(웃음이 멈춘 얼굴) · 실루엣 컷(P47–58의 미자, P60·P62의 하린)과 P45 원경에는 붙이지 않는다(작게·흐리게 그려야 하므로).
+- 주의: `MIJA_turnaround`는 앞치마 차림이라 S6–S7과 맞다. `HARIN_turnaround`는 백팩 없는 COMMUTE — S6 백팩은 프롬프트 문장으로 더한다.

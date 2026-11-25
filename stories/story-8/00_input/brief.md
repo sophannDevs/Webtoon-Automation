@@ -120,3 +120,38 @@ AC. A1–A6 accepted. 12 reference cards (6 main × turnaround + expressions, 16
 AD. FL1: style-bible wins — every panel image is 9:16 portrait in Flow (never mixed). The shot list's tall/normal/short stays as a framing/rhythm note only (crop-free; composition fills 9:16).
 AE. FL3: HARIN_FACTORY outfit includes a plain black backpack (no logo); prompt-smith writes it into her factory-outfit prompts.
 AF. FL4: the shot list's back-room staging is canon for EP01 (Ha-rin back to curtain, uncle back to wall, low drawer chest on screen right from her view with the key drawer = left column second from top of that chest, safe screen-left). FL2, FL5–FL8 accepted.
+
+---
+
+# EP02 (2026-11-25) — Phase 0 case 2 (new episode)
+
+- User: EP01 images are NOT made yet (ep01_flow_status.md = WAITING_FOR_IMAGES). Create EP02's beat sheet, Khmer script,
+  native Khmer review, shot list, lettering, Flow prompts and handoff page now. **Do not touch EP01 files.**
+- Episode: EP02 (NN = 02) 「엄마는 웃고 있었다」. Branch `story-8`.
+- Reuse (read, do not redo): `02_story/*`, `04_visual/style-bible.md`, `character-sheets.md`, `refs/ref_prompts.md`.
+  EP02 adds only what is new (new location/prop/outfit tokens; a reference card only for a new character who shows a face).
+- Follow series-arc.md EP02 (15th 21:40 → 16th dawn stairs → 17th dinner → 18th 21:15 yard phone call), twist-plan.md §4 EP02
+  (incl. D1/D10: the uncle never names Ha-rin on the phone; "안 팔았어. 맡긴 거야." លក់/បញ្ចាំ pun; copy-bracelet small twist),
+  tension-curve.md EP02 notes (T2: start at 9 straight from EP01 P60, door stand-off short (5–6 panels, U-jin "몰라."),
+  then drop to the 16th-dawn stairs valve at ~3).
+- 50+ panels (target ~60), one main twist (mother pays too, sold her ring, pays longest), cliffhanger type B = the series'
+  ONLY cut on dialogue heard through a door (Ha-rin's silhouette behind the frosted entrance glass).
+  One warmth beat + one small win. Plants for EP03: the 냄비 공장 사장 mention + father's spoon; "전화 한 통 안 오게";
+  Sae-rom's 「삼촌은 나 맨날 애기 취급해~」 (L14); rice-bin lid 「거기 손대지 마!」.
+- Continuity: EP01 final script/lettering are canon (letter-identical where repeated). Khmer clue rules from twist-plan §6
+  and glossary_km.md still bind (វា / ក៏…ដែរ only in EP01 P52; អាតូច not before EP04; លក់ vs បញ្ចាំ; រឿងនោះ; no amounts/currency).
+- Locations: reuse the 6 LOC_* tokens. A new location (e.g. the yard for the phone call) only if it cannot be staged in an
+  existing one; flag it so art-director writes a token. The 냄비 공장 사장 appears at most as a faceless distant cameo in EP02
+  (no reference card needed); his name and Khmer-reading check are needed only if he is named in dialogue.
+
+## EP02 leader rulings after ep02_beatsheet.md (2026-11-25) — all flags accepted
+EA. 62 panels; keep optional P23 (cut it only if the shot list needs room). New location LOC_HOME_YARD (outside reverse of the entrance; P59–62) approved; art-director writes its token. New props PROP_RICE_BIN (never open in EP02) and PROP_PHONE (screen never visible); pot-factory boss = one faceless distant figure, unnamed, no reference card.
+EB. F1/F7 accepted (16th dawn = Ha-rin awake from night-shift habit; no laundry day on the 18th). Q2: durations (이 년 / 일 년 좀 넘었어 / 이 년 반) are fine — they are not money amounts. Q3: 「전화 한 통 안 오게」 stays only in the phone call (P57). Q5: letterer decides the through-door bubble style within what km_tool supports.
+EC. លក់ for Mi-ja's ring (sold) at P51 and បញ្ចាំ for U-jin's bracelet (pawned) at P16 — the pun depends on keeping them distinct. Father says 「…됐다」 (not a repeat of 「끝난 얘기다」).
+
+## EP02 leader rulings after art-director's EP02 additions (2026-11-25) — AE1–AE7 accepted
+ED. AE1 the entrance door is already closed at P01 (U-jin closed it coming in). AE2 Ha-rin's backpack lies beside her in S1, not worn. AE3 her fingertips spread onto the glass edge at P58/P60/P62 so the hand shadow reads from the yard. AE4 father's shoes absent on the 15th, present on the 18th. AE5 copy bracelet visible at P17 only. AE6 U-jin's hood up only at P08. AE7 no comic speed lines at P30 (chair tilt + slight motion blur). If ep02_shotlist.md differs, prompt-smith follows these rulings.
+
+## EP02 leader rulings after ep02_shotlist.md (2026-11-25)
+EE. FL3 overrides ruling ED/AE1: the entrance door stays OPEN in panels 001–003 to match EP01 P57–60 canon (direct continuation); it is closed in S6 (from 046/047). Prompt-smith follows the shot list here.
+EF. FL2, FL4–FL9 accepted. Attach PROPS_keyprops to 017, 033, 052 and MIJA_expressions to 061. Copy bracelet visible only at 017 (pull-down at 019); AE3 fingertips-on-glass applies to 058/060/062.
