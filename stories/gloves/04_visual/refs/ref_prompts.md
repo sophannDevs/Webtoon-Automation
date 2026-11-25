@@ -7,7 +7,7 @@
 
 ## How to make the reference cards
 
-**Before you start.** In Flow, pick one image model that accepts reference images, and keep that same model for all 10 cards and all 62 panels (changing model changes the drawing style). For every card, make **4 variations** and keep the one that matches the description most exactly, not the prettiest one.
+**Before you start.** In Flow, pick one image model that accepts reference images, and keep that same model for every card and every panel of every episode (changing model changes the drawing style). For every card, make **4 variations** and keep the one that matches the description most exactly, not the prettiest one.
 
 **Order of work.**
 
@@ -15,6 +15,7 @@
 2. `PETRA_expressions` (attach `PETRA_turnaround`), `HUGO_expressions` (attach `HUGO_turnaround`), `HUGO_hands` (attach `HUGO_turnaround`), `PETRA_hands` (attach `PETRA_turnaround`).
 3. The three places: `LOC_GREENHOUSE`, `LOC_BENCH`, `LOC_STUDY`. Attach nothing. These are empty rooms with no people.
 4. `MOTHER_ref`. Attach nothing (attaching Petra would make the mother look like her). When it is done, put it next to `PETRA_turnaround`: the two women must not look alike.
+5. EP2 cards (added 2026-11-25, see "EP2 cards" at the end of this file), after the ten above: `HUGO_left_hand` (attach `HUGO_turnaround` and `HUGO_hands`), then `MAID_ref` (attach nothing), then `EP2_props` (attach nothing). EP2 panels must not start before `HUGO_left_hand` is saved.
 
 Attach only what a card's `attach:` line says, and set the aspect ratio to 16:9 each time.
 
@@ -33,7 +34,7 @@ Attach only what a card's `attach:` line says, and set the aspect ratio to 16:9 
 3. If the whole image comes out mirrored (thread or glove on the wrong side), do not flip it in an editor. Generate again.
 4. After 3 tries, keep the best one and tell Claude which view is off. It will be noted and checked again on the panels.
 
-**Saving.** Save each card as PNG with the exact name in its `output:` line, in `_workspace/04_visual/refs/` (for example `PETRA_turnaround.png`). Or download them into `_workspace/_inbox/` in the order below and say "import the inbox". When all 10 are saved, say "images are ready" ("이미지 다 넣었어").
+**Saving.** Save each card as PNG with the exact name in its `output:` line, in `_workspace/04_visual/refs/` (for example `PETRA_turnaround.png`). Or download them into `_workspace/_inbox/` in the order below and say "import the inbox". When all the cards are saved (10 for EP01, plus 3 more for EP02 — see step 5), say "images are ready" ("이미지 다 넣었어").
 
 ## Card list
 
@@ -102,4 +103,44 @@ Attach only what a card's `attach:` line says, and set the aspect ratio to 16:9 
 ### MOTHER_ref
 - prompt: "Character reference sheet, polished Korean romance-fantasy webtoon (manhwa) style: clean fine dark-brown lineart, soft cel shading with subtle painterly gradients, early-19th-century European clothing, realistic proportions; even neutral studio light, plain light warm-grey background with only a plain wooden chair and a small-paned window. Left two thirds: two seated upper-body views of the same woman, front and three-quarter, in the chair by the window, hands resting on her knees; right third: close-up of both hands on her knees. A woman in her early 50s, small and softly rounded, round soft face, heavy-lidded dark-brown eyes, weathered light skin with fine lines, dark brown hair heavily streaked with grey in a low bun under a plain linen cap; dark slate-blue wool dress, faded mustard-ochre knitted shawl; quiet, accepting expression, no resentment. On BOTH hands the first segment of the thumb, index and middle fingers is matte dull ash-grey all around, dry like a withered petal, not silver, not white, no black outline, with faint grey hairline threads up to the second knuckle; ring and little fingers clean; normal nails. No oversized anime eyes, no glow, no tattoos or runes on skin, no red or crimson clothing, no grid lines, arrows or measurement marks. Avoid: any text, labels, speech bubbles, watermark."
 - output: _workspace/04_visual/refs/MOTHER_ref.png
+- aspect: 16:9
+
+## EP2 cards (added 2026-11-25)
+
+- Written by: ref-sheet-artist, 2026-11-25 (EP02, Flow-by-hand mode, Khmer edition). Source: `04_visual/character-sheets.md` "EP02 additions" E2-1, E2-3, E2-6; `04_visual/style-bible.md` "EP02 additions" E-3, E-4; leader rulings EH (AE1-AE10) in `00_input/brief.md`.
+- The ten cards above are unchanged. Make these after them, in this order. **EP2 panels must not start before card 13 `HUGO_left_hand` is saved** (it fixes clue 3 and the twist strand).
+- Same rules as above: one image model, 16:9, 4 variations, keep the most exact one, attach only what the `attach:` line says, no writing anywhere.
+
+| # | Card (= file name) | Aspect | Attach when making | What it fixes for EP2 |
+|---|---|---|---|---|
+| 13 | `HUGO_left_hand` (required) | 16:9 | `HUGO_turnaround`, `HUGO_hands` | His bare LEFT hand (P11-P22): darker and denser veins than the right hand, the ring/little-finger-to-thumb-side landmark root, thick roots running under the cuff; and the one neck strand on the LEFT side of his neck (P45, also the EP8/EP11 height baseline). |
+| 12' | `MAID_ref` (required, EP2 layout) | 16:9 | none | The glove maid's face for close shots (P33-P39) and her two ash-grey RIGHT fingertip pads. No tray. |
+| 14 | `EP2_props` (recommended) | 16:9 | none | Failed-glove box with the darned glove, black stitch band with looped end, three-seal blank contract, chalk hand pattern with leather bundle. If skipped, P6, P23, P30 and P34 are the anchors. |
+
+**Check card 13 before saving.**
+
+- Views one to three are clearly darker and denser than the right hand on `HUGO_hands` (put the two cards side by side).
+- The landmark root runs from the ring and little-finger knuckles toward the thumb side of the wrist (not a copy of the right hand's index/middle-to-little-finger root).
+- Thick roots cross the wrist and go under the cuff. The cuff is down; no forearm skin anywhere. View three has no clean pulse spot.
+- View four is seen from his LEFT side (if he is drawn from his right side, discard it). Exactly ONE hair-thin strand on the neck below the left earlobe, forking once, tip just above the cravat edge. Collar and cravat closed, no unbuttoning, no collarbone or chest. Face, jaw and ears clean. His left hand in view four is gloved.
+- Veins never look like letters, runes, tattoos or a symmetric pattern; nothing glows; skin is not grey. Same man as `HUGO_turnaround` (the lock over his right brow may be hidden in view four).
+
+**Check card 12' before saving.** Four views are the same adult woman; she does not look like Petra (soft arched pale auburn brows, round face, auburn hair under a cap vs Petra's straight dark brows, squared jaw, honey-brown bun); ash-grey only on the RIGHT index and middle fingertip pads, the same grey as `PETRA_hands` view three; worried, never resentful or afraid; bottle-green dress, white apron and cap. If this card is ever attached to EP1 P3 (before the accident), that panel prompt must say her fingertips are clean.
+
+**Check card 14 before saving.** No writing-like marks on the parchment or paper; no letters or patterns in the wax seals (thimble seal = round dimpled dots, one rose); the black stitches read as a band, at least as texture (not separate X marks); the gloves in the box differ pair to pair; no crimson anywhere.
+
+### HUGO_left_hand
+- prompt: "Hand and neck reference sheet, polished Korean romance-fantasy webtoon (manhwa) style: clean fine dark-brown lineart, soft cel shading with subtle painterly gradients, skin textures; even neutral studio light, plain light warm-grey background. Four close-ups in a row of the attached man. One: his bare LEFT hand, back view, white shirt cuff at the wrist. Two: that hand palm up. Three: close-up of that inner wrist, palm up, cuff down. Four: seen from his LEFT side, head to chest, left arm raised sideways to shoulder height, black-gloved, looking at that hand. Left hand: pale cool-toned skin, never grey; matte ink-black veins under the skin, branching like tree roots, visibly darker and denser than his right hand; fingertips nearly ink-black; one thick root runs from the ring and little-finger knuckles diagonally to the thumb side of the wrist; denser fine strands on the palm; the roots stay thick at the wrist, two or three cross it and vanish under the cuff; no clean pulse spot; forearm never shown. Four: below his left earlobe, just above the ivory cravat edge, where the raised arm shifts the collar point and cravat aside a finger-joint, one hair-thin matte ink-black strand creeps up from under the cravat like a root tip, forking once at its tip, tip half a finger-joint above the edge; collar and cravat closed. No veins on face, jaw, ears or elsewhere on the neck. No glow, runes, tattoos, symmetric patterns, grid lines or arrows. Avoid: any text, labels, speech bubbles, watermark."
+- attach: refs/HUGO_turnaround.png, refs/HUGO_hands.png
+- output: _workspace/04_visual/refs/HUGO_left_hand.png
+- aspect: 16:9
+
+### MAID_ref
+- prompt: "Character reference sheet, polished Korean romance-fantasy webtoon (manhwa) style: clean fine dark-brown lineart, soft cel shading with subtle painterly gradients, fabric and skin textures, early-19th-century European clothing, mature adult, realistic proportions; even neutral studio light, plain light warm-grey background. Four views of the same young woman in one row: one, front full body head to shoes, standing, both hands loosely clasped in front, backs of the hands showing; two, three-quarter upper body, shy polite face, eyes lowered; three, front head and shoulders, worried and earnest, brows lifted, no resentment, no fear; four, close-up of her RIGHT hand palm up at a white cuff. A household maid, clearly adult woman in her mid-20s, slim, a little shorter than average; round soft face, small rounded nose, light freckles scattered across her nose and cheeks; softly arched pale auburn brows; round light-brown eyes; auburn-chestnut hair in a neat bun under a white mob cap, a few loose auburn wisps at the cap's edge; dark bottle-green manor uniform dress, white apron, white cuffs; bare hands, no tray. Only the palm-side pads of her RIGHT index and middle fingertips are matte dull ash-grey, dry like a withered petal, not silver, not white, no black outline; thumb, ring and little fingers and the whole left hand clean, normal nails. No childlike faces, no oversized anime eyes, no glow, no tattoos or symbols on skin, no red or crimson, no grid lines, arrows or measurement marks. Avoid: any text, labels, speech bubbles, watermark."
+- output: _workspace/04_visual/refs/MAID_ref.png
+- aspect: 16:9
+
+### EP2_props
+- prompt: "Prop reference sheet, polished Korean romance-fantasy webtoon (manhwa) style: clean fine dark-brown lineart, soft cel shading with subtle painterly gradients, leather, wood, paper and silk textures; even neutral studio light, plain light warm-grey background. Four still lifes in a row, seen from workbench height, no people, no hands. One: an old plain wooden box, lid open, unmarked, holding about ten pairs of black kid gloves piled up, each pair slightly different in leather grain, cut and cuff shape, every fingertip charred matte black-grey and split like dry bark; on top one glove whose split index fingertip is clumsily darned with black thread, uneven crooked stitches pulled too tight, the leather puckered. Two: a flat narrow cuff band of matte black kid leather with a continuous border of black silk cross-stitch with a faint silk sheen, one finger-joint wide, reading as a decorative band, not separate crosses, the thread tail wound into one small loop at one end; beside it a glover's needle and a black silk spool. Three: a blank sheet of pale parchment softly creased in quarters, three wax seals in a row: amber-brown thimble-pitted wax, black rose-stamped wax, and beside the rose a fresh glossy amber-brown thimble-pitted seal. Four: plain brown paper with only a chalk outline of a left hand, beside it a folded bundle of black kid leather skins tied with plain undyed string. No writing, stamps, numbers or measurement lines, no red or crimson, no smoke. Avoid: any text, labels, speech bubbles, watermark."
+- output: _workspace/04_visual/refs/EP2_props.png
 - aspect: 16:9

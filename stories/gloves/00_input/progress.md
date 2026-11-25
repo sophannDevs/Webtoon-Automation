@@ -28,3 +28,9 @@ Request: "Make a new fantasy romance webtoon, Episode 1, ages 18+"
 ## (old list, done above) Remaining
 - Phase 3 story team: concept -> world -> characters -> series-arc -> twist-plan + tension-curve -> beatsheet -> script -> script_final (with KM lines) + glossary_km
 - Phase 4 visual team (Flow mode, no panel-artists): style-bible, character-sheets, refs/ref_prompts, shotlist, lettering (km_tool check), prompts, handoff page -> STOP and wait for the user's Flow images
+
+# EP02 (2026-11-25) 「원하는 손만」
+- `_workspace` re-pointed to `stories/gloves` by hand (switch_story.sh's `ln -sfn` fails on Windows over the existing junction: `cmd /c rmdir _workspace` + `mklink /J`).
+- Beatsheet (56), script, script_final, native Khmer review READY round 1 (gate OK), art additions (HUGO_LEFT_BARE, NECK_STRAND, maid, EP2 props, 3 light sentences), 3 new ref cards (13 HUGO_left_hand, 12' MAID_ref, 14 EP2_props), shot list (56), lettering (50 bubbles + 1 caption, km_tool check OK), prompts (56, ≤250 words, synced to lettering), handoff page 04_visual/ep02_flow_handoff.html. Status WAITING_FOR_IMAGES.
+- Placement pass later: P13, P23, P26, P30, P48 tight stacks; offline Khmer UI font wraps more (P09, P13, P18, P23, P26, P32, P48).
+- Script header/editor notes still quote pre-review Khmer for P07/P25/P47/P48 (KM lines are correct); fix together with any later script change, then re-run the Khmer review.

@@ -414,3 +414,159 @@ the steward: man in his 60s, tall and thin, slightly stooped, neatly combed whit
 | 7 | characters §7 리스크 1은 표정 레퍼런스 **4종**(기본, 도발/자조, 당황, 들킨 얼굴)을 권했다 | 6종으로 늘렸다(반전 쌍 `PE_TASK`/`PE_OPEN`, `HE_CRUMBLE`/`HE_ASKING`이 EP1 핵심 컷이라서). 4종은 모두 포함 |
 | 8 | characters §7 레퍼런스 세트 6종(`HANDS_ASH` 포함) | `HANDS_ASH`는 따로 만들지 않고 `PETRA_hands` + 선택 카드 11·12로 나눴다(카드 수 절약). 나머지 5종은 같은 내용 |
 | 9 | **P45 ↔ P49 화면비** (style-bible §13-1) | 두 컷을 같은 비율로. panel-director 확정 |
+
+---
+
+## EP02 additions (2026-11-25)
+
+- 작성: art-director · 2026-11-25 · EP02 「원하는 손만」 추가분. **위의 EP1 토큰(FULL · PANEL · MIN · 표정 · 카드 1–12 사양)은 바꾸지 않았다.** EP2는 그것을 그대로 쓰고, 새것만 여기에 더한다.
+- 입력: brief EP02 잠금 1–8 · RULINGS EA–EG, `03_episode/ep02_beatsheet.md` §1-3 · §2 · §6(V1–V3, P1), `02_story/characters.md` §5-2 · §6-2, `02_story/world.md` §2-2 · R5, `04_visual/refs/ref_prompts.md`.
+- 짝 문서: `style-bible.md` "EP02 additions (2026-11-25)" (빛 문장 E-1, 저주 토큰 `NECK_STRAND` E-3, 소품 E-4, 손 상태 코드 E-5, 매치 컷 E-6, 옷 결정 E-7).
+- **옷:** 두 주인공·하녀·집사·하인 모두 EP1 토큰의 옷 그대로(다음 날이어도 의상 변주 없음, style-bible E-7). 휴고의 깃과 크라바트는 P1–P56 내내 턱까지 닫혀 있다.
+
+### E2-1. 휴고: 맨 왼손 `HUGO_LEFT_BARE` [리더 V1 · EB]
+
+- **불변:** 왼손 핏줄은 **오른손보다 짙고 촘촘하다**, **손목에서 가늘어지지 않는다**(굵은 뿌리 두세 가닥이 커프 밑 소매 안으로), 랜드마크는 오른손과 다른 사선(**약지·새끼 마디 → 엄지 쪽 손목**, style-bible §7 `VEIN_LANDMARK`의 EP1 왼손 문장 그대로), **팔뚝은 보이지 않는다**(커프는 늘 내려와 있다).
+- 이 무늬가 단서 3(P12, 반전 33패널 앞)이다. 오른손과 같아 보이면 단서가 사라진다.
+
+**FULL (손 클로즈업 · 카드용)**
+```
+HUGO_LEFT_BARE: his bare LEFT hand, long elegant fingers, pale cool-toned skin, never grey, normal nails; matte ink-black veins (faintly blue-black) beneath the skin, branching like tree roots or ink bleeding in water, visibly darker and denser than on his right hand: the fingertips nearly solid ink-black, thick roots crowding the back of the hand, where one thick landmark root runs from the ring and little-finger knuckles diagonally toward the thumb side of the wrist; more fine strands on the palm than on his right palm; the roots do not thin at the wrist: two or three thick roots, the landmark root among them, cross the wrist and disappear under the white shirt cuff into the sleeve; the cuff stays down and the forearm is never shown; asymmetric and organic, never symbols, runes or letters; flat under the skin, not raised, not glowing
+```
+**PANEL (짧은 판)** — style-bible E-3 표의 문장과 같다.
+```
+his bare LEFT hand with matte ink-black root-like veins under pale skin, visibly darker and denser than his right hand, fingertips nearly ink-black, one thick root running from the ring and little-finger knuckles diagonally to the thumb side of the wrist; the roots stay thick at the wrist and two or three of them cross it and disappear under the white shirt cuff; the cuff stays down, the forearm is never shown; never runes or tattoos, not glowing
+```
+- **오른손과 나란히 보일 때(이 회차엔 없음, 참고):** 오른손 = 손목에서 머리카락 같은 가닥만, 손목 안쪽에 깨끗한 맥박 자리 한 점. 왼손 = 손목을 굵게 건너감, 손목 안쪽에 깨끗한 점 없음.
+- 패널: P11(드러나기 시작) · **P12** 손등(L) · P13–P14 · P15–P19 손바닥 위/종이 위 · P20–P21 손바닥 위로 내밀다 멈춤 · P22 다시 낌. 손 상태 코드 `H_REMOVING_LEFT` / `H_LEFT_BARE` / `H_REGLOVING_LEFT`(style-bible E-5).
+- 금지: 커프 걷기, 소매 속 팔뚝, 손목 위 핏줄이 소매 **밖으로** 보이는 것, 오른손 랜드마크(검지·중지 → 새끼 쪽) 복제, 빛남·부풂·괴물 손톱.
+
+### E2-2. 휴고: 목의 가닥 `NECK_STRAND` [리더 V2 · EB]
+
+- EN 문자열은 style-bible E-3 `NECK_STRAND`(전문)를 쓴다. 여기서는 **인물 쪽 고정값**만 적는다.
+- **자리:** 그의 목 **왼쪽**(정면에서 화면 오른쪽), 왼쪽 귓불 바로 아래 선, 크라바트 윗가장자리 바로 위. **하나**, 머리카락 굵기, 끝에서 한 번 갈라짐, 끝은 크라바트 가장자리 위 **반 마디**(EP2 기준 높이 = 시리즈 시계의 0점).
+- **조건:** 왼팔을 어깨높이로 든 자세 때문에 셔츠 깃 끝과 크라바트가 왼쪽에서 손가락 한 마디쯤 비켜난 **P45 한 컷에서만** 보인다. 깃은 열리지 않는다. 팔을 내리면(P46) 다시 가려진다.
+- **얼굴 · 턱 · 귀 · 목의 나머지는 깨끗하다.** `HUGO_expressions` 카드의 "clean unmarked face and neck"은 그대로 맞다(크라바트가 제자리일 때의 그림).
+- P45 표정: `HE_UNAWARE`(아래 E2-4) — 들린 자기 장갑 손을 보는 눈, 그녀의 시선을 모른다.
+
+### E2-3. 장갑 시중 하녀: 얼굴이 읽히는 크기용 보강 [리더 V3 · EB]
+
+EP1 토큰(§3-2)은 "둥근 얼굴, 옅은 주근깨, 흰 모자 속 적갈색 머리"까지라 미디엄 클로즈업(P34, P36, P37)에서 얼굴이 매번 달라질 수 있다. **디자인은 그대로 두고(characters §5-2) 얼굴 앵커만 더한다.** 더한 낱말은 art-director 추정이다(characters에 없음 → 리더 플래그 AE4).
+
+- **주 표지 (EP2부터 늘):** **오른손 검지·중지 손끝 바닥의 잿빛**(`ASH_GREY`, 페트라 검지·어머니와 **같은 값**). EP2에서는 쟁반이 없으므로 이것이 유일한 주 표지다.
+- **얼굴 앵커:** ① 코와 볼에 흩어진 옅은 주근깨 ② **부드럽게 휜 옅은 적갈색 눈썹**(페트라의 곧고 짙은 눈썹과 반대) ③ 흰 모자 가장자리로 빠져나온 적갈색 잔머리 몇 가닥.
+- **페트라와 구별:** 둥근 얼굴·작고 둥근 코·휜 옅은 눈썹·둥근 연갈색 눈·적갈색 머리·조금 더 작은 키 vs 각진 턱·곧은 짙은 눈썹·호박갈색 눈·꿀갈색 쪽머리.
+
+**FULL (카드용 · 얼굴 큰 컷)**
+```
+the glove maid: adult woman in her mid-20s, clearly adult, slim, a little shorter than Petra; round soft face, small rounded nose, light freckles scattered across her nose and cheeks; softly arched pale auburn brows; round light-brown eyes; auburn-chestnut hair in a neat bun tucked under a white mob cap, a few loose auburn wisps at the cap's edge; dark bottle-green manor uniform dress, white apron, white cuffs; bare hands; the palm-side pads of her RIGHT index and middle fingertips matte dull ash-grey, dry like a withered petal, not silver, not white, no black outline, all other fingers clean
+```
+**PANEL / MIN (EP2)**
+```
+the glove maid (adult woman, mid-20s; round face, light freckles across nose and cheeks, softly arched pale auburn brows, auburn wisps under a white mob cap; bottle-green uniform, white apron; bare hands, the pads of her RIGHT index and middle fingertips ash-grey)
+```
+- **EP2 손:** `the leather bundle carried across both forearms, not gripped with her fingers` (P34). P35 클로즈업에서 그녀의 잿빛 두 손끝과 페트라의 흔적 검지가 **같은 회색**이어야 한다. 두 사람의 맨손은 닿지 않는다.
+- **EP2 표정:**
+
+| 코드 | 패널 | EN |
+|---|---|---|
+| `MAID_SHY` | P34 | `shy politeness, eyes lowered, holding the bundle out across her forearms` |
+| `MAID_NOTICING` | P35 | `her eyes caught on Petra's fingertip, quiet recognition and worry` |
+| `MAID_PLEADING` | P36–P37 | `worried and earnest, lifting her greyed fingertips a little toward her chest, quick to defend the count, no resentment, no fear of him` |
+| `MAID_LOOKS_DOWN` | P39 (작게, 원경) | `head bowed, looking at her own fingertips` |
+
+- 금지: 원망·공포·그를 노려보는 얼굴, 앳된 얼굴, 잿빛이 손가락 둘 밖으로 번진 그림.
+
+### E2-4. EP2 표정 추가 (EP1 표정은 그대로 재사용)
+
+**재사용:** 페트라 `PE_OPEN`(P3), `PE_LEVEL`(P9 등), `PE_DARE_DRAWN`(P8), `PE_FLUSTERED` 계열(P15–P17 머무는 시선 + 귀 끝 홍조) · 휴고 `HE_WEARY`(P8, P25, P31), `HE_FIRST_LOOK`(P4: 손끝에서 얼굴로 올라갔다 다시 흔적으로), `HE_GUILT`(P18), `HE_ASKING`(P14, P20, P42), `HE_HELD_BREATH`(P54, 단 시선은 자기 가슴 위 그녀의 손).
+
+**새 코드:**
+
+| 코드 | 패널 | EN |
+|---|---|---|
+| `PE_RESOLVE` | P1–P2 | `lips closed, eyes steady and composed, the moment before a decision, faint flush still at her ear tips, not fleeing` |
+| `PE_NOT_YET` | P21 | `refusing without coldness: lips closed but jaw relaxed, eyes steady on his face, not looking away, not hurt, not angry` |
+| `PE_APPRAISING` | P24 | `one eyebrow raised, a craftsman's near-contempt for the clumsy repair, dry` |
+| `PE_PROUD` | P27 | `chin up, a craftswoman naming her price, confident` |
+| `PE_HIDE_CRIMSON` | P28 | `a brief flicker of hurt, then a set face` |
+| `PE_CRAFT_FOCUS` | P43, P52–P53, P55 | `absorbed craftsman's concentration, eyes on the knots, lips lightly pressed, open and calm, not the closed task face` |
+| `PE_SEEING` | P44 | `her eyes stopped mid-count, lifting from his sleeve toward his neck, fingers frozen on a knot` |
+| `PE_LOGIC_CRACKS` | P48 | `brows drawn together, mouth set, her certainty cracking, no tears` |
+| `HE_ACCEPTS` | P22 | `not hurt: a quiet accepting calm, the faintest lift at one corner of his mouth, eyes on the glove he is pulling on` |
+| `HE_SHEEPISH` | P25 | `faintly embarrassed dry half-smile, eyes on the repaired glove in her hand` |
+| `HE_EASE` | P40 | `the most at ease he has been, a faint real smile` |
+| `HE_UNAWARE` | P43–P45 | `looking at his own raised gloved hand, unaware of where her eyes have gone` |
+| `HE_PLAIN_TRUTH` | P47, P50 | `calm, eyes on her face, a plain truth, no self-pity, no pain on his face` |
+| `HE_QUIET_ASSENT` | P56 | `looking down at her, not at her hand: quiet assent more than surprise, a faint sadness, still` |
+
+- 휴고의 **통증 얼굴 금지**(찡그림, 가슴 움켜쥐기). `HE_CRUMBLE`은 EP2에 쓰지 않는다.
+- 페트라의 `PE_TASK`(닫힌 일의 얼굴)는 EP2에 쓰지 않는다(일의 손 그림 0).
+
+### E2-5. 집사 · 하인들 (EP2 변주)
+
+- 토큰은 §3-4 그대로. **집사는 무대사**, P33·P34·P39에 하녀 뒤 반 걸음.
+- 하인들 표정 (P33, P39): `turning their heads to each other and whispering, surprised and curious rather than afraid, bodies moving, all staying behind the white marble band` (EP1의 `frozen in disbelief`를 대신).
+
+### E2-6. 레퍼런스 카드 추가 (ref-sheet-artist 지시서) [리더 EB]
+
+**기존 카드 1–12의 사양과 `refs/ref_prompts.md`의 기존 블록은 바꾸지 않는다.** 아래 카드를 블록으로 **덧붙인다.** 공통 규칙은 §5-1 그대로(REF_STYLE → 내용 → 토큰 → REF_NEGATIVE, 마지막 문장 `Avoid: any text, labels, speech bubbles, watermark.`, 밝은 따뜻한 회색 바탕, 중립광, 글자·화살표·치수선 0, 변형 4장).
+
+| # | 카드 이름 (= 파일 이름) | 등급 | 비율 | 내용 한 줄 | 만들 때 첨부 | 주로 쓰는 패널 |
+|---|---|---|---|---|---|---|
+| 13 | `HUGO_left_hand` | **필수 (EP2)** | 16:9 | 맨 왼손 3칸 + 목의 가닥 1칸 | `HUGO_turnaround` + `HUGO_hands` | P11–P22, **P45** (이후 EP8 · EP11의 가닥 높이 기준) |
+| 12' | `MAID_ref` (EP2판 배치) | **필수 (EP2)** | 16:9 | 전신 + 3/4 상반신 + 얼굴 + 오른손 잿빛 손끝 | 없음 | P33–P39 (EP4 끝, EP12) |
+| 14 | `EP2_props` | 권장 | 16:9 | 무텍스트 소품 4칸 | 없음 | P5–P8, P19, P23–P27, P29–P32, P34–P41, P49 (대신: P6, P23, P30, P34를 앵커로) |
+
+#### 카드 13 `HUGO_left_hand` — 필수 (EP2) · 16:9 · 첨부 `HUGO_turnaround` + `HUGO_hands`
+- **배치:** 한 줄 4칸, 같은 바탕과 빛. ①–③은 `HUGO_hands`와 같은 크기·같은 높이(두 카드를 나란히 놓고 비교할 수 있게).
+- ① **왼손 등**, 손가락을 살짝 벌림, 손목에 흰 셔츠 커프와 미드나이트 블루 소매 끝. `HUGO_LEFT_BARE` FULL: 오른손보다 짙고 촘촘, 손끝은 거의 먹빛, **약지·새끼 마디에서 엄지 쪽 손목으로 내려가는 굵은 랜드마크 뿌리**, 그 뿌리를 포함한 굵은 뿌리 두세 가닥이 손목을 굵게 건너 **커프 밑으로** 사라진다.
+- ② **왼손 바닥**(손바닥이 위): 손끝 바닥은 짙고, 손바닥의 가는 가닥이 오른손보다 촘촘.
+- ③ **왼손목 안쪽 + 커프 클로즈업**(손바닥이 위): 굵은 뿌리가 손목 안쪽을 건너 커프 가장자리 밑으로 들어간다. **커프는 내려와 있다, 팔뚝은 보이지 않는다.** 깨끗한 맥박 자리 한 점은 **없다**(오른손 ③과의 차이).
+- ④ **`NECK_STRAND`**: 그의 **왼쪽**에서 본 머리·어깨·들린 팔(가슴 위까지), 왼팔을 어깨높이로 옆으로 든 자세(코트 소매), 고개는 들린 자기 장갑 손 쪽으로. 셔츠 깃 끝과 상아색 크라바트가 왼쪽에서 손가락 한 마디쯤 비켜났고, 그 가장자리 바로 위 왼쪽 귓불 아래 선에 **머리카락 굵기의 먹빛 가닥 하나**(끝에서 한 번 갈라짐, 끝은 크라바트 위 반 마디). 깃은 닫혀 있고 쇄골·가슴은 보이지 않는다. 얼굴·턱·귀는 깨끗하다. 왼손은 검은 장갑(이 칸은 반전 컷의 상태: 양손 장갑).
+- **카드에서 바꿀 문장:** `HUGO_hands`의 `No veins above the wrist.` 대신 `On the left hand the veins continue under the cuff; the forearm itself is never shown. No veins on his face, jaw or ears, and none on his neck except the one strand in the fourth view.`
+- **검수:** ①–③이 `HUGO_hands`의 오른손보다 **분명히** 짙다 / 랜드마크가 약지·새끼 → 엄지 쪽(오른손 랜드마크의 복제가 아님) / 굵은 뿌리가 커프 밑으로 들어간다 / 팔뚝 노출 0 / ④ 가닥이 **하나**, 목의 **왼쪽**(이 칸은 그의 왼쪽 옆모습이라 보이는 쪽 목이 곧 왼쪽. 오른쪽 옆모습으로 그려졌다면 버린다) / 깃 닫힘, 단추 풀림 0 / 핏줄이 글자·룬·대칭·문신 같지 않음, 빛나지 않음 / 피부가 회색이 아님 / 같은 사람(머리 한 가닥이 오른쪽 눈썹 위라 ④에서는 보이지 않아도 된다).
+
+#### 카드 12' `MAID_ref` (EP2판 배치) — 필수 (EP2) · 16:9 · 첨부 없음
+- 카드 12(§5-2)의 사양은 "쟁반 든 전신"이었다. EP2부터 그녀는 **사고 뒤**이고 쟁반 없이 나오므로 배치를 EP2판으로 정한다(리더 플래그 AE5). 파일 이름은 `MAID_ref` 그대로(EP1 카드 목록에서 빠져 있던 카드라 충돌하는 파일이 없다).
+- **배치:** 4칸. ① 정면 전신, 두 손을 앞으로 가볍게 모음(손등이 보인다) ② 3/4 상반신, 공손한 기본 얼굴(`MAID_SHY`) ③ 머리와 어깨 정면, `MAID_PLEADING`(걱정스럽고 진지함, 원망 없음) ④ **오른손 손바닥이 위인 클로즈업**: 검지·중지 손끝 바닥만 `ASH_GREY`, 나머지 손가락 깨끗, 흰 소맷부리.
+- 토큰: E2-3 FULL. 분명한 20대 성인.
+- **검수:** 네 칸이 같은 사람 / 성인 얼굴 / 페트라와 닮지 않음(눈썹·턱·머리색) / 잿빛은 오른손 검지·중지 바닥 둘뿐, `PETRA_hands` ③과 같은 회색 / 원망·공포 얼굴 아님 / 제복은 병 초록, 흰 앞치마·모자.
+- EP1 P3(사고 전, 쟁반)에 이 카드를 붙일 때는 그 패널 프롬프트가 "her fingertips clean"이라고 적어야 한다(카드의 잿빛 손끝이 사고 전 컷으로 새지 않게).
+
+#### 카드 14 `EP2_props` — 권장 · 16:9 · 첨부 없음
+- **판단:** 소품이 5–8패널씩 이어지고, 무텍스트(계약서 · 종이 본)와 검정 위 검정(띠)이 Flow에서 흔들리기 쉬운 것들이라 카드 하나가 값을 한다. 시간이 없으면 건너뛰고 각 소품의 첫 패널(P6, P23, P30, P34)을 앵커로 쓴다.
+- **배치:** 사람 없음, 4칸, 작업대 높이에서 본 정물, 밝은 따뜻한 회색 바탕, 중립광.
+- ① `FAILED_GLOVE_BOX` 뚜껑 열린 무지 나무 상자, 켤레마다 조금씩 다른 손끝 탄 검은 장갑 열 켤레 남짓 + 맨 위에 `REPAIRED_GLOVE`(서투른 검은 실 땀, 오그라든 가죽).
+- ② `BLACK_STITCH_BAND` 납작한 검은 키드 커프 띠, 은은한 광택의 검은 비단실 십자땀 띠(이어진 장식 띠), 한쪽 끝 실꼬리가 작은 고리로 감겨 있음, 옆에 장갑 바늘 하나와 검은 비단 실패.
+- ③ `CONTRACT_EP2`(P6 이후 상태): 네 번 접혔던 자국이 있는 백지 양피지, 밀랍 셋(골무 · 흑장미 · 새 골무).
+- ④ `HAND_PATTERN` 분필 왼손 윤곽선만 있는 갈색 종이 + 그 옆에 `LEATHER_BUNDLE`(끈으로 묶은 접힌 검은 키드 가죽 묶음).
+- **넣지 않는 것:** 진홍(띠·실패·스티치 모두), 사람 손, 글자·숫자·치수선·라벨·낙인, 연기·불씨.
+- **검수:** 양피지·종이에 글씨 같은 얼룩 0 / 밀랍 자국에 글자·문양 0 / 검은 띠의 땀이 띠로 읽힘(따로 떨어진 X자 아님) / 상자 속 장갑이 켤레마다 다름 / 진홍 0.
+
+#### 만드는 순서 · 넘기는 법 (EP2)
+1. EP1 카드 1–6이 먼저다(`HUGO_left_hand`는 `HUGO_turnaround` · `HUGO_hands`를 첨부하므로). EP1 카드가 아직 없으면(EP01 = WAITING_FOR_IMAGES) EP1 카드 → 13 → 12' → (14) 순서.
+2. ref-sheet-artist는 `refs/ref_prompts.md`에 위 카드마다 블록 하나를 **덧붙인다**(기존 블록·카드 목록 표는 고치지 않고, 표 아래에 "EP2 cards" 소제목을 새로 단다). 형식은 §5-3 그대로:
+```
+### HUGO_left_hand
+- prompt: "<REF_STYLE … 4칸 내용 … HUGO FULL identity/outfit … HUGO_LEFT_BARE FULL … NECK_STRAND … 바꾼 문장 … REF_NEGATIVE>"
+- attach: refs/HUGO_turnaround.png, refs/HUGO_hands.png
+- output: _workspace/04_visual/refs/HUGO_left_hand.png
+- aspect: 16:9
+```
+3. 프롬프트 길이: 카드는 패널 250단어 상한 밖이지만, `HUGO_left_hand`는 손 3칸 + 목 1칸이라 길어지기 쉽다. 줄일 때 HUGO outfit 문장을 MIN으로 줄이고 `HUGO_LEFT_BARE` · `NECK_STRAND` 문장은 줄이지 않는다.
+
+### E2-7. 리더 플래그 (AE)
+
+| # | 내용 | 제안 |
+|---|---|---|
+| AE1 | **옷 결정:** 다음 날(P9–P56)에도 두 사람의 보이는 옷은 EP1과 같다. 휴고의 크라바트는 높이·매는 법·색이 그대로이고 깃은 늘 닫혀 있다(가닥 높이의 기준선이 크라바트 가장자리라서). | 확인만(series-arc 표 E와 같음). |
+| AE2 | **검정 위 검정 띠:** 검은 키드에 검은 실 십자땀은 Flow에서 사라지기 쉽다. "matte black kid + black silk with a faint sheen"으로 정했다. | 확인. P30은 세 손가락 집기로 통과 가능, P41·P49는 땀이 질감으로라도 보여야 한다(validator 항목). |
+| AE3 | **가닥 vs world R5 "끝은 왼쪽 쇄골 아래":** 목의 가닥을 쇄골 아래 뿌리에서 목 옆으로 오른 **가는 곁가닥**으로 정의했다. 세계 규칙은 그대로, 시계의 본체(쇄골 아래 → 심장 한 뼘)는 옷 위 측정이 보여 준다. | continuity-manager가 "EP2 가닥 높이 = 크라바트 위 반 마디, 목 왼쪽, 왼쪽 귓불 아래 선"을 기록해 EP8 · EP11의 기준으로 쓰게 한다. |
+| AE4 | **하녀 얼굴 앵커는 추정:** 휜 옅은 적갈색 눈썹, 둥근 연갈색 눈, 작고 둥근 코, 모자 밖 잔머리는 characters §5-2에 없던 낱말이다(디자인 변경 아님, 페트라와 구별하려는 보강). | 승인 요청. character-designer 확인이 필요하면 그쪽으로. |
+| AE5 | **`MAID_ref` 배치 변경:** 카드 12의 "쟁반 든 전신"을 EP2판(사고 뒤, 쟁반 없음, 얼굴 칸 + 잿빛 손 칸)으로 바꿨다. EP1 `ref_prompts.md`는 이 카드를 일부러 뺐으므로 충돌 파일은 없다. EP1 P3–P5에 이 카드를 붙이면 P3 프롬프트에 "fingertips clean"을 적어야 한다. | 승인 요청. |
+| AE6 | **EP2 진홍 0 (P28 제외) → 두루마리의 진홍 실패도 뺀다:** EP1 `TOOL_ROLL` 펼침 문자열에는 진홍 실패가 있고 EP1 규칙은 실패를 허용했다. EP2는 "진홍을 숨기는 회차"라 EP2 전용 `TOOL_ROLL_EP2`(검은 실패)를 만들었다. EP1 문자열은 그대로. | 승인 요청(X1의 연장). |
+| AE7 | **계약서 밀랍 순서:** EP1이 정하지 않아 "골무(왼) · 흑장미 · 새 골무(흑장미 바로 오른쪽)"로 정했다. EP1 P28 이미지가 생겨 순서가 다르면 그 이미지를 따른다. | 확인. |
+| AE8 | **`LOC_BENCH` 카드는 밤빛:** 낮(P9–P32) · 해 질 녘(P41–P56)에는 기하 참고로만 붙이고, 확정된 P9 · P41을 구간 앵커로 쓴다. 낮 패널에는 `LOC_BENCH` FULL 토큰(어둠 문구)을 쓰지 않는다. | prompt-smith · 핸드오프 노트에 반영. |
+| AE9 | **카드 추가:** 13 `HUGO_left_hand`(필수), 12' `MAID_ref`(필수), 14 `EP2_props`(권장, 건너뛰면 P6 · P23 · P30 · P34 앵커). EP2 패널은 13 없이 시작하지 않는다(단서 3과 반전 가닥의 기준). | ref-sheet-artist에 지시, 카드 수 확정(기본 2장, 여유가 있으면 3장). |
+| AE10 | **EP1 왼손 랜드마크 재사용:** style-bible §7 `VEIN_LANDMARK` 칸에 EP1 때 적어 둔 왼손 문장(약지·새끼 마디 → 엄지 쪽 손목)을 그대로 썼다. EP1 토큰 변경 없음. | 확인만. |
