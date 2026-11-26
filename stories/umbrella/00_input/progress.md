@@ -21,3 +21,8 @@ Story: 「맑은 날의 우산」 / ឆ័ត្រនៅថ្ងៃមេឃ�
 - Khmer: verb for 'umbrella flips inside out' = ក្រឡាប់ (not ផ្លាត់); P56 `ឥឡូវ បើភ្លៀងធម្មតា វាលែងក្រឡាប់ហើយ។`; P27 ruling ends `…អ្នកនោះបាននៅ។` (EP12 must quote it exactly). **All Khmer is draft and needs a native speaker's check** (list in `ep01_script_final.md` 에디터 노트 §7). The independent review notes are outside the repo (side-session-notes folder).
 - Rating: user's note said 18+, the prompt said ages 15+; followed 15+.
 - Series arc: both leads can pay the rent and choose to keep half each; first deliberate touch EP5; confession at the finale (EP12).
+
+# EP02 (2026-11-26)
+- Made in worktree `.claude/worktrees/umbrella-ep02` (branch `umbrella-ep02` from origin/main) because the main checkout's `_workspace` was in use by another session's new story.
+- Beatsheet (60), script, script_final, native Khmer review READY round 1 (gate OK), art additions (awning flap, tin can, grandma cameo, Taeo smile T11, GOLD_FEW, extras), 3 new ref cards (17–19; card 15 now required), shot list (60), lettering (70 bubbles + sfx + caption, km_tool check OK), prompts (60, ≤250 words), handoff page 04_visual/ep02_flow_handoff.html. Status WAITING_FOR_IMAGES.
+- The script's P54 "돌담 쪽" note is superseded by ruling AE3 (iron-staircase side). Editor notes still quote pre-review Khmer for P20/P56 (KM lines are correct).

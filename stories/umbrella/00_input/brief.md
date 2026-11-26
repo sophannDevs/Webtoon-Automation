@@ -71,3 +71,73 @@ Source: `_workspace/01_research/trend-brief.md` §2-1 (read it). Package 「처�
 8. **Rating 15+:** no kiss, no confession, no wrist-grab / wall-slam / embrace in EP1. EP1 touch budget: ONE accidental touch (hands overlapping on the umbrella handle), 1–2 near-touches (the two keys; handing the umbrella over). No possessive/commanding lines, no pet names, no insult-teasing, no sarcasm.
 9. **Khmer-first dialogue:** short lines that fit bubbles. Their speech styles must stay distinct in Khmer (A: short flat declaratives, object/number words, literal quoting; B: rambling excuses split into 2–3 short bubbles, self-corrections, trailing off). Forms of address: formal at first (not បង/ប្អូន yet; switching address later is a story step, do not do it in EP1). No jokes that rely on Korean idioms or puns. Emotion in silence is carried by faces, pauses and panel spacing (`gap_after`).
 10. **Series shape for series-plotter:** season 1 = one rainy season, roughly 12 episodes (~6 weeks); confession is the season finale (hydrangea clock + rule 3 "sky clears"); every episode: one twist/reveal, one "she nearly gets caught" moment, one relationship step forward; EP3 = biggest hook of the launch bundle (EP1–3); first deliberate touch EP5 (functional, brief); first kiss/confession not before the last act.
+
+---
+
+# EP02 (2026-11-26) — Phase 0 case 2 (new episode)
+
+- User: "make EP02 for umbrella". EP01 images are NOT made yet (`ep01_flow_status.md` = WAITING_FOR_IMAGES, 16 sheets + 62 panels).
+  Create EP02's beat sheet, Khmer script, native Khmer review, shot list, lettering, Flow prompts and handoff page, then STOP and wait
+  for the user's Flow images. **Do not touch EP01 files.**
+- **Where:** git worktree `D:\Project\WT test\.claude\worktrees\umbrella-ep02` (branch `umbrella-ep02`, cut from origin/main).
+  Its own `_workspace` junction → `stories/umbrella`. The main checkout's `_workspace` points at ANOTHER story that another session is
+  building; never read or write `D:\Project\WT test\_workspace`. Run every tool from the worktree root.
+- Episode: EP02 (NN = 02). Reuse (read, do not redo): `02_story/*`, `04_visual/style-bible.md`, `character-sheets.md`, `refs/ref_prompts.md`.
+  EP02 adds only what is new. EP01 `ep01_script_final.md` and `ep01_lettering.md` are canon; repeated/quoted lines are letter-identical
+  (incl. the P56 buried line «ឥឡូវ បើភ្លៀងធម្មតា វាលែងក្រឡាប់ហើយ។» and the P27 ruling «…អ្នកនោះបាននៅ។» when quoted).
+- **Project rule (CLAUDE.md, 2026-11-21): Korean style stays; only bubble text is Khmer.** Korean names, looks, clothes, market, town,
+  tropes and tone as designed. Do not Cambodianize. Khmer address words inside the KM text follow the glossary (no switch to បង/ប្អូន yet;
+  that is EP6's step).
+- EP01 predates the native Khmer reviewer (no `ep01_km_review.md`). EP02 gets the review (gate `km_review.py gate --episode 02`).
+- Sources, in order of authority: this brief → `twist-plan.md` (table row EP2, §… notes for EP2) → `series-arc.md` "EP2 — 핵심 비트" →
+  `tension-curve.md` EP2 row and notes → `characters.md` / `world.md` (rules R1–R3, EP2 prop) → EP01 script_final §6–§9 handovers.
+
+## EP02 locked points (leader)
+1. **Panels:** target ~60 (allowed 52–64, never below 50). Rating 15+. One twist + one "she nearly gets caught" moment + one relationship step.
+2. **Beats (series-arc EP2, in order):** (1) two keys at one lock, "first one here opens" — he is always there first; her half is dry and a wet rag
+   leans on the rail (background plant, never explained); tin-can height insert in the opening. (2) teasing gets an audience: 만식 commentates,
+   보미 calls him «ពូ», he corrects "스물다섯입니다", she mimics his deadpan, he quotes her words WITH the time ("어제 네 시 십 분. '다신 안 와요.'").
+   (3) misreading: yellow thread on grandma's black umbrella seam → she decides yellow thread is the shop's mark (old black thread on the rail = fair clue).
+   (4) business + romance: a dazzling gap flusters her → level-3 rain sound; arcade people open umbrellas at the exit, some flip and end up on his rail.
+   (5) **twist:** he repairs them and pushes the money back with two fingers; the tin-can height stays the same (same composition/height as the opening insert);
+   she witnesses once, doesn't know why. When she tries to pay EP1's repair fee: "맡기신 적 없습니다." (EP1 P55 promise "tomorrow" pays off).
+   (6) echo: his umbrella is already in his hand before her cloud forms; "별말 아니었어요." written so it is TRUE in Khmer (twist-plan note); drawer insert with the bent rib (PROP_BENT_RIB).
+   (7) shower: she lends 보미 her pink umbrella and walks with him under ONE yellow umbrella — a gap between their shoulders, his outer shoulder gets wet.
+   (8) **cliffhanger:** he smiles (rare) and a FEW of her drizzle drops shine gold. She is looking at the gap between their shoulders; he is looking at the gold.
+   Gold ladder: EP1 one drop < EP2 a few drops < EP3 rim light. Do not exceed "a few drops".
+3. **New prop introduced in EP2:** the frayed awning flap (faded navy canvas flap his grandfather hung at the end of the A-half eave, above the workbench) —
+   world.md §1-2 note. Show it naturally (needed for EP3's night stitching). art-director writes its token + a reference card.
+4. **Touch budget:** no deliberate touch yet (first deliberate touch is EP5); accidental near-touches only; walking under one umbrella with a visible gap.
+   No confession, no kiss, no possessive/commanding lines, no pet names, no insult-teasing, no sarcasm.
+5. **Speech styles (EP1 canon):** 태오 = short flat declaratives, numbers/objects, literal quoting (now with times); 단비 = rambling excuses split
+   into 2–3 short bubbles, self-corrections ("아니, 그게 아니라…"), trailing off, mimicking his deadpan. Max 2 bubbles per panel.
+6. **No text in any image.** Coins, tin can, thread, umbrellas, light carry information. No numbers/money amounts visible; spoken numbers in bubbles are fine.
+7. **Rules R1–R3 (world.md):** R1 her cloud forms when feelings overflow; rain levels rise with each self-correction; R2 gold only near him when her heart leans
+   toward him (EP2 = a few drops only, at the cliff); R3 (a true line stops the rain without fade) is NOT shown yet (EP6).
+8. Locations: reuse EP1 LOC_* tokens (eave stall, market entrance, arcade, etc.). A new location only if a beat cannot be staged in an existing one;
+   flag it. Cameos reuse existing cards (만식, 보미, 옥자/할머니 etc.).
+
+## EP02 leader rulings after ep02_beatsheet.md (2026-11-26) — flags accepted
+UA. 60 panels; beats P01–08 / 09–16 / 17–23 / 24–33 / 34–41 / 42–47 / 48–53 / 54–60. Twist P36/P39/P41, cliffhanger P59–P60. Comic lean accepted.
+UB. New tokens + cards: frayed awning flap (token + card), tin can prop card (seam ring = height marker); token lines for unmarked coins, glass savings jar,
+    wet rag, grandma's black umbrella with yellow band, open parasol, Bomi's two-broken-rib umbrella. P05 and P39 share one prompt; only the light changes.
+UC. Hydrangea alley plate (card 15) becomes REQUIRED for EP02. New cameo card for the umbrella-regular grandma (returns EP3/EP6) + glossary entries for
+    how she and Taeo address each other (Korean-style persona, Khmer only in the bubble words). Mansik/Bomi reuse card 14; extras faceless, umbrellas never yellow/red.
+UD. Danbi outfit O1 again (no new outfit). "다신 안 와요" = off-screen line on day 2 at 4:10 pm. Tin can lives in the drawer. Grandma pays nothing on screen.
+    The crowd and Mansik (not Taeo) cover the near-catch. P59 = Taeo's first smile: art-director adds a smile expression slot. Gold drops in the air below the canopy rim.
+    Key-on-hook custom → EP4. Bomi keeps the pink umbrella (continuity for EP3).
+
+## EP02 leader rulings after art-director's EP02 additions (2026-11-26) — AE1–AE10 accepted
+UE. AE1 flow_tool counts all 19 cards for every episode; EP01 still needs only its 16 (noted in ep02_flow_status.md; EP01 files untouched).
+    AE2 prompts spell out the awning flap even with card 05 attached; P04/P32/P49 attach card 17. AE3 drop "stone-wall side" in P54–P60;
+    keep his LEFT shoulder wet (P58 line), Danbi on his right, wet shoulder on the iron-staircase side of the alley.
+    AE4 tin-can frame = eye level tilted slightly down, identical for P05/P39. AE5 P51: the pink umbrella's yellow band away from camera/small, never touching
+    Bomi's red raincoat. AE6 P59 smile from prompt + T11 wording (fallback T7 + "mouth lifted a hair"). AE7 grandma's second repaired joint is out of view;
+    dialogue-writer puts 총각/할머니 address words in the glossary. AE8 extras rule relaxed for P24, P28–33, P35–38 (faces blurred). AE9 old cards untouched.
+    AE10 P18 attaches GRANDMA_ref + PROP_UMBRELLAS.
+
+## EP02 leader rulings after ep02_shotlist.md (2026-11-26)
+UF. FL1 P24–33 stays one scene (each panel names its location). FL2 the script's P54 "돌담 쪽" note is superseded by AE3 (iron-staircase side); the script is
+    not edited (keeps the review hash). FL3–FL9, FL11 (queue customer, long tail), FL12 accepted. FL6 handoff/status say: make panel_005 before panel_039.
+    FL10 order: letterer finalises art_space in ep02_lettering.md first; prompt-smith then writes prompts from the shot list + the lettering's art_space.
+UG. Lettering done (km_tool check OK). Where ep02_lettering.md's art_space differs from ep02_shotlist.md, the LETTERING wins (shot list not re-synced).

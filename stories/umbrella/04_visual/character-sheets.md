@@ -239,3 +239,97 @@
 - [ ] **장소:** FRONT에서 아치 쪽은 왼쪽, 골목 쪽은 오른쪽이다. 고리는 셔터 박스 정중앙에 있고 열쇠 구멍은 하나다. 사람은 없다.
 - [ ] **화풍:** STYLE_REF와 같은 선과 채색이다. 실사, 3D, 치비가 아니고, 테두리나 칸 나눔선이 없다.
 - 실패하면 어느 항목인지 적는다. ref-sheet-artist가 그 블록에 `redraw_reason`을 붙인다. 3회 뒤에는 ACCEPT-FLAG.
+
+---
+
+## EP02 additions (2026-11-26)
+
+- 작성: art-director · 2026-11-26 · 입력: brief「EP02」locked 1–8·rulings UA–UD, `ep02_beatsheet.md` §3·§8·§9·§10, world §1-2·§5·§8-4, characters §7-8. 빛·구름·금빛·엑스트라는 `style-bible.md`「EP02 additions」.
+- **위 §0–§8의 EP1 토큰은 한 글자도 바꾸지 않았다.** 아래는 새 슬롯·새 토큰·새 카드뿐이다. 모든 새 토큰은 글자 없음.
+- 의상: 단비 O1(민트 멜빵 원피스) 재사용, D3 하루 종일(ruling UD). 새 의상 없음. 태오 O1.
+
+### X1. 문태오 — 새 표정 슬롯
+
+| # | 슬롯 EN | 쓰임 |
+|---|---|---|
+| **T11** | `faint real smile, corners of his mouth barely lifted, eyes softened, looking down at his own wet shoulder` | **P59 한 컷 전용. 이 작품에서 그의 첫 웃음.** 드물고, 작고, 진짜. 이가 보이지 않고 입은 거의 닫혀 있다. 볼 홍조 없음(T10 귀 분홍은 여전히 EP3부터) |
+| **T12** | `calm, the trace of a smile still on his lips, eyes level on the drops falling from the umbrella rim` | P60. 웃음의 여운. 시선은 **눈높이**(위를 보지 않는다) |
+
+- 슬롯 규칙은 그대로: Flow phrase 끝의 `deadpan` 한 단어 자리를 바꾼다.
+- **카드 08 `TAEO_expressions`에는 웃음이 없다**("No smiles"로 그렸다). 새 카드를 만들지 않고 P59 패널 프롬프트에서만 처리한다: 첨부는 `TAEO_turnaround`(얼굴 기준)로 하고, 문장에 `not a grin, no teeth showing, a very small smile`을 덧붙인다. Flow가 크게 웃기면 REGEN, 3회 실패 시 T7 + `the corners of his mouth lifted a hair`로 낮춘다.
+- 금지 드리프트 추가: P59–P60 밖의 웃음 / 이 보이는 웃음 / P60에서 위를 보는 시선.
+- **젖음 (P53–P60):** `his left shoulder and denim sleeve soaked dark with rain` (우산을 그녀 쪽으로 기울여서. P58 「왼쪽 어깨」 대사와 일치. LEFT = 본인 기준)
+- 다른 EP2 동작은 기존 슬롯으로 충분하다: P02 공구 롤 끈 풀기 = T2 · P20·P41 손잡이만 보기 = T3(대상만 바꿈: `eyes on the umbrella handle`) · P12·P14 인용 = T4 · P43 실 감기 = T2.
+
+### X2. 소단비 — 새 표정 슬롯
+
+| # | 슬롯 EN | 쓰임 |
+|---|---|---|
+| **D11** | `deflated, small resigned smile, shoulders dropping, eyes lowered` | P19(D6 뒤)·P21 오독 확정, 김이 샘 |
+| **D12** | `puzzled, one eyebrow raised, head tilted slightly` | P37 목격(1회)·P38 「돈 싫어하나?」 |
+| **D13** | `squinting one eye against the bright sun, lips pursed with effort` | P25 파라솔 걸쇠 |
+| **D14** | `pouting, lips pushed out, cheeks slightly puffed` | P04 첫 경주 패배 |
+
+- P02 승리 = D7 + 동작구 `holding her key up high in triumph`. P23 리셋 = D1 + `patting both cheeks with her palms`. P58 흉내 = D8 + D5의 볼 홍조(`cheeks flushed pink`), 손가락은 그의 어깨를 가리키기만(`pointing, not touching`).
+- **카드 07 `DANBI_expressions`에 D11–D14가 없다.** 패널 프롬프트에서 슬롯 문장으로 처리한다(카드 추가 없음).
+- 젖음: P21–P23 L1(`fringe slightly damp`) · P28–P44 L3–L4 젖음 문장(그 씬 동안 남음) · P45–P46 L2 · P52–P56 시내 비에 `fringe and shoulders wet from the town rain` · P57–P60 앞머리 젖음 유지.
+- 우산: P01–P51 `PROP_DANBI_UMBRELLA_FIXED` + **`plain white crook handle with no ribbon`**(P41 반전의 근거: 레일 우산에는 반 리본, 그녀 우산에는 없음). P51에 보미에게 간다 → P52–P60 빈손.
+
+### X3. 우산 단골 할머니 — 새 카메오 · `GRANNY_REGULAR`
+
+- 역할명만, 이름 없음(world §8-4: 할아버지 때부터 매주 같은 검은 우산을 맡기는 단골). 한국식 외형 그대로(크메르화 금지). EP2 P17–P18·P20·P22, **EP3·EP6에 다시 나온다.**
+- **Flow phrase:** `elderly Korean woman, about 75, small and slightly stooped, short tight white perm, round gentle wrinkled face, small kind eyes with deep smile lines, dusty ash-pink knitted cardigan, cream blouse, loose grey-and-mauve floral elastic-waist trousers, black slip-on shoes, woven brown shopping basket on left arm, kindly smile` · 슬롯 = `kindly smile`
+- 한 줄 토큰: `할머니/75세 여/약 148cm 작고 살짝 굽음/짧은 흰 뽀글 파마/둥글고 주름진 얼굴·작은 웃는 눈/잿빛 분홍 카디건+크림 블라우스+회색·연보라 꽃무늬 몸뻬+검은 슬립온/왼팔 장바구니·오른손 검은 장우산/인자한 웃음`
+- 키: 단비(158cm)보다 조금 작다. 태오의 가슴 높이.
+- 표정: 인자한 웃음 / 칭찬하며 팔뚝 툭(`patting his forearm, praising`, P20 — 그녀가 치는 것, 태오는 움직이지 않는다) / 우산을 펴 보며 만족(`checking her opened umbrella, pleased`).
+- 식별 표식: ① 흰 뽀글 파마 ② 왼팔(LEFT)의 장바구니 — 정면 컷에서 화면 오른쪽 ③ 오른손(RIGHT)의 검은 장우산, 노란 실 띠 — 정면 컷에서 화면 왼쪽.
+- **옥자와 구분(혼동 방지):** 옥자 = 흑회색 파마·머리 위 돋보기·벽돌색 조끼·오른허리 열쇠. 할머니 = 흰 파마·안경 없음·분홍 카디건·장바구니. 옥자는 EP2에 나오지 않는다.
+- 금지: 안경, 빨강·벽돌색 옷, 채도 높은 청보라, 노란 옷·소품(우산의 실 띠만 예외), 화면에서 돈을 내는 동작(ruling UD).
+- 호칭(할머니 → 태오 「총각」, 태오 → 「할머니」)의 KM은 glossary 몫이다. 이 시트는 외형만.
+- 레퍼런스: `refs/GRANDMA_ref.png` (카드 19).
+
+### X4. 조연 — EP2 메모
+
+- **만식** (P08 원경, P14 원경, P31, P33 목소리): 카드 14 그대로. P31 「또 물받이 새네!」 = `calling out like a sports commentator` 슬롯. 여전히 위를 보지 않는다(냄비·물받이 쪽).
+- **보미** (P09–P16, P50–P52): 카드 14 그대로. P50 슬롯 `teary pout, holding up her broken umbrella`. **P51부터 분홍 우산은 보미가 가진다**(EP3 연속성). 우산 토큰은 X5 `PROP_BOMI_UMBRELLA_BROKEN`.
+- **옥자**: EP2 미등장.
+
+### X5. 소품 토큰 추가 (모두 글자 없음)
+
+| 토큰 | Flow phrase | 패널 |
+|---|---|---|
+| `PROP_AWNING_FLAP` | `old faded navy-blue canvas flap hanging from the eave's front edge at the arch-side end, directly above the workbench, about as wide as the workbench and forty centimetres long, sun-bleached in streaks, plain with no pattern or writing, its bottom edge frayed into a ragged fringe of loose threads` | P01·P24(원경 작게), P04, P32, P49 |
+| `PROP_TIN_CAN` | `grandfather's old dented tin can with an open top, about the height of a hand, dull grey tin with soft rust spots and a finger-worn shine, no label, no print, one raised horizontal seam ring around its side a thumb's width below the rim` | P05, P39, P47 |
+| `PROP_COINS` | `plain unmarked coins, blank brass and silver discs with no design, no numbers, no portraits, no paper money` | P05–P06, P35–P36, P38–P40, P42 |
+| `PROP_SAVINGS_JAR` | `small clear glass jar with a plain dull metal screw lid, no label, only a thin layer of plain coins on its bottom`, 자리 `on the low shelf under the ice cart` | P06, P40, P46 |
+| `PROP_WET_RAG` | `a damp grey cotton floor rag draped over the eave-side end of the iron-pipe repair rail` | P04(이후 같은 자리 배경 선택) |
+| `PROP_GRANNY_UMBRELLA` | `old long black umbrella, eight ribs, worn dark wooden crook handle, one rib joint wrapped in a thick neat band of bright sunflower-yellow thread about two centimetres wide, the other joints plain metal` | P17, P18, P22 |
+| `PROP_RAIL_BLACK_THREAD` | `older umbrellas on the repair rail mended with neat black thread at their joints, each tagged with a half-cut cloth ribbon in muted blue, green or lilac` (공정 단서: 검은 실 = 할아버지 시절) | P17, P22, P41 배경 |
+| `PROP_PARASOL_OPEN` | `the cart's strawberry-pink parasol opened wide on its white pole above the cart, round canopy, no logo, no pattern` (`PROP_ICE_CART`의 `folded strawberry-pink parasol` 자리에) · 걸림 상태(P25) `the parasol stuck half open, its old latch jammed` | P25–P33 |
+| `PROP_BOMI_UMBRELLA_BROKEN` | `small clear plastic umbrella with two ribs snapped and bent sharply inward, the clear canopy caved in and crumpled on that side` | P50 |
+| `PROP_BENT_RIB` (기존) + 위치구 | 기존 문장 + `lying neatly beside the tin can inside the open workbench drawer` | P47 |
+
+**사용 규칙**
+- **[TIN-A] P05 = [TIN-B] P39:** 프레임·빛은 style-bible E1·E2(`L_TIN_A` / `L_TIN_B`). 동전 높이는 두 컷 모두 `filled with plain coins to just below the seam ring`. 통은 평소 서랍 속, 아침에 꺼내 작업대에, 닫을 때 서랍에(ruling UD). 통이 불투명하므로 **눈높이에서 살짝 내려다보는** 각도여야 동전 면이 보인다.
+- **두 손가락 밀어내기(P36):** `his index and middle fingers slowly sliding a small heap of plain coins back across the workbench toward the customer, brass watch on his left wrist`. 이 동작은 P36 한 번뿐.
+- **저금병 vs 양철통:** 둘 다 동전이지만 유리(투명, 거의 빔, 카트 아래) 대 양철(불투명, 이음 테, 작업대). P40에서는 저금병을 그녀 손에 두고 통은 화면 밖에 둔다(두 높이를 비교하게 하지 않는다).
+- 자락은 남색뿐. 할머니 우산의 노란 띠는 태오 계열 노랑으로 센다(style-bible E5).
+
+### X6. 레퍼런스 카드 추가 (ref_prompts.md 끝에 덧붙였다)
+
+| # | 카드 · 출력 | aspect | attach | 상태 |
+|---|---|---|---|---|
+| 15 | `LOC_HYDRANGEA_ALLEY` · `refs/LOC_HYDRANGEA_ALLEY.png` (기존 카드, 변경 없음) | 9:16 | 06 | **EP2 필수**(EP1 권장) |
+| 17 | `PROP_AWNING_FLAP` · `refs/PROP_AWNING_FLAP.png` | 16:9 | 05 | EP2 필수 |
+| 18 | `PROP_TIN_CAN` · `refs/PROP_TIN_CAN.png` | 16:9 | — | EP2 필수 |
+| 19 | `GRANDMA_ref` · `refs/GRANDMA_ref.png` | 16:9 | — | EP2 필수 · EP3·EP6 재사용 |
+
+**17 PROP_AWNING_FLAP** — 같은 프레임 두 칸: 카드 05와 같은 아치 쪽 처마 끝·작업대를 가까이, 사람 없음. 왼쪽은 W_BREAK의 마른 자락, 오른쪽은 W_RAIN의 젖은 자락에서 공구 롤로 떨어지는 물방울. 왜: EP2에 세 번(P04·P32·P49), EP3 밤 바느질의 대상. 카드 05·12에 없는 것이 '원래 있던 것'으로 보이도록 같은 처마에 단다.
+
+**18 PROP_TIN_CAN** — 무지 바탕 3개: 양철통(살짝 내려다봐서 이음 테 바로 아래의 동전 면), 동전 더미(무늬 없음), 거의 빈 유리 저금병. 왜: 반전 그림 [TIN-A]/[TIN-B]의 높이 기준과 '글자 없는 돈'.
+
+**19 GRANDMA_ref** — 전신 정면, 전신 3/4, 가슴 위 클로즈업, 펼친 검은 우산(노란 실 띠가 카메라 쪽). 왜: 새 카메오(EP2 4컷, EP3·EP6 재등장), 오독의 재료인 노란 띠.
+
+- **패널 첨부 권장(3장 이하):** P05·P39 = `PROP_TIN_CAN` + `LOC_EAVES_STALL_day` · P04·P32·P49 = 인물 + `PROP_AWNING_FLAP` · P17·P20·P22 = `GRANDMA_ref` + `TAEO_turnaround`(+ P17·P22는 `LOC_EAVES_STALL_day`) · P18 = `GRANDMA_ref` + `PROP_UMBRELLAS` · P54–P60 = `LEADS_lineup` + `LOC_HYDRANGEA_ALLEY` · P50–P52 = `CAST_OKJA_MANSIK_BOMI`(+ P51 `DANBI_turnaround`).
+- EP2에 필요한 카드: 01–14, 15, 17–19 = **18장**(16 `LOC_ASSOC_OFFICE`는 EP2에 쓰지 않는다).
+- 검수: 위 §8 체크리스트 + ref_prompts.md "Extra checks for 17–19".

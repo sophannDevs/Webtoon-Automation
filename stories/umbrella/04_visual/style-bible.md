@@ -219,3 +219,80 @@
 12. 멀티 패널 레이아웃, 패널 테두리, 이미지 안 흰 여백.
 13. 샷리스트에 없는 접촉. EP1은 손잡이 위 우발 접촉 1회와 닿을 뻔 1–2회뿐.
 14. 인물 의상의 채도 높은 청보라(수국 몫).
+
+---
+
+## EP02 additions (2026-11-26)
+
+- 작성: art-director · 2026-11-26 · 입력: brief「EP02」locked 1–8·rulings UA–UD, `ep02_beatsheet.md` §3·§6–§8·§10, world §1-2·§2·§3(R1–R3)·§5, series-arc 표(EP2 = 1주째 수국).
+- **위 §1–§9의 EP1 토큰과 규약은 한 글자도 바꾸지 않았다.** 아래는 EP2에 새로 필요한 것만 더한다. 충돌하면 위 §9 금지가 이긴다. 인물·소품 토큰은 `character-sheets.md`의 같은 제목 섹션.
+- 기본 패널 화면비는 그대로 3:4(§4 표 그대로). 새 장소 없음.
+
+### E1. 장소 토큰 추가 (LOC_EAVES_STALL, EP2부터)
+
+- **해진 차양 자락 보조구 `LOC_EAVES_FLAP`** (EP2부터 처마칸이 화면에 나오고 아치 쪽 처마 끝이 보이면 아치 쪽 반 보조구 뒤에 붙인다):
+  `an old faded navy-blue canvas flap hangs from the eave's front edge at the arch-side end, directly above the workbench, plain with no pattern or writing, its bottom edge frayed into a ragged fringe of loose threads`
+  - 상태구: 마름(W_BREAK) `the flap hanging still` · 미풍(P24) `the flap stirring slightly in the breeze` · 돌풍(P32) `the flap whipping in the gust, loose threads flying` · 비(P04 물방울, P49 누수) `rain dripping from the flap's frayed fringe onto the tool roll on the workbench` (P04는 밤비 뒤라 `a few last drops falling from the flap's frayed fringe`).
+  - 크기: 작업대 폭만 하고 약 40cm 늘어진다. 원경(P01·P24)에서는 처마 끝의 작은 남색 조각.
+  - **남색뿐, 노란 실·노란 덧댐 없음**(EP3에 단비가 노란 실로 꿰맨다). 누구도 '고치자'고 말하지 않는다.
+  - EP1 카드 05·12와 EP1 패널에는 자락이 없다. EP2 패널에서는 `LOC_EAVES_STALL_day`를 첨부해도 이 보조구를 반드시 문장으로 쓴다(첨부 그림에 없으므로). 레퍼런스 카드 17 `PROP_AWNING_FLAP`.
+- **마른 반쪽 `FLOOR_DRY_HALF`** (P04 한 번, 설명 없음): `under the eave the arch-side half of the concrete floor is wet with rain marks and a small puddle, while the alley-side half is neatly dry, the dry area ending exactly at the white tape line`.
+- **젖은 걸레** 위치: 수선 레일의 처마 끝 쪽 끝. 토큰은 character-sheets `PROP_WET_RAG`. P04에서 한 번 보이고, 이후 같은 자리에 작게 남아도 된다. 아무도 보지 않는다.
+- **[TIN] 고정 프레임 (P05 = P39):** `insert, eye level with the workbench top, the camera tilted slightly down so the coins inside show, the tin can centred, its seam ring at half the frame height, the unrolled tool roll and one yellow spool behind it`. 같은 카메라·화면비(1:1)·크기·통 위치. 바뀌는 것은 빛(E2의 TIN-A / TIN-B)과 P05의 빠져나가는 손끝뿐. 동전 높이는 두 컷 모두 `filled with plain coins to just below the seam ring`.
+- **꽃골목(LOC_HYDRANGEA_ALLEY):** 수국 시계는 아직 1주째다(series-arc 표 EP2 = "1 · 같음"). 위 §6의 `EP1–2 보조구`(진한 청보라, 꽉 찬 송이)를 그대로 쓴다. 색을 옮기지 않는다(3주째 보라·분홍은 EP3부터). 플레이트 카드 15는 **EP2에서 필수**(B8 7컷 P54–P60).
+  - 방향: 골목 입구에서 안쪽을 보면 시장 바깥벽(초록 철계단)이 화면 왼쪽, 돌담이 오른쪽(카드 15). 두 사람이 카메라에서 멀어지며 골목 안쪽으로 걸으면(P54 뒷모습) 단비가 그의 RIGHT = 돌담 쪽, 그의 LEFT(젖는 바깥 어깨) = 철계단 쪽이다. 비트시트 P54의 "LEFT(돌담 쪽)"과 어긋난다 → 플래그 AE3.
+
+### E2. EP2 빛 문장 (날씨 토큰 §3-1에 덧붙이는 시간대 빛)
+
+| 토큰 | 패널 | EN phrase |
+|---|---|---|
+| `L_DAWN_AFTER_RAIN` | P01–P08 | `pearly blue-grey dawn just after night rain, wet pavement shining with soft reflections and small puddles, eaves still dripping, one bare bulb already glowing as a warm dot under the eave` |
+| `L_MORNING_THIN_SUN` | P09–P23 | `thin pale morning sun breaking through, soft short shadows, pavement drying in pale patches with damp edges` (W_BREAK의 아침판) |
+| `L_DAZZLE` | P24–P33 | `a dazzling break between showers, intense white-gold midday sun, very short hard shadows, bright glare on pale dry pavement, big white clouds far away, sudden gusts of wind` (W_BREAK 강화판, 가장 밝음) |
+| `L_EARLY_AFTERNOON` | P34–P46 | `early-afternoon sun a little lower, warm light coming from the right, the workbench bulb switched off` |
+| `L_DARKENING` | P47 | `the sky suddenly darkening before a shower, light dropping to a cool grey dimness` |
+| `W_SHOWER_ONSET` | P48 | `a moving shadow sweeping over the bright square, fat first raindrops spotting the dry pavement` → 다음 컷부터 `W_RAIN` |
+| `W_RAIN` (기존) | P49–P56 | 위 §3-1 그대로. P56은 `the town rain thinning` 추가 |
+| `L_AFTER_RAIN_SUN` | P57–P60 | `the town rain has just stopped, sun breaking through at the far end of the alley, warm low afternoon light, wet stone wall and hydrangeas glistening, drops hanging on the leaves, wet pavement reflecting the sky` |
+| `L_TIN_A` | P05 | `warm light of the bare bulb above mixed with pearly morning light from the upper left` |
+| `L_TIN_B` | P39 | `low warm afternoon light from the right, the bulb switched off, a longer shadow falling to the left` |
+
+- 구름 패널에서 바닥 규칙(§3-2 "바닥은 말라 있어야")은 EP2에서 두 군데 예외다: **P01–P08**(구름 없음, 젖은 새벽)과 **P57–P60**(시내 비가 막 그쳐 골목 전체가 젖음). P57–P60에서는 그녀의 비가 노란 우산 위에만 떨어지므로 '발밑 웅덩이' 대신 '우산 가장자리에서 떨어지는 방울'로 구름을 읽게 한다(E3 `CLOUD_SHARED_UMBRELLA`).
+
+### E3. 비구름 · 금빛 추가 (§7 토큰은 그대로)
+
+- 비 단계: EP2 상한은 L3. L1–L3은 이미 `CLOUD_L1`·`CLOUD_L2`·`CLOUD_L3` 토큰이다(새로 만들지 않는다). EP2 패널: P21–P22 `CLOUD_EAVE` + L1 · P28 L3 · P30 L3(원경에서 작게) · P32 L2 · P33 L1 · P45 L2 · P46 L2→L1 · P57–P60 L1.
+- `CLOUD_PARASOL` (P28, P30–P31): `the rain column falls onto the open pink cart parasol only, splash crowns on its canopy, water streaming off its edge onto the cart, customers standing dry in the sunlight just outside it` (BASE의 '그녀 위' 대신. 구름은 파라솔 꼭대기에서 1m 위)
+- `CLOUD_SHARED_UMBRELLA` (P57–P60): `the small cloud floats about a metre above the yellow umbrella on her side, its thin drizzle tapping on the yellow canopy only and dripping off its rim, no rain anywhere else`
+- **`GOLD_FEW` — 금빛 사다리 EP2 상한 (P60 한 컷만):**
+  `three to five of her drizzle drops, falling from the rim of the yellow umbrella, catch the low sunlight and glint warm white-gold in the air just below the canopy edge at eye level, like sunlight on water, the other drops clear; no glowing cloud, no golden rim, no halo, no sparkle effects`
+  - 금빛 방울은 **노란 천 위가 아니라 천 가장자리 아래 허공**(노랑 위에서는 묻힌다). 3–5개. 6개 이상, 구름 테두리 빛(`CLOUD_R2`), 금빛 구름, 별 모양 반짝이 = REGEN. `CLOUD_R2`는 여전히 EP3 몫.
+  - 사다리: EP1 P62 한 방울 < **EP2 P60 몇 방울(3–5)** < EP3 테두리 빛.
+  - P26–P28(1m 안), P44–P45, P54–P59에는 금빛 0. 노란 실·노란 우산은 빛나지 않는다.
+- 태오의 시선(비트시트 §3-2): P21·P28–P31·P44–P45·P57–P60에서 위를 보지 않는다. P60의 그는 **눈높이**의 우산 가장자리 방울을 본다. 올려다보는 그림 = REGEN(EP1 P61의 첫 상향은 한 번으로 남긴다).
+
+### E4. 엑스트라 (카드 없음)
+
+- `EXTRAS_SHOPPERS`: `ordinary Korean market shoppers in plain casual summer clothes, faces simplified and soft with no distinct features, no logos or printing on clothes` + 우산을 펼 때 `open umbrellas in muted blue, green, clear plastic and grey check only`.
+- 카트 손님 셋(P24, P28–P30): 위 토큰, 얼굴 흐리게. 회사원 손님(P35–P38): `office worker in a plain white short-sleeve shirt and grey slacks, face simple and soft, no lanyard or badge`. 아치 출구 행인(P30, P32).
+- 뒤집힌 우산(P32): `three cheap umbrellas flipped inside out by a gust, ribs bent upward`, 색은 위 넷 중에서.
+- **엑스트라의 우산·옷에 노랑·빨강 금지**(노랑 = 태오 독점, 빨강 = 보미). §5 규칙 11(엑스트라는 원경, 우산은 접은 채)은 EP2 P24·P28–P33·P35–P38에서 **풀린다**: 우산을 편 군중이 반전의 재료다. 그래도 얼굴은 흐리게, 이름 있는 조연보다 크게 그리지 않는다.
+
+### E5. 노랑 감사 · 빨강 (EP2)
+
+- **할머니 검은 우산의 노란 실 띠는 태오 계열이다**(그의 수선). P18에서 두 노란 띠(할머니 우산·단비 우산)가 한 화면에 나란히 있는 것은 의도다(같은 노랑 = 오독의 재료). 그 외 노랑 없음.
+- **보미(빨간 비옷) 컷:** P09–P16·P50–P52에서 노란 우산은 화면 밖이나 레일 먼 끝(비트시트 §3-7). **P51은 단비의 분홍 우산(노란 실 띠)을 빨간 비옷의 보미에게 건넨다** → 노란 띠가 빨간 비옷에 닿거나 겹치지 않게, 띠는 카메라 반대쪽이나 작게(플래그 AE5).
+- 파라솔 펼침은 딸기 분홍(노랑 아님). P26 노란 우산 손잡이 컷에서는 딸기 시럽 병을 뒤로 뺀다.
+
+### E6. 말풍선 자리 (EP2)
+
+- §8 규약 그대로. 비트시트 §6의 비트별 art_space를 따른다. 추가: 자락(P04·P32·P49)·양철통·동전·리본 없는 손잡이(P41)·금빛 방울(P60) 위에는 풍선 자리 금지. P60은 아래 1/6만 비운다(끝 캡션).
+
+### E7. 금지 추가 (EP2)
+
+1. 동전의 무늬·숫자·초상, 지폐, 양철통·저금병의 라벨이나 글씨.
+2. 금빛 6방울 이상, 금빛 구름·테두리 빛, 노란 우산 위에 얹힌 금빛.
+3. 해진 차양 자락에 노란 실·노란 덧댐(EP3 전), 자락의 무늬·글씨.
+4. 엑스트라의 노랑·빨강 우산과 옷, 또렷한 얼굴.
+5. 태오의 큰 웃음·이 보이는 웃음(P59도 입꼬리만), P59–P60 밖의 웃음.
+6. 의도적 접촉·우발 접촉(EP2 0회). P58 손가락은 어깨에 닿지 않는다. P54–P55 어깨 사이 주먹 하나의 틈이 늘 보인다.
