@@ -24,3 +24,6 @@ Request: regression revenge webtoon (user's pick, 2026-11-26), 15+ default, sett
 - Read 04_visual/ep01_flow_status.md, then follow "Resuming" in webtoon-flow-handoff (import → status --fix → validation → redraws).
 - On import check mirroring first (mole right jaw, Deokbae scar left eyebrow, Sua earring/pin left, ring right middle finger), record panels 048–051 for any overlay, P07 gloved hand, P50 silver dot.
 - Placement pass later: P11 caption legibility, P42 ② line count, P03/P06 left-edge tails.
+- EP02 (2026-11-26): beatsheet (60), script, script_final, native Khmer review READY round 1 (gate OK). Next: art additions, shot list, lettering, prompts, handoff.
+- EP02 visuals (2026-11-26): art additions (no new card), shot list (60), lettering (55 bubbles, km_tool check OK), prompts (60), handoff page 04_visual/ep02_flow_handoff.html. Status WAITING_FOR_IMAGES.
+- Make EP01 panel_052 before EP02 046/047. Placement pass later: EP02 P04, P13, P18, P25, P34, P40.

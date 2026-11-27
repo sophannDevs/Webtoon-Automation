@@ -143,3 +143,55 @@ AK. Lettering is canon for bubble positions (km_tool check OK, 48 bubbles). P56:
 
 ## Leader rulings after ep01_prompts.md (2026-11-26)
 AL. PS-F1 shortened per-scene/per-character tokens accepted (identity marks always kept). PS-F5 card ≈ a quarter of frame width (P16/P37 match). PS-F6, PS-F11 accepted. Mirroring check on import (PS-F10). P50 dot: retry, then twist-plan D5 fallback (PS-F9).
+
+---
+
+# EP02 (2026-11-26) — Phase 0 case 2 (new episode)
+
+- User asked to go ahead with the next episode. EP01 images are NOT made yet (ep01_flow_status.md = WAITING_FOR_IMAGES).
+  Create EP02's beat sheet, Khmer script, native Khmer review, shot list, lettering, Flow prompts and handoff page. **Do not touch EP01 files.**
+- Episode: EP02 (NN = 02), working title 「같은 가로등 아래」 (dialogue-writer confirms the Khmer title in the glossary). Branch `story-9`.
+- Reuse (read, do not redo): `02_story/*`, `04_visual/style-bible.md`, `character-sheets.md`, `refs/ref_prompts.md`. EP02 adds only what is new
+  (append "EP02 additions"; never rewrite earlier sections). A new reference card only for a new character who shows a face.
+- Follow series-arc.md §5-1 EP02 (7/30 bail request without the card → 8/1 bail granted by phone, 「사흘 뒤」 env → 8/1 evening release,
+  분식집 warmth beat → 8/2 the advisor checks the fake off-screen → 8/3 night: the guard 봉구 arrested in the anchor-A composition
+  (fate conservation ①, within three days) → the mentor's call), twist-plan.md §3 EP02, tension-curve.md EP02 (bail win mid-episode;
+  twist (9) and cliffhanger (9) run together with no breathing panel). Main twist C-2: the prevented misfortune moved to the guard.
+  Small payback: the partner room line ending 「…가족이니까요.」 turning the mentor's creed on him. Cliffhanger type D:
+  「진우야. 위에서 확인했대. …빈 카드라더라.」 (the mentor never names who checked).
+- Carry-overs from EP01 rulings: the guard's grandson line (L34) goes in EP02 (ruling AC); the mentor's 「난 안 본다」 needs one line in EP01–02
+  (W-F9) if not already in EP01; Sua's hand on her father's shoulder is an ordinary daughter's hand (no regression hint, 🔒 until EP06);
+  the courtroom stays off-screen (bail by phone/dialogue). Anchor A (EP01 P52) is repeated exactly with only people/objects changed (PD-F11).
+- 50+ panels (target ~60), one main twist, one warmth beat, one small payback. Same Khmer clue rules (twist-plan §6, glossary_km.md):
+  address forms (Jinu → Deokbae លោក, never ពូ before EP12; Sua → Jinu លោក, never លោកមេធាវី before EP06; mentor អូន, ឯង only in the
+  EP01 cold open), the guard's fixed line letter-identical if repeated, ជាន់លើ with no name for "upstairs", no on-screen text.
+- Locations: reuse the 7 LOC_* tokens + SET_SEDAN_CABIN. No new location unless essential (flag it first).
+- Continuity: EP01 final script / lettering / shot list are canon (letter-identical where repeated).
+
+## EP02 leader rulings after ep02_beatsheet.md (2026-11-26) — all flags accepted
+BA. 60 panels. F1: anchor A kept exact (camera low at the bend); Jinu's downward look at P44, tiny in the P50 mirror only. F2: Bonggu's lit flashlight on its side in the scooter's spot. F3 DEOKBAE_RELEASED, F4 props, F5 light codes approved; art-director writes them as "EP02 additions".
+BB. F8: keep P54 「풀려난 지… 사흘.」 (day count, not the rule). F9: P46 is its own EP02 panel prompt that copies EP01 panel_052's composition word for word (attach EP01 panel_052 once it exists); no file is shared between episodes.
+BC. Q8: naturalness first. Bonggu may use the ordinary noun ចៅ for his own grandchild if any other wording sounds unnatural; the clue is the ADDRESS form (the advisor calling Jinu ចៅ), not the noun. dialogue-writer decides, native reviewer confirms; record it in the glossary. Q9 「위에서」 = ខាងលើ (ជាន់លើ reserved for the guard/EP03). Q10 「빈 카드」 = "empty card", never "fake".
+
+## EP02 leader rulings after ep02_script.md (2026-11-26) — D2-F1–D2-F10 accepted
+BD. EP02 Khmer title ក្រោមភ្លើងផ្លូវដដែល. D2-F2 ចេញទៅមុន echo of K-14 accepted as a fair clue (fallback ទៅមុន if the native reviewer finds it forced). D2-F3 name at P04 accepted. D2-F5: letterer may type P57 as phone. D2-F6/F7/F8 go to the native reviewer. D2-F9 glossary row notes: script-editor/leader add them after the review.
+BE. The scratch `ep02_script_final.md` written for the format check is overwritten by script-editor.
+
+## EP02 leader rulings after ep02_script_final.md (2026-11-26) — E2-F1–E2-F7 accepted
+BF. 「사흘째」 (Korean only) accepted. ក្មេងនោះ (Ki about Jinu, third person) goes into the glossary after the review. E2-F4 (P60 `…គេថា` option) and D2-F2/F6/F7/F8 go to the native reviewer.
+
+## EP02 leader rulings after ep02_km_review.md (2026-11-26)
+BG. Native Khmer review READY round 1, gate OK (9 KM lines edited). Glossary updated by the leader (빈 카드 P60 `…គេថា`, ក្មេងនោះ note, ចៅ noun / វឺត / ចេញទៅមុន confirmed, 아저씨 / 조 변호사 first-use notes, 당직 P38 example).
+
+## EP02 leader rulings after art-director's EP02 additions (2026-11-26) — all flags accepted
+BH. E2-F1 (amends BB): P46 keeps its own prompt (copy of EP01 panel_052), but the user MAY instead save a copy of EP01 panel_052.png as EP02 panel_046.png — it is accepted as P46 (a copied file, not a shared one). The handoff/prompt notes say so.
+BI. Bonggu bare-headed at P47–49, P54, P56 (cap on head = redraw). Flashlight beam up the slope, out of the empty lower-right quarter (crossing it = redraw). CCTV absent in EP01 P28 accepted. Extra light codes and the hidden bent nib (E2-F7) accepted.
+
+## EP02 leader rulings after ep02_shotlist.md (2026-11-26) — PD2-F1–F14 accepted
+BJ. Make EP01 panel_052 before EP02 P46/P47 (handoff note). PROPS_keyprops on P07/P39/P43 with "nib hidden behind his fingers"; if the nib shows, drop PROPS and retry. P50 mirror silhouette: retry once, then accept the kneeling figure only. Partner glass office seating (Jinu door left, Taeho desk edge right, Ki sofa middle) is canon from EP02. P46 gap_after 0.
+
+## EP02 leader rulings after ep02_lettering.md (2026-11-26) — flags 1–8 accepted
+BK. Lettering is canon (55 bubbles, km_tool check OK). Five long lines split at the Khmer full stop (P04, P06, P09, P17, P41). Phone lines = dialogue bubbles with tail to the phone (P56, P60); P57 dialogue, tail to Taeho. prompt-smith keeps P04's top centre-right sky clear and adds the empty lower-right-quarter sentence to P46/P47. Placement pass later: P13, P18, P34, P40 ①, P25 caption/SFX legibility.
+
+## EP02 leader rulings after ep02_prompts.md (2026-11-26)
+BL. panel_047 at 297 words accepted (fixed anchor sentences must stay word for word). Order EP01 052 → EP02 046 → 047 is written in ep02_flow_status.md and told to the user (flow_tool does not show `- note:` lines). PROPS_keyprops on 003/007/039/043/053 as the shot list says; nib sentence on 007/039.

@@ -495,3 +495,185 @@ slightly low angle from further down the slope looking up at the bend: the curve
 | F9 | 느티나무 초록은 "초록은 반지에만" 규칙의 예외(환경). 늘 반지보다 탁하고 어둡게, 반지 컷(P50–51)에는 초록 환경 0 | 확인 |
 | F10 | 회의실·사무 층의 "고문 방 나무문" 외에 신규 장소·예비 장소 사용 0. P59 장례식은 장소 토큰 없이 클로즈업(검은 천·흰 국화 꽃잎) | — |
 | F11 | trend-brief에 화풍 지시가 없어 장르 관례(저채도·로우키·손 클로즈업)로 정했다. 폴백 트리거 발동 없음 | — |
+
+---
+
+# EP02 additions (「같은 가로등 아래」 · ក្រោមភ្លើងផ្លូវដដែល) — art-director · 2026-11-26
+
+- 근거: `00_input/brief.md` EP02 절 + 판정 BA–BF, `03_episode/ep02_beatsheet.md`(F1–F16, Q1–Q11), EP01 `04_visual/ep01_shotlist.md` panel_052 · `ep01_prompts.md` panel_052 · `ep01_lettering.md` panel_052.
+- **위의 §1–§11과 EP01 플래그는 그대로 유효하다.** 이 절은 EP02가 새로 필요로 하는 것만 더한다. GLOBAL STYLE TOKEN·레지스터 문장·LOC 문장·PROP 문장·Avoid 줄은 바뀌지 않는다.
+- EP02 레지스터: **REG-PRESENT**(P46 외 전부) · **REG-MEMORY**(P46 하나 = 앵커 A 원본). REG-WINTER·REG-RECORD 0.
+- EP02 장소: LOC_BACK_ALLEY(아래 모퉁이·굽이·BOOTH·맨 위·비탈 중간) · LOC_DETENTION_VISIT(+EXT_GATE) · LOC_FIRM_FLOOR(책상 줄·파트너 유리방 낮/밤) · LOC_BUNSIK. **새 LOC 0.** ROOFTOP·HERO_ROOM·FIRM_MEETING·SEDAN_CABIN 미사용.
+- 화면비: 모든 EP02 패널 **9:16**. 새 레퍼런스 카드 0(character-sheets "EP02 additions" §E2-0).
+
+## E2-1. 조명 코드 (EP02 신규 + 재사용 지도)
+
+같은 scene_id = 같은 조명 문장(§3 원칙 그대로). 아래 신규 문장은 LOC 문장 뒤에 그대로 붙인다.
+
+| 코드 | EP02 패널 | 영문 조명 문장 (프롬프트에 그대로) |
+|---|---|---|
+| **L-ALLEY-BOTTOM-NIGHT** (재사용 변주) | P01 | `humid summer night at the bottom of the slope, warm yellow light glowing through the steamed-up glass door of the snack shop behind him, the dark green crown of the huge zelkova tree above, cold white streetlamp glow further up the alley` — 유리문 안은 노란 흐림뿐, 사람 실루엣 0 |
+| L-ALLEY-SUMMER-NIGHT (EP01 재사용) | P02–P04 | EP01 §3 문장 그대로. P04는 `+ far up the slope, the small warm yellow window of the security booth` |
+| **L-VISIT-DAY** | P05–P08 | `late morning, flat pale green-white fluorescent light evenly along the whole corridor, the small high barred window at the far end showing only plain white daylight, no golden light, no sunset beam, no dust motes, cool and ordinary` |
+| **L-ALLEY-DAY** | P09–P10 | `midsummer noon, hard white sunlight from almost directly overhead, short dark shadows pooled under the walls and the utility pole, pale sun-bleached asphalt, a hazy white sky, the streetlamp switched off, the convex mirror reflecting only the empty sunlit alley` (매미는 효과음 — 그림에 0) |
+| **L-FLOOR-AFTERNOON** | P11–P24 | `afternoon, clean white daylight from the large north windows mixed with cool fluorescent light, the dark green crown of the zelkova tree outside` · 유리방 안(P15–P24): `+ white afternoon light falling through the half-lowered blinds in soft horizontal stripes across the room` |
+| **L-FLOOR-LATE** | P25–P27 | `late afternoon, the window light now lower and slightly warmer, long soft shadows across the desks, the zelkova crown outside` (금빛 아님 — 회귀 금빛 `#E8A93C` 금지) |
+| L-OUT-GOLD (EP01 재사용) | P28 | EP01 §3 문장 그대로 + `two long shadows on the concrete` |
+| **L-BUNSIK-EVENING** | P29–P36 | `warm steamy yellow light, red reflections from the tteokbokki pan, steam drifting through the air, beyond the steamed-up glass door the outside is still a deep blue summer dusk, not black night, the zelkova silhouette dark against the blue` (EP01 L-BUNSIK = 바깥 검은 밤 → EP02는 바깥 푸른 저녁으로 구별, beatsheet Q11) |
+| L-FLOOR-MORNING (EP01 재사용) | P37–P39 | EP01 §3 문장 그대로 |
+| L-BOOTH-NIGHT (EP01 재사용) | P40–P42 | EP01 §3 문장 그대로(따뜻하고 평범하게 — 재독 비트) |
+| **L-BOOTH-OFF** (불 꺼진 BOOTH 변주) | P43 | `humid summer night, the security booth's light is switched off and its inside is dim, lit only by a faint cold white glow from the streetlamp down the slope and a weak bluish street glow, the small electric fan still turning by itself in the dark, no warm yellow light anywhere` |
+| **L-ALLEY-TOP-NIGHT** | P44–P45 | `humid summer night seen from the top of the slope, the cold grey back wall of the tower behind, the narrow alley dropping away below into darkness, far below one circle of cold white streetlamp light at the bend, faint red and blue lights flickering alternately on the walls around the bend, no police car visible, no people visible` · P45(비탈 중간, 달림): `+ the red and blue reflections stronger on the walls ahead, the power lines overhead` |
+| L-MEM-ANCHOR (EP01 재사용) | P46 | EP01 panel_052 프롬프트의 Light 문장 그대로(§E2-4) |
+| **L-ANCHOR-PRESENT** | P47–P56, P59–P60 | `night, a cold white streetlamp from the upper left, faint red and blue police-light reflections alternating on the walls, no police car visible; normal full colour and sharp focus, not faded, no blurred edges` · 얼굴 컷(P49·P51·P52·P54·P60): `+ red and blue light alternating across his face` |
+| L-FLOOR-NIGHT (EP01 재사용) | P57–P58 | EP01 §3 문장 그대로. 유리방 밖 어두운 사무 층만 — **호두나무 문·복도 끝은 프레임 밖** |
+
+- **L-ANCHOR-PRESENT = L-MEM-ANCHOR의 광원 배치 그대로**(가로등 왼쪽 위, 경광 반사는 벽, 경찰차 0)이고 **레지스터만 현재**다. 청회 탈색·소프트 포커스·가장자리 흐림 문장을 절대 붙이지 않는다(P46과 P47의 차이는 레지스터와 사람·물건뿐).
+- 경광은 **반사로만**: 붉은빛·푸른빛이 벽과 얼굴에 약하게. 경광등·경찰차·사이렌 형태 0. 붉은·푸른 빛 번짐·렌즈 플레어 금지(§9-3).
+- **회귀 금빛 사용 (EP02):** P28 구치소 철문 밖(L-OUT-GOLD, EP01 P25 운율) 한 곳뿐. 접견 복도(P05–P08)에 금빛 0. P25–P27 오후빛은 따뜻해도 금빛으로 읽히지 않게.
+- 재독 비트(서늘하게 그리지 않음): P04 경비실 창, P34 덕배의 「건물 손님이…」, P37 들뜬 태호, P40–P41 봉구의 커피·양말.
+
+## E2-2. 장소 변주 (새 LOC 아님 — 기존 LOC 문장 + 변주 문장)
+
+| 변주 | 패널 | 영문 변주 문장 (기존 LOC 문장 대신 또는 뒤에) |
+|---|---|---|
+| BACK_ALLEY · **BOTTOM-DOOR** | P01 | `the bottom of the sloping alley at the corner of the market street: the steamed-up glass door of the tiny snack shop just closing behind a man, the huge zelkova tree beside it, the alley climbing away uphill` |
+| BACK_ALLEY · **BEND-SIDE** | P02–P03 | `the middle bend at night seen from the side and slightly above (not from down the slope): the grey utility pole with the curved-arm cold white streetlamp, the orange-rimmed convex mirror, the crack in the wall below the bend` — **앵커 A 각도 금지**(P46–P47 전용) |
+| BACK_ALLEY · **LOOK-UP-BOOTH** | P04 | `from the bend looking up the slope over his shoulder: at the very top, the cold grey back of the tower, the small security booth with its warm yellow window, a round silhouette in a cap and a small turning fan inside (too small to show a face), the outline of the car-park shutter and the barrier arm` |
+| BACK_ALLEY · **BEND-NOON** | P09 | `the same middle bend at noon, seen from the side: the utility pole, the switched-off streetlamp, the convex mirror, the crack in the wall, empty road, no cars, no people` — 앵커 A 각도·로우 앵글 금지 |
+| BACK_ALLEY · **RAMP-NOON** | P10 | `looking up at the top of the slope at noon: the basement car-park exit ramp with the grey roller shutter and the yellow-and-black striped barrier arm, a small plain security camera on a short bracket on the wall just above the shutter, the grey compact car parked next to the ramp, the security booth beside it with its window shut and nobody inside` (+ PROP 문장 §E2-3) |
+| BACK_ALLEY · BOOTH (EP01 변주 재사용) | P40–P42 | EP01 §5 BOOTH 문장 그대로. 셔터가 프레임에 들어오면 CCTV 카메라 구절을 더한다 |
+| BACK_ALLEY · **BOOTH-EMPTY** | P43 | `looking in through the open window of the small security booth: an empty chair, on the windowsill one paper cup in a hand-cut brown cardboard sleeve with no steam (the coffee gone cold), the small electric fan turning by itself, the old radio switched off, a bare nail on the wall where a cap usually hangs` |
+| BACK_ALLEY · **TOP-LOOK-DOWN** | P44 | `from the very top of the slope beside the security booth, looking down over a man's shoulder: the narrow alley dropping away, tangled power lines, low rooftops, and far below at the bend the white streetlamp circle with red and blue light flickering on the walls; the bend itself hidden behind a wall, nobody visible` |
+| BACK_ALLEY · **MID-SLOPE-RUN** | P45 | `the middle of the slope seen from behind a running man, the horizon tilted, power lines swaying overhead, below him the white streetlamp circle at the bend and red and blue light on the walls` |
+| BACK_ALLEY · **ANCHOR-A** | P46 · P47 | §E2-4 / §E2-5 고정 구도 |
+| BACK_ALLEY · **MIRROR-CLOSE** | P50 | `an extreme close-up of the round orange-rimmed convex mirror at the bend, filling most of the frame: inside its curved glass, the bent reflection of the alley with a tiny kneeling figure in the centre and, near the upper edge of the mirror at a wall corner up the slope, an even smaller standing silhouette of a man in a white shirt` |
+| BACK_ALLEY · **BEND-CORNER** | P51–P56, P60 | `at the corner of a low wall just up the slope from the bend, a man half hidden behind the wall corner, the bend below out of focus` (P54·P56 배경 흐림 속 경찰 손·봉구 실루엣) |
+| BACK_ALLEY · **BEND-HIGH-DOWN** | P59 | `a high-angle close view down onto the asphalt inside the empty circle of streetlamp light` (앵커 A 각도 아님) |
+| DETENTION_VISIT (EP01 LOC 재사용) | P05–P08 | EP01 LOC 문장 그대로. P07 시그니처 반사: `the reflection of the man behind the glass half-overlapping the writing hand` |
+| DETENTION_VISIT · EXT_GATE (EP01 변주 재사용) | P28 | EP01 문장 그대로. 이번엔 두 사람: `a man stepping out of the heavy grey steel gate and bowing deeply to a younger man waiting for him` |
+| FIRM_FLOOR (EP01 LOC 재사용) | P11–P14, P25–P27, P37–P39 | EP01 LOC 문장 그대로. **진우 자리 컷(P11·P25·P37) = 회색 책상 전화기 프레임 밖**(beatsheet F13). P14 배경: `the partner's glass office by the window, a stocky thick-necked man seated on the low sofa inside, seen as a blurred silhouette` |
+| FIRM_FLOOR · 파트너 유리방 안 (EP01 P37–38 변주 재사용) | P15–P24 | `inside the partner's glass office, blinds half lowered` + 기존 소파·정돈된 책상. 책상 위 `a plain file folder lying closed, showing only its blank back`. **호두나무 문 프레임 밖** |
+| FIRM_FLOOR · 유리방 밤 | P57–P58 | `inside the lit glass office at night, a man standing by the dark window, the dark empty office floor reflected in the glass` — 호두나무 문·복도 끝 프레임 밖(🔒 「위」) |
+| BUNSIK (EP01 LOC 재사용) | P29–P36 | EP01 LOC 문장 그대로 + L-BUNSIK-EVENING. 덕배 테이블 = 입구 쪽 작은 테이블 하나로 고정(P29–P35 같은 테이블), 진우는 그 맞은편 |
+
+- 골목 표지 그대로: 흰 가로등 하나 + 주황 테 반사경 + 비탈 위 유리 타워. 낮(P09–P10)에도 같은 전봇대·반사경·벽 금이 같은 자리에 있다.
+- **앵커 A 각도(비탈 아래에서 약간 로우 앵글로 굽이를 올려다봄)는 P46·P47 두 장에만** 쓴다. P02·P09·P45·P59는 다른 각도로(앵커 A 희석 방지).
+
+## E2-3. 소품 토큰 (EP02 신규 · 확정판)
+
+모든 소품: 글자·로고·숫자·각인·불빛 표시 없음(§9-1 그대로).
+
+### PROP_BABY_SOCKS — 아기 양말 한 켤레 (L34, P41)
+- `a pair of tiny plain white baby socks, each sock no longer than two fingers, soft cotton with a small folded cuff, no pattern, no print, no label, no lace, held together as a pair`
+- 봉구의 두툼하고 짧은 손가락 사이, 근무복 가슴 주머니에서 막 꺼낸 순간. 양말이 손가락보다 작아 보이게(크기 대비가 감정). 색은 흰색만(초록·분홍 무늬 0).
+
+### PROP_CCTV — 주차장 셔터 위 카메라 (L16, P10 · 셔터가 보이는 컷)
+- `a small plain grey-white box-shaped security camera on a short wall bracket just above the car-park roller shutter, its lens tilted down at the ramp, no logo, no sticker, no lights, no LED, no text`
+- 불빛(빨간 점)·안테나·경고판 0. 작게, 셔터 폭의 1/6 이하. P10에서 진우 시선의 끝(구도의 위쪽 3분의 1).
+- EP02부터 셔터가 프레임에 들어오면 늘 같은 자리에 있다(P04 윤곽·P40 배경). EP01 P28 프롬프트에는 없다 — 아주 작으므로 EP01 이미지에 없어도 ACCEPT(플래그 E2-F5).
+
+### PROP_PLASTIC_BAG — 무지 비닐봉지 (P01, P28)
+- `a plain thin semi-transparent white plastic carrier bag with no print`
+- P01 진우: `+ a roll of kimbap wrapped in silver foil faintly visible inside`. P28 덕배: `+ a folded navy vest faintly visible inside`. P29–P35에서는 덕배 의자 옆 바닥에(작게, 강조 0).
+
+### PROP_FLASHLIGHT — 봉구의 손전등 (EP01 P27 손전등을 정식 토큰화, 판정 BA F2)
+- 기본(EP01 P27과 같은 물건): `a plain black handheld flashlight`
+- **LIT-ON-GROUND (P47 · P59):** `the same plain black handheld flashlight lying on its side on the asphalt, still switched on, its narrow white beam lying flat along the ground and pointing up the slope, away from the camera`
+- P47에서는 **원본의 쓰러진 스쿠터 자리(왼쪽 가장자리)**에. 빛줄기는 비탈 위쪽(화면 안쪽)을 향해 누워 **오른쪽 아래 1/4 빈 면에 닿지 않는다.** 빛줄기는 가는 선 — 빛 번짐·광채·플레어 0(V7: 비현실은 "똑같다"는 것뿐).
+
+### VEH_COMPACT — 낡은 회색 경차 (L48, P10 · P40 배경)
+- `an old small grey compact hatchback car, slightly dusty, with a blank licence plate, no logo, no badge, parked next to the car-park exit ramp`
+- EP01 BOOTH 변주의 `an old small grey compact car parked next to the ramp with a blank licence plate`와 **같은 차·같은 자리**. EP01 panel_028 이미지가 생기면 그 차의 위치(경사로의 어느 쪽, 차 앞이 향하는 쪽)를 그대로 따른다. 강조 0 — 배경의 일부, 프레임 가장자리, 초점 밖.
+
+### PROP_HANDCUFFS — 수갑 (P46 원본 · P47 · P48)
+- `plain silver police handcuffs with no engraving and no numbers` (EP01 §6 `plain silver police handcuffs`와 같은 물건; P46은 EP01 052 문자열 그대로)
+- 닫히는 순간만. 손목의 상처·붉은 자국 0(15+).
+
+### PROP_GUARD_CAP — 땅 위의 남색 모자 (V4, P47 · P59)
+- `a plain navy peaked cap with no badge lying upside-down on the asphalt, the brim toward the camera`
+- **P47 = 원본 헬멧 자리(앞쪽 땅, 왼쪽 가운데)**, 헬멧과 비슷한 크기로. P59 = 같은 모자 + 흰 수건 + 손전등 빛줄기.
+
+### PROP_TOWEL_GROUND — 떨어진 흰 수건 (P48 · P59)
+- `a white cotton towel lying crumpled on the asphalt`
+- 봉구 외형 문장의 목 수건이 P48부터 땅에 있다(character-sheets EP02 additions §E2-1 BONGGU_ARRESTED).
+
+### 기타 EP02 소품
+- 테이크아웃 컵(P37, 태호): `a plain white takeaway coffee cup with a plain white lid and no print`.
+- 떡볶이 접시(P29·P32): `a plain white plate of tteokbokki in bubbling red sauce with rising steam`, `plain wooden disposable chopsticks`.
+- 폰 진동(P25·P55): PROP_PHONE + `the phone shown slightly trembling as a faint soft blur, no motion lines, no symbols, the screen only a blank soft glow`. P55: `+ red and blue reflections on the phone's glass`. 진동 표현은 뷰어 효과음이 맡는다(속도선·물결 기호 0).
+- 수첩·만년필(P05·P07·P39): PROP_NOTEPAD(빈 쪽) + PROP_PEN 공통 문장. **EP01 P31 이후 진우의 펜은 BENT 상태**이지만 EP02에서는 **펜촉이 보이지 않게** — `the nib hidden behind his fingers`. 펜촉 클로즈업 0(L05는 EP03 마지막 컷 전용). P07 종이 면: `the page is a blank bright surface, no marks visible`.
+- 진짜 카드(P03·P53): PROP_CARD_REAL — **주머니 가장자리로 깨진 오른쪽 위 모서리만** 보이고 엄지가 누른다. 긁힘이 안 보여도 ACCEPT(주머니 속). P53: `+ the thumbnail whitening from pressing hard`.
+- 경비실 소품(P40·P43): EP01 BOOTH 문장 그대로(전기 포트, 무지 믹스커피 상자, 종이컵 더미, 선풍기, 라디오, 손으로 자른 슬리브 더미).
+
+## E2-4. P46 규칙 — EP01 panel_052를 글자 그대로 복사 (판정 BB F9)
+
+- P46은 **EP02 자기 패널 프롬프트**다(파일 공유 0, 출력 `_workspace/05_panels/ep02/panel_046.png`). 그러나 내용은 EP01 panel_052와 **같은 그림**이어야 한다.
+- **prompt-smith 규칙:** `04_visual/ep01_prompts.md`의 panel_052 `prompt:` 문자열을 **처음부터 끝까지 한 글자도 바꾸지 않고** P46 prompt로 복사한다(GLOBAL 축약판·Panel style·Setting·Light·Character·Shot (fixed framing)·빈자리 문장·Avoid 줄 전부). 축약·재서술·순서 변경 금지.
+  - panel-director의 P46 camera·composition·art_space 줄도 `ep01_shotlist.md` panel_052의 해당 줄을 글자 그대로 옮긴다.
+  - 빈자리 문장(`Keep the lower-right quarter of the frame: dark empty asphalt and wall shadow as calm, empty background ...`)도 그대로 둔다 — P46은 무대사지만 **오른쪽 아래 1/4 빈 면은 앵커 A 구도의 일부**다(P47과 같은 자리가 비어야 운율이 선다).
+- **attach:** `refs/DEOKBAE_sheet.png` + **`05_panels/ep01/panel_052.png`(그 이미지가 생긴 뒤)**. 그것을 첨부할 때만 프롬프트 맨 앞에 한 문장을 더한다: `Recreate the attached panel image as exactly as possible: same camera, same framing, same positions, same light.` 이 문장 외에는 EP01 문자열 그대로.
+  - EP01 052가 아직 없으면 P46 카드 note에 "EP01 panel_052를 먼저 만들 것 / 만들어지면 그 이미지를 첨부" 표시.
+- 검수: P46 = EP01 052와 가로등·반사경·덕배·헬멧·스쿠터·타워 불빛·빈 오른쪽 아래 1/4의 **위치가 같다**. 청회 탈색·가장자리 흐림(REG-MEMORY).
+
+## E2-5. P47 규칙 — 앵커 A 현재 반복 (FRAME-ANCHOR-A-PRESENT)
+
+P46(= EP01 052)과 **같은 카메라·같은 프레이밍·같은 광원 배치·같은 오른쪽 아래 1/4 빈 면**. 바뀌는 것은 ① 레지스터(현재: 정상 색·선명) ② 사람(덕배 → 봉구) ③ 물건 두 개(헬멧 → 남색 모자, 스쿠터 → 켜진 손전등). **진우는 프레임에 없다**(판정 BA F1).
+
+**고정 구도 문장 (P47 prompt에 글자 그대로 — EP01 052의 Shot 문장에서 사람·물건만 바꾼 것):**
+```
+Shot (fixed framing, identical to the attached earlier panel): slightly low angle from down the slope up at the bend: a curved-arm cold white streetlamp upper left, a round orange-rimmed convex mirror upper right with a tiny reflection of the kneeling man; centre, a short round man kneels seen from behind, bare-headed, head bowed, a white towel around his neck, as plain silver handcuffs close on his wrists behind his back; a plain navy peaked cap with no badge lying upside-down on the ground, left-centre foreground, exactly where a helmet would lie; a plain black flashlight lying on its side at the left edge, still switched on, its narrow white beam lying flat along the ground pointing up the slope; up the slope, the small light of the tower's back door.
+```
+- 프롬프트 조립: GLOBAL STYLE TOKEN(EP01 052와 같은 축약판) → **Panel style 문장 없음**(현재 레지스터) → Setting: EP01 052의 `a narrow sloping alley bend at night, low brick walls; no signs.` 그대로 → Light: L-ANCHOR-PRESENT → Character: 봉구(모자 없는 외형 변주 + `BONGGU_ARRESTED`, character-sheets EP02 additions §E2-1·§E2-2) + `police only as dark sleeves and hands` → 위 고정 구도 문장 → 빈자리 문장(EP01 052와 **같은 글자**: `Keep the lower-right quarter of the frame: dark empty asphalt and wall shadow as calm, empty background with no important details (a speech bubble will be added there later).`) → `No other person in the frame; the cap is on the ground, not on his head.` → Avoid 줄(EP01 052와 같은 글자).
+- **attach:** `refs/BONGGU_sheet.png` + **EP02 `panel_046.png`(없으면 EP01 `panel_052.png`)** — 구도 기준 이미지. 카드의 봉구는 모자를 썼으므로 `bare-headed` + 마지막 문장을 반드시 넣는다(플래그 E2-F3).
+- 물건 위치 고정: 모자 = 헬멧 자리(앞쪽 땅 왼쪽 가운데) · 손전등 = 스쿠터 자리(왼쪽 가장자리) · 반사경 속 작은 무릎 꿇은 사람(V8) · 타워 뒷문 불빛(위 가운데, 작게) · 경광 반사(벽, 경찰차 0).
+- 빈자리: **오른쪽 아래 1/4 = 어두운 빈 아스팔트·담 그늘** — 손전등 빛줄기·수건·경찰 손이 침범하면 REGEN. P47이 무대사여도 비운다(구도 운율 우선).
+- 세로 배치: P46 → P47 **같은 폭, gap 0**(letterer `gap_after: 0`), 캡션·화살표 0.
+- 15+: 수갑이 닫히는 순간과 등만. 경찰 얼굴·휘장 0. 넘어뜨림·제압 동작 0.
+- **P48–P56·P59–P60**은 같은 굽이·같은 L-ANCHOR-PRESENT이지만 **앵커 A 각도를 쓰지 않는다**(E2-2 변주들).
+
+## E2-6. 말풍선 자리 (art_space) — EP02 메모
+
+- §8 규약 그대로. 장소별 빈자리: 접견 낮 = 위쪽 크림색 벽 / 한낮 골목 = 하얀 하늘 / 유리방 = 블라인드 위쪽 / 분식집 = 김·천장 / 밤 골목 = 밤하늘·담 그늘 / 유리방 밤 = 어두운 창 위쪽.
+- **P25 `env` 「사흘 뒤」** = 위쪽 빈 면(창 위·천장). 폰 진동 효과음(P25·P55)은 폰 옆 빈 자리.
+- **폰 화자(P56·P57·P60 태호):** P56·P60은 꼬리가 진우 귀의 폰을 향하므로 폰 쪽 위를 비운다. P57은 태호 본인이 보이는 컷 — 어두운 창 위쪽.
+- **P46·P47 오른쪽 아래 1/4은 무대사여도 비운다**(구도의 일부, E2-4·E2-5).
+
+## E2-7. 금지 / 반전 보호 (EP02 추가)
+
+- **앵커 A 각도는 P46·P47만.** P47에 진우 0. P46과 P47 사이에 각도·크기 차이 0.
+- 초자연 연출 0(V7): P46→P47 전환에 빛 번짐·이중 노출·겹침 효과·잔상 0. 손전등 빛줄기는 평범한 가는 빛.
+- 🔒 「위에서」의 정체: 고문 0, 지팡이 0, 호두나무 문 0(P14·P15–P24·P57–P58 모두 프레임 밖). 태호는 P57에서 웃음 0이지만 악역 조명(아래서 비춤) 0 — 차갑게, 평범한 유리방 불빛.
+- 🔒 수아(P29–P36): 아버지 어깨의 손은 평범한 딸의 손. 진우를 보는 시선·의미 있는 조명·리본핀 클로즈업 0(리본핀은 의상 연속성으로 작게 보이기만).
+- W12: P34 덕배의 「건물 손님이…」 컷에 진우 얼굴·리액션 0, 조명 변화 0.
+- L05: 진우의 만년필 펜촉 클로즈업 0(P05·P07·P39). L11: 진우 자리 컷에 책상 전화기 0.
+- 법원·판사·법정 0(P26 전화는 진우만, 상대 0).
+- 봉구 체포 15+: 얼굴 상처·넘어짐·제압·피 0. 웃음이 사라진 얼굴(P49)은 당혹으로, 울음·비명 표정 0.
+- CCTV 카메라·경차·손전등에 로고·불빛 표시·번호판 글자 0.
+
+## E2-8. EP02 체크리스트 추가 (panel-validator · quality-reviewer — §10-2에 더함)
+
+- [ ] P05–P08 접견 복도에 **금빛 0**(흰 낮빛 + 형광). P28만 금빛 저녁.
+- [ ] P29–P36 분식집 유리문 밖 = **푸른 저녁**(EP01 검은 밤과 다름).
+- [ ] P10 셔터 위 무지 CCTV 카메라(불빛·로고 0), 회색 경차 번호판 무지·강조 0.
+- [ ] P41 아기 양말 흰 무지, 손가락보다 작게.
+- [ ] **P46 = EP01 052 같은 구도**(가로등 왼쪽 위·반사경 오른쪽 위·가운데 등·헬멧 왼쪽 가운데 앞·스쿠터 왼쪽 가장자리·타워 불빛·오른쪽 아래 1/4 비움), 청회 기억 레지스터.
+- [ ] **P47 = P46 같은 카메라·광원·빈 면**, 현재 레지스터(탈색·흐림 0), 봉구 모자 없음 + 땅 위 남색 모자(헬멧 자리) + 켜진 손전등(스쿠터 자리, 빛줄기는 위쪽으로), 반사경 속 작은 사람, **진우 0**.
+- [ ] P48 흰 수건 땅에. P49 봉구 모자 없음·금니 안 보임·웃음 꺼짐.
+- [ ] P50 반사경 안 = 가운데 작은 무릎 꿇은 사람 + 가장자리 더 작은 흰 셔츠 실루엣.
+- [ ] P57–P58 유리방 밤 — 호두나무 문 0, 태호 웃음 0, 커프스 강조 0.
+- [ ] P12 태호의 손 = 크고 무겁게 움켜쥠(가볍게 얹는 FRAME-HAND-ON-BACK 구도 아님).
+- [ ] 펜촉 클로즈업 0, 책상 전화 0, 수아 아는 눈빛 0.
+
+## EP02 flags for the leader (style-bible)
+
+| # | 플래그 | 요청 |
+|---|---|---|
+| E2-F1 | **P46 = EP01 panel_052 프롬프트 글자 그대로 복사**(판정 BB). 052 이미지가 생기면 첨부하고 `Recreate the attached panel image as exactly as possible…` 한 문장만 앞에 더한다. 052 이미지를 그대로 복사해 panel_046.png로 저장하는 길(가장 정확, 작업 1장 감소)은 판정 BB "파일 공유 0"에 따라 **적지 않았다** | 복사 저장을 허용할지만 결정 |
+| E2-F2 | **P47 고정 구도 문장**은 EP01 052의 Shot 문장에서 사람·물건만 바꿨고, Setting·빈자리·Avoid 문장은 052와 같은 글자. Panel style(기억) 문장만 뺐다. attach = BONGGU_sheet + panel_046(없으면 EP01 052) | 확인 |
+| E2-F3 | BONGGU_sheet의 봉구는 **모자를 썼다** → P47–P49·P54·P56에서 Flow가 모자를 다시 씌울 위험. `bare-headed` + `the cap is on the ground, not on his head` 고정. 모자를 씌우면 REGEN | panel-validator 기준으로 전달 |
+| E2-F4 | **손전등 빛줄기는 비탈 위쪽(화면 안쪽)으로** 눕혔다 — 오른쪽 아래 1/4 빈 면을 지키고 빛 번짐을 막기 위해. 빛줄기가 빈 면에 닿거나 광채처럼 그려지면 REGEN | 확인 |
+| E2-F5 | **CCTV 카메라는 EP02부터** 셔터 위 고정 소품. EP01 panel_028 프롬프트엔 없다(작아서 괜찮다고 판단, EP01 파일은 건드리지 않음). EP01 이미지에 없어도 ACCEPT | 확인 |
+| E2-F6 | 비트시트에 이름이 없던 조명 **L-ALLEY-BOTTOM-NIGHT(P01)·L-FLOOR-AFTERNOON(P11–24)·L-FLOOR-LATE(P25–27)**를 문장으로 고정했다(비트시트의 "L-FLOOR-MORNING 계열/변주"). 새 장소 아님 | 확인 |
+| E2-F7 | 비트시트 P05의 "PROP_PEN 새 펜"은 EP01 P31 이후 상태와 어긋난다 — **진우의 펜은 BENT 상태**이고 EP02에서는 펜촉을 가린다(L05 보호). 그림 결과는 같다 | 확인 |
+| E2-F8 | P59는 앵커 A 각도가 아닌 하이 앵글 클로즈업(모자·수건·손전등 빛줄기). 경찰 손(선택)은 넣어도 얼굴 0 | panel-director 선택 |

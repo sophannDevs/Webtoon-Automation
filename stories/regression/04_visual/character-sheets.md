@@ -379,3 +379,151 @@ HM = HANMOK_sheet · DB = DEOKBAE_sheet · SA = SUA_sheet · SD = SANGDU_sheet �
 | F6 | 봉구 APPEARANCE에 모자·흰 수건을 넣었다(EP01 유일 의상이고 둘 다 식별 표식). EP02 앵커 A에서 모자가 땅에 떨어지는 컷은 그 회차 OUTFIT에서 "cap on the ground"로 빼면 된다 | 확인 |
 | F7 | P59 장례식 기억 컷에는 SUA_sheet를 첨부하지 않는다(Flow가 앞치마를 섞을 위험). PROPS_keyprops가 있으면 리본핀용으로 첨부, 없으면 문장만 | 확인 |
 | F8 | 분식집 이모·교도관·경찰·노인·어소시에이트는 카드 없이 토큰 문장만(얼굴 정면 0) | — |
+
+---
+
+# EP02 additions (「같은 가로등 아래」) — art-director · 2026-11-26
+
+- 근거: `00_input/brief.md` EP02 절 + 판정 BA(F3 DEOKBAE_RELEASED) · `03_episode/ep02_beatsheet.md` §0-1(의상 시계)·§2 · style-bible "EP02 additions".
+- **위의 §0–§6 (APPEARANCE·HAND ID·카드 사양·금지)은 그대로 유효하다.** 아래는 EP02 의상 행·외형 변주·패널 표만 더한다. 토큰 이름은 프롬프트에 쓰지 않는다.
+
+## E2-0. 레퍼런스 카드 — 신규 0
+
+- EP02에 **얼굴이 나오는 새 인물이 없다.** 경찰은 소매·손만(§2-3 POLICE), 법원 쪽 목소리 0, 고문·준서·민재 등장 0.
+- 따라서 **새 카드도, 기존 카드 재렌더도 없다.** EP01의 14장(`refs/ref_prompts.md`)을 그대로 쓴다. 덕배의 새 의상(DEOKBAE_RELEASED)·봉구의 모자 없는 모습은 같은 얼굴·체형이므로 카드 불필요(brief: 새 카드는 새 얼굴 인물만).
+- 대신 **구도 기준 이미지**를 attach로 쓴다: P46 ← EP01 `panel_052.png`, P47 ← EP02 `panel_046.png`(없으면 EP01 052). 이건 레퍼런스 카드가 아니라 패널 이미지다.
+
+## E2-1. 의상 — EP02 신규·변주
+
+| code | 인물 | 영문 문장 | EP02 패널 |
+|---|---|---|---|
+| JINU28_OUT_NIGHT (EP01 재사용) | 진우 | EP01 문장 그대로 (+ P01 `carrying a plain thin semi-transparent white plastic carrier bag with no print, a foil-wrapped kimbap roll faintly visible inside`; P03 카드는 남색 재킷 주머니) | P01–P04 |
+| JINU28_SUIT (EP01 재사용) | 진우 | EP01 문장 그대로 | P05–P08, P11–P27, P37–P39 |
+| **JINU28_SUIT_NOON** | 진우 | `wearing navy-blue suit trousers, a crisp white shirt with plain buttoned cuffs and no cufflinks, a plain charcoal tie, black leather shoes, his navy suit jacket folded over his left forearm` | P09–P10 |
+| JINU28_SUIT + 가방 | 진우 | JINU28_SUIT + `carrying a plain matte black leather briefcase with no logo` | P28 |
+| **JINU28_SUIT_EVENING** | 진우 | `wearing a navy-blue suit whose shoulders are slightly too big for him, a white shirt with plain buttoned cuffs and no cufflinks, the plain charcoal tie loosened and the collar button undone, black leather shoes` (+ P31 가방 손에, P32 이후 의자 옆) | P29–P36 |
+| JINU28_NIGHT (EP01 재사용) | 진우 | EP01 문장 그대로. 카드는 **바지 주머니**(P53), 폰은 반대 손(P55) | P40–P45, P50(반사경 속 흰 셔츠 실루엣), P51–P56, P60 |
+| TAEHO37_OFFICE (EP01 재사용) | 태호 | EP01 문장 그대로 — 낮(P12–P24·P37–P38)·밤(P57–P58) 모두 같은 옷. 커프스 강조 0. P37 + `holding a plain white takeaway coffee cup with a plain white lid and no print` | P12, P14–P24, P37–P38, P57–P58 |
+| SANGDU_SUIT (EP01 재사용) | 기 대표 | EP01 문장 그대로. 유리방 낮은 소파에 다리를 꼬고 앉음 | P14(실루엣), P15, P19, P23 |
+| DEOKBAE_INMATE (EP01 재사용) | 덕배 | EP01 문장 그대로 | P05–P08 |
+| **DEOKBAE_RELEASED** (판정 BA F3) | 덕배 | `wearing a grey short-sleeved T-shirt, dark work trousers and worn grey canvas sneakers, no helmet, no vest on, no prison uniform` (+ P28 `carrying a plain thin semi-transparent white plastic carrier bag with no print, a folded navy vest faintly visible inside`) | P28–P36 |
+| DEOKBAE_DELIVERY (EP01 재사용) | 덕배 | P46은 EP01 052 프롬프트 문자열 그대로(`in a grey T-shirt and navy delivery vest`) | P46 |
+| SUA_WORK (EP01 재사용) | 수아 | EP01 문장 그대로. 리본핀은 `the ribbon pin small and out of focus`(클로즈업·강조 0, 🔒) | P29–P32, P36(배경 흐림 손) |
+| IMO (EP01 재사용) | 분식집 이모 | §2-3 문장 그대로(등·옆, 얼굴 정면 0) | P29, P33 배경 |
+| **BONGGU_NIGHT_DUTY** | 봉구 | = EP01 `BONGGU_SUMMER` 문장 그대로(남색 반팔 근무복 무지·짙은 회색 바지·검은 운동화). 외형 문장의 모자·흰 수건 그대로. P41 + `a pair of tiny plain white baby socks just taken out of his chest pocket` | P04(창 안 실루엣), P40–P42 |
+| **BONGGU_ARRESTED** | 봉구 | `wearing a navy short-sleeved security guard uniform shirt with no badge and no name tag, dark grey trousers, black sneakers; bare-headed, his navy cap fallen on the ground` · 수건: P47 = `a white towel still around his neck` / P48 이후 = 수건 없음(땅 위, style-bible PROP_TOWEL_GROUND) | P47–P49, P50(반사경 속 작게), P54·P56(배경 흐림) |
+| POLICE (EP01 재사용) | 경찰 | §2-3 문장 그대로(소매·손만, 휘장 0, 얼굴 0) | P46, P47, P48, P54·P56(배경), P59(선택: 모자를 집으려는 손) |
+
+- **진우 커프스 금지·시계 금지는 EP02 모든 의상에 그대로**(단추 소매만). 진우28 의상의 초록 0.
+- 덕배: 머리는 EP01 외형 그대로(짧게 깎은 반백). 석방 컷(P28)에 수갑·수의·번호 0.
+- 수아·이모 앞치마 구별(밝은 황토 베이지 / 짙은 갈색) 그대로.
+
+## E2-2. 외형 변주 — 봉구 모자 없음 (P47–P49 · 반사경 · 배경)
+
+봉구의 APPEARANCE(§1-8)에는 모자가 들어 있다. EP02 체포 이후 컷에서는 **그 구절만** 바꾸고 나머지는 글자 그대로 쓴다.
+
+- 바꿀 구절: `short grey hair thinning on top under a plain navy peaked cap with no badge` → **`short grey hair thinning on top, bare-headed with no cap`**
+- 수건 구절: P47은 `a white towel draped around his neck` 그대로 / P48 이후 그 구절을 빼고 `no towel around his neck`.
+- 표정: P47 = 고개 숙인 등(얼굴 0) / P49 = `his laughing face gone for the first time: drooping eyes wide and lost, his mouth trying to smile and failing, the gold tooth not showing` (울음·비명 0).
+- **Flow 대비:** BONGGU_sheet는 모자를 쓴 모습이라 첨부하면 모자가 돌아올 수 있다 → 프롬프트 끝에 `the cap is on the ground, not on his head`(style-bible 플래그 E2-F3).
+- 이건 외형의 **불변 요소 변경이 아니다**(모자는 소품이 떨어진 상태). 얼굴·금니·체형·피부는 그대로.
+
+## E2-3. HAND ID 추가 (EP02)
+
+| 인물 | 손 문장 | 손목·소매 | 패널 |
+|---|---|---|---|
+| 봉구 (체포) | `a thick short-fingered sunburnt hand` | `navy short sleeve, plain silver handcuffs closing on the wrist` | P48 |
+| 봉구 (양말) | `thick short fingers holding a pair of tiny plain white baby socks` | `navy short sleeve` | P41 |
+| 수아 (어깨에 얹은 손) | `a small quick hand with short nails resting lightly on a thin shoulder` — 평범한 딸의 손, 리본핀 쪽으로 구도를 끌지 않는다 | `short sleeve, bare wrist` | P30 |
+| 태호 (움켜쥠) | `a large thick golf-tanned hand gripping the shoulder hard, the whole heavy hand visible` (P12 — FRAME-HAND-ON-BACK 구도 금지, EP01 P35 계열) | `white French cuff with a square onyx cufflink, charcoal suit sleeve`(강조 0) | P12, P23 |
+| 진우 28 | §3 그대로 + 카드 컷: `his thumb pressing the chipped top-right corner of a tiny dark navy memory card at the edge of a pocket` | 재킷 주머니(P03) / 바지 주머니(P53) | P03, P07, P25, P39, P53, P55 |
+
+## E2-4. EP02 등장 · 의상 · attach 표 (P01–P60, 권장안 — panel-director·prompt-smith가 확정)
+
+attach 약어는 §4와 같다(J28T/J28E · T37T/T37E · SD · DB · SA · BG). `052img` = EP01 `05_panels/ep01/panel_052.png`, `046img` = EP02 `05_panels/ep02/panel_046.png`. PR = PROPS_keyprops.
+
+| P | 장면·장소 | 인물 / 의상 | attach |
+|---|---|---|---|
+| 01 | BACK_ALLEY BOTTOM-DOOR | JINU28 `JINU28_OUT_NIGHT` 뒷모습 + 비닐봉지 | J28T |
+| 02 | BEND-SIDE | JINU28 전신 작게 | J28T |
+| 03 | BEND-SIDE | JINU28 손 + 카드 | PR |
+| 04 | LOOK-UP-BOOTH | JINU28 옆얼굴 · BONGGU 창 안 실루엣(아주 작게) | J28E |
+| 05 | DETENTION_VISIT 낮 | JINU28 `JINU28_SUIT` · DEOKBAE `DEOKBAE_INMATE` | J28T, DB |
+| 06 | 〃 | DEOKBAE 클로즈업 | DB |
+| 07 | 〃 | JINU28 손 + 덕배 반사 | DB |
+| 08 | 〃 | DEOKBAE · JINU28 | J28E, DB |
+| 09 | BEND-NOON | JINU28 `JINU28_SUIT_NOON` | J28T |
+| 10 | RAMP-NOON | JINU28 뒷모습 작게 | — |
+| 11 | FIRM_FLOOR 오후 | JINU28 `JINU28_SUIT` | J28E |
+| 12 | 〃 | JINU28 · TAEHO37 손(움켜쥠) | T37T |
+| 13 | 〃 | JINU28 얼굴 | J28E |
+| 14 | 〃 | TAEHO37 얼굴 · SANGDU 실루엣 | T37E |
+| 15 | 유리방 안 | SANGDU `SANGDU_SUIT` · TAEHO37 · JINU28 | SD, T37T |
+| 16 | 〃 | TAEHO37 · JINU28 | T37E, J28E |
+| 17 | 〃 | TAEHO37 | T37E |
+| 18 | 〃 | JINU28 | J28E |
+| 19 | 〃 | SANGDU(전경) · JINU28(배경) | SD, J28T |
+| 20 | 〃 | JINU28 · TAEHO37 | J28E, T37E |
+| 21 | 〃 | JINU28 정면 | J28E |
+| 22 | 〃 | TAEHO37 늦게 굳는 미소 ① | T37E |
+| 23 | 〃 | SANGDU · TAEHO37 | SD, T37E |
+| 24 | 〃 | TAEHO37(전경) · JINU28 등 | T37E, J28T |
+| 25 | FIRM_FLOOR 늦은 오후 | JINU28 손 + 폰 | — |
+| 26 | 〃 | JINU28 | J28E |
+| 27 | 〃 | JINU28 옆얼굴 | J28E |
+| 28 | EXT_GATE 금빛 | DEOKBAE `DEOKBAE_RELEASED` · JINU28 `JINU28_SUIT`+가방 | DB, J28T |
+| 29 | BUNSIK 저녁 | DEOKBAE · SUA `SUA_WORK` · IMO | DB, SA |
+| 30 | 〃 | SUA 손 · DEOKBAE 어깨·손 | SA, DB |
+| 31 | 〃 | DEOKBAE · JINU28 `JINU28_SUIT_EVENING` | DB, J28T |
+| 32 | 〃 | JINU28 · DEOKBAE · SUA 손 | J28E, DB |
+| 33 | 〃 | DEOKBAE | DB |
+| 34 | 〃 | DEOKBAE (진우 얼굴 0) | DB |
+| 35 | 〃 | DEOKBAE | DB |
+| 36 | 〃 | JINU28 옆얼굴 · SUA 손(흐림) | J28E |
+| 37 | FIRM_FLOOR 아침 | TAEHO37 + 테이크아웃 컵 · JINU28 | T37E, J28T |
+| 38 | 〃 | TAEHO37 | T37E |
+| 39 | 〃 | JINU28 손 + 수첩·펜(펜촉 가림) | — |
+| 40 | BOOTH 밤 | BONGGU `BONGGU_NIGHT_DUTY` · JINU28 `JINU28_NIGHT` | BG, J28T |
+| 41 | 〃 | BONGGU 손 + PROP_BABY_SOCKS | BG |
+| 42 | 〃 | JINU28 · BONGGU(흐림) | J28E, BG |
+| 43 | BOOTH-EMPTY | JINU28 손 | — |
+| 44 | TOP-LOOK-DOWN | JINU28 어깨·옆머리 | J28T |
+| 45 | MID-SLOPE-RUN | JINU28 등 | J28T |
+| 46 | **ANCHOR-A 기억** (EP01 052 복사) | DEOKBAE `DEOKBAE_DELIVERY` · POLICE | DB + 052img |
+| 47 | **ANCHOR-A 현재** | BONGGU `BONGGU_ARRESTED`(모자 없음, 수건 목에) · POLICE | BG + 046img(또는 052img) |
+| 48 | BEND 클로즈업 | BONGGU 손목 + 수갑 · 땅 위 수건 | BG |
+| 49 | 〃 | BONGGU 얼굴(모자 없음, 웃음 꺼짐) | BG |
+| 50 | MIRROR-CLOSE | (반사경 속) BONGGU · JINU28 작게 | — |
+| 51 | BEND-CORNER | JINU28 `JINU28_NIGHT` | J28T |
+| 52 | 〃 | JINU28 눈 | J28E |
+| 53 | 〃 | JINU28 손 + 카드(바지 주머니) | PR |
+| 54 | 〃 | JINU28 얼굴 · 배경 흐림 POLICE·BONGGU | J28E |
+| 55 | 〃 | JINU28 손 + 폰 | — |
+| 56 | 〃 | JINU28 · 배경 흐림 BONGGU·POLICE | J28E |
+| 57 | 유리방 밤 | TAEHO37 웃음 없음 | T37E |
+| 58 | 〃 | TAEHO37 눈 | T37E |
+| 59 | BEND-HIGH-DOWN | 모자·수건·손전등 (+ POLICE 손 선택) | — |
+| 60 | BEND-CORNER | JINU28 눈 + 폰 가장자리 | J28E |
+
+- 원칙(§4와 같음): 얼굴 패널 = 그 인물 카드 최대 2명분. 손만 = 카드 하나 또는 생략. 아주 작은 원경 = 첨부 없음. Flow 첨부 장수 한도에 걸리면 구도 기준 이미지(052img/046img)를 카드보다 먼저 남긴다(P46·P47).
+- 태호 P57–P58은 웃음 없는 얼굴 → T37E의 3번(웃지 않는 작고 차가운 눈)이 기준. T44 카드 첨부 금지(나이 섞임).
+
+## E2-5. 금지 요약 (EP02 추가)
+
+- 새 인물 얼굴 0(경찰 얼굴·휘장 0, 법원 사람 0).
+- 봉구: 체포 컷에서 모자 머리 위 금지(땅 위에만) · 얼굴 상처·눈물 0 · 휘장·명찰 0.
+- 덕배 석방 의상에 수의·번호·수갑 0, 헬멧 0. 배달 조끼는 비닐봉지 안에만(P28).
+- 진우: 커프스·시계 금지 그대로 · 펜촉 클로즈업 0 · P34에 얼굴 0 · P47 프레임에 0.
+- 수아: 진우를 보는 시선·리본핀 클로즈업 0(🔒).
+- 태호: 장갑 금지 그대로 · P12 손은 무겁게 움켜쥠(가볍게 얹는 손 금지) · P57 악역 조명 0.
+
+## EP02 flags for the leader (character-sheets)
+
+| # | 플래그 | 요청 |
+|---|---|---|
+| E2-C1 | **새 레퍼런스 카드 0** — EP02에 얼굴이 나오는 새 인물 없음(경찰 소매·손만). 기존 14장 그대로. 덕배 석방 의상·봉구 모자 없음도 카드 불필요 | 확인 |
+| E2-C2 | **DEOKBAE_RELEASED** 확정: 회색 반팔 티 + 짙은 작업 바지 + 낡은 회색 캔버스 운동화, 헬멧·조끼 착용 0(조끼는 P28 비닐봉지 안) | 확인 |
+| E2-C3 | 진우 의상 변주 2개를 더했다: **JINU28_SUIT_NOON**(P09–10, 재킷을 왼팔에 걸침) · **JINU28_SUIT_EVENING**(P29–36, 넥타이 느슨·깃 단추 풂). P28은 넥타이를 아직 단정하게(장면이 바뀌는 분식집에서 느슨) | 확인 |
+| E2-C4 | 봉구 **BONGGU_NIGHT_DUTY = EP01 BONGGU_SUMMER 그대로**, **BONGGU_ARRESTED** = 같은 근무복 + 모자 없음 + 수건(P47 목 → P48 이후 땅). APPEARANCE의 모자 구절만 `bare-headed with no cap`으로 바꾸는 변주(§E2-2) | 확인 |
+| E2-C5 | 태호·기 대표·수아·이모·경찰은 EP01 의상 그대로(새 의상 0). 태호 밤(P57)도 같은 사무실 정장 | 확인 |
+| E2-C6 | §E2-4 attach 표는 권장안. P46·P47은 구도 기준 이미지(052img/046img)를 카드보다 우선 | panel-director·prompt-smith |
